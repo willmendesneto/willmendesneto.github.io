@@ -1,0 +1,62 @@
+---
+layout: post
+title: Usando abas na linha de comando do Windows
+categories:
+- Dicas e Truques
+- GIT
+- Outros
+tags:
+- abas
+- cli
+- console2
+- git
+- git bash
+- linha de comando
+- windows
+status: publish
+type: post
+published: true
+meta:
+  geo_public: '0'
+  _publicize_pending: '1'
+author:
+---
+<p>Olá pessoal.</p>
+<p>Uma dica bem prática para quem utiliza a linha de comando no Windows. Uma coisa que é bastante usual em Linux/Mac é a questão das abas na linha de comando. Isso agiliza o trabalho horrores!</p>
+<p>Eu instalei o git no Windows da seguinte forma:</p>
+<p>Com o git bash intalado em sua máquina, vamos agora fazer o download do programa Console2 (http://sourceforge.net/projects/console/) e inserí-lo na pasta que contém os outros arquivos de programas</p>
+<p><a href="//assets/images/screenshot001.jpg"><img class="size-full wp-image-176" alt="Diretório do Console2 instalado na máquina" src="/assets/images/screenshot001.jpg" width="594" height="423" /></a> Diretório do Console2 instalado na máquina</p>
+<p>Agora vamos executar o console2 e vamos em Edit &gt; Settings para fazermos a nossa configuração inicial para unirmos o git bash ao console2.</p>
+<p><a href="/assets/images/screenshot002.jpg"><img class="size-full wp-image-177" alt="Console2  configuração inicial" src="/assets/images/screenshot002.jpg" width="594" height="187" /></a> Console2 configuração inicial</p>
+<p>Ao clicar na opção vai abrir um popup. No canto direito vamos clicar na opção "Tabs" e vamos inserir as informações:</p>
+<p>Title: Git Bash<br />
+Icon: C:\Program Files (x86)\Git\etc\git.ico<br />
+Shell: "C:\Program Files (x86)\Git\bin\sh.exe" --login -i</p>
+<p><a href="/assets/images/screenshot003.jpg"><img class="size-full wp-image-178" alt="Configurando o Git Bash no Console2" src="/assets/images/screenshot003.jpg" width="546" height="560" /></a> Configurando o Git Bash no Console2</p>
+<p>Agora vamos clicar na opção "Hotkeys" no canto direito para modificarmos o atalho para a criação de uma nova aba. Clique na opção "New Tab 1" e abaixo insira as informações:</p>
+<p>Command: New Tab 1<br />
+Hotkey: Ctrl + T (Clique nos Botões para inserir este valor no campo)</p>
+<p><a href="http://willmendesnetoprojects.files.wordpress.com/2013/07/screenshot004.jpg"><img class="size-full wp-image-179" alt="Modificando atalhos no Console2" src="/assets/images/screenshot004.jpg" width="535" height="559" /></a> Modificando atalhos no Console2</p>
+<p>Clique no botão "Assign" para salvar o atalho para a criação de uma nova aba.</p>
+<p>Vamos na opção "Behavior" para mudarmos o caracter de cópia de nova linha para Linux</p>
+<p><a href="http://willmendesnetoprojects.files.wordpress.com/2013/07/screenshot005.jpg"><img class="size-full wp-image-180" alt="Configurações do Console2" src="/assets/images/screenshot005.jpg" width="546" height="561" /></a> Configurações do Console2</p>
+<p>Agora para modificarmos um pouco a sua aparência vamos na opção "Appearance" e vamos mudar os valores</p>
+<p>Font<br />
+Name: Lucida Console (a fonte utilizada no Git Bash);<br />
+Size: 12</p>
+<p><a href="http://willmendesnetoprojects.files.wordpress.com/2013/07/screenshot006.jpg"><img class="size-full wp-image-181" alt="Modificando a fonte do Console2" src="/assets/images/screenshot006.jpg" width="548" height="564" /></a> Modificando a fonte do Console2</p>
+<p>Clicamos em "Appearance &gt; More..." para finalizarmos com as nossas modificações</p>
+<p>Window transparency<br />
+Alpha: 20</p>
+<p><a href="http://willmendesnetoprojects.files.wordpress.com/2013/07/screenshot011.jpg"><img class="size-full wp-image-188" alt="Configurando transparência no Console2" src="/assets/images/screenshot011.jpg" width="545" height="561" /></a> Configurando transparência no Console2</p>
+<p>Para finalizarmos vamos na opção "Console" e vamos direcionar o programa para que inicie na raíz da pasta do usuário</p>
+<p>Startur dir: C:\Users\pasta-com-seu-usuario\ (no meu caso "willmendesneto")</p>
+<p><a href="http://willmendesnetoprojects.files.wordpress.com/2013/07/screenshot007.jpg"><img class="size-full wp-image-182" alt="Configurando inicialização do Gitbash no Console2" src="/assets/images/screenshot007.jpg" width="546" height="559" /></a> Configurando inicialização do Gitbash no Console2</p>
+<p>Com o programa configurado, cria um atalho no seu Desktop e modifique as propriedades do atalho clicando com o botão direito no atalho criado e escolhendo a opção "Propriedades". Assim que o popup abrir clique na opção "Atalho &gt; Alterar ícone &gt; Procurar" e insira esta informação para que o Console2 fique com o ícone do Git Bash.</p>
+<p>%ProgramFiles% (x86)\Git\etc\git.ico</p>
+<p>&nbsp;</p>
+<p><a href="http://willmendesnetoprojects.files.wordpress.com/2013/07/screenshot010.jpg"><img class="size-full wp-image-185" alt="Modificando ícone de atalho" src="/assets/images/screenshot010.jpg" width="398" height="515" /></a> Modificando ícone de atalho</p>
+<p>O resultado final será seu programa funcionando com tudo que você tem direito (na medida do possível) em um ambiente Windows, lembrando que o Git bash instala algumas coisas bem legais como Vim, comandos "find" e outras coisas que ajudam bastante.</p>
+<p><a href="http://willmendesnetoprojects.files.wordpress.com/2013/07/screenshot009.jpg"><img class="size-full wp-image-184" alt="Finalizando integração Git Bash e Console2" src="/assets/images/screenshot009.jpg" width="594" height="173" /></a> Finalizando integração Git Bash e Console2</p>
+<p>Obrigado e até mais!</p>
+<p>Este post foi baseado em algumas dicas que achei no post "git bash &amp; console2, finally! (<a title="http://johngilliland.wordpress.com/2012/12/22/git-bash-console2-finally/" href="http://johngilliland.wordpress.com/2012/12/22/git-bash-console2-finally/" target="_blank">http://johngilliland.wordpress.com/2012/12/22/git-bash-console2-finally/</a>)" do blog de "John Gilliland" com algumas alterações.</p>

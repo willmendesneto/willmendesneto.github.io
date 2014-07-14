@@ -1,0 +1,65 @@
+---
+layout: post
+title: Testes no Codeigniter com CIUnit
+categories:
+- Codeigniter
+- Linguagens de Programação
+- PHP
+- TDD
+- Testes
+tags:
+- ciunit
+- codeigniter
+- php
+- tdd
+- teste unitário
+status: publish
+type: post
+published: true
+meta:
+  _oembed_5e1cc9b965a69fbf845abf8cf0e7d8fb: '{{unknown}}'
+  _oembed_0c9d1d315e707e4a5ea68936b2acc7df: '{{unknown}}'
+  _publicize_pending: '1'
+  _oembed_bf1aa60b6eae0c68a1b84d87ecf1049b: '{{unknown}}'
+  _oembed_d298595d11135b50d7880b1c04a8be49: '{{unknown}}'
+  _oembed_c7fa9169f2254b479b1751b73f00dae5: '{{unknown}}'
+  tagazine-media: a:7:{s:7:"primary";s:75:"/assets/images/sem-tc3adtulo.png";s:6:"images";a:1:{s:75:"/assets/images/sem-tc3adtulo.png";a:6:{s:8:"file_url";s:75:"/assets/images/sem-tc3adtulo.png";s:5:"width";i:1048;s:6:"height";i:549;s:4:"type";s:5:"image";s:4:"area";i:575352;s:9:"file_path";b:0;}}s:6:"videos";a:0:{}s:11:"image_count";i:1;s:6:"author";s:8:"20307137";s:7:"blog_id";s:8:"34783303";s:9:"mod_stamp";s:19:"2013-02-21
+    17:29:50";}
+  _oembed_a3db494c36f377e3b575d8d16502cfb1: '{{unknown}}'
+  _oembed_33cc7b4466a34d81e154fc85160e95ae: '{{unknown}}'
+  _oembed_a2528df33750552d9fb208d993ea1857: '{{unknown}}'
+  _oembed_90f3ea9f0b22e987543fc1e3d3bd20b2: '{{unknown}}'
+  _oembed_acfe4159700e3d99f53827767d58334f: '{{unknown}}'
+  _oembed_3d66842b31cb6171363e56676c0511b7: '{{unknown}}'
+  _oembed_d0bad2ba8edf0ae4f29438dc59c3542f: '{{unknown}}'
+  _oembed_6dae141a2c53ed4c09857ff44399357a: '{{unknown}}'
+  _oembed_934350713cd673157f5222f86152c51b: '{{unknown}}'
+  _oembed_6e6d30d4ef39b610a001763d697b1a84: '{{unknown}}'
+  _oembed_55101a3efab631fc1bc60cb451cb8d24: '{{unknown}}'
+  _oembed_45408ae1077ea587098e83ea7b76628d: '{{unknown}}'
+  _oembed_ea872bffa8c760d4aa615df298a80160: '{{unknown}}'
+  _oembed_bd353eb01fcefb0e338985ff69411d95: '{{unknown}}'
+  _oembed_b472f955b07331b4a100f7a6407a9f66: '{{unknown}}'
+  _oembed_d0e139a36d013c6f765bd0c3e2113afb: '{{unknown}}'
+author:
+---
+<p>Olá pessoal.</p>
+<p>Para quem já tentou utilizar TDD (Test Development Driven) no Codeigniter percebeu que sofria horrores para conseguir. Para isso Tatsuya Fukata criou uma biblioteca, a CIUnit, e a deixou disponível no Github (<a href="https://github.com/fukata/CIUnit-for-CI2" target="_blank">https://github.com/fukata/CIUnit-for-CI2</a>). Este post vai mostrar como é bem simples fazermos testes unitários utilizando este componente.</p>
+<p>Seu acoplamento é bastante simples:</p>
+<p><a href="/assets/images/sem-tc3adtulo.png"><img class="size-full wp-image-150" alt="Github - Projeto CIUnit" src="/assets/images/sem-tc3adtulo.png" width="611" height="320" /></a> Github - Projeto CIUnit</p>
+<p>Faça o download do Codeigniter e descompacte-o no seu servidor local. Após isto faça o download do projeto CIUnit e insira os arquivos do projeto no diretório "application/third_party/" da sua aplicação;</p>
+<p>Remova o conteúdo da pasta "tests" e crie o arquivo "phpunit.xml.dist" na raíz do projeto com este conteúdo (<a href="https://gist.github.com/willmendesneto/5005522" target="_blank">https://gist.github.com/willmendesneto/5005522</a>).</p>
+<p>Agora crie o arquivo  "VerificationTests.php" dentro da pasta tests e insira este conteúdo (<a href="https://gist.github.com/willmendesneto/5005595" target="_blank">https://gist.github.com/willmendesneto/5005595</a>).</p>
+<p>Passando por estas etapas, abra a linha de comando e insira os comandos:<br />
+<code><br />
+cd pasta-do-seu-projeto/</code><br />
+<code><br />
+phpunit --testdox</code></p>
+<p><strong>Dica</strong>: Caso esteja usando o phpunit via composer, você pode utilizar os comandos:<br />
+<code><br />
+cd pasta-do-seu-projeto/</code><br />
+<code><br />
+php vendor/phpunit/phpunit/composer/bin/phpunit --testdox</code></p>
+<p>Pronto, se tudo deu certo você verá a mensagem de tudo ok na aplicação.</p>
+<p>Obrigado e até mais</p>
+<p>https://github.com/fukata/CIUnit-for-CI2</p>

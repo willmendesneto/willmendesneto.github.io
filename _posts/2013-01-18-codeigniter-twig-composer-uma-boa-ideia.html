@@ -1,0 +1,79 @@
+---
+layout: post
+title: 'Codeigniter + Twig + Composer : Uma boa idéia'
+categories:
+- Linguagens de Programação
+tags:
+- codeigniter
+- composer
+- framework
+- mendes
+- php
+status: publish
+type: post
+published: true
+meta:
+  _publicize_pending: '1'
+  _oembed_ab2886fc1e0567d34102497899f084e7: '{{unknown}}'
+  _oembed_9650e057b5b7984f3ff0c66d71d4c1f1: '{{unknown}}'
+  _oembed_ab9db7bbea984a33266c130cea7933ea: '{{unknown}}'
+author:
+---
+<p>Olá a todos.</p>
+<p>Em um projeto tive a necessidade de utilizar alguns recursos de um template engine e olhando alguns achei interessante trabalhar com o twig (<a href="http://twig.sensiolabs.org/" target="_blank">http://twig.sensiolabs.org/</a>).</p>
+<p><a href="/assets/images/cover.jpg"><img class="size-full wp-image-113" alt="Twig Template engine" src="/assets/images/cover.jpg" width="500" height="250" /></a> Twig Template engine</p>
+<p>Já existe uma biblioteca no Codeigniter para trabalhar com o Twig, o Codeigniter Twig (<a href="https://github.com/altrano/codeigniter-twig">https://github.com/altrano/codeigniter-twig</a>) que é de fácil acoplamento, basta fazer o download dos arquivos, inseri-los na aplicação e carregar no controller que vá usá-lo. Ele faz o processo de carregamento automático dos helpers inseridos no arquivo de autoload da aplicação.</p>
+<p>application/libraries/Twig.php<br />
+Link do gist  : <a href="https://gist.github.com/4551063" target="_blank">https://gist.github.com/4550897</a></p>
+<p>application/config/twig.php<a href="https://gist.github.com/4551063" target="_blank"><br />
+</a> Link do gist : <a href="https://gist.github.com/4550897" target="_blank">https://gist.github.com/4550897</a><br />
+Baixado os arquivos do projeto Codeigniter Twig no github e inseridos no projeto, vamos começar a integração Primeiro vamos inserir o composer na aplicação. Iremos criar a requisição do Twig no arquivos composer.json. Crie um arquivo <em>composer.json</em> na raíz do projeto com as informações:</p>
+<p>composer.json<br />
+Link do gist : <a href="https://gist.github.com/4550979" target="_blank">https://gist.github.com/4550979</a></p>
+<p>Depois iremos inserir o código que vai chamar o arquivo de carregamento dos pacotes do composer no arquivo<em> index.php</em> na raíz do projeto.</p>
+<p>No arquivo autoload.php (application/config/autoload.php) modifique o conteúdo do arquivo da linha 55 à 67 e insira a informação abaixo:</p>
+<p>application/config/autoload.php<br />
+Link do gist : <a href="https://gist.github.com/4551017" target="_blank">https://gist.github.com/4551017</a></p>
+<p>O código do controller da aplicação:</p>
+<p>application/controllers/welcome.php<br />
+Link do gist: <a href="https://gist.github.com/4550963" target="_blank">https://gist.github.com/4550963</a></p>
+<div></div>
+<div>Agora os templates. O Twig tem algumas funções nativas que podem ser muito úteis. Criaremos 2 arquivos na pasta "application/views":</div>
+<div>
+<ul>
+<li><strong>template.html.twig - </strong>Template padrão da aplicação</li>
+<li><strong>index.html.twig - </strong>Arquivo com o conteúdo específico da página;</li>
+</ul>
+</div>
+<div></div>
+<div>Como ficou o código das views:</div>
+<div></div>
+<div></div>
+<div><strong>template.html.twig</strong></div>
+<div>application/views/template.html.twig</div>
+<div>Link do gist : <a href="https://gist.github.com/4551035" target="_blank">https://gist.github.com/4551017</a></div>
+<div></div>
+<div><strong>index.html.twig</strong></div>
+<div>
+<p>application/views/index.html.twig<br />
+Link do gist : <a href="https://gist.github.com/4551051" target="_blank">https://gist.github.com/4551017</a></p>
+</div>
+<div></div>
+<div></div>
+<div>Agora uma observação:</div>
+<div></div>
+<div>Quando for utilizar algum helper que gere html (form_helper, por exemplo), utilize o método com o sufixo |raw</div>
+<div> Chamada da função <strong>form_open();</strong> do helper</div>
+<div>     <code>{{ form_open("/login")|raw }}</code></div>
+<div>ao invés de</div>
+<div>     <code>form_open("/login");</code></div>
+<div></div>
+<div>Link do Gist com o código dos arquivos utilizados no projeto:</div>
+<div><a href="https://gist.github.com/4541588" target="_blank">https://gist.github.com/4541588</a></div>
+<div></div>
+<div>Documentação do Twig:</div>
+<div><a href="http://twig.sensiolabs.org/doc/tags/raw.html" target="_blank">http://twig.sensiolabs.org/doc/tags/raw.html</a></div>
+<div></div>
+<div>Valeu e até mais!</div>
+<div></div>
+<div></div>

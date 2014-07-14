@@ -1,0 +1,29 @@
+---
+layout: post
+title: Adicionando Angularjs via CDN + fallback
+categories:
+- Angularjs
+- Javascript
+- Linguagens de Programação
+- Outros
+tags:
+- content delivery network
+- js
+status: publish
+type: post
+published: true
+meta:
+  _publicize_pending: '1'
+  geo_public: '0'
+author: 
+---
+<p>Olá pessoal.</p>
+<p>Inicialmente vou falar do assunto CDN ou <em>Content Delivery Network</em> (caso não saiba do que estou falando <a href="http://pt.wikipedia.org/wiki/Content_Delivery_Network" target="_blank">leia a definição do Wikipedia sobre CDN</a>). As vantagens de inserir um arquivo em seu site via CDN são diversas como Cache de arquivos, diminui a latência da requisição e o arquivo pode ser carregado paralelamente com os demais conteúdos do site, o que melhora a performance.</p>
+<p>Porém um dos pontos que podem impactar na utilização de arquivos via CDN são as dependências diretas de servidores externos. Caso os servidores por qualquer motivo pararem de disponibilizar o arquivo (podem estar off por "N" motivos) sua aplicação estaria comprometida. Para isso existem os chamados <em>fallbacks</em>, que nada mais é do que, neste caso, uma verificação de carregamento do arquivo, caso contrário insere o arquivo local . Utilizando o <a href="http://angularjs.org/" target="_blank">angularjs</a> não seria diferente também. Existe uma maneira simples de verificarmos se o arquivo foi carregado corretamente, caso contrário inserimos o arquivo localmente e para o usuário final a utilização fica transparente. Duvida?</p>
+<pre><code>&lt;!-- Angular JS off CDN, otherwise fallback. --&gt;
+&lt;script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/<code>angular.min.js</code>"&gt;&lt;/script&gt;
+ &lt;script&gt;
+    window.angular || document.write('&lt;script src="scripts/vendor/angular-1.0.7.min.js"&gt;&lt;\/script&gt;');
+ &lt;/script&gt;</code></pre>
+<p>Bastante simples, não acham? Da mesma forma você pode fazer um <em>fallback</em> para o <a href="http://jquery.com/" target="_blank">jquery</a> e outros arquivos, bibliotecas, etc.</p>
+<p>Até mais!</p>

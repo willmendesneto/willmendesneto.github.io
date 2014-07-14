@@ -1,0 +1,75 @@
+---
+layout: post
+title: Usando PHPUnit no Codeigniter via Hooks
+categories:
+- Linguagens de Programação
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _publicize_pending: '1'
+  _oembed_e6d1873e421705b4e25692015e9ce3f1: '{{unknown}}'
+  _oembed_058e553dacbf0a6fc5359390c14a4db6: '{{unknown}}'
+  _oembed_a2abf7ff9d47f66ae49550d0c7607092: '{{unknown}}'
+  _oembed_0c4a72e46ac8123adb2232e7d8837fac: '{{unknown}}'
+  _oembed_bd529b7280ee20b257b55a110d2f9029: '{{unknown}}'
+  _oembed_7200bfe6ec2c4e12e4a51d1fb87bec64: '{{unknown}}'
+  _oembed_65bc54494c71ba262ba94a15292255f2: '{{unknown}}'
+  _oembed_eaade0ce65ca63a0e5820927a5057dd5: '{{unknown}}'
+author:
+---
+<p>Olá pessoal.</p>
+<p>Já fiz um post sobre <a href="http://willmendesnetoprojects.wordpress.com/2013/02/21/testes-no-codeigniter-com-ciunit/" target="_blank">como fazer testes unitários utilizando o framework Codeigniter PHP com o CIUnit</a>.</p>
+<p>Uma grande pergunta que me fiz foi: "Porque utilizar componentes externos se posso simplificar esse fluxo?"</p>
+<p>Pesquisando achei este link que fala da utilização de hooks para integração do PHPUnit e o Codeigniter de maneira mais simples (<a id=".reactRoot[5].[1][2][1]{comment340101742762753_340210312751896}.0.[1].0.[1].0.[0].[0][2].0.[6]" href="http://phpfour.com/blog/2012/01/phpunit-integration-with-codeigniter/" target="_blank" rel="nofollow">http://phpfour.com/blog/2012/01/phpunit-integration-with-codeigniter/</a>), mas quando fui utilizá-lo via CLI tive alguns problemas, então tive que fazer algumas modificações.</p>
+<p>Inicialmente vamos fazer o download do framework no <a href="https://github.com/EllisLab/CodeIgniter" target="_blank">repositório oficial da Ellislab</a>. Feito o download descompactaremos ele no nosso servidor local. A partir daí faremos algumas modificações.</p>
+<p>No arquivo 'system/core/Exceptions.php' iremos modificar os métodos "show_php_error()" e "show_error()" para que eles verifiquem se a chamada do arquivo foi feita via linha de comando. Caso positivo o erro deve ser otimizado para sua visualização via CLI. Insira este conteúdo no arquivo.</p>
+<p>Gist: <a href="https://gist.github.com/willmendesneto/5025979" target="_blank">https://gist.github.com/willmendesneto/5025979</a></p>
+<p>No arquivo 'application/config/config.php' modifique a linha 121 para que o array na posição 'enable_hooks' tenha agora o valor "TRUE", assim a aplicação fica sabendo que vai utilizar algum hook</p>
+<p>$config['enable_hooks'] = TRUE;</p>
+<p>Após isso vá em 'application/config/hooks.php e insira este conteúdo</p>
+<p>$hook['display_override'] = array(<br />
+'class' =&gt; 'DisplayHook',<br />
+'function' =&gt; 'captureOutput',<br />
+'filename' =&gt; 'DisplayHook.php',<br />
+'filepath' =&gt; 'hooks'<br />
+);</p>
+<p>Gist: <a href="https://gist.github.com/willmendesneto/5025990" target="_blank">https://gist.github.com/willmendesneto/5025990</a></p>
+<p>Vamos criar a classe que vai interagir com o evento encadeado via hook. Crie o arquivo 'application/hooks.DisplayHook.php' e insira o conteúdo deste gist.</p>
+<p>Gist: <a href="https://gist.github.com/willmendesneto/5025995" target="_blank">https://gist.github.com/willmendesneto/5025995</a></p>
+<p>Para maiores informações sobre os métodos que podem ser utilizados para os hooks, uma excelente dica é a documentação oficial do Codeigniter(<a href="http://ellislab.com/codeigniter/user-guide/general/hooks.html" target="_blank">http://ellislab.com/codeigniter/user-guide/general/hooks.html</a>).</p>
+<p>Agora iremos criar as configurações para utilizarmos os testes unitários. Crie o arquivo "phpunit.xml.dist" na raíz do projeto com este conteúdo (<a href="https://gist.github.com/willmendesneto/5026004" target="_blank">https://gist.github.com/willmendesneto/5026004</a>). Logo após crie uma pasta 'tests' na raíz do projeto. Nesta pasta ficarão todos os arquivos de teste que utilizaremos neste exemplo. Para concluirmos a configuração do ambiente de testes, iremos criar um arquivo em 'tests/bootstrap.php' com este conteúdo (<a href="https://gist.github.com/willmendesneto/5026014" target="_blank">https://gist.github.com/willmendesneto/5026014</a>), assim nos asseguramos que os componentes do Framework estarão inicializados e prontos para o utilização nos testes.</p>
+<p>Estou utilizando o nome do banco dados 'ci-phpunit' para este exemplo. Neste banco criaremos a tabela 'posts' com este conteúdo:</p>
+<p>CREATE TABLE IF NOT EXISTS `posts` (<br />
+`id` int(5) NOT NULL AUTO_INCREMENT,<br />
+`title` varchar(100) DEFAULT NULL,<br />
+PRIMARY KEY (`id`)<br />
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;</p>
+<p>Agora sim criaremos o nosso arquivo de testes. Crie o arquivo em 'tests/PostTest.php' com este conteúdo.</p>
+<p>Gist: <a href="https://gist.github.com/willmendesneto/5026017" target="_blank">https://gist.github.com/willmendesneto/5026017</a></p>
+<p>Passando por estas etapas, abra a linha de comando e insira os comandos:<br />
+<code><br />
+cd pasta-do-seu-projeto/</code><br />
+<code><br />
+phpunit<br />
+</code></p>
+<p><code>ou</code></p>
+<p><code><code>phpunit --testdox</code></code></p>
+<p><strong>Dica</strong>: Caso esteja usando o phpunit via composer, você pode utilizar os comandos:<br />
+<code><br />
+cd pasta-do-seu-projeto/</code><br />
+<code><br />
+php vendor/phpunit/phpunit/composer/bin/phpunit</code></p>
+<p>ou<br />
+<code><br />
+php vendor/phpunit/phpunit/composer/bin/phpunit --testdox</code></p>
+<p>Inicialmente vai dar errado o teste e mostrará o html da mensagem que seria visualizado no seu navegador.</p>
+<p><a href="/assets/images/phpunit-test-fails.png"><img class="size-full wp-image-160" alt="phpunit-teste-falhou" src="/assets/images/phpunit-test-fails.png" width="611" height="202" /></a> phpunit-teste-falhou</p>
+<p>Não se espante, pois este evento já era esperado. Isto acontece porque o model Post ainda não existe. Vamos criá-lo? Inisira o model Post em 'application/models/Post.php' com este conteúdo(<a href="https://gist.github.com/willmendesneto/5026026" target="_blank">https://gist.github.com/willmendesneto/5026026</a>) e vamos rodar o comando na linha de comando novamente.</p>
+<p><a href="/assets/images/phpunit-testes-ok.png"><img class="size-full wp-image-159" alt="phpunit-testes-ok" src="/assets/images/phpunit-testes-ok.png" width="611" height="202" /></a> phpunit-testes-ok</p>
+<p>Após o comando ser executado a mensagem que vai aparecer é esta acima, mostrando que está tudo ok! Seu teste está rodando no Codeigniter e o model Post foi testado corretamente somente com a utilização de um hook. Simples e prático.</p>
+<p>Se você nãoo conhece muita coisa sobre Testes Unitários e TDD, aconselho a dar uma olhada neste link do tutsplus (<a href="http://net.tutsplus.com/sessions/test-driven-php/" target="_blank">http://net.tutsplus.com/sessions/test-driven-php/</a>)  que aborda alguns conceitos e utilizações com exemplos utilizando a linguagem PHP.</p>
+<p>Criei um repositório no meu Github mostrando todas as etapas deste projeto e um controller com a migration para gerar a tabela 'posts' no seu banco de dados. Segue o link(<a href="https://github.com/willmendesneto/Codeigniter-TDD-with-Hooks" target="_blank">https://github.com/willmendesneto/Codeigniter-TDD-with-Hooks</a>)</p>
+<p>Curtiu? Utiliza de outra forma? Dê sua opinião!</p>
+<p>Obrigado e até mais!</p>

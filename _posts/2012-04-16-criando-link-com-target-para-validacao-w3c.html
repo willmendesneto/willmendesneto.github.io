@@ -1,0 +1,57 @@
+---
+layout: post
+title: Criando link com TARGET para validação W3C
+categories:
+- Javascript
+- Jquery
+tags:
+- javascript
+- jquery
+- link
+- w3c
+status: publish
+type: post
+published: true
+meta: {}
+author: 
+---
+<p>Olá pessoal.</p>
+<p>Aqui vai um código simples para que seu site passe na validação W3C no quesito de links, ou as tags "&lt;a&gt;&lt;/a&gt;".</p>
+<p>Se você escrever um código no seu HTML desta forma e tentar validar seu projeto, visualizará alguns erros de validação. Mas porque? A W3C não aceita o atributo <strong><em>target="_blank"</em></strong> do link e mostrará um erro a ser corrigido no seu projeto. Uma saída simples, fácil e prática é implementar este atributo via Jquery.</p>
+<p>Basta trabalhar com o atributo <em>rel</em> do link. Como? Veja o código abaixo:</p>
+<p>Como ficaria o conteúdo da página "<em>index.html</em>"<br />
+<code><br />
+<em>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</em><br />
+<em>&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;</em><br />
+<em>    &lt;head&gt;</em><br />
+<em>        &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;</em><br />
+<em>        &lt;title&gt;Link com atributo Target para validação W3C&lt;/title&gt;</em><br />
+<em>        &lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;</em><br />
+<em>        &lt;script type="text/javascript" src="jquery.functions.js"&gt;&lt;/script&gt;</em><br />
+<em>    &lt;/head&gt;</em><br />
+<em>    </em><br />
+<em>    &lt;body&gt;</em><br />
+<em>        &lt;h1&gt;Página de teste&lt;/h1&gt;</em><br />
+<em>        &lt;a rel="external" href="http://willmendesnetoprojects.wordpress.com"&gt;Link Com Target&lt;/a&gt;</em><br />
+<em>    &lt;/body&gt;</em><br />
+<em>&lt;/html&gt;</em></code></p>
+<p>como ficaria o conteúdo da página "<em>jquery.functions.js</em>"</p>
+<p><code><br />
+<em>$(document).ready(function(){</em></code></p>
+<p><em>    $('a[rel=external]').attr('target','_blank');</em></p>
+<p><em>});</em></p>
+<p>E pronto! Seus links agora estarão redirecionando para a página que queira. O jquery fará o trabalho de atribuir o atributo target a todos as tags "&lt;a&gt;&lt;/a&gt;" que possuam o atributo <strong><em>rel="external"</em></strong></p>
+<p>Antes:</p>
+<p><code><br />
+<em>&lt;a href="http://willmendesnetoprojects.wordpress.com" rel="external" &gt;Link Com Target&lt;/a&gt;</em><br />
+</code></p>
+<p>Depois:</p>
+<p><code><br />
+<em>&lt;a href="http://willmendesnetoprojects.wordpress.com" rel="external" </em></code></p>
+<p><code><em>target="_blank" &gt;Link Com Target&lt;/a&gt;</em><br />
+</code></p>
+<p>Simples e prático.<br />
+Espero ter ajudado.</p>
+<p><em>Créditos: </em></p>
+<p><em>Wilson Mendes "willmendesneto@gmail.com" </em></p>
+<p><em>Thiago Teles: "thiagoteles.designer@gmail.com"</em></p>
