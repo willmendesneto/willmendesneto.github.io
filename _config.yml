@@ -1,11 +1,19 @@
 ---
 layout: page
+author: Wilson Mendes
 title: Willmendesneto Blog
 permalink: /:year/:month/:day/:title
 email: willmendesneto@gmail.com
 github_username: willmendesneto
+github_repo_url: https://github.com/willmendesneto/willmendesneto.github.io.git
 twitter_username: willmendesneto
 description: This is my blog, when i talk about technologies
+paginate: 20
+markdown: kramdown
+highlighter: pygments
+disqus_short_name: willmendesneto
+disqus_show_comment_count: true
+google_analytics_tracking_id: ''
 ---
 
 This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
