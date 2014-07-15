@@ -5,13 +5,13 @@
     <description>This is my blog, when i talk about technologies</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 13 Jul 2014 23:59:17 -0300</pubDate>
-    <lastBuildDate>Sun, 13 Jul 2014 23:59:17 -0300</lastBuildDate>
+    <pubDate>Tue, 15 Jul 2014 13:41:34 -0300</pubDate>
+    <lastBuildDate>Tue, 15 Jul 2014 13:41:34 -0300</lastBuildDate>
     <generator>Jekyll v2.1.0</generator>
     
       <item>
         <title>Instalação do ambiente para desenvolvimento com Phonegap no Windows</title>
-        <description>&lt;p&gt;&lt;a href=&quot;/assets/images/phonegap-logo2.png&quot;&gt;&lt;img class=&quot;size-large wp-image-198&quot; src=&quot;/assets/images/assets/phonegap-logo2.png&quot; alt=&quot;Instalação do ambiente para desenvolvimento com Phonegap no Windows&quot; width=&quot;800&quot; height=&quot;226&quot; /&gt;&lt;/a&gt; Instalação do ambiente para desenvolvimento com Phonegap no Windows&lt;/p&gt;
+        <description>&lt;p&gt;&lt;a href=&quot;/assets/images/phonegap-logo2.png&quot;&gt;&lt;img class=&quot;size-large wp-image-198&quot; src=&quot;/assets/images/phonegap-logo2.png&quot; alt=&quot;Instalação do ambiente para desenvolvimento com Phonegap no Windows&quot; width=&quot;800&quot; height=&quot;226&quot; /&gt;&lt;/a&gt; Instalação do ambiente para desenvolvimento com Phonegap no Windows&lt;/p&gt;
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;Uma dica rápida, após um período sem postar nada no blog.&lt;/p&gt;
 &lt;p&gt;Tive que utilizar o windows para criar um projeto com o phonegap e tive alguns problemas para a configuração inicial. Fica a fica de alguns links que ajudaram na configuração do ambiente no Windows.&lt;/p&gt;
