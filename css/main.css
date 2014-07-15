@@ -9,7 +9,7 @@
 html, body { height: 100%; }
 
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   font-weight: 300;
@@ -407,4 +407,57 @@ a:visited { color: #205caa; }
     width: auto;
     margin: 0 0 15px; }
 
+}
+
+.pagination{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: rgba(0, 0, 0, 0.8);
+  height: 44px;
+  letter-spacing: 0.1599999964237213px;
+  text-decoration: none solid rgba(0, 0, 0, 0.8);
+  text-rendering: optimizelegibility;
+  width: 700px;
+  border: 0px none rgba(0, 0, 0, 0.8);
+  font: normal normal normal 22px/33px freight-text-pro, Georgia, Cambria, 'Times New Roman', Times, serif;
+  outline: rgba(0, 0, 0, 0.8) none 0px;
+}
+
+.pagination .btn{
+    color: #2a7ae2;
+    cursor: pointer;
+    height: 44px;
+    letter-spacing: -0.30000001192092896px;
+    position: relative;
+    text-decoration: none solid rgb(70, 140, 84);
+    text-rendering: optimizelegibility;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 142.703125px;
+    background: rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;
+    border: 1px solid #2a7ae2;
+    border-radius: 14985px 14985px 14985px 14985px;
+    font: normal normal normal 15px/44px jaf-bernino-sans, 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+    margin: 0px 8px 0px 0px;
+    outline: #2a7ae2 none 0px;
+    padding: 0 13px;
+    transition: background-color 0.1s ease 0s, border-color 0.1s ease 0s, color 0.1s ease 0s;
+}
+.pagination .btn.prev{
+  float:left;
+}
+.pagination .btn.next{
+  float: right;
+}
+.pagination .btn.prev, .pagination .btn.next {
+  color: #2a7ae2;
+  cursor: pointer;
+  letter-spacing: -0.30000001192092896px;
+  text-align: center;
+  text-decoration: none solid rgb(70, 140, 84);
+  text-rendering: optimizelegibility;
+  white-space: nowrap;
+  align-self: flex-start;
+  font: normal normal normal 15px/44px jaf-bernino-sans, 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+  outline: #2a7ae2 none 0px;
 }
