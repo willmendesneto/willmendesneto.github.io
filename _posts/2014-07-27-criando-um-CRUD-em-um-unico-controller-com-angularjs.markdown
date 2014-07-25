@@ -968,6 +968,10 @@ Neste exemplo, vimos como a lógica de seu Controller fica com toda a responsabi
 
 Com as responsabilidades mais modularizadas entre os services, o service de Contato fica muito mais enxuto, já que fizemos a abstração para o acesso ao localStorage usando o OfflineModel. De uma maneira bem simples conseguimos resolver alguns problemas corriqueiros de uma aplicação utilizando o AngularJS.
 
+Criei um Plunkr com este app para que possam ver seu funcionamento, caso queiram fazer download.
+
+Link: [http://plnkr.co/edit/QHouFMvVNZIZErgAWYS9?p=info](http://plnkr.co/edit/QHouFMvVNZIZErgAWYS9?p=info)
+
 Caso queiram saber mais sobre abstrações em aplicações AngularJS/Javascript, recomendo fortemente os blogs:
 
 John Papa: [http://www.johnpapa.net/][john-papa]
