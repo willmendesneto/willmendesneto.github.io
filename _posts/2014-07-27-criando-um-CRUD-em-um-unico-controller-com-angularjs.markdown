@@ -4,6 +4,7 @@ title: Criando um CRUD em um único controller com AngularJS
 categories: angularjs javascript crud architecture tools
 tags: javascript angularjs frameworks frontend
 status: publish
+image: https://pbs.twimg.com/profile_images/2149314222/square.png
 type: post
 published: true
 meta: {}

@@ -2,6 +2,9 @@
 layout: page
 author: Wilson Mendes
 title: Willmendesneto Blog
+website_author: http://about.me/willmendesneto/
+image: https://pt.gravatar.com/userimage/20307137/9985d3f2795120b92df3e6d97491ce96.png?size=300
+website_keywords: angularjs, javascript, nodejs, grunt, php, performance, web, development, databases, git, github, jquery, mobile, mongodb, tdd, bdd, tests, agile, workflow, yeoman, html5 api
 permalink: /:year/:month/:day/:title
 email: willmendesneto@gmail.com
 github_username: willmendesneto

@@ -11,13 +11,24 @@
     <meta http-equiv="CACHE-CONTROL" content="NO-CACHE" />
     <meta http-equiv="PRAGMA" content="NO-CACHE" />
     <meta name="domain" content="willmendesneto.github.io" />
-    <meta name="url" content="{% if page.url %}{{ page.url | prepend: site.baseurl | replace: '//', '/' }}{% else %}willmendesneto.github.io{% endif %}" />
-    <meta name="autor" content="Wilson Mendes Neto" />
-    <meta name="reply-to" content="willmendesneto@gmail.com">
+    <meta name="url" content="{{ page.url || '' | prepend: site.baseurl | replace: '//', '/' | replace: 'index.html', '' }}" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:url" content="{{ page.url || '' | prepend: site.baseurl | replace: '//', '/' | replace: 'index.html', '' }}" />
+    <meta property="og:description" content="{{page.description || page.content }}" />
+    <meta property="article:author" content="{{ site.website_author }}" />
+    <meta property="og:site_name" content="{{ site.title }}" />
+    <meta property="og:image" content="{{ page.image || site.image }}" />
+    <meta name="twitter:site" content="@{{ site.twitter_username }}" />
+    <meta name="twitter:image" content="{{ page.image || site.image }}" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="autor" content="{{ site.author }}" />
+    <meta name="reply-to" content="{{ site.email }}">
     <meta name="revisit-after" content="3" />
-    <meta name="title" content="Willmendesneto blog">
-    <meta name="description" content="This is my blog, when i talk about technologies.">
-    <meta name="keywords" content="angularjs, javascript, nodejs, grunt, php, performance, web, development, databases, git, github, jquery, mobile, mongodb, tdd, bdd, tests, agile, workflow, yeoman, html5 api" />
+    <meta name="title" content="{{ site.title }}">
+    <meta name="description" content="{{ site.description }}">
+    <meta name="keywords" content="{{ site.website_keywords }}" />
 
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700,800" rel="stylesheet" type="text/css">
     <meta name="description" content="{{ site.description }}">
