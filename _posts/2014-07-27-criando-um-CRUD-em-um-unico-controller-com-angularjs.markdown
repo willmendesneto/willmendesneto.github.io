@@ -971,7 +971,6 @@ Com as responsabilidades mais modularizadas entre os services, o service de Cont
 
 Criei um Plunkr com este app para que possam ver seu funcionamento, caso queiram fazer download.
 
-Links
 - Plunker: [http://plnkr.co/edit/QHouFMvVNZIZErgAWYS9?p=info](http://plnkr.co/edit/QHouFMvVNZIZErgAWYS9?p=info)
 - Github com o projeto completo e testado: [https://github.com/willmendesneto/angular-contact-list](https://github.com/willmendesneto/angular-contact-list)
 
