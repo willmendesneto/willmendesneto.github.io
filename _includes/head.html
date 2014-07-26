@@ -3,6 +3,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="viewport" content="width=device-width">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="cache-control" content="no-store, no-cache, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-store, no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE" />
+    <meta http-equiv="PRAGMA" content="NO-CACHE" />
+    <meta name="domain" content="willmendesneto.github.io" />
+    <meta name="url" content="{% if page.url %}{{ page.url | prepend: site.baseurl | replace: '//', '/' }}{% else %}willmendesneto.github.io{% endif %}" />
+    <meta name="autor" content="Wilson Mendes Neto" />
+    <meta name="reply-to" content="willmendesneto@gmail.com">
+    <meta name="revisit-after" content="3" />
+    <meta name="title" content="Willmendesneto blog">
+    <meta name="description" content="This is my blog, when i talk about technologies.">
+    <meta name="keywords" content="angularjs, javascript, nodejs, grunt, php, performance, web, development, databases, git, github, jquery, mobile, mongodb, tdd, bdd, tests, agile, workflow, yeoman, html5 api" />
+
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700,800" rel="stylesheet" type="text/css">
     <meta name="description" content="{{ site.description }}">
     <link rel="canonical" href="{{ page.url || '' | prepend: site.baseurl  | replace: '//', '/' | replace: 'index.html', '' }} ">

@@ -813,7 +813,7 @@ Neste controller podemos destacar alguns métodos/parâmetros:
 
 Agora sim, podemos criar as nossas views/templates. Sem mais delongas vamos criar as views:
 
-list.html:
+`list.html`
 
 {% highlight html %}
 
@@ -964,7 +964,7 @@ Não criamos a nossa view para a exclusão, pois tratamos esta operação na pr�
 
 ### CONCLUSÃO
 
-Neste exemplo, vimos como a lógica de seu Controller fica com toda a responsabilidade de métodos e atributos para ele. Pode-se usar este conceito em projetos maiores para que cada controller tenha a responsabilidade de seu módulo. Ou até mesmo modularizarmos ainda mais, pegando como base alguns conceitos de OOP e [na nova estrutura de projetos para o AngularJS][angularjs-docs-folders-structure].
+Neste exemplo, vimos como a lógica de seu Controller fica com toda a responsabilidade de métodos e atributos para ele. Pode-se usar este conceito em projetos maiores para que cada controller tenha a responsabilidade de seu módulo. Ou até mesmo modularizarmos ainda mais, pegando como base alguns conceitos de OOP e [a nova estrutura de projetos para o AngularJS][angularjs-docs-folders-structure].
 
 Com as responsabilidades mais modularizadas entre os services, o service de Contato fica muito mais enxuto, já que fizemos a abstração para o acesso ao localStorage usando o OfflineModel. De uma maneira bem simples conseguimos resolver alguns problemas corriqueiros de uma aplicação utilizando o AngularJS.
 
