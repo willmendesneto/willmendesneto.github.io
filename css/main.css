@@ -461,3 +461,15 @@ a:visited { color: #205caa; }
   font: normal normal normal 15px/44px jaf-bernino-sans, 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
   outline: #2a7ae2 none 0px;
 }
+
+.author{
+  margin-top: 20px;
+  border-bottom: 1px solid #2CA8D2;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+.author-title{
+  margin-bottom: 15px;
+  font-size: 24px;
+}
