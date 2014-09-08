@@ -139,7 +139,7 @@ a:visited { color: #205caa; }
 /* ----------------------------------------------------------*/
 
 .page-content {
-  padding: 30px 0;
+  padding: 75px 0 30px 0;
   background-color: #fff;
 }
 
@@ -426,7 +426,24 @@ a:visited { color: #205caa; }
   outline: rgba(0, 0, 0, 0.8) none 0px;
 }
 
-.pagination .btn{
+.newsletter-content{
+  margin-bottom: 30px;
+}
+
+.input-newsletter{
+  border-radius: 30px 0 0 30px;
+  padding: 11px 5px 5px 5px;
+  width: 300px;
+  float: left;
+  text-align: center;
+  border: 2px solid #EEE;
+}
+
+.btn.btn-newsletter{
+  border-radius: 0 30px 30px 0;
+}
+
+.pagination .btn, .btn{
     color: #2a7ae2;
     cursor: pointer;
     height: 44px;
