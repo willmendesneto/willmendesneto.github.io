@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Trabalhando com Thin Directives no AngularJS
+title: Working with Thin Directives in AngularJS
 categories: angularjs javascript directives architecture
 tags: javascript angularjs frameworks frontend
 status: publish
@@ -10,15 +10,16 @@ published: true
 meta: {}
 author: Wilson Mendes Neto
 ---
-<a class="page-link" href="{{ '/2014/09/22/working-with-thin-directives-in-angularjs' | prepend: site.baseurl | replace: '//', '/' }}">Veja a versão em inglês</a>
 
-## INTRODUÇÃO
+<a class="page-link" href="{{ '/2014/07/26/trabalhando-com-thin-directives-no-angularjs' | prepend: site.baseurl | replace: '//', '/' }}">Read the Brazillian Portuguese version</a>
 
-O conceito de diretivas no AngularJS é algo bastante interessante para apps, visando aspectos como reuso, portabilidade, modularização, dentre outros. Porém, a depender da complexidade de sua diretiva, alguns testes tornam-se mais complexos. Uma abordagem para simplificar alguns procedimentos é a contrução de diretivas baseando-se no conceito de diretivas "magras" (Thin Directives). Conheci este conceito no post de Joel Hooks ["Let's Make Full-Ass AngularJS Directives"][post-thin-directives], onde ele aborda os conceito de uma maneira bastante simples. Recomendo esta leitura, bastante explicativo!
+## INTRODUCTION
 
-O conceito de thin directives é a construção de uma diretiva Angular utilizando também outros componentes (como Controllers, Services, Factories, etc) como base de uma diretiva. Com esta abordagem os testes ficam muito mais simples, já que você delega algumas responsabilidades a outros componentes Angular.
+The AngularJS directives concept is a bit very interesting for apps, if you think in software aspects as reuse, portability, modularity, among others. However, depending on the complexity of your directive, some tests become more complex. One approach to simplify some procedures is the construction of directives based on the concept of Thin Directives. I met this concept in Joel Hooks post ["Let's Make Full-Ass AngularJS Directives"] [post-thin-directives], where he discusses the concept of a very simple way. I recommend reading this, very explanatory!
 
-## PROBLEMA: DIRETIVA NAVBAR
+The thin directives conception is based in construction of an angular directive using other components (as Controllers Services, factories, etc.) based on a directive for better integration and testability. With this approach the tests are much simpler, as you delegate some responsibilities to other Angular components.
+
+## PROBLEM: NAVBAR DIRECTIVE
 
 Criaremos uma diretiva de menu como exemplo. Algo bastante simples, mas acredito que bem didático para que todos entendam melhor este novo conceito (para alguns) e algumas formas de utilizá-lo. A idéia é que nossa diretiva possa verificar qual item está sendo acessado em tempo real, a partir das informações passadas pela url.
 
@@ -30,9 +31,19 @@ Para isto vamos criar 3 arquivos para lidar diretamente com esta diretiva:
 
 Baseando a construção de nossa diretiva em [TDD][tdd], vamos focar no conceito de [Red, Green, Refactor][red-green-refactor], assim além do conceito de Thin Directives, ainda teremos conhecimento de TDD (para quem tem dúvidas sobre).
 
-## CRIAÇÃO DA DIRETIVA
+We will create a menu as an example using a directive based in thin directive concept. Something simple, but I believe that good teaching so that everyone can better understand this new concept (for some people) and some ways to use it in your apps. The idea is that our directive can check which item is being accessed in real time from the information passed by the url.
 
-Inicialmente temos este código html que se tornará o template de nossa aplicação, o arquivo com a configuração das rotas de nosso app e outro template html que será o da diretiva.
+For this task we will create three files to works directly with this directive:
+
+- `navbar.html`: Template of our policy with the information and values ​​to be updated;
+- `navbar-ctrl.js`: Controller for our menu. He will be responsible for making the integration so that our controller works perfectly;
+- `navbar.js`: our directive really. This file is very compact, it will have only a few simple settings;
+
+Basing our directive's building in [TDD concepts] [tdd], we will focus on the concept of [Red, Green, Refactor] [red-green-refactor], so beyond the Thin Directives, we still have knowledge of TDD (for whom have doubts/questions about it).
+
+## DIRETIVE CREATION
+
+Initially we have this html code that will become the template for our application, the file with the configuration of the routes of our app and other template (file `.html`) that will be vinculated with the directive.
 
 `index.html`:
 
@@ -110,6 +121,8 @@ angular.module('plunkerApp', [
 
 `isActive()` é o método que o controller `NavbarCtrl` utilizará acessando a diretiva, mas por ora não criaremos o controller e sim a nossa diretiva. Porém temos que fazer alguns testes para validarmos a diretiva e saber se tudo está ocorrendo corretamente. Vamos ao nosso teste:
 
+`isActive ()` method is used for `NavbarCtrl` controller accessing the directive, but for now we will not create the controller, but yes our directive. But we have to do some tests to validate the component and make sure everything is going correctly. Come to our test:
+
 `navbar-test.js`:
 
 {% highlight javascript %}
@@ -154,7 +167,7 @@ describe('Directive: navbar', function () {
 });
 {% endhighlight %}
 
-Agora vamos criar a nossa diretiva
+And now, let's go to create the navbar directive really.
 
 `navbar.js`:
 
@@ -171,14 +184,14 @@ angular.module('plunkerApp')
   });
 {% endhighlight %}
 
-Estamos utilizando a diretiva com o formato "elemento". Temos alguns formatos para diretivas:
+We are using the directive with the "element" element. Now, we have some formats for directives:
 
-- 'E': Elemento (<navbar></navbar>);
-- 'C': Classe (<div class="navbar"></div>);
-- 'A': Atributo (<div navbar ></div>);
+- 'E': Element (<navbar></navbar>);
+- 'C': Class (<div class="navbar"></div>);
+- 'A': Attribute (<div navbar ></div>);
 
-Estas opções podem ser combinadas, o que abre um leque de possibilidades a mais para as diretivas.
-Ex :
+These options can be combined, which opens a range of new possibilities for the more directives.
+ex:
 
 {% highlight javascript %}
 'use strict';
@@ -193,11 +206,11 @@ angular.module('plunkerApp')
   });
 {% endhighlight %}
 
-Caso queiram saber mais sobre as diretivas, dêem uma olhada na [documentação das diretivas do angularjs][angular-directive-docs].
+If you have to know more about directives, please take a look in [AngularJS directives documentation][angular-directive-docs].
 
-## ETAPA FINAL DA CONSTRUÇÃO DA DIRETIVA
+## LAST DIRECTIVE CONSTRUCTION STEP
 
-Ainda assim, nosso teste não estará correto, pois não temos o nosso controller criado. Vamos criar agora ele e o seu respectivo teste
+Still, our test will not be correct, because we don't have our controller created already. Let's create it now and their respective tests.
 
 `navbar-ctrl-test.js`:
 
@@ -268,23 +281,22 @@ Agora ao rodar os testes, tudo estará ok.
 
 ## CONCLUSÃO
 
-Diretivas magras são interessantes para diretivas com complexidade média e/ou alta, pois delega características a outros elementos do AngularJS, melhorando a sua manutenção, testes, etc. Vale a pena visar aspectos um pouco mais avançados juntamente às diretivas, com outros Patterns unidos ao AngularJS. Assim podemos criar uma aplicação muito mais modular utilizando o melhor do javascript e do AngularJS.
+Thin directives are interesting for create components with middle and/or high complexity characteristics as delegates to other elements of AngularJS, improving your maintenance, testing, etc. Worth aiming for a little more advanced aspects together to the directives, vinculated with others AngularJS Patterns. This way, we can create an app much more modular application using the best of javascript and AngularJS.
 
-Caso queiram ver este exemplo funcionando, acessem o plunker que criei com este exemplo.
+If want see this working example accessing the plunker, I created with this example.
 
 Link Plunker: [http://plnkr.co/edit/UHnbq5Nn5dNLsAPxOikk?p=preview][link-plunker]
 
-O que acharam? Como vocês utilizam no seu dia-a-dia?
+What do you think about it? How do you uses it in your works?
 
-Obrigado e até mais!
+Thanks and I see you very soon!
 
 Links:
 
-- Documentação das diretivas: [https://docs.angularjs.org/guide/directive][angular-directive-docs]
+- Directives documentation: [https://docs.angularjs.org/guide/directive][angular-directive-docs]
 - Let's Make Full-Ass AngularJS Directives: [http://joelhooks.com/blog/2014/02/11/lets-make-full-ass-angularjs-directives/][post-thin-directives]
 - Test Driven Development (TDD): [http://pt.wikipedia.org/wiki/Test_Driven_Development][tdd]
 - Red, Green, Refactor: [http://www.jamesshore.com/Blog/Red-Green-Refactor.html][red-green-refactor]
-
 
 [post-thin-directives]: http://joelhooks.com/blog/2014/02/11/lets-make-full-ass-angularjs-directives/
 [red-green-refactor]: http://www.jamesshore.com/Blog/Red-Green-Refactor.html

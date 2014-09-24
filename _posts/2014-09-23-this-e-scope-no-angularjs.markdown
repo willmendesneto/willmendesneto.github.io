@@ -13,11 +13,12 @@ author:
 
 ## INTRODUÇÃO
 
-A adoção do AngularJs em aplicações de pequeno, médio e grande porte é algo fantástico (estando o framework nos top trends do google search e de frameworks frontend) e isso acontece devido a vários fatores dentre eles:
+
+Ao usar o AngularJS entendemos o porquê do framework ser um dos mais populares atualmente, estando na lista dos mais pesquisados no Google e Github. A adoção do AngularJs em aplicações de pequeno, médio e grande porte é algo fantástico (estando o framework nos top trends do google search e de frameworks frontend) e isso acontece devido a vários fatores dentre eles:
 
 * Facilidade em integração de ferramentas de testes (unitários, end-to-end, etc);
 * Modularização baseada em princípios SOLID;
-* Two-way data bind;
+* Two-way data bind, tendo o $scope como interface para a atualização de dados;
 * Vasta documentação;
 * Comunidade ativa;
 
@@ -183,12 +184,32 @@ app.controller('PanelsController', function ($scope, $timeout, WebStorage) {
 
 ## CONCLUSÃO
 
-Acabei de ler uma explicação muito interessante sobre a diferença entre os dois, e uma crescente preferência para anexar modelos ao controlador e apelido do controlador para ligar modelos para a vista. http://toddmotto.com/digging-into-angulares-controlador -como-syntax / é o artigo. Ele não menciona, mas quando definir diretrizes, se você precisar compartilhar algo entre várias directivas e não querem um serviço (há casos legítimos onde os serviços são um aborrecimento), em seguida, anexar os dados para o controlador da directiva pai. O $scope fornece uma abundância de coisas úteis ($watch, sendo o mais óbvio, por exemplo), mas se tudo que você precisa para ligar dados para a view, usando o controlador simples e 'controller as "no model é bom, e sem dúvida preferível.
+Acompanho a publicação de novos conteúdos e percebo uma crescente preferência para anexar models ao controller e apelidá-lo no template utilizando a sintaxe 'ng-controller="RealController as real"' utilizando o `this` e quando existe a necessidade de compartilhar algo entre várias directivas ou o exige um comportamento mais específico, o $scope fornece um conjunto de features bastante úteis ($watch, $broadcast e $on, por exemplo). Mas se tudo que você precisa é de um compartilhamento de dados simples entre elemento e html, usando o controller com o `this` é, sem dúvida, uma solução a se pensar.
+
+Para quem tiver interesse, existe alguns repositórios interessantes sobre patterns no AngularJS
+
+
 
 Espero que tenham gostado e até mais!
 
 Links:
 
-* Post "Hacking Core Directives in AngularJS": [http://briantford.com/blog/angular-hacking-core][btford-post]
+* Projeto "KEEPR": [https://github.com/willmendesneto/keepr][keepr]
+* AngularJS Style Guide: [https://github.com/johnpapa/angularjs-styleguide][angularjs-style-guide]
+* StackOverflow "this vs $scope in AngularJS controllers": [http://stackoverflow.com/questions/11605917/this-vs-scope-in-angularjs-controllers][question-stackoverflow]
+* $scope - Documentação oficial: [https://docs.angularjs.org/guide/scope][scope-docs]
+* $rootScope - Documentação oficial: [https://docs.angularjs.org/api/ng/type/$rootScope.Scope][root-scope-docs]
+* Opinionated AngularJS styleguide for teams: [http://www.linkplugapp.com/a/437872][oppiniated-angular]
+* Best Practice Recommendations for Angular App Structure: [https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub][angular-best-practices]
+* Leverage Scope Creep! An in-depth tutorial on Angular.js Scope: [http://modernweb.com/2014/07/14/leverage-scope-creep-depth-tutorial-angular-js-scope/][leverage-scope]
+* Rethinking AngularJS Controllers: [http://toddmotto.com/rethinking-angular-js-controllers/?=utm&utm_content=buffere9265&utm_medium=social&utm_source=linkedin.com&utm_campaign=buffer][rethinking-controllers]
 
 [keepr]:https://github.com/willmendesneto/keepr
+[angularjs-style-guide]:https://github.com/johnpapa/angularjs-styleguide
+[scope-docs]:https://docs.angularjs.org/guide/scope
+[root-scope-docs]:https://docs.angularjs.org/api/ng/type/$rootScope.Scope
+[question-stackoverflow]:http://stackoverflow.com/questions/11605917/this-vs-scope-in-angularjs-controllers
+[oppiniated-angular]:http://www.linkplugapp.com/a/437872
+[angular-best-practices]:https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub
+[leverage-scope]:http://modernweb.com/2014/07/14/leverage-scope-creep-depth-tutorial-angular-js-scope/
+[rethinking-controllers]:http://toddmotto.com/rethinking-angular-js-controllers/?=utm&utm_content=buffere9265&utm_medium=social&utm_source=linkedin.com&utm_campaign=buffer
