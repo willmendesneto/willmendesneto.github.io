@@ -4,6 +4,7 @@ title: Working with Thin Directives in AngularJS
 categories: angularjs javascript directives architecture
 tags: javascript angularjs frameworks frontend
 status: publish
+lang: "us"
 image: https://pbs.twimg.com/profile_images/2149314222/square.png
 type: post
 published: true

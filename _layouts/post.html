@@ -14,9 +14,17 @@ layout: default
 
   {% include accessibility.html %}
 
-  {% include about-author.html %}
+  {% if page.lang == "us" %}
+    {% include about-author-us.html %}
+  {% else %}
+    {% include about-author.html %}
+  {% endif %}
 
-  {% include newsletter.html %}
+  {% if page.lang == "us" %}
+    {% include newsletter-us.html %}
+  {% else %}
+    {% include newsletter.html %}
+  {% endif %}
 
   <div id="disqus_thread"></div>
   <script type="text/javascript">

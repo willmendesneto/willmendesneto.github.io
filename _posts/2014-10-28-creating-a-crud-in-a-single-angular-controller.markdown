@@ -1,52 +1,56 @@
 ---
 layout: post
-title: Criando um CRUD em um único controller com AngularJS
+title: Creating a single CRUD in a single AngularJS Controller
 categories: angularjs javascript crud architecture tools
 tags: javascript angularjs frameworks frontend
 status: publish
+lang: "us"
 image: https://pbs.twimg.com/profile_images/2149314222/square.png
 type: post
 published: true
 meta: {}
 author:
 ---
-<a class="page-link" href="{{ '/2014/10/28/creating-a-crud-in-a-single-angular-controller' | prepend: site.baseurl | replace: '//', '/' }}">Veja a versão em inglês</a>
 
-## INTRODUÇÃO
+<a class="page-link" href="{{ '/2014/07/27/criando-um-CRUD-em-um-unico-controller-com-angularjs/' | prepend: site.baseurl | replace: '//', '/' }}">Read the Brazillian Portuguese version</a>
 
-Para quem já trabalha com algumas linguagens backend e pode direcionar ações na rota do seu app baseado em métodos de controllers sabe o quanto isso pode ser interessante em alguns apps (fiz um Pull Request para o AngularJS para que esta feature fosse algo padrão no Framework, caso queiram saber mais sobre ou votar para que ela seja incorporada, dêem uma olhada neste link), mas, por ora, nenhum framework frontend (que eu conheça, claro) tem algo a este nível por padrão.
+## INTRODUCTION
 
-No entanto a maioria dos exemplos que vejo de coisas simples utilizam-se muitos controllers para operações, já que baseiam-se em operações por página, como o [angular-phonecat, o exemplo oficial que pode ser encontrado no site oficial do AngularJS][angular-phonecat].
+For those already working with some backend languages ​​and can direct the actions of your route based on methods of controllers app knows how this can be interesting in some apps
+(I made a Pull Request for AngularJS for this feature was something standard in the Framework, if want to know more about or vote for it to be built, take a look at this link),
+but for now, no framework frontend (I know, of course) is something to this level by default.
 
-Neste caso quer dizer que se eu tiver 3 operações, devo criar 3 controllers, um para cara página/view? Não!
+However most of the examples I see simple things many controllers are used for operations, since they are based on operations per page, as the [angular-phonecat, the official example
+that can be found on the official website of AngularJS.
 
-![A vida é linda!](http://i.imgur.com/dAnMWxQ.gif "A vida é linda!")
+In this case mean that if I have three operations, I create three controllers, one for each page / view? No!
+![Life is beautiful!](http://i.imgur.com/dAnMWxQ.gif "Life is beautiful!")
 
-Nosso exemplo será baseado em uma lista simples de contatos, como a lista de contatos do seu celular, por exemplo. Um conceito simples, mas de conhecimento geral. É muito comum atualizarmos o conteúdo de nossos contatos por vários motivos e estamos fazendo algo simples, mas funcional.
+Our example is based on a simple contact list, as the list of contacts from your mobile phone, for example. A simple concept, but general knowledge. Too often we update the content of
+our contacts for various reasons and are doing something simple, but functional.
 
-Nosso cadastro de contato vai aceitar as informações:
+Our contact will accept registration information:
 
-- Id, somente para nosso controle;
-- Nome, sendo o nome obrigatório
-- Endereço, sendo opcional
-- Telefone, sendo obrigatório;
+- Id, only for our control;
+- Name, and the name required
+- Address, being optional
+- Telephone, is obligatory;
 
-E teremos as 4 operações:
+And we have the four operations:
 
-- Create:  Área para criação de um novo contato; Arquivo `new.html`
-- Retrieve: terá a nossa listagem de contatos, com uma busca simples e o link para as outras opções como Editar, Adicionar e Excluir;
-- Update: Área para atualizarmos os dados do nosso contato; Arquivo `edit.html`
-- Delete: Opção para a exclusão do nosso contato; Como é algo relativamente simples, deixemos vinculado ao nosso arquivo `index.html`;
+- Create: Area to create a new contact; `new.html` file;
+- Retrieve: will our list of contacts, with a simple search and the link to the other options like Edit, Add and Delete;
+- Update: Area we update our contact data; edit.html file
+- Delete: Option to exclude our contact; How is relatively simple, let us bound to our `index.html` file;
 
-Afim de facilitar o nosso processo do exemplo, utilizaremos um banco utilizando o LocalStorage, [um dos HTML5 WebStorage][webstorage-api]. Para isso criaremos uma abstração simples do processo. Utilizaremos criptografia no nosso Localstorage a partir da biblioteca [CryptoJS][cryptojs].
+For do our process more easy for our example, we use a database using LocalStorage, [one of HTML5 WebStorage][webstorage-api]. For this we will create a simple abstraction process.
+We use encryption in our LocalStorage from [CryptoJS library][cryptojs].
 
+## BEGINNING UOUR APP
 
-### INICIANDO NOSSO APP
+Ok, let's first create our main file:
 
-Ok, vamos inicialmente criar os nossos arquivos principais:
-
-`index.html`, onde serão linkados os nossos arquivos externos e servirá de template principal para a nossa aplicação.
-
+`index.html`, which will be linked to our external files and will serve as the primary template for our application.
 {% highlight html %}
 
 <!DOCTYPE html>
@@ -107,8 +111,8 @@ Ok, vamos inicialmente criar os nossos arquivos principais:
 
 {% endhighlight %}
 
-`main.css`, onde ficará a estilização do nosso app
 
+`main.css`, which will be styling our app
 
 {% highlight css %}
 
@@ -469,13 +473,12 @@ display: table;
 
 {% endhighlight %}
 
-Nossa aplicação tem algumas dependências externas:
+Our application has some external dependencies:
 
-- angular-route.js: Arquivo para o angularJS. A partir deste módulo podemos configurar as nossas rotas, quais as views, controllers e passar parâmetros para o controller;
-- crypto-js/tripledes.js: um dos algoritmos de criptografia do projeto crypto-js. Será utilizado para ofuscar o nosso LocalStorage com as informações de nossos contatos;
-- angular-keepr: Uma lista de directives, filters e services/factories utilizadas no nosso app para facilitar o processo;
-
-Vamos inicialmente criar as nossas rotas no arquivo `app.js`:
+- angular-route.js: Files for angularJS. From this module we can configure our routes, which views, controllers and pass parameters to the controller;
+- crypto-js / tripledes.js: one of the encryption algorithms design crypto-js. Will be used to obfuscate our LocalStorage with information from our contacts;
+- angular-keepr: A list of directives, filters and services / factories used in our app to facilitate the process;
+Let's first create our routes in `app.js` file:
 
 {% highlight javascript %}
 'use strict';
@@ -515,15 +518,15 @@ angular.module('plunkerApp', [
 {% endhighlight %}
 
 
-### CRIANDO OS SERVICES
+### CREATING THE SERVICES
 
-Com as rotas criadas para o nosso app, vamos agora criar o nosso primeiro service. Chamaremos ele de `OfflineModel`. Este service terá alguns parâmetros:
+With routes created for our app, we now create our first service. Call him OfflineModel. This service will have some parameters:
 
-- `_key`: parâmetro key passado para o localStorage. Vale lembrar que o LocalStorage é um banco baseado em chave-valor;
-- `_items`: lista com as informações contidas no service;
-- `_fields`: campos a serem verificados para criação de um [ValueObject][value-object] para a nossa lista de itens;
+- `_key`: key parameter passed to the localStorage. Remember, the LocalStorage is a bank based on key-value;
+- `_items`: list with the information contained in the service;
+- `_fields`: fields to be scanned to create a [ValueObject][value-object] to our list of items;
 
-Este service utilizará o service `CryptoOffline` do Keepr, que trata diretamente com o Crypto e criptografa/decriptografa as informações para o nosso app. Para nós não é interessante entender mais a fundo este procedimento por ora, mas caso queira saber mais sobre como é esse processo, [você pode dar uma olhada no projeto Keepr no Github][angular-keepr].
+This service uses Keepr `CryptoOffline` service, which deals directly with the Crypto and encrypts/decrypts informations into our app. For us it is not interesting to further understand this procedure for now, but if you want to know more about how this process is, [you can take a look at Keepr project on Github][angular-keepr].
 
 {% highlight javascript %}
 'use strict';
@@ -629,15 +632,16 @@ angular.module('plunkerApp')
  });
 {% endhighlight %}
 
-Neste service podemos destacar alguns métodos:
 
-- init: Instancia um novo objeto `OfflineModel`, passando parâmetros para os outros que o terão injetados via [composição][composition-pattern];
-- createValueObject: Cria um [ValueObject][value-object], pegando somente as informações que foram inseridas no campo de _fields e descartando as demais;
-- create: Cria um item
-- update: Edita o item com base nas novas especificacoes
-- delete: Remove um determinado item
+In this service we can highlight some methods:
 
-Para que o nosso exemplo tenha alguma informação inicial, criaremos um `angular.value()` com alguns contatos.
+- init: OfflineModel Instantiates a new object, passing parameters to the others who have injected via [composition pattern][composition-pattern];
+- createValueObject: Creates a [ValueObject][value-object], catching only the information that was entered into the field _Fields and discarding the other;
+- create: Creates an item;
+- update: Edits the item based on the new specifications;
+- delete: Remove a specific item;
+
+For our example has some initial information, we will create a `angular.value()` with some contacts.
 
 {% highlight javascript %}
 /**
@@ -656,32 +660,11 @@ angular.module('plunkerApp')
  ]);
 {% endhighlight %}
 
-Agora criaremos agora o nosso service de Contato. Veja que o seu conteúdo é bem simples, pois ele pega as informações de `OfflineModel` e depois cadastra os campos para que seja criado um [ValueObject][value-object].
+Now we will create our service now Contact. See that your content is very simple, because it takes the information `OfflineModel` and then registers the fields for [ValueObject][value-object] creation.
 
-{% highlight javascript %}
+### CREATING THE CONTROLLER AND VIEWS
 
-angular.module('plunkerApp')
- .service('ContactsService', function ContactsService(OfflineModel, listContacts) {
-
-   var Contacts = OfflineModel.init('listContacts', listContacts);
-
-   /**
-    * Contact fields
-    *
-    * @type {Array}
-    */
-   var contactFields = ['_id', 'name' , 'address' , 'phone'];
-
-   Contacts.setFields(contactFields);
-
-   return Contacts;
- });
-{% endhighlight %}
-
-
-### CRIANDO O CONTROLLER E AS VIEWS
-
-Criaremos agora o nosso controller com os métodos necessários para o nosso cadastro.
+Now we will create our controller with the necessary for our registration methods.
 
 {% highlight javascript %}
 /* globals confirm */
@@ -691,14 +674,14 @@ angular.module('plunkerApp')
  .controller('ContactsCtrl', function ($scope, $location, $routeParams, $route, $filter, AlertService, ContactsService) {
 
    /**
-    * Valor inicial dos formulários de inserção/alteração de contatos
+    * initial value of creation/alteration contact form
     *
     * @type {Array}
     */
    $scope.contact = [];
 
    /**
-    * Reinicia o valor dos formulários com os campos vazios
+    * Reinitialize form values
     */
    $scope.reset = function() {
      $scope.contact = [
@@ -711,7 +694,7 @@ angular.module('plunkerApp')
    };
 
    /**
-    * Retorna a quantidade de contatos
+    * Returns count of contacts
     * @return {Int}
     */
    $scope.numberOfPages = function(){
@@ -719,14 +702,14 @@ angular.module('plunkerApp')
    };
 
    /**
-    * Insere um contato
+    * Add um contato
     */
    $scope.create = function(contact){
      $scope.listContacts = ContactsService.create(contact);
    };
 
    /**
-    * Retorna um contato específico selecionado para ser editado
+    * Return a specific contact for edition
     */
    $scope.edit = function(){
      var id = $routeParams.id;
@@ -735,16 +718,16 @@ angular.module('plunkerApp')
    };
 
    /**
-    * Altera um contato
-    * @param  {Object} item informações do contato
+    * Update a contact
+    * @param  {Object} item Contact informations
     */
    $scope.update = function( item ) {
      $scope.listContacts = ContactsService.update(item);
    };
 
    /**
-    * Abstração dos métodos de inserir/alterar
-    * @param  {Object} item informações do contato
+    * Insert/update abstraction
+    * @param  {Object} item Contact informations
     */
    $scope.save = function(item){
      if(typeof item._id !== 'undefined'){
@@ -757,9 +740,9 @@ angular.module('plunkerApp')
    };
 
    /**
-    * Remove um contact da lista de contatos
-    * @param  {Integer} index        valor do `_id` do contato
-    * @param  {Boolean} confirmation verificação de chamada da função `window.confirm()` na aplicação
+    * Remove a contact of contact list
+    * @param  {Integer} index        `_id` value's contact
+    * @param  {Boolean} confirmation boolean verificator for call "confirm" method
     * @return {Boolean}
     */
    $scope.delete = function( index, confirmation ){
@@ -779,8 +762,8 @@ angular.module('plunkerApp')
    };
 
    /**
-    * Método para accessar a função "window.confirm()"
-    * @param  {Boolean} confirmation verificador Boolean para chamada do confirm
+    * Method for access "window.confirm()"
+    * @param  {Boolean} confirmation boolean verificator for call "confirm" method
     * @return {Boolean}
     */
    var confirmDelete = function(confirmation){
@@ -788,7 +771,7 @@ angular.module('plunkerApp')
    };
 
    /**
-    * Método chamado ao inicializar o nosso controller
+    * Method called for initialize our controller
     */
    $scope.init = function(){
      $scope.listContacts = $scope.filteredData = ContactsService.getListItems();
@@ -804,17 +787,17 @@ angular.module('plunkerApp')
  });
 {% endhighlight %}
 
-Neste controller podemos destacar alguns métodos/parâmetros:
+In this contest we can highlight some methods / parameters:
 
-- init: Método chamado ao inicializar o nosso controller
-- numberOfPages: Retorna a quantidade de contatos
-- reset: Reinicia o valor dos formulários com os campos vazios
-- create: Insere um contato da lista de contatos
-- update: Update a item in _items
-- save: Abstração dos métodos de inserir/alterar
-- delete: Remove um contato da lista de contatos
+- init: method called to initialize our controller;
+- numberOfPages: Returns the number of contacts;
+- reset: Resets the value of the forms with empty fields;
+- create: Inserts a contact from the contacts list;
+- update: Update the item in _items;
+- save: Abstraction methods to insert / change;
+- delete: Remove a contact from the contacts list;
 
-Agora sim, podemos criar as nossas views/templates. Sem mais delongas vamos criar as views:
+Now we can create our views / templates. Without further ado lets create the views:
 
 `list.html`
 
@@ -963,25 +946,26 @@ Agora sim, podemos criar as nossas views/templates. Sem mais delongas vamos cria
 </div>
 {% endhighlight %}
 
-Não criamos a nossa view para a exclusão, pois tratamos esta operação na própria view `list.html`.
 
-### CONCLUSÃO
+We don't need create our view to the exclusion, because this operation ocurring in `list.html` view file.
 
-Neste exemplo, vimos como a lógica de seu Controller fica com toda a responsabilidade de métodos e atributos para ele. Pode-se usar este conceito em projetos maiores para que cada controller tenha a responsabilidade de seu módulo. Ou até mesmo modularizarmos ainda mais, pegando como base alguns conceitos de OOP e [a nova estrutura de projetos para o AngularJS][angularjs-docs-folders-structure].
+### CONCLUSION
 
-Com as responsabilidades mais modularizadas entre os services, o service de Contato fica muito mais enxuto, já que fizemos a abstração para o acesso ao localStorage usando o OfflineModel. De uma maneira bem simples conseguimos resolver alguns problemas corriqueiros de uma aplicação utilizando o AngularJS.
+In this example, we saw how the logic of your Controller is the full responsibility of methods and attributes to him. You can use this concept in larger projects so that each controller has a responsibility to its module. Modularizarmos or even further, taking as a base some concepts of OOP and [the new AngularJS project's structure][angularjs-docs-folders-structure].
 
-Criei um Plunkr com este app para que possam ver seu funcionamento, caso queiram fazer download.
+With more modularized responsibilities between the services, the service Contact is much more streamlined, since we have the abstraction for access to localStorage using OfflineModel. In a very simple way we can solve some common problems in an application using AngularJS.
+
+Created a Plunkr with this app so they can see their operation if they want to download.
 
 - Plunker: [http://plnkr.co/edit/QHouFMvVNZIZErgAWYS9?p=info](http://plnkr.co/edit/QHouFMvVNZIZErgAWYS9?p=info)
 - Github com o projeto completo e testado: [https://github.com/willmendesneto/angular-contact-list](https://github.com/willmendesneto/angular-contact-list)
 
-Caso queiram saber mais sobre abstrações em aplicações AngularJS/Javascript, recomendo fortemente os blogs:
+If want to know more about abstractions AngularJS / Javascript applications strongly recommend blogs:
 
 John Papa: [http://www.johnpapa.net/][john-papa]
 Todd Motto: [http://toddmotto.com][todd-motto] (Em especial o artigo: "[Rethinking AngularJS Controllers][todd-motto-post]")
 
-Obrigado e até mais.
+Thanks and see you soon.
 
 
 Links:
@@ -991,7 +975,7 @@ Links:
 * HTML5 WebStorage: [http://www.w3.org/TR/webstorage/][webstorage-api]
 * ValueObject: [http://en.wikipedia.org/wiki/Value_object][value-object]
 * Composition Pattern: [http://www.vagrantup.com/2][composition-pattern]
-* Blog de John Papa: [http://www.johnpapa.net/angular-app-structuring-guidelines/][john-papa]
+* John Papa's Blog: [http://www.johnpapa.net/angular-app-structuring-guidelines/][john-papa]
 
 [angularjs-docs-folders-structure]: https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub
 [angular-phonecat]: https://github.com/angular/angular-phonecat
