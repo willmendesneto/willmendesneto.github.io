@@ -244,7 +244,9 @@ a:visited { color: #205caa; }
 
 .post ul,
 .post ol { margin-left: 1.35em; }
-
+.post ul li {
+  word-break: break-word;
+}
 .post pre code {
   border: 0;
   padding-right: 0;

@@ -11,6 +11,7 @@ meta: {}
 author:
 ---
 
+<a class="page-link" href="{{ '/2014/12/14/angular-js-about-filter/' | prepend: site.baseurl | replace: '//', '/' }}">Veja a versão em inglês</a>
 
 
 ## INTRODUÇÃO
@@ -213,7 +214,7 @@ O Filter pode ser utilizado em vários locais de sua aplicação, como Controlle
 
 ## TESTES
 
-A questão de testes é importante em sua aplicação por "N" fatores. Não abordarei o porquê dos testes em sua aplicação, mas caso queira se aprofundar aconselho [o conteúdo produzido para a Caelum por Maurício Aniche, referência no Brasil quando se fala em Testes de Software][links-tests]. de um filter é um aspecto relativamente simples. Um formato de teste para filtros customizados é mostrado no [tutorial fornecido pelo site oficial do projeto][ng-tutorial-filter]. Neste tutorial temos o seguinte exemplo e seu código de testes, respectivamente. Com base nele podemos ter um norte de como testar os nossos filtros.
+A questão de testes é importante em sua aplicação por "N" fatores. Não abordarei o porquê dos testes em sua aplicação, mas caso queira se aprofundar aconselho [o conteúdo produzido para a Caelum por Maurício Aniche, referência no Brasil quando se fala em Testes de Software][links-tests]. Um formato de teste para filtros customizados é mostrado no [tutorial fornecido pelo site oficial do projeto][ng-tutorial-filter]. Neste tutorial temos o seguinte exemplo e seu código de testes, respectivamente. Com base nele podemos ter um norte de como testar os nossos filtros.
 
 {% highlight javascript linenos %}
 
