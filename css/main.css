@@ -186,9 +186,13 @@ a:visited { color: #205caa; }
   margin-top: 5px;
 }
 
-.post-content { margin: 0 0 30px; }
+.post-content { 
+  padding: 20px 30px;
+  word-break: break-word;
+}
+  
 
-.post-content > * { margin: 20px 0; }
+/*.post-content > * { margin: 20px 0; }*/
 
 
 .post-content h1,
