@@ -151,8 +151,10 @@ a:visited { color: #205caa; }
 
 .posts { list-style-type: none; }
 
-.posts li { margin-bottom: 30px; }
-
+.post li {
+  word-break: break-word;
+  margin-bottom: 30px;
+}
 .posts .post-link {
   font-size: 24px;
   letter-spacing: -1px;
@@ -336,6 +338,13 @@ a:visited { color: #205caa; }
 
 @media screen and (max-width: 750px) {
 
+  .pagination {
+    width: 100% !important;
+    min-width: 100% !important;
+    margin: 0;
+    padding: 0;
+  }
+
   .footer-col-1 { width: 50%; }
 
   .footer-col-2 {
@@ -495,4 +504,16 @@ a:visited { color: #205caa; }
 .author-title{
   margin-bottom: 15px;
   font-size: 24px;
+}
+
+
+@media screen and (max-width: 460px) {
+  .input-newsletter {
+    width: 57%;
+  }
+  .btn.btn-newsletter {
+    width: 40% !important;
+    float: right;
+    min-width: 30% !important;
+  }
 }
