@@ -3,7 +3,7 @@ layout: page
 title: Sobre
 permalink: /about/
 ---
-Google Developer Expert (GDE) e Google Developer Group (GDG) Salvador Organizer. Estudioso das artes místicas das novas tecnologias, apaixonado por elas e ativo em muitas comunidades, com foco em tecnologias para desenvolvedores web (Javascript, CSS, HTML, Workflow, desempenho da Web, segurança, etc), participando de algumas organizações de eventos e contribuir com projetos de código aberto. Músico e desenhista nas horas vagas.
+Google Developer Expert (GDE) AngularJS e Google Developer Group (GDG) Salvador Organizer. Estudioso das artes místicas das novas tecnologias, apaixonado por elas e ativo em muitas comunidades, com foco em tecnologias para desenvolvedores web (Javascript, CSS, HTML, Workflow, desempenho da Web, segurança, etc), participando de algumas organizações de eventos e contribuir com projetos de código aberto. Músico e desenhista nas horas vagas.
 
 ## PROJETOS
 

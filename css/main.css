@@ -248,6 +248,10 @@ a:visited { color: #205caa; }
 
 .post code { padding: 1px 5px; }
 
+.post p {
+  margin-top: 10px;
+}
+
 .post ul,
 .post ol { margin-left: 1.35em; }
 .post ul li {
