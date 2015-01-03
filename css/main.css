@@ -447,7 +447,7 @@ a:visited { color: #205caa; }
   outline: rgba(0, 0, 0, 0.8) none 0px;
 }
 
-.newsletter-content{
+.newsletter-content, .newsletter-text{
   margin-bottom: 30px;
 }
 

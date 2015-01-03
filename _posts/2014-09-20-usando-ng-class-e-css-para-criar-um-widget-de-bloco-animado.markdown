@@ -11,6 +11,8 @@ meta: {}
 author:
 ---
 
+<a class="page-link" href="{{ '/2015/01/03/using-ng-class-and-css-for-create-an-animated-block-widget/' | prepend: site.baseurl | replace: '//', '/' }}">Veja a versão em inglês</a>
+
 ## INTRODUÇÃO
 
 Esta é uma postagem mais simples, mas baseada em um questionamento. Quem utiliza o AngularJs conhece o "ngAnimate", um módulo para gerenciar animações em aplicações que utilizam o framework. Porém desta vez utilizaremos animações CSS3 e a diretiva `Ng-class` para criarmos um exemplo de bloco animado.
