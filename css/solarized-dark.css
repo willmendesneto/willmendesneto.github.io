@@ -16,7 +16,10 @@ cyan      #2aa198  strings, numbers
 green     #859900  operators, other keywords
 */
 
-.highlight { background-color: #002b36; color: #93a1a1 }
+.highlight {
+  background-color: #002b36;
+  color: #93a1a1;
+}
 
 .highlight pre,
 .highlight code {
