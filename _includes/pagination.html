@@ -1,0 +1,13 @@
+<nav class="pagination" role="pagination">
+    {% if paginator.next_page %}
+        <a class="btn older-posts" href="/page{{ paginator.next_page }}/" title="{% if paginator.previous_page %}Next{% else %}Previous{% endif %} Page">&laquo; Older Posts</a>
+    {% endif %}
+    <span class="page-number"> Page {{paginator.page}} of {{paginator.total_pages}}</span>
+    {% if paginator.previous_page %}
+        {% if paginator.previous_page == 1 %}
+            <a class="btn newer-posts" href="/" title="Previous Page">Newer Posts &raquo;</a>
+        {% else %}
+            <a class="btn newer-posts" href="/page{{ paginator.previous_page }}/" title="Previous Page">Newer Posts &raquo;</a>
+      {% endif %}
+    {% endif %}
+</nav>

@@ -1,9 +1,8 @@
 ---
 layout: page
-title: Sobre
+title: About / Sobre
 permalink: /about/
 ---
-Google Developer Expert (GDE) AngularJS e Google Developer Group (GDG) Salvador Organizer. Estudioso das artes místicas das novas tecnologias, apaixonado por elas e ativo em muitas comunidades, com foco em tecnologias para desenvolvedores web (Javascript, CSS, HTML, Workflow, desempenho da Web, segurança, etc), participando de algumas organizações de eventos e contribuir com projetos de código aberto. Músico e desenhista nas horas vagas.
 
 ## PROJETOS
 
@@ -28,7 +27,10 @@ Manipulação e redimensionamento de texto baseado em acessibilidade web;
 
 Biblioteca que propõe um console gerador de código para o Framework Codeigniter;
 
-## CONTRIBUIÇÕES EM PROJETOS OPEN SOURCE
+## OPEN SOURCE - CONTRIBUIÇÕES
+
+### [MARIGHELLA - CMS][cms-marighella]
+O Marighella é uma iniciativa dedicada a empoderar coletivos, movimentos sociais e organizações populares através da tecnologia. O nome é uma homenagem ao revolucionário Carlos Marighella, o negro guerrilheiro que balançou o Brasil ao lutar contra as opressões sobre o povo. Colaboração no projeto;
 
 ### [CMS - MOVIMENTO SEM TERRA][cms-mst]
 Sistema de gerenciameto de conteúdo para o projeto Movimento Sem Terra usando AngularJS,
@@ -52,19 +54,19 @@ Scaffolding para o Framework Codeigniter PHP. Colaboração no projeto Grocery C
 ### [HTML5 API: HERÓI, VILÃO E SUA UTILIZAÇÃO HOJE EM APLICAÇÕES REAIS][talk-html5]
 
 Eventos:
+
 - The Developers Conference ­ TDC São Paulo 2014;
 - Primeiro encontro GDG Salvador 2014;
+- GDG Tech Talk Salvador 2014;
 
 ### [ANGULARJS: UM FRAMEWORK PARA FACILITAR A SUA VIDA][talk-angularjs-facilitar-sua-vida]
 
 Eventos:
+
 - FLISOL 2013 + BahiaJS;
 - Primeiro encontro GDG Salvador e JavaBahia 2013;
 - SEMCOMP ­ Semana da Computação ­ UFBA 2013;
-
-
-Student of the mystic arts of new technologies, passionate about technology and active on many communities in your hometown focused on technologies to web developers (Javascript, CSS, HTML, Workflow, Web Performance, Security, etc), participating in some events organizations and contributing with opensource projects.
-
+- Meetings;
 
 
 [keepr]:https://github.com/willmendesneto/keepr
@@ -78,3 +80,4 @@ Student of the mystic arts of new technologies, passionate about technology and 
 [talk-html5]:http://willmendesneto.github.io/Jquery­Text­Resize/
 [talk-angularjs-facilitar-sua-vida]:http://willmendesneto.github.io/Jquery­Text­Resize/
 [cms-mst]:https://github.com/movimento­sem­terra/cms
+[cms-marighella]:https://github.com/marighella/cms
