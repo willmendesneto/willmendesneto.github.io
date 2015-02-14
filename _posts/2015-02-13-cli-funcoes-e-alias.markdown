@@ -420,3 +420,11 @@ Tem outro workflow para ambientes CLI? Comente e compartilhe essa experiência, 
 > Conhecimento bom é conhecimento compartilhado
 
 Abraço e até mais!
+
+Links:
+
+* Gist: arquivo .functions [https://gist.github.com/willmendesneto/b6bc8ab4f868a9ec459c][functions-file]
+* Gist: arquivo .aliases [https://gist.github.com/willmendesneto/3c1c150666b02232e494][aliases-file]
+
+[functions-file]:https://gist.github.com/willmendesneto/b6bc8ab4f868a9ec459c
+[aliases-file]: https://gist.github.com/willmendesneto/3c1c150666b02232e494
