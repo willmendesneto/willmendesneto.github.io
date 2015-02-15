@@ -4,7 +4,7 @@ title: "AngularJS: About E2E tests and Protractor - pt 1"
 categories: angularjs frontend protractor end-to-end tests
 tags: workflow frontend tests
 status: publish
-image:
+image: https://d2eip9sf3oo6c2.cloudfront.net/series/covers/000/000/002/full/angularjs_functional_testing_protractor.jpg?1390674819
 type: post
 published: true
 meta: {}
@@ -38,9 +38,20 @@ Your configuration is very easy (protractor born with this specification), that 
 The setup of protractor is very easy. Firts it's available via NPM (Node Package Manager) and your installation is done with the command
 
 ```bash
-$ npm install -g protractor
+$ cd awesome-folder
+$ npm install  protractor
 ```
 
+And update your webdrive using this command in folder that you create and add protractor package.
+
+```bash
+$ ./node_modules/protractor/bin/webdriver-manager update
+```
+
+
+After this you can use the protractor template for begin your tests. If you can, use this template for begin tests with protractor and configure your folder for end-to-end tests
+
+{% gist willmendesneto/d6d1163b39356e5e103a %}
 
 ## Boilerplate
 
@@ -76,11 +87,11 @@ describe('angularjs homepage todo list', function() {
 
 In this example we can see some elements that we will use many times in Protractor tests, such as:
 
-- browser: Interface for browser element. In this example we use `browser` for access some url;
-- element: Interface for access some page element. Is very usefull for get elements based in certain parameters and manipulate them;
-- by: Interface for access element based in parameters (css, angular models, angular repeaters, etc);
+- browser: API for browser element. In this example we use `browser` for access some url;
+- element: API for access some page element. Is very usefull for get elements based in certain parameters and manipulate them;
+- by: API for access element based in parameters (css, angular models, angular repeaters, etc);
 
-If you would like to know more about the interfaces protractor, [please take a look in protractor documentation][protractor-interface-docs]
+If you would like to know more about the API's protractor, [please take a look in protractor documentation][protractor-api-docs]
 
 ## CONCLUSION
 
@@ -90,6 +101,6 @@ Do you like of this post? Comments this post, feedbacks are always welcome ;)
 
 Links:
 
-* Protractor interface docs: [http://angular.github.io/protractor/#/api][protractor-interface-docs]
+* Protractor API docs: [http://angular.github.io/protractor/#/api][protractor-api-docs]
 
-[protractor-interface-docs]: http://angular.github.io/protractor/#/api
+[protractor-api-docs]: http://angular.github.io/protractor/#/api
