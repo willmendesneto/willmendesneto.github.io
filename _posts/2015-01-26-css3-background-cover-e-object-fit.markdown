@@ -6,6 +6,7 @@ tags: css3 tips tricks frontend
 status: publish
 image: /assets/images/css3-post.png
 type: post
+lang: "us"
 published: true
 meta: {}
 author:

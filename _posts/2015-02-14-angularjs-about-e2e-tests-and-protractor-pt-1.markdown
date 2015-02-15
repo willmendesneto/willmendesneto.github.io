@@ -4,6 +4,7 @@ title: "AngularJS: About E2E tests and Protractor - pt 1"
 categories: angularjs frontend protractor end-to-end tests
 tags: workflow frontend tests
 status: publish
+lang: "us"
 image: https://d2eip9sf3oo6c2.cloudfront.net/series/covers/000/000/002/full/angularjs_functional_testing_protractor.jpg?1390674819
 type: post
 published: true

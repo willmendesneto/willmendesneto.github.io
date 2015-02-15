@@ -6,6 +6,7 @@ tags: javascript angularjs management version control frontend
 status: publish
 image: http://www.bennadel.com/resources/uploads/2013/feelings_about_angularjs_over_time.png
 type: post
+lang: "us"
 published: true
 meta: {}
 author:
