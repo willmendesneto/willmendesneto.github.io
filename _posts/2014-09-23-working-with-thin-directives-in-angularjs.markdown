@@ -22,16 +22,6 @@ The thin directives conception is based in construction of an angular directive 
 
 ## PROBLEM: NAVBAR DIRECTIVE
 
-Criaremos uma diretiva de menu como exemplo. Algo bastante simples, mas acredito que bem didático para que todos entendam melhor este novo conceito (para alguns) e algumas formas de utilizá-lo. A idéia é que nossa diretiva possa verificar qual item está sendo acessado em tempo real, a partir das informações passadas pela url.
-
-Para isto vamos criar 3 arquivos para lidar diretamente com esta diretiva:
-
-- `navbar.html`: Template da nossa diretiva com as informações e valores a serem atualizados.
-- `navbar-ctrl.js`: Controller para o nosso menu. Ele será responsável por fazer a integração para que o nosso controller funcione perfeitamente
-- `navbar.js`: Diretiva de nosso app. Este arquivo será bem compacto, pois possuirá somente algumas configurações mais simples.
-
-Baseando a construção de nossa diretiva em [TDD][tdd], vamos focar no conceito de [Red, Green, Refactor][red-green-refactor], assim além do conceito de Thin Directives, ainda teremos conhecimento de TDD (para quem tem dúvidas sobre).
-
 We will create a menu as an example using a directive based in thin directive concept. Something simple, but I believe that good teaching so that everyone can better understand this new concept (for some people) and some ways to use it in your apps. The idea is that our directive can check which item is being accessed in real time from the information passed by the url.
 
 For this task we will create three files to works directly with this directive:
@@ -119,8 +109,6 @@ angular.module('plunkerApp', [
   <h3 class="text-muted">THIN DIRECTIVE EXAMPLE</h3>
 </div>
 {% endhighlight %}
-
-`isActive()` é o método que o controller `NavbarCtrl` utilizará acessando a diretiva, mas por ora não criaremos o controller e sim a nossa diretiva. Porém temos que fazer alguns testes para validarmos a diretiva e saber se tudo está ocorrendo corretamente. Vamos ao nosso teste:
 
 `isActive ()` method is used for `NavbarCtrl` controller accessing the directive, but for now we will not create the controller, but yes our directive. But we have to do some tests to validate the component and make sure everything is going correctly. Come to our test:
 
