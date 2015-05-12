@@ -53,7 +53,7 @@
           {{content}}
         </section>
 
-        {% if page.lang == "us" %}
+        {% if page.lang == "us" || site.lang == "us" %}
           {% include newsletter-us.html %}
         {% else %}
           {% include newsletter.html %}
@@ -79,7 +79,11 @@
             <section class="author">
               <div class="author-image" style="background-image: url({{site.author_image}})">Blog Logo</div>
               <h4>{{ site.author }}</h4>
-              <p class="bio">{{site.author_biography}}</p>
+              {% if page.lang == "us" || site.lang == "us" %}
+                <p class="bio">{{site.author_biography_us}}</p>
+              {% else %}
+                <p class="bio">{{site.author_biography}}</p>
+              {% endif %}
               <hr>
               <p class="published">Publicado em <time datetime="{{ page.date | date: "%F %R" }}">{{ page.date | date_to_string }}</time></p>
             </section>
