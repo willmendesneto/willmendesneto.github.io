@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Micro tunnings with Angular apps - Part 1"
-categories: performance, frontend, angular
-tags: performance, frontend, angular, web performance, tips, tricks
+categories: "performance, frontend, angular"
+tags: "performance, frontend, angular, web performance, tips, tricks"
 status: publish
 lang: "us"
 image: "/assets/images/components.jpeg"
