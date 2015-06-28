@@ -12,7 +12,6 @@ meta: {}
 author: Will Mendes
 ---
 
-
 ## INTRODUCTION
 
 In last post we talking about real-time web concepts, angular best practices, one-time-binding and how to integrate javascript async patterns in angular apps. Now lets take a look in some aspects of functional programming. So let's go?

@@ -12,6 +12,8 @@ meta: {}
 author: Will Mendes
 ---
 
+<a class="page-link" href="{{ '/2015/06/28/micro-tunings-em-angular-apps-pt-1/' | prepend: site.baseurl | replace: '//', '/' }}">Read the Brazillian Portuguese version</a>
+
 
 ## INTRODUCTION
 
