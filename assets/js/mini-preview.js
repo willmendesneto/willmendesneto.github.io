@@ -97,6 +97,7 @@
 
         loadPreview: function() {
             this.$el.find('.' + PREFIX + '-frame')
+                .attr('target', '_blank')
                 .attr('src', this.$el.attr('href'))
                 .on('load', function() {
                     // some sites don't set their background color
