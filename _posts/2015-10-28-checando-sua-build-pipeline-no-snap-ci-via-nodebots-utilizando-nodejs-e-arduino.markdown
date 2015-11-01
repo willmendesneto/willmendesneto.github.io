@@ -16,14 +16,12 @@ author:
 
 A idéia desta postagem é compartilhar alguns conceitos básicos sobre a utilização de open hardware manipulando-o a partir do Javascript.
 
-Sempre que começamos o contato com o [Arduino][arduino], por exemplo, fazemos o exemplo de piscas as leds, comumento conhecido como blink. Neste exemplo mostrarei uma forma mais atrativa de abordar este exemplo para o nosso cotidiano, baseado em modelos como Hubot e Retaliation para checarmos a nossa build pipeline e averiguarmos a saúde de nossa aplicação utilizando [Arduino][arduino] + NodeJS + [Johnny-Five][johnny-five]
-em uma introdução a [NodeBots][nodebots].
+Sempre que começamos o contato com o [Arduino][arduino], por exemplo, fazemos o exemplo de piscas as leds, comumento conhecido como blink. Neste exemplo mostrarei uma forma mais atrativa de abordar este exemplo para o nosso cotidiano, baseado em modelos como Hubot e Retaliation para checarmos a nossa build pipeline e averiguarmos a saúde de nossa aplicação utilizando [Arduino][arduino] + NodeJS + [Johnny-Five][johnny-five] em uma introdução a [NodeBots][nodebots].
 
 
 # Build pipeline
 
-Em algumas apresentações percebi que este termo não é conhecido por muitas pessoas até que são mais familiarizadas com
-abordagens como integração contínua e entrega contínua. Build pipeline é um conceito que foi construído em meados de 2005 e é baseado na idéia de paralelização de tarefas, separando cada etapa em pequenos critérios de aceitação para a aplicação. Vale lembrar que esses passos podem automáticos ou manuais.
+Em algumas apresentações percebi que este termo não é conhecido por muitas pessoas até que são mais familiarizadas com abordagens como integração contínua e entrega contínua. Build pipeline é um conceito que foi construído em meados de 2005 e é baseado na idéia de paralelização de tarefas, separando cada etapa em pequenos critérios de aceitação para a aplicação. Vale lembrar que esses passos podem automáticos ou manuais.
 
 Um exemplo de um serviço gratuito que utiliza este conceito é o [Snap-CI][snap-ci], que te dá várias facilidades e com suporte a várias outras linguagens, deploy em diversas plataformas e várias outras funcionalidades bem bacanas.
 
@@ -32,8 +30,7 @@ Para este exemplo de nosso build-checker criei um projeto de exemplo no github e
 
 # NodeBots
 
-NodeBots é um conceito no qual une a linguagem de programação Javascript e robótica. Isso foi possível
-graças ao surgimento do NodeJS, dando a possibilidade de utilizarmos Javascript não somente nos navegadores e o pacote node-serialport, criado por Chris Williams, permitindo que os desenvolvedores controlassem hardware a partir da utilização do javascript.
+NodeBots é um conceito no qual une a linguagem de programação Javascript e robótica. Isso foi possível graças ao surgimento do NodeJS, dando a possibilidade de utilizarmos Javascript não somente nos navegadores e o pacote node-serialport, criado por Chris Williams, permitindo que os desenvolvedores controlassem hardware a partir da utilização do javascript.
 
 
 # Arduino
@@ -50,7 +47,7 @@ compatível com todos os sistemas operacionais;
 Baseado nestas características, vamos ao que interessa o nosso projeto de introdução a [NodeBots][nodebots] com a ferramenta [build-checker][build-checker].
 
 
-# Build checker: the project
+# Build checker: o projeto
 
 O projeto foi baseado no CCmenu, projeto criado pelo ThoughtWorker Erik Doernenburg para checar e mostrar o
 status de um determinado projeto em um servidor de integração contínua.
@@ -109,7 +106,7 @@ Este projeto foi baseado no projeto [Relatiation][retaliation], feito pelo pesso
 [![Retaliation](http://img.youtube.com/vi/1EGk2rvZe8A/0.jpg)](https://www.youtube.com/watch?v=1EGk2rvZe8A)
 
 
-# Conclusion
+# Conclusão
 
 Este é um projeto bem introdutório do poder nos [NodeBots][nodebots], utilizando um dos exemplos mais simples para introdução ao Arduino, que é o código que faz com que uma led pisque (caso tenha interesse em ver como este código funciona, pesquise por "blink"). Este exemplo de led piscando é algo totalmente didático, mas ao utilizarmos NodeJS percebemos todo o poder que temos para aliar vários conceitos juntamente a um dos exemplos mais clássicos do Arduino. A partir daí é com você.
 
