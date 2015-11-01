@@ -83,7 +83,7 @@ Vamos no site do SNAP-CI, efetuamos o login (caso não tenha cadastro você ter�
 
 ![SNAP-CI "Adicionar novo Repositório"](/assets/images/snap-ci-setup-repo.png)
 
-![Adicionando Repositório para integração](/assets/images/snap-ci-setup-repo.png)
+![Adicionando Repositório para integração](/assets/images/snap-ci-choosing-repo.png)
 
 Ao cadastrar o projeto ele vai aparecer na parte superior, à direita, um campo com o nome "CCTray" que, ao clicarmos, direciona para o arquivo XML com as informações do build.
 
