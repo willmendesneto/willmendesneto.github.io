@@ -21,16 +21,16 @@ Sempre que começamos o contato com o [Arduino][arduino], por exemplo, fazemos o
 
 # Build pipeline
 
-Em algumas apresentações percebi que este termo não é conhecido por muitas pessoas até que são mais familiarizadas com abordagens como integração contínua e entrega contínua. Build pipeline é um conceito que foi construído em meados de 2005 e é baseado na idéia de paralelização de tarefas, separando cada etapa em pequenos critérios de aceitação para a aplicação. Vale lembrar que esses passos podem automáticos ou manuais.
+Em algumas apresentações percebi que este termo não é conhecido por muitas pessoas, mesmo as que são mais familiarizadas com abordagens como integração contínua e entrega contínua. Build pipeline é um conceito que foi construído em meados de 2005 e é baseado na idéia de paralelização de tarefas, separando cada etapa em pequenos critérios de aceitação para a aplicação. Vale lembrar que esses passos podem automáticos ou manuais.
 
-Um exemplo de um serviço gratuito que utiliza este conceito é o [Snap-CI][snap-ci], que te dá várias facilidades e com suporte a várias outras linguagens, deploy em diversas plataformas e várias outras funcionalidades bem bacanas.
+Um exemplo de um serviço gratuito que utiliza este conceito é o [Snap-CI][snap-ci], que te dá várias facilidades, suporte a outras linguagens, deploy em diversas plataformas, dentre outras funcionalidades bem bacanas.
 
 Para este exemplo de nosso build-checker criei um projeto de exemplo no github e o integrei no nosso [Snap-CI][snap-ci]. Após as configurações iniciais (uma das coisas bacanas no projeto é que ele tem um guia bem bacana e simples) podemos verificar o nosso build mais atual a partir da aba de notificações. Você
 
 
 # NodeBots
 
-NodeBots é um conceito no qual une a linguagem de programação Javascript e robótica. Isso foi possível graças ao surgimento do NodeJS, dando a possibilidade de utilizarmos Javascript não somente nos navegadores e o pacote node-serialport, criado por Chris Williams, permitindo que os desenvolvedores controlassem hardware a partir da utilização do javascript.
+NodeBots é um conceito que une a linguagem de programação Javascript e robótica. Isso foi possível graças ao surgimento do NodeJS, que possibilita a utilização do Javascript em outros ambientes além dos navegadores (como em geladeiras, micro controladores e outras opções) e o pacote node-serialport, criado por Chris Williams, permitindo que os desenvolvedores controlassem hardware a partir da utilização do javascript.
 
 
 # Arduino
@@ -52,7 +52,7 @@ Baseado nestas características, vamos ao que interessa o nosso projeto de intro
 O projeto foi baseado no CCmenu, projeto criado pelo ThoughtWorker Erik Doernenburg para checar e mostrar o
 status de um determinado projeto em um servidor de integração contínua.
 
-No nosso caso passamos a idéia para algo físico, utilizando open hardware e NodeJS. Nossa aplicação consumirá um XML com as informações retornadas pelo [Snap-CI][snap-ci]. A partir destes dados checaremos o estado atual da aplicação e retornaremos de maneira visível utilizando alguns artifícios como Arduino e Led's para avisar ao nosso time de que algo de errado aconteceu com o nosso build e devemos corrigir o quanto antes.
+No nosso caso passamos a idéia para algo físico, utilizando open hardware e NodeJS. Nossa aplicação consumirá um XML com as informações retornadas pelo [Snap-CI][snap-ci]. A partir destes dados checaremos o estado atual da aplicação e o retornaremos utilizando alguns artifícios como Arduino e Led's para avisar ao nosso time de que algo de errado aconteceu com o nosso build e devemos corrigir o quanto antes.
 
 Primeiramente precisamos instalar o NodeJS em nossa máquina. Sua instalação é muito simples e pode ser feita seguindo as instruções contidas no próprio site do projeto.
 
@@ -60,7 +60,7 @@ O nosso próximo passo é a instalação do Arduino IDE. Após instalado, vamos 
 
 ![Abrindo opções de exemplo no Arduino IDE](/assets/images/open-firmata-example.png)
 
-Com o Arduino plugado no nosso computador rodamos este código e aguardamos a mensagem da IDE de que tudo ocorreu com sucesso.
+Com o Arduino plugado no nosso computador rodamos o código a seguir e aguardamos a mensagem da IDE de que tudo ocorreu com sucesso.
 
 ![Tudo ok. Firmata rodando](/assets/images/upload-firmata-example.png)
 
@@ -101,7 +101,7 @@ $ node index.js # roda o código do build checker
 
 Caso queiram saber mais sobre o projeto, [cliquem aqui e o projeto Build-Checker no github][build-checker]. O código é open-source, então sintam-se à vontade para feedbacks, sugestões e críticas construtivas. Lembrando também que estrelas no github são sempre bem vindas também!
 
-Este projeto foi baseado no projeto [Relatiation][retaliation], feito pelo pessoal do Github para verificar a situação do build no Jenkins e dar um feedback ao time. Fica a dica deste vídeo bem simples e bacana mostrando como o Retaliation funcionalidades.
+Este projeto foi baseado no projeto [Relatiation][retaliation], feito pelo pessoal do Github para verificar a situação do build no Jenkins e dar um feedback ao time. Fica a dica deste vídeo bem simples e bacana mostrando como o Retaliation funciona.
 
 [![Retaliation](http://img.youtube.com/vi/1EGk2rvZe8A/0.jpg)](https://www.youtube.com/watch?v=1EGk2rvZe8A)
 
@@ -120,6 +120,7 @@ Links:
 * Arduino: [https://www.arduino.cc/][arduino]
 * NodeBots: [http://nodebots.io/][nodebots]
 * Build Pipeline: [http://www.martinfowler.com/articles/continuousIntegration.html][build-pipeline]
+* Retaliation: [https://www.youtube.com/watch?v=1EGk2rvZe8A][retaliation]
 
 
 [build-checker]:https://github.com/willmendesneto/build-checker
@@ -128,3 +129,4 @@ Links:
 [arduino]:https://www.arduino.cc/
 [nodebots]:https://nodebots.io/
 [build-pipeline]:http://www.martinfowler.com/articles/continuousIntegration.html
+[retaliation]:https://www.youtube.com/watch?v=1EGk2rvZe8A
