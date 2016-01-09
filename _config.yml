@@ -1,6 +1,7 @@
 # Build settings
 markdown: redcarpet
 highlighter: pygments
+gems: [pygments.rb, redcarpet, jekyll-paginate, jekyll-gist]
 
 # Site settings
 title: "Wilson Mendes - Blog"
