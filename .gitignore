@@ -1,4 +1,12 @@
-**/*.swp
-.sass-cache
+**/*.{swp,swo}
 _site
 .DS_Store
+node_modules
+.bundle/
+.ruby-version
+.node-version
+.sass-cache/
+neat/
+bourbon/
+.rvmrc
+npm-debug.log
