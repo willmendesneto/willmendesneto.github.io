@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <!-- (1) Optimize for mobile versions: http://goo.gl/EOpFl -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- (1) force latest IE rendering engine: bit.ly/1c8EiC9 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>AngularJS Sobre filter</title>
+  <meta name="description" content="This is my blog, where i talk about technologies" />
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="canonical" href="http://willmendesneto.github.io/2014/12/08/angular-js-sobre-filter">
+
+  
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="cache-control" content="no-store, no-cache, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-store, no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE" />
+    <meta http-equiv="PRAGMA" content="NO-CACHE" />
+    <meta name="domain" content="willmendesneto.github.io" />
+    <meta name="url" content="/2014/12/08/angular-js-sobre-filter" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="AngularJS Sobre filter" />
+    <meta property="og:url" content="/2014/12/08/angular-js-sobre-filter" />
+    <meta property="og:description" content="" />
+    <meta property="article:author" content="" />
+    <meta property="og:site_name" content="Wilson Mendes - Blog" />
+    <meta property="og:image" content="http://i1098.photobucket.com/albums/g379/farazi482/AngularJS-filters.png" />
+    <meta name="twitter:site" content="@willmendesneto" />
+    <meta name="twitter:image" content="http://i1098.photobucket.com/albums/g379/farazi482/AngularJS-filters.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="autor" content="Wilson Mendes" />
+    <meta name="reply-to" content="willmendesneto@gmail.com">
+    <meta name="revisit-after" content="3" />
+    <meta name="title" content="Wilson Mendes - Blog">
+    <meta name="description" content="This is my blog, where i talk about technologies">
+    <meta name="keywords" content="["javascript",, "angularjs",, "frontend",, "frameworks",, "architecture"]" />
+  
+
+  <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Pesquisa no Blog" />
+
+  <link rel="shortcut icon" href="/assets/images/favicon.ico">
+<!--  <link rel="stylesheet" href=""> -->
+  <!-- <link rel="stylesheet" href="http://brick.a.ssl.fastly.net/Linux+Libertine:400,400i,700,700i/Open+Sans:400,400i,700,700i"> -->
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700,800" rel="stylesheet" type="text/css">
+
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/main.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/mini-preview.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/solarized-dark.css" />
+  <link rel="stylesheet" type="text/css" media="print" href="/assets/css/print.css" />
+</head>
+
+  <body itemscope itemtype="http://schema.org/Article">
+    <!-- header start -->
+
+<!-- <a href="http://willmendesneto.github.io" class="logo-readium"><span class="logo" style="background-image: url()"></span></a> -->
+
+<!-- header end -->
+
+    <main class="content" role="main">
+      <article class="post">
+        
+        <div class="article-image">
+          <div class="post-image-image" style="background-image: url(http://i1098.photobucket.com/albums/g379/farazi482/AngularJS-filters.png)">
+            Article Image
+          </div>
+          <div class="post-meta">
+            <h1 class="post-title">AngularJS Sobre filter</h1>
+            <div class="cf post-meta-text">
+              <div class="author-image" style="background-image: url(https://pt.gravatar.com/userimage/20307137/677413a79461cdfd62c8a65143214850.png?size=300)">Blog Logo</div>
+              <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">Wilson Mendes</h4>
+              on
+              <time datetime="2014-12-08 00:00">08 Dec 2014</time>
+              <!-- , tagged on <span class="post-tag-">, <a href="/tag/"></a></span> -->
+            </div>
+            <div style="text-align:center">
+              <a href="#topofpage" class="topofpage"><i class="fa fa-angle-down"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <section class="post-content">
+
+          <a class="home-button"  href="/">&laquo; Home</a>
+          <div class="post-reading">
+            Lido a <span class="post-reading-time"></span>
+          </div>
+          <a name="topofpage"></a>
+          <div id="post-content-page">
+            <p><a class="page-link" href="/2014/12/14/angular-js-about-filter/">Veja a versão em inglês</a></p>
+
+<h2>INTRODUÇÃO</h2>
+
+<p>Desta vez uma postagem bem simples e rápida. Tenho um envolvimento bem bacana, participando de grupos locais e nacionais. Dentre estes grupos sou um dos organizers do <a href="https://plus.google.com/109551746919819088573/posts">GDG - Google Developers Group Salvador</a> o qual fortaleceu meu envolvimento com várias tecnologias, mas atualmente curto bastante frontend e atuo diretamente em projetos que utilizam, dentre outras tecnologias, o framework AngularJS.</p>
+
+<p>Neste processo percebo que várias pessoas possuem dúvidas distintas sobre algum aspecto do framework, seja conceitual ou prático, dos componentes fornecidos pelo AngularJS. E foi por isso que pensei em criar uma série de posts abordando alguns destes pontos pelo simples motivo:</p>
+
+<blockquote>
+<p>&quot;Conhecimento bom é conhecimento compartilhado&quot;</p>
+</blockquote>
+
+<p>Neste post vamos falar um pouco sobre o conceito de filtros e como é o fluxo da interface de <code>$filter</code> no AngularJS. Claro, este é o primeiro, mas a idéia não é torná-lo algo <a href="http://teropa.info/build-your-own-angular">como o Building your own AngularJS </a> (nem tenho esta pretensão), mas algo que passe alguns fundamentos e dicas que possam valer a pena inicialmente ou mostrar alguns aspectos que não conhecia.</p>
+
+<h2>SOBRE</h2>
+
+<p>O conceito de filtros é algo bem bacana que o framework já traz no seu core. Isso facilita horrores, pois a interface fornecida pelo AngularJS pode ser utilizada em todos os locais de sua aplicação, sejam elas templates html, services, directives, controllers, etc. Por padrão já podemos utilizar alguns filtros previamente criados, como:</p>
+
+<ul>
+<li><code>currency</code>: para valores. Formata um número para o formato de moeda. Quando nenhum símbolo é fornecido, utiliza o símbolo padrão para o local como padrão;</li>
+<li><code>date</code>: para formatação de datas. Com base no parâmetro passado pode retornar uma data em um formato específico;</li>
+<li><code>filter</code>: filtro padrão para buscas em string, objetos JSON ou ArrayObjects;</li>
+<li><code>json</code>: para transformarmos um valor em json. utilizado para transformar objetos Javascript em uma string Json;</li>
+<li><code>limitTo</code>: Cria uma nova matriz/string com um número de elementos determinado previamente. Os elementos são retirados do início ou do fim da matriz de origem, número ou cadeia de caracteres, especificados pelo valor e sinal (positivo ou negativo para verificação de ordem). Se um número é usado como entrada, ele é convertido para uma string.</li>
+<li><code>lowercase</code>: Conversão para caracteres minúsculos;</li>
+<li><code>number</code>: Formatação de números;</li>
+<li><code>orderBy</code>: Ordena em ordem alfabética ou numerica. Em caso de números vale observar se eles estão realmente sendo salvos como números e não strings, pois isto pode afetar na ordenação;</li>
+<li><code>uppercase</code>: Conversão para caracteres maiúsculos;</li>
+</ul>
+
+<p>Quando utilizado no template html, o filter aceita algumas verificações, como:</p>
+
+<ul>
+<li><code>+</code>: Soma ou concatena. Utiliza o método <code>additive</code>;</li>
+<li><code>-</code>: Diminui. Utiliza o método <code>additive</code>;</li>
+<li><code>*</code>: Multiplica. Utiliza o método <code>multiplicative</code>;</li>
+<li><code>/</code> : Divide. Utiliza o método <code>multiplicative</code>;</li>
+<li><code>%</code>: Retorna o resto da divisão. Utiliza o método <code>multiplicative</code>;</li>
+<li><code>===</code>: Compara com verificação de tipagem. Utiliza o método <code>equality</code>;</li>
+<li><code>!==</code>: Compara com verificação de tipagem. Utiliza o método <code>equality</code>;</li>
+<li><code>==</code>: Compara sem verificação de tipagem. Utiliza o método <code>equality</code>;</li>
+<li><code>!=</code>: Compara sem verificação de tipagem. Utiliza o método <code>equality</code>;</li>
+<li><code>&lt;</code>: Menor que. Utiliza o método <code>relational</code>;</li>
+<li><code>&gt;</code>: Maior que. Utiliza o método <code>relational</code>;</li>
+<li><code>&lt;=</code>: Menor ou igual. Utiliza o método <code>relational</code>;</li>
+<li><code>&gt;=</code>: Maior ou igual. Utiliza o método <code>relational</code>;</li>
+<li><code>&amp;&amp;</code>: AND. Utiliza o método <code>logicalAND</code>;</li>
+<li><code>||</code>: OR. Utiliza o método <code>logicalOR</code>;</li>
+<li><code>!</code>: Altera o valor (força o valor para o tipo boolean). Utiliza o método <code>unary</code>;</li>
+<li><code>=</code>: Atribui o valor do segundo ao primeiro. Utiliza o método <code>assignment</code>;</li>
+<li><code>|</code>: Retorna o boolean <code>true</code>;</li>
+</ul>
+
+<p>Todos estes operadores estão configurados na variável <code>OPERATORS</code>. Caso queira saber mais sobre Operadores de comparação, o próprio Angular referencia a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators">documentação do MDN &quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators&quot;</a></p>
+
+<p>E escapa alguns caracteres especiais, como:</p>
+
+<ul>
+<li><code>\n</code>;</li>
+<li><code>\f</code>;</li>
+<li><code>\r</code>;</li>
+<li><code>\t</code>;</li>
+<li><code>\v</code>;</li>
+<li><code>&#39;</code>;</li>
+<li><code>&quot;</code>;</li>
+</ul>
+
+<p>Todos estes caracteres especiais estão configurados na variável <code>ESCAPE</code>. Caso queira saber mais basta darem uma olhada no código final do AngularJS e buscarem por esta variável.</p>
+
+<h2>ARQUITETURA E DESIGN PATTERN</h2>
+
+<p>Alguns padrões de projetos são implementados no angularjs, alguns não tão conhecidos. Conceitualmente falando, um filtro recebe um fluxo (stream de dados) como entrada e produz um fluxo de caracteres como saída. Além disso os filtros podem ser parametrizados. Definição oficial para filtros encontrada no site oficial do AngularJS:</p>
+
+<blockquote>
+<p>&quot;Selects a subset of items from array and returns it as a new array.&quot;</p>
+</blockquote>
+
+<p>O conjunto particular de regras aqui aplicado define um estilo arquitetural conhecido como <a href="http://webcem01.cem.itesm.mx:8005/apps/s200911/tc3003/notes_pipes_and_filters/">Pipe-and-Filter</a>. O Pipe-and-filter é baseado no fluxo/stream de dados, tendo filtros que podem operar de forma concorrente ou não, ou seja, podem ou não aguardar o término do produtor para que o componente que consome a saída do produtor inicie o seu funcionamento.</p>
+
+<p>No contexto desta arquitetura, um pipe (<code>|</code>) é uma forma de conectar dois filtros, onde a saída do primeiro filtro é conectada à entrada do segundo (o que acarretou no nome da arquitetura). Conhecendo os filtros e pipes utilizados pode-se facilmente compreender o seu funcionamento e/ou criar outros baseado em combinações.</p>
+
+<p>Agora um exemplo simples utilizando múltiplos filtros combinados. De um determinado número dado queremos que ele retorne o seu valor como número romano. Pensando que temos 2 filtros já criados podemos fazer a seguinte combinação. No nosso template sua utilização ficaria da seguinte forma:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="lineno">1</span> <span class="nt">&lt;tr&gt;</span>
+<span class="lineno">2</span>     <span class="c">&lt;!-- Returns &quot;X&quot; --&gt;</span>
+<span class="lineno">3</span>     <span class="nt">&lt;td&gt;</span> { { &#39;10&#39; | returnOnlyNumbers | formatForRomanNumbers } }<span class="nt">&lt;/td&gt;</span>
+<span class="lineno">4</span> <span class="nt">&lt;/tr&gt;</span></code></pre></figure>
+
+<p>Podemos verificar alguns métodos do Angular que demonstram o funcionamento desta arquitetura, como:</p>
+
+<p><code>filterChain</code>: Faz a chamada dos filtros combinados utilizando chainning methods, que é um tipo de fluent API e utiliza também o método <code>filter</code> internamente. Caso queiram saber mais sobre este conceito, <a href="http://www.smashingmagazine.com/2012/10/09/designing-javascript-apis-usability/">recomendo o artigo do Smashing Magazine &quot;Designing Better JavaScript APIs&quot;</a>.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="lineno">1</span> <span class="nx">filterChain</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="lineno">2</span>     <span class="kd">var</span> <span class="nx">left</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">expression</span><span class="p">();</span>
+<span class="lineno">3</span>     <span class="kd">var</span> <span class="nx">token</span><span class="p">;</span>
+<span class="lineno">4</span>     <span class="k">while</span> <span class="p">((</span><span class="nx">token</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">expect</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="p">)))</span> <span class="p">{</span>
+<span class="lineno">5</span>       <span class="nx">left</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">left</span><span class="p">);</span>
+<span class="lineno">6</span>     <span class="p">}</span>
+<span class="lineno">7</span>     <span class="k">return</span> <span class="nx">left</span><span class="p">;</span>
+<span class="lineno">8</span>   <span class="p">},</span></code></pre></figure>
+
+<p><code>filter</code>: Método que trata todos os valores passados para o filter e retorna o valor final.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="lineno"> 1</span> <span class="nx">filter</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">inputFn</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno"> 2</span>     <span class="kd">var</span> <span class="nx">fn</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">$filter</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">consume</span><span class="p">().</span><span class="nx">text</span><span class="p">);</span>
+<span class="lineno"> 3</span>     <span class="kd">var</span> <span class="nx">argsFn</span><span class="p">;</span>
+<span class="lineno"> 4</span>     <span class="kd">var</span> <span class="nx">args</span><span class="p">;</span>
+<span class="lineno"> 5</span> 
+<span class="lineno"> 6</span>     <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">peek</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">))</span> <span class="p">{</span>
+<span class="lineno"> 7</span>       <span class="nx">argsFn</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="lineno"> 8</span>       <span class="nx">args</span> <span class="o">=</span> <span class="p">[];</span> <span class="c1">// we can safely reuse the array</span>
+<span class="lineno"> 9</span>       <span class="k">while</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">expect</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">))</span> <span class="p">{</span>
+<span class="lineno">10</span>         <span class="nx">argsFn</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">expression</span><span class="p">());</span>
+<span class="lineno">11</span>       <span class="p">}</span>
+<span class="lineno">12</span>     <span class="p">}</span>
+<span class="lineno">13</span> 
+<span class="lineno">14</span>     <span class="kd">var</span> <span class="nx">inputs</span> <span class="o">=</span> <span class="p">[</span><span class="nx">inputFn</span><span class="p">].</span><span class="nx">concat</span><span class="p">(</span><span class="nx">argsFn</span> <span class="o">||</span> <span class="p">[]);</span>
+<span class="lineno">15</span> 
+<span class="lineno">16</span>     <span class="k">return</span> <span class="nx">extend</span><span class="p">(</span><span class="kd">function</span> <span class="nx">$parseFilter</span><span class="p">(</span><span class="nx">self</span><span class="p">,</span> <span class="nx">locals</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">17</span>       <span class="kd">var</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">inputFn</span><span class="p">(</span><span class="nx">self</span><span class="p">,</span> <span class="nx">locals</span><span class="p">);</span>
+<span class="lineno">18</span>       <span class="k">if</span> <span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">19</span>         <span class="nx">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nx">input</span><span class="p">;</span>
+<span class="lineno">20</span> 
+<span class="lineno">21</span>         <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">argsFn</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+<span class="lineno">22</span>         <span class="k">while</span> <span class="p">(</span><span class="nx">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">23</span>           <span class="nx">args</span><span class="p">[</span><span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">argsFn</span><span class="p">[</span><span class="nx">i</span><span class="p">](</span><span class="nx">self</span><span class="p">,</span> <span class="nx">locals</span><span class="p">);</span>
+<span class="lineno">24</span>         <span class="p">}</span>
+<span class="lineno">25</span> 
+<span class="lineno">26</span>         <span class="k">return</span> <span class="nx">fn</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span> <span class="nx">args</span><span class="p">);</span>
+<span class="lineno">27</span>       <span class="p">}</span>
+<span class="lineno">28</span> 
+<span class="lineno">29</span>       <span class="k">return</span> <span class="nx">fn</span><span class="p">(</span><span class="nx">input</span><span class="p">);</span>
+<span class="lineno">30</span>     <span class="p">},</span> <span class="p">{</span>
+<span class="lineno">31</span>       <span class="nx">constant</span><span class="o">:</span> <span class="o">!</span><span class="nx">fn</span><span class="p">.</span><span class="nx">$stateful</span> <span class="o">&amp;&amp;</span> <span class="nx">inputs</span><span class="p">.</span><span class="nx">every</span><span class="p">(</span><span class="nx">isConstant</span><span class="p">),</span>
+<span class="lineno">32</span>       <span class="nx">inputs</span><span class="o">:</span> <span class="o">!</span><span class="nx">fn</span><span class="p">.</span><span class="nx">$stateful</span> <span class="o">&amp;&amp;</span> <span class="nx">inputs</span>
+<span class="lineno">33</span>     <span class="p">});</span>
+<span class="lineno">34</span>   <span class="p">},</span></code></pre></figure>
+
+<p>Sabendo que os filtros são apenas funções que transformam a entrada para uma saída solicitada. No entanto filtros precisam de uma injeção de dependências. Para isto uma definição de filtro é constituído por uma função factory (que já é fornecida internamente pelo AngularJS) com annotations de suas dependências e é aí que o <code>$filterProvider</code> se apresenta para nós a partir do método <code>$filterProvider.register()</code>.</p>
+
+<h2>BOAS PRÁTICAS</h2>
+
+<p>Existem vários style guides sobre isso, mas vale lembrar que todos estão andando lado a lado com a documentação do Angular e feedbacks baseados em sua utilização em projetos.</p>
+
+<p>Há pouco tempo foi abordado algo que funcionava, mas que não era o correto. Em uma das issues abertas no repositório do Github do AngularJS foi abordada um cenário no qual se utiliza o conceito de namespaces (pense no namespace do jQuery &quot;my.awesome.namespace&quot;). Este cenário era possível até a versão 1.3.2 do framework e além desta versão este formato não funcionava corretamente.</p>
+
+<p>Esta issue levantou uma discussão bastante interessante, que foi finalizada com algo que era correto, mas que não constava na documentação dos filtros que é a de que não se deve utilizar caracteres especiais na definição do nome do filtro. Caso queira acompanhar mais informações sobre a discussão <a href="https://github.com/angular/angular.js/issues/10110">vale a pena darem uma olhada na issue #10110 que aborda este tema</a>.</p>
+
+<p>Caso utilize um $filter com dependência de outros filters  ou utilize um filter com strategy pattern é simples também, já que você terá que testar todos os filters e o parâmetros. Um exemplo de um filter com strategy pattern é este de datas. Sabemos que o $filter já possui um filtro de datas por padrão, mas em um app com suporte a multilinguagens, você poderia usar o seguinte formato:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="lineno"> 1</span> <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;filters&#39;</span><span class="p">,</span> <span class="p">[])</span>
+<span class="lineno"> 2</span>     <span class="c1">// Chama os filtros</span>
+<span class="lineno"> 3</span>     <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="s1">&#39;strategyMoneyFilter&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$filter</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno"> 4</span>         <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">attribute</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno"> 5</span>             <span class="k">return</span> <span class="nx">$filter</span><span class="p">(</span><span class="s1">&#39;moneyFormat&#39;</span> <span class="o">+</span> <span class="p">(</span><span class="nx">attribute</span><span class="p">.</span><span class="nx">country</span><span class="p">.</span><span class="nx">toUpper</span><span class="p">()</span> <span class="o">||</span> <span class="s1">&#39;BR&#39;</span><span class="p">))(</span><span class="nx">attribute</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+<span class="lineno"> 6</span>         <span class="p">};</span>
+<span class="lineno"> 7</span>     <span class="p">})</span>
+<span class="lineno"> 8</span>     <span class="c1">// Formato brasileiro</span>
+<span class="lineno"> 9</span>     <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="s1">&#39;moneyFormatBR&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<span class="lineno">10</span>         <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">11</span>             <span class="c1">// trato e retorno o formato com base no país</span>
+<span class="lineno">12</span>         <span class="p">};</span>
+<span class="lineno">13</span>     <span class="p">})</span>
+<span class="lineno">14</span>     <span class="c1">// Formato estados unidos</span>
+<span class="lineno">15</span>     <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="s1">&#39;moneyFormatUS&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<span class="lineno">16</span>         <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">17</span>             <span class="c1">// trato e retorno o formato com base no país</span>
+<span class="lineno">18</span>         <span class="p">};</span>
+<span class="lineno">19</span>     <span class="p">})</span>
+<span class="lineno">20</span>     <span class="c1">// Formato Europeu</span>
+<span class="lineno">21</span>     <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="s1">&#39;moneyFormatEU&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<span class="lineno">22</span>         <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">23</span>             <span class="c1">// trato e retorno o formato com base no país</span>
+<span class="lineno">24</span>         <span class="p">};</span>
+<span class="lineno">25</span>     <span class="p">});</span></code></pre></figure>
+
+<p>Desta forma, somente com um parâmetro podemos utilizar o melhor de cada parâmetro e isto pode ser facilmente trabalhado no javascript, já que ao invés de if&#39;s o que definiria o formato de output do stream de dados é uma informação passada a seu filtro, informação esta que pode vir de uma base de dados, por exemplo!</p>
+
+<h2>PERFORMANCE</h2>
+
+<p>Outro aspecto bacana é o de performance no seu app. Mas não abordarei questões como não utilizarem o two-way data binding em elementos que não possuirão nenhum tipo de interação/alteração ou questões mais básicas como minimizarmos o binds/watches.</p>
+
+<p>O Filter pode ser utilizado em vários locais de sua aplicação, como Controllers, Services e até mesmo no próprio html. Porém devemos pensar bastante na melhor abordagem baseado em suas necessidades. Se a aplicação só vai possuir alguma interação com o $filter baseado em alguma interação do usuário (um click de botão, por exemplo) não existe o porque de deixarmos o filter em nosso template html. Poderíamos utilizar vinculado ao evento que é ativado na interação, por exemplo. Assim passaríamos os valores previamente tratados com o formato que esperamos e em qualquer interação na aplicação ele seria tratado somente em um ponto único da aplicação, sem falar que podemos utilizar uma melhor abordagem com abstrações de código para tal. O Angular trata a injeção de dependências de maneira transparente e devemos utilizá-lo da melhor forma possível.</p>
+
+<h2>TESTES</h2>
+
+<p>A questão de testes é importante em sua aplicação por &quot;N&quot; fatores. Não abordarei o porquê dos testes em sua aplicação, mas caso queira se aprofundar aconselho <a href="http://tdd.caelum.com.br/">o conteúdo produzido para a Caelum por Maurício Aniche, referência no Brasil quando se fala em Testes de Software</a>. Um formato de teste para filtros customizados é mostrado no <a href="https://docs.angularjs.org/tutorial/step_09">tutorial fornecido pelo site oficial do projeto</a>. Neste tutorial temos o seguinte exemplo e seu código de testes, respectivamente. Com base nele podemos ter um norte de como testar os nossos filtros.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="lineno">1</span> <span class="c1">// phonecatFilters.js</span>
+<span class="lineno">2</span> <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;phonecatFilters&#39;</span><span class="p">,</span> <span class="p">[]).</span><span class="nx">filter</span><span class="p">(</span><span class="s1">&#39;checkmark&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="lineno">3</span>   <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">input</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">4</span>     <span class="k">return</span> <span class="nx">input</span> <span class="o">?</span> <span class="s1">&#39;\u2713&#39;</span> <span class="o">:</span> <span class="s1">&#39;\u2718&#39;</span><span class="p">;</span>
+<span class="lineno">5</span>   <span class="p">};</span>
+<span class="lineno">6</span> <span class="p">});</span></code></pre></figure>
+
+<p>Com base no filtro customizado <code>phonecatFilter</code> previamente criado, agora vamos dar uma olhada no seu código de testes.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="lineno"> 1</span> <span class="c1">// phonecatFiltersTest.js</span>
+<span class="lineno"> 2</span> <span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;filter&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="lineno"> 3</span> 
+<span class="lineno"> 4</span>   <span class="nx">beforeEach</span><span class="p">(</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;phonecatFilters&#39;</span><span class="p">));</span>
+<span class="lineno"> 5</span> 
+<span class="lineno"> 6</span>   <span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;checkmark&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="lineno"> 7</span>     <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should convert boolean values to unicode checkmark or cross&#39;</span><span class="p">,</span> <span class="nx">inject</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">checkmarkFilter</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno"> 8</span>       <span class="nx">expect</span><span class="p">(</span><span class="nx">checkmarkFilter</span><span class="p">(</span><span class="kc">true</span><span class="p">)).</span><span class="nx">toBe</span><span class="p">(</span><span class="s1">&#39;\u2713&#39;</span><span class="p">);</span>
+<span class="lineno"> 9</span>       <span class="nx">expect</span><span class="p">(</span><span class="nx">checkmarkFilter</span><span class="p">(</span><span class="kc">false</span><span class="p">)).</span><span class="nx">toBe</span><span class="p">(</span><span class="s1">&#39;\u2718&#39;</span><span class="p">);</span>
+<span class="lineno">10</span>     <span class="p">}));</span>
+<span class="lineno">11</span>   <span class="p">});</span>
+<span class="lineno">12</span> <span class="p">});</span></code></pre></figure>
+
+<h2>CONCLUSÃO</h2>
+
+<p>Com isto finalizo este post sobre filtros. Aprendemos alguns aspectos bacanas sobre arquitetura, patterns, boas práticas e performance quando utilizamos o $filter em uma aplicação AngularJS.</p>
+
+<p>Espero que tenham gostado e que esta leitura tenha sido proveitosa para você. Vale lembrar que feedbacks são sempre bem vindos =)</p>
+
+<p>Abraço e até mais!</p>
+
+<p>Links:</p>
+
+<ul>
+<li>Proposta de estruturação das aplicações: <a href="https://github.com/yeoman/generator-angular/issues/109">https://github.com/yeoman/generator-angular/issues/109</a></li>
+<li>Pipe-and-filter pattern: <a href="http://webcem01.cem.itesm.mx:8005/apps/s200911/tc3003/notes_pipes_and_filters/">http://webcem01.cem.itesm.mx:8005/apps/s200911/tc3003/notes<em>pipes</em>and_filters/</a></li>
+<li>Building your own AngularJS: <a href="http://teropa.info/build-your-own-angular">http://teropa.info/build-your-own-angular</a></li>
+<li>Issue #10110 do AngularJS: <a href="https://github.com/angular/angular.js/issues/10110">https://github.com/angular/angular.js/issues/10110</a></li>
+<li>Documentação do MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators</a></li>
+<li>Testes: <a href="http://tdd.caelum.com.br/">http://tdd.caelum.com.br/</a></li>
+<li>Documentação <a href="https://docs.angularjs.org/tutorial/step_09">https://docs.angularjs.org/tutorial/step_09</a></li>
+<li>Smashing Magazine &quot;Designing Better JavaScript APIs&quot;: <a href="http://www.smashingmagazine.com/2012/10/09/designing-javascript-apis-usability/">http://www.smashingmagazine.com/2012/10/09/designing-javascript-apis-usability/</a></li>
+</ul>
+
+          </div>
+        </section>
+
+        
+          <section class="newsletter-content">
+    <form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=willmendesneto', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true;" >
+        <h3 class="newsletter-title">Receba novidades por e-mail</h3>
+        <p class="newsletter-text">Inscreva-se na minha newsletter para receber notificações de novos artigos no seu e-mail.</p>
+        <input class="input-newsletter" type="email" name="email" placeholder="Digite o seu email"/>
+        <input type="hidden" value="willmendesneto" name="uri"/>
+        <input type="hidden" name="loc" value="en_US"/>
+        <input class="btn btn-newsletter" type="submit" value="Assinar" />
+    </form>
+</section>
+
+        
+
+        <footer class="post-footer">
+
+          <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+  <a class="addthis_button_preferred_1"></a>
+  <a class="addthis_button_preferred_2"></a>
+  <a class="addthis_button_preferred_3"></a>
+  <a class="addthis_button_preferred_4"></a>
+  <a class="addthis_button_preferred_5"></a>
+</div>
+
+
+          <!-- <section class="share">
+            
+              
+                <a class="icon-twitter" href="http://twitter.com/share?text=AngularJS+Sobre+filter&amp;url=http://willmendesneto.github.io/2014/12/08/angular-js-sobre-filter"
+                  onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
+                <i class="fa fa-twitter"></i><span class="hidden">twitter</span>
+                </a>
+              
+            
+              
+                <a class="icon-facebook" href="//www.facebook.com/sharer.php?t=AngularJS+Sobre+filter&amp;u=http://willmendesneto.github.io/2014/12/08/angular-js-sobre-filter"
+                  onclick="window.open(this.href, 'facebook-share', 'width=550,height=255');return false;">
+                <i class="fa fa-facebook"></i><span class="hidden">facebook</span>
+                </a>
+              
+            
+              
+            
+              
+                <a class="icon-google-plus" href="https://plus.google.com/share?t=AngularJS+Sobre+filter&amp;url=http://willmendesneto.github.io/2014/12/08/angular-js-sobre-filter"
+                  onclick="window.open(this.href, 'google-plus-share', 'width=550,height=255');return false;">
+                <i class="fa fa-google-plus"></i><span class="hidden">google-plus</span>
+                </a>
+              
+            
+          </section> -->
+        </footer>
+        <div class="bottom-teaser cf">
+          <div class="isLeft">
+            <section class="author">
+              <div class="author-image" style="background-image: url(https://pt.gravatar.com/userimage/20307137/677413a79461cdfd62c8a65143214850.png?size=300)">Blog Logo</div>
+              <h4>Wilson Mendes</h4>
+              
+                <p class="bio">Google Developer Expert (GDE) AngularJS e Google Developer Group (GDG) Salvador Organizer. Músico e desenhista nas horas vagas.</p>
+              
+              <hr>
+              <p class="published">Publicado em <time datetime="2014-12-08 00:00">08 Dec 2014</time></p>
+            </section>
+            <footer class="site-footer">
+              <section class="poweredby">Mais um blog feito com <a href="http://jekyllrb.com">Jekyll</a></section>
+              <a class="subscribe" href="/feed.xml" target="_blank"> <span class="tooltip"> <i class="fa fa-rss"></i> Assine o feed.</span></a>
+            </footer>
+          </div>
+          
+        </div>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'willmendesnetogithubio'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+
+        'use strict';
+
+        function load() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+          // Remove o evento
+          window.onscroll = function() {};
+        }
+
+        window.onscroll = function() {
+          if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 2000)) {
+            load();
+          }
+        };
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </article>
+
+    </main>
+    <div class="bottom-closer">
+      <div class="background-closer-image"  style="background-image: url(/assets/images/background-1.jpg)">
+        Image
+      </div>
+      <div class="inner">
+        <h1 class="blog-title">Wilson Mendes - Blog</h1>
+        <h2 class="blog-description">This is my blog, where i talk about technologies</h2>
+        <a href="/" class="btn">Back to Home</a>
+      </div>
+    </div>
+
+    
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53c591e4471ce379" async="async"></script>
+
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="/assets/js/mini-preview.js"></script>
+<script type="text/javascript" src="/assets/js/index.js"></script>
+<script type="text/javascript" src="/assets/js/readingTime.min.js"></script>
+<script>
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-58169656-1', 'auto');
+ga('send', 'pageview');
+
+(function ($) {
+  "use strict";
+  $(document).ready(function(){
+
+    var $window = $(window),
+    $image = $('.post-image-image, .teaserimage-image');
+    $window.on('scroll', function() {
+      var top = $window.scrollTop();
+
+      if (top < 0 || top > 1500) { return; }
+      $image
+        .css('transform', 'translate3d(0px, '+top/3+'px, 0px)')
+        .css('opacity', 1-Math.max(top/700, 0));
+    });
+    $window.trigger('scroll');
+
+    var height = $('.article-image').height();
+    $('.post-content').css('padding-top', height + 'px');
+
+    $('a[href*=#]:not([href=#])').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+       && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html,body').animate({ scrollTop: target.offset().top }, 500);
+          return false;
+        }
+      }
+    });
+  });
+}(jQuery));
+</script>
+
+  </body>
+</html>

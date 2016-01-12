@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <!-- (1) Optimize for mobile versions: http://goo.gl/EOpFl -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- (1) force latest IE rendering engine: bit.ly/1c8EiC9 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Creating a single CRUD in a single AngularJS Controller</title>
+  <meta name="description" content="This is my blog, where i talk about technologies" />
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="canonical" href="http://willmendesneto.github.io/2014/10/28/creating-a-crud-in-a-single-angular-controller">
+
+  
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="cache-control" content="no-store, no-cache, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-store, no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE" />
+    <meta http-equiv="PRAGMA" content="NO-CACHE" />
+    <meta name="domain" content="willmendesneto.github.io" />
+    <meta name="url" content="/2014/10/28/creating-a-crud-in-a-single-angular-controller" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Creating a single CRUD in a single AngularJS Controller" />
+    <meta property="og:url" content="/2014/10/28/creating-a-crud-in-a-single-angular-controller" />
+    <meta property="og:description" content="" />
+    <meta property="article:author" content="" />
+    <meta property="og:site_name" content="Wilson Mendes - Blog" />
+    <meta property="og:image" content="https://pbs.twimg.com/profile_images/2149314222/square.png" />
+    <meta name="twitter:site" content="@willmendesneto" />
+    <meta name="twitter:image" content="https://pbs.twimg.com/profile_images/2149314222/square.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="autor" content="Wilson Mendes" />
+    <meta name="reply-to" content="willmendesneto@gmail.com">
+    <meta name="revisit-after" content="3" />
+    <meta name="title" content="Wilson Mendes - Blog">
+    <meta name="description" content="This is my blog, where i talk about technologies">
+    <meta name="keywords" content="["angularjs",, "javascript",, "crud",, "architecture",, "tools"]" />
+  
+
+  <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Pesquisa no Blog" />
+
+  <link rel="shortcut icon" href="/assets/images/favicon.ico">
+<!--  <link rel="stylesheet" href=""> -->
+  <!-- <link rel="stylesheet" href="http://brick.a.ssl.fastly.net/Linux+Libertine:400,400i,700,700i/Open+Sans:400,400i,700,700i"> -->
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700,800" rel="stylesheet" type="text/css">
+
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/main.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/mini-preview.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/solarized-dark.css" />
+  <link rel="stylesheet" type="text/css" media="print" href="/assets/css/print.css" />
+</head>
+
+  <body itemscope itemtype="http://schema.org/Article">
+    <!-- header start -->
+
+<!-- <a href="http://willmendesneto.github.io" class="logo-readium"><span class="logo" style="background-image: url()"></span></a> -->
+
+<!-- header end -->
+
+    <main class="content" role="main">
+      <article class="post">
+        
+        <div class="article-image">
+          <div class="post-image-image" style="background-image: url(https://pbs.twimg.com/profile_images/2149314222/square.png)">
+            Article Image
+          </div>
+          <div class="post-meta">
+            <h1 class="post-title">Creating a single CRUD in a single AngularJS Controller</h1>
+            <div class="cf post-meta-text">
+              <div class="author-image" style="background-image: url(https://pt.gravatar.com/userimage/20307137/677413a79461cdfd62c8a65143214850.png?size=300)">Blog Logo</div>
+              <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">Wilson Mendes</h4>
+              on
+              <time datetime="2014-10-28 00:00">28 Oct 2014</time>
+              <!-- , tagged on <span class="post-tag-">, <a href="/tag/"></a></span> -->
+            </div>
+            <div style="text-align:center">
+              <a href="#topofpage" class="topofpage"><i class="fa fa-angle-down"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <section class="post-content">
+
+          <a class="home-button"  href="/">&laquo; Home</a>
+          <div class="post-reading">
+            Lido a <span class="post-reading-time"></span>
+          </div>
+          <a name="topofpage"></a>
+          <div id="post-content-page">
+            <p><a class="page-link" href="/2014/07/27/criando-um-CRUD-em-um-unico-controller-com-angularjs/">Read the Brazillian Portuguese version</a></p>
+
+<h2>INTRODUCTION</h2>
+
+<p>For those already working with some backend languages ​​and can direct the actions of your route based on methods of controllers app knows how this can be interesting in some apps
+(I made a Pull Request for AngularJS for this feature was something standard in the Framework, if want to know more about or vote for it to be built, take a look at this link),
+but for now, no framework frontend (I know, of course) is something to this level by default.</p>
+
+<p>However most of the examples I see simple things many controllers are used for operations, since they are based on operations per page, as the [angular-phonecat, the official example
+that can be found on the official website of AngularJS.</p>
+
+<p>In this case mean that if I have three operations, I create three controllers, one for each page / view? No!
+<img src="http://i.imgur.com/dAnMWxQ.gif" alt="Life is beautiful!" title="Life is beautiful!"></p>
+
+<p>Our example is based on a simple contact list, as the list of contacts from your mobile phone, for example. A simple concept, but general knowledge. Too often we update the content of
+our contacts for various reasons and are doing something simple, but functional.</p>
+
+<p>Our contact will accept registration information:</p>
+
+<ul>
+<li>Id, only for our control;</li>
+<li>Name, and the name required</li>
+<li>Address, being optional</li>
+<li>Telephone, is obligatory;</li>
+</ul>
+
+<p>And we have the four operations:</p>
+
+<ul>
+<li>Create: Area to create a new contact; <code>new.html</code> file;</li>
+<li>Retrieve: will our list of contacts, with a simple search and the link to the other options like Edit, Add and Delete;</li>
+<li>Update: Area we update our contact data; edit.html file</li>
+<li>Delete: Option to exclude our contact; How is relatively simple, let us bound to our <code>index.html</code> file;</li>
+</ul>
+
+<p>For do our process more easy for our example, we use a database using LocalStorage, <a href="http://www.w3.org/TR/webstorage/">one of HTML5 WebStorage</a>. For this we will create a simple abstraction process.
+We use encryption in our LocalStorage from <a href="https://code.google.com/p/crypto-js/">CryptoJS library</a>.</p>
+
+<h2>BEGINNING UOUR APP</h2>
+
+<p>Ok, let&#39;s first create our main file:</p>
+
+<p><code>index.html</code>, which will be linked to our external files and will serve as the primary template for our application.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="c">&lt;!--[if lt IE 7]&gt;      &lt;html class=&quot;no-js lt-ie9 lt-ie8 lt-ie7&quot;&gt; &lt;![endif]--&gt;</span>
+<span class="c">&lt;!--[if IE 7]&gt;         &lt;html class=&quot;no-js lt-ie9 lt-ie8&quot;&gt; &lt;![endif]--&gt;</span>
+<span class="c">&lt;!--[if IE 8]&gt;         &lt;html class=&quot;no-js lt-ie9&quot;&gt; &lt;![endif]--&gt;</span>
+<span class="c">&lt;!--[if gt IE 8]&gt;&lt;!--&gt;</span> <span class="nt">&lt;html</span> <span class="na">class=</span><span class="s">&quot;no-js&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!--&lt;![endif]--&gt;</span>
+ <span class="nt">&lt;head&gt;</span>
+   <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content=</span><span class="s">&quot;IE=edge&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;title&gt;&lt;/title&gt;</span>
+   <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;description&quot;</span> <span class="na">content=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;script&gt;</span><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;&lt;base href=&quot;&#39;</span> <span class="o">+</span> <span class="nb">document</span><span class="p">.</span><span class="nx">location</span> <span class="o">+</span> <span class="s1">&#39;&quot; /&gt;&#39;</span><span class="p">);</span><span class="nt">&lt;/script&gt;</span>
+   <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width&quot;</span><span class="nt">&gt;</span>
+
+   <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;http://fonts.googleapis.com/css?family=Montserrat&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;http://fonts.googleapis.com/css?family=Quicksand:400,700&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;http://fonts.googleapis.com/css?family=Lato:300,400,700&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span><span class="nt">&gt;</span>
+
+   <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css&quot;</span><span class="nt">&gt;</span>
+
+   <span class="c">&lt;!-- Onde ficarao a nossa estilização --&gt;</span>
+   <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;main.css&quot;</span><span class="nt">&gt;</span>
+   <span class="c">&lt;!-- --&gt;</span>
+
+ <span class="nt">&lt;/head&gt;</span>
+ <span class="nt">&lt;body</span> <span class="na">ng-app=</span><span class="s">&quot;plunkerApp&quot;</span><span class="nt">&gt;</span>
+
+   <span class="c">&lt;!-- Add your site or application content here --&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;container&quot;</span> <span class="na">ng-view=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+   <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/tripledes.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+   <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+
+   <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;angular-route.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+   <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;https://rawgit.com/willmendesneto/keepr/master/dist/keepr.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+   <span class="c">&lt;!-- Onde ficarao as nossas rotas --&gt;</span>
+   <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;app.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+   <span class="c">&lt;!-- --&gt;</span>
+
+   <span class="c">&lt;!-- Onde ficarao os nossos controllers --&gt;</span>
+   <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;controllers.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+   <span class="c">&lt;!-- --&gt;</span>
+
+   <span class="c">&lt;!-- Onde ficarao as nossas diretivas --&gt;</span>
+   <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;directives.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+   <span class="c">&lt;!-- --&gt;</span>
+
+   <span class="c">&lt;!-- Onde ficarao os nossos serviços --&gt;</span>
+   <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;services.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+   <span class="c">&lt;!-- --&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></figure>
+
+<p><code>main.css</code>, which will be styling our app</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="o">[</span><span class="nt">ng</span><span class="err">\</span><span class="nd">:cloak</span><span class="o">],</span> <span class="o">[</span><span class="nt">ng-cloak</span><span class="o">],</span> <span class="o">[</span><span class="nt">data-ng-cloak</span><span class="o">],</span> <span class="o">[</span><span class="nt">x-ng-cloak</span><span class="o">],</span> <span class="nc">.ng-cloak</span><span class="o">,</span> <span class="nc">.x-ng-cloak</span> <span class="p">{</span>
+    <span class="k">display</span><span class="o">:</span> <span class="k">none</span> <span class="cp">!important</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">html</span><span class="o">,</span>
+<span class="nt">body</span> <span class="p">{</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="k">font-family</span><span class="o">:</span> <span class="s1">&#39;Quicksand&#39;</span><span class="o">,</span> <span class="s1">&#39;Helvetica Neue&#39;</span><span class="o">,</span><span class="n">Helvetica</span><span class="o">,</span><span class="n">Arial</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">16px</span><span class="p">;</span>
+  <span class="k">background</span><span class="o">:</span> <span class="m">#E7E7E7</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">html</span><span class="o">,</span>
+<span class="nt">body</span><span class="o">,</span>
+<span class="nt">legend</span> <span class="p">{</span>
+  <span class="k">color</span><span class="o">:</span> <span class="m">#666</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">iframe</span><span class="o">,</span> <span class="nt">object</span><span class="o">,</span> <span class="nt">embed</span> <span class="p">{</span>
+  <span class="k">max-width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">h1</span><span class="o">,</span>
+<span class="nt">h2</span><span class="o">,</span>
+<span class="nt">h3</span><span class="o">,</span>
+<span class="nt">h4</span><span class="o">,</span>
+<span class="nt">h5</span><span class="o">,</span>
+<span class="nt">h6</span> <span class="p">{</span>
+  <span class="k">font-family</span><span class="o">:</span> <span class="s1">&#39;Montserrat&#39;</span><span class="o">,</span> <span class="s1">&#39;Helvetica Neue&#39;</span><span class="o">,</span><span class="n">Helvetica</span><span class="o">,</span><span class="n">Arial</span><span class="o">,</span><span class="k">sans-serif</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="c">/* Everything but the jumbotron gets side spacing for mobile first views */</span>
+<span class="nc">.header</span> <span class="p">{</span>
+  <span class="k">padding-left</span><span class="o">:</span> <span class="m">15px</span><span class="p">;</span>
+  <span class="k">padding-right</span><span class="o">:</span> <span class="m">15px</span><span class="p">;</span>
+  <span class="k">padding-top</span><span class="o">:</span> <span class="m">15px</span><span class="p">;</span>
+  <span class="k">border-bottom</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#e5e5e5</span><span class="p">;</span>
+  <span class="k">background</span><span class="o">:</span> <span class="m">#FFF</span><span class="p">;</span>
+
+<span class="p">}</span>
+<span class="nc">.header</span> <span class="nt">h3</span> <span class="p">{</span>
+  <span class="k">margin-top</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">line-height</span><span class="o">:</span> <span class="m">40px</span><span class="p">;</span>
+  <span class="k">padding-bottom</span><span class="o">:</span> <span class="m">19px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.animate-show</span> <span class="p">{</span>
+  <span class="k">line-height</span><span class="o">:</span><span class="m">20px</span><span class="p">;</span>
+  <span class="k">opacity</span><span class="o">:</span><span class="m">1</span><span class="p">;</span>
+  <span class="k">padding</span><span class="o">:</span><span class="m">10px</span><span class="p">;</span>
+  <span class="k">border</span><span class="o">:</span><span class="m">1px</span> <span class="k">solid</span> <span class="nb">black</span><span class="p">;</span>
+  <span class="k">background</span><span class="o">:</span><span class="nb">white</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.animate-show.ng-hide-add.ng-hide-add-active</span><span class="o">,</span>
+<span class="nc">.animate-show.ng-hide-remove.ng-hide-remove-active</span> <span class="p">{</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">transition</span><span class="o">:</span><span class="n">all</span> <span class="n">linear</span> <span class="m">0.5s</span><span class="p">;</span>
+  <span class="n">transition</span><span class="o">:</span><span class="n">all</span> <span class="n">linear</span> <span class="m">0.5s</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.animate-show.ng-hide</span> <span class="p">{</span>
+  <span class="k">line-height</span><span class="o">:</span><span class="m">0</span><span class="p">;</span>
+  <span class="k">opacity</span><span class="o">:</span><span class="m">0</span><span class="p">;</span>
+  <span class="k">padding</span><span class="o">:</span><span class="m">0</span> <span class="m">10px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.btn</span><span class="o">,</span>
+<span class="nc">.form-control</span> <span class="p">{</span>
+  <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.btn</span> <span class="p">{</span>
+  <span class="k">font-size</span><span class="o">:</span><span class="m">10px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.btn-add-contact</span><span class="p">{</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">24px</span> <span class="cp">!important</span><span class="p">;</span>
+  <span class="k">text-transform</span><span class="o">:</span> <span class="k">uppercase</span><span class="p">;</span>
+  <span class="k">font-weight</span><span class="o">:</span> <span class="m">500</span><span class="p">;</span>
+  <span class="k">margin-top</span><span class="o">:</span> <span class="m">16px</span><span class="p">;</span>
+  <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">16px</span><span class="p">;</span>
+  <span class="k">outline</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">cursor</span><span class="o">:</span> <span class="k">pointer</span><span class="p">;</span>
+  <span class="k">letter-spacing</span><span class="o">:</span> <span class="m">1px</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">appearance</span><span class="o">:</span> <span class="n">button</span><span class="p">;</span>
+  <span class="k">cursor</span><span class="o">:</span> <span class="k">pointer</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.form-group</span><span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="s2">&quot;col-lg-&quot;</span><span class="o">]</span> <span class="p">{</span>
+  <span class="k">padding-left</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.no-padding-left</span><span class="o">,</span>
+<span class="nc">.form-group.no-padding-left</span><span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="s2">&quot;col-lg-&quot;</span><span class="o">]</span> <span class="p">{</span>
+  <span class="k">padding-left</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.no-padding-right</span><span class="o">,</span>
+<span class="nc">.form-group.no-padding-right</span><span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="s2">&quot;col-lg-&quot;</span><span class="o">]</span> <span class="p">{</span>
+  <span class="k">padding-right</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.table</span> <span class="o">&gt;</span> <span class="nt">thead</span> <span class="o">&gt;</span> <span class="nt">tr</span> <span class="o">&gt;</span> <span class="nt">th</span><span class="o">,</span>
+<span class="nc">.table</span> <span class="o">&gt;</span> <span class="nt">tbody</span> <span class="o">&gt;</span> <span class="nt">tr</span> <span class="o">&gt;</span> <span class="nt">td</span> <span class="p">{</span>
+  <span class="k">color</span><span class="o">:</span> <span class="m">#336077</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.btn-success</span> <span class="p">{</span>
+  <span class="k">background</span><span class="o">:</span> <span class="m">#23A658</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.btn-primary</span> <span class="p">{</span>
+  <span class="k">background</span><span class="o">:</span> <span class="m">#2DA0D4</span><span class="p">;</span>
+  <span class="k">color</span><span class="o">:</span> <span class="m">#FFF</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="nt">form</span><span class="nc">.contact-actions</span> <span class="p">{</span>
+  <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">2em</span><span class="p">;</span>
+  <span class="k">margin-top</span><span class="o">:</span> <span class="m">1em</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">form</span><span class="nc">.contact-actions</span> <span class="nt">legend</span> <span class="p">{</span>
+  <span class="k">color</span><span class="o">:</span> <span class="m">#2DA0D4</span><span class="p">;</span>
+  <span class="k">font-weight</span><span class="o">:</span> <span class="m">700</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">form</span><span class="nc">.contact-actions</span> <span class="nt">a</span><span class="o">,</span>
+<span class="nt">form</span><span class="nc">.contact-actions</span> <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;color&quot;</span><span class="o">],</span>
+<span class="nt">form</span><span class="nc">.contact-actions</span> <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;email&quot;</span><span class="o">],</span>
+<span class="nt">form</span><span class="nc">.contact-actions</span> <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;password&quot;</span><span class="o">],</span>
+<span class="nt">form</span><span class="nc">.contact-actions</span> <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;search&quot;</span><span class="o">],</span>
+<span class="nt">form</span><span class="nc">.contact-actions</span> <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;tel&quot;</span><span class="o">],</span>
+<span class="nt">form</span><span class="nc">.contact-actions</span> <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="o">],</span>
+<span class="nt">form</span><span class="nc">.contact-actions</span> <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;url&quot;</span><span class="o">],</span>
+<span class="nt">form</span><span class="nc">.contact-actions</span> <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="o">],</span>
+<span class="nt">form</span><span class="nc">.contact-actions</span> <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;date&quot;</span><span class="o">],</span>
+<span class="nt">form</span><span class="nc">.contact-actions</span> <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="o">],</span>
+<span class="nt">form</span><span class="nc">.contact-actions</span> <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;datetime&quot;</span><span class="o">],</span>
+<span class="nt">form</span><span class="nc">.contact-actions</span> <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;datetime-local&quot;</span><span class="o">],</span>
+<span class="nt">form</span><span class="nc">.contact-actions</span> <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;week&quot;</span><span class="o">],</span>
+<span class="nt">form</span><span class="nc">.contact-actions</span> <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;month&quot;</span><span class="o">]</span> <span class="p">{</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">padding</span><span class="o">:</span> <span class="m">5px</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="k">background</span><span class="o">:</span> <span class="m">#F8F8F8</span><span class="p">;</span>
+  <span class="k">border</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">border-bottom</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#CCC</span><span class="p">;</span>
+  <span class="k">outline</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">font-style</span><span class="o">:</span> <span class="k">italic</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">12px</span><span class="p">;</span>
+  <span class="k">font-weight</span><span class="o">:</span> <span class="m">400</span><span class="p">;</span>
+  <span class="k">letter-spacing</span><span class="o">:</span> <span class="m">1px</span><span class="p">;</span>
+  <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+  <span class="k">color</span><span class="o">:</span> <span class="m">#5E5E5E</span><span class="p">;</span>
+  <span class="k">outline</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">form</span><span class="nc">.contact-actions</span> <span class="nt">a</span><span class="p">{</span>
+  <span class="k">background</span><span class="o">:</span> <span class="m">#E92429</span><span class="p">;</span>
+  <span class="k">color</span><span class="o">:</span> <span class="m">#FFF</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">form</span><span class="nc">.contact-actions</span> <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;date&quot;</span><span class="o">]:</span><span class="nd">:-webkit-inner-spin-button</span> <span class="p">{</span>
+    <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">appearance</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+    <span class="k">display</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="nt">form</span><span class="nc">.contact-actions</span> <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;date&quot;</span><span class="o">]:</span><span class="nd">:-moz-inner-spin-button</span> <span class="p">{</span>
+  <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">appearance</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+  <span class="k">display</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">form</span><span class="nc">.contact-actions</span> <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;date&quot;</span><span class="o">]:</span><span class="nd">:-o-inner-spin-button</span> <span class="p">{</span>
+  <span class="o">-</span><span class="n">o</span><span class="o">-</span><span class="n">appearance</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+  <span class="k">display</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">form</span><span class="nc">.contact-actions</span> <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;date&quot;</span><span class="o">]:</span><span class="nd">:-ms-inner-spin-button</span> <span class="p">{</span>
+  <span class="o">-</span><span class="n">ms</span><span class="o">-</span><span class="n">appearance</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+  <span class="k">display</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">form</span><span class="nc">.contact-actions</span> <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;date&quot;</span><span class="o">]:</span><span class="nd">:inner-spin-button</span> <span class="p">{</span>
+  <span class="n">appearance</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+  <span class="k">display</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">form</span><span class="nc">.contact-actions</span> <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;submit&quot;</span><span class="o">],</span> <span class="nt">a</span> <span class="p">{</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">24px</span> <span class="cp">!important</span><span class="p">;</span>
+  <span class="k">text-transform</span><span class="o">:</span> <span class="k">uppercase</span><span class="p">;</span>
+  <span class="k">font-weight</span><span class="o">:</span> <span class="m">500</span><span class="p">;</span>
+  <span class="k">margin-top</span><span class="o">:</span> <span class="m">16px</span><span class="p">;</span>
+  <span class="k">outline</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">cursor</span><span class="o">:</span> <span class="k">pointer</span><span class="p">;</span>
+  <span class="k">letter-spacing</span><span class="o">:</span> <span class="m">1px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">form</span><span class="nc">.contact-actions</span> <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;submit&quot;</span><span class="o">]</span><span class="nd">:hover</span><span class="o">,</span> <span class="nt">a</span><span class="nd">:hover</span> <span class="p">{</span>
+  <span class="n">transition</span><span class="o">:</span> <span class="k">background-color</span> <span class="m">0.5s</span> <span class="n">ease</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">form</span><span class="nc">.contact-actions</span> <span class="nt">label</span><span class="o">,</span> <span class="nt">form</span><span class="nc">.contact-actions</span> <span class="nt">a</span> <span class="p">{</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">12px</span><span class="p">;</span>
+  <span class="k">font-weight</span><span class="o">:</span> <span class="m">400</span><span class="p">;</span>
+  <span class="k">color</span><span class="o">:</span> <span class="m">#FFFFFF</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="nc">.btn-outline</span><span class="o">,</span> <span class="nt">a</span><span class="nc">.btn-outline</span> <span class="p">{</span>
+  <span class="k">color</span><span class="o">:</span> <span class="m">#FFF</span><span class="p">;</span>
+  <span class="n">transition</span><span class="o">:</span> <span class="n">all</span> <span class="m">.5s</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.btn-outline</span> <span class="nc">.btn-primary</span><span class="nd">:hover</span><span class="o">,</span> <span class="nt">a</span><span class="nc">.btn-outline</span> <span class="nc">.btn-primary</span><span class="nd">:hover</span> <span class="p">{</span>
+  <span class="k">color</span><span class="o">:</span> <span class="m">#428bca</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.btn-outline.btn-success</span><span class="nd">:hover</span><span class="o">,</span> <span class="nt">a</span><span class="nc">.btn-outline.btn-success</span><span class="nd">:hover</span> <span class="p">{</span>
+  <span class="k">color</span><span class="o">:</span> <span class="m">#5cb85c</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.btn-outline.btn-info</span><span class="nd">:hover</span><span class="o">,</span> <span class="nt">a</span><span class="nc">.btn-outline.btn-info</span><span class="nd">:hover</span> <span class="p">{</span>
+  <span class="k">color</span><span class="o">:</span> <span class="m">#5bc0de</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.btn-outline.btn-warning</span><span class="nd">:hover</span><span class="o">,</span> <span class="nt">a</span><span class="nc">.btn-outline.btn-warning</span><span class="nd">:hover</span> <span class="p">{</span>
+  <span class="k">color</span><span class="o">:</span> <span class="m">#f0ad4e</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.btn-outline.btn-danger</span><span class="nd">:hover</span><span class="o">,</span> <span class="nt">a</span><span class="nc">.btn-outline.btn-danger</span><span class="nd">:hover</span> <span class="p">{</span>
+  <span class="k">color</span><span class="o">:</span> <span class="m">#d9534f</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.btn-outline.btn-primary</span><span class="nd">:hover</span><span class="o">,</span> <span class="nt">a</span><span class="nc">.btn-outline.btn-primary</span><span class="nd">:hover</span><span class="o">,</span>
+<span class="nc">.btn-outline.btn-success</span><span class="nd">:hover</span><span class="o">,</span> <span class="nt">a</span><span class="nc">.btn-outline.btn-success</span><span class="nd">:hover</span><span class="o">,</span>
+<span class="nc">.btn-outline.btn-info</span><span class="nd">:hover</span><span class="o">,</span> <span class="nt">a</span><span class="nc">.btn-outline.btn-info</span><span class="nd">:hover</span><span class="o">,</span>
+<span class="nc">.btn-outline.btn-warning</span><span class="nd">:hover</span><span class="o">,</span> <span class="nt">a</span><span class="nc">.btn-outline.btn-warning</span><span class="nd">:hover</span><span class="o">,</span>
+<span class="nc">.btn-outline.btn-danger</span><span class="nd">:hover</span><span class="o">,</span> <span class="nt">a</span><span class="nc">.btn-outline.btn-danger</span><span class="nd">:hover</span> <span class="p">{</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="k">transparent</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.contact-list</span> <span class="p">{</span>
+  <span class="k">list-style</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+  <span class="k">font-family</span><span class="o">:</span> <span class="s1">&#39;Lato&#39;</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="m">0px</span><span class="p">;</span>
+  <span class="k">padding</span><span class="o">:</span> <span class="m">0px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.contact-list</span> <span class="o">&gt;</span> <span class="nt">li</span> <span class="p">{</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="k">rgb</span><span class="p">(</span><span class="m">255</span><span class="o">,</span> <span class="m">255</span><span class="o">,</span> <span class="m">255</span><span class="p">);</span>
+  <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="m">0px</span> <span class="m">0px</span> <span class="m">5px</span> <span class="k">rgb</span><span class="p">(</span><span class="m">51</span><span class="o">,</span> <span class="m">51</span><span class="o">,</span> <span class="m">51</span><span class="p">);</span>
+  <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="m">0px</span> <span class="m">0px</span> <span class="m">5px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">51</span><span class="o">,</span> <span class="m">51</span><span class="o">,</span> <span class="m">51</span><span class="o">,</span> <span class="m">0</span><span class="o">.</span><span class="m">7</span><span class="p">);</span>
+  <span class="k">padding</span><span class="o">:</span> <span class="m">0px</span><span class="p">;</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="m">0px</span> <span class="m">0px</span> <span class="m">20px</span><span class="p">;</span>
+  <span class="k">position</span><span class="o">:</span> <span class="k">relative</span><span class="p">;</span>
+  <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">125px</span><span class="p">;</span>
+  <span class="k">padding</span><span class="o">:</span> <span class="m">0px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.contact-list</span> <span class="o">&gt;</span> <span class="nt">li</span> <span class="o">&gt;</span> <span class="nc">.first-letter</span> <span class="p">{</span>
+  <span class="k">display</span><span class="o">:</span> <span class="k">inline</span><span class="o">-</span><span class="k">block</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="k">color</span><span class="o">:</span> <span class="k">rgb</span><span class="p">(</span><span class="m">255</span><span class="o">,</span> <span class="m">255</span><span class="o">,</span> <span class="m">255</span><span class="p">);</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="k">rgb</span><span class="p">(</span><span class="m">197</span><span class="o">,</span> <span class="m">44</span><span class="o">,</span> <span class="m">102</span><span class="p">);</span>
+  <span class="k">padding</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+  <span class="k">text-align</span><span class="o">:</span> <span class="k">center</span><span class="p">;</span>
+  <span class="k">text-transform</span><span class="o">:</span> <span class="k">uppercase</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.contact-list</span> <span class="o">&gt;</span> <span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">even</span><span class="o">)</span> <span class="o">&gt;</span> <span class="nc">.first-letter</span> <span class="p">{</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="k">rgb</span><span class="p">(</span><span class="m">165</span><span class="o">,</span> <span class="m">82</span><span class="o">,</span> <span class="m">167</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nc">.contact-list</span> <span class="o">&gt;</span> <span class="nt">li</span> <span class="o">&gt;</span> <span class="nc">.first-letter</span> <span class="o">&gt;</span> <span class="nt">span</span> <span class="p">{</span>
+  <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="k">font-weight</span><span class="o">:</span> <span class="m">100</span><span class="p">;</span>
+  <span class="k">line-height</span><span class="o">:</span> <span class="m">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.contact-list</span> <span class="o">&gt;</span> <span class="nt">li</span> <span class="o">&gt;</span> <span class="nt">img</span> <span class="p">{</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.contact-list</span> <span class="o">&gt;</span> <span class="nt">li</span> <span class="o">&gt;</span> <span class="nc">.info</span> <span class="p">{</span>
+  <span class="k">padding-top</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+  <span class="k">text-align</span><span class="o">:</span> <span class="k">center</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="k">rgb</span><span class="p">(</span><span class="m">245</span><span class="o">,</span> <span class="m">245</span><span class="o">,</span> <span class="m">245</span><span class="p">);</span>
+  <span class="k">overflow</span><span class="o">:</span> <span class="k">hidden</span><span class="p">;</span>
+  <span class="k">position</span><span class="o">:</span> <span class="k">relative</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">125px</span><span class="p">;</span>
+  <span class="k">text-align</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.contact-list</span> <span class="o">&gt;</span> <span class="nt">li</span> <span class="o">&gt;</span> <span class="nc">.info</span> <span class="o">&gt;</span> <span class="nc">.title</span> <span class="p">{</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">17pt</span><span class="p">;</span>
+  <span class="k">font-weight</span><span class="o">:</span> <span class="m">300</span><span class="p">;</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="m">0px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.contact-list</span> <span class="o">&gt;</span> <span class="nt">li</span> <span class="o">&gt;</span> <span class="nc">.info</span> <span class="o">&gt;</span> <span class="nc">.desc</span> <span class="p">{</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">13pt</span><span class="p">;</span>
+  <span class="k">font-weight</span><span class="o">:</span> <span class="m">300</span><span class="p">;</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="m">0px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.contact-list</span> <span class="o">&gt;</span> <span class="nt">li</span> <span class="o">&gt;</span> <span class="nc">.info</span> <span class="o">&gt;</span> <span class="nt">ul</span><span class="p">{</span>
+<span class="k">display</span><span class="o">:</span> <span class="n">table</span><span class="p">;</span>
+  <span class="k">list-style</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="m">10px</span> <span class="m">0px</span> <span class="m">0px</span><span class="p">;</span>
+  <span class="k">padding</span><span class="o">:</span> <span class="m">0px</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="k">text-align</span><span class="o">:</span> <span class="k">center</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.contact-list</span> <span class="o">&gt;</span> <span class="nt">li</span> <span class="o">&gt;</span> <span class="nc">.info</span> <span class="o">&gt;</span> <span class="nt">ul</span> <span class="o">&gt;</span> <span class="nt">li</span><span class="p">{</span>
+  <span class="k">display</span><span class="o">:</span> <span class="k">table-cell</span><span class="p">;</span>
+  <span class="k">cursor</span><span class="o">:</span> <span class="k">pointer</span><span class="p">;</span>
+  <span class="k">color</span><span class="o">:</span> <span class="k">rgb</span><span class="p">(</span><span class="m">30</span><span class="o">,</span> <span class="m">30</span><span class="o">,</span> <span class="m">30</span><span class="p">);</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">11pt</span><span class="p">;</span>
+  <span class="k">font-weight</span><span class="o">:</span> <span class="m">300</span><span class="p">;</span>
+  <span class="k">padding</span><span class="o">:</span> <span class="m">3px</span> <span class="m">0px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.contact-list</span> <span class="o">&gt;</span> <span class="nt">li</span> <span class="o">&gt;</span> <span class="nc">.info</span> <span class="o">&gt;</span> <span class="nt">ul</span> <span class="o">&gt;</span> <span class="nt">li</span> <span class="o">&gt;</span> <span class="nt">a</span> <span class="p">{</span>
+  <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="k">color</span><span class="o">:</span> <span class="k">rgb</span><span class="p">(</span><span class="m">30</span><span class="o">,</span> <span class="m">30</span><span class="o">,</span> <span class="m">30</span><span class="p">);</span>
+  <span class="k">text-decoration</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.contact-list</span> <span class="o">&gt;</span> <span class="nt">li</span> <span class="o">&gt;</span> <span class="nc">.info</span> <span class="o">&gt;</span> <span class="nt">ul</span> <span class="o">&gt;</span> <span class="nt">li</span><span class="nd">:hover</span><span class="p">{</span>
+  <span class="k">color</span><span class="o">:</span> <span class="k">rgb</span><span class="p">(</span><span class="m">30</span><span class="o">,</span> <span class="m">30</span><span class="o">,</span> <span class="m">30</span><span class="p">);</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="k">rgb</span><span class="p">(</span><span class="m">200</span><span class="o">,</span> <span class="m">200</span><span class="o">,</span> <span class="m">200</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nc">.contact-list</span> <span class="o">&gt;</span> <span class="nt">li</span> <span class="o">&gt;</span> <span class="nc">.first-letter</span><span class="o">,</span>
+<span class="nc">.contact-list</span> <span class="o">&gt;</span> <span class="nt">li</span> <span class="o">&gt;</span> <span class="nt">img</span> <span class="p">{</span>
+  <span class="k">display</span><span class="o">:</span> <span class="k">inline</span><span class="o">-</span><span class="k">block</span><span class="p">;</span>
+  <span class="k">float</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">125px</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">125px</span><span class="p">;</span>
+  <span class="k">padding</span><span class="o">:</span> <span class="m">0px</span><span class="p">;</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="m">0px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.contact-list</span> <span class="o">&gt;</span> <span class="nt">li</span> <span class="o">&gt;</span> <span class="nc">.info</span> <span class="o">&gt;</span> <span class="nc">.title</span><span class="o">,</span>
+<span class="nc">.contact-list</span> <span class="o">&gt;</span> <span class="nt">li</span> <span class="o">&gt;</span> <span class="nc">.info</span> <span class="o">&gt;</span> <span class="nc">.desc</span> <span class="p">{</span>
+  <span class="k">padding</span><span class="o">:</span> <span class="m">0px</span> <span class="m">10px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.contact-list</span> <span class="o">&gt;</span> <span class="nt">li</span> <span class="o">&gt;</span> <span class="nc">.info</span> <span class="o">&gt;</span> <span class="nt">ul</span> <span class="p">{</span>
+  <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+  <span class="k">left</span><span class="o">:</span> <span class="m">0px</span><span class="p">;</span>
+  <span class="k">bottom</span><span class="o">:</span> <span class="m">0px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.main-content</span> <span class="p">{</span>
+  <span class="k">padding-top</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span>
+  <span class="k">padding-bottom</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span>
+  <span class="k">background</span><span class="o">:</span> <span class="m">#FFF</span><span class="p">;</span>
+  <span class="k">margin-top</span><span class="o">:</span> <span class="m">15px</span><span class="p">;</span>
+  <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">15px</span><span class="p">;</span>
+  <span class="k">border</span><span class="o">:</span><span class="m">1px</span> <span class="k">solid</span> <span class="m">#ccc</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.bg-blue</span> <span class="p">{</span>
+  <span class="k">background</span><span class="o">:</span> <span class="m">#2DA0D4</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Responsive: Portrait tablets and up */</span>
+<span class="k">@media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="nt">768px</span><span class="o">)</span> <span class="p">{</span>
+  <span class="nc">.container</span> <span class="p">{</span>
+    <span class="k">max-width</span><span class="o">:</span> <span class="m">730px</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Our application has some external dependencies:</p>
+
+<ul>
+<li>angular-route.js: Files for angularJS. From this module we can configure our routes, which views, controllers and pass parameters to the controller;</li>
+<li>crypto-js / tripledes.js: one of the encryption algorithms design crypto-js. Will be used to obfuscate our LocalStorage with information from our contacts;</li>
+<li>angular-keepr: A list of directives, filters and services / factories used in our app to facilitate the process;
+Let&#39;s first create our routes in <code>app.js</code> file:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+
+<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;plunkerApp&#39;</span><span class="p">,</span> <span class="p">[</span>
+ <span class="s1">&#39;ngRoute&#39;</span><span class="p">,</span> <span class="c1">// Incluindo o módulo `angular-route.js` no nosso app</span>
+ <span class="s1">&#39;keepr&#39;</span> <span class="c1">// Incluindo o módulo `angular-keepr.js` no nosso app</span>
+<span class="p">])</span>
+ <span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">$routeProvider</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">$routeProvider</span>
+     <span class="c1">// Rota padrão do nosso app; Enviará o usuário para a lista de contatos</span>
+     <span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="p">{</span>
+       <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;list.html&#39;</span><span class="p">,</span>
+       <span class="nx">controller</span><span class="o">:</span> <span class="s1">&#39;ContactsCtrl&#39;</span>
+     <span class="p">})</span>
+     <span class="c1">// Rota padrão do nosso app; Enviará o usuário para a lista de contatos</span>
+     <span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="s1">&#39;/contacts&#39;</span><span class="p">,</span> <span class="p">{</span>
+       <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;list.html&#39;</span><span class="p">,</span>
+       <span class="nx">controller</span><span class="o">:</span> <span class="s1">&#39;ContactsCtrl&#39;</span>
+     <span class="p">})</span>
+     <span class="c1">// Rota para criação de um novo contato</span>
+     <span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="s1">&#39;/contacts/new&#39;</span><span class="p">,</span> <span class="p">{</span>
+       <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;new.html&#39;</span><span class="p">,</span>
+       <span class="nx">controller</span><span class="o">:</span> <span class="s1">&#39;ContactsCtrl&#39;</span>
+     <span class="p">})</span>
+     <span class="c1">// Rota para a edição de um contato existente</span>
+     <span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="s1">&#39;/contacts/:id/edit&#39;</span><span class="p">,</span> <span class="p">{</span>
+       <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;edit.html&#39;</span><span class="p">,</span>
+       <span class="nx">controller</span><span class="o">:</span> <span class="s1">&#39;ContactsCtrl&#39;</span><span class="p">,</span>
+       <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;edit&#39;</span>
+     <span class="p">})</span>
+     <span class="c1">// Redirecionamento, caso o usuário tente acessar uma rota não cadastrada</span>
+     <span class="p">.</span><span class="nx">otherwise</span><span class="p">({</span>
+       <span class="nx">redirectTo</span><span class="o">:</span> <span class="s1">&#39;/&#39;</span>
+     <span class="p">});</span>
+ <span class="p">});</span></code></pre></figure>
+
+<h3>CREATING THE SERVICES</h3>
+
+<p>With routes created for our app, we now create our first service. Call him OfflineModel. This service will have some parameters:</p>
+
+<ul>
+<li><code>_key</code>: key parameter passed to the localStorage. Remember, the LocalStorage is a bank based on key-value;</li>
+<li><code>_items</code>: list with the information contained in the service;</li>
+<li><code>_fields</code>: fields to be scanned to create a <a href="http://en.wikipedia.org/wiki/Value_object">ValueObject</a> to our list of items;</li>
+</ul>
+
+<p>This service uses Keepr <code>CryptoOffline</code> service, which deals directly with the Crypto and encrypts/decrypts informations into our app. For us it is not interesting to further understand this procedure for now, but if you want to know more about how this process is, [you can take a look at Keepr project on Github][angular-keepr].</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+
+<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;plunkerApp&#39;</span><span class="p">)</span>
+ <span class="p">.</span><span class="nx">factory</span><span class="p">(</span><span class="s1">&#39;OfflineModel&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">OfflineModel</span><span class="p">(</span><span class="nx">$filter</span><span class="p">,</span> <span class="nx">CryptoOfflineStorageService</span><span class="p">)</span> <span class="p">{</span>
+
+   <span class="c1">// Service logic</span>
+   <span class="c1">// ...</span>
+
+   <span class="kd">var</span> <span class="nx">_key</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span>
+       <span class="nx">_items</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span>
+       <span class="nx">_fields</span> <span class="o">=</span> <span class="kc">null</span>
+   <span class="p">;</span>
+
+   <span class="c1">// Public API here</span>
+   <span class="k">return</span> <span class="p">{</span>
+     <span class="nx">_secret</span><span class="o">:</span> <span class="s1">&#39;my-awesome-key&#39;</span><span class="p">,</span>
+     <span class="nx">init</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">_items</span><span class="p">,</span> <span class="nx">params</span><span class="p">)</span> <span class="p">{</span>
+
+       <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+       <span class="nx">_key</span> <span class="o">=</span> <span class="nx">key</span><span class="p">;</span>
+       <span class="nx">params</span> <span class="o">=</span> <span class="nx">params</span> <span class="o">||</span> <span class="p">{};</span>
+       <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">_items</span><span class="p">;</span>
+
+       <span class="nx">CryptoOfflineStorageService</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span><span class="nx">secret</span><span class="o">:</span> <span class="nx">self</span><span class="p">.</span><span class="nx">_secret</span><span class="p">});</span>
+       <span class="nx">_items</span> <span class="o">=</span> <span class="nx">CryptoOfflineStorageService</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">_key</span><span class="p">);</span>
+       <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">_items</span><span class="p">){</span>
+         <span class="nx">CryptoOfflineStorageService</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">_key</span><span class="p">,</span> <span class="nx">_items</span><span class="p">);</span>
+         <span class="nx">_items</span> <span class="o">=</span> <span class="nx">i</span><span class="p">;</span>
+       <span class="p">}</span>
+       <span class="nx">self</span><span class="p">.</span><span class="nx">setListItems</span><span class="p">(</span><span class="nx">_items</span><span class="p">,</span> <span class="nx">params</span><span class="p">);</span>
+
+       <span class="c1">//  Extend params for create a factory in service</span>
+       <span class="k">return</span> <span class="nx">angular</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">self</span><span class="p">,</span> <span class="nx">params</span><span class="p">);</span>
+     <span class="p">},</span>
+     <span class="nx">createValueObject</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+       <span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
+       <span class="nx">angular</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span> <span class="nx">_fields</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">field</span> <span class="p">)</span> <span class="p">{</span>
+         <span class="nx">obj</span><span class="p">[</span><span class="nx">field</span><span class="p">]</span> <span class="o">=</span> <span class="nx">item</span><span class="p">[</span><span class="nx">field</span><span class="p">]</span> <span class="o">||</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+       <span class="p">});</span>
+       <span class="k">return</span> <span class="nx">obj</span><span class="p">;</span>
+     <span class="p">},</span>
+     <span class="nx">setKey</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">key</span><span class="p">){</span>
+       <span class="nx">_key</span> <span class="o">=</span> <span class="nx">key</span><span class="p">;</span>
+       <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+     <span class="p">},</span>
+     <span class="nx">getKey</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+       <span class="k">return</span> <span class="nx">_key</span><span class="p">;</span>
+     <span class="p">},</span>
+     <span class="nx">setListItems</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">items</span><span class="p">){</span>
+       <span class="nx">_items</span> <span class="o">=</span> <span class="nx">items</span><span class="p">;</span>
+       <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+     <span class="p">},</span>
+     <span class="nx">getListItems</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+       <span class="k">return</span> <span class="nx">_items</span><span class="p">;</span>
+     <span class="p">},</span>
+     <span class="nx">setFields</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">fields</span><span class="p">){</span>
+       <span class="nx">_fields</span> <span class="o">=</span> <span class="nx">fields</span><span class="p">;</span>
+       <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+     <span class="p">},</span>
+     <span class="nx">countTotalItems</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">items</span><span class="p">)</span> <span class="p">{</span>
+       <span class="k">return</span> <span class="p">(</span><span class="nx">$filter</span><span class="p">(</span><span class="s1">&#39;max&#39;</span><span class="p">)(</span><span class="nx">items</span><span class="p">,</span> <span class="s1">&#39;_id&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+     <span class="p">},</span>
+     <span class="nx">create</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+       <span class="nx">item</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">createValueObject</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
+       <span class="nx">item</span><span class="p">.</span><span class="nx">_id</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">countTotalItems</span><span class="p">(</span><span class="nx">_items</span><span class="p">);</span>
+       <span class="nx">_items</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
+       <span class="nx">CryptoOfflineStorageService</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">_key</span><span class="p">,</span> <span class="nx">_items</span><span class="p">);</span>
+       <span class="k">return</span> <span class="nx">_items</span><span class="p">;</span>
+     <span class="p">},</span>
+     <span class="nx">update</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+       <span class="nx">_items</span> <span class="o">=</span> <span class="nx">_items</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">if</span> <span class="p">(</span> <span class="nx">element</span><span class="p">.</span><span class="nx">_id</span> <span class="o">===</span> <span class="nx">item</span><span class="p">.</span><span class="nx">_id</span><span class="p">){</span>
+           <span class="nx">element</span> <span class="o">=</span> <span class="nx">item</span><span class="p">;</span>
+         <span class="p">}</span>
+         <span class="k">return</span> <span class="nx">element</span><span class="p">;</span>
+       <span class="p">});</span>
+       <span class="nx">CryptoOfflineStorageService</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">_key</span><span class="p">,</span> <span class="nx">_items</span><span class="p">);</span>
+       <span class="k">return</span> <span class="nx">_items</span><span class="p">;</span>
+     <span class="p">},</span>
+     <span class="k">delete</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
+       <span class="kd">var</span> <span class="nx">db</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getListItems</span><span class="p">();</span>
+       <span class="kd">var</span> <span class="nx">_id</span> <span class="o">=</span> <span class="nx">db</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">pos</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">if</span> <span class="p">(</span> <span class="nx">element</span><span class="p">.</span><span class="nx">_id</span> <span class="o">===</span> <span class="nx">index</span><span class="p">){</span>
+           <span class="nx">element</span><span class="p">.</span><span class="nx">pos</span> <span class="o">=</span> <span class="nx">pos</span><span class="p">;</span>
+           <span class="k">return</span> <span class="nx">element</span><span class="p">;</span>
+         <span class="p">}</span>
+       <span class="p">});</span>
+
+       <span class="k">if</span> <span class="p">(</span><span class="nx">_id</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+         <span class="kd">var</span> <span class="nx">item</span> <span class="o">=</span> <span class="nx">db</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">_id</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">pos</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+         <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">===</span>  <span class="s1">&#39;object&#39;</span><span class="p">)</span> <span class="p">{</span>
+           <span class="k">this</span><span class="p">.</span><span class="nx">setListItems</span><span class="p">(</span><span class="nx">db</span><span class="p">);</span>
+           <span class="nx">CryptoOfflineStorageService</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">_key</span><span class="p">,</span> <span class="nx">db</span><span class="p">);</span>
+           <span class="k">return</span> <span class="nx">item</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+         <span class="p">}</span>
+       <span class="p">}</span>
+       <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+     <span class="p">}</span>
+   <span class="p">};</span>
+
+ <span class="p">});</span></code></pre></figure>
+
+<p>In this service we can highlight some methods:</p>
+
+<ul>
+<li>init: OfflineModel Instantiates a new object, passing parameters to the others who have injected via <a href="http://www.oodesign.com/composite-pattern.html">composition pattern</a>;</li>
+<li>createValueObject: Creates a <a href="http://en.wikipedia.org/wiki/Value_object">ValueObject</a>, catching only the information that was entered into the field _Fields and discarding the other;</li>
+<li>create: Creates an item;</li>
+<li>update: Edits the item based on the new specifications;</li>
+<li>delete: Remove a specific item;</li>
+</ul>
+
+<p>For our example has some initial information, we will create a <code>angular.value()</code> with some contacts.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/**</span>
+<span class="cm">* Initial listContacts list</span>
+<span class="cm">*</span>
+<span class="cm">* @type {Array}</span>
+<span class="cm">*/</span>
+<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;plunkerApp&#39;</span><span class="p">)</span>
+ <span class="p">.</span><span class="nx">value</span><span class="p">(</span><span class="s1">&#39;listContacts&#39;</span><span class="p">,</span> <span class="p">[</span>
+   <span class="p">{</span><span class="nx">_id</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Allan Benjamin&#39;</span><span class="p">,</span> <span class="nx">address</span><span class="o">:</span> <span class="s1">&#39;St. Claire Avenue, Nº 101&#39;</span><span class="p">,</span> <span class="nx">phone</span><span class="o">:</span> <span class="s1">&#39;557188339933&#39;</span><span class="p">},</span>
+   <span class="p">{</span><span class="nx">_id</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Georgia Smith&#39;</span><span class="p">,</span> <span class="nx">address</span><span class="o">:</span> <span class="s1">&#39;St. Claire Avenue, Nº 102&#39;</span><span class="p">,</span> <span class="nx">phone</span><span class="o">:</span> <span class="s1">&#39;557188339933&#39;</span><span class="p">},</span>
+   <span class="p">{</span><span class="nx">_id</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Gregory Levinsky&#39;</span><span class="p">,</span> <span class="nx">address</span><span class="o">:</span> <span class="s1">&#39;St. Claire Avenue, Nº 103&#39;</span><span class="p">,</span> <span class="nx">phone</span><span class="o">:</span> <span class="s1">&#39;557188339933&#39;</span><span class="p">},</span>
+   <span class="p">{</span><span class="nx">_id</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Jackeline Macfly&#39;</span><span class="p">,</span> <span class="nx">address</span><span class="o">:</span> <span class="s1">&#39;St. Claire Avenue, Nº 104&#39;</span><span class="p">,</span> <span class="nx">phone</span><span class="o">:</span> <span class="s1">&#39;557188339933&#39;</span><span class="p">},</span>
+   <span class="p">{</span><span class="nx">_id</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Joseph Climber&#39;</span><span class="p">,</span> <span class="nx">address</span><span class="o">:</span> <span class="s1">&#39;St. Claire Avenue, Nº 105&#39;</span><span class="p">,</span> <span class="nx">phone</span><span class="o">:</span> <span class="s1">&#39;557188339933&#39;</span><span class="p">},</span>
+   <span class="p">{</span><span class="nx">_id</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Joshua Jackson&#39;</span><span class="p">,</span> <span class="nx">address</span><span class="o">:</span> <span class="s1">&#39;St. Claire Avenue, Nº 106&#39;</span><span class="p">,</span> <span class="nx">phone</span><span class="o">:</span> <span class="s1">&#39;557188339933&#39;</span><span class="p">}</span>
+ <span class="p">]);</span></code></pre></figure>
+
+<p>Now we will create our service now Contact. See that your content is very simple, because it takes the information <code>OfflineModel</code> and then registers the fields for <a href="http://en.wikipedia.org/wiki/Value_object">ValueObject</a> creation.</p>
+
+<h3>CREATING THE CONTROLLER AND VIEWS</h3>
+
+<p>Now we will create our controller with the necessary for our registration methods.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/* globals confirm */</span>
+<span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+
+<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;plunkerApp&#39;</span><span class="p">)</span>
+ <span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">&#39;ContactsCtrl&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="nx">$location</span><span class="p">,</span> <span class="nx">$routeParams</span><span class="p">,</span> <span class="nx">$route</span><span class="p">,</span> <span class="nx">$filter</span><span class="p">,</span> <span class="nx">AlertService</span><span class="p">,</span> <span class="nx">ContactsService</span><span class="p">)</span> <span class="p">{</span>
+
+   <span class="cm">/**</span>
+<span class="cm">    * initial value of creation/alteration contact form</span>
+<span class="cm">    *</span>
+<span class="cm">    * @type {Array}</span>
+<span class="cm">    */</span>
+   <span class="nx">$scope</span><span class="p">.</span><span class="nx">contact</span> <span class="o">=</span> <span class="p">[];</span>
+
+   <span class="cm">/**</span>
+<span class="cm">    * Reinitialize form values</span>
+<span class="cm">    */</span>
+   <span class="nx">$scope</span><span class="p">.</span><span class="nx">reset</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+     <span class="nx">$scope</span><span class="p">.</span><span class="nx">contact</span> <span class="o">=</span> <span class="p">[</span>
+       <span class="p">{</span>
+         <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+         <span class="nx">address</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+         <span class="nx">phone</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
+       <span class="p">}</span>
+     <span class="p">];</span>
+   <span class="p">};</span>
+
+   <span class="cm">/**</span>
+<span class="cm">    * Returns count of contacts</span>
+<span class="cm">    * @return {Int}</span>
+<span class="cm">    */</span>
+   <span class="nx">$scope</span><span class="p">.</span><span class="nx">numberOfPages</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+     <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="nx">$scope</span><span class="p">.</span><span class="nx">filteredData</span><span class="p">.</span><span class="nx">length</span><span class="o">/</span><span class="nx">$scope</span><span class="p">.</span><span class="nx">pageSize</span><span class="p">);</span>
+   <span class="p">};</span>
+
+   <span class="cm">/**</span>
+<span class="cm">    * Add um contato</span>
+<span class="cm">    */</span>
+   <span class="nx">$scope</span><span class="p">.</span><span class="nx">create</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">contact</span><span class="p">){</span>
+     <span class="nx">$scope</span><span class="p">.</span><span class="nx">listContacts</span> <span class="o">=</span> <span class="nx">ContactsService</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">contact</span><span class="p">);</span>
+   <span class="p">};</span>
+
+   <span class="cm">/**</span>
+<span class="cm">    * Return a specific contact for edition</span>
+<span class="cm">    */</span>
+   <span class="nx">$scope</span><span class="p">.</span><span class="nx">edit</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+     <span class="kd">var</span> <span class="nx">id</span> <span class="o">=</span> <span class="nx">$routeParams</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
+     <span class="nx">$scope</span><span class="p">.</span><span class="nx">contact</span> <span class="o">=</span> <span class="nx">$filter</span><span class="p">(</span><span class="s1">&#39;filter&#39;</span><span class="p">)(</span><span class="nx">$scope</span><span class="p">.</span><span class="nx">listContacts</span><span class="p">,</span> <span class="p">{</span><span class="nx">_id</span><span class="o">:</span> <span class="nx">id</span><span class="p">})[</span><span class="mi">0</span><span class="p">];</span>
+     <span class="nb">window</span><span class="p">.</span><span class="nx">scrollTo</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+   <span class="p">};</span>
+
+   <span class="cm">/**</span>
+<span class="cm">    * Update a contact</span>
+<span class="cm">    * @param  {Object} item Contact informations</span>
+<span class="cm">    */</span>
+   <span class="nx">$scope</span><span class="p">.</span><span class="nx">update</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">item</span> <span class="p">)</span> <span class="p">{</span>
+     <span class="nx">$scope</span><span class="p">.</span><span class="nx">listContacts</span> <span class="o">=</span> <span class="nx">ContactsService</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
+   <span class="p">};</span>
+
+   <span class="cm">/**</span>
+<span class="cm">    * Insert/update abstraction</span>
+<span class="cm">    * @param  {Object} item Contact informations</span>
+<span class="cm">    */</span>
+   <span class="nx">$scope</span><span class="p">.</span><span class="nx">save</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">){</span>
+     <span class="k">if</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">item</span><span class="p">.</span><span class="nx">_id</span> <span class="o">!==</span> <span class="s1">&#39;undefined&#39;</span><span class="p">){</span>
+       <span class="nx">$scope</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
+     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+       <span class="nx">$scope</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
+     <span class="p">}</span>
+     <span class="nx">$scope</span><span class="p">.</span><span class="nx">reset</span><span class="p">();</span>
+     <span class="nx">$location</span><span class="p">.</span><span class="nx">path</span><span class="p">(</span><span class="s1">&#39;/contacts&#39;</span><span class="p">);</span>
+   <span class="p">};</span>
+
+   <span class="cm">/**</span>
+<span class="cm">    * Remove a contact of contact list</span>
+<span class="cm">    * @param  {Integer} index        `_id` value&#39;s contact</span>
+<span class="cm">    * @param  {Boolean} confirmation boolean verificator for call &quot;confirm&quot; method</span>
+<span class="cm">    * @return {Boolean}</span>
+<span class="cm">    */</span>
+   <span class="nx">$scope</span><span class="p">.</span><span class="k">delete</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">confirmation</span> <span class="p">){</span>
+     <span class="nx">confirmation</span> <span class="o">=</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">confirmation</span> <span class="o">!==</span> <span class="s1">&#39;undefined&#39;</span><span class="p">)</span> <span class="o">?</span> <span class="nx">confirmation</span> <span class="o">:</span> <span class="kc">true</span><span class="p">;</span>
+     <span class="k">if</span> <span class="p">(</span><span class="nx">confirmDelete</span><span class="p">(</span><span class="nx">confirmation</span><span class="p">))</span> <span class="p">{</span>
+       <span class="kd">var</span> <span class="nx">message</span><span class="p">,</span>
+           <span class="nx">item</span> <span class="o">=</span> <span class="nx">ContactsService</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">index</span><span class="p">);</span>
+       <span class="k">if</span> <span class="p">(</span><span class="o">!!</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+         <span class="nx">message</span> <span class="o">=</span> <span class="s1">&#39;Contact &quot;&#39;</span> <span class="o">+</span> <span class="nx">item</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">&#39;&quot; with id &quot;&#39;</span> <span class="o">+</span> <span class="nx">item</span><span class="p">.</span><span class="nx">_id</span><span class="o">+</span> <span class="s1">&#39;&quot; was removed of your contact\&#39;s list&#39;</span><span class="p">;</span>
+         <span class="nx">AlertService</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;success&#39;</span><span class="p">,</span> <span class="nx">message</span><span class="p">,</span> <span class="mi">5000</span><span class="p">);</span>
+         <span class="nx">$scope</span><span class="p">.</span><span class="nx">listContacts</span> <span class="o">=</span> <span class="nx">ContactsService</span><span class="p">.</span><span class="nx">getListItems</span><span class="p">();</span>
+         <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+       <span class="p">}</span>
+       <span class="nx">AlertService</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="s1">&#39;Houston, we have a problem. This operation cannot be executed correctly.&#39;</span><span class="p">,</span> <span class="mi">5000</span><span class="p">);</span>
+       <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+     <span class="p">}</span>
+   <span class="p">};</span>
+
+   <span class="cm">/**</span>
+<span class="cm">    * Method for access &quot;window.confirm()&quot;</span>
+<span class="cm">    * @param  {Boolean} confirmation boolean verificator for call &quot;confirm&quot; method</span>
+<span class="cm">    * @return {Boolean}</span>
+<span class="cm">    */</span>
+   <span class="kd">var</span> <span class="nx">confirmDelete</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">confirmation</span><span class="p">){</span>
+     <span class="k">return</span> <span class="nx">confirmation</span> <span class="o">?</span> <span class="nx">confirm</span><span class="p">(</span><span class="s1">&#39;This action is irreversible. Do you want to delete this contact?&#39;</span><span class="p">)</span> <span class="o">:</span> <span class="kc">true</span><span class="p">;</span>
+   <span class="p">};</span>
+
+   <span class="cm">/**</span>
+<span class="cm">    * Method called for initialize our controller</span>
+<span class="cm">    */</span>
+   <span class="nx">$scope</span><span class="p">.</span><span class="nx">init</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+     <span class="nx">$scope</span><span class="p">.</span><span class="nx">listContacts</span> <span class="o">=</span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">filteredData</span> <span class="o">=</span> <span class="nx">ContactsService</span><span class="p">.</span><span class="nx">getListItems</span><span class="p">();</span>
+     <span class="nx">$scope</span><span class="p">.</span><span class="nx">reset</span><span class="p">();</span>
+     <span class="c1">//  Calling routeParam method</span>
+     <span class="k">if</span> <span class="p">(</span><span class="nx">$route</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">method</span> <span class="o">!==</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+       <span class="nx">$scope</span><span class="p">[</span><span class="nx">$route</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">method</span><span class="p">]();</span>
+     <span class="p">}</span>
+   <span class="p">};</span>
+
+   <span class="nx">$scope</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
+
+ <span class="p">});</span></code></pre></figure>
+
+<p>In this contest we can highlight some methods / parameters:</p>
+
+<ul>
+<li>init: method called to initialize our controller;</li>
+<li>numberOfPages: Returns the number of contacts;</li>
+<li>reset: Resets the value of the forms with empty fields;</li>
+<li>create: Inserts a contact from the contacts list;</li>
+<li>update: Update the item in _items;</li>
+<li>save: Abstraction methods to insert / change;</li>
+<li>delete: Remove a contact from the contacts list;</li>
+</ul>
+
+<p>Now we can create our views / templates. Without further ado lets create the views:</p>
+
+<p><code>list.html</code></p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-6 col-lg-offset-3 col-xs-10 col-xs-offset-1 main-content&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&quot;text-center&quot;</span><span class="nt">&gt;</span>Contact List<span class="nt">&lt;/h1&gt;</span>
+   <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary btn-outline btn-add-contact col-lg-12 col-md-12 col-sm-12  clearfix&quot;</span> <span class="na">href=</span><span class="s">&quot;#/contacts/new&quot;</span> <span class="nt">&gt;</span>ADD NEW CONTACT<span class="nt">&lt;/a&gt;</span>
+
+   <span class="nt">&lt;form</span> <span class="na">autocomplete=</span><span class="s">&quot;off&quot;</span> <span class="na">role=</span><span class="s">&quot;form&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;fieldset&gt;</span>
+         <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;search&quot;</span> <span class="na">name=</span><span class="s">&quot;search&quot;</span> <span class="na">id=</span><span class="s">&quot;search&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Search...&quot;</span> <span class="na">data-ng-model=</span><span class="s">&quot;search&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="nt">/&gt;</span>
+       <span class="nt">&lt;/fieldset&gt;</span>
+     <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/form&gt;</span>
+
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;alert alert-warning fade in&quot;</span> <span class="na">data-ng-repeat=</span><span class="s">&quot;alert in alerts track by $index&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;close&quot;</span> <span class="na">data-dismiss=</span><span class="s">&quot;alert&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span> <span class="na">data-ng-click=</span><span class="s">&quot;closeAlertMessage($index)&quot;</span><span class="nt">&gt;</span>×<span class="nt">&lt;/button&gt;</span>
+     
+   <span class="nt">&lt;/div&gt;</span>
+
+   <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;contact-list&quot;</span> <span class="na">data-ng-if=</span><span class="s">&quot;filteredData.length &gt; 0&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;li</span> <span class="na">data-ng-repeat=</span><span class="s">&quot;item in filteredData = (listContacts | orderBy:predicate:reverse | filter:search) | startFrom:currentPage*pageSize | limitTo:pageSize track by $index&quot;</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;first-letter&quot;</span> <span class="nt">&gt;</span>
+         <span class="nt">&lt;span&gt;&lt;/span&gt;</span>
+       <span class="nt">&lt;/div&gt;</span>
+       <span class="nt">&lt;img</span> <span class="na">alt=</span><span class="s">&quot;&quot;</span> <span class="na">src=</span><span class="s">&quot;http://www.corporalmente.com.br/wp-content/uploads/2013/10/profile_avatar_default.png&quot;</span> <span class="nt">/&gt;</span>
+       <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;info&quot;</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">&quot;title&quot;</span><span class="nt">&gt;&lt;/h2&gt;</span>
+         <span class="nt">&lt;ul&gt;</span>
+           <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#/contacts//edit&quot;</span><span class="nt">&gt;</span>✔ EDIT<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+           <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">data-ng-click=</span><span class="s">&quot;delete(item._id);&quot;</span><span class="nt">&gt;</span>✖ DELETE<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+         <span class="nt">&lt;/ul&gt;</span>
+       <span class="nt">&lt;/div&gt;</span>
+     <span class="nt">&lt;/li&gt;</span>
+   <span class="nt">&lt;/ul&gt;</span>
+ <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+<p><code>new.html</code></p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-6 col-lg-offset-3 col-xs-10 col-xs-offset-1 main-content&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&quot;text-center&quot;</span><span class="nt">&gt;</span>Contact List<span class="nt">&lt;/h1&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-4 col-xs-offset-4 col-sm-3 col-sm-offset-4 col-md-3 col-md-offset-4 col-lg-3 col-lg-offset-4 clearfix&quot;</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://www.corporalmente.com.br/wp-content/uploads/2013/10/profile_avatar_default.png&quot;</span> <span class="na">alt=</span><span class="s">&quot;Seth Frazier&quot;</span> <span class="na">class=</span><span class="s">&quot;img-responsive img-circle&quot;</span> <span class="nt">/&gt;</span>
+     <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;form</span> <span class="na">autocomplete=</span><span class="s">&quot;off&quot;</span> <span class="na">role=</span><span class="s">&quot;form&quot;</span> <span class="na">novalidate</span> <span class="na">class=</span><span class="s">&quot;form-inline contact-actions clearfix&quot;</span> <span class="na">name=</span><span class="s">&quot;crudOperations&quot;</span> <span class="na">data-ng-submit=</span><span class="s">&quot;save(contact)&quot;</span> <span class="nt">&gt;</span>
+     <span class="nt">&lt;fieldset&gt;</span>
+       <span class="nt">&lt;legend&gt;</span>Insert an item<span class="nt">&lt;/legend&gt;</span>
+       <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">data-ng-model=</span><span class="s">&quot;contact._id&quot;</span> <span class="nt">/&gt;</span>
+       <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group float-label-control col-lg-6 col-md-6 col-sm-6 no-padding-left&quot;</span> <span class="na">data-ng-class=</span><span class="s">&quot;{&#39;has-error&#39;: crudOperations.name.$invalid &amp;&amp; crudOperations.name.$dirty, &#39;has-success&#39;: crudOperations.name.$valid &amp;&amp; crudOperations.name.$dirty}&quot;</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span> <span class="na">data-ng-model=</span><span class="s">&quot;contact.name&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">data-ng-class=</span><span class="s">&quot;{empty: contact.name.length === 0 || contact.name.length === undefined}&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Your name&quot;</span> <span class="na">required</span> <span class="na">qs-focus</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">data-ng-if=</span><span class="s">&quot;crudOperations.name.$invalid &amp;&amp; crudOperations.name.$dirty &amp;&amp; !crudOperations.name.$focused&quot;</span><span class="nt">&gt;</span>
+           <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;help-block&quot;</span><span class="nt">&gt;</span>
+             This field is required
+           <span class="nt">&lt;/p&gt;</span>
+         <span class="nt">&lt;/div&gt;</span>
+       <span class="nt">&lt;/div&gt;</span>
+       <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group float-label-control col-lg-6 col-md-6 col-sm-6 no-padding-left&quot;</span> <span class="na">data-ng-class=</span><span class="s">&quot;{&#39;has-error&#39;: crudOperations.phone.$invalid &amp;&amp; crudOperations.phone.$dirty, &#39;has-success&#39;: crudOperations.phone.$valid &amp;&amp; crudOperations.phone.$dirty}&quot;</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;phone&quot;</span> <span class="na">kp-mask=</span><span class="s">&#39;+99 (99) 9999-9999&#39;</span> <span class="na">kp-placeholder=</span><span class="s">&quot;+99 (99) 9999-9999&quot;</span> <span class="na">data-ng-model=</span><span class="s">&quot;contact.phone&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">data-ng-class=</span><span class="s">&quot;{empty: contact.phone.length === 0 || contact.phone.length === undefined}&quot;</span> <span class="na">required</span> <span class="na">qs-focus</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">data-ng-if=</span><span class="s">&quot;crudOperations.phone.$invalid &amp;&amp; crudOperations.phone.$dirty &amp;&amp; !crudOperations.phone.$focused&quot;</span><span class="nt">&gt;</span>
+           <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;help-block&quot;</span><span class="nt">&gt;</span>
+             This field is required
+           <span class="nt">&lt;/p&gt;</span>
+         <span class="nt">&lt;/div&gt;</span>
+       <span class="nt">&lt;/div&gt;</span>
+       <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group float-label-control col-lg-12 col-md-12 col-sm-12 no-padding-right clearfix&quot;</span> <span class="na">data-ng-class=</span><span class="s">&quot;{&#39;has-error&#39;: crudOperations.data.$invalid &amp;&amp; crudOperations.data.$dirty, &#39;has-success&#39;: crudOperations.data.$valid &amp;&amp; crudOperations.data.$dirty}&quot;</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;textarea</span> <span class="na">name=</span><span class="s">&quot;address&quot;</span> <span class="na">ng-model=</span><span class="s">&quot;contact.address&quot;</span> <span class="na">class=</span><span class="s">&quot;col-lg-12 col-md-12 col-sm-12 col-xs-12&quot;</span> <span class="na">rows=</span><span class="s">&quot;10&quot;</span> <span class="na">required</span> <span class="na">qs-focus</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">data-ng-if=</span><span class="s">&quot;crudOperations.address.$invalid &amp;&amp; crudOperations.address.$dirty &amp;&amp; !crudOperations.address.$focused&quot;</span><span class="nt">&gt;</span>
+           <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;help-block&quot;</span><span class="nt">&gt;</span>
+             This field is required
+           <span class="nt">&lt;/p&gt;</span>
+         <span class="nt">&lt;/div&gt;</span>
+       <span class="nt">&lt;/div&gt;</span>
+       <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group col-lg-12 col-md-12 col-sm-12 no-padding-right&quot;</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-12&quot;</span> <span class="na">data-ng-if=</span><span class="s">&quot;crudOperations.$invalid &amp;&amp; crudOperations.data.$dirty&quot;</span><span class="nt">&gt;</span>
+           <span class="nt">&lt;p&gt;</span>You shall not pass =/<span class="nt">&lt;/p&gt;</span>
+           <span class="nt">&lt;p&gt;</span>You only can finish the operation if all fields required was populated correctly<span class="nt">&lt;/p&gt;</span>
+         <span class="nt">&lt;/div&gt;</span>
+         <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary btn-outline col-lg-12 col-md-12 col-sm-12  clearfix&quot;</span> <span class="na">value=</span><span class="s">&quot;CREATE&quot;</span> <span class="na">data-ng-disabled=</span><span class="s">&quot;crudOperations.$invalid &amp;&amp; !crudOperations.data.$dirty&quot;</span> <span class="nt">/&gt;</span>
+         <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;btn btn-danger btn-outline col-lg-12 col-md-12 col-sm-12 &quot;</span> <span class="na">href=</span><span class="s">&quot;#/contacts&quot;</span> <span class="nt">&gt;</span>CANCEL<span class="nt">&lt;/a&gt;</span>
+       <span class="nt">&lt;/div&gt;</span>
+     <span class="nt">&lt;/fieldset&gt;</span>
+   <span class="nt">&lt;/form&gt;</span>
+ <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+<p><code>edit.html</code></p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-6 col-lg-offset-3 col-xs-10 col-xs-offset-1 main-content&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&quot;text-center&quot;</span><span class="nt">&gt;</span>Contact List<span class="nt">&lt;/h1&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-4 col-xs-offset-4 col-sm-3 col-sm-offset-4 col-md-3 col-md-offset-4 col-lg-3 col-lg-offset-4 clearfix&quot;</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://www.corporalmente.com.br/wp-content/uploads/2013/10/profile_avatar_default.png&quot;</span> <span class="na">alt=</span><span class="s">&quot;Seth Frazier&quot;</span> <span class="na">class=</span><span class="s">&quot;img-responsive img-circle&quot;</span> <span class="nt">/&gt;</span>
+     <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;form</span> <span class="na">autocomplete=</span><span class="s">&quot;off&quot;</span> <span class="na">role=</span><span class="s">&quot;form&quot;</span> <span class="na">novalidate</span> <span class="na">class=</span><span class="s">&quot;form-inline contact-actions clearfix&quot;</span> <span class="na">name=</span><span class="s">&quot;crudOperations&quot;</span> <span class="na">data-ng-submit=</span><span class="s">&quot;save(contact)&quot;</span> <span class="nt">&gt;</span>
+     <span class="nt">&lt;fieldset&gt;</span>
+       <span class="nt">&lt;legend&gt;</span>Edit an item<span class="nt">&lt;/legend&gt;</span>
+       <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">data-ng-model=</span><span class="s">&quot;contact._id&quot;</span> <span class="nt">/&gt;</span>
+       <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group float-label-control col-lg-6 col-md-6 col-sm-6 no-padding-left&quot;</span> <span class="na">data-ng-class=</span><span class="s">&quot;{&#39;has-error&#39;: crudOperations.name.$invalid &amp;&amp; crudOperations.name.$dirty, &#39;has-success&#39;: crudOperations.name.$valid &amp;&amp; crudOperations.name.$dirty}&quot;</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span> <span class="na">data-ng-model=</span><span class="s">&quot;contact.name&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">data-ng-class=</span><span class="s">&quot;{empty: contact.name.length === 0 || contact.name.length === undefined}&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Your name&quot;</span> <span class="na">required</span> <span class="na">qs-focus</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">data-ng-if=</span><span class="s">&quot;crudOperations.name.$invalid &amp;&amp; crudOperations.name.$dirty &amp;&amp; !crudOperations.name.$focused&quot;</span><span class="nt">&gt;</span>
+           <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;help-block&quot;</span><span class="nt">&gt;</span>
+             This field is required
+           <span class="nt">&lt;/p&gt;</span>
+         <span class="nt">&lt;/div&gt;</span>
+       <span class="nt">&lt;/div&gt;</span>
+       <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group float-label-control col-lg-6 col-md-6 col-sm-6 no-padding-left&quot;</span> <span class="na">data-ng-class=</span><span class="s">&quot;{&#39;has-error&#39;: crudOperations.phone.$invalid &amp;&amp; crudOperations.phone.$dirty, &#39;has-success&#39;: crudOperations.phone.$valid &amp;&amp; crudOperations.phone.$dirty}&quot;</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;phone&quot;</span> <span class="na">kp-mask=</span><span class="s">&#39;+99 (99) 9999-9999&#39;</span> <span class="na">kp-placeholder=</span><span class="s">&quot;+99 (99) 9999-9999&quot;</span> <span class="na">data-ng-model=</span><span class="s">&quot;contact.phone&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">data-ng-class=</span><span class="s">&quot;{empty: contact.phone.length === 0 || contact.phone.length === undefined}&quot;</span> <span class="na">required</span> <span class="na">qs-focus</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">data-ng-if=</span><span class="s">&quot;crudOperations.phone.$invalid &amp;&amp; crudOperations.phone.$dirty &amp;&amp; !crudOperations.phone.$focused&quot;</span><span class="nt">&gt;</span>
+           <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;help-block&quot;</span><span class="nt">&gt;</span>
+             This field is required
+           <span class="nt">&lt;/p&gt;</span>
+         <span class="nt">&lt;/div&gt;</span>
+       <span class="nt">&lt;/div&gt;</span>
+       <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group float-label-control col-lg-12 col-md-12 col-sm-12 no-padding-right clearfix&quot;</span> <span class="na">data-ng-class=</span><span class="s">&quot;{&#39;has-error&#39;: crudOperations.data.$invalid &amp;&amp; crudOperations.data.$dirty, &#39;has-success&#39;: crudOperations.data.$valid &amp;&amp; crudOperations.data.$dirty}&quot;</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;textarea</span> <span class="na">name=</span><span class="s">&quot;address&quot;</span> <span class="na">ng-model=</span><span class="s">&quot;contact.address&quot;</span> <span class="na">class=</span><span class="s">&quot;col-lg-12 col-md-12 col-sm-12 col-xs-12&quot;</span> <span class="na">rows=</span><span class="s">&quot;10&quot;</span> <span class="na">required</span> <span class="na">qs-focus</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">data-ng-if=</span><span class="s">&quot;crudOperations.address.$invalid &amp;&amp; crudOperations.address.$dirty &amp;&amp; !crudOperations.address.$focused&quot;</span><span class="nt">&gt;</span>
+           <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;help-block&quot;</span><span class="nt">&gt;</span>
+             This field is required
+           <span class="nt">&lt;/p&gt;</span>
+         <span class="nt">&lt;/div&gt;</span>
+       <span class="nt">&lt;/div&gt;</span>
+       <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group col-lg-12 col-md-12 col-sm-12 no-padding-right&quot;</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-12&quot;</span> <span class="na">data-ng-if=</span><span class="s">&quot;crudOperations.$invalid &amp;&amp; crudOperations.data.$dirty&quot;</span><span class="nt">&gt;</span>
+           <span class="nt">&lt;p&gt;</span>You shall not pass =/<span class="nt">&lt;/p&gt;</span>
+           <span class="nt">&lt;p&gt;</span>You only can finish the operation if all fields required was populated correctly<span class="nt">&lt;/p&gt;</span>
+         <span class="nt">&lt;/div&gt;</span>
+         <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary btn-outline col-lg-12 col-md-12 col-sm-12  clearfix&quot;</span> <span class="na">value=</span><span class="s">&quot;UPDATE&quot;</span> <span class="na">data-ng-disabled=</span><span class="s">&quot;crudOperations.$invalid &amp;&amp; !crudOperations.data.$dirty&quot;</span> <span class="nt">/&gt;</span>
+         <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;btn btn-danger btn-outline col-lg-12 col-md-12 col-sm-12 &quot;</span> <span class="na">href=</span><span class="s">&quot;#/contacts&quot;</span> <span class="nt">&gt;</span>CANCEL<span class="nt">&lt;/a&gt;</span>
+       <span class="nt">&lt;/div&gt;</span>
+     <span class="nt">&lt;/fieldset&gt;</span>
+   <span class="nt">&lt;/form&gt;</span>
+ <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+<p>We don&#39;t need create our view to the exclusion, because this operation ocurring in <code>list.html</code> view file.</p>
+
+<h3>CONCLUSION</h3>
+
+<p>In this example, we saw how the logic of your Controller is the full responsibility of methods and attributes to him. You can use this concept in larger projects so that each controller has a responsibility to its module. Modularizarmos or even further, taking as a base some concepts of OOP and <a href="https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub">the new AngularJS project&#39;s structure</a>.</p>
+
+<p>With more modularized responsibilities between the services, the service Contact is much more streamlined, since we have the abstraction for access to localStorage using OfflineModel. In a very simple way we can solve some common problems in an application using AngularJS.</p>
+
+<p>Created a Plunkr with this app so they can see their operation if they want to download.</p>
+
+<ul>
+<li>Plunker: <a href="http://plnkr.co/edit/QHouFMvVNZIZErgAWYS9?p=info">http://plnkr.co/edit/QHouFMvVNZIZErgAWYS9?p=info</a></li>
+<li>Github com o projeto completo e testado: <a href="https://github.com/willmendesneto/angular-contact-list">https://github.com/willmendesneto/angular-contact-list</a></li>
+</ul>
+
+<p>If want to know more about abstractions AngularJS / Javascript applications strongly recommend blogs:</p>
+
+<p>John Papa: <a href="http://www.johnpapa.net">http://www.johnpapa.net/</a>
+Todd Motto: <a href="http://toddmotto.com">http://toddmotto.com</a> (Em especial o artigo: &quot;<a href="http://toddmotto.com/rethinking-angular-js-controllers/?=utm&amp;utm_content=buffere9265&amp;utm_medium=social&amp;utm_source=linkedin.com&amp;utm_campaign=buffer">Rethinking AngularJS Controllers</a>&quot;)</p>
+
+<p>Thanks and see you soon.</p>
+
+<p>Links:</p>
+
+<ul>
+<li>Angular phonecat: <a href="https://github.com/angular/angular-phonecat">https://github.com/angular/angular-phonecat</a></li>
+<li>CryptoJS: <a href="https://code.google.com/p/crypto-js/">https://code.google.com/p/crypto-js/</a></li>
+<li>HTML5 WebStorage: <a href="http://www.w3.org/TR/webstorage/">http://www.w3.org/TR/webstorage/</a></li>
+<li>ValueObject: <a href="http://en.wikipedia.org/wiki/Value_object">http://en.wikipedia.org/wiki/Value_object</a></li>
+<li>Composition Pattern: <a href="http://www.oodesign.com/composite-pattern.html">http://www.vagrantup.com/2</a></li>
+<li>John Papa&#39;s Blog: <a href="http://www.johnpapa.net">http://www.johnpapa.net/angular-app-structuring-guidelines/</a></li>
+</ul>
+
+          </div>
+        </section>
+
+        
+          <section class="newsletter-content">
+    <form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=willmendesneto', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true;" >
+        <h3 class="newsletter-title">Receive news by email</h3>
+        <p class="newsletter-text">Subscribe to my newsletter to receive notifications of new articles in your e- mail</p>
+        <input class="input-newsletter" type="email" name="email" placeholder="email"/>
+        <input type="hidden" value="willmendesneto" name="uri"/>
+        <input type="hidden" name="loc" value="en_US"/>
+        <input class="btn btn-newsletter" type="submit" value="Subscribe" />
+    </form>
+</section>
+
+        
+
+        <footer class="post-footer">
+
+          <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+  <a class="addthis_button_preferred_1"></a>
+  <a class="addthis_button_preferred_2"></a>
+  <a class="addthis_button_preferred_3"></a>
+  <a class="addthis_button_preferred_4"></a>
+  <a class="addthis_button_preferred_5"></a>
+</div>
+
+
+          <!-- <section class="share">
+            
+              
+                <a class="icon-twitter" href="http://twitter.com/share?text=Creating+a+single+CRUD+in+a+single+AngularJS+Controller&amp;url=http://willmendesneto.github.io/2014/10/28/creating-a-crud-in-a-single-angular-controller"
+                  onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
+                <i class="fa fa-twitter"></i><span class="hidden">twitter</span>
+                </a>
+              
+            
+              
+                <a class="icon-facebook" href="//www.facebook.com/sharer.php?t=Creating+a+single+CRUD+in+a+single+AngularJS+Controller&amp;u=http://willmendesneto.github.io/2014/10/28/creating-a-crud-in-a-single-angular-controller"
+                  onclick="window.open(this.href, 'facebook-share', 'width=550,height=255');return false;">
+                <i class="fa fa-facebook"></i><span class="hidden">facebook</span>
+                </a>
+              
+            
+              
+            
+              
+                <a class="icon-google-plus" href="https://plus.google.com/share?t=Creating+a+single+CRUD+in+a+single+AngularJS+Controller&amp;url=http://willmendesneto.github.io/2014/10/28/creating-a-crud-in-a-single-angular-controller"
+                  onclick="window.open(this.href, 'google-plus-share', 'width=550,height=255');return false;">
+                <i class="fa fa-google-plus"></i><span class="hidden">google-plus</span>
+                </a>
+              
+            
+          </section> -->
+        </footer>
+        <div class="bottom-teaser cf">
+          <div class="isLeft">
+            <section class="author">
+              <div class="author-image" style="background-image: url(https://pt.gravatar.com/userimage/20307137/677413a79461cdfd62c8a65143214850.png?size=300)">Blog Logo</div>
+              <h4>Wilson Mendes</h4>
+              
+                <p class="bio">Google Developer Expert (GDE) AngularJS and GDG Salvador Organizer. Musician and designer in his spare time.</p>
+              
+              <hr>
+              <p class="published">Publicado em <time datetime="2014-10-28 00:00">28 Oct 2014</time></p>
+            </section>
+            <footer class="site-footer">
+              <section class="poweredby">Mais um blog feito com <a href="http://jekyllrb.com">Jekyll</a></section>
+              <a class="subscribe" href="/feed.xml" target="_blank"> <span class="tooltip"> <i class="fa fa-rss"></i> Assine o feed.</span></a>
+            </footer>
+          </div>
+          
+        </div>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'willmendesnetogithubio'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+
+        'use strict';
+
+        function load() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+          // Remove o evento
+          window.onscroll = function() {};
+        }
+
+        window.onscroll = function() {
+          if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 2000)) {
+            load();
+          }
+        };
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </article>
+
+    </main>
+    <div class="bottom-closer">
+      <div class="background-closer-image"  style="background-image: url(/assets/images/background-1.jpg)">
+        Image
+      </div>
+      <div class="inner">
+        <h1 class="blog-title">Wilson Mendes - Blog</h1>
+        <h2 class="blog-description">This is my blog, where i talk about technologies</h2>
+        <a href="/" class="btn">Back to Home</a>
+      </div>
+    </div>
+
+    
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53c591e4471ce379" async="async"></script>
+
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="/assets/js/mini-preview.js"></script>
+<script type="text/javascript" src="/assets/js/index.js"></script>
+<script type="text/javascript" src="/assets/js/readingTime.min.js"></script>
+<script>
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-58169656-1', 'auto');
+ga('send', 'pageview');
+
+(function ($) {
+  "use strict";
+  $(document).ready(function(){
+
+    var $window = $(window),
+    $image = $('.post-image-image, .teaserimage-image');
+    $window.on('scroll', function() {
+      var top = $window.scrollTop();
+
+      if (top < 0 || top > 1500) { return; }
+      $image
+        .css('transform', 'translate3d(0px, '+top/3+'px, 0px)')
+        .css('opacity', 1-Math.max(top/700, 0));
+    });
+    $window.trigger('scroll');
+
+    var height = $('.article-image').height();
+    $('.post-content').css('padding-top', height + 'px');
+
+    $('a[href*=#]:not([href=#])').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+       && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html,body').animate({ scrollTop: target.offset().top }, 500);
+          return false;
+        }
+      }
+    });
+  });
+}(jQuery));
+</script>
+
+  </body>
+</html>
