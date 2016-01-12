@@ -12,6 +12,7 @@
 
 ## Usage
 
+
 ### Run at Localhost
 
 Run this blog in your local host with the following steps:
@@ -24,6 +25,16 @@ Run this blog in your local host with the following steps:
     git clone git@github.com:willmendesneto/willmendesneto.github.io.git
 
 > If you have some performance problems in markdown compile task, please use  `jekyll serve --watch --limit_posts <number-of-posts-for-compile-using-watch>`
+
+
+### Deploy
+
+Run the command:
+
+```bash
+$ ./deploy.sh production
+```
+
 
 ## Contribute
 
