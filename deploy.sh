@@ -42,7 +42,7 @@ function dist {
       --depth=1 $REMOTE_ORIGIN \
       $DIST_DIR
   fi
-  time bundle exec jekyll build
+  time jekyll build --incremental
 }
 
 function deploy {
@@ -67,7 +67,7 @@ function heroku {
     git commit -qam "" --allow-empty --allow-empty-message
   popd
 
-  time bundle exec jekyll build
+  time jekyll build --incremental
   rsync -r _site/* $DIST_DIR/
 
   pushd $DIST_DIR
