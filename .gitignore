@@ -6,7 +6,8 @@ node_modules
 .ruby-version
 .node-version
 .sass-cache/
+.jekyll-metadata
+.rvmrc
 neat/
 bourbon/
-.rvmrc
 npm-debug.log
