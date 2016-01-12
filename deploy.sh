@@ -5,8 +5,8 @@
 #
 # ./deploy.sh <production|staging>
 #
-$STAGING_MESSAGE="Send to staging"
-$PRODUCTION_MESSAGE="Pushing code to branch gh-pages..."
+STAGING_MESSAGE="Send to staging"
+PRODUCTION_MESSAGE="Pushing code to branch gh-pages..."
 
 function dirty_check {
   if [[ `(git status --porcelain 2> /dev/null) && (git log origin/master..master 2> /dev/null)` &&  -z "$1" ]]; then
@@ -42,7 +42,7 @@ function dist {
       --depth=1 $REMOTE_ORIGIN \
       $DIST_DIR
   fi
-  time bundle exec jekyll build
+  time jekyll build --incremental
 }
 
 function deploy {
@@ -67,7 +67,7 @@ function heroku {
     git commit -qam "" --allow-empty --allow-empty-message
   popd
 
-  time bundle exec jekyll build
+  time jekyll build --incremental
   rsync -r _site/* $DIST_DIR/
 
   pushd $DIST_DIR
@@ -80,14 +80,13 @@ function heroku {
   popd
 }
 
-function install_gems {
-  bundle install --jobs 8
-  bundle exec bourbon install
-  bundle exec neat install
-}
+# function install_gems {
+#   gem install jekyll pygments.rb redcarpet jekyll-paginate jekyll-gist
+# }
+
 DIST_FOLDER="/tmp/$(LC_ALL=C tr -dc 0-9 < /dev/urandom | head -c 20 | xargs | cat)"
 
-install_gems $1
+# install_gems $1
 
 if [ "$1" == "production" ]; then
   dirty_check $1
