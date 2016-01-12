@@ -48,9 +48,10 @@ function dist {
 function deploy {
   DIST_DIR=$(awk '/destination:/{dist=$2}; END {if (dist) print dist; else print "./_site"}' _config.yml)
   MASTER_HEAD_SHA=$(git rev-parse --short HEAD)
+  LAST_COMMIT_MESSAGE=$(git log -n 1 --pretty=format:'%s')
   pushd $DIST_DIR
     git add . -A
-    git commit -m "Deployed from master: $MASTER_HEAD_SHA"
+    git commit -m "$LAST_COMMIT_MESSAGE - $MASTER_HEAD_SHA : Deployed from master"
 
     echo $PRODUCTION_MESSAGE
     git push origin gh-pages
