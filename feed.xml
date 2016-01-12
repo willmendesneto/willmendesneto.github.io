@@ -5,8 +5,8 @@
     <description>This is my blog, where i talk about technologies</description>
     <link>http://willmendesneto.github.io/</link>
     <atom:link href="http://willmendesneto.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 12 Jan 2016 03:37:55 +0000</pubDate>
-    <lastBuildDate>Tue, 12 Jan 2016 03:37:55 +0000</lastBuildDate>
+    <pubDate>Tue, 12 Jan 2016 00:38:53 -0300</pubDate>
+    <lastBuildDate>Tue, 12 Jan 2016 00:38:53 -0300</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -40,7 +40,7 @@
 &lt;li&gt;Jekyll: &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;https://jekyllrb.com/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Tue, 12 Jan 2016 00:00:00 +0000</pubDate>
+        <pubDate>Tue, 12 Jan 2016 00:00:00 -0300</pubDate>
         <link>http://willmendesneto.github.io/2016/01/12/otimizando-o-watch-do-jekyll</link>
         <guid isPermaLink="true">http://willmendesneto.github.io/2016/01/12/otimizando-o-watch-do-jekyll</guid>
         
@@ -219,7 +219,7 @@ var board = new five.Board();&lt;/p&gt;
 &lt;li&gt;Retaliation: &lt;a href=&quot;https://www.youtube.com/watch?v=1EGk2rvZe8A&quot;&gt;https://www.youtube.com/watch?v=1EGk2rvZe8A&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Wed, 28 Oct 2015 00:00:00 +0000</pubDate>
+        <pubDate>Wed, 28 Oct 2015 00:00:00 -0300</pubDate>
         <link>http://willmendesneto.github.io/2015/10/28/checando-sua-build-pipeline-no-snap-ci-via-nodebots-utilizando-nodejs-e-arduino</link>
         <guid isPermaLink="true">http://willmendesneto.github.io/2015/10/28/checando-sua-build-pipeline-no-snap-ci-via-nodebots-utilizando-nodejs-e-arduino</guid>
         
@@ -322,7 +322,7 @@ var board = new five.Board();&lt;/p&gt;
 &lt;li&gt;Basic Access Authentication: &lt;a href=&quot;https://en.wikipedia.org/wiki/Basic_access_authentication&quot;&gt;https://en.wikipedia.org/wiki/Basic&lt;em&gt;access&lt;/em&gt;authentication&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Thu, 09 Jul 2015 00:00:00 +0000</pubDate>
+        <pubDate>Thu, 09 Jul 2015 00:00:00 -0300</pubDate>
         <link>http://willmendesneto.github.io/2015/07/09/multiple-credentials-check-with-basic-auth</link>
         <guid isPermaLink="true">http://willmendesneto.github.io/2015/07/09/multiple-credentials-check-with-basic-auth</guid>
         
@@ -544,7 +544,7 @@ var board = new five.Board();&lt;/p&gt;
 &lt;li&gt;JsPerf: Object.freeze, Object.seal and object with default behaviour: &lt;a href=&quot;http://jsperf.com/freeze-vs-seal-vs-normal/19&quot;&gt;http://jsperf.com/freeze-vs-seal-vs-normal/19&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Sun, 28 Jun 2015 00:00:00 +0000</pubDate>
+        <pubDate>Sun, 28 Jun 2015 00:00:00 -0300</pubDate>
         <link>http://willmendesneto.github.io/2015/06/28/micro-tunings-em-angular-apps-pt-1</link>
         <guid isPermaLink="true">http://willmendesneto.github.io/2015/06/28/micro-tunings-em-angular-apps-pt-1</guid>
         
@@ -693,7 +693,7 @@ var board = new five.Board();&lt;/p&gt;
 &lt;li&gt;React JS: &lt;a href=&quot;http://facebook.github.io/react/&quot;&gt;http://facebook.github.io/react/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Mon, 22 Jun 2015 00:00:00 +0000</pubDate>
+        <pubDate>Mon, 22 Jun 2015 00:00:00 -0300</pubDate>
         <link>http://willmendesneto.github.io/2015/06/22/micro-tunnings-with-angular-apps-part-2</link>
         <guid isPermaLink="true">http://willmendesneto.github.io/2015/06/22/micro-tunnings-with-angular-apps-part-2</guid>
         
@@ -921,7 +921,7 @@ var board = new five.Board();&lt;/p&gt;
 &lt;li&gt;JsPerf comparison: Object.freeze, Object.seal and object with default behaviour: &lt;a href=&quot;http://jsperf.com/freeze-vs-seal-vs-normal/19&quot;&gt;http://jsperf.com/freeze-vs-seal-vs-normal/19&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Mon, 11 May 2015 00:00:00 +0000</pubDate>
+        <pubDate>Mon, 11 May 2015 00:00:00 -0300</pubDate>
         <link>http://willmendesneto.github.io/2015/05/11/micro-tunnings-with-angular-apps-part-1</link>
         <guid isPermaLink="true">http://willmendesneto.github.io/2015/05/11/micro-tunnings-with-angular-apps-part-1</guid>
         
@@ -999,7 +999,7 @@ var board = new five.Board();&lt;/p&gt;
 &lt;li&gt;Travis-CI Documentation: &lt;a href=&quot;http://docs.travis-ci.com&quot;&gt;http://docs.travis-ci.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Mon, 16 Feb 2015 00:00:00 +0000</pubDate>
+        <pubDate>Mon, 16 Feb 2015 00:00:00 -0300</pubDate>
         <link>http://willmendesneto.github.io/2015/02/16/using-travis-ci-for-run-angularjs-unit-tests</link>
         <guid isPermaLink="true">http://willmendesneto.github.io/2015/02/16/using-travis-ci-for-run-angularjs-unit-tests</guid>
         
@@ -1147,7 +1147,7 @@ var board = new five.Board();&lt;/p&gt;
 
 &lt;p&gt;Thanks and we see very soon!&lt;/p&gt;
 </description>
-        <pubDate>Sun, 15 Feb 2015 00:00:00 +0000</pubDate>
+        <pubDate>Sun, 15 Feb 2015 00:00:00 -0300</pubDate>
         <link>http://willmendesneto.github.io/2015/02/15/angularjs-about-e2e-tests-and-protractor-pt-2</link>
         <guid isPermaLink="true">http://willmendesneto.github.io/2015/02/15/angularjs-about-e2e-tests-and-protractor-pt-2</guid>
         
@@ -1284,7 +1284,7 @@ exports.config = {
 &lt;li&gt;Protractor API docs: &lt;a href=&quot;http://angular.github.io/protractor/#/api&quot;&gt;http://angular.github.io/protractor/#/api&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Sat, 14 Feb 2015 00:00:00 +0000</pubDate>
+        <pubDate>Sat, 14 Feb 2015 00:00:00 -0300</pubDate>
         <link>http://willmendesneto.github.io/2015/02/14/angularjs-about-e2e-tests-and-protractor-pt-1</link>
         <guid isPermaLink="true">http://willmendesneto.github.io/2015/02/14/angularjs-about-e2e-tests-and-protractor-pt-1</guid>
         
@@ -1709,7 +1709,7 @@ devilspie -a &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt; clear&lt;spa
 &lt;li&gt;Gist: arquivo .aliases &lt;a href=&quot;https://gist.github.com/willmendesneto/3c1c150666b02232e494&quot;&gt;https://gist.github.com/willmendesneto/3c1c150666b02232e494&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Fri, 13 Feb 2015 00:00:00 +0000</pubDate>
+        <pubDate>Fri, 13 Feb 2015 00:00:00 -0300</pubDate>
         <link>http://willmendesneto.github.io/2015/02/13/cli-funcoes-e-alias</link>
         <guid isPermaLink="true">http://willmendesneto.github.io/2015/02/13/cli-funcoes-e-alias</guid>
         
