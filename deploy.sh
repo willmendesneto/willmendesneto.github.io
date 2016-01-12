@@ -5,12 +5,14 @@
 #
 # ./deploy.sh <production|staging>
 #
+$STAGING_MESSAGE="Send to staging"
+$PRODUCTION_MESSAGE="Pushing code to branch gh-pages..."
 
 function dirty_check {
   if [[ `(git status --porcelain 2> /dev/null) && (git log origin/master..master 2> /dev/null)` &&  -z "$1" ]]; then
-    echo
+    echo ""
     echo "# You have changes that were not pushed to master yet."
-    echo
+    echo ""
     exit -1
   fi
 }
@@ -32,7 +34,7 @@ function dist {
   DIST_DIR=$(awk '/destination:/{dist=$2}; END {if (dist) print dist; else print "./_site"}' < _config.yml)
   if [[ ! -d $DIST_DIR/.git ]]; then
     REMOTE_ORIGIN=$(git remote -v | awk '/origin/{print $2}' | sort -u)
-    rm -rf $DIST_DIR
+    rm -rf deploy.sh $DIST_DIR
 
     git clone \
       --single-branch \
@@ -50,7 +52,7 @@ function deploy {
     git add . -A
     git commit -m "Deployed from master: $MASTER_HEAD_SHA"
 
-    echo "Pushing code to branch gh-pages..."
+    echo $PRODUCTION_MESSAGE
     git push origin gh-pages
   popd
 }
@@ -72,7 +74,7 @@ function heroku {
     touch index.php
     echo '<?php include_once("index.html"); ?>' > index.php
     git add . -A
-    git commit -m "Site-novo to staging"
+    git commit -m $STAGING_MESSAGE
     git push -f heroku master
     rm index.php
   popd
@@ -84,11 +86,10 @@ function install_gems {
   bundle exec neat install
 }
 DIST_FOLDER="/tmp/$(LC_ALL=C tr -dc 0-9 < /dev/urandom | head -c 20 | xargs | cat)"
-TARGET=$1
 
 install_gems $1
 
-if [ "$TARGET" == "production" ]; then
+if [ "$1" == "production" ]; then
   dirty_check $1
   create_gh_pages
   dist
