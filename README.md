@@ -32,6 +32,7 @@ Run this blog in your local host with the following steps:
 Run the command:
 
 ```bash
+$ chmod +x deploy.sh
 $ ./deploy.sh production
 ```
 
