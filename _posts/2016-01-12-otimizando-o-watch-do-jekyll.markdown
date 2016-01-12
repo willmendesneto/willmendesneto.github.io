@@ -10,6 +10,7 @@ meta: {}
 author:
 ---
 
+
 Este post é bem simples, mas crucial para melhorar o seu trabalho, além de ser o primeiro post do ano, claro =).
 
 # Introdução
@@ -26,6 +27,8 @@ $ jekyll serve -w --limit_posts <number-of-posts>
 ```
 
 Sendo que o `<number-of-posts>` é o número que para você é necessário para validar o layout e o conteúdo. Pode ser 1, 10, 20 e assim sucessivamente. Isso é bem bacana, pois podemos otimizar o feedback de nossas alterações/atualizações.
+
+> Caso esteja utilizando o Jekyll >= 3.0 utilize o comando `jekyll serve --incremental` para uma melhoria no tempo de resposta
 
 # Conclusão
 

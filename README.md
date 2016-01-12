@@ -24,7 +24,7 @@ Run this blog in your local host with the following steps:
 
     git clone git@github.com:willmendesneto/willmendesneto.github.io.git
 
-> If you have some performance problems in markdown compile task, please use  `jekyll serve --watch --limit_posts <number-of-posts-for-compile-using-watch>`
+> If you have some performance problems in markdown compile task, please use  `jekyll serve --watch --limit_posts <number-of-posts-for-compile-using-watch>`. If you're using Jekyll >= 3.0 run `jekyll serve --incremental` command for a better feedback time
 
 
 ### Deploy
