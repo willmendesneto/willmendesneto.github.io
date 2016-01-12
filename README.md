@@ -2,6 +2,7 @@
 
 > My personal blog built with [Jekyll](http://jekyllrb.com/).
 
+[![Build Status](https://snap-ci.com/willmendesneto/willmendesneto.github.io/branch/master/build_image)](https://snap-ci.com/willmendesneto/willmendesneto.github.io/branch/master)
 
 ## Requirements
 
