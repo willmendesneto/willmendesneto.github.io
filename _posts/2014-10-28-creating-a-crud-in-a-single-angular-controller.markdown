@@ -12,7 +12,7 @@ meta: {}
 author:
 ---
 
-<a class="page-link" href="{{ '/2014/07/27/criando-um-CRUD-em-um-unico-controller-com-angularjs/' | prepend: site.baseurl | replace: '//', '/' }}">Read the Brazillian Portuguese version</a>
+<a class="page-link" href="{{ '/2014/07/27/criando-um-CRUD-em-um-unico-controller-com-angularjs' | prepend: site.baseurl | replace: '//', '/' }}">Read the Brazillian Portuguese version</a>
 
 ## INTRODUCTION
 
