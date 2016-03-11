@@ -1,7 +1,7 @@
 # Build settings
-markdown: redcarpet
+markdown: kramdown
 highlighter: pygments
-gems: [pygments.rb, redcarpet, jekyll-paginate, jekyll-gist]
+gems: [pygments.rb, kramdown, jekyll-paginate, jekyll-gist]
 
 # Site settings
 title: "Wilson Mendes - Blog"
