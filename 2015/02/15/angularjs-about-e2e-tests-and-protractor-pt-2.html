@@ -97,130 +97,150 @@
           </div>
           <a name="topofpage"></a>
           <div id="post-content-page">
-            <h2>INTRODUCTION</h2>
+            <h2 id="introduction">INTRODUCTION</h2>
 
 <p>This time we will know more about it with an overview in some aspects for Protractor usage in projects and best practices such as page objects, performance, cache, usage with nodejs and others.</p>
 
 <blockquote>
-<p>Because best practices always are welcome!</p>
+  <p>Because best practices always are welcome!</p>
 </blockquote>
 
-<h2>Why Page Objects</h2>
+<h2 id="why-page-objects">Why Page Objects</h2>
 
 <p>Page Object is a object model with properties and methods, wrapping page elements and interactions event (click, submit, etc). Your objective is simplify the test scripts and upgrade your code reuse in end-to-end tests, reducing amount of duplicate code and centralyzing UI modifications and fixes in only one file.</p>
 
-<p>Let&#39;s think in a scenario that you have to test one of your directives in diferent scenarios, working with others controllers, services and templates. If you have to write <code>element(by...)</code> many times, the manutenability of your tests will not be so cool and ever that you have to take a look in them, your sensation will be something like this...</p>
+<p>Let’s think in a scenario that you have to test one of your directives in diferent scenarios, working with others controllers, services and templates. If you have to write <code>element(by...)</code> many times, the manutenability of your tests will not be so cool and ever that you have to take a look in them, your sensation will be something like this…</p>
 
-<p><img src="/assets/images/ugly.gif" alt="urgh!" title="urgh!"></p>
+<p><img src="/assets/images/ugly.gif" alt="urgh!" title="urgh!" /></p>
 
-<h2>Using Page Objects</h2>
+<h2 id="using-page-objects">Using Page Objects</h2>
 
 <blockquote>
-<p>A example of Page object construction</p>
+  <p>A example of Page object construction</p>
 </blockquote>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">PageObject</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// properties</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">property</span> <span class="o">=</span> <span class="nx">element</span><span class="p">(</span><span class="nx">by</span><span class="p">.</span><span class="nx">id</span><span class="p">(</span><span class="s1">&#39;property&#39;</span><span class="p">))</span>
-    <span class="p">...</span>
-<span class="p">}</span>
 
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PageObject</span><span class="p">();</span>
-</code></pre></div>
-<p>You should use Page Objects in your application tests. It&#39;s a best practice for manutenibility and sanity for your tests.</p>
+<pre><code class="language-javascript">var PageObject = function() {
+    // properties
+    this.property = element(by.id('property'))
+    ...
+}
+
+module.exports = new PageObject();
+</code></pre>
+
+<p>You should use Page Objects in your application tests. It’s a best practice for manutenibility and sanity for your tests.</p>
 
 <p>Page Objects are useds for centralize the properties and methods of the website/system/app page. For example, if you have a form in your app, in this objects the properties will be form elements (inputs, selects, textboxes) and methods are the events of your form elements (click in button, blur in input element, change in select, etc).</p>
 
 <p>A simple example using Page Objects in your protractor tests.</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;angularjs homepage todo list&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">pageObject</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;page.js&#39;</span><span class="p">);</span>
 
-  <span class="nx">beforeEach</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// before function</span>
-    <span class="nx">browser</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;&lt;your-url&gt;&#39;</span><span class="p">);</span>
-    <span class="p">...</span>
-  <span class="p">});</span>
+<pre><code class="language-javascript">
+describe('angularjs homepage todo list', function() {
+  var pageObject = require('page.js');
 
-  <span class="nx">afterEach</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">//after function</span>
-    <span class="p">...</span>
-  <span class="p">});</span>
+  beforeEach(function() {
+    // before function
+    browser.get('&lt;your-url&gt;');
+    ...
+  });
 
-  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Page Object should be &quot;Angular Testing Recipes&quot; in your text content by default&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">pageObject</span><span class="p">.</span><span class="nx">property</span><span class="p">.</span><span class="nx">getText</span><span class="p">()).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s1">&#39;Angular Testing Recipes&#39;</span><span class="p">);</span>
-  <span class="p">});</span>
-<span class="p">});</span>
-</code></pre></div>
-<h2>Working with promises</h2>
+  afterEach(function() {
+    //after function
+    ...
+  });
+
+  it('Page Object should be "Angular Testing Recipes" in your text content by default', function() {
+    expect(pageObject.property.getText()).toEqual('Angular Testing Recipes');
+  });
+});
+</code></pre>
+
+<h2 id="working-with-promises">Working with promises</h2>
 
 <p>All page events returns for you test like as promise. In this case, your have to resolve the promises get your result and finish your test correctly. For example</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">PageObject</span><span class="p">.</span><span class="nx">property</span><span class="p">.</span><span class="nx">click</span><span class="p">();</span>
-<span class="c1">// your assertions are here</span>
-</code></pre></div>
+
+<pre><code class="language-javascript">PageObject.property.click();
+// your assertions are here
+</code></pre>
+
 <p>can be used this way too</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">PageObject</span><span class="p">.</span><span class="nx">property</span><span class="p">.</span><span class="nx">click</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-   <span class="c1">// your assertions are here</span>
-   <span class="p">...</span>
-<span class="p">});</span>
-</code></pre></div>
+
+<pre><code class="language-javascript">PageObject.property.click().then(function(){
+   // your assertions are here
+   ...
+});
+</code></pre>
+
 <p>You can use <code>waitForAngular()</code> method for that Protractor waits for AngularJS event finalization.</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">browser</span><span class="p">.</span><span class="nx">waitForAngular</span><span class="p">();</span>
-</code></pre></div>
+
+<pre><code class="language-javascript">browser.waitForAngular();
+</code></pre>
+
 <p><code>expect()</code> method resolve the promises in your tests. For example:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">expect</span><span class="p">(</span><span class="nx">PageObject</span><span class="p">.</span><span class="nx">property</span><span class="p">.</span><span class="nx">getText</span><span class="p">()).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s1">&#39;your test&#39;</span><span class="p">);</span>
-</code></pre></div>
-<h2>Performance in your End to End Tests</h2>
+
+<pre><code class="language-javascript">expect(PageObject.property.getText()).toEqual('your test');
+</code></pre>
+
+<h2 id="performance-in-your-end-to-end-tests">Performance in your End to End Tests</h2>
 
 <p>Test your application with animation disabled. In many times has no sense to test your app with animations enabled and with this resource disabled the tests run more fast.</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">allowAnimations</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-</code></pre></div>
+
+<pre><code class="language-javascript">allowAnimations(false);
+</code></pre>
+
 <p>To disable angular debug informations is a best practice too, because you should use protractor debug for it.</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$compileProvider</span><span class="p">.</span><span class="nx">debugInfoEnabled</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-</code></pre></div>
-<h2>Using NodeJS in Protractor tests</h2>
+
+<pre><code class="language-javascript">$compileProvider.debugInfoEnabled(false);
+</code></pre>
+
+<h2 id="using-nodejs-in-protractor-tests">Using NodeJS in Protractor tests</h2>
 
 <p>In some cases you can the option of use NodeJS with protractor methods for more elaborated tests. In this example we are testing a ordenation click event in a tablesorter component, but using NodeJS for set table headers in our tests and caching table headers elements (get all elements that <code>by.css()</code> method return, resolving your promise and managing tests based in <code>items</code> values).</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// spec.js</span>
-<span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;TableSorter: testing component&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
 
-  <span class="kd">var</span> <span class="nx">tableSorter</span><span class="p">;</span>
+<pre><code class="language-javascript">// spec.js
+describe('TableSorter: testing component', function () {
 
-  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;changes active table order based in user\&#39;s choice&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  var tableSorter;
 
-    <span class="nx">browser</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">);</span>
+  it('changes active table order based in user\'s choice', function () {
 
-    <span class="nx">element</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nx">by</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;.table-sorter-order&#39;</span><span class="p">)).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">items</span><span class="p">)</span> <span class="p">{</span>
+    browser.get('/');
 
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">items</span><span class="p">.</span><span class="nx">length</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    element.all(by.css('.table-sorter-order')).then(function(items) {
 
-      <span class="c1">//  Testing all elements with ordenation method</span>
-      <span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Email&#39;</span><span class="p">].</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">text</span><span class="p">,</span> <span class="nx">key</span><span class="p">){</span>
+      expect(items.length).toBe(1);
 
-        <span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;Testing Item &quot;&#39;</span><span class="o">+</span><span class="nx">text</span><span class="o">+</span><span class="s1">&#39;&quot;&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
-          <span class="c1">//  Order Asc</span>
-          <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;ASC ordenation&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-            <span class="nx">expect</span><span class="p">(</span><span class="nx">items</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">getText</span><span class="p">()).</span><span class="nx">toBe</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
-            <span class="nx">items</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">click</span><span class="p">();</span>
-            <span class="nx">tableSorter</span> <span class="o">=</span> <span class="nx">element</span><span class="p">(</span><span class="nx">by</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;.table-sorter-order.asc&#39;</span><span class="p">));</span>
-            <span class="nx">expect</span><span class="p">(</span><span class="nx">tableSorter</span><span class="p">.</span><span class="nx">getText</span><span class="p">()).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
-          <span class="p">});</span>
-          <span class="c1">//  Order Desc</span>
-          <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;DESC ordenation&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-            <span class="nx">items</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">click</span><span class="p">();</span>
-            <span class="nx">tableSorter</span> <span class="o">=</span> <span class="nx">element</span><span class="p">(</span><span class="nx">by</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;.table-sorter-order.desc&#39;</span><span class="p">));</span>
-            <span class="nx">expect</span><span class="p">(</span><span class="nx">tableSorter</span><span class="p">.</span><span class="nx">getText</span><span class="p">()).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
-          <span class="p">});</span>
-        <span class="p">});</span>
-      <span class="p">});</span>
-    <span class="p">});</span>
-  <span class="p">});</span>
+      //  Testing all elements with ordenation method
+      ['Name', 'Email'].forEach(function(text, key){
 
-<span class="p">});</span>
-</code></pre></div>
-<h2>CONCLUSION</h2>
+        describe('Testing Item "'+text+'"', function(){
+          //  Order Asc
+          it('ASC ordenation', function () {
+            expect(items[key].getText()).toBe(text);
+            items[key].click();
+            tableSorter = element(by.css('.table-sorter-order.asc'));
+            expect(tableSorter.getText()).toEqual(text);
+          });
+          //  Order Desc
+          it('DESC ordenation', function () {
+            items[key].click();
+            tableSorter = element(by.css('.table-sorter-order.desc'));
+            expect(tableSorter.getText()).toEqual(text);
+          });
+        });
+      });
+    });
+  });
+
+});
+</code></pre>
+
+<h2 id="conclusion">CONCLUSION</h2>
 
 <p>Protractor is a awesome tool for create and integrate end-to-end test in your applications, but remember that end-to-end is used with unit tests (more unit tests, less end-to-end tests).</p>
 
 <p>Thanks and we see very soon!</p>
+
 
           </div>
         </section>

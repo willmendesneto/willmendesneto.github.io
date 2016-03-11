@@ -99,27 +99,27 @@
           <div id="post-content-page">
             <p><a class="page-link" href="/2014/07/26/trabalhando-com-thin-directives-no-angularjs">Read the Brazillian Portuguese version</a></p>
 
-<h2>INTRODUCTION</h2>
+<h2 id="introduction">INTRODUCTION</h2>
 
-<p>The AngularJS directives concept is a bit very interesting for apps, if you think in software aspects as reuse, portability, modularity, among others. However, depending on the complexity of your directive, some tests become more complex. One approach to simplify some procedures is the construction of directives based on the concept of Thin Directives. I met this concept in Joel Hooks post <a href="http://joelhooks.com/blog/2014/02/11/lets-make-full-ass-angularjs-directives/">&quot;Let&#39;s Make Full-Ass AngularJS Directives&quot;</a>, where he discusses the concept of a very simple way. I recommend reading this, very explanatory!</p>
+<p>The AngularJS directives concept is a bit very interesting for apps, if you think in software aspects as reuse, portability, modularity, among others. However, depending on the complexity of your directive, some tests become more complex. One approach to simplify some procedures is the construction of directives based on the concept of Thin Directives. I met this concept in Joel Hooks post <a href="http://joelhooks.com/blog/2014/02/11/lets-make-full-ass-angularjs-directives/">“Let’s Make Full-Ass AngularJS Directives”</a>, where he discusses the concept of a very simple way. I recommend reading this, very explanatory!</p>
 
 <p>The thin directives conception is based in construction of an angular directive using other components (as Controllers Services, factories, etc.) based on a directive for better integration and testability. With this approach the tests are much simpler, as you delegate some responsibilities to other Angular components.</p>
 
-<h2>PROBLEM: NAVBAR DIRECTIVE</h2>
+<h2 id="problem-navbar-directive">PROBLEM: NAVBAR DIRECTIVE</h2>
 
 <p>We will create a menu as an example using a directive based in thin directive concept. Something simple, but I believe that good teaching so that everyone can better understand this new concept (for some people) and some ways to use it in your apps. The idea is that our directive can check which item is being accessed in real time from the information passed by the url.</p>
 
 <p>For this task we will create three files to works directly with this directive:</p>
 
 <ul>
-<li><code>navbar.html</code>: Template of our policy with the information and values ​​to be updated;</li>
-<li><code>navbar-ctrl.js</code>: Controller for our menu. He will be responsible for making the integration so that our controller works perfectly;</li>
-<li><code>navbar.js</code>: our directive really. This file is very compact, it will have only a few simple settings;</li>
+  <li><code>navbar.html</code>: Template of our policy with the information and values ​​to be updated;</li>
+  <li><code>navbar-ctrl.js</code>: Controller for our menu. He will be responsible for making the integration so that our controller works perfectly;</li>
+  <li><code>navbar.js</code>: our directive really. This file is very compact, it will have only a few simple settings;</li>
 </ul>
 
-<p>Basing our directive&#39;s building in <a href="http://pt.wikipedia.org/wiki/Test_Driven_Development">TDD concepts</a>, we will focus on the concept of <a href="http://www.jamesshore.com/Blog/Red-Green-Refactor.html">Red, Green, Refactor</a>, so beyond the Thin Directives, we still have knowledge of TDD (for whom have doubts/questions about it).</p>
+<p>Basing our directive’s building in <a href="http://pt.wikipedia.org/wiki/Test_Driven_Development">TDD concepts</a>, we will focus on the concept of <a href="http://www.jamesshore.com/Blog/Red-Green-Refactor.html">Red, Green, Refactor</a>, so beyond the Thin Directives, we still have knowledge of TDD (for whom have doubts/questions about it).</p>
 
-<h2>DIRETIVE CREATION</h2>
+<h2 id="diretive-creation">DIRETIVE CREATION</h2>
 
 <p>Initially we have this html code that will become the template for our application, the file with the configuration of the routes of our app and other template (file <code>.html</code>) that will be vinculated with the directive.</p>
 
@@ -234,7 +234,7 @@
 
 <span class="p">});</span></code></pre></figure>
 
-<p>And now, let&#39;s go to create the navbar directive really.</p>
+<p>And now, let’s go to create the navbar directive really.</p>
 
 <p><code>navbar.js</code>:</p>
 
@@ -249,12 +249,12 @@
     <span class="p">};</span>
   <span class="p">});</span></code></pre></figure>
 
-<p>We are using the directive with the &quot;element&quot; element. Now, we have some formats for directives:</p>
+<p>We are using the directive with the “element” element. Now, we have some formats for directives:</p>
 
 <ul>
-<li>&#39;E&#39;: Element (<navbar></navbar>);</li>
-<li>&#39;C&#39;: Class (<div class="navbar"></div>);</li>
-<li>&#39;A&#39;: Attribute (<div navbar ></div>);</li>
+  <li>‘E’: Element (<navbar></navbar>);</li>
+  <li>‘C’: Class (&lt;div class="navbar"&gt;&lt;/div&gt;);</li>
+  <li>‘A’: Attribute (&lt;div navbar &gt;&lt;/div&gt;);</li>
 </ul>
 
 <p>These options can be combined, which opens a range of new possibilities for the more directives.
@@ -273,9 +273,9 @@ ex:</p>
 
 <p>If you have to know more about directives, please take a look in <a href="https://docs.angularjs.org/guide/directive">AngularJS directives documentation</a>.</p>
 
-<h2>LAST DIRECTIVE CONSTRUCTION STEP</h2>
+<h2 id="last-directive-construction-step">LAST DIRECTIVE CONSTRUCTION STEP</h2>
 
-<p>Still, our test will not be correct, because we don&#39;t have our controller created already. Let&#39;s create it now and their respective tests.</p>
+<p>Still, our test will not be correct, because we don’t have our controller created already. Let’s create it now and their respective tests.</p>
 
 <p><code>navbar-ctrl-test.js</code>:</p>
 
@@ -341,7 +341,7 @@ ex:</p>
 
 <p>Agora ao rodar os testes, tudo estará ok.</p>
 
-<h2>CONCLUSÃO</h2>
+<h2 id="concluso">CONCLUSÃO</h2>
 
 <p>Thin directives are interesting for create components with middle and/or high complexity characteristics as delegates to other elements of AngularJS, improving your maintenance, testing, etc. Worth aiming for a little more advanced aspects together to the directives, vinculated with others AngularJS Patterns. This way, we can create an app much more modular application using the best of javascript and AngularJS.</p>
 
@@ -356,11 +356,12 @@ ex:</p>
 <p>Links:</p>
 
 <ul>
-<li>Directives documentation: <a href="https://docs.angularjs.org/guide/directive">https://docs.angularjs.org/guide/directive</a></li>
-<li>Let&#39;s Make Full-Ass AngularJS Directives: <a href="http://joelhooks.com/blog/2014/02/11/lets-make-full-ass-angularjs-directives/">http://joelhooks.com/blog/2014/02/11/lets-make-full-ass-angularjs-directives/</a></li>
-<li>Test Driven Development (TDD): <a href="http://pt.wikipedia.org/wiki/Test_Driven_Development">http://pt.wikipedia.org/wiki/Test<em>Driven</em>Development</a></li>
-<li>Red, Green, Refactor: <a href="http://www.jamesshore.com/Blog/Red-Green-Refactor.html">http://www.jamesshore.com/Blog/Red-Green-Refactor.html</a></li>
+  <li>Directives documentation: <a href="https://docs.angularjs.org/guide/directive">https://docs.angularjs.org/guide/directive</a></li>
+  <li>Let’s Make Full-Ass AngularJS Directives: <a href="http://joelhooks.com/blog/2014/02/11/lets-make-full-ass-angularjs-directives/">http://joelhooks.com/blog/2014/02/11/lets-make-full-ass-angularjs-directives/</a></li>
+  <li>Test Driven Development (TDD): <a href="http://pt.wikipedia.org/wiki/Test_Driven_Development">http://pt.wikipedia.org/wiki/Test_Driven_Development</a></li>
+  <li>Red, Green, Refactor: <a href="http://www.jamesshore.com/Blog/Red-Green-Refactor.html">http://www.jamesshore.com/Blog/Red-Green-Refactor.html</a></li>
 </ul>
+
 
           </div>
         </section>

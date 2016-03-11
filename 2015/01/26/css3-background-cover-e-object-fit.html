@@ -97,17 +97,17 @@
           </div>
           <a name="topofpage"></a>
           <div id="post-content-page">
-            <h2>INTRODUÇÃO</h2>
+            <h2 id="introduo">INTRODUÇÃO</h2>
 
 <p>O CSS 3 melhorou a forma que interagíamos com o usuário de maneira direta. Muitos dos artifícios que utilizávamos javascript para proporcionar maior interatividade (animações, transições, etc) em nossas aplicações hoje em dia são feitas utilizando CSS 3 de maneira simples e usual.</p>
 
 <p>Uma das coisas que o CSS3 proporciona é a de utilizar um full background usando <code>background-size: cover</code> para centralizar uma determinada imagem, mas nem todos conhecem uma outra propriedade (ou não sabem a real diferença entre uma e a outra) que é a <code>object-fit: cover</code> e utilizam o background-size para o mesmo efeito, o que diminui a semântica do app.</p>
 
-<h2>CENTRALIZANDO IMAGEM COM CSS</h2>
+<h2 id="centralizando-imagem-com-css">CENTRALIZANDO IMAGEM COM CSS</h2>
 
 <p>Podemos centralizar imagens utilizando somente CSS? Sim! E para isso podemos utilizar estas propriedades. Por exemplo: em um app que precise de uma imagem que tome todo o fundo do browser, por exemplo, podemos muito bem utilizar a propriedade <code>background-size: cover</code>:</p>
 
-<p>Podemos fazer isso desde 2009 graças à propriedade do CSS3 <code>background-size: cover</code>. Utilizaremos o element &quot;html&quot; para montar um fundo fixo e centrado sobre ele, em seguida, ajustar o seu tamanho usando <code>background-size</code> definido com a propriedade <code>cover</code>.</p>
+<p>Podemos fazer isso desde 2009 graças à propriedade do CSS3 <code>background-size: cover</code>. Utilizaremos o element “html” para montar um fundo fixo e centrado sobre ele, em seguida, ajustar o seu tamanho usando <code>background-size</code> definido com a propriedade <code>cover</code>.</p>
 
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="lineno">1</span> <span class="nt">html</span> <span class="p">{</span>
 <span class="lineno">2</span>   <span class="k">background</span><span class="o">:</span> <span class="sx">url(/assets/images/css3-post.png)</span> <span class="k">no-repeat</span> <span class="k">center</span> <span class="k">center</span> <span class="k">fixed</span><span class="p">;</span>
@@ -122,16 +122,16 @@
 <p>1°: Tudo vai funcionar como esperamos nos browsers:</p>
 
 <ul>
-<li>Safari 3+;</li>
-<li>Chrome *;</li>
-<li>IE 9+;</li>
-<li>Opera 10+ (com prefixo <code>-o</code>);</li>
-<li>Firefox 3.6+ (com prefixo <code>-moz</code>);</li>
+  <li>Safari 3+;</li>
+  <li>Chrome *;</li>
+  <li>IE 9+;</li>
+  <li>Opera 10+ (com prefixo <code>-o</code>);</li>
+  <li>Firefox 3.6+ (com prefixo <code>-moz</code>);</li>
 </ul>
 
 <p>2°: Caso utilize pré-processadores esta questão de prefixos já são resolvidos por várias ferramentas. Dá uma olhada no seu pré-processador preferido.</p>
 
-<p>Muitas pessoas utilizavam a propriedade background-size para criarem um &quot;workaround&quot; colocando elementos como &quot;div&quot;, &quot;spam&quot; com a propriedade <code>cover</code> para simularem este evento, mas atualmente podemos simular este evento de outra forma e é aí que entra a propriedade <code>object-fit</code>.</p>
+<p>Muitas pessoas utilizavam a propriedade background-size para criarem um “workaround” colocando elementos como “div”, “spam” com a propriedade <code>cover</code> para simularem este evento, mas atualmente podemos simular este evento de outra forma e é aí que entra a propriedade <code>object-fit</code>.</p>
 
 <p>Podemos utilizá-lo para cortarmos de maneira proporcional uma imagem de avatar, por exemplo. Com o <code>object-fit: cover</code> aplicado à imagem com largura e altura definidas, ela é dsitribuída de forma centralizada. Para isso defina as dimensões da imagem e usando o seguinte CSS:</p>
 
@@ -141,7 +141,7 @@
 
 <p>Criei um código de exemplo no <a href="http://plnkr.co/edit/erzWvD?p=preview">plunker com os formatos de utilização do atributo no plunker</a> para darem uma olhada no <code>object-fit</code> em ação. Caso queiram saber mais podem dar uma olhada sobre os <a href="http://caniuse.com/#feat=object-fit">browsers que suportam <code>object-fit</code> via Can I use</a>.</p>
 
-<h2>CONCLUSÃO</h2>
+<h2 id="concluso">CONCLUSÃO</h2>
 
 <p>Simples, não? A depender do que queira fazer não precisa adicionar elementos no DOM e afetar diretamente a semântica do nosso app. Estas técnicas funcionam muito bem em evergreen browsers, mas existe um <a href="https://github.com/anselmh/object-fit">polyfill</a> para os browsers mais antigos. Você pode adicioná-lo a seu projeto via npm ou bower. Agora é só utilizá-los em seus apps da melhor maneira possível!</p>
 
@@ -150,11 +150,12 @@
 <p>Links:</p>
 
 <ul>
-<li>CSS3 - The Object-fit: <a href="http://www.w3.org/TR/css3-images/#the-object-fit">http://www.w3.org/TR/css3-images/#the-object-fit</a></li>
-<li>CSS3 - Background-size: <a href="http://www.w3.org/TR/2002/WD-css3-background-20020802/#background-size">http://www.w3.org/TR/2002/WD-css3-background-20020802/#background-size</a></li>
-<li>Center and crop images with a single line of CSS: <a href="https://medium.com/@chrisnager/center-and-crop-images-with-a-single-line-of-css-ad140d5b4a87">https://medium.com/@chrisnager/center-and-crop-images-with-a-single-line-of-css-ad140d5b4a87</a></li>
-<li>Can I use object-fit: <a href="http://caniuse.com/#feat=object-fit">http://caniuse.com/#feat=object-fit</a></li>
+  <li>CSS3 - The Object-fit: <a href="http://www.w3.org/TR/css3-images/#the-object-fit">http://www.w3.org/TR/css3-images/#the-object-fit</a></li>
+  <li>CSS3 - Background-size: <a href="http://www.w3.org/TR/2002/WD-css3-background-20020802/#background-size">http://www.w3.org/TR/2002/WD-css3-background-20020802/#background-size</a></li>
+  <li>Center and crop images with a single line of CSS: <a href="https://medium.com/@chrisnager/center-and-crop-images-with-a-single-line-of-css-ad140d5b4a87">https://medium.com/@chrisnager/center-and-crop-images-with-a-single-line-of-css-ad140d5b4a87</a></li>
+  <li>Can I use object-fit: <a href="http://caniuse.com/#feat=object-fit">http://caniuse.com/#feat=object-fit</a></li>
 </ul>
+
 
           </div>
         </section>

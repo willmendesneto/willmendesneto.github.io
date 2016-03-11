@@ -97,27 +97,27 @@
           </div>
           <a name="topofpage"></a>
           <div id="post-content-page">
-            <h2>INTRODUÇÃO</h2>
+            <h2 id="introduo">INTRODUÇÃO</h2>
 
 <p>Todos já conhecem sobre a fama da curva de aprendizado no AngularJS, que é comparado a uma montanha russa (risos).</p>
 
-<p><img src="http://www.bennadel.com/resources/uploads/2013/feelings_about_angularjs_over_time.png" alt="Curva de Aprendizado no AngularJS"></p>
+<p><img src="http://www.bennadel.com/resources/uploads/2013/feelings_about_angularjs_over_time.png" alt="Curva de Aprendizado no AngularJS" /></p>
 
 <p>Alguns conceitos como directives, factories e services são comumente mais usados, mas e se você tiver de alterar um comportamento mais específico de um módulo seu e/ou até mesmo de um módulo da comunidade? Como fazê-lo sem interferir no Core do módulo utilizado?</p>
 
-<h2>USANDO DECORATORS NO CORE DO ANGULAR JS</h2>
+<h2 id="usando-decorators-no-core-do-angular-js">USANDO DECORATORS NO CORE DO ANGULAR JS</h2>
 
-<p>Um post interessante feito por <a href="https://github.com/btford">Brian Ford</a> ([@briantford][btford-twitter]) com um nome bem sugestivo <a href="http://briantford.com/blog/angular-hacking-core">&quot;Hacking Core Directives in AngularJS&quot;</a> explica sobre um cenário no qual existe a necessidade de há a necessidade de se alterar uma diretiva do Core (todas as diretivas do Core do AngularJS utilizam o namespace <code>ng</code> e sua utilização para seus apps é considerada uma má prática de desenvolvimento) do AngularJS utilizando decorators a partir da interface <code>$provide</code>. Vale citar que o mesmo autor tem um <a href="https://github.com/btford/brian-talks-about-decorators">lightning talk bem interessante falando sobre Decorators, disponibilizada no seu github</a>.</p>
+<p>Um post interessante feito por <a href="https://github.com/btford">Brian Ford</a> ([@briantford][btford-twitter]) com um nome bem sugestivo <a href="http://briantford.com/blog/angular-hacking-core">“Hacking Core Directives in AngularJS”</a> explica sobre um cenário no qual existe a necessidade de há a necessidade de se alterar uma diretiva do Core (todas as diretivas do Core do AngularJS utilizam o namespace <code>ng</code> e sua utilização para seus apps é considerada uma má prática de desenvolvimento) do AngularJS utilizando decorators a partir da interface <code>$provide</code>. Vale citar que o mesmo autor tem um <a href="https://github.com/btford/brian-talks-about-decorators">lightning talk bem interessante falando sobre Decorators, disponibilizada no seu github</a>.</p>
 
-<p><a href="https://github.com/wejendorp">Jacob Wejendorp</a> falou mais sobre inserção/alteração de métodos interessantes para quem trabalha com promises no angular e gostaria de maiores tratamentos e opções no <a href="http://dorp.io/blog/extending-q-promises.html">&quot;Extending $q promises in Angular&quot;</a>.</p>
+<p><a href="https://github.com/wejendorp">Jacob Wejendorp</a> falou mais sobre inserção/alteração de métodos interessantes para quem trabalha com promises no angular e gostaria de maiores tratamentos e opções no <a href="http://dorp.io/blog/extending-q-promises.html">“Extending $q promises in Angular”</a>.</p>
 
-<h2>USANDO DECORATORS EM MÓDULOS EXTERNOS</h2>
+<h2 id="usando-decorators-em-mdulos-externos">USANDO DECORATORS EM MÓDULOS EXTERNOS</h2>
 
 <p>Outro post bem bacana é o do [Damien Klinnert][damien] falando sobre sua experiência ao utilizar decorators no AngularJS. Em um de seus exemplos ele mostra como alterar o comportamento do módulo angular-resource. Sua alteração é bastante simples e didática:</p>
 
 <ul>
-<li>Ele cria um módulo utilizando o <code>ngResource</code> padrão para acessar o angular-resource;</li>
-<li>Cria-se uma configuração específica para fazer as alterações no módulo, utilizando o <code>$provide.decorator()</code>;</li>
+  <li>Ele cria um módulo utilizando o <code>ngResource</code> padrão para acessar o angular-resource;</li>
+  <li>Cria-se uma configuração específica para fazer as alterações no módulo, utilizando o <code>$provide.decorator()</code>;</li>
 </ul>
 
 <p>Achava que esta era uma abordagem meio que didática, mas me deparei com uma utilização real em uma de minhas empreitadas com o AngularJS. Um sistema que já estava em produção e que tinha um codebase considerável tinha de ser alterado. A sua API foi atualizada e com base em alguns parâmetros iniciais teríamos de verificar qual a API está disponível para o usuário e inicializarmos via app. Outra coisa interessante é que o sistema não pensava anteriormente em versionamento de API (já que era uma mescla caótica entre MVC e entregas de conteúdo via REST), ou seja, nada de <code>/v1</code>, <code>/v2</code> para facilitar a nossa vida inicialmente (senão seria algo bem simples).</p>
@@ -151,19 +151,20 @@
 
 <p>Inicialmente bem simples. Além disto podemos refatorar para que essa verificação seja feita com base em informações server-side, usando alguma linguagem de backend para auxiliar e várias outras opções, aumentando ainda mais a nossa gama de possibilidades. No meu caso acabei optando por algo auxiliado pelo backend, afim de evitar tratamentos desnecessários.</p>
 
-<h2>CONCLUSÃO</h2>
+<h2 id="concluso">CONCLUSÃO</h2>
 
 <p>A utilização de decorators no Angular é algo bem simples e muito poderoso, indo além de algo como <a href="http://en.wikipedia.org/wiki/Syntactic_sugar">sugar syntax</a>, trazendo uma maior modularidade de alterações. Mas tenha cuidado, pois as alterações serão refletidas em todo o seu projeto. Use-o com cautela e seja feliz!</p>
 
 <p>Links:</p>
 
 <ul>
-<li>Post &quot;Hacking Core Directives in AngularJS&quot;: <a href="http://briantford.com/blog/angular-hacking-core">http://briantford.com/blog/angular-hacking-core</a></li>
-<li>Brian Ford: <a href="https://github.com/btford">https://github.com/btford</a></li>
-<li>LIghtning Talk &quot;Decorators in AngularJS&quot;: <a href="https://github.com/btford/brian-talks-about-decorators">https://github.com/btford/brian-talks-about-decorators</a></li>
-<li>Post &quot;Extending $q promises in Angular&quot;: <a href="http://dorp.io/blog/extending-q-promises.html">http://dorp.io/blog/extending-q-promises.html</a></li>
-<li>Sugar Syntax:<a href="http://en.wikipedia.org/wiki/Syntactic_sugar">http://en.wikipedia.org/wiki/Syntactic_sugar</a></li>
+  <li>Post “Hacking Core Directives in AngularJS”: <a href="http://briantford.com/blog/angular-hacking-core">http://briantford.com/blog/angular-hacking-core</a></li>
+  <li>Brian Ford: <a href="https://github.com/btford">https://github.com/btford</a></li>
+  <li>LIghtning Talk “Decorators in AngularJS”: <a href="https://github.com/btford/brian-talks-about-decorators">https://github.com/btford/brian-talks-about-decorators</a></li>
+  <li>Post “Extending $q promises in Angular”: <a href="http://dorp.io/blog/extending-q-promises.html">http://dorp.io/blog/extending-q-promises.html</a></li>
+  <li>Sugar Syntax:<a href="http://en.wikipedia.org/wiki/Syntactic_sugar">http://en.wikipedia.org/wiki/Syntactic_sugar</a></li>
 </ul>
+
 
           </div>
         </section>

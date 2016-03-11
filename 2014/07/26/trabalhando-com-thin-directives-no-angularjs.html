@@ -99,27 +99,27 @@
           <div id="post-content-page">
             <p><a class="page-link" href="/2014/09/22/working-with-thin-directives-in-angularjs">Veja a versão em inglês</a></p>
 
-<h2>INTRODUÇÃO</h2>
+<h2 id="introduo">INTRODUÇÃO</h2>
 
-<p>O conceito de diretivas no AngularJS é algo bastante interessante para apps, visando aspectos como reuso, portabilidade, modularização, dentre outros. Porém, a depender da complexidade de sua diretiva, alguns testes tornam-se mais complexos. Uma abordagem para simplificar alguns procedimentos é a contrução de diretivas baseando-se no conceito de diretivas &quot;magras&quot; (Thin Directives). Conheci este conceito no post de Joel Hooks <a href="http://joelhooks.com/blog/2014/02/11/lets-make-full-ass-angularjs-directives/">&quot;Let&#39;s Make Full-Ass AngularJS Directives&quot;</a>, onde ele aborda os conceito de uma maneira bastante simples. Recomendo esta leitura, bastante explicativo!</p>
+<p>O conceito de diretivas no AngularJS é algo bastante interessante para apps, visando aspectos como reuso, portabilidade, modularização, dentre outros. Porém, a depender da complexidade de sua diretiva, alguns testes tornam-se mais complexos. Uma abordagem para simplificar alguns procedimentos é a contrução de diretivas baseando-se no conceito de diretivas “magras” (Thin Directives). Conheci este conceito no post de Joel Hooks <a href="http://joelhooks.com/blog/2014/02/11/lets-make-full-ass-angularjs-directives/">“Let’s Make Full-Ass AngularJS Directives”</a>, onde ele aborda os conceito de uma maneira bastante simples. Recomendo esta leitura, bastante explicativo!</p>
 
 <p>O conceito de thin directives é a construção de uma diretiva Angular utilizando também outros componentes (como Controllers, Services, Factories, etc) como base de uma diretiva. Com esta abordagem os testes ficam muito mais simples, já que você delega algumas responsabilidades a outros componentes Angular.</p>
 
-<h2>PROBLEMA: DIRETIVA NAVBAR</h2>
+<h2 id="problema-diretiva-navbar">PROBLEMA: DIRETIVA NAVBAR</h2>
 
 <p>Criaremos uma diretiva de menu como exemplo. Algo bastante simples, mas acredito que bem didático para que todos entendam melhor este novo conceito (para alguns) e algumas formas de utilizá-lo. A idéia é que nossa diretiva possa verificar qual item está sendo acessado em tempo real, a partir das informações passadas pela url.</p>
 
 <p>Para isto vamos criar 3 arquivos para lidar diretamente com esta diretiva:</p>
 
 <ul>
-<li><code>navbar.html</code>: Template da nossa diretiva com as informações e valores a serem atualizados.</li>
-<li><code>navbar-ctrl.js</code>: Controller para o nosso menu. Ele será responsável por fazer a integração para que o nosso controller funcione perfeitamente</li>
-<li><code>navbar.js</code>: Diretiva de nosso app. Este arquivo será bem compacto, pois possuirá somente algumas configurações mais simples.</li>
+  <li><code>navbar.html</code>: Template da nossa diretiva com as informações e valores a serem atualizados.</li>
+  <li><code>navbar-ctrl.js</code>: Controller para o nosso menu. Ele será responsável por fazer a integração para que o nosso controller funcione perfeitamente</li>
+  <li><code>navbar.js</code>: Diretiva de nosso app. Este arquivo será bem compacto, pois possuirá somente algumas configurações mais simples.</li>
 </ul>
 
 <p>Baseando a construção de nossa diretiva em <a href="http://pt.wikipedia.org/wiki/Test_Driven_Development">TDD</a>, vamos focar no conceito de <a href="http://www.jamesshore.com/Blog/Red-Green-Refactor.html">Red, Green, Refactor</a>, assim além do conceito de Thin Directives, ainda teremos conhecimento de TDD (para quem tem dúvidas sobre).</p>
 
-<h2>CRIAÇÃO DA DIRETIVA</h2>
+<h2 id="criao-da-diretiva">CRIAÇÃO DA DIRETIVA</h2>
 
 <p>Inicialmente temos este código html que se tornará o template de nossa aplicação, o arquivo com a configuração das rotas de nosso app e outro template html que será o da diretiva.</p>
 
@@ -249,12 +249,12 @@
     <span class="p">};</span>
   <span class="p">});</span></code></pre></figure>
 
-<p>Estamos utilizando a diretiva com o formato &quot;elemento&quot;. Temos alguns formatos para diretivas:</p>
+<p>Estamos utilizando a diretiva com o formato “elemento”. Temos alguns formatos para diretivas:</p>
 
 <ul>
-<li>&#39;E&#39;: Elemento (<navbar></navbar>);</li>
-<li>&#39;C&#39;: Classe (<div class="navbar"></div>);</li>
-<li>&#39;A&#39;: Atributo (<div navbar ></div>);</li>
+  <li>‘E’: Elemento (<navbar></navbar>);</li>
+  <li>‘C’: Classe (&lt;div class="navbar"&gt;&lt;/div&gt;);</li>
+  <li>‘A’: Atributo (&lt;div navbar &gt;&lt;/div&gt;);</li>
 </ul>
 
 <p>Estas opções podem ser combinadas, o que abre um leque de possibilidades a mais para as diretivas.
@@ -273,7 +273,7 @@ Ex :</p>
 
 <p>Caso queiram saber mais sobre as diretivas, dêem uma olhada na <a href="https://docs.angularjs.org/guide/directive">documentação das diretivas do angularjs</a>.</p>
 
-<h2>ETAPA FINAL DA CONSTRUÇÃO DA DIRETIVA</h2>
+<h2 id="etapa-final-da-construo-da-diretiva">ETAPA FINAL DA CONSTRUÇÃO DA DIRETIVA</h2>
 
 <p>Ainda assim, nosso teste não estará correto, pois não temos o nosso controller criado. Vamos criar agora ele e o seu respectivo teste</p>
 
@@ -341,7 +341,7 @@ Ex :</p>
 
 <p>Agora ao rodar os testes, tudo estará ok.</p>
 
-<h2>CONCLUSÃO</h2>
+<h2 id="concluso">CONCLUSÃO</h2>
 
 <p>Diretivas magras são interessantes para diretivas com complexidade média e/ou alta, pois delega características a outros elementos do AngularJS, melhorando a sua manutenção, testes, etc. Vale a pena visar aspectos um pouco mais avançados juntamente às diretivas, com outros Patterns unidos ao AngularJS. Assim podemos criar uma aplicação muito mais modular utilizando o melhor do javascript e do AngularJS.</p>
 
@@ -356,11 +356,12 @@ Ex :</p>
 <p>Links:</p>
 
 <ul>
-<li>Documentação das diretivas: <a href="https://docs.angularjs.org/guide/directive">https://docs.angularjs.org/guide/directive</a></li>
-<li>Let&#39;s Make Full-Ass AngularJS Directives: <a href="http://joelhooks.com/blog/2014/02/11/lets-make-full-ass-angularjs-directives/">http://joelhooks.com/blog/2014/02/11/lets-make-full-ass-angularjs-directives/</a></li>
-<li>Test Driven Development (TDD): <a href="http://pt.wikipedia.org/wiki/Test_Driven_Development">http://pt.wikipedia.org/wiki/Test<em>Driven</em>Development</a></li>
-<li>Red, Green, Refactor: <a href="http://www.jamesshore.com/Blog/Red-Green-Refactor.html">http://www.jamesshore.com/Blog/Red-Green-Refactor.html</a></li>
+  <li>Documentação das diretivas: <a href="https://docs.angularjs.org/guide/directive">https://docs.angularjs.org/guide/directive</a></li>
+  <li>Let’s Make Full-Ass AngularJS Directives: <a href="http://joelhooks.com/blog/2014/02/11/lets-make-full-ass-angularjs-directives/">http://joelhooks.com/blog/2014/02/11/lets-make-full-ass-angularjs-directives/</a></li>
+  <li>Test Driven Development (TDD): <a href="http://pt.wikipedia.org/wiki/Test_Driven_Development">http://pt.wikipedia.org/wiki/Test_Driven_Development</a></li>
+  <li>Red, Green, Refactor: <a href="http://www.jamesshore.com/Blog/Red-Green-Refactor.html">http://www.jamesshore.com/Blog/Red-Green-Refactor.html</a></li>
 </ul>
+
 
           </div>
         </section>

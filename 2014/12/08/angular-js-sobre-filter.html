@@ -99,79 +99,79 @@
           <div id="post-content-page">
             <p><a class="page-link" href="/2014/12/14/angular-js-about-filter/">Veja a versão em inglês</a></p>
 
-<h2>INTRODUÇÃO</h2>
+<h2 id="introduo">INTRODUÇÃO</h2>
 
 <p>Desta vez uma postagem bem simples e rápida. Tenho um envolvimento bem bacana, participando de grupos locais e nacionais. Dentre estes grupos sou um dos organizers do <a href="https://plus.google.com/109551746919819088573/posts">GDG - Google Developers Group Salvador</a> o qual fortaleceu meu envolvimento com várias tecnologias, mas atualmente curto bastante frontend e atuo diretamente em projetos que utilizam, dentre outras tecnologias, o framework AngularJS.</p>
 
 <p>Neste processo percebo que várias pessoas possuem dúvidas distintas sobre algum aspecto do framework, seja conceitual ou prático, dos componentes fornecidos pelo AngularJS. E foi por isso que pensei em criar uma série de posts abordando alguns destes pontos pelo simples motivo:</p>
 
 <blockquote>
-<p>&quot;Conhecimento bom é conhecimento compartilhado&quot;</p>
+  <p>“Conhecimento bom é conhecimento compartilhado”</p>
 </blockquote>
 
 <p>Neste post vamos falar um pouco sobre o conceito de filtros e como é o fluxo da interface de <code>$filter</code> no AngularJS. Claro, este é o primeiro, mas a idéia não é torná-lo algo <a href="http://teropa.info/build-your-own-angular">como o Building your own AngularJS </a> (nem tenho esta pretensão), mas algo que passe alguns fundamentos e dicas que possam valer a pena inicialmente ou mostrar alguns aspectos que não conhecia.</p>
 
-<h2>SOBRE</h2>
+<h2 id="sobre">SOBRE</h2>
 
 <p>O conceito de filtros é algo bem bacana que o framework já traz no seu core. Isso facilita horrores, pois a interface fornecida pelo AngularJS pode ser utilizada em todos os locais de sua aplicação, sejam elas templates html, services, directives, controllers, etc. Por padrão já podemos utilizar alguns filtros previamente criados, como:</p>
 
 <ul>
-<li><code>currency</code>: para valores. Formata um número para o formato de moeda. Quando nenhum símbolo é fornecido, utiliza o símbolo padrão para o local como padrão;</li>
-<li><code>date</code>: para formatação de datas. Com base no parâmetro passado pode retornar uma data em um formato específico;</li>
-<li><code>filter</code>: filtro padrão para buscas em string, objetos JSON ou ArrayObjects;</li>
-<li><code>json</code>: para transformarmos um valor em json. utilizado para transformar objetos Javascript em uma string Json;</li>
-<li><code>limitTo</code>: Cria uma nova matriz/string com um número de elementos determinado previamente. Os elementos são retirados do início ou do fim da matriz de origem, número ou cadeia de caracteres, especificados pelo valor e sinal (positivo ou negativo para verificação de ordem). Se um número é usado como entrada, ele é convertido para uma string.</li>
-<li><code>lowercase</code>: Conversão para caracteres minúsculos;</li>
-<li><code>number</code>: Formatação de números;</li>
-<li><code>orderBy</code>: Ordena em ordem alfabética ou numerica. Em caso de números vale observar se eles estão realmente sendo salvos como números e não strings, pois isto pode afetar na ordenação;</li>
-<li><code>uppercase</code>: Conversão para caracteres maiúsculos;</li>
+  <li><code>currency</code>: para valores. Formata um número para o formato de moeda. Quando nenhum símbolo é fornecido, utiliza o símbolo padrão para o local como padrão;</li>
+  <li><code>date</code>: para formatação de datas. Com base no parâmetro passado pode retornar uma data em um formato específico;</li>
+  <li><code>filter</code>: filtro padrão para buscas em string, objetos JSON ou ArrayObjects;</li>
+  <li><code>json</code>: para transformarmos um valor em json. utilizado para transformar objetos Javascript em uma string Json;</li>
+  <li><code>limitTo</code>: Cria uma nova matriz/string com um número de elementos determinado previamente. Os elementos são retirados do início ou do fim da matriz de origem, número ou cadeia de caracteres, especificados pelo valor e sinal (positivo ou negativo para verificação de ordem). Se um número é usado como entrada, ele é convertido para uma string.</li>
+  <li><code>lowercase</code>: Conversão para caracteres minúsculos;</li>
+  <li><code>number</code>: Formatação de números;</li>
+  <li><code>orderBy</code>: Ordena em ordem alfabética ou numerica. Em caso de números vale observar se eles estão realmente sendo salvos como números e não strings, pois isto pode afetar na ordenação;</li>
+  <li><code>uppercase</code>: Conversão para caracteres maiúsculos;</li>
 </ul>
 
 <p>Quando utilizado no template html, o filter aceita algumas verificações, como:</p>
 
 <ul>
-<li><code>+</code>: Soma ou concatena. Utiliza o método <code>additive</code>;</li>
-<li><code>-</code>: Diminui. Utiliza o método <code>additive</code>;</li>
-<li><code>*</code>: Multiplica. Utiliza o método <code>multiplicative</code>;</li>
-<li><code>/</code> : Divide. Utiliza o método <code>multiplicative</code>;</li>
-<li><code>%</code>: Retorna o resto da divisão. Utiliza o método <code>multiplicative</code>;</li>
-<li><code>===</code>: Compara com verificação de tipagem. Utiliza o método <code>equality</code>;</li>
-<li><code>!==</code>: Compara com verificação de tipagem. Utiliza o método <code>equality</code>;</li>
-<li><code>==</code>: Compara sem verificação de tipagem. Utiliza o método <code>equality</code>;</li>
-<li><code>!=</code>: Compara sem verificação de tipagem. Utiliza o método <code>equality</code>;</li>
-<li><code>&lt;</code>: Menor que. Utiliza o método <code>relational</code>;</li>
-<li><code>&gt;</code>: Maior que. Utiliza o método <code>relational</code>;</li>
-<li><code>&lt;=</code>: Menor ou igual. Utiliza o método <code>relational</code>;</li>
-<li><code>&gt;=</code>: Maior ou igual. Utiliza o método <code>relational</code>;</li>
-<li><code>&amp;&amp;</code>: AND. Utiliza o método <code>logicalAND</code>;</li>
-<li><code>||</code>: OR. Utiliza o método <code>logicalOR</code>;</li>
-<li><code>!</code>: Altera o valor (força o valor para o tipo boolean). Utiliza o método <code>unary</code>;</li>
-<li><code>=</code>: Atribui o valor do segundo ao primeiro. Utiliza o método <code>assignment</code>;</li>
-<li><code>|</code>: Retorna o boolean <code>true</code>;</li>
+  <li><code>+</code>: Soma ou concatena. Utiliza o método <code>additive</code>;</li>
+  <li><code>-</code>: Diminui. Utiliza o método <code>additive</code>;</li>
+  <li><code>*</code>: Multiplica. Utiliza o método <code>multiplicative</code>;</li>
+  <li><code>/</code> : Divide. Utiliza o método <code>multiplicative</code>;</li>
+  <li><code>%</code>: Retorna o resto da divisão. Utiliza o método <code>multiplicative</code>;</li>
+  <li><code>===</code>: Compara com verificação de tipagem. Utiliza o método <code>equality</code>;</li>
+  <li><code>!==</code>: Compara com verificação de tipagem. Utiliza o método <code>equality</code>;</li>
+  <li><code>==</code>: Compara sem verificação de tipagem. Utiliza o método <code>equality</code>;</li>
+  <li><code>!=</code>: Compara sem verificação de tipagem. Utiliza o método <code>equality</code>;</li>
+  <li><code>&lt;</code>: Menor que. Utiliza o método <code>relational</code>;</li>
+  <li><code>&gt;</code>: Maior que. Utiliza o método <code>relational</code>;</li>
+  <li><code>&lt;=</code>: Menor ou igual. Utiliza o método <code>relational</code>;</li>
+  <li><code>&gt;=</code>: Maior ou igual. Utiliza o método <code>relational</code>;</li>
+  <li><code>&amp;&amp;</code>: AND. Utiliza o método <code>logicalAND</code>;</li>
+  <li><code>||</code>: OR. Utiliza o método <code>logicalOR</code>;</li>
+  <li><code>!</code>: Altera o valor (força o valor para o tipo boolean). Utiliza o método <code>unary</code>;</li>
+  <li><code>=</code>: Atribui o valor do segundo ao primeiro. Utiliza o método <code>assignment</code>;</li>
+  <li><code>|</code>: Retorna o boolean <code>true</code>;</li>
 </ul>
 
-<p>Todos estes operadores estão configurados na variável <code>OPERATORS</code>. Caso queira saber mais sobre Operadores de comparação, o próprio Angular referencia a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators">documentação do MDN &quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators&quot;</a></p>
+<p>Todos estes operadores estão configurados na variável <code>OPERATORS</code>. Caso queira saber mais sobre Operadores de comparação, o próprio Angular referencia a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators">documentação do MDN “https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators”</a></p>
 
 <p>E escapa alguns caracteres especiais, como:</p>
 
 <ul>
-<li><code>\n</code>;</li>
-<li><code>\f</code>;</li>
-<li><code>\r</code>;</li>
-<li><code>\t</code>;</li>
-<li><code>\v</code>;</li>
-<li><code>&#39;</code>;</li>
-<li><code>&quot;</code>;</li>
+  <li><code>\n</code>;</li>
+  <li><code>\f</code>;</li>
+  <li><code>\r</code>;</li>
+  <li><code>\t</code>;</li>
+  <li><code>\v</code>;</li>
+  <li><code>'</code>;</li>
+  <li><code>"</code>;</li>
 </ul>
 
 <p>Todos estes caracteres especiais estão configurados na variável <code>ESCAPE</code>. Caso queira saber mais basta darem uma olhada no código final do AngularJS e buscarem por esta variável.</p>
 
-<h2>ARQUITETURA E DESIGN PATTERN</h2>
+<h2 id="arquitetura-e-design-pattern">ARQUITETURA E DESIGN PATTERN</h2>
 
 <p>Alguns padrões de projetos são implementados no angularjs, alguns não tão conhecidos. Conceitualmente falando, um filtro recebe um fluxo (stream de dados) como entrada e produz um fluxo de caracteres como saída. Além disso os filtros podem ser parametrizados. Definição oficial para filtros encontrada no site oficial do AngularJS:</p>
 
 <blockquote>
-<p>&quot;Selects a subset of items from array and returns it as a new array.&quot;</p>
+  <p>“Selects a subset of items from array and returns it as a new array.”</p>
 </blockquote>
 
 <p>O conjunto particular de regras aqui aplicado define um estilo arquitetural conhecido como <a href="http://webcem01.cem.itesm.mx:8005/apps/s200911/tc3003/notes_pipes_and_filters/">Pipe-and-Filter</a>. O Pipe-and-filter é baseado no fluxo/stream de dados, tendo filtros que podem operar de forma concorrente ou não, ou seja, podem ou não aguardar o término do produtor para que o componente que consome a saída do produtor inicie o seu funcionamento.</p>
@@ -187,7 +187,7 @@
 
 <p>Podemos verificar alguns métodos do Angular que demonstram o funcionamento desta arquitetura, como:</p>
 
-<p><code>filterChain</code>: Faz a chamada dos filtros combinados utilizando chainning methods, que é um tipo de fluent API e utiliza também o método <code>filter</code> internamente. Caso queiram saber mais sobre este conceito, <a href="http://www.smashingmagazine.com/2012/10/09/designing-javascript-apis-usability/">recomendo o artigo do Smashing Magazine &quot;Designing Better JavaScript APIs&quot;</a>.</p>
+<p><code>filterChain</code>: Faz a chamada dos filtros combinados utilizando chainning methods, que é um tipo de fluent API e utiliza também o método <code>filter</code> internamente. Caso queiram saber mais sobre este conceito, <a href="http://www.smashingmagazine.com/2012/10/09/designing-javascript-apis-usability/">recomendo o artigo do Smashing Magazine “Designing Better JavaScript APIs”</a>.</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="lineno">1</span> <span class="nx">filterChain</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 <span class="lineno">2</span>     <span class="kd">var</span> <span class="nx">left</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">expression</span><span class="p">();</span>
@@ -237,11 +237,11 @@
 
 <p>Sabendo que os filtros são apenas funções que transformam a entrada para uma saída solicitada. No entanto filtros precisam de uma injeção de dependências. Para isto uma definição de filtro é constituído por uma função factory (que já é fornecida internamente pelo AngularJS) com annotations de suas dependências e é aí que o <code>$filterProvider</code> se apresenta para nós a partir do método <code>$filterProvider.register()</code>.</p>
 
-<h2>BOAS PRÁTICAS</h2>
+<h2 id="boas-prticas">BOAS PRÁTICAS</h2>
 
 <p>Existem vários style guides sobre isso, mas vale lembrar que todos estão andando lado a lado com a documentação do Angular e feedbacks baseados em sua utilização em projetos.</p>
 
-<p>Há pouco tempo foi abordado algo que funcionava, mas que não era o correto. Em uma das issues abertas no repositório do Github do AngularJS foi abordada um cenário no qual se utiliza o conceito de namespaces (pense no namespace do jQuery &quot;my.awesome.namespace&quot;). Este cenário era possível até a versão 1.3.2 do framework e além desta versão este formato não funcionava corretamente.</p>
+<p>Há pouco tempo foi abordado algo que funcionava, mas que não era o correto. Em uma das issues abertas no repositório do Github do AngularJS foi abordada um cenário no qual se utiliza o conceito de namespaces (pense no namespace do jQuery “my.awesome.namespace”). Este cenário era possível até a versão 1.3.2 do framework e além desta versão este formato não funcionava corretamente.</p>
 
 <p>Esta issue levantou uma discussão bastante interessante, que foi finalizada com algo que era correto, mas que não constava na documentação dos filtros que é a de que não se deve utilizar caracteres especiais na definição do nome do filtro. Caso queira acompanhar mais informações sobre a discussão <a href="https://github.com/angular/angular.js/issues/10110">vale a pena darem uma olhada na issue #10110 que aborda este tema</a>.</p>
 
@@ -273,17 +273,17 @@
 <span class="lineno">24</span>         <span class="p">};</span>
 <span class="lineno">25</span>     <span class="p">});</span></code></pre></figure>
 
-<p>Desta forma, somente com um parâmetro podemos utilizar o melhor de cada parâmetro e isto pode ser facilmente trabalhado no javascript, já que ao invés de if&#39;s o que definiria o formato de output do stream de dados é uma informação passada a seu filtro, informação esta que pode vir de uma base de dados, por exemplo!</p>
+<p>Desta forma, somente com um parâmetro podemos utilizar o melhor de cada parâmetro e isto pode ser facilmente trabalhado no javascript, já que ao invés de if’s o que definiria o formato de output do stream de dados é uma informação passada a seu filtro, informação esta que pode vir de uma base de dados, por exemplo!</p>
 
-<h2>PERFORMANCE</h2>
+<h2 id="performance">PERFORMANCE</h2>
 
 <p>Outro aspecto bacana é o de performance no seu app. Mas não abordarei questões como não utilizarem o two-way data binding em elementos que não possuirão nenhum tipo de interação/alteração ou questões mais básicas como minimizarmos o binds/watches.</p>
 
 <p>O Filter pode ser utilizado em vários locais de sua aplicação, como Controllers, Services e até mesmo no próprio html. Porém devemos pensar bastante na melhor abordagem baseado em suas necessidades. Se a aplicação só vai possuir alguma interação com o $filter baseado em alguma interação do usuário (um click de botão, por exemplo) não existe o porque de deixarmos o filter em nosso template html. Poderíamos utilizar vinculado ao evento que é ativado na interação, por exemplo. Assim passaríamos os valores previamente tratados com o formato que esperamos e em qualquer interação na aplicação ele seria tratado somente em um ponto único da aplicação, sem falar que podemos utilizar uma melhor abordagem com abstrações de código para tal. O Angular trata a injeção de dependências de maneira transparente e devemos utilizá-lo da melhor forma possível.</p>
 
-<h2>TESTES</h2>
+<h2 id="testes">TESTES</h2>
 
-<p>A questão de testes é importante em sua aplicação por &quot;N&quot; fatores. Não abordarei o porquê dos testes em sua aplicação, mas caso queira se aprofundar aconselho <a href="http://tdd.caelum.com.br/">o conteúdo produzido para a Caelum por Maurício Aniche, referência no Brasil quando se fala em Testes de Software</a>. Um formato de teste para filtros customizados é mostrado no <a href="https://docs.angularjs.org/tutorial/step_09">tutorial fornecido pelo site oficial do projeto</a>. Neste tutorial temos o seguinte exemplo e seu código de testes, respectivamente. Com base nele podemos ter um norte de como testar os nossos filtros.</p>
+<p>A questão de testes é importante em sua aplicação por “N” fatores. Não abordarei o porquê dos testes em sua aplicação, mas caso queira se aprofundar aconselho <a href="http://tdd.caelum.com.br/">o conteúdo produzido para a Caelum por Maurício Aniche, referência no Brasil quando se fala em Testes de Software</a>. Um formato de teste para filtros customizados é mostrado no <a href="https://docs.angularjs.org/tutorial/step_09">tutorial fornecido pelo site oficial do projeto</a>. Neste tutorial temos o seguinte exemplo e seu código de testes, respectivamente. Com base nele podemos ter um norte de como testar os nossos filtros.</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="lineno">1</span> <span class="c1">// phonecatFilters.js</span>
 <span class="lineno">2</span> <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;phonecatFilters&#39;</span><span class="p">,</span> <span class="p">[]).</span><span class="nx">filter</span><span class="p">(</span><span class="s1">&#39;checkmark&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
@@ -307,7 +307,7 @@
 <span class="lineno">11</span>   <span class="p">});</span>
 <span class="lineno">12</span> <span class="p">});</span></code></pre></figure>
 
-<h2>CONCLUSÃO</h2>
+<h2 id="concluso">CONCLUSÃO</h2>
 
 <p>Com isto finalizo este post sobre filtros. Aprendemos alguns aspectos bacanas sobre arquitetura, patterns, boas práticas e performance quando utilizamos o $filter em uma aplicação AngularJS.</p>
 
@@ -318,15 +318,16 @@
 <p>Links:</p>
 
 <ul>
-<li>Proposta de estruturação das aplicações: <a href="https://github.com/yeoman/generator-angular/issues/109">https://github.com/yeoman/generator-angular/issues/109</a></li>
-<li>Pipe-and-filter pattern: <a href="http://webcem01.cem.itesm.mx:8005/apps/s200911/tc3003/notes_pipes_and_filters/">http://webcem01.cem.itesm.mx:8005/apps/s200911/tc3003/notes<em>pipes</em>and_filters/</a></li>
-<li>Building your own AngularJS: <a href="http://teropa.info/build-your-own-angular">http://teropa.info/build-your-own-angular</a></li>
-<li>Issue #10110 do AngularJS: <a href="https://github.com/angular/angular.js/issues/10110">https://github.com/angular/angular.js/issues/10110</a></li>
-<li>Documentação do MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators</a></li>
-<li>Testes: <a href="http://tdd.caelum.com.br/">http://tdd.caelum.com.br/</a></li>
-<li>Documentação <a href="https://docs.angularjs.org/tutorial/step_09">https://docs.angularjs.org/tutorial/step_09</a></li>
-<li>Smashing Magazine &quot;Designing Better JavaScript APIs&quot;: <a href="http://www.smashingmagazine.com/2012/10/09/designing-javascript-apis-usability/">http://www.smashingmagazine.com/2012/10/09/designing-javascript-apis-usability/</a></li>
+  <li>Proposta de estruturação das aplicações: <a href="https://github.com/yeoman/generator-angular/issues/109">https://github.com/yeoman/generator-angular/issues/109</a></li>
+  <li>Pipe-and-filter pattern: <a href="http://webcem01.cem.itesm.mx:8005/apps/s200911/tc3003/notes_pipes_and_filters/">http://webcem01.cem.itesm.mx:8005/apps/s200911/tc3003/notes_pipes_and_filters/</a></li>
+  <li>Building your own AngularJS: <a href="http://teropa.info/build-your-own-angular">http://teropa.info/build-your-own-angular</a></li>
+  <li>Issue #10110 do AngularJS: <a href="https://github.com/angular/angular.js/issues/10110">https://github.com/angular/angular.js/issues/10110</a></li>
+  <li>Documentação do MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators</a></li>
+  <li>Testes: <a href="http://tdd.caelum.com.br/">http://tdd.caelum.com.br/</a></li>
+  <li>Documentação <a href="https://docs.angularjs.org/tutorial/step_09">https://docs.angularjs.org/tutorial/step_09</a></li>
+  <li>Smashing Magazine “Designing Better JavaScript APIs”: <a href="http://www.smashingmagazine.com/2012/10/09/designing-javascript-apis-usability/">http://www.smashingmagazine.com/2012/10/09/designing-javascript-apis-usability/</a></li>
 </ul>
+
 
           </div>
         </section>

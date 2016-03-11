@@ -97,42 +97,44 @@
           </div>
           <a name="topofpage"></a>
           <div id="post-content-page">
-            <h2>INTRODUCTION</h2>
+            <h2 id="introduction">INTRODUCTION</h2>
 
-<p>Used in opensource projects, Travis-CI is a excellent solution for will used in projects for add continuous integrations of a simple way in you project and, it&#39;s free!</p>
+<p>Used in opensource projects, Travis-CI is a excellent solution for will used in projects for add continuous integrations of a simple way in you project and, it’s free!</p>
 
 <p>But in your AngularJS apps, you have to add karma for test runner and we have problems for run karma tests in browsers. For this, you should use some trick for run these tests.</p>
 
-<h2>TRAVIS-CI CONFIGURATION</h2>
+<h2 id="travis-ci-configuration">TRAVIS-CI CONFIGURATION</h2>
 
 <p>First you have to create a login in Travis-CI with your github credentials. After this, you enable travis-ci to access your github repository and intercept the commits and pull requests and use travis-ci commands via web hook for run your commands list specified in a .yml file with name <code>.travis.yml</code>.</p>
 
-<p>Let&#39;s take a look in a example of travis-ci configuration file for angularjs apps.</p>
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">language</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">node_js</span>
-<span class="l-Scalar-Plain">node_js</span><span class="p-Indicator">:</span>
-  <span class="p-Indicator">-</span> <span class="s">&#39;0.10.33&#39;</span>
-<span class="l-Scalar-Plain">before_script</span><span class="p-Indicator">:</span>
-  <span class="p-Indicator">-</span> <span class="s">&#39;export</span><span class="nv"> </span><span class="s">CHROME_BIN=chromium-browser&#39;</span>
-  <span class="p-Indicator">-</span> <span class="s">&#39;export</span><span class="nv"> </span><span class="s">DISPLAY=:99.0&#39;</span>
-  <span class="p-Indicator">-</span> <span class="s">&#39;sh</span><span class="nv"> </span><span class="s">-e</span><span class="nv"> </span><span class="s">/etc/init.d/xvfb</span><span class="nv"> </span><span class="s">start&#39;</span>
-  <span class="p-Indicator">-</span> <span class="s">&#39;npm</span><span class="nv"> </span><span class="s">install</span><span class="nv"> </span><span class="s">-g</span><span class="nv"> </span><span class="s">bower</span><span class="nv"> </span><span class="s">karma</span><span class="nv"> </span><span class="s">grunt-cli</span><span class="nv"> </span><span class="s">jshint&#39;</span>
-  <span class="p-Indicator">-</span> <span class="s">&#39;npm</span><span class="nv"> </span><span class="s">install&#39;</span> <span class="c1"># install npm packages</span>
-  <span class="p-Indicator">-</span> <span class="s">&#39;bower</span><span class="nv"> </span><span class="s">install&#39;</span> <span class="c1"># install bower packages</span>
+<p>Let’s take a look in a example of travis-ci configuration file for angularjs apps.</p>
 
-<span class="l-Scalar-Plain">after_script</span><span class="p-Indicator">:</span>
-  <span class="p-Indicator">-</span> <span class="s">&#39;grunt&#39;</span> <span class="c1"># or other command for build, run tests, etc</span>
-</code></pre></div>
+<pre><code class="language-yaml">language: node_js
+node_js:
+  - '0.10.33'
+before_script:
+  - 'export CHROME_BIN=chromium-browser'
+  - 'export DISPLAY=:99.0'
+  - 'sh -e /etc/init.d/xvfb start'
+  - 'npm install -g bower karma grunt-cli jshint'
+  - 'npm install' # install npm packages
+  - 'bower install' # install bower packages
+
+after_script:
+  - 'grunt' # or other command for build, run tests, etc
+</code></pre>
+
 <p>This file specifally has 3 points that should be explained:</p>
 
 <ul>
-<li>language: In this line we choice what language travis-ci will be use for run your commands specified;</li>
-<li>before_script: All commands that will run before the main command. Normally in this point is inserted all commands for bootstrap your test environment. In this code block we enable the Chrome and Firefox browsers for will be useds in our tests;</li>
-<li>after_script: The commands that will be executeds for validate the send code. If the return of these commands will be <code>true</code>, the code was accept, if not will show in repository that your code have problems that you have to fix them;</li>
+  <li>language: In this line we choice what language travis-ci will be use for run your commands specified;</li>
+  <li>before_script: All commands that will run before the main command. Normally in this point is inserted all commands for bootstrap your test environment. In this code block we enable the Chrome and Firefox browsers for will be useds in our tests;</li>
+  <li>after_script: The commands that will be executeds for validate the send code. If the return of these commands will be <code>true</code>, the code was accept, if not will show in repository that your code have problems that you have to fix them;</li>
 </ul>
 
 <p>If you would like to know more about these specifications please take a look in <a href="http://docs.travis-ci.com">travis-ci documentation</a></p>
 
-<h2>CONCLUSION</h2>
+<h2 id="conclusion">CONCLUSION</h2>
 
 <p>The use of any tool for automate your code integration is a best practice and Travis-CI is a good and concise tool for it, but remember that if you need of a more elaborated integration, testing many kinds of browsers, you have to combine with other tools for it, such as saucelabs (AWESOME TOOL), for example.</p>
 
@@ -143,8 +145,9 @@
 <p>Links:</p>
 
 <ul>
-<li>Travis-CI Documentation: <a href="http://docs.travis-ci.com">http://docs.travis-ci.com</a></li>
+  <li>Travis-CI Documentation: <a href="http://docs.travis-ci.com">http://docs.travis-ci.com</a></li>
 </ul>
+
 
           </div>
         </section>

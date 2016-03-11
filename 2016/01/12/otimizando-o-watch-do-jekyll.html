@@ -96,22 +96,24 @@
           <div id="post-content-page">
             <p>Este post é bem simples, mas crucial para melhorar o seu trabalho, além de ser o primeiro post do ano, claro =).</p>
 
-<h1>Introdução</h1>
+<h1 id="introduo">Introdução</h1>
 
 <p>O <a href="https://jekyllrb.com/">Jekyll</a> é um gerador que transforma seus arquivos markdown em websites e/ou blogs baseado em arquivos estáticos. Mas quando seu projeto possui uma massa de dados (neste caso, arquivos markdown) relativamente grande percebe-se o tempo de compilação de mardown para páginas estáticas pode ser um problema.</p>
 
-<h1>O comando serve</h1>
+<h1 id="o-comando-serve">O comando serve</h1>
 
 <p>O comando <code>jekyll &lt;serve|server|s&gt;</code> é a base de tudo. A partir dele é possível rodar o servidor local do Jekyll para que possamos visualizar o conteúdo criado. Ele aceita alguns atributos (para visualizar lista completa basta dar uma olhada no output do comando <code>jekyll --help</code>). Um deles, o <code>--limit_posts</code> é bem interessante, pois nele podemos limitar a quantidade de posts a serem renderizados pelo comando <code>server</code>.</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>jekyll serve -w --limit_posts &lt;number-of-posts&gt;
-</code></pre></div>
+
+<pre><code class="language-bash">$ jekyll serve -w --limit_posts &lt;number-of-posts&gt;
+</code></pre>
+
 <p>Sendo que o <code>&lt;number-of-posts&gt;</code> é o número que para você é necessário para validar o layout e o conteúdo. Pode ser 1, 10, 20 e assim sucessivamente. Isso é bem bacana, pois podemos otimizar o feedback de nossas alterações/atualizações.</p>
 
 <blockquote>
-<p>Caso esteja utilizando o Jekyll &gt;= 3.0 utilize o comando <code>jekyll serve --incremental</code> para uma melhoria no tempo de resposta</p>
+  <p>Caso esteja utilizando o Jekyll &gt;= 3.0 utilize o comando <code>jekyll serve --incremental</code> para uma melhoria no tempo de resposta</p>
 </blockquote>
 
-<h1>Conclusão</h1>
+<h1 id="concluso">Conclusão</h1>
 
 <p>Esta dica apesar de simples pode ser extremamente útil, pois ter um feedback mais rápido do seu código quer dizer também em otimização no seu workflow. E no caso de estar trabalhando com um projeto com mais de 1.000 arquivos markdown a compilação em ambiente de desenvolvimento pode ser algo realmente impactante.</p>
 
@@ -120,8 +122,9 @@
 <p>Links:</p>
 
 <ul>
-<li>Jekyll: <a href="https://jekyllrb.com/">https://jekyllrb.com/</a></li>
+  <li>Jekyll: <a href="https://jekyllrb.com/">https://jekyllrb.com/</a></li>
 </ul>
+
 
           </div>
         </section>

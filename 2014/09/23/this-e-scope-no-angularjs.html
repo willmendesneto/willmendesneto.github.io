@@ -97,23 +97,23 @@
           </div>
           <a name="topofpage"></a>
           <div id="post-content-page">
-            <h2>INTRODUÇÃO</h2>
+            <h2 id="introduo">INTRODUÇÃO</h2>
 
 <p>Ao usar o AngularJS entendemos o porquê do framework ser um dos mais populares atualmente, estando na lista dos mais pesquisados no Google e Github. A adoção do AngularJs em aplicações de pequeno, médio e grande porte é algo fantástico (estando o framework nos top trends do google search e de frameworks frontend) e isso acontece devido a vários fatores dentre eles:</p>
 
 <ul>
-<li>Facilidade em integração de ferramentas de testes (unitários, end-to-end, etc);</li>
-<li>Modularização baseada em princípios SOLID;</li>
-<li>Two-way data bind, tendo o $scope como interface para a atualização de dados;</li>
-<li>Vasta documentação;</li>
-<li>Comunidade ativa;</li>
+  <li>Facilidade em integração de ferramentas de testes (unitários, end-to-end, etc);</li>
+  <li>Modularização baseada em princípios SOLID;</li>
+  <li>Two-way data bind, tendo o $scope como interface para a atualização de dados;</li>
+  <li>Vasta documentação;</li>
+  <li>Comunidade ativa;</li>
 </ul>
 
 <p>Com o seu crescimento surgiram várias iniciativas afim de fornecer conteúdo de qualidade. Porém algumas coisas foram melhoradas desde então. Grandes nomes do Javascript, como John Papa e Todd Motto, fora alguns cursos gratuitos e conteúdos diversos na web mostram a utilização do elemento <code>this</code> dentro dos elementos angular.</p>
 
 <p>Isso nos remete a questão: qual a diferença entre cada um deles? É melhor usar <code>this</code> ou <code>$scope</code> em seu projeto? Quando aliar a utilização de cada um deles?</p>
 
-<h2>ENTENDENDO O PAPEL DO THIS NO JAVASCRIPT</h2>
+<h2 id="entendendo-o-papel-do-this-no-javascript">ENTENDENDO O PAPEL DO THIS NO JAVASCRIPT</h2>
 
 <p>O elemento <code>this</code> é referente ao escopo no qual ele se encontra. Caso você não tenha especificado um valor para <code>this</code> ao escopo atual, o seu valor padrão será o do elemento <code>window</code>. Em algumas situações você pode perder a referência do elemento <code>this</code> por alterações do escopo. Para isto podemos referenciar o escopo em outra variável e chamarmos diretamente. Um exemplo clássico é:</p>
 
@@ -166,15 +166,15 @@
 
 <p>Mas quando utilizar <code>this</code> e <code>$scope</code></p>
 
-<h2>QUANDO USAR CADA UM</h2>
+<h2 id="quando-usar-cada-um">QUANDO USAR CADA UM</h2>
 
 <p>De maneira bem resumida fica aqui a diferença real entre a utilização do <code>this</code> e do <code>$scope</code>.</p>
 
 <p>this:</p>
 
 <ul>
-<li>Quando a função de controller é chamado, o this é a referencia do controller, já que ele é baseado no escopo atual em que se encontra; normalmente o this refere-se ao seu pai em primeiro grau. por exemplo</li>
-<li>O elemento this não pode acessar métodos já existentes no $scope, como <code>.$emit()</code>, <code>.$on()</code> e <code>.$broadcast()</code></li>
+  <li>Quando a função de controller é chamado, o this é a referencia do controller, já que ele é baseado no escopo atual em que se encontra; normalmente o this refere-se ao seu pai em primeiro grau. por exemplo</li>
+  <li>O elemento this não pode acessar métodos já existentes no $scope, como <code>.$emit()</code>, <code>.$on()</code> e <code>.$broadcast()</code></li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">globalValue</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
@@ -194,20 +194,24 @@
 <p>$scope</p>
 
 <ul>
-<li>Cada controller (ou classes que utilizem o $scope diretamente) tem um objeto de interface <code>$scope</code> associado.</li>
-<li>A função do controlador (construtor) é responsável por definir as propriedades do modelo e funções / métodos / comportamento no seu <code>$scope</code> associado, mas todos eles podem ser acessados por outra interface, a <code>$rootScope</code>.</li>
-<li>Somente métodos definidos via $scope (e objetos escopo pai, usando a herança via prototype, por exemplo ) podiam ser acessados via template HTML a partir de diretivas como ng-click, filtros, etc;</li>
+  <li>Cada controller (ou classes que utilizem o $scope diretamente) tem um objeto de interface <code>$scope</code> associado.</li>
+  <li>A função do controlador (construtor) é responsável por definir as propriedades do modelo e funções / métodos / comportamento no seu <code>$scope</code> associado, mas todos eles podem ser acessados por outra interface, a <code>$rootScope</code>.</li>
+  <li>Somente métodos definidos via $scope (e objetos escopo pai, usando a herança via prototype, por exemplo ) podiam ser acessados via template HTML a partir de diretivas como ng-click, filtros, etc;</li>
 </ul>
 
-<p>Um exemplo claro de seus prós e contras é em um controller para um elemento de abas, para verificar a aba selecionada utilizando um parâmetro guardado via LocalStorage, uma das 3 API&#39;s HTML5 para WebStorage. Inicialmente o valor da aba selecionada será a da primeira aba. Após o clique do usuário em outra aba, ao atualizar a página o controller para as abas deve ser capaz de verificar a última aba selecionada e colocá-la como ativa e visível para o usuário.</p>
+<p>Um exemplo claro de seus prós e contras é em um controller para um elemento de abas, para verificar a aba selecionada utilizando um parâmetro guardado via LocalStorage, uma das 3 API’s HTML5 para WebStorage. Inicialmente o valor da aba selecionada será a da primeira aba. Após o clique do usuário em outra aba, ao atualizar a página o controller para as abas deve ser capaz de verificar a última aba selecionada e colocá-la como ativa e visível para o usuário.</p>
 
 <p>Ao lidarmos com o this percemos inicialmente um problema. A informação que guardamos referente à aba selecionada não é aplicada. No caso a aba selecionada pelo usuário não é ativada e visível ao atualizar a página. Já no caso do mesmo controller utilizando o $scope percebemos que o fluxo de comportamento ocorre como esperado e a última aba continua visível ao atualizar a página.</p>
 
 <p>Estes exemplos encontram-se no plunker:</p>
 
 <ul>
-<li><p>Controller para abas utilizando o &quot;this&quot;: http://plnkr.co/edit/g9dasZ?p=info</p></li>
-<li><p>Controller para abas utilizando o &quot;$scope&quot;: http://plnkr.co/edit/oVmfIX?p=info</p></li>
+  <li>
+    <p>Controller para abas utilizando o “this”: http://plnkr.co/edit/g9dasZ?p=info</p>
+  </li>
+  <li>
+    <p>Controller para abas utilizando o “$scope”: http://plnkr.co/edit/oVmfIX?p=info</p>
+  </li>
 </ul>
 
 <p>Neste exemplo podemos perceber que o <code>this</code> não pode acessar alguns métodos do $scope, como já foi dito antes. Caso queira testar, basta remover o comentário do exemplo utilizando o <code>this</code>. Não explicarei muito sobre o service <code>WebStorage</code>, pois ele faz parte do toolset de componentes <a href="https://github.com/willmendesneto/keepr">angular-keepr/KEEPR</a>. Caso tenham curiosidade basta darem uma olhada no projeto (se curtirem mandam um star no projeto, ajuda bastante =) ).</p>
@@ -261,9 +265,9 @@
     <span class="nx">$scope</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="s1">&#39;selectPanel&#39;</span><span class="p">);</span>
 <span class="p">});</span></code></pre></figure>
 
-<h2>CONCLUSÃO</h2>
+<h2 id="concluso">CONCLUSÃO</h2>
 
-<p>Acompanho a publicação de novos conteúdos e percebo uma crescente preferência para anexar models ao controller e apelidá-lo no template utilizando a sintaxe &#39;ng-controller=&quot;RealController as real&quot;&#39; utilizando o <code>this</code> e quando existe a necessidade de compartilhar algo entre várias directivas ou o exige um comportamento mais específico, o $scope fornece um conjunto de features bastante úteis ($watch, $broadcast e $on, por exemplo). Mas se tudo que você precisa é de um compartilhamento de dados simples entre elemento e html, usando o controller com o <code>this</code> é, sem dúvida, uma solução a se pensar.</p>
+<p>Acompanho a publicação de novos conteúdos e percebo uma crescente preferência para anexar models ao controller e apelidá-lo no template utilizando a sintaxe ‘ng-controller=”RealController as real”’ utilizando o <code>this</code> e quando existe a necessidade de compartilhar algo entre várias directivas ou o exige um comportamento mais específico, o $scope fornece um conjunto de features bastante úteis ($watch, $broadcast e $on, por exemplo). Mas se tudo que você precisa é de um compartilhamento de dados simples entre elemento e html, usando o controller com o <code>this</code> é, sem dúvida, uma solução a se pensar.</p>
 
 <p>Para quem tiver interesse, existe alguns repositórios interessantes sobre patterns no AngularJS</p>
 
@@ -272,16 +276,17 @@
 <p>Links:</p>
 
 <ul>
-<li>Projeto &quot;KEEPR&quot;: <a href="https://github.com/willmendesneto/keepr">https://github.com/willmendesneto/keepr</a></li>
-<li>AngularJS Style Guide: <a href="https://github.com/johnpapa/angularjs-styleguide">https://github.com/johnpapa/angularjs-styleguide</a></li>
-<li>StackOverflow &quot;this vs $scope in AngularJS controllers&quot;: <a href="http://stackoverflow.com/questions/11605917/this-vs-scope-in-angularjs-controllers">http://stackoverflow.com/questions/11605917/this-vs-scope-in-angularjs-controllers</a></li>
-<li>$scope - Documentação oficial: <a href="https://docs.angularjs.org/guide/scope">https://docs.angularjs.org/guide/scope</a></li>
-<li>$rootScope - Documentação oficial: <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope">https://docs.angularjs.org/api/ng/type/$rootScope.Scope</a></li>
-<li>Opinionated AngularJS styleguide for teams: <a href="http://www.linkplugapp.com/a/437872">http://www.linkplugapp.com/a/437872</a></li>
-<li>Best Practice Recommendations for Angular App Structure: <a href="https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub">https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub</a></li>
-<li>Leverage Scope Creep! An in-depth tutorial on Angular.js Scope: <a href="http://modernweb.com/2014/07/14/leverage-scope-creep-depth-tutorial-angular-js-scope/">http://modernweb.com/2014/07/14/leverage-scope-creep-depth-tutorial-angular-js-scope/</a></li>
-<li>Rethinking AngularJS Controllers: <a href="http://toddmotto.com/rethinking-angular-js-controllers/?=utm&amp;utm_content=buffere9265&amp;utm_medium=social&amp;utm_source=linkedin.com&amp;utm_campaign=buffer">http://toddmotto.com/rethinking-angular-js-controllers/?=utm&amp;utm<em>content=buffere9265&amp;utm</em>medium=social&amp;utm<em>source=linkedin.com&amp;utm</em>campaign=buffer</a></li>
+  <li>Projeto “KEEPR”: <a href="https://github.com/willmendesneto/keepr">https://github.com/willmendesneto/keepr</a></li>
+  <li>AngularJS Style Guide: <a href="https://github.com/johnpapa/angularjs-styleguide">https://github.com/johnpapa/angularjs-styleguide</a></li>
+  <li>StackOverflow “this vs $scope in AngularJS controllers”: <a href="http://stackoverflow.com/questions/11605917/this-vs-scope-in-angularjs-controllers">http://stackoverflow.com/questions/11605917/this-vs-scope-in-angularjs-controllers</a></li>
+  <li>$scope - Documentação oficial: <a href="https://docs.angularjs.org/guide/scope">https://docs.angularjs.org/guide/scope</a></li>
+  <li>$rootScope - Documentação oficial: <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope">https://docs.angularjs.org/api/ng/type/$rootScope.Scope</a></li>
+  <li>Opinionated AngularJS styleguide for teams: <a href="http://www.linkplugapp.com/a/437872">http://www.linkplugapp.com/a/437872</a></li>
+  <li>Best Practice Recommendations for Angular App Structure: <a href="https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub">https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub</a></li>
+  <li>Leverage Scope Creep! An in-depth tutorial on Angular.js Scope: <a href="http://modernweb.com/2014/07/14/leverage-scope-creep-depth-tutorial-angular-js-scope/">http://modernweb.com/2014/07/14/leverage-scope-creep-depth-tutorial-angular-js-scope/</a></li>
+  <li>Rethinking AngularJS Controllers: <a href="http://toddmotto.com/rethinking-angular-js-controllers/?=utm&amp;utm_content=buffere9265&amp;utm_medium=social&amp;utm_source=linkedin.com&amp;utm_campaign=buffer">http://toddmotto.com/rethinking-angular-js-controllers/?=utm&amp;utm_content=buffere9265&amp;utm_medium=social&amp;utm_source=linkedin.com&amp;utm_campaign=buffer</a></li>
 </ul>
+
 
           </div>
         </section>

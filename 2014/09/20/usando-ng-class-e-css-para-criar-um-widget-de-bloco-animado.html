@@ -99,35 +99,35 @@
           <div id="post-content-page">
             <p><a class="page-link" href="/2015/01/03/using-ng-class-and-css-for-create-an-animated-block-widget/">Veja a versão em inglês</a></p>
 
-<h2>INTRODUÇÃO</h2>
+<h2 id="introduo">INTRODUÇÃO</h2>
 
-<p>Esta é uma postagem mais simples, mas baseada em um questionamento. Quem utiliza o AngularJs conhece o &quot;ngAnimate&quot;, um módulo para gerenciar animações em aplicações que utilizam o framework. Porém desta vez utilizaremos animações CSS3 e a diretiva <code>Ng-class</code> para criarmos um exemplo de bloco animado.</p>
+<p>Esta é uma postagem mais simples, mas baseada em um questionamento. Quem utiliza o AngularJs conhece o “ngAnimate”, um módulo para gerenciar animações em aplicações que utilizam o framework. Porém desta vez utilizaremos animações CSS3 e a diretiva <code>Ng-class</code> para criarmos um exemplo de bloco animado.</p>
 
 <p>Algo simples, mas usual e que mostrará que nem sempre precisamos utilizar um módulo mais completo/complexo para melhorar a interação na aplicação, diminuindo a complexidade de gerenciamento de módulos e performance, já que o módulo de animações também utiliza javascript para animações e carrega o módulo para a aplicação (mais um request no browser). Mas antes vamos falar um pouco das tecnologias utilizadas para fecharmos com um exemplo prático utilizando-os.</p>
 
-<h2>HTML5</h2>
+<h2 id="html5">HTML5</h2>
 
-<p>Em um de seus posts de título <a href="http://www.maujor.com/blog/2014/08/05/html5-w3c-versus-whatwg/">&quot;HTML5 – W3C versus WHATWG&quot;</a> Maujor, um ícone quando tratamos de css e web, cita um conteúdo da WHATWG que define HTML5 de uma maneira bem bacana.</p>
+<p>Em um de seus posts de título <a href="http://www.maujor.com/blog/2014/08/05/html5-w3c-versus-whatwg/">“HTML5 – W3C versus WHATWG”</a> Maujor, um ícone quando tratamos de css e web, cita um conteúdo da WHATWG que define HTML5 de uma maneira bem bacana.</p>
 
 <blockquote>
-<p>O termo &quot;HTML5&quot; é um buzzword para designar as modernas tecnologias para web, muitas das quais (não todas) são desenvolvidas pelo WHATWG. Este documento é dedicado a uma destas tecnologias; outros estão disponíveis e estão relacionados no índice das especificações do WHATWG (http://kwz.me/wm).</p>
+  <p>O termo “HTML5” é um buzzword para designar as modernas tecnologias para web, muitas das quais (não todas) são desenvolvidas pelo WHATWG. Este documento é dedicado a uma destas tecnologias; outros estão disponíveis e estão relacionados no índice das especificações do WHATWG (http://kwz.me/wm).</p>
 </blockquote>
 
-<p>Ou seja, HTML5 é nada mais, nada menos que a combinação entre as tecnologias HTML5 + CSS3 + API&#39;s Javascript, dando maiores possibilidades ao Frontend de sua aplicação.</p>
+<p>Ou seja, HTML5 é nada mais, nada menos que a combinação entre as tecnologias HTML5 + CSS3 + API’s Javascript, dando maiores possibilidades ao Frontend de sua aplicação.</p>
 
-<h2>NG-CLASS</h2>
+<h2 id="ng-class">NG-CLASS</h2>
 
-<p>NG class é uma diretiva do core do framework AngularJS que habilita a inserção e remoção de classes em elementos do DOM baseados em parâmetros controlados pelo framework via controller, service e outros elementos, baseando em valores acessados via interface &quot;$scope&quot;.</p>
+<p>NG class é uma diretiva do core do framework AngularJS que habilita a inserção e remoção de classes em elementos do DOM baseados em parâmetros controlados pelo framework via controller, service e outros elementos, baseando em valores acessados via interface “$scope”.</p>
 
 <p>Definição do <code>ngClass</code> pela documentação oficial do framework:</p>
 
 <blockquote>
-<p>The ngClass directive allows you to dynamically set CSS classes on an HTML element by databinding an expression that represents all classes to be added.</p>
+  <p>The ngClass directive allows you to dynamically set CSS classes on an HTML element by databinding an expression that represents all classes to be added.</p>
 </blockquote>
 
-<h2>UM EXEMPLO PRÁTICO: WIDGET ANIMADO</h2>
+<h2 id="um-exemplo-prtico-widget-animado">UM EXEMPLO PRÁTICO: WIDGET ANIMADO</h2>
 
-<p>Agora que cada um foi devidamente apresentado, podemos finalizar com o exemplo bem simples: um widget animado. Este bloco deve iniciar &quot;invisível&quot; e, ao clicar no botão ficará visível ou invisível, baseando-se no evento anterior (se estiver invisível, ficará visível e vice-versa).</p>
+<p>Agora que cada um foi devidamente apresentado, podemos finalizar com o exemplo bem simples: um widget animado. Este bloco deve iniciar “invisível” e, ao clicar no botão ficará visível ou invisível, baseando-se no evento anterior (se estiver invisível, ficará visível e vice-versa).</p>
 
 <p>Neste exemplo basicamente utilizarei o ngClass para adicionar ou remover uma classe, sendo que nesta classe está atrelada uma animação simples.</p>
 
@@ -196,7 +196,7 @@
 
 <p>Você pode ver um exemplo com este código <a href="http://plnkr.co/edit/jrROjT?p=preview">no meu plunker</a>.</p>
 
-<h2>CONCLUSÃO</h2>
+<h2 id="concluso">CONCLUSÃO</h2>
 
 <p>A idéia deste post é primeiro apresentar a diretiva <code>ngClass</code> caso não conheçam e mostrar o poder em aliarmos tecnologias que em conjunto formam o que chamamos de HTML5. Além disso um ponto importante é termos senso crítico ao utilizarmos componentes, bibliotecas e outros elementos em nossa aplicação, já que existem outros aspectos importantes em uma aplicação, como performance, quantidade de requisições e outros.</p>
 
@@ -205,10 +205,11 @@
 <p>Links:</p>
 
 <ul>
-<li>Documentação da diretiva &quot;ngClass&quot;: <a href="https://docs.angularjs.org/api/ng/directive/ngClass">https://docs.angularjs.org/api/ng/directive/ngClass</a></li>
-<li>CSS3 Animations: <a href="http://www.w3.org/TR/css3-animations/">http://www.w3.org/TR/css3-animations/</a></li>
-<li>Postagem &quot;HTML5 – W3C versus WHATWG&quot; do Maujor:<a href="http://www.maujor.com/blog/2014/08/05/html5-w3c-versus-whatwg/">http://www.maujor.com/blog/2014/08/05/html5-w3c-versus-whatwg/</a></li>
+  <li>Documentação da diretiva “ngClass”: <a href="https://docs.angularjs.org/api/ng/directive/ngClass">https://docs.angularjs.org/api/ng/directive/ngClass</a></li>
+  <li>CSS3 Animations: <a href="http://www.w3.org/TR/css3-animations/">http://www.w3.org/TR/css3-animations/</a></li>
+  <li>Postagem “HTML5 – W3C versus WHATWG” do Maujor:<a href="http://www.maujor.com/blog/2014/08/05/html5-w3c-versus-whatwg/">http://www.maujor.com/blog/2014/08/05/html5-w3c-versus-whatwg/</a></li>
 </ul>
+
 
           </div>
         </section>

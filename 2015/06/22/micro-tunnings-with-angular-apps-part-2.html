@@ -97,35 +97,35 @@
           </div>
           <a name="topofpage"></a>
           <div id="post-content-page">
-            <h2>INTRODUCTION</h2>
+            <h2 id="introduction">INTRODUCTION</h2>
 
-<p>In last post we talking about real-time web concepts, angular best practices, one-time-binding and how to integrate javascript async patterns in angular apps. Now lets take a look in some aspects of functional programming. So let&#39;s go?</p>
+<p>In last post we talking about real-time web concepts, angular best practices, one-time-binding and how to integrate javascript async patterns in angular apps. Now lets take a look in some aspects of functional programming. So let’s go?</p>
 
-<h2>FUNCTIONAL PROGRAMMING - CONCEPTS</h2>
+<h2 id="functional-programming---concepts">FUNCTIONAL PROGRAMMING - CONCEPTS</h2>
 
 <p>Here I will talk about functional programming concepts in angular apps.</p>
 
-<h2>IMMUTABLE DATA STRUCTURE</h2>
+<h2 id="immutable-data-structure">IMMUTABLE DATA STRUCTURE</h2>
 
-<p>An immutable data are based in a data structure that can&#39;t be modified in any way after its creation. The only way to effective modify it would be to make a mutable copy or something similar (slightly modifying the parameters you pass to the constructor of the new one). One of the most caracteristics of these structure are the thread safe behaviour (if you can&#39;t modify/update the data, you can understand too that your data is really safe of corruption) and your usage for hash keys.</p>
+<p>An immutable data are based in a data structure that can’t be modified in any way after its creation. The only way to effective modify it would be to make a mutable copy or something similar (slightly modifying the parameters you pass to the constructor of the new one). One of the most caracteristics of these structure are the thread safe behaviour (if you can’t modify/update the data, you can understand too that your data is really safe of corruption) and your usage for hash keys.</p>
 
 <p>Thinking in Javascript, your first attempt was <a href="http://swannodette.github.io/mori/">MoriJS project</a>, a library based in ClojureScript using immutability concepts. But this idea will be more familiar in front-end via <a href="http://facebook.github.io/immutable-js/">ImmutableJS project</a>.</p>
 
 <p>Lee Byron, Interactive Information Designer at Facebook says in the first time that show Immutable JS in public:</p>
 
 <blockquote>
-<p>Immutable js fits better with the rest of the JS ecosystem in my opinion, because it is designed for and written in JS, rather than ClojureScript. The API follows the native Array API where possible, so it&#39;s  a lot easier to switch between the two</p>
+  <p>Immutable js fits better with the rest of the JS ecosystem in my opinion, because it is designed for and written in JS, rather than ClojureScript. The API follows the native Array API where possible, so it’s  a lot easier to switch between the two</p>
 </blockquote>
 
 <p>Using a simple approach, we can take a look in results when we use immutable js instead mori js in our apps:</p>
 
-<p><img src="/assets/images/immutable-vs-mori.png" alt="ImmutableJS versus MoriJS: Comparison" title="ImmutableJS versus MoriJS: Comparison"></p>
+<p><img src="/assets/images/immutable-vs-mori.png" alt="ImmutableJS versus MoriJS: Comparison" title="ImmutableJS versus MoriJS: Comparison" /></p>
 
 <ul>
-<li>More informations in <a href="http://jsperf.com/immutablejs-versus-morijs">http://jsperf.com/immutablejs-versus-morijs</a></li>
+  <li>More informations in <a href="http://jsperf.com/immutablejs-versus-morijs">http://jsperf.com/immutablejs-versus-morijs</a></li>
 </ul>
 
-<h2>HOW TO USE THIS CONCEPTS IN ANGULAR APPS</h2>
+<h2 id="how-to-use-this-concepts-in-angular-apps">HOW TO USE THIS CONCEPTS IN ANGULAR APPS</h2>
 
 <p>Thinking in improve more performance and give a simple way to use this library in angular apps, Minko Gechev create angular-immutable module. The idea of this module is simplify the $digest cycle of the data manipulated for angular apps.</p>
 
@@ -134,21 +134,21 @@
 <p>Goods</p>
 
 <ul>
-<li>Performance improvements when app work with bigger informations;</li>
+  <li>Performance improvements when app work with bigger informations;</li>
 </ul>
 
 <p>Bads</p>
 
 <ul>
-<li>Less performatic when app work with few informations;</li>
-<li>Insert more complexity in your app;</li>
+  <li>Less performatic when app work with few informations;</li>
+  <li>Insert more complexity in your app;</li>
 </ul>
 
 <blockquote>
-<p>Please take a look in your post <a href="http://blog.mgechev.com/2015/03/02/immutability-in-angularjs-immutablejs/">&quot;Boost the Performance of an AngularJS Application Using Immutable Data&quot;</a> for more detailed informations.</p>
+  <p>Please take a look in your post <a href="http://blog.mgechev.com/2015/03/02/immutability-in-angularjs-immutablejs/">“Boost the Performance of an AngularJS Application Using Immutable Data”</a> for more detailed informations.</p>
 </blockquote>
 
-<h2>REACTIVE PROGRAMMING: A WORLD WITH GOOD NEWS</h2>
+<h2 id="reactive-programming-a-world-with-good-news">REACTIVE PROGRAMMING: A WORLD WITH GOOD NEWS</h2>
 
 <p>Reactive programming, in resume, is a programming paradigm oriented around data flows and the propagation of change. This is not a new idea or concept, but return with a new approach via <a href="http://facebook.github.io/react/">React JS</a> and Flux/Reflux.</p>
 
@@ -157,47 +157,51 @@
 <p>There are many approaches for your utilization integrating with front-end frameworks, such as Ember, Backbone and Angular. For Angular specifically has a module ngReact that help in this work, integrating React components via directive in angular apps.</p>
 
 <p>Let me show you a simple example. We have 2 directives: one with ReactJS and another without. Based in a simple Devtools profiler for this example the results are:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// without react</span>
-<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;angularPerformanceApp&#39;</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">directive</span><span class="p">(</span><span class="s1">&#39;myMessage&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">{</span>
-      <span class="nx">template</span><span class="o">:</span> <span class="s1">&#39;&lt;div&gt;Hello &lt;/div&gt;&#39;</span><span class="p">,</span>
-      <span class="nx">restrict</span><span class="o">:</span> <span class="s1">&#39;A&#39;</span>
-    <span class="p">};</span>
-  <span class="p">});</span>
-</code></pre></div>
-<p><img src="/assets/images/without-react.png" alt="Using Angular directives" title="Using Angular directives"></p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// with react</span>
-<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;angularPerformanceApp&#39;</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">directive</span><span class="p">(</span><span class="s1">&#39;myReactMessage&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
 
-    <span class="k">return</span> <span class="p">{</span>
-      <span class="nx">compile</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
-       <span class="kd">var</span> <span class="nx">Hello</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
-          <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="nx">React</span><span class="p">.</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">div</span><span class="p">({},</span> <span class="s1">&#39;Hello &#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
-          <span class="p">}</span>
-        <span class="p">});</span>
+<pre><code class="language-javascript">// without react
+angular.module('angularPerformanceApp')
+  .directive('myMessage', function () {
+    return {
+      template: '&lt;div&gt;Hello &lt;/div&gt;',
+      restrict: 'A'
+    };
+  });
+</code></pre>
 
-        <span class="k">return</span> <span class="p">{</span>
-          <span class="nx">post</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">scope</span><span class="p">,</span> <span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">scope</span><span class="p">.</span><span class="nx">$watch</span><span class="p">(</span><span class="s1">&#39;vm.message&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">newVal</span><span class="p">,</span> <span class="nx">oldVal</span><span class="p">)</span> <span class="p">{</span>
-              <span class="nx">React</span><span class="p">.</span><span class="nx">renderComponent</span><span class="p">(</span><span class="nx">Hello</span><span class="p">({</span>
-                <span class="nx">name</span><span class="o">:</span> <span class="nx">scope</span><span class="p">.</span><span class="nx">vm</span><span class="p">.</span><span class="nx">message</span>
-              <span class="p">}),</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="p">));</span>
-            <span class="p">});</span>
-          <span class="p">}</span>
-        <span class="p">}</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-</code></pre></div>
-<p><img src="/assets/images/with-react.png" alt="Using React JS" title="Using React JS"></p>
+<p><img src="/assets/images/without-react.png" alt="Using Angular directives" title="Using Angular directives" /></p>
+
+<pre><code class="language-javascript">// with react
+angular.module('angularPerformanceApp')
+  .directive('myReactMessage', function () {
+
+    return {
+      compile: function(element) {
+       var Hello = React.createClass({
+          render: function() {
+            return React.DOM.div({}, 'Hello ' + this.props.name);
+          }
+        });
+
+        return {
+          post: function(scope, element) {
+            scope.$watch('vm.message', function(newVal, oldVal) {
+              React.renderComponent(Hello({
+                name: scope.vm.message
+              }), document.getElementById('example'));
+            });
+          }
+        }
+      }
+    }
+</code></pre>
+
+<p><img src="/assets/images/with-react.png" alt="Using React JS" title="Using React JS" /></p>
 
 <blockquote>
-<p>The Angular and React teams are sharing ideas about new steps (performance, DOM rendering, coesion and other aspects) and ideas about these projects and the resolutions are shared with community</p>
+  <p>The Angular and React teams are sharing ideas about new steps (performance, DOM rendering, coesion and other aspects) and ideas about these projects and the resolutions are shared with community</p>
 </blockquote>
 
-<h2>CONCLUSION</h2>
+<h2 id="conclusion">CONCLUSION</h2>
 
 <p>In this post, was approached the Functional programming concepts and some simple aspects about immutable data structure, how to use in app and libraries for help in this work.</p>
 
@@ -210,12 +214,13 @@
 <p>Links:</p>
 
 <ul>
-<li>Mori JS: <a href="http://swannodette.github.io/mori/">http://swannodette.github.io/mori/</a></li>
-<li>Immutable JS: <a href="http://facebook.github.io/immutable-js/">http://facebook.github.io/immutable-js/</a></li>
-<li>JSPerf: ImmutableJS x MoriJS: <a href="http://jsperf.com/immutablejs-versus-morijs">http://jsperf.com/immutablejs-versus-morijs</a></li>
-<li>Boost the Performance of an AngularJS Application Using Immutable Data: <a href="http://blog.mgechev.com/2015/03/02/immutability-in-angularjs-immutablejs/">http://blog.mgechev.com/2015/03/02/immutability-in-angularjs-immutablejs/</a></li>
-<li>React JS: <a href="http://facebook.github.io/react/">http://facebook.github.io/react/</a></li>
+  <li>Mori JS: <a href="http://swannodette.github.io/mori/">http://swannodette.github.io/mori/</a></li>
+  <li>Immutable JS: <a href="http://facebook.github.io/immutable-js/">http://facebook.github.io/immutable-js/</a></li>
+  <li>JSPerf: ImmutableJS x MoriJS: <a href="http://jsperf.com/immutablejs-versus-morijs">http://jsperf.com/immutablejs-versus-morijs</a></li>
+  <li>Boost the Performance of an AngularJS Application Using Immutable Data: <a href="http://blog.mgechev.com/2015/03/02/immutability-in-angularjs-immutablejs/">http://blog.mgechev.com/2015/03/02/immutability-in-angularjs-immutablejs/</a></li>
+  <li>React JS: <a href="http://facebook.github.io/react/">http://facebook.github.io/react/</a></li>
 </ul>
+
 
           </div>
         </section>

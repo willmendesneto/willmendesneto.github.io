@@ -99,35 +99,35 @@
           <div id="post-content-page">
             <p><a class="page-link" href="/2014/09/20/usando-ng-class-e-css-para-criar-um-widget-de-bloco-animado/">Read the Brazillian Portuguese version</a></p>
 
-<h2>INTRODUCTION</h2>
+<h2 id="introduction">INTRODUCTION</h2>
 
-<p>This is a simple post, but based in a questioning. Who uses AngularJS know the &quot;ngAnimate&quot;, a module for manage animations in applications that use the framework. However this time we will use animations CSS3 and &quot;ngClass&quot; directive only for create an animated block animated example.</p>
+<p>This is a simple post, but based in a questioning. Who uses AngularJS know the “ngAnimate”, a module for manage animations in applications that use the framework. However this time we will use animations CSS3 and “ngClass” directive only for create an animated block animated example.</p>
 
 <p>Something simple, but usual and will show that not always we need use a full/complex module for improve the intereaction in application, reducing module management complexity and upgrading performance, since the animation module uses javascriot for animations and load one more module for application too, in other words, one more request in browser. But before we will talk more about the technologies used for finish with an practice example using them.</p>
 
-<h2>HTML5</h2>
+<h2 id="html5">HTML5</h2>
 
-<p>Um one of your posts with a title <a href="http://www.maujor.com/blog/2014/08/05/html5-w3c-versus-whatwg/">&quot;HTML5 – W3C versus WHATWG&quot;</a>, Maujor, one reference when we deal with CSS and web, cite a WHATWG content that defines HTML5 in a very nice way.</p>
+<p>Um one of your posts with a title <a href="http://www.maujor.com/blog/2014/08/05/html5-w3c-versus-whatwg/">“HTML5 – W3C versus WHATWG”</a>, Maujor, one reference when we deal with CSS and web, cite a WHATWG content that defines HTML5 in a very nice way.</p>
 
 <blockquote>
-<p>The WHATWG works on a number of technologies that widely get referred to by the buzzword &quot;HTML5&quot;. They are organised somewhat arbitrarily based on the preferences of those editing the specifications for those technologies.</p>
+  <p>The WHATWG works on a number of technologies that widely get referred to by the buzzword “HTML5”. They are organised somewhat arbitrarily based on the preferences of those editing the specifications for those technologies.</p>
 </blockquote>
 
-<p>In other words, HTML5 is nothing more, nothing less than a combination between HTML5 + CSS3 + Javascript API&#39;s technologies, giving more possibilities for the Frontend of your application.</p>
+<p>In other words, HTML5 is nothing more, nothing less than a combination between HTML5 + CSS3 + Javascript API’s technologies, giving more possibilities for the Frontend of your application.</p>
 
-<h2>NG-CLASS</h2>
+<h2 id="ng-class">NG-CLASS</h2>
 
 <p>NG Class is a directive of the AngularJS core framework that enable insertion and remotion of CSS classes in DOM elements based in parameters, managed for framework via controller, service and other elements, accessing values via <code>$scope</code> interface.</p>
 
 <p>The <code>ngClass</code> directive definition is, based in framework oficial documentation:</p>
 
 <blockquote>
-<p>The ngClass directive allows you to dynamically set CSS classes on an HTML element by databinding an expression that represents all classes to be added.</p>
+  <p>The ngClass directive allows you to dynamically set CSS classes on an HTML element by databinding an expression that represents all classes to be added.</p>
 </blockquote>
 
-<h2>A PRATIC EXAMPLE: ANIMATED WIDGET</h2>
+<h2 id="a-pratic-example-animated-widget">A PRATIC EXAMPLE: ANIMATED WIDGET</h2>
 
-<p>Now that each one was properly presented, we can finish with a very simple example: the widget animated. This block should be initialize &quot;invisible&quot; and, in button click event it will be visible or invisible, based in last event ( understand like a toggle event).</p>
+<p>Now that each one was properly presented, we can finish with a very simple example: the widget animated. This block should be initialize “invisible” and, in button click event it will be visible or invisible, based in last event ( understand like a toggle event).</p>
 
 <p>In this example basically we will use the ngClass for insert or remove a class, and in this class is linked the animation used for widget.</p>
 
@@ -196,7 +196,7 @@
 
 <p>You can take a look an example with this code <a href="http://plnkr.co/edit/jrROjT?p=preview">in my plunker</a>.</p>
 
-<h2>CONCLUSION</h2>
+<h2 id="conclusion">CONCLUSION</h2>
 
 <p>The idea of this post is, first, to present the <code>ngClass</code> directive and show the power in combine technologies that together form what is called HTML5. Also an important point is to have critical sense when we use components, libraries and other elements in our application, as there are other important aspects of an application, such as performance, number of request and others.</p>
 
@@ -205,10 +205,11 @@
 <p>Links:</p>
 
 <ul>
-<li>Documentation of &quot;ngClass&quot; directive: <a href="https://docs.angularjs.org/api/ng/directive/ngClass">https://docs.angularjs.org/api/ng/directive/ngClass</a></li>
-<li>CSS3 Animations: <a href="http://www.w3.org/TR/css3-animations/">http://www.w3.org/TR/css3-animations/</a></li>
-<li>Post &quot;HTML5 – W3C versus WHATWG&quot; by Maujor:<a href="http://www.maujor.com/blog/2014/08/05/html5-w3c-versus-whatwg/">http://www.maujor.com/blog/2014/08/05/html5-w3c-versus-whatwg/</a></li>
+  <li>Documentation of “ngClass” directive: <a href="https://docs.angularjs.org/api/ng/directive/ngClass">https://docs.angularjs.org/api/ng/directive/ngClass</a></li>
+  <li>CSS3 Animations: <a href="http://www.w3.org/TR/css3-animations/">http://www.w3.org/TR/css3-animations/</a></li>
+  <li>Post “HTML5 – W3C versus WHATWG” by Maujor:<a href="http://www.maujor.com/blog/2014/08/05/html5-w3c-versus-whatwg/">http://www.maujor.com/blog/2014/08/05/html5-w3c-versus-whatwg/</a></li>
 </ul>
+
 
           </div>
         </section>

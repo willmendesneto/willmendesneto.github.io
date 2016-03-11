@@ -99,7 +99,7 @@
           <div id="post-content-page">
             <p><a class="page-link" href="/2014/07/27/criando-um-CRUD-em-um-unico-controller-com-angularjs">Read the Brazillian Portuguese version</a></p>
 
-<h2>INTRODUCTION</h2>
+<h2 id="introduction">INTRODUCTION</h2>
 
 <p>For those already working with some backend languages ​​and can direct the actions of your route based on methods of controllers app knows how this can be interesting in some apps
 (I made a Pull Request for AngularJS for this feature was something standard in the Framework, if want to know more about or vote for it to be built, take a look at this link),
@@ -109,7 +109,7 @@ but for now, no framework frontend (I know, of course) is something to this leve
 that can be found on the official website of AngularJS.</p>
 
 <p>In this case mean that if I have three operations, I create three controllers, one for each page / view? No!
-<img src="http://i.imgur.com/dAnMWxQ.gif" alt="Life is beautiful!" title="Life is beautiful!"></p>
+<img src="http://i.imgur.com/dAnMWxQ.gif" alt="Life is beautiful!" title="Life is beautiful!" /></p>
 
 <p>Our example is based on a simple contact list, as the list of contacts from your mobile phone, for example. A simple concept, but general knowledge. Too often we update the content of
 our contacts for various reasons and are doing something simple, but functional.</p>
@@ -117,27 +117,27 @@ our contacts for various reasons and are doing something simple, but functional.
 <p>Our contact will accept registration information:</p>
 
 <ul>
-<li>Id, only for our control;</li>
-<li>Name, and the name required</li>
-<li>Address, being optional</li>
-<li>Telephone, is obligatory;</li>
+  <li>Id, only for our control;</li>
+  <li>Name, and the name required</li>
+  <li>Address, being optional</li>
+  <li>Telephone, is obligatory;</li>
 </ul>
 
 <p>And we have the four operations:</p>
 
 <ul>
-<li>Create: Area to create a new contact; <code>new.html</code> file;</li>
-<li>Retrieve: will our list of contacts, with a simple search and the link to the other options like Edit, Add and Delete;</li>
-<li>Update: Area we update our contact data; edit.html file</li>
-<li>Delete: Option to exclude our contact; How is relatively simple, let us bound to our <code>index.html</code> file;</li>
+  <li>Create: Area to create a new contact; <code>new.html</code> file;</li>
+  <li>Retrieve: will our list of contacts, with a simple search and the link to the other options like Edit, Add and Delete;</li>
+  <li>Update: Area we update our contact data; edit.html file</li>
+  <li>Delete: Option to exclude our contact; How is relatively simple, let us bound to our <code>index.html</code> file;</li>
 </ul>
 
 <p>For do our process more easy for our example, we use a database using LocalStorage, <a href="http://www.w3.org/TR/webstorage/">one of HTML5 WebStorage</a>. For this we will create a simple abstraction process.
 We use encryption in our LocalStorage from <a href="https://code.google.com/p/crypto-js/">CryptoJS library</a>.</p>
 
-<h2>BEGINNING UOUR APP</h2>
+<h2 id="beginning-uour-app">BEGINNING UOUR APP</h2>
 
-<p>Ok, let&#39;s first create our main file:</p>
+<p>Ok, let’s first create our main file:</p>
 
 <p><code>index.html</code>, which will be linked to our external files and will serve as the primary template for our application.</p>
 
@@ -557,10 +557,10 @@ We use encryption in our LocalStorage from <a href="https://code.google.com/p/cr
 <p>Our application has some external dependencies:</p>
 
 <ul>
-<li>angular-route.js: Files for angularJS. From this module we can configure our routes, which views, controllers and pass parameters to the controller;</li>
-<li>crypto-js / tripledes.js: one of the encryption algorithms design crypto-js. Will be used to obfuscate our LocalStorage with information from our contacts;</li>
-<li>angular-keepr: A list of directives, filters and services / factories used in our app to facilitate the process;
-Let&#39;s first create our routes in <code>app.js</code> file:</li>
+  <li>angular-route.js: Files for angularJS. From this module we can configure our routes, which views, controllers and pass parameters to the controller;</li>
+  <li>crypto-js / tripledes.js: one of the encryption algorithms design crypto-js. Will be used to obfuscate our LocalStorage with information from our contacts;</li>
+  <li>angular-keepr: A list of directives, filters and services / factories used in our app to facilitate the process;
+Let’s first create our routes in <code>app.js</code> file:</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
@@ -598,14 +598,14 @@ Let&#39;s first create our routes in <code>app.js</code> file:</li>
      <span class="p">});</span>
  <span class="p">});</span></code></pre></figure>
 
-<h3>CREATING THE SERVICES</h3>
+<h3 id="creating-the-services">CREATING THE SERVICES</h3>
 
 <p>With routes created for our app, we now create our first service. Call him OfflineModel. This service will have some parameters:</p>
 
 <ul>
-<li><code>_key</code>: key parameter passed to the localStorage. Remember, the LocalStorage is a bank based on key-value;</li>
-<li><code>_items</code>: list with the information contained in the service;</li>
-<li><code>_fields</code>: fields to be scanned to create a <a href="http://en.wikipedia.org/wiki/Value_object">ValueObject</a> to our list of items;</li>
+  <li><code>_key</code>: key parameter passed to the localStorage. Remember, the LocalStorage is a bank based on key-value;</li>
+  <li><code>_items</code>: list with the information contained in the service;</li>
+  <li><code>_fields</code>: fields to be scanned to create a <a href="http://en.wikipedia.org/wiki/Value_object">ValueObject</a> to our list of items;</li>
 </ul>
 
 <p>This service uses Keepr <code>CryptoOffline</code> service, which deals directly with the Crypto and encrypts/decrypts informations into our app. For us it is not interesting to further understand this procedure for now, but if you want to know more about how this process is, [you can take a look at Keepr project on Github][angular-keepr].</p>
@@ -715,11 +715,11 @@ Let&#39;s first create our routes in <code>app.js</code> file:</li>
 <p>In this service we can highlight some methods:</p>
 
 <ul>
-<li>init: OfflineModel Instantiates a new object, passing parameters to the others who have injected via <a href="http://www.oodesign.com/composite-pattern.html">composition pattern</a>;</li>
-<li>createValueObject: Creates a <a href="http://en.wikipedia.org/wiki/Value_object">ValueObject</a>, catching only the information that was entered into the field _Fields and discarding the other;</li>
-<li>create: Creates an item;</li>
-<li>update: Edits the item based on the new specifications;</li>
-<li>delete: Remove a specific item;</li>
+  <li>init: OfflineModel Instantiates a new object, passing parameters to the others who have injected via <a href="http://www.oodesign.com/composite-pattern.html">composition pattern</a>;</li>
+  <li>createValueObject: Creates a <a href="http://en.wikipedia.org/wiki/Value_object">ValueObject</a>, catching only the information that was entered into the field _Fields and discarding the other;</li>
+  <li>create: Creates an item;</li>
+  <li>update: Edits the item based on the new specifications;</li>
+  <li>delete: Remove a specific item;</li>
 </ul>
 
 <p>For our example has some initial information, we will create a <code>angular.value()</code> with some contacts.</p>
@@ -741,7 +741,7 @@ Let&#39;s first create our routes in <code>app.js</code> file:</li>
 
 <p>Now we will create our service now Contact. See that your content is very simple, because it takes the information <code>OfflineModel</code> and then registers the fields for <a href="http://en.wikipedia.org/wiki/Value_object">ValueObject</a> creation.</p>
 
-<h3>CREATING THE CONTROLLER AND VIEWS</h3>
+<h3 id="creating-the-controller-and-views">CREATING THE CONTROLLER AND VIEWS</h3>
 
 <p>Now we will create our controller with the necessary for our registration methods.</p>
 
@@ -867,13 +867,13 @@ Let&#39;s first create our routes in <code>app.js</code> file:</li>
 <p>In this contest we can highlight some methods / parameters:</p>
 
 <ul>
-<li>init: method called to initialize our controller;</li>
-<li>numberOfPages: Returns the number of contacts;</li>
-<li>reset: Resets the value of the forms with empty fields;</li>
-<li>create: Inserts a contact from the contacts list;</li>
-<li>update: Update the item in _items;</li>
-<li>save: Abstraction methods to insert / change;</li>
-<li>delete: Remove a contact from the contacts list;</li>
+  <li>init: method called to initialize our controller;</li>
+  <li>numberOfPages: Returns the number of contacts;</li>
+  <li>reset: Resets the value of the forms with empty fields;</li>
+  <li>create: Inserts a contact from the contacts list;</li>
+  <li>update: Update the item in _items;</li>
+  <li>save: Abstraction methods to insert / change;</li>
+  <li>delete: Remove a contact from the contacts list;</li>
 </ul>
 
 <p>Now we can create our views / templates. Without further ado lets create the views:</p>
@@ -1018,38 +1018,39 @@ Let&#39;s first create our routes in <code>app.js</code> file:</li>
  <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></figure>
 
-<p>We don&#39;t need create our view to the exclusion, because this operation ocurring in <code>list.html</code> view file.</p>
+<p>We don’t need create our view to the exclusion, because this operation ocurring in <code>list.html</code> view file.</p>
 
-<h3>CONCLUSION</h3>
+<h3 id="conclusion">CONCLUSION</h3>
 
-<p>In this example, we saw how the logic of your Controller is the full responsibility of methods and attributes to him. You can use this concept in larger projects so that each controller has a responsibility to its module. Modularizarmos or even further, taking as a base some concepts of OOP and <a href="https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub">the new AngularJS project&#39;s structure</a>.</p>
+<p>In this example, we saw how the logic of your Controller is the full responsibility of methods and attributes to him. You can use this concept in larger projects so that each controller has a responsibility to its module. Modularizarmos or even further, taking as a base some concepts of OOP and <a href="https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub">the new AngularJS project’s structure</a>.</p>
 
 <p>With more modularized responsibilities between the services, the service Contact is much more streamlined, since we have the abstraction for access to localStorage using OfflineModel. In a very simple way we can solve some common problems in an application using AngularJS.</p>
 
 <p>Created a Plunkr with this app so they can see their operation if they want to download.</p>
 
 <ul>
-<li>Plunker: <a href="http://plnkr.co/edit/QHouFMvVNZIZErgAWYS9?p=info">http://plnkr.co/edit/QHouFMvVNZIZErgAWYS9?p=info</a></li>
-<li>Github com o projeto completo e testado: <a href="https://github.com/willmendesneto/angular-contact-list">https://github.com/willmendesneto/angular-contact-list</a></li>
+  <li>Plunker: <a href="http://plnkr.co/edit/QHouFMvVNZIZErgAWYS9?p=info">http://plnkr.co/edit/QHouFMvVNZIZErgAWYS9?p=info</a></li>
+  <li>Github com o projeto completo e testado: <a href="https://github.com/willmendesneto/angular-contact-list">https://github.com/willmendesneto/angular-contact-list</a></li>
 </ul>
 
 <p>If want to know more about abstractions AngularJS / Javascript applications strongly recommend blogs:</p>
 
 <p>John Papa: <a href="http://www.johnpapa.net">http://www.johnpapa.net/</a>
-Todd Motto: <a href="http://toddmotto.com">http://toddmotto.com</a> (Em especial o artigo: &quot;<a href="http://toddmotto.com/rethinking-angular-js-controllers/?=utm&amp;utm_content=buffere9265&amp;utm_medium=social&amp;utm_source=linkedin.com&amp;utm_campaign=buffer">Rethinking AngularJS Controllers</a>&quot;)</p>
+Todd Motto: <a href="http://toddmotto.com">http://toddmotto.com</a> (Em especial o artigo: “<a href="http://toddmotto.com/rethinking-angular-js-controllers/?=utm&amp;utm_content=buffere9265&amp;utm_medium=social&amp;utm_source=linkedin.com&amp;utm_campaign=buffer">Rethinking AngularJS Controllers</a>”)</p>
 
 <p>Thanks and see you soon.</p>
 
 <p>Links:</p>
 
 <ul>
-<li>Angular phonecat: <a href="https://github.com/angular/angular-phonecat">https://github.com/angular/angular-phonecat</a></li>
-<li>CryptoJS: <a href="https://code.google.com/p/crypto-js/">https://code.google.com/p/crypto-js/</a></li>
-<li>HTML5 WebStorage: <a href="http://www.w3.org/TR/webstorage/">http://www.w3.org/TR/webstorage/</a></li>
-<li>ValueObject: <a href="http://en.wikipedia.org/wiki/Value_object">http://en.wikipedia.org/wiki/Value_object</a></li>
-<li>Composition Pattern: <a href="http://www.oodesign.com/composite-pattern.html">http://www.vagrantup.com/2</a></li>
-<li>John Papa&#39;s Blog: <a href="http://www.johnpapa.net">http://www.johnpapa.net/angular-app-structuring-guidelines/</a></li>
+  <li>Angular phonecat: <a href="https://github.com/angular/angular-phonecat">https://github.com/angular/angular-phonecat</a></li>
+  <li>CryptoJS: <a href="https://code.google.com/p/crypto-js/">https://code.google.com/p/crypto-js/</a></li>
+  <li>HTML5 WebStorage: <a href="http://www.w3.org/TR/webstorage/">http://www.w3.org/TR/webstorage/</a></li>
+  <li>ValueObject: <a href="http://en.wikipedia.org/wiki/Value_object">http://en.wikipedia.org/wiki/Value_object</a></li>
+  <li>Composition Pattern: <a href="http://www.oodesign.com/composite-pattern.html">http://www.vagrantup.com/2</a></li>
+  <li>John Papa’s Blog: <a href="http://www.johnpapa.net">http://www.johnpapa.net/angular-app-structuring-guidelines/</a></li>
 </ul>
+
 
           </div>
         </section>

@@ -99,7 +99,7 @@
           <div id="post-content-page">
             <p><a class="page-link" href="/2014/10/28/creating-a-crud-in-a-single-angular-controller">Veja a versão em inglês</a></p>
 
-<h2>INTRODUÇÃO</h2>
+<h2 id="introduo">INTRODUÇÃO</h2>
 
 <p>Para quem já trabalha com algumas linguagens backend e pode direcionar ações na rota do seu app baseado em métodos de controllers sabe o quanto isso pode ser interessante em alguns apps (fiz um Pull Request para o AngularJS para que esta feature fosse algo padrão no Framework, caso queiram saber mais sobre ou votar para que ela seja incorporada, dêem uma olhada neste link), mas, por ora, nenhum framework frontend (que eu conheça, claro) tem algo a este nível por padrão.</p>
 
@@ -107,31 +107,31 @@
 
 <p>Neste caso quer dizer que se eu tiver 3 operações, devo criar 3 controllers, um para cara página/view? Não!</p>
 
-<p><img src="http://i.imgur.com/dAnMWxQ.gif" alt="A vida é linda!" title="A vida é linda!"></p>
+<p><img src="http://i.imgur.com/dAnMWxQ.gif" alt="A vida é linda!" title="A vida é linda!" /></p>
 
 <p>Nosso exemplo será baseado em uma lista simples de contatos, como a lista de contatos do seu celular, por exemplo. Um conceito simples, mas de conhecimento geral. É muito comum atualizarmos o conteúdo de nossos contatos por vários motivos e estamos fazendo algo simples, mas funcional.</p>
 
 <p>Nosso cadastro de contato vai aceitar as informações:</p>
 
 <ul>
-<li>Id, somente para nosso controle;</li>
-<li>Nome, sendo o nome obrigatório</li>
-<li>Endereço, sendo opcional</li>
-<li>Telefone, sendo obrigatório;</li>
+  <li>Id, somente para nosso controle;</li>
+  <li>Nome, sendo o nome obrigatório</li>
+  <li>Endereço, sendo opcional</li>
+  <li>Telefone, sendo obrigatório;</li>
 </ul>
 
 <p>E teremos as 4 operações:</p>
 
 <ul>
-<li>Create:  Área para criação de um novo contato; Arquivo <code>new.html</code></li>
-<li>Retrieve: terá a nossa listagem de contatos, com uma busca simples e o link para as outras opções como Editar, Adicionar e Excluir;</li>
-<li>Update: Área para atualizarmos os dados do nosso contato; Arquivo <code>edit.html</code></li>
-<li>Delete: Opção para a exclusão do nosso contato; Como é algo relativamente simples, deixemos vinculado ao nosso arquivo <code>index.html</code>;</li>
+  <li>Create:  Área para criação de um novo contato; Arquivo <code>new.html</code></li>
+  <li>Retrieve: terá a nossa listagem de contatos, com uma busca simples e o link para as outras opções como Editar, Adicionar e Excluir;</li>
+  <li>Update: Área para atualizarmos os dados do nosso contato; Arquivo <code>edit.html</code></li>
+  <li>Delete: Opção para a exclusão do nosso contato; Como é algo relativamente simples, deixemos vinculado ao nosso arquivo <code>index.html</code>;</li>
 </ul>
 
 <p>Afim de facilitar o nosso processo do exemplo, utilizaremos um banco utilizando o LocalStorage, <a href="http://www.w3.org/TR/webstorage/">um dos HTML5 WebStorage</a>. Para isso criaremos uma abstração simples do processo. Utilizaremos criptografia no nosso Localstorage a partir da biblioteca <a href="https://code.google.com/p/crypto-js/">CryptoJS</a>.</p>
 
-<h3>INICIANDO NOSSO APP</h3>
+<h3 id="iniciando-nosso-app">INICIANDO NOSSO APP</h3>
 
 <p>Ok, vamos inicialmente criar os nossos arquivos principais:</p>
 
@@ -553,9 +553,9 @@
 <p>Nossa aplicação tem algumas dependências externas:</p>
 
 <ul>
-<li>angular-route.js: Arquivo para o angularJS. A partir deste módulo podemos configurar as nossas rotas, quais as views, controllers e passar parâmetros para o controller;</li>
-<li>crypto-js/tripledes.js: um dos algoritmos de criptografia do projeto crypto-js. Será utilizado para ofuscar o nosso LocalStorage com as informações de nossos contatos;</li>
-<li>angular-keepr: Uma lista de directives, filters e services/factories utilizadas no nosso app para facilitar o processo;</li>
+  <li>angular-route.js: Arquivo para o angularJS. A partir deste módulo podemos configurar as nossas rotas, quais as views, controllers e passar parâmetros para o controller;</li>
+  <li>crypto-js/tripledes.js: um dos algoritmos de criptografia do projeto crypto-js. Será utilizado para ofuscar o nosso LocalStorage com as informações de nossos contatos;</li>
+  <li>angular-keepr: Uma lista de directives, filters e services/factories utilizadas no nosso app para facilitar o processo;</li>
 </ul>
 
 <p>Vamos inicialmente criar as nossas rotas no arquivo <code>app.js</code>:</p>
@@ -595,14 +595,14 @@
      <span class="p">});</span>
  <span class="p">});</span></code></pre></figure>
 
-<h3>CRIANDO OS SERVICES</h3>
+<h3 id="criando-os-services">CRIANDO OS SERVICES</h3>
 
 <p>Com as rotas criadas para o nosso app, vamos agora criar o nosso primeiro service. Chamaremos ele de <code>OfflineModel</code>. Este service terá alguns parâmetros:</p>
 
 <ul>
-<li><code>_key</code>: parâmetro key passado para o localStorage. Vale lembrar que o LocalStorage é um banco baseado em chave-valor;</li>
-<li><code>_items</code>: lista com as informações contidas no service;</li>
-<li><code>_fields</code>: campos a serem verificados para criação de um <a href="http://en.wikipedia.org/wiki/Value_object">ValueObject</a> para a nossa lista de itens;</li>
+  <li><code>_key</code>: parâmetro key passado para o localStorage. Vale lembrar que o LocalStorage é um banco baseado em chave-valor;</li>
+  <li><code>_items</code>: lista com as informações contidas no service;</li>
+  <li><code>_fields</code>: campos a serem verificados para criação de um <a href="http://en.wikipedia.org/wiki/Value_object">ValueObject</a> para a nossa lista de itens;</li>
 </ul>
 
 <p>Este service utilizará o service <code>CryptoOffline</code> do Keepr, que trata diretamente com o Crypto e criptografa/decriptografa as informações para o nosso app. Para nós não é interessante entender mais a fundo este procedimento por ora, mas caso queira saber mais sobre como é esse processo, [você pode dar uma olhada no projeto Keepr no Github][angular-keepr].</p>
@@ -712,11 +712,11 @@
 <p>Neste service podemos destacar alguns métodos:</p>
 
 <ul>
-<li>init: Instancia um novo objeto <code>OfflineModel</code>, passando parâmetros para os outros que o terão injetados via <a href="http://www.oodesign.com/composite-pattern.html">composição</a>;</li>
-<li>createValueObject: Cria um <a href="http://en.wikipedia.org/wiki/Value_object">ValueObject</a>, pegando somente as informações que foram inseridas no campo de _fields e descartando as demais;</li>
-<li>create: Cria um item</li>
-<li>update: Edita o item com base nas novas especificacoes</li>
-<li>delete: Remove um determinado item</li>
+  <li>init: Instancia um novo objeto <code>OfflineModel</code>, passando parâmetros para os outros que o terão injetados via <a href="http://www.oodesign.com/composite-pattern.html">composição</a>;</li>
+  <li>createValueObject: Cria um <a href="http://en.wikipedia.org/wiki/Value_object">ValueObject</a>, pegando somente as informações que foram inseridas no campo de _fields e descartando as demais;</li>
+  <li>create: Cria um item</li>
+  <li>update: Edita o item com base nas novas especificacoes</li>
+  <li>delete: Remove um determinado item</li>
 </ul>
 
 <p>Para que o nosso exemplo tenha alguma informação inicial, criaremos um <code>angular.value()</code> com alguns contatos.</p>
@@ -755,7 +755,7 @@
    <span class="k">return</span> <span class="nx">Contacts</span><span class="p">;</span>
  <span class="p">});</span></code></pre></figure>
 
-<h3>CRIANDO O CONTROLLER E AS VIEWS</h3>
+<h3 id="criando-o-controller-e-as-views">CRIANDO O CONTROLLER E AS VIEWS</h3>
 
 <p>Criaremos agora o nosso controller com os métodos necessários para o nosso cadastro.</p>
 
@@ -881,13 +881,13 @@
 <p>Neste controller podemos destacar alguns métodos/parâmetros:</p>
 
 <ul>
-<li>init: Método chamado ao inicializar o nosso controller</li>
-<li>numberOfPages: Retorna a quantidade de contatos</li>
-<li>reset: Reinicia o valor dos formulários com os campos vazios</li>
-<li>create: Insere um contato da lista de contatos</li>
-<li>update: Update a item in _items</li>
-<li>save: Abstração dos métodos de inserir/alterar</li>
-<li>delete: Remove um contato da lista de contatos</li>
+  <li>init: Método chamado ao inicializar o nosso controller</li>
+  <li>numberOfPages: Retorna a quantidade de contatos</li>
+  <li>reset: Reinicia o valor dos formulários com os campos vazios</li>
+  <li>create: Insere um contato da lista de contatos</li>
+  <li>update: Update a item in _items</li>
+  <li>save: Abstração dos métodos de inserir/alterar</li>
+  <li>delete: Remove um contato da lista de contatos</li>
 </ul>
 
 <p>Agora sim, podemos criar as nossas views/templates. Sem mais delongas vamos criar as views:</p>
@@ -1034,7 +1034,7 @@
 
 <p>Não criamos a nossa view para a exclusão, pois tratamos esta operação na própria view <code>list.html</code>.</p>
 
-<h3>CONCLUSÃO</h3>
+<h3 id="concluso">CONCLUSÃO</h3>
 
 <p>Neste exemplo, vimos como a lógica de seu Controller fica com toda a responsabilidade de métodos e atributos para ele. Pode-se usar este conceito em projetos maiores para que cada controller tenha a responsabilidade de seu módulo. Ou até mesmo modularizarmos ainda mais, pegando como base alguns conceitos de OOP e <a href="https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub">a nova estrutura de projetos para o AngularJS</a>.</p>
 
@@ -1043,27 +1043,28 @@
 <p>Criei um Plunkr com este app para que possam ver seu funcionamento, caso queiram fazer download.</p>
 
 <ul>
-<li>Plunker: <a href="http://plnkr.co/edit/QHouFMvVNZIZErgAWYS9?p=info">http://plnkr.co/edit/QHouFMvVNZIZErgAWYS9?p=info</a></li>
-<li>Github com o projeto completo e testado: <a href="https://github.com/willmendesneto/angular-contact-list">https://github.com/willmendesneto/angular-contact-list</a></li>
+  <li>Plunker: <a href="http://plnkr.co/edit/QHouFMvVNZIZErgAWYS9?p=info">http://plnkr.co/edit/QHouFMvVNZIZErgAWYS9?p=info</a></li>
+  <li>Github com o projeto completo e testado: <a href="https://github.com/willmendesneto/angular-contact-list">https://github.com/willmendesneto/angular-contact-list</a></li>
 </ul>
 
 <p>Caso queiram saber mais sobre abstrações em aplicações AngularJS/Javascript, recomendo fortemente os blogs:</p>
 
 <p>John Papa: <a href="http://www.johnpapa.net">http://www.johnpapa.net/</a>
-Todd Motto: <a href="http://toddmotto.com">http://toddmotto.com</a> (Em especial o artigo: &quot;<a href="http://toddmotto.com/rethinking-angular-js-controllers/?=utm&amp;utm_content=buffere9265&amp;utm_medium=social&amp;utm_source=linkedin.com&amp;utm_campaign=buffer">Rethinking AngularJS Controllers</a>&quot;)</p>
+Todd Motto: <a href="http://toddmotto.com">http://toddmotto.com</a> (Em especial o artigo: “<a href="http://toddmotto.com/rethinking-angular-js-controllers/?=utm&amp;utm_content=buffere9265&amp;utm_medium=social&amp;utm_source=linkedin.com&amp;utm_campaign=buffer">Rethinking AngularJS Controllers</a>”)</p>
 
 <p>Obrigado e até mais.</p>
 
 <p>Links:</p>
 
 <ul>
-<li>Angular phonecat: <a href="https://github.com/angular/angular-phonecat">https://github.com/angular/angular-phonecat</a></li>
-<li>CryptoJS: <a href="https://code.google.com/p/crypto-js/">https://code.google.com/p/crypto-js/</a></li>
-<li>HTML5 WebStorage: <a href="http://www.w3.org/TR/webstorage/">http://www.w3.org/TR/webstorage/</a></li>
-<li>ValueObject: <a href="http://en.wikipedia.org/wiki/Value_object">http://en.wikipedia.org/wiki/Value_object</a></li>
-<li>Composition Pattern: <a href="http://www.oodesign.com/composite-pattern.html">http://www.vagrantup.com/2</a></li>
-<li>Blog de John Papa: <a href="http://www.johnpapa.net">http://www.johnpapa.net/angular-app-structuring-guidelines/</a></li>
+  <li>Angular phonecat: <a href="https://github.com/angular/angular-phonecat">https://github.com/angular/angular-phonecat</a></li>
+  <li>CryptoJS: <a href="https://code.google.com/p/crypto-js/">https://code.google.com/p/crypto-js/</a></li>
+  <li>HTML5 WebStorage: <a href="http://www.w3.org/TR/webstorage/">http://www.w3.org/TR/webstorage/</a></li>
+  <li>ValueObject: <a href="http://en.wikipedia.org/wiki/Value_object">http://en.wikipedia.org/wiki/Value_object</a></li>
+  <li>Composition Pattern: <a href="http://www.oodesign.com/composite-pattern.html">http://www.vagrantup.com/2</a></li>
+  <li>Blog de John Papa: <a href="http://www.johnpapa.net">http://www.johnpapa.net/angular-app-structuring-guidelines/</a></li>
 </ul>
+
 
           </div>
         </section>

@@ -97,395 +97,407 @@
           </div>
           <a name="topofpage"></a>
           <div id="post-content-page">
-            <h2>INTRODUÇÃO</h2>
+            <h2 id="introduo">INTRODUÇÃO</h2>
 
-<p>Faz algum tempo que optei por utilizar editores de texto ao invés de utilizar IDE&#39;s mais robustas. A partir daí utilizo bastante os editores VIM e Sublime Text e adaptei algumas coisas ao meu workflow quando estou no ambiente CLI. Esta postagem mostra algumas alterações que fiz no meu workflow para melhorar o ambiente CLI e que podem ajudar outros devs.</p>
+<p>Faz algum tempo que optei por utilizar editores de texto ao invés de utilizar IDE’s mais robustas. A partir daí utilizo bastante os editores VIM e Sublime Text e adaptei algumas coisas ao meu workflow quando estou no ambiente CLI. Esta postagem mostra algumas alterações que fiz no meu workflow para melhorar o ambiente CLI e que podem ajudar outros devs.</p>
 
-<h2>LINHA DE COMANDO</h2>
+<h2 id="linha-de-comando">LINHA DE COMANDO</h2>
 
 <p>É sempre uma boa prática modularizar os arquivos. Para isto criaremos 2 arquivos:</p>
 
 <ul>
-<li><code>.functions</code>: arquivo onde ficarão as funções;</li>
-<li><code>.aliases</code>: arquivo onde ficarão os atalhos/aliases;</li>
+  <li><code>.functions</code>: arquivo onde ficarão as funções;</li>
+  <li><code>.aliases</code>: arquivo onde ficarão os atalhos/aliases;</li>
 </ul>
 
 <p>Utilizo como base algumas configurações do Paul Irish, uma das referências quando se fala em frontend atualmente, e os arquivos ficaram com o seguinte conteúdo:</p>
 
 <p>.functions</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Simple calculator</span>
-<span class="k">function</span> calc<span class="o">()</span> <span class="o">{</span>
-    <span class="nb">local </span><span class="nv">result</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">;</span>
-    <span class="nv">result</span><span class="o">=</span><span class="s2">&quot;$(printf &quot;</span><span class="nv">scale</span><span class="o">=</span>10<span class="p">;</span><span class="nv">$*</span><span class="se">\n</span><span class="s2">&quot; | bc --mathlib | tr -d &#39;\\\n&#39;)&quot;</span><span class="p">;</span>
-    <span class="c">#                       └─ default (when `--mathlib` is used) is 20</span>
-    <span class="c">#</span>
-    <span class="k">if</span> <span class="o">[[</span> <span class="s2">&quot;$result&quot;</span> <span class="o">==</span> *.* <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-        <span class="c"># improve the output for decimal numbers</span>
-        <span class="nb">printf</span> <span class="s2">&quot;$result&quot;</span> <span class="p">|</span>
-        sed -e <span class="s1">&#39;s/^\./0./&#39;</span>        <span class="sb">`</span><span class="c"># add &quot;0&quot; for cases like &quot;.5&quot;` \</span>
-            -e <span class="s1">&#39;s/^-\./-0./&#39;</span>      <span class="sb">`</span><span class="c"># add &quot;0&quot; for cases like &quot;-.5&quot;`\</span>
-            -e <span class="s1">&#39;s/0*$//;s/\.$//&#39;</span><span class="p">;</span>  <span class="c"># remove trailing zeros</span>
-    <span class="k">else</span>
-        <span class="nb">printf</span> <span class="s2">&quot;$result&quot;</span><span class="p">;</span>
-    <span class="k">fi</span><span class="p">;</span>
-    <span class="nb">printf</span> <span class="s2">&quot;\n&quot;</span><span class="p">;</span>
-<span class="o">}</span>
 
-<span class="c"># Create a new directory and enter it</span>
-<span class="k">function</span> mkd<span class="o">()</span> <span class="o">{</span>
-    mkdir -p <span class="s2">&quot;$@&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">cd</span> <span class="s2">&quot;$_&quot;</span><span class="p">;</span>
-<span class="o">}</span>
+<pre><code class="language-bash"># Simple calculator
+function calc() {
+    local result="";
+    result="$(printf "scale=10;$*\n" | bc --mathlib | tr -d '\\\n')";
+    #                       └─ default (when `--mathlib` is used) is 20
+    #
+    if [[ "$result" == *.* ]]; then
+        # improve the output for decimal numbers
+        printf "$result" |
+        sed -e 's/^\./0./'        `# add "0" for cases like ".5"` \
+            -e 's/^-\./-0./'      `# add "0" for cases like "-.5"`\
+            -e 's/0*$//;s/\.$//';  # remove trailing zeros
+    else
+        printf "$result";
+    fi;
+    printf "\n";
+}
 
-<span class="c"># Create a .tar.gz archive, using `zopfli`, `pigz` or `gzip` for compression</span>
-<span class="k">function</span> targz<span class="o">()</span> <span class="o">{</span>
-    <span class="nb">local </span><span class="nv">tmpFile</span><span class="o">=</span><span class="s2">&quot;${@%/}.tar&quot;</span><span class="p">;</span>
-    tar -cvf <span class="s2">&quot;${tmpFile}&quot;</span> --exclude<span class="o">=</span><span class="s2">&quot;.DS_Store&quot;</span> <span class="s2">&quot;${@}&quot;</span> <span class="o">||</span> <span class="k">return</span> 1<span class="p">;</span>
+# Create a new directory and enter it
+function mkd() {
+    mkdir -p "$@" &amp;&amp; cd "$_";
+}
 
-    <span class="nv">size</span><span class="o">=</span><span class="k">$(</span>
-        stat -f<span class="s2">&quot;%z&quot;</span> <span class="s2">&quot;${tmpFile}&quot;</span> 2&gt; /dev/null<span class="p">;</span> <span class="c"># OS X `stat`</span>
-        stat -c<span class="s2">&quot;%s&quot;</span> <span class="s2">&quot;${tmpFile}&quot;</span> 2&gt; /dev/null <span class="c"># GNU `stat`</span>
-    <span class="k">)</span><span class="p">;</span>
+# Create a .tar.gz archive, using `zopfli`, `pigz` or `gzip` for compression
+function targz() {
+    local tmpFile="${@%/}.tar";
+    tar -cvf "${tmpFile}" --exclude=".DS_Store" "${@}" || return 1;
 
-    <span class="nb">local </span><span class="nv">cmd</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">;</span>
-    <span class="k">if</span> <span class="o">((</span> size &lt; <span class="m">52428800</span> <span class="o">))</span> <span class="o">&amp;&amp;</span> <span class="nb">hash </span>zopfli 2&gt; /dev/null<span class="p">;</span> <span class="k">then</span>
-        <span class="c"># the .tar file is smaller than 50 MB and Zopfli is available; use it</span>
-        <span class="nv">cmd</span><span class="o">=</span><span class="s2">&quot;zopfli&quot;</span><span class="p">;</span>
-    <span class="k">else</span>
-        <span class="k">if</span> <span class="nb">hash </span>pigz 2&gt; /dev/null<span class="p">;</span> <span class="k">then</span>
-            <span class="nv">cmd</span><span class="o">=</span><span class="s2">&quot;pigz&quot;</span><span class="p">;</span>
-        <span class="k">else</span>
-            <span class="nv">cmd</span><span class="o">=</span><span class="s2">&quot;gzip&quot;</span><span class="p">;</span>
-        <span class="k">fi</span><span class="p">;</span>
-    <span class="k">fi</span><span class="p">;</span>
+    size=$(
+        stat -f"%z" "${tmpFile}" 2&gt; /dev/null; # OS X `stat`
+        stat -c"%s" "${tmpFile}" 2&gt; /dev/null # GNU `stat`
+    );
 
-    <span class="nb">echo</span> <span class="s2">&quot;Compressing .tar using \`${cmd}\`…&quot;</span><span class="p">;</span>
-    <span class="s2">&quot;${cmd}&quot;</span> -v <span class="s2">&quot;${tmpFile}&quot;</span> <span class="o">||</span> <span class="k">return</span> 1<span class="p">;</span>
-    <span class="o">[</span> -f <span class="s2">&quot;${tmpFile}&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> rm <span class="s2">&quot;${tmpFile}&quot;</span><span class="p">;</span>
-    <span class="nb">echo</span> <span class="s2">&quot;${tmpFile}.gz created successfully.&quot;</span><span class="p">;</span>
-<span class="o">}</span>
+    local cmd="";
+    if (( size &lt; 52428800 )) &amp;&amp; hash zopfli 2&gt; /dev/null; then
+        # the .tar file is smaller than 50 MB and Zopfli is available; use it
+        cmd="zopfli";
+    else
+        if hash pigz 2&gt; /dev/null; then
+            cmd="pigz";
+        else
+            cmd="gzip";
+        fi;
+    fi;
 
-<span class="c"># Create a new directory and enter it</span>
-<span class="k">function</span> md<span class="o">()</span> <span class="o">{</span>
-    mkdir -p <span class="s2">&quot;$@&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">cd</span> <span class="s2">&quot;$@&quot;</span>
-<span class="o">}</span>
+    echo "Compressing .tar using \`${cmd}\`…";
+    "${cmd}" -v "${tmpFile}" || return 1;
+    [ -f "${tmpFile}" ] &amp;&amp; rm "${tmpFile}";
+    echo "${tmpFile}.gz created successfully.";
+}
 
-
-<span class="c"># find shorthand</span>
-<span class="k">function</span> f<span class="o">()</span> <span class="o">{</span>
-    find . -name <span class="s2">&quot;$1&quot;</span>
-<span class="o">}</span>
-
-<span class="c"># Start an HTTP server from a directory, optionally specifying the port</span>
-<span class="k">function</span> server<span class="o">()</span> <span class="o">{</span>
-    <span class="nb">local </span><span class="nv">port</span><span class="o">=</span><span class="s2">&quot;${1:-8000}&quot;</span>
-    open <span class="s2">&quot;http://localhost:${port}/&quot;</span>
-    <span class="c"># Set the default Content-Type to `text/plain` instead of `application/octet-stream`</span>
-    <span class="c"># And serve everything as UTF-8 (although not technically correct, this doesn’t break anything for binary files)</span>
-    python -c <span class="s1">$&#39;import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[&quot;&quot;] = &quot;text/plain&quot;;\nfor key, value in map.items():\n\tmap[key] = value + &quot;;charset=UTF-8&quot;;\nSimpleHTTPServer.test();&#39;</span> <span class="s2">&quot;$port&quot;</span>
-<span class="o">}</span>
-
-<span class="c"># git log with per-commit cmd-clickable GitHub URLs (iTerm)</span>
-<span class="k">function</span> gf<span class="o">()</span> <span class="o">{</span>
-  <span class="nb">local </span><span class="nv">remote</span><span class="o">=</span><span class="s2">&quot;$(git remote -v | awk &#39;/^origin.*\(push\)$/ {print $2}&#39;)&quot;</span>
-  <span class="o">[[</span> <span class="s2">&quot;$remote&quot;</span> <span class="o">]]</span> <span class="o">||</span> <span class="k">return</span>
-  <span class="nb">local </span><span class="nv">user_repo</span><span class="o">=</span><span class="s2">&quot;$(echo &quot;</span><span class="nv">$remote</span><span class="s2">&quot; | perl -pe &#39;s/.*://;s/\.git$//&#39;)&quot;</span>
-  git log <span class="nv">$*</span> --name-status --color <span class="p">|</span> awk <span class="s2">&quot;$(cat &lt;&lt;AWK</span>
-<span class="s2">    /^.*commit [0-9a-f]{40}/ {sha=substr(\$2,1,7)}</span>
-<span class="s2">    /^[MA]\t/ {printf &quot;</span>%s<span class="se">\t</span>https://github.com/<span class="nv">$user_repo</span>/blob/%s/%s<span class="se">\n</span><span class="s2">&quot;, \$1, sha, \$2; next}</span>
-<span class="s2">    /.*/ {print \$0}</span>
-<span class="s2">AWK</span>
-<span class="s2">  )&quot;</span> <span class="p">|</span> less -F
-<span class="o">}</span>
+# Create a new directory and enter it
+function md() {
+    mkdir -p "$@" &amp;&amp; cd "$@"
+}
 
 
-<span class="c"># Copy w/ progress</span>
-cp_p <span class="o">()</span> <span class="o">{</span>
-  rsync -WavP --human-readable --progress <span class="nv">$1</span> <span class="nv">$2</span>
-<span class="o">}</span>
+# find shorthand
+function f() {
+    find . -name "$1"
+}
+
+# Start an HTTP server from a directory, optionally specifying the port
+function server() {
+    local port="${1:-8000}"
+    open "http://localhost:${port}/"
+    # Set the default Content-Type to `text/plain` instead of `application/octet-stream`
+    # And serve everything as UTF-8 (although not technically correct, this doesn’t break anything for binary files)
+    python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
+}
+
+# git log with per-commit cmd-clickable GitHub URLs (iTerm)
+function gf() {
+  local remote="$(git remote -v | awk '/^origin.*\(push\)$/ {print $2}')"
+  [[ "$remote" ]] || return
+  local user_repo="$(echo "$remote" | perl -pe 's/.*://;s/\.git$//')"
+  git log $* --name-status --color | awk "$(cat &lt;&lt;AWK
+    /^.*commit [0-9a-f]{40}/ {sha=substr(\$2,1,7)}
+    /^[MA]\t/ {printf "%s\thttps://github.com/$user_repo/blob/%s/%s\n", \$1, sha, \$2; next}
+    /.*/ {print \$0}
+AWK
+  )" | less -F
+}
 
 
-<span class="c"># Test if HTTP compression (RFC 2616 + SDCH) is enabled for a given URL.</span>
-<span class="c"># Send a fake UA string for sites that sniff it instead of using the Accept-Encoding header. (Looking at you, ajax.googleapis.com!)</span>
-<span class="k">function</span> httpcompression<span class="o">()</span> <span class="o">{</span>
-    <span class="nv">encoding</span><span class="o">=</span><span class="s2">&quot;$(curl -LIs -H &#39;User-Agent: Mozilla/5 Gecko&#39; -H &#39;Accept-Encoding: gzip,deflate,compress,sdch&#39; &quot;</span><span class="nv">$1</span><span class="s2">&quot; | grep &#39;^Content-Encoding:&#39;)&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;$1 is encoded using ${encoding#* }&quot;</span> <span class="o">||</span> <span class="nb">echo</span> <span class="s2">&quot;$1 is not using any encoding&quot;</span>
-<span class="o">}</span>
-
-<span class="c"># Syntax-highlight JSON strings or files</span>
-<span class="k">function</span> json<span class="o">()</span> <span class="o">{</span>
-    <span class="k">if</span> <span class="o">[</span> -p /dev/stdin <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-        <span class="c"># piping, e.g. `echo &#39;{&quot;foo&quot;:42}&#39; | json`</span>
-        python -mjson.tool <span class="p">|</span> pygmentize -l javascript
-    <span class="k">else</span>
-        <span class="c"># e.g. `json &#39;{&quot;foo&quot;:42}&#39;`</span>
-        python -mjson.tool <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;$*&quot;</span> <span class="p">|</span> pygmentize -l javascript
-    <span class="k">fi</span>
-<span class="o">}</span>
-
-<span class="c"># take this repo and copy it to somewhere else minus the .git stuff.</span>
-<span class="k">function</span> gitexport<span class="o">(){</span>
-    mkdir -p <span class="s2">&quot;$1&quot;</span>
-    git archive master <span class="p">|</span> tar -x -C <span class="s2">&quot;$1&quot;</span>
-<span class="o">}</span>
+# Copy w/ progress
+cp_p () {
+  rsync -WavP --human-readable --progress $1 $2
+}
 
 
+# Test if HTTP compression (RFC 2616 + SDCH) is enabled for a given URL.
+# Send a fake UA string for sites that sniff it instead of using the Accept-Encoding header. (Looking at you, ajax.googleapis.com!)
+function httpcompression() {
+    encoding="$(curl -LIs -H 'User-Agent: Mozilla/5 Gecko' -H 'Accept-Encoding: gzip,deflate,compress,sdch' "$1" | grep '^Content-Encoding:')" &amp;&amp; echo "$1 is encoded using ${encoding#* }" || echo "$1 is not using any encoding"
+}
 
-<span class="c"># get gzipped size</span>
-<span class="k">function</span> gz<span class="o">()</span> <span class="o">{</span>
-    <span class="nb">echo</span> <span class="s2">&quot;orig size    (bytes): &quot;</span>
-    cat <span class="s2">&quot;$1&quot;</span> <span class="p">|</span> wc -c
-    <span class="nb">echo</span> <span class="s2">&quot;gzipped size (bytes): &quot;</span>
-    gzip -c <span class="s2">&quot;$1&quot;</span> <span class="p">|</span> wc -c
-<span class="o">}</span>
+# Syntax-highlight JSON strings or files
+function json() {
+    if [ -p /dev/stdin ]; then
+        # piping, e.g. `echo '{"foo":42}' | json`
+        python -mjson.tool | pygmentize -l javascript
+    else
+        # e.g. `json '{"foo":42}'`
+        python -mjson.tool &lt;&lt;&lt; "$*" | pygmentize -l javascript
+    fi
+}
 
-
-<span class="c"># Extract archives - use: extract &lt;file&gt;</span>
-<span class="c"># Based on http://dotfiles.org/~pseup/.bashrc</span>
-<span class="k">function</span> extract<span class="o">()</span> <span class="o">{</span>
-    <span class="k">if</span> <span class="o">[</span> -f <span class="s2">&quot;$1&quot;</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
-        <span class="nb">local </span><span class="nv">filename</span><span class="o">=</span><span class="k">$(</span>basename <span class="s2">&quot;$1&quot;</span><span class="k">)</span>
-        <span class="nb">local </span><span class="nv">foldername</span><span class="o">=</span><span class="s2">&quot;${filename%%.*}&quot;</span>
-        <span class="nb">local </span><span class="nv">fullpath</span><span class="o">=</span><span class="sb">`</span>perl -e <span class="s1">&#39;use Cwd &quot;abs_path&quot;;print abs_path(shift)&#39;</span> <span class="s2">&quot;$1&quot;</span><span class="sb">`</span>
-        <span class="nb">local </span><span class="nv">didfolderexist</span><span class="o">=</span><span class="nb">false</span>
-<span class="nb">        </span><span class="k">if</span> <span class="o">[</span> -d <span class="s2">&quot;$foldername&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-            <span class="nv">didfolderexist</span><span class="o">=</span><span class="nb">true</span>
-<span class="nb">            read</span> -p <span class="s2">&quot;$foldername already exists, do you want to overwrite it? (y/n) &quot;</span> -n 1
-            <span class="nb">echo</span>
-<span class="nb">            </span><span class="k">if</span> <span class="o">[[</span> <span class="nv">$REPLY</span> <span class="o">=</span>~ ^<span class="o">[</span>Nn<span class="o">]</span><span class="nv">$ </span><span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-                <span class="k">return</span>
-            <span class="k">fi</span>
-        <span class="k">fi</span>
-        mkdir -p <span class="s2">&quot;$foldername&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">cd</span> <span class="s2">&quot;$foldername&quot;</span>
-        <span class="k">case</span> <span class="nv">$1</span> in
-            *.tar.bz2<span class="o">)</span> tar xjf <span class="s2">&quot;$fullpath&quot;</span> <span class="p">;;</span>
-            *.tar.gz<span class="o">)</span> tar xzf <span class="s2">&quot;$fullpath&quot;</span> <span class="p">;;</span>
-            *.tar.xz<span class="o">)</span> tar Jxvf <span class="s2">&quot;$fullpath&quot;</span> <span class="p">;;</span>
-            *.tar.Z<span class="o">)</span> tar xzf <span class="s2">&quot;$fullpath&quot;</span> <span class="p">;;</span>
-            *.tar<span class="o">)</span> tar xf <span class="s2">&quot;$fullpath&quot;</span> <span class="p">;;</span>
-            *.taz<span class="o">)</span> tar xzf <span class="s2">&quot;$fullpath&quot;</span> <span class="p">;;</span>
-            *.tb2<span class="o">)</span> tar xjf <span class="s2">&quot;$fullpath&quot;</span> <span class="p">;;</span>
-            *.tbz<span class="o">)</span> tar xjf <span class="s2">&quot;$fullpath&quot;</span> <span class="p">;;</span>
-            *.tbz2<span class="o">)</span> tar xjf <span class="s2">&quot;$fullpath&quot;</span> <span class="p">;;</span>
-            *.tgz<span class="o">)</span> tar xzf <span class="s2">&quot;$fullpath&quot;</span> <span class="p">;;</span>
-            *.txz<span class="o">)</span> tar Jxvf <span class="s2">&quot;$fullpath&quot;</span> <span class="p">;;</span>
-            *.zip<span class="o">)</span> unzip <span class="s2">&quot;$fullpath&quot;</span> <span class="p">;;</span>
-            *<span class="o">)</span> <span class="nb">echo</span> <span class="s2">&quot;&#39;$1&#39; cannot be extracted via extract()&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">cd</span> .. <span class="o">&amp;&amp;</span> ! <span class="nv">$didfolderexist</span> <span class="o">&amp;&amp;</span> rm -r <span class="s2">&quot;$foldername&quot;</span> <span class="p">;;</span>
-        <span class="k">esac</span>
-    <span class="k">else</span>
-        <span class="nb">echo</span> <span class="s2">&quot;&#39;$1&#39; is not a valid file&quot;</span>
-    <span class="k">fi</span>
-<span class="o">}</span>
+# take this repo and copy it to somewhere else minus the .git stuff.
+function gitexport(){
+    mkdir -p "$1"
+    git archive master | tar -x -C "$1"
+}
 
 
-<span class="c"># animated gifs from any video</span>
-<span class="c"># from alex sexton   gist.github.com/SlexAxton/4989674</span>
-gifify<span class="o">()</span> <span class="o">{</span>
-  <span class="k">if</span> <span class="o">[[</span> -n <span class="s2">&quot;$1&quot;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$2</span> <span class="o">==</span> <span class="s1">&#39;--good&#39;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-      ffmpeg -i <span class="nv">$1</span> -r <span class="m">10</span> -vcodec png out-static-%05d.png
-      <span class="nb">time </span>convert -verbose +dither -layers Optimize -resize 900x900<span class="se">\&gt;</span> out-static*.png  GIF:- <span class="p">|</span> gifsicle --colors <span class="m">128</span> --delay<span class="o">=</span><span class="m">5</span> --loop --optimize<span class="o">=</span><span class="m">3</span> --multifile - &gt; <span class="nv">$1</span>.gif
+
+# get gzipped size
+function gz() {
+    echo "orig size    (bytes): "
+    cat "$1" | wc -c
+    echo "gzipped size (bytes): "
+    gzip -c "$1" | wc -c
+}
+
+
+# Extract archives - use: extract &lt;file&gt;
+# Based on http://dotfiles.org/~pseup/.bashrc
+function extract() {
+    if [ -f "$1" ] ; then
+        local filename=$(basename "$1")
+        local foldername="${filename%%.*}"
+        local fullpath=`perl -e 'use Cwd "abs_path";print abs_path(shift)' "$1"`
+        local didfolderexist=false
+        if [ -d "$foldername" ]; then
+            didfolderexist=true
+            read -p "$foldername already exists, do you want to overwrite it? (y/n) " -n 1
+            echo
+            if [[ $REPLY =~ ^[Nn]$ ]]; then
+                return
+            fi
+        fi
+        mkdir -p "$foldername" &amp;&amp; cd "$foldername"
+        case $1 in
+            *.tar.bz2) tar xjf "$fullpath" ;;
+            *.tar.gz) tar xzf "$fullpath" ;;
+            *.tar.xz) tar Jxvf "$fullpath" ;;
+            *.tar.Z) tar xzf "$fullpath" ;;
+            *.tar) tar xf "$fullpath" ;;
+            *.taz) tar xzf "$fullpath" ;;
+            *.tb2) tar xjf "$fullpath" ;;
+            *.tbz) tar xjf "$fullpath" ;;
+            *.tbz2) tar xjf "$fullpath" ;;
+            *.tgz) tar xzf "$fullpath" ;;
+            *.txz) tar Jxvf "$fullpath" ;;
+            *.zip) unzip "$fullpath" ;;
+            *) echo "'$1' cannot be extracted via extract()" &amp;&amp; cd .. &amp;&amp; ! $didfolderexist &amp;&amp; rm -r "$foldername" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
+}
+
+
+# animated gifs from any video
+# from alex sexton   gist.github.com/SlexAxton/4989674
+gifify() {
+  if [[ -n "$1" ]]; then
+    if [[ $2 == '--good' ]]; then
+      ffmpeg -i $1 -r 10 -vcodec png out-static-%05d.png
+      time convert -verbose +dither -layers Optimize -resize 900x900\&gt; out-static*.png  GIF:- | gifsicle --colors 128 --delay=5 --loop --optimize=3 --multifile - &gt; $1.gif
       rm out-static*.png
-    <span class="k">else</span>
-      ffmpeg -i <span class="nv">$1</span> -s 600x400 -pix_fmt rgb24 -r <span class="m">10</span> -f gif - <span class="p">|</span> gifsicle --optimize<span class="o">=</span><span class="m">3</span> --delay<span class="o">=</span><span class="m">3</span> &gt; <span class="nv">$1</span>.gif
-    <span class="k">fi</span>
-  <span class="k">else</span>
-    <span class="nb">echo</span> <span class="s2">&quot;proper usage: gifify &lt;input_movie.mov&gt;. You DO need to include extension.&quot;</span>
-  <span class="k">fi</span>
-<span class="o">}</span>
+    else
+      ffmpeg -i $1 -s 600x400 -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=3 &gt; $1.gif
+    fi
+  else
+    echo "proper usage: gifify &lt;input_movie.mov&gt;. You DO need to include extension."
+  fi
+}
 
-<span class="c"># turn that video into webm.</span>
-<span class="c"># brew reinstall ffmpeg --with-libvpx</span>
-webmify<span class="o">(){</span>
-    ffmpeg -i <span class="nv">$1</span> -vcodec libvpx -acodec libvorbis -isync -copyts -aq <span class="m">80</span> -threads <span class="m">3</span> -qmax <span class="m">30</span> -y <span class="nv">$2</span> <span class="nv">$1</span>.webm
-<span class="o">}</span>
-</code></pre></div>
+# turn that video into webm.
+# brew reinstall ffmpeg --with-libvpx
+webmify(){
+    ffmpeg -i $1 -vcodec libvpx -acodec libvorbis -isync -copyts -aq 80 -threads 3 -qmax 30 -y $2 $1.webm
+}
+
+</code></pre>
+
 <p>Agora o arquivo .aliases</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">################################################################################</span>
-<span class="c">#       Default Aliases</span>
-<span class="c">################################################################################</span>
 
-<span class="c"># Easier navigation: .., ..., ...., ....., ~ and -</span>
-<span class="nb">alias</span> ..<span class="o">=</span><span class="s2">&quot;cd ..&quot;</span>
-<span class="nb">alias</span> ...<span class="o">=</span><span class="s2">&quot;cd ../..&quot;</span>
-<span class="nb">alias</span> ....<span class="o">=</span><span class="s2">&quot;cd ../../..&quot;</span>
-<span class="nb">alias</span> .....<span class="o">=</span><span class="s2">&quot;cd ../../../..&quot;</span>
-<span class="nb">alias</span> ~<span class="o">=</span><span class="s2">&quot;cd ~&quot;</span> <span class="c"># `cd` is probably faster to type though</span>
-<span class="nb">alias</span> -- -<span class="o">=</span><span class="s2">&quot;cd -&quot;</span>
+<pre><code class="language-bash">
+################################################################################
+#       Default Aliases
+################################################################################
 
-<span class="c"># List only directories</span>
-<span class="nb">alias </span><span class="nv">listdir</span><span class="o">=</span><span class="s2">&quot;ls -lF ${colorflag} | grep --color=never &#39;^d&#39;&quot;</span>
+# Easier navigation: .., ..., ...., ....., ~ and -
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd ~" # `cd` is probably faster to type though
+alias -- -="cd -"
 
-<span class="nb">alias </span><span class="nv">sha1</span><span class="o">=</span><span class="s1">&#39;openssl sha1&#39;</span>
+# List only directories
+alias listdir="ls -lF ${colorflag} | grep --color=never '^d'"
 
-<span class="nb">alias </span><span class="nv">path</span><span class="o">=</span><span class="s1">&#39;echo -e ${PATH//:/\\n}&#39;</span>
-<span class="nb">alias </span><span class="nv">now</span><span class="o">=</span><span class="s1">&#39;date +&quot;%T&quot;&#39;</span>
-<span class="nb">alias </span><span class="nv">nowtime</span><span class="o">=</span>now
-<span class="nb">alias </span><span class="nv">nowdate</span><span class="o">=</span><span class="s1">&#39;date +&quot;%d-%m-%Y&quot;&#39;</span>
+alias sha1='openssl sha1'
 
-<span class="c"># Stop after sending count ECHO_REQUEST packets #</span>
-<span class="nb">alias </span><span class="nv">ping</span><span class="o">=</span><span class="s1">&#39;ping -c 5&#39;</span>
-<span class="c"># Do not wait interval 1 second, go fast #</span>
-<span class="nb">alias </span><span class="nv">fastping</span><span class="o">=</span><span class="s1">&#39;ping -c 100 -s.2&#39;</span>
+alias path='echo -e ${PATH//:/\\n}'
+alias now='date +"%T"'
+alias nowtime=now
+alias nowdate='date +"%d-%m-%Y"'
 
-<span class="nb">alias </span><span class="nv">ports</span><span class="o">=</span><span class="s1">&#39;netstat -tulanp&#39;</span>
+# Stop after sending count ECHO_REQUEST packets #
+alias ping='ping -c 5'
+# Do not wait interval 1 second, go fast #
+alias fastping='ping -c 100 -s.2'
 
-<span class="c"># get web server headers #</span>
-<span class="nb">alias </span><span class="nv">header</span><span class="o">=</span><span class="s1">&#39;curl -I&#39;</span>
+alias ports='netstat -tulanp'
 
-<span class="c"># find out if remote server supports gzip / mod_deflate or not #</span>
-<span class="nb">alias </span><span class="nv">headerc</span><span class="o">=</span><span class="s1">&#39;curl -I --compress&#39;</span>
+# get web server headers #
+alias header='curl -I'
 
-<span class="c">## shortcut  for iptables and pass it via sudo#</span>
-<span class="nb">alias </span><span class="nv">ipt</span><span class="o">=</span><span class="s1">&#39;sudo /sbin/iptables&#39;</span>
+# find out if remote server supports gzip / mod_deflate or not #
+alias headerc='curl -I --compress'
 
-<span class="c"># display all rules #</span>
-<span class="nb">alias </span><span class="nv">iptlist</span><span class="o">=</span><span class="s1">&#39;sudo /sbin/iptables -L -n -v --line-numbers&#39;</span>
-<span class="nb">alias </span><span class="nv">iptlistin</span><span class="o">=</span><span class="s1">&#39;sudo /sbin/iptables -L INPUT -n -v --line-numbers&#39;</span>
-<span class="nb">alias </span><span class="nv">iptlistout</span><span class="o">=</span><span class="s1">&#39;sudo /sbin/iptables -L OUTPUT -n -v --line-numbers&#39;</span>
-<span class="nb">alias </span><span class="nv">iptlistfw</span><span class="o">=</span><span class="s1">&#39;sudo /sbin/iptables -L FORWARD -n -v --line-numbers&#39;</span>
-<span class="nb">alias </span><span class="nv">firewall</span><span class="o">=</span>iptlist
+## shortcut  for iptables and pass it via sudo#
+alias ipt='sudo /sbin/iptables'
 
-<span class="c">## Colorize the grep command output for ease of use (good for log files)##</span>
-<span class="nb">alias </span><span class="nv">grep</span><span class="o">=</span><span class="s1">&#39;grep --color=auto&#39;</span>
-<span class="nb">alias </span><span class="nv">egrep</span><span class="o">=</span><span class="s1">&#39;egrep --color=auto&#39;</span>
-<span class="nb">alias </span><span class="nv">fgrep</span><span class="o">=</span><span class="s1">&#39;fgrep --color=auto&#39;</span>
+# display all rules #
+alias iptlist='sudo /sbin/iptables -L -n -v --line-numbers'
+alias iptlistin='sudo /sbin/iptables -L INPUT -n -v --line-numbers'
+alias iptlistout='sudo /sbin/iptables -L OUTPUT -n -v --line-numbers'
+alias iptlistfw='sudo /sbin/iptables -L FORWARD -n -v --line-numbers'
+alias firewall=iptlist
 
-<span class="c"># YUM Package manager alias</span>
-<span class="nb">alias </span><span class="nv">yumupdate</span><span class="o">=</span><span class="s1">&#39;sudo yum update &amp;&amp; sudo yum upgrade&#39;</span>
-<span class="nb">alias </span><span class="nv">yumsearch</span><span class="o">=</span><span class="s1">&#39;sudo yum search&#39;</span>
-<span class="nb">alias </span><span class="nv">yumremove</span><span class="o">=</span><span class="s1">&#39;sudo yum remove&#39;</span>
+## Colorize the grep command output for ease of use (good for log files)##
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
 
-<span class="c"># Shortcuts</span>
-<span class="nb">alias </span><span class="nv">dl</span><span class="o">=</span><span class="s2">&quot;cd ~/Downloads&quot;</span>
-<span class="nb">alias </span><span class="nv">dt</span><span class="o">=</span><span class="s2">&quot;cd ~/Desktop&quot;</span>
-<span class="nb">alias </span><span class="nv">p</span><span class="o">=</span><span class="s2">&quot;cd ~/projects&quot;</span>
-<span class="nb">alias </span><span class="nv">g</span><span class="o">=</span><span class="s2">&quot;git&quot;</span>
-<span class="nb">alias </span><span class="nv">h</span><span class="o">=</span><span class="s2">&quot;history&quot;</span>
-<span class="nb">alias </span><span class="nv">j</span><span class="o">=</span><span class="s2">&quot;jobs&quot;</span>
+# YUM Package manager alias
+alias yumupdate='sudo yum update &amp;&amp; sudo yum upgrade'
+alias yumsearch='sudo yum search'
+alias yumremove='sudo yum remove'
 
-<span class="c"># IP addresses</span>
-<span class="nb">alias </span><span class="nv">ip</span><span class="o">=</span><span class="s2">&quot;dig +short myip.opendns.com @resolver1.opendns.com&quot;</span>
-<span class="nb">alias </span><span class="nv">localip</span><span class="o">=</span><span class="s2">&quot;ifconfig getifaddr en1&quot;</span>
-<span class="nb">alias </span><span class="nv">ips</span><span class="o">=</span><span class="s2">&quot;ifconfig -a | perl -nle&#39;/(\d+\.\d+\.\d+\.\d+)/ &amp;&amp; print $1&#39;&quot;</span>
+# Shortcuts
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias p="cd ~/projects"
+alias g="git"
+alias h="history"
+alias j="jobs"
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ifconfig getifaddr en1"
+alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ &amp;&amp; print $1'"
 
 
-<span class="c"># Copy my public key to the pasteboard</span>
-<span class="nb">alias </span><span class="nv">pubkey</span><span class="o">=</span><span class="s2">&quot;more ~/.ssh/id_rsa.pub | pbcopy | printf &#39;=&gt; Public key copied to pasteboard.\n&#39;&quot;</span>
+# Copy my public key to the pasteboard
+alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | printf '=&gt; Public key copied to pasteboard.\n'"
 
-<span class="c"># Flush Directory Service cache</span>
-<span class="nb">alias </span><span class="nv">flush</span><span class="o">=</span><span class="s2">&quot;dscacheutil -flushcache&quot;</span>
+# Flush Directory Service cache
+alias flush="dscacheutil -flushcache"
 
-<span class="c"># View HTTP traffic</span>
-<span class="nb">alias </span><span class="nv">sniff</span><span class="o">=</span><span class="s2">&quot;sudo ngrep -d &#39;en1&#39; -t &#39;^(GET|POST) &#39; &#39;tcp and port 80&#39;&quot;</span>
-<span class="nb">alias </span><span class="nv">httpdump</span><span class="o">=</span><span class="s2">&quot;sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \&quot;Host\: .*|GET \/.*\&quot;&quot;</span>
+# View HTTP traffic
+alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
+alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
 
-<span class="c"># File size</span>
-<span class="nb">alias </span><span class="nv">fs</span><span class="o">=</span><span class="s2">&quot;stat -f \&quot;%z bytes\&quot;&quot;</span>
+# File size
+alias fs="stat -f \"%z bytes\""
 
-<span class="c"># Recursively delete `.DS_Store` files</span>
-<span class="nb">alias </span><span class="nv">cleanup</span><span class="o">=</span><span class="s2">&quot;find . -type f -name &#39;*.DS_Store&#39; -ls -delete&quot;</span>
-<span class="nb">alias </span><span class="nv">xlog</span><span class="o">=</span><span class="s2">&quot;sudo grep --binary-files=without-match --color -nsie &#39;(EE)&#39; -e &#39;(WW)&#39; /var/log/Xorg.0.log&quot;</span>
-<span class="nb">alias </span><span class="nv">which</span><span class="o">=</span><span class="s2">&quot;whence&quot;</span>
-<span class="nb">alias </span><span class="nv">sd</span><span class="o">=</span><span class="s1">&#39;export DISPLAY=:0.0&#39;</span>
-<span class="nb">alias </span><span class="nv">cpan</span><span class="o">=</span><span class="s2">&quot;perl -MCPAN -e shell&quot;</span>
-<span class="nb">alias </span><span class="nv">cup</span><span class="o">=</span><span class="s1">&#39;cvs -z3 update -Pd&#39;</span>
-<span class="nb">alias </span><span class="nv">mv</span><span class="o">=</span><span class="s1">&#39;nocorrect /bin/mv&#39;</span>
-<span class="nb">alias </span><span class="nv">rm</span><span class="o">=</span><span class="s1">&#39;nocorrect /bin/rm -i&#39;</span>
-<span class="nb">alias </span><span class="nv">shred</span><span class="o">=</span><span class="s1">&#39;nocorrect ionice -c3 /usr/bin/shred -fuz&#39;</span>
-<span class="nb">alias </span><span class="nv">wipe</span><span class="o">=</span><span class="s1">&#39;nocorrect ionice -c3 /usr/bin/wipe -l2 -v -x -r&#39;</span>
-<span class="nb">alias </span><span class="nv">man</span><span class="o">=</span><span class="s1">&#39;nocorrect man&#39;</span>
-<span class="nb">alias </span><span class="nv">mkdir</span><span class="o">=</span><span class="s1">&#39;nocorrect /bin/mkdir -p&#39;</span>
-<span class="nb">alias </span><span class="nv">find</span><span class="o">=</span><span class="s1">&#39;noglob find&#39;</span>
+# Recursively delete `.DS_Store` files
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+alias xlog="sudo grep --binary-files=without-match --color -nsie '(EE)' -e '(WW)' /var/log/Xorg.0.log"
+alias which="whence"
+alias sd='export DISPLAY=:0.0'
+alias cpan="perl -MCPAN -e shell"
+alias cup='cvs -z3 update -Pd'
+alias mv='nocorrect /bin/mv'
+alias rm='nocorrect /bin/rm -i'
+alias shred='nocorrect ionice -c3 /usr/bin/shred -fuz'
+alias wipe='nocorrect ionice -c3 /usr/bin/wipe -l2 -v -x -r'
+alias man='nocorrect man'
+alias mkdir='nocorrect /bin/mkdir -p'
+alias find='noglob find'
 
-<span class="c"># Jekyll alias</span>
-<span class="nb">alias </span><span class="nv">jsw</span><span class="o">=</span><span class="s1">&#39;jekyll serve -w&#39;</span>
+# Jekyll alias
+alias jsw='jekyll serve -w'
 
-<span class="c"># alias wget=&quot;wget -c&quot;</span>
-<span class="nb">alias </span><span class="nv">lsd</span><span class="o">=</span><span class="s1">&#39;ls -Fld *(-/DN)&#39;</span>
-<span class="nb">alias </span><span class="nv">weather</span><span class="o">=</span><span class="s2">&quot;/home/gregf/code/bin/forecast/forecast.rb&quot;</span>
-<span class="nb">alias </span><span class="nv">ncmpc</span><span class="o">=</span><span class="s2">&quot;ncmpc -c&quot;</span>
-<span class="nb">alias </span><span class="nv">fixdbus</span><span class="o">=</span><span class="s2">&quot;sudo -s dbus-uuidgen --ensure&quot;</span>
+# alias wget="wget -c"
+alias lsd='ls -Fld *(-/DN)'
+alias weather="/home/gregf/code/bin/forecast/forecast.rb"
+alias ncmpc="ncmpc -c"
+alias fixdbus="sudo -s dbus-uuidgen --ensure"
 
-<span class="nb">alias </span><span class="nv">v</span><span class="o">=</span><span class="s2">&quot;vim&quot;</span>
-<span class="nb">alias </span><span class="nv">o</span><span class="o">=</span><span class="s2">&quot;open&quot;</span>
-<span class="nb">alias </span><span class="nv">d</span><span class="o">=</span><span class="s2">&quot;devtodo -A&quot;</span>
-<span class="nb">alias </span><span class="nv">s</span><span class="o">=</span><span class="s2">&quot;sudo subl&quot;</span>
-<span class="nb">alias </span><span class="nv">subl</span><span class="o">=</span><span class="s2">&quot;sudo subl&quot;</span>
+alias v="vim"
+alias o="open"
+alias d="devtodo -A"
+alias s="sudo subl"
+alias subl="sudo subl"
 
-<span class="c"># Reload the shell (i.e. invoke as a login shell)</span>
-<span class="nb">alias </span><span class="nv">reloadshell</span><span class="o">=</span><span class="s2">&quot;exec $SHELL -l&quot;</span>
+# Reload the shell (i.e. invoke as a login shell)
+alias reloadshell="exec $SHELL -l"
 
-<span class="c"># Concatenate and print content of files (add line numbers)</span>
-<span class="nb">alias </span><span class="nv">catn</span><span class="o">=</span><span class="s2">&quot;cat -n&quot;</span>
+# Concatenate and print content of files (add line numbers)
+alias catn="cat -n"
 
-<span class="c"># Kill all the tabs in Chrome to free up memory</span>
-<span class="c"># [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description</span>
-<span class="nb">alias </span><span class="nv">chromekill</span><span class="o">=</span><span class="s2">&quot;ps ux | grep &#39;[C]hrome Helper --type=renderer&#39; | grep -v extension-process | tr -s &#39; &#39; | cut -d &#39; &#39; -f2 | xargs kill&quot;</span>
+# Kill all the tabs in Chrome to free up memory
+# [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
+alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
 
-<span class="nb">alias </span><span class="nv">tlog</span><span class="o">=</span><span class="s1">&#39;tail -f log/development.log&#39;</span>
-<span class="nb">alias </span><span class="nv">rst</span><span class="o">=</span><span class="s1">&#39;touch tmp/restart.txt&#39;</span>
-<span class="nb">alias </span><span class="nv">giti</span><span class="o">=</span><span class="s2">&quot;vim .gitignore&quot;</span>
-<span class="nb">alias </span><span class="nv">g</span><span class="o">=</span><span class="s1">&#39;gthumb&#39;</span>
-<span class="nb">alias </span><span class="nv">burniso</span><span class="o">=</span><span class="s1">&#39;wodim -v dev=/dev/cdrw&#39;</span>
-<span class="nb">alias </span><span class="nv">burndvdiso</span><span class="o">=</span><span class="s1">&#39;growisofs -speed=8 -dvd-compat -Z /dev/dvdrw=$1&#39;</span>
-<span class="nb">alias </span><span class="nv">biosinfo</span><span class="o">=</span><span class="s1">&#39;sudo dmidecode&#39;</span>
-<span class="nb">alias </span>f-spot<span class="o">=</span><span class="s1">&#39;dbus-launch f-spot&#39;</span>
-<span class="nb">alias </span><span class="nv">gnp</span><span class="o">=</span><span class="s2">&quot;git-notpushed&quot;</span>
-<span class="nb">alias </span><span class="nv">k</span><span class="o">=</span><span class="s2">&quot;killall&quot;</span>
-<span class="nb">alias </span><span class="nv">poweroff</span><span class="o">=</span><span class="s1">&#39;sudo poweroff&#39;</span>
-<span class="nb">alias </span><span class="nv">reboot</span><span class="o">=</span><span class="s1">&#39;sudo reboot&#39;</span>
-<span class="nb">alias </span><span class="nv">lsnoext</span><span class="o">=</span><span class="s2">&quot;ls | grep -v &#39;\.&#39;&quot;</span>
-<span class="nb">alias </span><span class="nv">ipager</span><span class="o">=</span><span class="s1">&#39;k ipager; sleep 1; ipager &amp;&#39;</span>
-<span class="nb">alias </span><span class="nv">gis</span><span class="o">=</span><span class="s2">&quot;git status | grep --color=always &#39;^[^a-z]\+\(new file:\|modified:\)&#39; | cut -d&#39;#&#39; -f2-&quot;</span>
-<span class="nb">alias </span><span class="nv">ports</span><span class="o">=</span><span class="s1">&#39;netstat --inet -pln&#39;</span>
+alias tlog='tail -f log/development.log'
+alias rst='touch tmp/restart.txt'
+alias giti="vim .gitignore"
+alias g='gthumb'
+alias burniso='wodim -v dev=/dev/cdrw'
+alias burndvdiso='growisofs -speed=8 -dvd-compat -Z /dev/dvdrw=$1'
+alias biosinfo='sudo dmidecode'
+alias f-spot='dbus-launch f-spot'
+alias gnp="git-notpushed"
+alias k="killall"
+alias poweroff='sudo poweroff'
+alias reboot='sudo reboot'
+alias lsnoext="ls | grep -v '\.'"
+alias ipager='k ipager; sleep 1; ipager &amp;'
+alias gis="git status | grep --color=always '^[^a-z]\+\(new file:\|modified:\)' | cut -d'#' -f2-"
+alias ports='netstat --inet -pln'
 
-<span class="nb">alias </span><span class="nv">subl</span><span class="o">=</span><span class="s2">&quot;sudo subl&quot;</span>
-<span class="nb">alias </span><span class="nv">la</span><span class="o">=</span><span class="s2">&quot;ls -la&quot;</span>
-<span class="nb">alias </span><span class="nv">srm</span><span class="o">=</span><span class="s2">&quot;sudo rm -rf&quot;</span>
-<span class="nb">alias </span><span class="nv">smkdir</span><span class="o">=</span><span class="s2">&quot;sudo mkdir&quot;</span>
-</code></pre></div>
-<h2>OH-MY-ZSH</h2>
+alias subl="sudo subl"
+alias la="ls -la"
+alias srm="sudo rm -rf"
+alias smkdir="sudo mkdir"
+
+</code></pre>
+
+<h2 id="oh-my-zsh">OH-MY-ZSH</h2>
 
 <p>Algumas informações para inserirmos algumas funções e aliases no ambiente CLI. Como utilizo e contribuo para o projeto oh-my-zsh, ele por padrão utiliza um arquivo <code>.zshrc</code> para carregar alguns plugins, alias e funções. Existe uma linha para o carregamento automático dos plugins do oh-my-zsh e alguns que carrego por padrão são:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">plugins</span><span class="o">=(</span>git rails ruby frontend-search nvm rvm vagrant<span class="o">)</span>
-</code></pre></div>
-<p>E adicionamos estas linhas no arquivo <code>.zshrc</code> para carregar as nossas configurações.</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">##############################################################################</span>
-<span class="c">#       Clear screen on logout</span>
-<span class="c">##############################################################################</span>
-<span class="nb">trap </span>clear 0
 
-<span class="c">################################################################################</span>
-<span class="c"># Resource Limits</span>
-<span class="c">################################################################################</span>
+<pre><code class="language-bash">plugins=(git rails ruby frontend-search nvm rvm vagrant)
+</code></pre>
+
+<p>E adicionamos estas linhas no arquivo <code>.zshrc</code> para carregar as nossas configurações.</p>
+
+<pre><code class="language-bash">##############################################################################
+#       Clear screen on logout
+##############################################################################
+trap clear 0
+
+################################################################################
+# Resource Limits
+################################################################################
 limit stack 8192
-<span class="c">#limit core unlimited</span>
+#limit core unlimited
 limit core 0
 limit -s
 
-<span class="c"># Source global definitions</span>
-<span class="k">if</span> <span class="o">[</span> -f ~/.functions <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+# Source global definitions
+if [ -f ~/.functions ]; then
     . ~/.functions
-<span class="k">fi</span>
+fi
 
-<span class="c"># Source global definitions</span>
-<span class="k">if</span> <span class="o">[</span> -f ~/.aliases <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+# Source global definitions
+if [ -f ~/.aliases ]; then
     . ~/.aliases
-<span class="k">fi</span>
+fi
 
 
-<span class="c"># User configuration</span>
-<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;$PATH:$HOME/bin:/usr/local/bin&quot;</span>
+# User configuration
+export PATH="$PATH:$HOME/bin:/usr/local/bin"
 
-devilspie -a <span class="p">&amp;</span> clear<span class="p">;</span>
-</code></pre></div>
-<h2>CONCLUSÃO</h2>
+devilspie -a &amp; clear;
 
-<p>Estas são algumas configurações que utilizo ao trabalhar em ambientes CLI, o que acontece diariamente já que minhas ferramentas de trabalho &quot;default&quot; são um editor de texto e um terminal.</p>
+</code></pre>
 
-<p>Tem outro workflow para ambientes CLI? Comente e compartilhe essa experiência, pois...</p>
+<h2 id="concluso">CONCLUSÃO</h2>
+
+<p>Estas são algumas configurações que utilizo ao trabalhar em ambientes CLI, o que acontece diariamente já que minhas ferramentas de trabalho “default” são um editor de texto e um terminal.</p>
+
+<p>Tem outro workflow para ambientes CLI? Comente e compartilhe essa experiência, pois…</p>
 
 <blockquote>
-<p>Conhecimento bom é conhecimento compartilhado</p>
+  <p>Conhecimento bom é conhecimento compartilhado</p>
 </blockquote>
 
 <p>Abraço e até mais!</p>
@@ -493,9 +505,10 @@ devilspie -a <span class="p">&amp;</span> clear<span class="p">;</span>
 <p>Links:</p>
 
 <ul>
-<li>Gist: arquivo .functions <a href="https://gist.github.com/willmendesneto/b6bc8ab4f868a9ec459c">https://gist.github.com/willmendesneto/b6bc8ab4f868a9ec459c</a></li>
-<li>Gist: arquivo .aliases <a href="https://gist.github.com/willmendesneto/3c1c150666b02232e494">https://gist.github.com/willmendesneto/3c1c150666b02232e494</a></li>
+  <li>Gist: arquivo .functions <a href="https://gist.github.com/willmendesneto/b6bc8ab4f868a9ec459c">https://gist.github.com/willmendesneto/b6bc8ab4f868a9ec459c</a></li>
+  <li>Gist: arquivo .aliases <a href="https://gist.github.com/willmendesneto/3c1c150666b02232e494">https://gist.github.com/willmendesneto/3c1c150666b02232e494</a></li>
 </ul>
+
 
           </div>
         </section>

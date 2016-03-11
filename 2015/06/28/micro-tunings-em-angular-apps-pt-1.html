@@ -99,191 +99,213 @@
           <div id="post-content-page">
             <p><a class="page-link" href="/2015/05/11/micro-tunnings-with-angular-apps-part-1/">Veja a versão em inglês</a></p>
 
-<h2>INTRODUÇÃO</h2>
+<h2 id="introduo">INTRODUÇÃO</h2>
 
-<p>Muitas aplicações estão usando Angular como framework Frontend e isso é muito bom, mas com o passar do tempo e evolução do software outros aspectos do produto/serviço possuem importância fundamental também, como manutenibilidade e... performance, claro!</p>
+<p>Muitas aplicações estão usando Angular como framework Frontend e isso é muito bom, mas com o passar do tempo e evolução do software outros aspectos do produto/serviço possuem importância fundamental também, como manutenibilidade e… performance, claro!</p>
 
 <p>Mas quando falamos sobre performance, quais são as (re)soluções que voê tem em mente?</p>
 
 <ul>
-<li>Mais máquinas?</li>
-<li>Mais cache?</li>
-<li>Mais minificação/compressão?</li>
-<li>Mais chamadas assíncronas?</li>
-<li>Utilizar HTTP2?</li>
+  <li>Mais máquinas?</li>
+  <li>Mais cache?</li>
+  <li>Mais minificação/compressão?</li>
+  <li>Mais chamadas assíncronas?</li>
+  <li>Utilizar HTTP2?</li>
 </ul>
 
 <blockquote>
-<p>Não esconda os seus problemas</p>
+  <p>Não esconda os seus problemas</p>
 </blockquote>
 
 <p>Sim, todos estes são idéias sensacionais, mas <strong>não resolvem o problema realmente</strong>. Porque não? Todas estas idéias são <strong>paliativos</strong>, porque you nunca está atacando o real problema, com o tempo, ele irá aparecer novamente.</p>
 
-<h2>REAL-TIME WEB - CONCEITOS</h2>
+<h2 id="real-time-web---conceitos">REAL-TIME WEB - CONCEITOS</h2>
 
 <p>Angular é utilizado em vários apps, incluindo apps que trabalham com tempo real, seja usando web socket ou tree way data binding (com Firebase, por exemplo). Mas antes de tudo isso vamos conhecer alguns aspectos mais teóricos, certo?</p>
 
 <p>Quando o usuário acessa sua aplicação e os dados são atualizados em uma velocidade &lt;= 100 milisegundos: isto sim é o que conhecemos como tempo real.</p>
 
-<p>Atualmente tempo real não existe. O que existe é um tipo de &quot;truque&quot;, já que o nosso cérebro não consegue processar tudo o que acontece neste período de tempo. Por causa disso ele entende que tudo acontece em tempo real.</p>
+<p>Atualmente tempo real não existe. O que existe é um tipo de “truque”, já que o nosso cérebro não consegue processar tudo o que acontece neste período de tempo. Por causa disso ele entende que tudo acontece em tempo real.</p>
 
 <p>Two-way data binding ajuda bastante nesta tarefa, já que no Angular ele é baseado no <a href="http://en.wikipedia.org/wiki/Hollywood_principle">princípio de Hollywood</a>.</p>
 
 <blockquote>
-<p>Devs não precisam entender como funciona o Two-way data binding por debaixo dos panos, inicialmente.</p>
+  <p>Devs não precisam entender como funciona o Two-way data binding por debaixo dos panos, inicialmente.</p>
 </blockquote>
 
 <p>Sim, isto é verdade, mas quando você tem uma aplicação com muitos bindings todos os tipos de truques são bem vindos, como:</p>
 
-<h3><strong>Minimize bindings e watchers</strong></h3>
+<h3 id="minimize-bindings-e-watchers"><strong>Minimize bindings e watchers</strong></h3>
 
 <p>Sempre que puder, minimize bindings e watchers, tente utilizar <code>Object.freeze</code> (<a href="http://jsperf.com/freeze-vs-seal-vs-normal/19">dê uma olhada nesta comparação entre <code>Object.freeze</code>, <code>Object.seal</code> e Json object com comportamento padrão no jsperf</a>)</p>
 
-<h3><strong>ng-if ao invés de ng-show</strong></h3>
+<h3 id="ng-if-ao-invs-de-ng-show"><strong>ng-if ao invés de ng-show</strong></h3>
 
 <p>Use ng-if ao invés de ng-show sempre que puder, já que o  ng-show manipula o atributo <code>display</code>do elemento, but o mesmo já existe no DOM e o two-way data binding já está ativo, o que impacta na performance.</p>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">ng-if=</span><span class="s">&quot;!vm.usingOneTimeBinding&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;p&gt;</span>
-    Makes more sense
-  <span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
 
-<span class="nt">&lt;div</span> <span class="na">ng-show=</span><span class="s">&quot;!vm.usingOneTimeBinding&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;p&gt;</span>
+<pre><code class="language-html">&lt;div ng-if="!vm.usingOneTimeBinding"&gt;
+  &lt;p&gt;
+    Makes more sense
+  &lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div ng-show="!vm.usingOneTimeBinding"&gt;
+  &lt;p&gt;
     Please, avoid this approach
-  <span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div>
-<h3><strong>$filter + two-way data binding === não, por favor!</strong></h3>
+  &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h3 id="filter--two-way-data-binding--no-por-favor"><strong>$filter + two-way data binding === não, por favor!</strong></h3>
 
 <p>Manipule os dados uma única vez e ao invés de utilizar o service $filter no template;</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">...</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">users</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="p">{</span><span class="nx">firstName</span><span class="o">:</span> <span class="s1">&#39;eu&#39;</span><span class="p">,</span> <span class="nx">lastName</span><span class="o">:</span> <span class="s1">&#39;ea&#39;</span><span class="p">},</span>
-  <span class="p">{</span><span class="nx">firstName</span><span class="o">:</span> <span class="s1">&#39;William&#39;</span><span class="p">,</span> <span class="nx">lastName</span><span class="o">:</span> <span class="s1">&#39;Wallace&#39;</span><span class="p">}</span>
-<span class="p">];</span>
-<span class="p">...</span>
-</code></pre></div>
-<p>Baseado nestes dados, ao invés de utilizar um $filter no template HTML...</p>
-<div class="highlight"><pre><code class="language-html" data-lang="html">...
-<span class="nt">&lt;div</span> <span class="na">ng-repeat=</span><span class="s">&quot;item in vm.users&quot;</span><span class="nt">&gt;</span>
 
-<span class="nt">&lt;/div&gt;</span>
+<pre><code class="language-javascript">...
+this.users = [
+  {firstName: 'eu', lastName: 'ea'},
+  {firstName: 'William', lastName: 'Wallace'}
+];
 ...
-</code></pre></div>
-<p>... com isso os efeitos na performance são bem consideráveis quando você faz o tratamento antes...</p>
+</code></pre>
+<p>Baseado nestes dados, ao invés de utilizar um $filter no template HTML…</p>
 
-<p><img src="/assets/images/using-filters-in-template.png" alt="Quando você usa o filter no template"></p>
-
-<p>... ao invés disso, manipule a stream de dados no controller/service/etc, passando os dados com o seu formato final esperado para somente serem renderizados no template. Neste exemplo usamos a função <code>.map()</code> do javascript para isso.</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">...</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">users</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">el</span><span class="p">){</span>
-  <span class="nx">el</span><span class="p">.</span><span class="nx">username</span> <span class="o">=</span> <span class="nx">el</span><span class="p">.</span><span class="nx">firstName</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nx">el</span><span class="p">.</span><span class="nx">lastName</span><span class="p">;</span>
-<span class="p">});</span>
-<span class="p">...</span>
-</code></pre></div><div class="highlight"><pre><code class="language-html" data-lang="html">...
-<span class="nt">&lt;div</span> <span class="na">ng-repeat=</span><span class="s">&quot;item in vm.users&quot;</span><span class="nt">&gt;</span>
-
-<span class="nt">&lt;/div&gt;</span>
+<pre><code class="language-html">...
+&lt;div ng-repeat="item in vm.users"&gt;
+  
+&lt;/div&gt;
 ...
-</code></pre></div>
-<h3><strong>ngRepeat + Track by</strong></h3>
+</code></pre>
+
+<p>… com isso os efeitos na performance são bem consideráveis quando você faz o tratamento antes…</p>
+
+<p><img src="/assets/images/using-filters-in-template.png" alt="Quando você usa o filter no template" /></p>
+
+<p>… ao invés disso, manipule a stream de dados no controller/service/etc, passando os dados com o seu formato final esperado para somente serem renderizados no template. Neste exemplo usamos a função <code>.map()</code> do javascript para isso.</p>
+
+<pre><code class="language-javascript">...
+this.users.map(function(el){
+  el.username = el.firstName + ' ' + el.lastName;
+});
+...
+</code></pre>
+
+<pre><code class="language-html">...
+&lt;div ng-repeat="item in vm.users"&gt;
+  
+&lt;/div&gt;
+...
+</code></pre>
+
+<h3 id="ngrepeat--track-by"><strong>ngRepeat + Track by</strong></h3>
 
 <p>Track by em elementos são sempre bem vindos! <code>ngRepeat</code> é mais performático quando utiliza algo para indexar os elementos.</p>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- sem track by --&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">ng-repeat=</span><span class="s">&quot;item in vm.users&quot;</span><span class="nt">&gt;</span>
 
-<span class="nt">&lt;/div&gt;</span>
+<pre><code class="language-html">
+&lt;!-- sem track by --&gt;
+&lt;div ng-repeat="item in vm.users"&gt;
+  
+&lt;/div&gt;
 
-<span class="c">&lt;!-- com track by --&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">ng-repeat=</span><span class="s">&quot;item in vm.users track by $index&quot;</span><span class="nt">&gt;</span>
+&lt;!-- com track by --&gt;
+&lt;div ng-repeat="item in vm.users track by $index"&gt;
+  
+&lt;/div&gt;
 
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div>
+</code></pre>
 <p>Em um simples exemplo com e sem a utilização do <code>ngRepeat + Track by</code> os resultados são bem expressivos (Baseado em uma lista com 10 elementos somente. Imagine então em uma lista com mais elementos).</p>
 
-<p><img src="/assets/images/ng-repeat-track-by-comparison.png" alt="Comparação do template com ngRepeat e track by"></p>
+<p><img src="/assets/images/ng-repeat-track-by-comparison.png" alt="Comparação do template com ngRepeat e track by" /></p>
 
-<h3><strong>One-time-binding usage</strong></h3>
+<h3 id="one-time-binding-usage"><strong>One-time-binding usage</strong></h3>
 
 <p>Use one-time-binding sempre que puder, seu app e os usuários ficarão eternamente gratos!</p>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">ng-repeat=</span><span class="s">&quot;item in ::vm.users track by $index&quot;</span> <span class="nt">&gt;</span>
 
-<span class="nt">&lt;/div&gt;</span>
+<pre><code class="language-html">&lt;div ng-repeat="item in ::vm.users track by $index" &gt;
+  
+&lt;/div&gt;
 
-<span class="nt">&lt;div</span> <span class="na">ng-if=</span><span class="s">&quot;::vm.users.loggedIn&quot;</span><span class="nt">&gt;</span>
+&lt;div ng-if="::vm.users.loggedIn"&gt;
   ...
-<span class="nt">&lt;/div&gt;</span>
+&lt;/div&gt;
 
-<span class="nt">&lt;div</span> <span class="na">ng-class=</span><span class="s">&quot;::{ &#39;my-awesome-class&#39;: vm.users.loggedIn}&quot;</span><span class="nt">&gt;</span>
+&lt;div ng-class="::{ 'my-awesome-class': vm.users.loggedIn}"&gt;
   ...
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div>
-<h3>Use async patterns</h3>
+&lt;/div&gt;
+</code></pre>
+
+<h3 id="use-async-patterns">Use async patterns</h3>
 
 <p>Em qualquer app que usa ou é baseado em javascript, é sempre bom o uso de patterns assíncronos. Patterns como <code>debounce</code> são muito fáceis de serem implementados e adicionados graças a diretiva <code>ngModelOptions</code>. Esta diretiva habilita patterns assíncronos, dando mais poder ao seu app.</p>
 
 <p>Debounce é um pattern utilizado para verificar quantas vezes o evento/método foi chamado em sua aplicação. Um exemplo de como utilizá-lo é pensarmos em uma simples de busca em uma lista de itens.</p>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">autocomplete=</span><span class="s">&quot;off&quot;</span> <span class="na">role=</span><span class="s">&quot;form&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;fieldset&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;search&quot;</span> <span class="na">name=</span><span class="s">&quot;search&quot;</span> <span class="na">id=</span><span class="s">&quot;search&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Search...&quot;</span> <span class="na">ng-model=</span><span class="s">&quot;vm.searchItem&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;/fieldset&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/form&gt;</span>
-<span class="nt">&lt;ul&gt;</span>
-  <span class="nt">&lt;li</span> <span class="na">ng-repeat=</span><span class="s">&quot;item in vm.users | myFilter:vm.searchItem&quot;</span><span class="nt">&gt;</span>
 
-  <span class="nt">&lt;/li&gt;</span>
-<span class="nt">&lt;/ul&gt;</span>
-</code></pre></div>
+<pre><code class="language-html">&lt;form autocomplete="off" role="form"&gt;
+  &lt;div class="form-group"&gt;
+    &lt;fieldset&gt;
+      &lt;input type="search" name="search" id="search" placeholder="Search..." ng-model="vm.searchItem" class="form-control" /&gt;
+    &lt;/fieldset&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+&lt;ul&gt;
+  &lt;li ng-repeat="item in vm.users | myFilter:vm.searchItem"&gt;
+    
+  &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
 <p>Neste exemplo a busca será chamada cada vez que o usuário adicionar ou remover um caracter no campo de busca do formulário. Mas isso não é uma boa idéia, então vamos dar uma olhada agora e ver como ficaria este exemplo usando <code>debounce</code>.</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">...</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">myModelOptions</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">updateOn</span><span class="o">:</span> <span class="s1">&#39;keydown blur&#39;</span><span class="p">,</span>
-  <span class="nx">debounce</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">keydown</span><span class="o">:</span> <span class="mi">250</span><span class="p">,</span> <span class="c1">//for search we don&#39;t want to update server during user type</span>
-      <span class="nx">blur</span><span class="o">:</span> <span class="mi">250</span> <span class="c1">//when user move on to the next field, we update immediately</span>
-  <span class="p">}</span>
-<span class="p">};</span>
-<span class="p">...</span>
-</code></pre></div><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">autocomplete=</span><span class="s">&quot;off&quot;</span> <span class="na">role=</span><span class="s">&quot;form&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;fieldset&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;search&quot;</span> <span class="na">name=</span><span class="s">&quot;search&quot;</span> <span class="na">id=</span><span class="s">&quot;search&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Search...&quot;</span> <span class="na">ng-model=</span><span class="s">&quot;vm.searchItem&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">ng-model-options=</span><span class="s">&quot;vm.myModelOptions&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;/fieldset&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/form&gt;</span>
-<span class="nt">&lt;ul&gt;</span>
-  <span class="nt">&lt;li</span> <span class="na">ng-repeat=</span><span class="s">&quot;item in vm.users | myFilter:vm.searchItem&quot;</span><span class="nt">&gt;</span>
 
-  <span class="nt">&lt;/li&gt;</span>
-<span class="nt">&lt;/ul&gt;</span>
-</code></pre></div>
+<pre><code class="language-javascript">...
+this.myModelOptions = {
+  updateOn: 'keydown blur',
+  debounce: {
+      keydown: 250, //for search we don't want to update server during user type
+      blur: 250 //when user move on to the next field, we update immediately
+  }
+};
+...
+</code></pre>
+
+<pre><code class="language-html">&lt;form autocomplete="off" role="form"&gt;
+  &lt;div class="form-group"&gt;
+    &lt;fieldset&gt;
+      &lt;input type="search" name="search" id="search" placeholder="Search..." ng-model="vm.searchItem" class="form-control" ng-model-options="vm.myModelOptions" /&gt;
+    &lt;/fieldset&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+&lt;ul&gt;
+  &lt;li ng-repeat="item in vm.users | myFilter:vm.searchItem"&gt;
+    
+  &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
 <p>Desta forma o evento/método de busca será disparado somente após 250 milisegundos do evento de <code>keydown</code> ou <code>blur</code> serem acionados. O número que foi impresso no DevTools é baseado na inserção de somente 3 caracteres no formulário de busca.</p>
 
-<p><img src="/assets/images/debounce-comparison.png" alt="Comparação: busca utilizando Debounce e busca padrão"></p>
+<p><img src="/assets/images/debounce-comparison.png" alt="Comparação: busca utilizando Debounce e busca padrão" /></p>
 
 <p>Para o patter <code>memoization</code>, a abordagem de utilização do <code>$provide.decorator()</code> é uma tática excelente, já que ele modifica o comportamente padrão de componentes angular, melhorando e habilitando cache por padrão ou outras possibilidades, por exemplo.</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Creating a new module for enable cache by default</span>
-<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;perf.rootScope&#39;</span><span class="p">,</span> <span class="p">[])</span>
-  <span class="c1">// $rootScope modified</span>
-  <span class="p">.</span><span class="nx">decorate</span><span class="p">(</span><span class="s1">&#39;$rootScope&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$delegate</span><span class="p">){</span>
-    <span class="nx">$delegate</span><span class="p">.</span><span class="nx">__proto__</span><span class="p">.</span><span class="nx">$watch</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-      <span class="p">...</span>
-    <span class="p">};</span>
 
-    <span class="nx">$delegate</span><span class="p">.</span><span class="nx">__proto__</span><span class="p">.</span><span class="nx">$apply</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-      <span class="p">...</span>
-    <span class="p">};</span>
+<pre><code class="language-javascript">// Creating a new module for enable cache by default
+angular.module('perf.rootScope', [])
+  // $rootScope modified
+  .decorate('$rootScope', function($delegate){
+    $delegate.__proto__.$watch = function() {
+      ...
+    };
 
-    <span class="k">return</span> <span class="nx">$delegate</span><span class="p">;</span>
-  <span class="p">});</span>
+    $delegate.__proto__.$apply = function() {
+      ...
+    };
 
-<span class="p">...</span>
-<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;myApp&#39;</span><span class="p">,</span> <span class="s1">&#39;perf.rootScope&#39;</span><span class="p">]);</span>
-</code></pre></div>
-<h2>CONCLUSÃO</h2>
+    return $delegate;
+  });
+
+...
+angular.module('myApp', 'perf.rootScope']);
+</code></pre>
+
+<h2 id="concluso">CONCLUSÃO</h2>
 
 <p>Neste primeiro post falamos sobre conceitos de Tempo Real e alguns aspectos sobre micro tunagens mais simples, como boas práticas sobre como utilizar componentes do core do angular, otimizações Javascript e padrões (funcionais e assíncronos). No próximo post vamos falar sobre outros conceitos como estrutura de dados imutáveis, como utilizá-lo em seu app, bibliotecas que podem nos ajudar nesta etapa.</p>
 
@@ -294,9 +316,10 @@
 <p>Links:</p>
 
 <ul>
-<li>Princípio de Hollywood: <a href="http://en.wikipedia.org/wiki/Hollywood_principle">http://en.wikipedia.org/wiki/Hollywood_principle</a></li>
-<li>JsPerf: Object.freeze, Object.seal and object with default behaviour: <a href="http://jsperf.com/freeze-vs-seal-vs-normal/19">http://jsperf.com/freeze-vs-seal-vs-normal/19</a></li>
+  <li>Princípio de Hollywood: <a href="http://en.wikipedia.org/wiki/Hollywood_principle">http://en.wikipedia.org/wiki/Hollywood_principle</a></li>
+  <li>JsPerf: Object.freeze, Object.seal and object with default behaviour: <a href="http://jsperf.com/freeze-vs-seal-vs-normal/19">http://jsperf.com/freeze-vs-seal-vs-normal/19</a></li>
 </ul>
+
 
           </div>
         </section>

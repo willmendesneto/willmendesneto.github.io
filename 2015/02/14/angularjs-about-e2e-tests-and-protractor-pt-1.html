@@ -97,107 +97,114 @@
           </div>
           <a name="topofpage"></a>
           <div id="post-content-page">
-            <h2>INTRODUCTION</h2>
+            <h2 id="introduction">INTRODUCTION</h2>
 
 <p>You never speak about protractor or End-to-tests? This time the aspect approached will be the tests, most specifically End-to-end test, with an overview in some aspects for Protractor, the framework created for AngularJS, but that can be used with many other projects without angularjs dependency. In this post I will explain some aspects for end-to-end tests, why to use them, how the protractor is included in this approach and show a example of your use in tests.</p>
 
-<h2>Why End to End (E2E) tests</h2>
+<h2 id="why-end-to-end-e2e-tests">Why End to End (E2E) tests</h2>
 
 <p>End to End tests are pretty good tests for validate some aspects of your application , such as functionalities and interactions. For example, you will use End to End test in this cases:</p>
 
 <ul>
-<li>Validate if your component works on in your application, generating a &quot;happy way&quot;;</li>
-<li>Validate interaction in your browser between backend and frontend, based in a complete operation, like a login, search and other validations;</li>
+  <li>Validate if your component works on in your application, generating a “happy way”;</li>
+  <li>Validate interaction in your browser between backend and frontend, based in a complete operation, like a login, search and other validations;</li>
 </ul>
 
 <blockquote>
-<p>Unit Tests and End to End tests ever works together.</p>
+  <p>Unit Tests and End to End tests ever works together.</p>
 </blockquote>
 
-<h2>Well, but...why Protractor</h2>
+<h2 id="well-butwhy-protractor">Well, but…why Protractor</h2>
 
 <p>Protractor is a tool created for attend developers of an easier way, with a reasonable setup, low context-switching and sensible syntax using all power of WebDrivers can do for us.</p>
 
 <p>Your configuration is very easy (protractor born with this specification), that help in your use in applications.</p>
 
-<h2>SETUP</h2>
+<h2 id="setup">SETUP</h2>
 
-<p>The setup of protractor is very easy. Firts it&#39;s available via NPM (Node Package Manager) and your installation is done with the command</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">cd </span>awesome-folder
-<span class="nv">$ </span>npm install  protractor
-</code></pre></div>
+<p>The setup of protractor is very easy. Firts it’s available via NPM (Node Package Manager) and your installation is done with the command</p>
+
+<pre><code class="language-bash">$ cd awesome-folder
+$ npm install  protractor
+</code></pre>
+
 <p>And update your webdrive using this command in folder that you create and add protractor package.</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>./node_modules/protractor/bin/webdriver-manager update
-</code></pre></div>
+
+<pre><code class="language-bash">$ ./node_modules/protractor/bin/webdriver-manager update
+</code></pre>
+
 <p>After this you can use the protractor template for begin your tests. If you can, use this template for begin tests with protractor and configure your folder for end-to-end tests</p>
 
-<p><noscript><pre>// An example configuration file.
+<noscript><pre>// An example configuration file.
 exports.config = {
   // Do not start a Selenium Standalone sever - only run this using chrome.
   chromeOnly: true,
-  chromeDriver: &#39;./node_modules/protractor/selenium/chromedriver&#39;,</p>
+  chromeDriver: &#39;./node_modules/protractor/selenium/chromedriver&#39;,
 
-<p>seleniumAddress: &#39;http://0.0.0.0:4444/wd/hub&#39;,
-  baseUrl: &#39;http://0.0.0.0:9000&#39;,</p>
+  seleniumAddress: &#39;http://0.0.0.0:4444/wd/hub&#39;,
+  baseUrl: &#39;http://0.0.0.0:9000&#39;,
 
-<p>// Capabilities to be passed to the webdriver instance.
+  // Capabilities to be passed to the webdriver instance.
   capabilities: {
     &#39;browserName&#39;: &#39;chrome&#39;
-  },</p>
+  },
 
-<p>// Spec patterns are relative to the current working directly when
+  // Spec patterns are relative to the current working directly when
   // protractor is called.
-  specs: [&#39;test/e2e/*<em>/</em>_spec.js&#39;],</p>
+  specs: [&#39;test/e2e/**/*_spec.js&#39;],
 
-<p>// Options to be passed to Jasmine-node.
+  // Options to be passed to Jasmine-node.
   jasmineNodeOpts: {
     showColors: true,
     defaultTimeoutInterval: 30000
   }
-};</pre></noscript><script src="https://gist.github.com/willmendesneto/d6d1163b39356e5e103a.js"> </script></p>
+};</pre></noscript>
+<script src="https://gist.github.com/willmendesneto/d6d1163b39356e5e103a.js"> </script>
 
-<h2>Boilerplate</h2>
+<h2 id="boilerplate">Boilerplate</h2>
 
 <blockquote>
-<p>Basic step for use end-to-end tests</p>
+  <p>Basic step for use end-to-end tests</p>
 </blockquote>
 
 <p>An example of end-to-end tests file is access the todo list that exists in angularjs website.</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;angularjs homepage todo list&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 
-  <span class="nx">beforeEach</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// before function</span>
-    <span class="p">...</span>
-  <span class="p">});</span>
+<pre><code class="language-javascript">describe('angularjs homepage todo list', function() {
 
-  <span class="nx">afterEach</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">//after function</span>
-    <span class="p">...</span>
-  <span class="p">});</span>
+  beforeEach(function() {
+    // before function
+    ...
+  });
 
-  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should add a todo&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">browser</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;http://www.angularjs.org&#39;</span><span class="p">);</span>
+  afterEach(function() {
+    //after function
+    ...
+  });
 
-    <span class="nx">element</span><span class="p">(</span><span class="nx">by</span><span class="p">.</span><span class="nx">model</span><span class="p">(</span><span class="s1">&#39;todoText&#39;</span><span class="p">)).</span><span class="nx">sendKeys</span><span class="p">(</span><span class="s1">&#39;write a protractor test&#39;</span><span class="p">);</span>
-    <span class="nx">element</span><span class="p">(</span><span class="nx">by</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;[value=&quot;add&quot;]&#39;</span><span class="p">)).</span><span class="nx">click</span><span class="p">();</span>
+  it('should add a todo', function() {
+    browser.get('http://www.angularjs.org');
 
-    <span class="kd">var</span> <span class="nx">todoList</span> <span class="o">=</span> <span class="nx">element</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nx">by</span><span class="p">.</span><span class="nx">repeater</span><span class="p">(</span><span class="s1">&#39;todo in todos&#39;</span><span class="p">));</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">todoList</span><span class="p">.</span><span class="nx">count</span><span class="p">()).</span><span class="nx">toEqual</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">todoList</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="nx">getText</span><span class="p">()).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s1">&#39;write a protractor test&#39;</span><span class="p">);</span>
-  <span class="p">});</span>
-<span class="p">});</span>
-</code></pre></div>
+    element(by.model('todoText')).sendKeys('write a protractor test');
+    element(by.css('[value="add"]')).click();
+
+    var todoList = element.all(by.repeater('todo in todos'));
+    expect(todoList.count()).toEqual(3);
+    expect(todoList.get(2).getText()).toEqual('write a protractor test');
+  });
+});
+</code></pre>
+
 <p>In this example we can see some elements that we will use many times in Protractor tests, such as:</p>
 
 <ul>
-<li>browser: API for browser element. In this example we use <code>browser</code> for access some url;</li>
-<li>element: API for access some page element. Is very usefull for get elements based in certain parameters and manipulate them;</li>
-<li>by: API for access element based in parameters (css, angular models, angular repeaters, etc);</li>
+  <li>browser: API for browser element. In this example we use <code>browser</code> for access some url;</li>
+  <li>element: API for access some page element. Is very usefull for get elements based in certain parameters and manipulate them;</li>
+  <li>by: API for access element based in parameters (css, angular models, angular repeaters, etc);</li>
 </ul>
 
-<p>If you would like to know more about the API&#39;s protractor, <a href="http://angular.github.io/protractor/#/api">please take a look in protractor documentation</a></p>
+<p>If you would like to know more about the API’s protractor, <a href="http://angular.github.io/protractor/#/api">please take a look in protractor documentation</a></p>
 
-<h2>CONCLUSION</h2>
+<h2 id="conclusion">CONCLUSION</h2>
 
 <p>Now you are most familiarized with the concept of End-to-end tests and the powerfull tool that is protractor. In next post we will take a look in others aspects of protractor, such as performance and best practices.</p>
 
@@ -206,8 +213,9 @@ exports.config = {
 <p>Links:</p>
 
 <ul>
-<li>Protractor API docs: <a href="http://angular.github.io/protractor/#/api">http://angular.github.io/protractor/#/api</a></li>
+  <li>Protractor API docs: <a href="http://angular.github.io/protractor/#/api">http://angular.github.io/protractor/#/api</a></li>
 </ul>
+
 
           </div>
         </section>
