@@ -10,9 +10,9 @@
 
         $(".post-content").fitVids();
 
-        if ( $(window).width() >720 ) {
-          $('#post-content-page a').miniPreview({ prefetch: 'pageload' });
-        }
+        // if ( $(window).width() >720 ) {
+        //   $('#post-content-page a').miniPreview({ prefetch: 'pageload' });
+        // }
 
         // Calculates Reading Time
         $('.post-content').readingTime({
