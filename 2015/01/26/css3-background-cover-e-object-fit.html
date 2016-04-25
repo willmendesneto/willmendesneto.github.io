@@ -101,21 +101,28 @@
 
 <p>O CSS 3 melhorou a forma que interagíamos com o usuário de maneira direta. Muitos dos artifícios que utilizávamos javascript para proporcionar maior interatividade (animações, transições, etc) em nossas aplicações hoje em dia são feitas utilizando CSS 3 de maneira simples e usual.</p>
 
-<p>Uma das coisas que o CSS3 proporciona é a de utilizar um full background usando <code>background-size: cover</code> para centralizar uma determinada imagem, mas nem todos conhecem uma outra propriedade (ou não sabem a real diferença entre uma e a outra) que é a <code>object-fit: cover</code> e utilizam o background-size para o mesmo efeito, o que diminui a semântica do app.</p>
+<p>Uma das coisas que o CSS3 proporciona é a de utilizar um full background usando <code class="highlighter-rouge">background-size: cover</code> para centralizar uma determinada imagem, mas nem todos conhecem uma outra propriedade (ou não sabem a real diferença entre uma e a outra) que é a <code class="highlighter-rouge">object-fit: cover</code> e utilizam o background-size para o mesmo efeito, o que diminui a semântica do app.</p>
 
 <h2 id="centralizando-imagem-com-css">CENTRALIZANDO IMAGEM COM CSS</h2>
 
-<p>Podemos centralizar imagens utilizando somente CSS? Sim! E para isso podemos utilizar estas propriedades. Por exemplo: em um app que precise de uma imagem que tome todo o fundo do browser, por exemplo, podemos muito bem utilizar a propriedade <code>background-size: cover</code>:</p>
+<p>Podemos centralizar imagens utilizando somente CSS? Sim! E para isso podemos utilizar estas propriedades. Por exemplo: em um app que precise de uma imagem que tome todo o fundo do browser, por exemplo, podemos muito bem utilizar a propriedade <code class="highlighter-rouge">background-size: cover</code>:</p>
 
-<p>Podemos fazer isso desde 2009 graças à propriedade do CSS3 <code>background-size: cover</code>. Utilizaremos o element “html” para montar um fundo fixo e centrado sobre ele, em seguida, ajustar o seu tamanho usando <code>background-size</code> definido com a propriedade <code>cover</code>.</p>
+<p>Podemos fazer isso desde 2009 graças à propriedade do CSS3 <code class="highlighter-rouge">background-size: cover</code>. Utilizaremos o element “html” para montar um fundo fixo e centrado sobre ele, em seguida, ajustar o seu tamanho usando <code class="highlighter-rouge">background-size</code> definido com a propriedade <code class="highlighter-rouge">cover</code>.</p>
 
-<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="lineno">1</span> <span class="nt">html</span> <span class="p">{</span>
-<span class="lineno">2</span>   <span class="k">background</span><span class="o">:</span> <span class="sx">url(/assets/images/css3-post.png)</span> <span class="k">no-repeat</span> <span class="k">center</span> <span class="k">center</span> <span class="k">fixed</span><span class="p">;</span>
-<span class="lineno">3</span>   <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="n">cover</span><span class="p">;</span>
-<span class="lineno">4</span>   <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="n">cover</span><span class="p">;</span>
-<span class="lineno">5</span>   <span class="o">-</span><span class="n">o</span><span class="o">-</span><span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="n">cover</span><span class="p">;</span>
-<span class="lineno">6</span>   <span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="n">cover</span><span class="p">;</span>
-<span class="lineno">7</span> <span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7</pre></td><td class="code"><pre><span class="nt">html</span> <span class="p">{</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="sx">url(/assets/images/css3-post.png)</span> <span class="nb">no-repeat</span> <span class="nb">center</span> <span class="nb">center</span> <span class="nb">fixed</span><span class="p">;</span>
+  <span class="nl">-webkit-background-size</span><span class="p">:</span> <span class="n">cover</span><span class="p">;</span>
+  <span class="nl">-moz-background-size</span><span class="p">:</span> <span class="n">cover</span><span class="p">;</span>
+  <span class="nl">-o-background-size</span><span class="p">:</span> <span class="n">cover</span><span class="p">;</span>
+  <span class="nl">background-size</span><span class="p">:</span> <span class="n">cover</span><span class="p">;</span>
+<span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Você pode acessar visualizar este <a href="http://plnkr.co/edit/BjE3ct?p=preview">código de exemplo em um plunker</a>, mas vale ressaltar 2 aspectos:</p>
 
@@ -125,21 +132,24 @@
   <li>Safari 3+;</li>
   <li>Chrome *;</li>
   <li>IE 9+;</li>
-  <li>Opera 10+ (com prefixo <code>-o</code>);</li>
-  <li>Firefox 3.6+ (com prefixo <code>-moz</code>);</li>
+  <li>Opera 10+ (com prefixo <code class="highlighter-rouge">-o</code>);</li>
+  <li>Firefox 3.6+ (com prefixo <code class="highlighter-rouge">-moz</code>);</li>
 </ul>
 
 <p>2°: Caso utilize pré-processadores esta questão de prefixos já são resolvidos por várias ferramentas. Dá uma olhada no seu pré-processador preferido.</p>
 
-<p>Muitas pessoas utilizavam a propriedade background-size para criarem um “workaround” colocando elementos como “div”, “spam” com a propriedade <code>cover</code> para simularem este evento, mas atualmente podemos simular este evento de outra forma e é aí que entra a propriedade <code>object-fit</code>.</p>
+<p>Muitas pessoas utilizavam a propriedade background-size para criarem um “workaround” colocando elementos como “div”, “spam” com a propriedade <code class="highlighter-rouge">cover</code> para simularem este evento, mas atualmente podemos simular este evento de outra forma e é aí que entra a propriedade <code class="highlighter-rouge">object-fit</code>.</p>
 
-<p>Podemos utilizá-lo para cortarmos de maneira proporcional uma imagem de avatar, por exemplo. Com o <code>object-fit: cover</code> aplicado à imagem com largura e altura definidas, ela é dsitribuída de forma centralizada. Para isso defina as dimensões da imagem e usando o seguinte CSS:</p>
+<p>Podemos utilizá-lo para cortarmos de maneira proporcional uma imagem de avatar, por exemplo. Com o <code class="highlighter-rouge">object-fit: cover</code> aplicado à imagem com largura e altura definidas, ela é dsitribuída de forma centralizada. Para isso defina as dimensões da imagem e usando o seguinte CSS:</p>
 
-<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="lineno">1</span> <span class="nt">img</span> <span class="p">{</span>
-<span class="lineno">2</span>     <span class="n">object</span><span class="o">-</span><span class="n">fit</span><span class="o">:</span> <span class="n">cover</span><span class="p">;</span>
-<span class="lineno">3</span> <span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre><span class="nt">img</span> <span class="p">{</span>
+    <span class="nl">object-fit</span><span class="p">:</span> <span class="n">cover</span><span class="p">;</span>
+<span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Criei um código de exemplo no <a href="http://plnkr.co/edit/erzWvD?p=preview">plunker com os formatos de utilização do atributo no plunker</a> para darem uma olhada no <code>object-fit</code> em ação. Caso queiram saber mais podem dar uma olhada sobre os <a href="http://caniuse.com/#feat=object-fit">browsers que suportam <code>object-fit</code> via Can I use</a>.</p>
+<p>Criei um código de exemplo no <a href="http://plnkr.co/edit/erzWvD?p=preview">plunker com os formatos de utilização do atributo no plunker</a> para darem uma olhada no <code class="highlighter-rouge">object-fit</code> em ação. Caso queiram saber mais podem dar uma olhada sobre os <a href="http://caniuse.com/#feat=object-fit">browsers que suportam <code class="highlighter-rouge">object-fit</code> via Can I use</a>.</p>
 
 <h2 id="concluso">CONCLUSÃO</h2>
 

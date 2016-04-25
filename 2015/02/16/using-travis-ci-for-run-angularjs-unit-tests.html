@@ -105,31 +105,32 @@
 
 <h2 id="travis-ci-configuration">TRAVIS-CI CONFIGURATION</h2>
 
-<p>First you have to create a login in Travis-CI with your github credentials. After this, you enable travis-ci to access your github repository and intercept the commits and pull requests and use travis-ci commands via web hook for run your commands list specified in a .yml file with name <code>.travis.yml</code>.</p>
+<p>First you have to create a login in Travis-CI with your github credentials. After this, you enable travis-ci to access your github repository and intercept the commits and pull requests and use travis-ci commands via web hook for run your commands list specified in a .yml file with name <code class="highlighter-rouge">.travis.yml</code>.</p>
 
 <p>Let’s take a look in a example of travis-ci configuration file for angularjs apps.</p>
 
-<pre><code class="language-yaml">language: node_js
-node_js:
-  - '0.10.33'
-before_script:
-  - 'export CHROME_BIN=chromium-browser'
-  - 'export DISPLAY=:99.0'
-  - 'sh -e /etc/init.d/xvfb start'
-  - 'npm install -g bower karma grunt-cli jshint'
-  - 'npm install' # install npm packages
-  - 'bower install' # install bower packages
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="s">language</span><span class="pi">:</span> <span class="s">node_js</span>
+<span class="s">node_js</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s1">'</span><span class="s">0.10.33'</span>
+<span class="s">before_script</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s1">'</span><span class="s">export</span><span class="nv"> </span><span class="s">CHROME_BIN=chromium-browser'</span>
+  <span class="pi">-</span> <span class="s1">'</span><span class="s">export</span><span class="nv"> </span><span class="s">DISPLAY=:99.0'</span>
+  <span class="pi">-</span> <span class="s1">'</span><span class="s">sh</span><span class="nv"> </span><span class="s">-e</span><span class="nv"> </span><span class="s">/etc/init.d/xvfb</span><span class="nv"> </span><span class="s">start'</span>
+  <span class="pi">-</span> <span class="s1">'</span><span class="s">npm</span><span class="nv"> </span><span class="s">install</span><span class="nv"> </span><span class="s">-g</span><span class="nv"> </span><span class="s">bower</span><span class="nv"> </span><span class="s">karma</span><span class="nv"> </span><span class="s">grunt-cli</span><span class="nv"> </span><span class="s">jshint'</span>
+  <span class="pi">-</span> <span class="s1">'</span><span class="s">npm</span><span class="nv"> </span><span class="s">install'</span> <span class="c1"># install npm packages</span>
+  <span class="pi">-</span> <span class="s1">'</span><span class="s">bower</span><span class="nv"> </span><span class="s">install'</span> <span class="c1"># install bower packages</span>
 
-after_script:
-  - 'grunt' # or other command for build, run tests, etc
+<span class="s">after_script</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s1">'</span><span class="s">grunt'</span> <span class="c1"># or other command for build, run tests, etc</span>
 </code></pre>
+</div>
 
 <p>This file specifally has 3 points that should be explained:</p>
 
 <ul>
   <li>language: In this line we choice what language travis-ci will be use for run your commands specified;</li>
   <li>before_script: All commands that will run before the main command. Normally in this point is inserted all commands for bootstrap your test environment. In this code block we enable the Chrome and Firefox browsers for will be useds in our tests;</li>
-  <li>after_script: The commands that will be executeds for validate the send code. If the return of these commands will be <code>true</code>, the code was accept, if not will show in repository that your code have problems that you have to fix them;</li>
+  <li>after_script: The commands that will be executeds for validate the send code. If the return of these commands will be <code class="highlighter-rouge">true</code>, the code was accept, if not will show in repository that your code have problems that you have to fix them;</li>
 </ul>
 
 <p>If you would like to know more about these specifications please take a look in <a href="http://docs.travis-ci.com">travis-ci documentation</a></p>

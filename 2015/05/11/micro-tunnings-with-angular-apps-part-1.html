@@ -135,82 +135,88 @@
 
 <h3 id="minimize-bindings-and-watchers"><strong>Minimize bindings and watchers</strong></h3>
 
-<p>Ever that can, minimize bindings and watchers, <code>Object.freeze</code> usage <a href="take a look in jsperf comparison between `Object.freeze`, `Object.seal` and object with default behaviour">jsperf-object-freeze</a></p>
+<p>Ever that can, minimize bindings and watchers, <code class="highlighter-rouge">Object.freeze</code> usage <a href="take a look in jsperf comparison between `Object.freeze`, `Object.seal` and object with default behaviour">jsperf-object-freeze</a></p>
 
 <h3 id="ng-if-instead-ng-show"><strong>ng-if instead ng-show</strong></h3>
 
 <p>Use ng-if instead ng-show when you can, because ng-show manipulate element display, but it already exist in DOM and two-way data binding already active, decreasing performance.</p>
 
-<pre><code class="language-html">&lt;div ng-if="!vm.usingOneTimeBinding"&gt;
-  &lt;p&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">ng-if=</span><span class="s">"!vm.usingOneTimeBinding"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;p&gt;</span>
     Makes more sense
-  &lt;/p&gt;
-&lt;/div&gt;
+  <span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 
-&lt;div ng-show="!vm.usingOneTimeBinding"&gt;
-  &lt;p&gt;
+<span class="nt">&lt;div</span> <span class="na">ng-show=</span><span class="s">"!vm.usingOneTimeBinding"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;p&gt;</span>
     Please, avoid this approach
-  &lt;/p&gt;
-&lt;/div&gt;
+  <span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 </code></pre>
+</div>
 
 <h3 id="filter--two-way-data-binding--no"><strong>$filter + two-way data binding === no!</strong></h3>
 
 <p>Manipulate data in a once moment and pass the data for template instead $filter’s usage in template;</p>
 
-<pre><code class="language-javascript">...
-this.users = [
-  {firstName: 'eu', lastName: 'ea'},
-  {firstName: 'William', lastName: 'Wallace'}
-];
-...
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">...</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">users</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span><span class="na">firstName</span><span class="p">:</span> <span class="s1">'eu'</span><span class="p">,</span> <span class="na">lastName</span><span class="p">:</span> <span class="s1">'ea'</span><span class="p">},</span>
+  <span class="p">{</span><span class="na">firstName</span><span class="p">:</span> <span class="s1">'William'</span><span class="p">,</span> <span class="na">lastName</span><span class="p">:</span> <span class="s1">'Wallace'</span><span class="p">}</span>
+<span class="p">];</span>
+<span class="p">...</span>
 </code></pre>
+</div>
 <p>Based in this data, avoid use filter in template…</p>
 
-<pre><code class="language-html">...
-&lt;div ng-repeat="item in vm.users"&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>...
+<span class="nt">&lt;div</span> <span class="na">ng-repeat=</span><span class="s">"item in vm.users"</span><span class="nt">&gt;</span>
   
-&lt;/div&gt;
+<span class="nt">&lt;/div&gt;</span>
 ...
 </code></pre>
+</div>
 <p>… because the effect in your performance is very considerable…</p>
 
 <p><img src="/assets/images/using-filters-in-template.png" alt="When use filter comparison" /></p>
 
-<p>… instead this manipulate the stream’s data in controller, passing the data in your final format only for render in template. In this example is used <code>.map()</code> javascript function for it.</p>
+<p>… instead this manipulate the stream’s data in controller, passing the data in your final format only for render in template. In this example is used <code class="highlighter-rouge">.map()</code> javascript function for it.</p>
 
-<pre><code class="language-javascript">...
-this.users.map(function(el){
-  el.username = el.firstName + ' ' + el.lastName;
-});
-...
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">...</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">users</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">el</span><span class="p">){</span>
+  <span class="nx">el</span><span class="p">.</span><span class="nx">username</span> <span class="o">=</span> <span class="nx">el</span><span class="p">.</span><span class="nx">firstName</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nx">el</span><span class="p">.</span><span class="nx">lastName</span><span class="p">;</span>
+<span class="p">});</span>
+<span class="p">...</span>
 </code></pre>
+</div>
 
-<pre><code class="language-html">...
-&lt;div ng-repeat="item in vm.users"&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>...
+<span class="nt">&lt;div</span> <span class="na">ng-repeat=</span><span class="s">"item in vm.users"</span><span class="nt">&gt;</span>
   
-&lt;/div&gt;
+<span class="nt">&lt;/div&gt;</span>
 ...
 </code></pre>
+</div>
 
 <h3 id="ngrepeat--track-by"><strong>ngRepeat + Track by</strong></h3>
 
 <p>Track by in elements are always welcome! ngRepeat is more fast when tracking something.</p>
 
-<pre><code class="language-html">
-&lt;!-- Without track by --&gt;
-&lt;div ng-repeat="item in vm.users"&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>
+<span class="c">&lt;!-- Without track by --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">ng-repeat=</span><span class="s">"item in vm.users"</span><span class="nt">&gt;</span>
   
-&lt;/div&gt;
+<span class="nt">&lt;/div&gt;</span>
 
-&lt;!-- With track by --&gt;
-&lt;div ng-repeat="item in vm.users track by $index"&gt;
+<span class="c">&lt;!-- With track by --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">ng-repeat=</span><span class="s">"item in vm.users track by $index"</span><span class="nt">&gt;</span>
   
-&lt;/div&gt;
+<span class="nt">&lt;/div&gt;</span>
 
 </code></pre>
+</div>
 
-<p>In a simple example with and without <code>ngRepeat + Track by</code> the results are very expressives</p>
+<p>In a simple example with and without <code class="highlighter-rouge">ngRepeat + Track by</code> the results are very expressives</p>
 
 <p><img src="/assets/images/ng-repeat-track-by-comparison.png" alt="ngRepeat track by usage comparison" /></p>
 
@@ -218,90 +224,95 @@ this.users.map(function(el){
 
 <p>Use one-time-binding when you can, your app and your users are grateful for it!</p>
 
-<pre><code class="language-html">&lt;div ng-repeat="item in ::vm.users track by $index" &gt;
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">ng-repeat=</span><span class="s">"item in ::vm.users track by $index"</span> <span class="nt">&gt;</span>
   
-&lt;/div&gt;
+<span class="nt">&lt;/div&gt;</span>
 
-&lt;div ng-if="::vm.users.loggedIn"&gt;
+<span class="nt">&lt;div</span> <span class="na">ng-if=</span><span class="s">"::vm.users.loggedIn"</span><span class="nt">&gt;</span>
   ...
-&lt;/div&gt;
+<span class="nt">&lt;/div&gt;</span>
 
-&lt;div ng-class="::{ 'my-awesome-class': vm.users.loggedIn}"&gt;
+<span class="nt">&lt;div</span> <span class="na">ng-class=</span><span class="s">"::{ 'my-awesome-class': vm.users.loggedIn}"</span><span class="nt">&gt;</span>
   ...
-&lt;/div&gt;
+<span class="nt">&lt;/div&gt;</span>
 </code></pre>
+</div>
 
 <h3 id="use-async-patterns">Use async patterns</h3>
 
-<p>In all javascript apps, ever use async patterns for help your life. In angular apps patterns like debounce are very easier to implement and add because <code>ngModelOptions</code> directive. This directive enable async patterns in components in a powerful way.</p>
+<p>In all javascript apps, ever use async patterns for help your life. In angular apps patterns like debounce are very easier to implement and add because <code class="highlighter-rouge">ngModelOptions</code> directive. This directive enable async patterns in components in a powerful way.</p>
 
 <p>Debounce is a pattern for how many times the event/method will be called in your application. A example of your usage is a simple search in a list.</p>
 
-<pre><code class="language-html">&lt;form autocomplete="off" role="form"&gt;
-  &lt;div class="form-group"&gt;
-    &lt;fieldset&gt;
-      &lt;input type="search" name="search" id="search" placeholder="Search..." ng-model="vm.searchItem" class="form-control" /&gt;
-    &lt;/fieldset&gt;
-  &lt;/div&gt;
-&lt;/form&gt;
-&lt;ul&gt;
-  &lt;li ng-repeat="item in vm.users | myFilter:vm.searchItem"&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">autocomplete=</span><span class="s">"off"</span> <span class="na">role=</span><span class="s">"form"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;fieldset&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"search"</span> <span class="na">name=</span><span class="s">"search"</span> <span class="na">id=</span><span class="s">"search"</span> <span class="na">placeholder=</span><span class="s">"Search..."</span> <span class="na">ng-model=</span><span class="s">"vm.searchItem"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/fieldset&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">ng-repeat=</span><span class="s">"item in vm.users | myFilter:vm.searchItem"</span><span class="nt">&gt;</span>
     
-  &lt;/li&gt;
-&lt;/ul&gt;
+  <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
 </code></pre>
+</div>
 
 <p>In this example the search will be called each user add character in input for search. But this isn’t a good idea. So let’t take a look in debounce usage.</p>
 
-<pre><code class="language-javascript">...
-this.myModelOptions = {
-  updateOn: 'keydown blur',
-  debounce: {
-      keydown: 250, //for search we don't want to update server during user type
-      blur: 250 //when user move on to the next field, we update immedately
-  }
-};
-...
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">...</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">myModelOptions</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">updateOn</span><span class="p">:</span> <span class="s1">'keydown blur'</span><span class="p">,</span>
+  <span class="na">debounce</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">keydown</span><span class="p">:</span> <span class="mi">250</span><span class="p">,</span> <span class="c1">//for search we don't want to update server during user type</span>
+      <span class="na">blur</span><span class="p">:</span> <span class="mi">250</span> <span class="c1">//when user move on to the next field, we update immedately</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="p">...</span>
 </code></pre>
+</div>
 
-<pre><code class="language-html">&lt;form autocomplete="off" role="form"&gt;
-  &lt;div class="form-group"&gt;
-    &lt;fieldset&gt;
-      &lt;input type="search" name="search" id="search" placeholder="Search..." ng-model="vm.searchItem" class="form-control" ng-model-options="vm.myModelOptions" /&gt;
-    &lt;/fieldset&gt;
-  &lt;/div&gt;
-&lt;/form&gt;
-&lt;ul&gt;
-  &lt;li ng-repeat="item in vm.users | myFilter:vm.searchItem"&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">autocomplete=</span><span class="s">"off"</span> <span class="na">role=</span><span class="s">"form"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;fieldset&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"search"</span> <span class="na">name=</span><span class="s">"search"</span> <span class="na">id=</span><span class="s">"search"</span> <span class="na">placeholder=</span><span class="s">"Search..."</span> <span class="na">ng-model=</span><span class="s">"vm.searchItem"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">ng-model-options=</span><span class="s">"vm.myModelOptions"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/fieldset&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">ng-repeat=</span><span class="s">"item in vm.users | myFilter:vm.searchItem"</span><span class="nt">&gt;</span>
     
-  &lt;/li&gt;
-&lt;/ul&gt;
+  <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
 </code></pre>
+</div>
 
 <p>This way the search method/event is dispatched only after 250 miliseconds when triggered via keydown or blur events. The number, based in 3 characters are inserted for search is this.</p>
 
 <p><img src="/assets/images/debounce-comparison.png" alt="With and Without Debounce usage comparison" /></p>
 
-<p>For memoization pattern you can use <code>$provide.decorator()</code> approach, modifying default behaviour of angular, improving and enable cache by default or other possibilities, for example.</p>
+<p>For memoization pattern you can use <code class="highlighter-rouge">$provide.decorator()</code> approach, modifying default behaviour of angular, improving and enable cache by default or other possibilities, for example.</p>
 
-<pre><code class="language-javascript">// Creating a new module for enable cache by default
-angular.module('perf.rootScope', [])
-  // $rootScope modified
-  .decorate('$rootScope', function($delegate){
-    $delegate.__proto__.$watch = function() {
-      ...
-    };
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// Creating a new module for enable cache by default</span>
+<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'perf.rootScope'</span><span class="p">,</span> <span class="p">[])</span>
+  <span class="c1">// $rootScope modified</span>
+  <span class="p">.</span><span class="nx">decorate</span><span class="p">(</span><span class="s1">'$rootScope'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$delegate</span><span class="p">){</span>
+    <span class="nx">$delegate</span><span class="p">.</span><span class="nx">__proto__</span><span class="p">.</span><span class="nx">$watch</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="p">...</span>
+    <span class="p">};</span>
 
-    $delegate.__proto__.$apply = function() {
-      ...
-    };
+    <span class="nx">$delegate</span><span class="p">.</span><span class="nx">__proto__</span><span class="p">.</span><span class="nx">$apply</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="p">...</span>
+    <span class="p">};</span>
 
-    return $delegate;
-  });
+    <span class="k">return</span> <span class="nx">$delegate</span><span class="p">;</span>
+  <span class="p">});</span>
 
-...
-angular.module('myApp', 'perf.rootScope']);
+<span class="p">...</span>
+<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'myApp'</span><span class="p">,</span> <span class="s1">'perf.rootScope'</span><span class="p">]);</span>
 </code></pre>
+</div>
 
 <h2 id="conclusion">CONCLUSION</h2>
 

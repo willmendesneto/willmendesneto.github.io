@@ -124,14 +124,16 @@
 
 <p>The setup of protractor is very easy. Firts it’s available via NPM (Node Package Manager) and your installation is done with the command</p>
 
-<pre><code class="language-bash">$ cd awesome-folder
-$ npm install  protractor
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">cd </span>awesome-folder
+<span class="gp">$ </span>npm install  protractor
 </code></pre>
+</div>
 
 <p>And update your webdrive using this command in folder that you create and add protractor package.</p>
 
-<pre><code class="language-bash">$ ./node_modules/protractor/bin/webdriver-manager update
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>./node_modules/protractor/bin/webdriver-manager update
 </code></pre>
+</div>
 
 <p>After this you can use the protractor template for begin your tests. If you can, use this template for begin tests with protractor and configure your folder for end-to-end tests</p>
 
@@ -169,35 +171,36 @@ exports.config = {
 
 <p>An example of end-to-end tests file is access the todo list that exists in angularjs website.</p>
 
-<pre><code class="language-javascript">describe('angularjs homepage todo list', function() {
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">describe</span><span class="p">(</span><span class="s1">'angularjs homepage todo list'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 
-  beforeEach(function() {
-    // before function
-    ...
-  });
+  <span class="nx">beforeEach</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// before function</span>
+    <span class="p">...</span>
+  <span class="p">});</span>
 
-  afterEach(function() {
-    //after function
-    ...
-  });
+  <span class="nx">afterEach</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">//after function</span>
+    <span class="p">...</span>
+  <span class="p">});</span>
 
-  it('should add a todo', function() {
-    browser.get('http://www.angularjs.org');
+  <span class="nx">it</span><span class="p">(</span><span class="s1">'should add a todo'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">browser</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'http://www.angularjs.org'</span><span class="p">);</span>
 
-    element(by.model('todoText')).sendKeys('write a protractor test');
-    element(by.css('[value="add"]')).click();
+    <span class="nx">element</span><span class="p">(</span><span class="nx">by</span><span class="p">.</span><span class="nx">model</span><span class="p">(</span><span class="s1">'todoText'</span><span class="p">)).</span><span class="nx">sendKeys</span><span class="p">(</span><span class="s1">'write a protractor test'</span><span class="p">);</span>
+    <span class="nx">element</span><span class="p">(</span><span class="nx">by</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s1">'[value="add"]'</span><span class="p">)).</span><span class="nx">click</span><span class="p">();</span>
 
-    var todoList = element.all(by.repeater('todo in todos'));
-    expect(todoList.count()).toEqual(3);
-    expect(todoList.get(2).getText()).toEqual('write a protractor test');
-  });
-});
+    <span class="kd">var</span> <span class="nx">todoList</span> <span class="o">=</span> <span class="nx">element</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nx">by</span><span class="p">.</span><span class="nx">repeater</span><span class="p">(</span><span class="s1">'todo in todos'</span><span class="p">));</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">todoList</span><span class="p">.</span><span class="nx">count</span><span class="p">()).</span><span class="nx">toEqual</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">todoList</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="nx">getText</span><span class="p">()).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s1">'write a protractor test'</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
 </code></pre>
+</div>
 
 <p>In this example we can see some elements that we will use many times in Protractor tests, such as:</p>
 
 <ul>
-  <li>browser: API for browser element. In this example we use <code>browser</code> for access some url;</li>
+  <li>browser: API for browser element. In this example we use <code class="highlighter-rouge">browser</code> for access some url;</li>
   <li>element: API for access some page element. Is very usefull for get elements based in certain parameters and manipulate them;</li>
   <li>by: API for access element based in parameters (css, angular models, angular repeaters, etc);</li>
 </ul>

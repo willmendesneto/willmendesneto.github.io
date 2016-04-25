@@ -208,7 +208,7 @@ board.on(&#39;ready&#39;, function() {
 });</pre></noscript>
 <script src="https://gist.github.com/willmendesneto/b5f92a932ec3b7ffadd0.js"> </script>
 
-<p>Como vocês podem ver a interface do Johnny-Five é bem intuitiva. Ele possui o evento <code>board.on('ready')</code> que é similar ao evento <code>$(document).ready()</code> do jQuery. Quando todo o ambiente está preparado, iniciamos com base no conteúdo desta função.</p>
+<p>Como vocês podem ver a interface do Johnny-Five é bem intuitiva. Ele possui o evento <code class="highlighter-rouge">board.on('ready')</code> que é similar ao evento <code class="highlighter-rouge">$(document).ready()</code> do jQuery. Quando todo o ambiente está preparado, iniciamos com base no conteúdo desta função.</p>
 
 <p>Agora basta plugarmos 2 leds: 1 vermelha (para sinalizar o build quebrado) e 1 verde (para sinalizar o build sem problemas). Colocamos o build de sucesso na porta de número 12 + uma porta GND do nosso Arduino e o build de erro na porta de número 10 + uma porta GND do nosso Arduino, como podem ver na imagem.</p>
 
@@ -234,9 +234,10 @@ board.on(&#39;ready&#39;, function() {
 
 <p>Para conferirmos o resultado final, basta rodarmos os comandos</p>
 
-<pre><code class="language-bash">$ npm install # instala todas as dependências do projeto
-$ node index.js # roda o código do build checker
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm install <span class="c"># instala todas as dependências do projeto</span>
+<span class="gp">$ </span>node index.js <span class="c"># roda o código do build checker</span>
 </code></pre>
+</div>
 
 <p>Caso queiram saber mais sobre o projeto, <a href="https://github.com/willmendesneto/build-checker">cliquem aqui e o projeto Build-Checker no github</a>. O código é open-source, então sintam-se à vontade para feedbacks, sugestões e críticas construtivas. Lembrando também que estrelas no github são sempre bem vindas também!</p>
 

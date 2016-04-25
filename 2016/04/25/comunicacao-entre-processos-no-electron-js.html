@@ -107,7 +107,7 @@
 <p>Todo o ciclo de sua aplicação electron está baseada nos processos:</p>
 
 <ul>
-  <li>main: O processo principal é aonde lida-se diretamente com A API electron, como Tray, BrowserWindow, etc. Nele você dará o <code>bootstrap</code> de sua aplicação com informações como tamanho da tela da aplicação, se existirá um menu com ícone integrado (Tray) além de outros opcionais. Para maiores detalhes acesse a <a href="http://electron.atom.io/docs/all/">documentação do Electron</a>.</li>
+  <li>main: O processo principal é aonde lida-se diretamente com A API electron, como Tray, BrowserWindow, etc. Nele você dará o <code class="highlighter-rouge">bootstrap</code> de sua aplicação com informações como tamanho da tela da aplicação, se existirá um menu com ícone integrado (Tray) além de outros opcionais. Para maiores detalhes acesse a <a href="http://electron.atom.io/docs/all/">documentação do Electron</a>.</li>
   <li>renderer: Camada onde a aplicação realmente estará ativa e possui acessos ao DOM e stylesheets, por exemplo;</li>
 </ul>
 
@@ -126,7 +126,7 @@
 
 <h1 id="conhecendo-os-ipcs">Conhecendo os IPC’s</h1>
 
-<p>Para fazer esta comunicação entra em cena o <a href="http://electron.atom.io/docs/v0.33.0/api/ipc-renderer/">IPC Renderer</a> e o <a href="http://electron.atom.io/docs/v0.33.0/api/ipc-main-process/">IPC Main</a>. O IPC Main será utilizado no arquivo de bootstrap do aplicativo (configurado no <code>package.json</code> do seu app) e o IPC Renderer será utilizado no arquivo principal do da sua aplicação realmente dita (com os comportamentos, acesso ao DOM, etc). Todos os IPC’s tem os mesmos eventos que são:</p>
+<p>Para fazer esta comunicação entra em cena o <a href="http://electron.atom.io/docs/v0.33.0/api/ipc-renderer/">IPC Renderer</a> e o <a href="http://electron.atom.io/docs/v0.33.0/api/ipc-main-process/">IPC Main</a>. O IPC Main será utilizado no arquivo de bootstrap do aplicativo (configurado no <code class="highlighter-rouge">package.json</code> do seu app) e o IPC Renderer será utilizado no arquivo principal do da sua aplicação realmente dita (com os comportamentos, acesso ao DOM, etc). Todos os IPC’s tem os mesmos eventos que são:</p>
 
 <ul>
   <li>.on(): cria o listener do evento;</li>
@@ -135,31 +135,33 @@
 
 <p>Então para isso o seu arquivo principal terá o seguinte código.</p>
 
-<pre><code class="language-javascript">import {ipcMain} from 'electron';
-...
-// Iniciando o evento que aguarda o trigger do `ipc-renderer`
-ipcMain.on('app:updateAppWithConfigInformations', function(event, config){
-  ...
-  // Retorno de sucesso ou erro para o `ipc-renderer`
-  // Neste exemplo sempre retornará com sucesso
-  event.sender.send('app:updateAppWithConfigInformationsCallback', {success: true});
-});
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span><span class="nx">ipcMain</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">'electron'</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="c1">// Iniciando o evento que aguarda o trigger do `ipc-renderer`</span>
+<span class="nx">ipcMain</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'app:updateAppWithConfigInformations'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">config</span><span class="p">){</span>
+  <span class="p">...</span>
+  <span class="c1">// Retorno de sucesso ou erro para o `ipc-renderer`</span>
+  <span class="c1">// Neste exemplo sempre retornará com sucesso</span>
+  <span class="nx">event</span><span class="p">.</span><span class="nx">sender</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">'app:updateAppWithConfigInformationsCallback'</span><span class="p">,</span> <span class="p">{</span><span class="na">success</span><span class="p">:</span> <span class="kc">true</span><span class="p">});</span>
+<span class="p">});</span>
 
 </code></pre>
+</div>
 
 <p>E no seu processo de renderização você acessa da seguinte maneira.</p>
 
-<pre><code class="language-javascript">import ipcRenderer from 'ipc-renderer';
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="nx">ipcRenderer</span> <span class="nx">from</span> <span class="s1">'ipc-renderer'</span><span class="p">;</span>
 
-...
-// Acesso ao seu formato de armazenamento
-ipc.send('app:updateAppWithConfigInformations', config);
-...
-// Listener para verificar se a operação no processo principal foi finalizada com sucesso
-ipcRenderer.on('app:updateAppWithConfigInformationsCallback', function(event, response) {
-  // Validação do retorno do processo principal
-});
+<span class="p">...</span>
+<span class="c1">// Acesso ao seu formato de armazenamento</span>
+<span class="nx">ipc</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">'app:updateAppWithConfigInformations'</span><span class="p">,</span> <span class="nx">config</span><span class="p">);</span>
+<span class="p">...</span>
+<span class="c1">// Listener para verificar se a operação no processo principal foi finalizada com sucesso</span>
+<span class="nx">ipcRenderer</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'app:updateAppWithConfigInformationsCallback'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Validação do retorno do processo principal</span>
+<span class="p">});</span>
 </code></pre>
+</div>
 
 <h1 id="concluso">Conclusão</h1>
 

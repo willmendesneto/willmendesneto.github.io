@@ -158,42 +158,44 @@
 
 <p>Let me show you a simple example. We have 2 directives: one with ReactJS and another without. Based in a simple Devtools profiler for this example the results are:</p>
 
-<pre><code class="language-javascript">// without react
-angular.module('angularPerformanceApp')
-  .directive('myMessage', function () {
-    return {
-      template: '&lt;div&gt;Hello &lt;/div&gt;',
-      restrict: 'A'
-    };
-  });
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// without react</span>
+<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'angularPerformanceApp'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">directive</span><span class="p">(</span><span class="s1">'myMessage'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">template</span><span class="p">:</span> <span class="s1">'&lt;div&gt;Hello &lt;/div&gt;'</span><span class="p">,</span>
+      <span class="na">restrict</span><span class="p">:</span> <span class="s1">'A'</span>
+    <span class="p">};</span>
+  <span class="p">});</span>
 </code></pre>
+</div>
 
 <p><img src="/assets/images/without-react.png" alt="Using Angular directives" title="Using Angular directives" /></p>
 
-<pre><code class="language-javascript">// with react
-angular.module('angularPerformanceApp')
-  .directive('myReactMessage', function () {
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// with react</span>
+<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'angularPerformanceApp'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">directive</span><span class="p">(</span><span class="s1">'myReactMessage'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
 
-    return {
-      compile: function(element) {
-       var Hello = React.createClass({
-          render: function() {
-            return React.DOM.div({}, 'Hello ' + this.props.name);
-          }
-        });
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">compile</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
+       <span class="kd">var</span> <span class="nx">Hello</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+          <span class="na">render</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">React</span><span class="p">.</span><span class="nx">DOM</span><span class="p">.</span><span class="nx">div</span><span class="p">({},</span> <span class="s1">'Hello '</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+          <span class="p">}</span>
+        <span class="p">});</span>
 
-        return {
-          post: function(scope, element) {
-            scope.$watch('vm.message', function(newVal, oldVal) {
-              React.renderComponent(Hello({
-                name: scope.vm.message
-              }), document.getElementById('example'));
-            });
-          }
-        }
-      }
-    }
+        <span class="k">return</span> <span class="p">{</span>
+          <span class="na">post</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">scope</span><span class="p">,</span> <span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">scope</span><span class="p">.</span><span class="nx">$watch</span><span class="p">(</span><span class="s1">'vm.message'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">newVal</span><span class="p">,</span> <span class="nx">oldVal</span><span class="p">)</span> <span class="p">{</span>
+              <span class="nx">React</span><span class="p">.</span><span class="nx">renderComponent</span><span class="p">(</span><span class="nx">Hello</span><span class="p">({</span>
+                <span class="na">name</span><span class="p">:</span> <span class="nx">scope</span><span class="p">.</span><span class="nx">vm</span><span class="p">.</span><span class="nx">message</span>
+              <span class="p">}),</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'example'</span><span class="p">));</span>
+            <span class="p">});</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
 </code></pre>
+</div>
 
 <p><img src="/assets/images/with-react.png" alt="Using React JS" title="Using React JS" /></p>
 

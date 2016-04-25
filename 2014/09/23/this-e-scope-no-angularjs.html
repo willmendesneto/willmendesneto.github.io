@@ -109,16 +109,16 @@
   <li>Comunidade ativa;</li>
 </ul>
 
-<p>Com o seu crescimento surgiram várias iniciativas afim de fornecer conteúdo de qualidade. Porém algumas coisas foram melhoradas desde então. Grandes nomes do Javascript, como John Papa e Todd Motto, fora alguns cursos gratuitos e conteúdos diversos na web mostram a utilização do elemento <code>this</code> dentro dos elementos angular.</p>
+<p>Com o seu crescimento surgiram várias iniciativas afim de fornecer conteúdo de qualidade. Porém algumas coisas foram melhoradas desde então. Grandes nomes do Javascript, como John Papa e Todd Motto, fora alguns cursos gratuitos e conteúdos diversos na web mostram a utilização do elemento <code class="highlighter-rouge">this</code> dentro dos elementos angular.</p>
 
-<p>Isso nos remete a questão: qual a diferença entre cada um deles? É melhor usar <code>this</code> ou <code>$scope</code> em seu projeto? Quando aliar a utilização de cada um deles?</p>
+<p>Isso nos remete a questão: qual a diferença entre cada um deles? É melhor usar <code class="highlighter-rouge">this</code> ou <code class="highlighter-rouge">$scope</code> em seu projeto? Quando aliar a utilização de cada um deles?</p>
 
 <h2 id="entendendo-o-papel-do-this-no-javascript">ENTENDENDO O PAPEL DO THIS NO JAVASCRIPT</h2>
 
-<p>O elemento <code>this</code> é referente ao escopo no qual ele se encontra. Caso você não tenha especificado um valor para <code>this</code> ao escopo atual, o seu valor padrão será o do elemento <code>window</code>. Em algumas situações você pode perder a referência do elemento <code>this</code> por alterações do escopo. Para isto podemos referenciar o escopo em outra variável e chamarmos diretamente. Um exemplo clássico é:</p>
+<p>O elemento <code class="highlighter-rouge">this</code> é referente ao escopo no qual ele se encontra. Caso você não tenha especificado um valor para <code class="highlighter-rouge">this</code> ao escopo atual, o seu valor padrão será o do elemento <code class="highlighter-rouge">window</code>. Em algumas situações você pode perder a referência do elemento <code class="highlighter-rouge">this</code> por alterações do escopo. Para isto podemos referenciar o escopo em outra variável e chamarmos diretamente. Um exemplo clássico é:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">Test</span><span class="p">(){</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">phrase</span> <span class="o">=</span> <span class="s1">&#39;Calling function &quot;Test&quot;&#39;</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">phrase</span> <span class="o">=</span> <span class="s1">'Calling function "Test"'</span><span class="p">;</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">showAlert</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
     <span class="nx">alert</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">phrase</span><span class="p">);</span>
   <span class="p">}</span>
@@ -134,14 +134,14 @@
 <span class="c1">// Mostra a mensagem no alert</span>
 <span class="nx">test</span><span class="p">.</span><span class="nx">showAlert</span><span class="p">();</span>
 
-<span class="c1">// Mostra &quot;undefined&quot; no alert, pois o escopo se perdeu</span>
+<span class="c1">// Mostra "undefined" no alert, pois o escopo se perdeu</span>
 <span class="nx">test</span><span class="p">.</span><span class="nx">showAlertTimeout</span><span class="p">();</span>
 <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">test</span><span class="p">.</span><span class="nx">showAlert</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span></code></pre></figure>
 
-<p>Uma forma de utilizarmos o método <code>showAlertTimeout</code> corretamente é atribuirmos o escopo <code>this</code> a uma variável. Este exemplo então ficaria assim:</p>
+<p>Uma forma de utilizarmos o método <code class="highlighter-rouge">showAlertTimeout</code> corretamente é atribuirmos o escopo <code class="highlighter-rouge">this</code> a uma variável. Este exemplo então ficaria assim:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">Test</span><span class="p">(){</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">phrase</span> <span class="o">=</span> <span class="s1">&#39;Calling function &quot;Test&quot;&#39;</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">phrase</span> <span class="o">=</span> <span class="s1">'Calling function "Test"'</span><span class="p">;</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">showAlert</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
     <span class="nx">alert</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">phrase</span><span class="p">);</span>
   <span class="p">}</span>
@@ -159,33 +159,33 @@
 <span class="nx">test</span><span class="p">.</span><span class="nx">showAlert</span><span class="p">();</span>
 <span class="nx">test</span><span class="p">.</span><span class="nx">showAlertTimeout</span><span class="p">();</span>
 
-<span class="c1">// Mostra &quot;undefined&quot; no alert, pois o escopo se perdeu</span>
+<span class="c1">// Mostra "undefined" no alert, pois o escopo se perdeu</span>
 <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">test</span><span class="p">.</span><span class="nx">showAlert</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span></code></pre></figure>
 
-<p>Com estes dois exemplos temos uma definição mais clara da utilização do <code>this</code> e do seu comportamento referente ao escopo atual que se encontra. Além disso percebemos uma maneira de utilizar referencias para efetuarmos chamadas baseadas em outros fluxos.</p>
+<p>Com estes dois exemplos temos uma definição mais clara da utilização do <code class="highlighter-rouge">this</code> e do seu comportamento referente ao escopo atual que se encontra. Além disso percebemos uma maneira de utilizar referencias para efetuarmos chamadas baseadas em outros fluxos.</p>
 
-<p>Mas quando utilizar <code>this</code> e <code>$scope</code></p>
+<p>Mas quando utilizar <code class="highlighter-rouge">this</code> e <code class="highlighter-rouge">$scope</code></p>
 
 <h2 id="quando-usar-cada-um">QUANDO USAR CADA UM</h2>
 
-<p>De maneira bem resumida fica aqui a diferença real entre a utilização do <code>this</code> e do <code>$scope</code>.</p>
+<p>De maneira bem resumida fica aqui a diferença real entre a utilização do <code class="highlighter-rouge">this</code> e do <code class="highlighter-rouge">$scope</code>.</p>
 
 <p>this:</p>
 
 <ul>
   <li>Quando a função de controller é chamado, o this é a referencia do controller, já que ele é baseado no escopo atual em que se encontra; normalmente o this refere-se ao seu pai em primeiro grau. por exemplo</li>
-  <li>O elemento this não pode acessar métodos já existentes no $scope, como <code>.$emit()</code>, <code>.$on()</code> e <code>.$broadcast()</code></li>
+  <li>O elemento this não pode acessar métodos já existentes no $scope, como <code class="highlighter-rouge">.$emit()</code>, <code class="highlighter-rouge">.$on()</code> e <code class="highlighter-rouge">.$broadcast()</code></li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">globalValue</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 <span class="kd">function</span> <span class="nx">Controller</span><span class="p">(){</span>
 
   <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">globalValue</span><span class="o">:</span> <span class="mi">20</span>
-    <span class="nx">method</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="na">globalValue</span><span class="p">:</span> <span class="mi">20</span>
+    <span class="na">method</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
       <span class="k">return</span> <span class="nx">globalValue</span><span class="p">;</span> <span class="c1">// returns 10, value based in global variable</span>
     <span class="p">},</span>
-    <span class="nx">anotherMethod</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="na">anotherMethod</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
       <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">globalValue</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// returns 40, because this value is refered of local function</span>
     <span class="p">}</span>
   <span class="p">};</span>
@@ -194,8 +194,8 @@
 <p>$scope</p>
 
 <ul>
-  <li>Cada controller (ou classes que utilizem o $scope diretamente) tem um objeto de interface <code>$scope</code> associado.</li>
-  <li>A função do controlador (construtor) é responsável por definir as propriedades do modelo e funções / métodos / comportamento no seu <code>$scope</code> associado, mas todos eles podem ser acessados por outra interface, a <code>$rootScope</code>.</li>
+  <li>Cada controller (ou classes que utilizem o $scope diretamente) tem um objeto de interface <code class="highlighter-rouge">$scope</code> associado.</li>
+  <li>A função do controlador (construtor) é responsável por definir as propriedades do modelo e funções / métodos / comportamento no seu <code class="highlighter-rouge">$scope</code> associado, mas todos eles podem ser acessados por outra interface, a <code class="highlighter-rouge">$rootScope</code>.</li>
   <li>Somente métodos definidos via $scope (e objetos escopo pai, usando a herança via prototype, por exemplo ) podiam ser acessados via template HTML a partir de diretivas como ng-click, filtros, etc;</li>
 </ul>
 
@@ -214,14 +214,14 @@
   </li>
 </ul>
 
-<p>Neste exemplo podemos perceber que o <code>this</code> não pode acessar alguns métodos do $scope, como já foi dito antes. Caso queira testar, basta remover o comentário do exemplo utilizando o <code>this</code>. Não explicarei muito sobre o service <code>WebStorage</code>, pois ele faz parte do toolset de componentes <a href="https://github.com/willmendesneto/keepr">angular-keepr/KEEPR</a>. Caso tenham curiosidade basta darem uma olhada no projeto (se curtirem mandam um star no projeto, ajuda bastante =) ).</p>
+<p>Neste exemplo podemos perceber que o <code class="highlighter-rouge">this</code> não pode acessar alguns métodos do $scope, como já foi dito antes. Caso queira testar, basta remover o comentário do exemplo utilizando o <code class="highlighter-rouge">this</code>. Não explicarei muito sobre o service <code class="highlighter-rouge">WebStorage</code>, pois ele faz parte do toolset de componentes <a href="https://github.com/willmendesneto/keepr">angular-keepr/KEEPR</a>. Caso tenham curiosidade basta darem uma olhada no projeto (se curtirem mandam um star no projeto, ajuda bastante =) ).</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">app</span><span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">&#39;PanelsController&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="nx">$timeout</span><span class="p">,</span> <span class="nx">WebStorage</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">app</span><span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">'PanelsController'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="nx">$timeout</span><span class="p">,</span> <span class="nx">WebStorage</span><span class="p">)</span> <span class="p">{</span>
 
     <span class="kd">var</span> <span class="nx">me</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">tab</span> <span class="o">=</span> <span class="nx">WebStorage</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">me</span><span class="p">.</span><span class="nx">panelSelectedKey</span><span class="p">)</span> <span class="o">||</span> <span class="mi">1</span><span class="p">;</span>
 
-    <span class="k">this</span><span class="p">.</span><span class="nx">panelSelectedKey</span> <span class="o">=</span> <span class="s1">&#39;panelSelected&#39;</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">panelSelectedKey</span> <span class="o">=</span> <span class="s1">'panelSelected'</span><span class="p">;</span>
 
     <span class="k">this</span><span class="p">.</span><span class="nx">setPanel</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">_tab</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">tab</span> <span class="o">=</span> <span class="nx">_tab</span><span class="p">;</span>
@@ -232,11 +232,11 @@
         <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">tab</span> <span class="o">===</span> <span class="nx">_tab</span><span class="p">;</span>
     <span class="p">};</span>
 
-    <span class="c1">// This code doesn&#39;t run</span>
-    <span class="c1">//this.$on(&#39;selectPanel&#39;, function () {</span>
+    <span class="c1">// This code doesn't run</span>
+    <span class="c1">//this.$on('selectPanel', function () {</span>
     <span class="c1">//  me.setPanel(this.tab);</span>
     <span class="c1">//});</span>
-    <span class="c1">//this.$emit(&#39;selectPanel&#39;);</span>
+    <span class="c1">//this.$emit('selectPanel');</span>
 
     <span class="k">this</span><span class="p">.</span><span class="nx">setPanel</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">tab</span> <span class="p">);</span>
 
@@ -244,11 +244,11 @@
 
 <p>Já o exemplo utilizando o $scope funciona perfeitamente como o esperado</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">app</span><span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">&#39;PanelsController&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="nx">$timeout</span><span class="p">,</span> <span class="nx">WebStorage</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">app</span><span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">'PanelsController'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="nx">$timeout</span><span class="p">,</span> <span class="nx">WebStorage</span><span class="p">)</span> <span class="p">{</span>
 
     <span class="nx">$scope</span><span class="p">.</span><span class="nx">tab</span><span class="p">;</span>
 
-    <span class="nx">$scope</span><span class="p">.</span><span class="nx">panelSelectedKey</span> <span class="o">=</span> <span class="s1">&#39;panelSelected&#39;</span><span class="p">;</span>
+    <span class="nx">$scope</span><span class="p">.</span><span class="nx">panelSelectedKey</span> <span class="o">=</span> <span class="s1">'panelSelected'</span><span class="p">;</span>
 
     <span class="nx">$scope</span><span class="p">.</span><span class="nx">setPanel</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">_tab</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">$scope</span><span class="p">.</span><span class="nx">tab</span> <span class="o">=</span>  <span class="nx">_tab</span><span class="p">;</span>
@@ -259,15 +259,15 @@
       <span class="k">return</span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">tab</span> <span class="o">===</span> <span class="nx">_tab</span><span class="p">;</span>
     <span class="p">};</span>
 
-    <span class="nx">$scope</span><span class="p">.</span><span class="nx">$on</span><span class="p">(</span><span class="s1">&#39;selectPanel&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$scope</span><span class="p">.</span><span class="nx">$on</span><span class="p">(</span><span class="s1">'selectPanel'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
       <span class="nx">$scope</span><span class="p">.</span><span class="nx">setPanel</span><span class="p">(</span><span class="nx">WebStorage</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">$scope</span><span class="p">.</span><span class="nx">panelSelectedKey</span><span class="p">)</span> <span class="o">||</span> <span class="mi">1</span><span class="p">);</span>
     <span class="p">});</span>
-    <span class="nx">$scope</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="s1">&#39;selectPanel&#39;</span><span class="p">);</span>
+    <span class="nx">$scope</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="s1">'selectPanel'</span><span class="p">);</span>
 <span class="p">});</span></code></pre></figure>
 
 <h2 id="concluso">CONCLUSÃO</h2>
 
-<p>Acompanho a publicação de novos conteúdos e percebo uma crescente preferência para anexar models ao controller e apelidá-lo no template utilizando a sintaxe ‘ng-controller=”RealController as real”’ utilizando o <code>this</code> e quando existe a necessidade de compartilhar algo entre várias directivas ou o exige um comportamento mais específico, o $scope fornece um conjunto de features bastante úteis ($watch, $broadcast e $on, por exemplo). Mas se tudo que você precisa é de um compartilhamento de dados simples entre elemento e html, usando o controller com o <code>this</code> é, sem dúvida, uma solução a se pensar.</p>
+<p>Acompanho a publicação de novos conteúdos e percebo uma crescente preferência para anexar models ao controller e apelidá-lo no template utilizando a sintaxe ‘ng-controller=”RealController as real”’ utilizando o <code class="highlighter-rouge">this</code> e quando existe a necessidade de compartilhar algo entre várias directivas ou o exige um comportamento mais específico, o $scope fornece um conjunto de features bastante úteis ($watch, $broadcast e $on, por exemplo). Mas se tudo que você precisa é de um compartilhamento de dados simples entre elemento e html, usando o controller com o <code class="highlighter-rouge">this</code> é, sem dúvida, uma solução a se pensar.</p>
 
 <p>Para quem tiver interesse, existe alguns repositórios interessantes sobre patterns no AngularJS</p>
 

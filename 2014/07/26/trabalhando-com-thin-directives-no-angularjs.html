@@ -112,9 +112,9 @@
 <p>Para isto vamos criar 3 arquivos para lidar diretamente com esta diretiva:</p>
 
 <ul>
-  <li><code>navbar.html</code>: Template da nossa diretiva com as informações e valores a serem atualizados.</li>
-  <li><code>navbar-ctrl.js</code>: Controller para o nosso menu. Ele será responsável por fazer a integração para que o nosso controller funcione perfeitamente</li>
-  <li><code>navbar.js</code>: Diretiva de nosso app. Este arquivo será bem compacto, pois possuirá somente algumas configurações mais simples.</li>
+  <li><code class="highlighter-rouge">navbar.html</code>: Template da nossa diretiva com as informações e valores a serem atualizados.</li>
+  <li><code class="highlighter-rouge">navbar-ctrl.js</code>: Controller para o nosso menu. Ele será responsável por fazer a integração para que o nosso controller funcione perfeitamente</li>
+  <li><code class="highlighter-rouge">navbar.js</code>: Diretiva de nosso app. Este arquivo será bem compacto, pois possuirá somente algumas configurações mais simples.</li>
 </ul>
 
 <p>Baseando a construção de nossa diretiva em <a href="http://pt.wikipedia.org/wiki/Test_Driven_Development">TDD</a>, vamos focar no conceito de <a href="http://www.jamesshore.com/Blog/Red-Green-Refactor.html">Red, Green, Refactor</a>, assim além do conceito de Thin Directives, ainda teremos conhecimento de TDD (para quem tem dúvidas sobre).</p>
@@ -123,84 +123,84 @@
 
 <p>Inicialmente temos este código html que se tornará o template de nossa aplicação, o arquivo com a configuração das rotas de nosso app e outro template html que será o da diretiva.</p>
 
-<p><code>index.html</code>:</p>
+<p><code class="highlighter-rouge">index.html</code>:</p>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!doctype html&gt;</span>
-<span class="c">&lt;!--[if lt IE 7]&gt;      &lt;html class=&quot;no-js lt-ie9 lt-ie8 lt-ie7&quot;&gt; &lt;![endif]--&gt;</span>
-<span class="c">&lt;!--[if IE 7]&gt;         &lt;html class=&quot;no-js lt-ie9 lt-ie8&quot;&gt; &lt;![endif]--&gt;</span>
-<span class="c">&lt;!--[if IE 8]&gt;         &lt;html class=&quot;no-js lt-ie9&quot;&gt; &lt;![endif]--&gt;</span>
-<span class="c">&lt;!--[if gt IE 8]&gt;&lt;!--&gt;</span> <span class="nt">&lt;html</span> <span class="na">class=</span><span class="s">&quot;no-js&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!--&lt;![endif]--&gt;</span>
+<span class="c">&lt;!--[if lt IE 7]&gt;      &lt;html class="no-js lt-ie9 lt-ie8 lt-ie7"&gt; &lt;![endif]--&gt;</span>
+<span class="c">&lt;!--[if IE 7]&gt;         &lt;html class="no-js lt-ie9 lt-ie8"&gt; &lt;![endif]--&gt;</span>
+<span class="c">&lt;!--[if IE 8]&gt;         &lt;html class="no-js lt-ie9"&gt; &lt;![endif]--&gt;</span>
+<span class="c">&lt;!--[if gt IE 8]&gt;&lt;!--&gt;</span> <span class="nt">&lt;html</span> <span class="na">class=</span><span class="s">"no-js"</span><span class="nt">&gt;</span> <span class="c">&lt;!--&lt;![endif]--&gt;</span>
   <span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content=</span><span class="s">&quot;IE=edge&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=edge"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;title&gt;&lt;/title&gt;</span>
-    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;description&quot;</span> <span class="na">content=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;script&gt;</span><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;&lt;base href=&quot;&#39;</span> <span class="o">+</span> <span class="nb">document</span><span class="p">.</span><span class="nx">location</span> <span class="o">+</span> <span class="s1">&#39;&quot; /&gt;&#39;</span><span class="p">);</span><span class="nt">&lt;/script&gt;</span>
-    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">content=</span><span class="s">""</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;script&gt;</span><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">'&lt;base href="'</span> <span class="o">+</span> <span class="nb">document</span><span class="p">.</span><span class="nx">location</span> <span class="o">+</span> <span class="s1">'" /&gt;'</span><span class="p">);</span><span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width"</span><span class="nt">&gt;</span>
 
-    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"</span><span class="nt">&gt;</span>
 
   <span class="nt">&lt;/head&gt;</span>
-  <span class="nt">&lt;body</span> <span class="na">ng-app=</span><span class="s">&quot;plunkerApp&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;body</span> <span class="na">ng-app=</span><span class="s">"plunkerApp"</span><span class="nt">&gt;</span>
     <span class="c">&lt;!-- Esta é a nossa diretiva--&gt;</span>
     <span class="nt">&lt;navbar&gt;&lt;/navbar&gt;</span>
     <span class="c">&lt;!-- --&gt;</span>
 
     <span class="c">&lt;!-- Add your site or application content here --&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;container&quot;</span> <span class="na">ng-view=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span> <span class="na">ng-view=</span><span class="s">""</span><span class="nt">&gt;&lt;/div&gt;</span>
 
-    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 
-    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;angular-route.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"angular-route.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 
-    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;app.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;navbar-ctrl.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;navbar.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"app.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"navbar-ctrl.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"navbar.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span></code></pre></figure>
 
-<p><code>app.js</code>:</p>
+<p><code class="highlighter-rouge">app.js</code>:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s1">'use strict'</span><span class="p">;</span>
 
-<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;plunkerApp&#39;</span><span class="p">,</span> <span class="p">[</span>
-  <span class="s1">&#39;ngRoute&#39;</span>
+<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'plunkerApp'</span><span class="p">,</span> <span class="p">[</span>
+  <span class="s1">'ngRoute'</span>
 <span class="p">])</span>
   <span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">$routeProvider</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">$routeProvider</span>
-      <span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="p">{</span>
-        <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;list.html&#39;</span><span class="p">,</span>
-        <span class="nx">controller</span><span class="o">:</span> <span class="s1">&#39;ContactsCtrl&#39;</span>
+      <span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">templateUrl</span><span class="p">:</span> <span class="s1">'list.html'</span><span class="p">,</span>
+        <span class="na">controller</span><span class="p">:</span> <span class="s1">'ContactsCtrl'</span>
       <span class="p">})</span>
-      <span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="s1">&#39;/contacts&#39;</span><span class="p">,</span> <span class="p">{</span>
-        <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;list.html&#39;</span><span class="p">,</span>
-        <span class="nx">controller</span><span class="o">:</span> <span class="s1">&#39;ContactsCtrl&#39;</span>
+      <span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="s1">'/contacts'</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">templateUrl</span><span class="p">:</span> <span class="s1">'list.html'</span><span class="p">,</span>
+        <span class="na">controller</span><span class="p">:</span> <span class="s1">'ContactsCtrl'</span>
       <span class="p">})</span>
       <span class="p">.</span><span class="nx">otherwise</span><span class="p">({</span>
-        <span class="nx">redirectTo</span><span class="o">:</span> <span class="s1">&#39;/&#39;</span>
+        <span class="na">redirectTo</span><span class="p">:</span> <span class="s1">'/'</span>
       <span class="p">});</span>
   <span class="p">});</span></code></pre></figure>
 
-<p><code>navbar.html</code>:</p>
+<p><code class="highlighter-rouge">navbar.html</code>:</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;header&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;nav nav-pills pull-right&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;li</span> <span class="na">ng-class=</span><span class="s">&quot;{active:isActive(&#39;/&#39;)}&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-    <span class="nt">&lt;li</span> <span class="na">ng-class=</span><span class="s">&quot;{active:isActive(&#39;#/contacts&#39;)}&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#/contacts&quot;</span><span class="nt">&gt;</span>Contacts<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav nav-pills pull-right"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">ng-class=</span><span class="s">"{active:isActive('/')}"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">ng-class=</span><span class="s">"{active:isActive('#/contacts')}"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#/contacts"</span><span class="nt">&gt;</span>Contacts<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
   <span class="nt">&lt;/ul&gt;</span>
-  <span class="nt">&lt;h3</span> <span class="na">class=</span><span class="s">&quot;text-muted&quot;</span><span class="nt">&gt;</span>THIN DIRECTIVE EXAMPLE<span class="nt">&lt;/h3&gt;</span>
+  <span class="nt">&lt;h3</span> <span class="na">class=</span><span class="s">"text-muted"</span><span class="nt">&gt;</span>THIN DIRECTIVE EXAMPLE<span class="nt">&lt;/h3&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></figure>
 
-<p><code>isActive()</code> é o método que o controller <code>NavbarCtrl</code> utilizará acessando a diretiva, mas por ora não criaremos o controller e sim a nossa diretiva. Porém temos que fazer alguns testes para validarmos a diretiva e saber se tudo está ocorrendo corretamente. Vamos ao nosso teste:</p>
+<p><code class="highlighter-rouge">isActive()</code> é o método que o controller <code class="highlighter-rouge">NavbarCtrl</code> utilizará acessando a diretiva, mas por ora não criaremos o controller e sim a nossa diretiva. Porém temos que fazer alguns testes para validarmos a diretiva e saber se tudo está ocorrendo corretamente. Vamos ao nosso teste:</p>
 
-<p><code>navbar-test.js</code>:</p>
+<p><code class="highlighter-rouge">navbar-test.js</code>:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s1">'use strict'</span><span class="p">;</span>
 
-<span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;Directive: navbar&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<span class="nx">describe</span><span class="p">(</span><span class="s1">'Directive: navbar'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
 
-  <span class="c1">// load the directive&#39;s module</span>
-  <span class="nx">beforeEach</span><span class="p">(</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;plunkerApp&#39;</span><span class="p">));</span>
+  <span class="c1">// load the directive's module</span>
+  <span class="nx">beforeEach</span><span class="p">(</span><span class="nx">module</span><span class="p">(</span><span class="s1">'plunkerApp'</span><span class="p">));</span>
 
   <span class="kd">var</span> <span class="nx">element</span><span class="p">,</span>
     <span class="nx">template</span><span class="p">,</span>
@@ -211,41 +211,41 @@
     <span class="nx">scope</span> <span class="o">=</span> <span class="nx">$rootScope</span><span class="p">.</span><span class="nx">$new</span><span class="p">();</span>
     <span class="nx">httpBackend</span> <span class="o">=</span> <span class="nx">_$httpBackend_</span><span class="p">;</span>
 
-    <span class="nx">template</span> <span class="o">=</span> <span class="s1">&#39;&lt;div class=&quot;header&quot;&gt;&#39;</span> <span class="o">+</span>
-  <span class="s1">&#39;&lt;ul class=&quot;nav nav-pills pull-right&quot;&gt;&#39;</span> <span class="o">+</span>
-  <span class="s1">&#39;  &lt;li ng-class=&quot;{active:{active:isActive(&#39;</span><span class="o">/</span><span class="s1">&#39;)}&quot;&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;&#39;</span> <span class="o">+</span>
-  <span class="s1">&#39;  &lt;li ng-class=&quot;{active:isActive(&#39;</span><span class="err">#</span><span class="o">/</span><span class="nx">contacts</span><span class="s1">&#39;)}&quot;&gt;&lt;a href=&quot;#/contacts&quot;&gt;Contacts&lt;/a&gt;&lt;/li&gt;&#39;</span> <span class="o">+</span>
-  <span class="s1">&#39;&lt;/ul&gt;&#39;</span> <span class="o">+</span>
-  <span class="s1">&#39;&lt;h3 class=&quot;text-muted&quot;&gt;THIN DIRECTIVE EXAMPLE&lt;/h3&gt;&#39;</span> <span class="o">+</span>
-<span class="s1">&#39;&lt;/div&gt;&#39;</span><span class="p">;</span>
-    <span class="nx">httpBackend</span><span class="p">.</span><span class="nx">whenGET</span><span class="p">(</span><span class="s1">&#39;navbar.html&#39;</span><span class="p">).</span><span class="nx">respond</span><span class="p">(</span><span class="nx">template</span><span class="p">);</span>
+    <span class="nx">template</span> <span class="o">=</span> <span class="s1">'&lt;div class="header"&gt;'</span> <span class="o">+</span>
+  <span class="s1">'&lt;ul class="nav nav-pills pull-right"&gt;'</span> <span class="o">+</span>
+  <span class="s1">'  &lt;li ng-class="{active:{active:isActive('</span><span class="o">/</span><span class="s1">')}"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;'</span> <span class="o">+</span>
+  <span class="s1">'  &lt;li ng-class="{active:isActive('</span><span class="err">#</span><span class="o">/</span><span class="nx">contacts</span><span class="s1">')}"&gt;&lt;a href="#/contacts"&gt;Contacts&lt;/a&gt;&lt;/li&gt;'</span> <span class="o">+</span>
+  <span class="s1">'&lt;/ul&gt;'</span> <span class="o">+</span>
+  <span class="s1">'&lt;h3 class="text-muted"&gt;THIN DIRECTIVE EXAMPLE&lt;/h3&gt;'</span> <span class="o">+</span>
+<span class="s1">'&lt;/div&gt;'</span><span class="p">;</span>
+    <span class="nx">httpBackend</span><span class="p">.</span><span class="nx">whenGET</span><span class="p">(</span><span class="s1">'navbar.html'</span><span class="p">).</span><span class="nx">respond</span><span class="p">(</span><span class="nx">template</span><span class="p">);</span>
 
     <span class="nx">element</span> <span class="o">=</span> <span class="nx">angular</span><span class="p">.</span><span class="nx">element</span><span class="p">(</span><span class="nx">template</span><span class="p">);</span>
     <span class="nx">element</span> <span class="o">=</span> <span class="nx">$compile</span><span class="p">(</span><span class="nx">element</span><span class="p">)(</span><span class="nx">scope</span><span class="p">);</span>
   <span class="p">}));</span>
 
-  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should create a navbar header with &quot;.header&quot; class in element&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">element</span><span class="p">.</span><span class="nx">hasClass</span><span class="p">(</span><span class="s1">&#39;header&#39;</span><span class="p">)).</span><span class="nx">toBe</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+  <span class="nx">it</span><span class="p">(</span><span class="s1">'should create a navbar header with ".header" class in element'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">element</span><span class="p">.</span><span class="nx">hasClass</span><span class="p">(</span><span class="s1">'header'</span><span class="p">)).</span><span class="nx">toBe</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
   <span class="p">});</span>
 
-  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should create a navbar header with ng-controller value equals &quot;NavbarCtrl&quot;&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">element</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;ng-controller&#39;</span><span class="p">)).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s1">&#39;NavbarCtrl&#39;</span><span class="p">);</span>
+  <span class="nx">it</span><span class="p">(</span><span class="s1">'should create a navbar header with ng-controller value equals "NavbarCtrl"'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">element</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'ng-controller'</span><span class="p">)).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s1">'NavbarCtrl'</span><span class="p">);</span>
   <span class="p">});</span>
 
 <span class="p">});</span></code></pre></figure>
 
 <p>Agora vamos criar a nossa diretiva</p>
 
-<p><code>navbar.js</code>:</p>
+<p><code class="highlighter-rouge">navbar.js</code>:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s1">'use strict'</span><span class="p">;</span>
 
-<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;plunkerApp&#39;</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">directive</span><span class="p">(</span><span class="s1">&#39;navbar&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'plunkerApp'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">directive</span><span class="p">(</span><span class="s1">'navbar'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">{</span>
-      <span class="nx">restrict</span><span class="o">:</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span>
-      <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;navbar.html&#39;</span><span class="p">,</span>
-      <span class="nx">controller</span><span class="o">:</span> <span class="s1">&#39;NavbarCtrl&#39;</span><span class="p">,</span>
+      <span class="na">restrict</span><span class="p">:</span> <span class="s1">'E'</span><span class="p">,</span>
+      <span class="na">templateUrl</span><span class="p">:</span> <span class="s1">'navbar.html'</span><span class="p">,</span>
+      <span class="na">controller</span><span class="p">:</span> <span class="s1">'NavbarCtrl'</span><span class="p">,</span>
     <span class="p">};</span>
   <span class="p">});</span></code></pre></figure>
 
@@ -260,14 +260,14 @@
 <p>Estas opções podem ser combinadas, o que abre um leque de possibilidades a mais para as diretivas.
 Ex :</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s1">'use strict'</span><span class="p">;</span>
 
-<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;plunkerApp&#39;</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">directive</span><span class="p">(</span><span class="s1">&#39;navbar&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'plunkerApp'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">directive</span><span class="p">(</span><span class="s1">'navbar'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">{</span>
-      <span class="nx">restrict</span><span class="o">:</span> <span class="s1">&#39;EAC&#39;</span><span class="p">,</span> <span class="c1">// Aceita o formato de classe, atributo ou element</span>
-      <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;navbar.html&#39;</span><span class="p">,</span>
-      <span class="nx">controller</span><span class="o">:</span> <span class="s1">&#39;NavbarCtrl&#39;</span><span class="p">,</span>
+      <span class="na">restrict</span><span class="p">:</span> <span class="s1">'EAC'</span><span class="p">,</span> <span class="c1">// Aceita o formato de classe, atributo ou element</span>
+      <span class="na">templateUrl</span><span class="p">:</span> <span class="s1">'navbar.html'</span><span class="p">,</span>
+      <span class="na">controller</span><span class="p">:</span> <span class="s1">'NavbarCtrl'</span><span class="p">,</span>
     <span class="p">};</span>
   <span class="p">});</span></code></pre></figure>
 
@@ -277,14 +277,14 @@ Ex :</p>
 
 <p>Ainda assim, nosso teste não estará correto, pois não temos o nosso controller criado. Vamos criar agora ele e o seu respectivo teste</p>
 
-<p><code>navbar-ctrl-test.js</code>:</p>
+<p><code class="highlighter-rouge">navbar-ctrl-test.js</code>:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s1">'use strict'</span><span class="p">;</span>
 
-<span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;Controller: NavbarCtrl&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<span class="nx">describe</span><span class="p">(</span><span class="s1">'Controller: NavbarCtrl'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
 
-  <span class="c1">// load the controller&#39;s module</span>
-  <span class="nx">beforeEach</span><span class="p">(</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;plunkerApp&#39;</span><span class="p">));</span>
+  <span class="c1">// load the controller's module</span>
+  <span class="nx">beforeEach</span><span class="p">(</span><span class="nx">module</span><span class="p">(</span><span class="s1">'plunkerApp'</span><span class="p">));</span>
 
   <span class="kd">var</span> <span class="nx">NavbarCtrl</span><span class="p">,</span>
     <span class="nx">scope</span><span class="p">,</span>
@@ -294,48 +294,48 @@ Ex :</p>
   <span class="nx">beforeEach</span><span class="p">(</span><span class="nx">inject</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">$controller</span><span class="p">,</span> <span class="nx">$rootScope</span><span class="p">,</span> <span class="nx">$location</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">location</span> <span class="o">=</span> <span class="nx">$location</span><span class="p">;</span>
     <span class="nx">scope</span> <span class="o">=</span> <span class="nx">$rootScope</span><span class="p">.</span><span class="nx">$new</span><span class="p">();</span>
-    <span class="nx">NavbarCtrl</span> <span class="o">=</span> <span class="nx">$controller</span><span class="p">(</span><span class="s1">&#39;NavbarCtrl&#39;</span><span class="p">,</span> <span class="p">{</span>
-      <span class="nx">$scope</span><span class="o">:</span> <span class="nx">scope</span>
+    <span class="nx">NavbarCtrl</span> <span class="o">=</span> <span class="nx">$controller</span><span class="p">(</span><span class="s1">'NavbarCtrl'</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">$scope</span><span class="p">:</span> <span class="nx">scope</span>
     <span class="p">});</span>
   <span class="p">}));</span>
 
-  <span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;isActive&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+  <span class="nx">describe</span><span class="p">(</span><span class="s1">'isActive'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
 
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should return &quot;true&quot; when paths are the same&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-      <span class="nx">location</span><span class="p">.</span><span class="nx">path</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">);</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">scope</span><span class="p">.</span><span class="nx">isActive</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)).</span><span class="nx">toBeTruthy</span><span class="p">();</span>
+    <span class="nx">it</span><span class="p">(</span><span class="s1">'should return "true" when paths are the same'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="nx">location</span><span class="p">.</span><span class="nx">path</span><span class="p">(</span><span class="s1">'/'</span><span class="p">);</span>
+      <span class="nx">expect</span><span class="p">(</span><span class="nx">scope</span><span class="p">.</span><span class="nx">isActive</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)).</span><span class="nx">toBeTruthy</span><span class="p">();</span>
     <span class="p">});</span>
 
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should return &quot;false&quot; when paths aren\&#39;t the same&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-      <span class="nx">location</span><span class="p">.</span><span class="nx">path</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">);</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">scope</span><span class="p">.</span><span class="nx">isActive</span><span class="p">(</span><span class="s1">&#39;/error&#39;</span><span class="p">)).</span><span class="nx">toBeFalsy</span><span class="p">();</span>
+    <span class="nx">it</span><span class="p">(</span><span class="s1">'should return "false" when paths aren\'t the same'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="nx">location</span><span class="p">.</span><span class="nx">path</span><span class="p">(</span><span class="s1">'/'</span><span class="p">);</span>
+      <span class="nx">expect</span><span class="p">(</span><span class="nx">scope</span><span class="p">.</span><span class="nx">isActive</span><span class="p">(</span><span class="s1">'/error'</span><span class="p">)).</span><span class="nx">toBeFalsy</span><span class="p">();</span>
     <span class="p">});</span>
 
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should return &quot;true&quot; when word starts are the same&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-      <span class="nx">location</span><span class="p">.</span><span class="nx">path</span><span class="p">(</span><span class="s1">&#39;/contacts/1/edit&#39;</span><span class="p">);</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">scope</span><span class="p">.</span><span class="nx">isActive</span><span class="p">(</span><span class="s1">&#39;/contacts&#39;</span><span class="p">)).</span><span class="nx">toBeTruthy</span><span class="p">();</span>
+    <span class="nx">it</span><span class="p">(</span><span class="s1">'should return "true" when word starts are the same'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="nx">location</span><span class="p">.</span><span class="nx">path</span><span class="p">(</span><span class="s1">'/contacts/1/edit'</span><span class="p">);</span>
+      <span class="nx">expect</span><span class="p">(</span><span class="nx">scope</span><span class="p">.</span><span class="nx">isActive</span><span class="p">(</span><span class="s1">'/contacts'</span><span class="p">)).</span><span class="nx">toBeTruthy</span><span class="p">();</span>
     <span class="p">});</span>
 
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should return &quot;true&quot; when word starts are the same followed by query string&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-      <span class="nx">location</span><span class="p">.</span><span class="nx">path</span><span class="p">(</span><span class="s1">&#39;/contacts?id=1&#39;</span><span class="p">);</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">scope</span><span class="p">.</span><span class="nx">isActive</span><span class="p">(</span><span class="s1">&#39;/contacts&#39;</span><span class="p">)).</span><span class="nx">toBeTruthy</span><span class="p">();</span>
+    <span class="nx">it</span><span class="p">(</span><span class="s1">'should return "true" when word starts are the same followed by query string'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="nx">location</span><span class="p">.</span><span class="nx">path</span><span class="p">(</span><span class="s1">'/contacts?id=1'</span><span class="p">);</span>
+      <span class="nx">expect</span><span class="p">(</span><span class="nx">scope</span><span class="p">.</span><span class="nx">isActive</span><span class="p">(</span><span class="s1">'/contacts'</span><span class="p">)).</span><span class="nx">toBeTruthy</span><span class="p">();</span>
     <span class="p">});</span>
 
   <span class="p">});</span>
 <span class="p">});</span></code></pre></figure>
 
-<p><code>navbar-ctrl.js</code>:</p>
+<p><code class="highlighter-rouge">navbar-ctrl.js</code>:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s1">'use strict'</span><span class="p">;</span>
 
-<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;plunkerApp&#39;</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">&#39;NavbarCtrl&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="nx">$location</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'plunkerApp'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">'NavbarCtrl'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="nx">$location</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">$scope</span><span class="p">.</span><span class="nx">isActive</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">path</span><span class="p">){</span>
-      <span class="kd">var</span> <span class="nx">currentPath</span> <span class="o">=</span> <span class="nx">$location</span><span class="p">.</span><span class="nx">path</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">];</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">currentPath</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;?&#39;</span><span class="p">)</span> <span class="o">!==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">currentPath</span> <span class="o">=</span> <span class="nx">currentPath</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;?&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+      <span class="kd">var</span> <span class="nx">currentPath</span> <span class="o">=</span> <span class="nx">$location</span><span class="p">.</span><span class="nx">path</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)[</span><span class="mi">1</span><span class="p">];</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">currentPath</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">'?'</span><span class="p">)</span> <span class="o">!==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">currentPath</span> <span class="o">=</span> <span class="nx">currentPath</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">'?'</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
       <span class="p">}</span>
-      <span class="k">return</span> <span class="nx">currentPath</span> <span class="o">===</span> <span class="nx">path</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">];</span>
+      <span class="k">return</span> <span class="nx">currentPath</span> <span class="o">===</span> <span class="nx">path</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)[</span><span class="mi">1</span><span class="p">];</span>
     <span class="p">};</span>
   <span class="p">});</span></code></pre></figure>
 

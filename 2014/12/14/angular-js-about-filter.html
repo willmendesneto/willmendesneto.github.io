@@ -101,7 +101,7 @@
 
 <h2 id="introduction">INTRODUCTION</h2>
 
-<p>In this post we will talk about filter concepts and how is the interface <code>$filter</code> flux in AngularJS. Offcourse, this is the first, but the idea isn’t make it something like the <a href="http://teropa.info/build-your-own-angular">Building your own AngularJS </a> (and I don’t have this pretension), but in something that share initially some good tips, fundamentals and cool aspects, showing more than “overview” in some approaches with these points for only one simple reason:</p>
+<p>In this post we will talk about filter concepts and how is the interface <code class="highlighter-rouge">$filter</code> flux in AngularJS. Offcourse, this is the first, but the idea isn’t make it something like the <a href="http://teropa.info/build-your-own-angular">Building your own AngularJS </a> (and I don’t have this pretension), but in something that share initially some good tips, fundamentals and cool aspects, showing more than “overview” in some approaches with these points for only one simple reason:</p>
 
 <blockquote>
   <p>“Good knowledge is shared knowledge”</p>
@@ -112,55 +112,55 @@
 <p>The filters concept is something very cool that the framework already brings in your core. This is helpful for the interface provided by AngularJS can be used in all locations of your application, whether html templates, services, directives, controllers, etc. We can already use some filters previously created by default, such as:</p>
 
 <ul>
-  <li><code>currency</code>: for values. Formats a number for the currency format. When no symbol is supplied, uses the standard symbol for the site as standard;</li>
-  <li><code>date</code>: for date formatting. Based on the last parameter can return a date in a specific format;</li>
-  <li><code>filter</code>:  standard filter to search in string, JSON objects or ArrayObjects;</li>
-  <li><code>json</code>: to transform a value in json. used to transform Javascript objects in a JSON string;</li>
-  <li><code>limitTo</code>: Creates a new array / string with a specified number of elements previously. The elements are stripped from the beginning or the end of the source array, number or string, specified by the value and sign (positive or negative for order verification). If a number is used as input, it is converted to a string.</li>
-  <li><code>lowercase</code>: lowercase characters conversion;</li>
-  <li><code>number</code>: Formatting numbers;</li>
-  <li><code>orderBy</code>: Sort in alphabetical or numerical order. If numbers worth noting if they are actually being saved as numbers and not strings, as this may affect the ordering;</li>
-  <li><code>uppercase</code>: uppercase characters conversion;</li>
+  <li><code class="highlighter-rouge">currency</code>: for values. Formats a number for the currency format. When no symbol is supplied, uses the standard symbol for the site as standard;</li>
+  <li><code class="highlighter-rouge">date</code>: for date formatting. Based on the last parameter can return a date in a specific format;</li>
+  <li><code class="highlighter-rouge">filter</code>:  standard filter to search in string, JSON objects or ArrayObjects;</li>
+  <li><code class="highlighter-rouge">json</code>: to transform a value in json. used to transform Javascript objects in a JSON string;</li>
+  <li><code class="highlighter-rouge">limitTo</code>: Creates a new array / string with a specified number of elements previously. The elements are stripped from the beginning or the end of the source array, number or string, specified by the value and sign (positive or negative for order verification). If a number is used as input, it is converted to a string.</li>
+  <li><code class="highlighter-rouge">lowercase</code>: lowercase characters conversion;</li>
+  <li><code class="highlighter-rouge">number</code>: Formatting numbers;</li>
+  <li><code class="highlighter-rouge">orderBy</code>: Sort in alphabetical or numerical order. If numbers worth noting if they are actually being saved as numbers and not strings, as this may affect the ordering;</li>
+  <li><code class="highlighter-rouge">uppercase</code>: uppercase characters conversion;</li>
 </ul>
 
 <p>When use in html template, the filter accept some verifications such as:</p>
 
 <ul>
-  <li><code>+</code>: Sum or concatenate. Uses the <code>additive</code> method;</li>
-  <li><code>-</code>: Decreases. Uses the <code>additive</code> method;</li>
-  <li><code>*</code>: Multiplies. Uses the <code>multiplicative</code> method;</li>
-  <li><code>/</code> : Divide. Uses the <code>multiplicative</code> method;</li>
-  <li><code>%</code>: Returns the remainder of the division. Uses the <code>multiplicative</code> method;</li>
-  <li><code>===</code>:  Compares with typing check. Uses the <code>equality</code>;</li>
-  <li><code>!==</code>: ompares with typing check. Uses the <code>equality</code>;</li>
-  <li><code>==</code>: Compares without typing check. Uses the <code>equality</code>;</li>
-  <li><code>!=</code>: Compares without typing check. Uses the <code>equality</code>;</li>
-  <li><code>&lt;</code>: Less than. Uses the <code>relational</code>;</li>
-  <li><code>&gt;</code>: Greater than. Uses the <code>relational</code>;</li>
-  <li><code>&lt;=</code>: Less than or equal. Uses the <code>relational</code>;</li>
-  <li><code>&gt;=</code>: Greater than or equal. Uses the <code>relational</code>;</li>
-  <li><code>&amp;&amp;</code>: AND. Uses the <code>logicalAND</code>;</li>
-  <li><code>||</code>: OOR. Uses the <code>logicalOR</code>;</li>
-  <li><code>!</code>:  Changes the value (force for boolean type). Uses the <code>unary</code>;</li>
-  <li><code>=</code>: Assign the value of the second to first. Uses the <code>assignment</code>;</li>
-  <li><code>|</code>: Returns the boolean <code>true</code>;</li>
+  <li><code class="highlighter-rouge">+</code>: Sum or concatenate. Uses the <code class="highlighter-rouge">additive</code> method;</li>
+  <li><code class="highlighter-rouge">-</code>: Decreases. Uses the <code class="highlighter-rouge">additive</code> method;</li>
+  <li><code class="highlighter-rouge">*</code>: Multiplies. Uses the <code class="highlighter-rouge">multiplicative</code> method;</li>
+  <li><code class="highlighter-rouge">/</code> : Divide. Uses the <code class="highlighter-rouge">multiplicative</code> method;</li>
+  <li><code class="highlighter-rouge">%</code>: Returns the remainder of the division. Uses the <code class="highlighter-rouge">multiplicative</code> method;</li>
+  <li><code class="highlighter-rouge">===</code>:  Compares with typing check. Uses the <code class="highlighter-rouge">equality</code>;</li>
+  <li><code class="highlighter-rouge">!==</code>: ompares with typing check. Uses the <code class="highlighter-rouge">equality</code>;</li>
+  <li><code class="highlighter-rouge">==</code>: Compares without typing check. Uses the <code class="highlighter-rouge">equality</code>;</li>
+  <li><code class="highlighter-rouge">!=</code>: Compares without typing check. Uses the <code class="highlighter-rouge">equality</code>;</li>
+  <li><code class="highlighter-rouge">&lt;</code>: Less than. Uses the <code class="highlighter-rouge">relational</code>;</li>
+  <li><code class="highlighter-rouge">&gt;</code>: Greater than. Uses the <code class="highlighter-rouge">relational</code>;</li>
+  <li><code class="highlighter-rouge">&lt;=</code>: Less than or equal. Uses the <code class="highlighter-rouge">relational</code>;</li>
+  <li><code class="highlighter-rouge">&gt;=</code>: Greater than or equal. Uses the <code class="highlighter-rouge">relational</code>;</li>
+  <li><code class="highlighter-rouge">&amp;&amp;</code>: AND. Uses the <code class="highlighter-rouge">logicalAND</code>;</li>
+  <li><code class="highlighter-rouge">||</code>: OOR. Uses the <code class="highlighter-rouge">logicalOR</code>;</li>
+  <li><code class="highlighter-rouge">!</code>:  Changes the value (force for boolean type). Uses the <code class="highlighter-rouge">unary</code>;</li>
+  <li><code class="highlighter-rouge">=</code>: Assign the value of the second to first. Uses the <code class="highlighter-rouge">assignment</code>;</li>
+  <li><code class="highlighter-rouge">|</code>: Returns the boolean <code class="highlighter-rouge">true</code>;</li>
 </ul>
 
-<p>All these operators are configured in <code>OPERATORS</code> variable. If you would like to know more about comparation operators, the AngularJS project references the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators">MDN documentation “https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators”</a></p>
+<p>All these operators are configured in <code class="highlighter-rouge">OPERATORS</code> variable. If you would like to know more about comparation operators, the AngularJS project references the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators">MDN documentation “https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators”</a></p>
 
 <p>And escape some special characters , as:</p>
 
 <ul>
-  <li><code>\n</code>;</li>
-  <li><code>\f</code>;</li>
-  <li><code>\r</code>;</li>
-  <li><code>\t</code>;</li>
-  <li><code>\v</code>;</li>
-  <li><code>'</code>;</li>
-  <li><code>"</code>;</li>
+  <li><code class="highlighter-rouge">\n</code>;</li>
+  <li><code class="highlighter-rouge">\f</code>;</li>
+  <li><code class="highlighter-rouge">\r</code>;</li>
+  <li><code class="highlighter-rouge">\t</code>;</li>
+  <li><code class="highlighter-rouge">\v</code>;</li>
+  <li><code class="highlighter-rouge">'</code>;</li>
+  <li><code class="highlighter-rouge">"</code>;</li>
 </ul>
 
-<p>All these operators are configured in <code>ESCAPE</code> variable. If you would like to know more please take a look in angularjs final code and search for this variable.</p>
+<p>All these operators are configured in <code class="highlighter-rouge">ESCAPE</code> variable. If you would like to know more please take a look in angularjs final code and search for this variable.</p>
 
 <h2 id="architecture-and-design-pattern">ARCHITECTURE AND DESIGN PATTERN</h2>
 
@@ -172,66 +172,112 @@
 
 <p>The particular set of rules applied defines an architectural style known as <a href="http://webcem01.cem.itesm.mx:8005/apps/s200911/tc3003/notes_pipes_and_filters/">Pipe-and-Filter</a>. The Pipe-and-filter is based on flow/stream data, and filters that can operate concurrently or not. In other words, can or cannot wait for the producer end to the component that consumes the output of the producer start your operation.</p>
 
-<p>In this architecture context, the pipe character (<code>|</code>) is one way to connect two filters, where the first filter output is connected in second input (which led to the architecture name). Knowing filters and pipes used can easily understand its operation and/or create other based on combinations.</p>
+<p>In this architecture context, the pipe character (<code class="highlighter-rouge">|</code>) is one way to connect two filters, where the first filter output is connected in second input (which led to the architecture name). Knowing filters and pipes used can easily understand its operation and/or create other based on combinations.</p>
 
 <p>Now a simple example using multiple filters combined. A given number, we want it to return your value as a Roman number. If we think that we have already created two filters can do the following combination. In our template its use would be as follows:</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="lineno">1</span> <span class="nt">&lt;tr&gt;</span>
-<span class="lineno">2</span>     <span class="c">&lt;!-- Returns &quot;X&quot; --&gt;</span>
-<span class="lineno">3</span>     <span class="nt">&lt;td&gt;</span> { { &#39;10&#39; | returnOnlyNumbers | formatForRomanNumbers } }<span class="nt">&lt;/td&gt;</span>
-<span class="lineno">4</span> <span class="nt">&lt;/tr&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre><span class="nt">&lt;tr&gt;</span>
+    <span class="c">&lt;!-- Returns "X" --&gt;</span>
+    <span class="nt">&lt;td&gt;</span> { { '10' | returnOnlyNumbers | formatForRomanNumbers } }<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;/tr&gt;</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>We can see some methods of Angular that demonstrate the operation of this architecture, such as:</p>
 
-<p>filterChain<code> ': Call combined filters using chainning mthods, which is a fluent API type and also uses the  </code>filter` method internally. If you want to know more about this concept, <a href="http://www.smashingmagazine.com/2012/10/09/designing-javascript-apis-usability/">I recommend Smashing Magazine article “Designing Better JavaScript APIs”</a>.</p>
+<p>filterChain<code class="highlighter-rouge"> ': Call combined filters using chainning mthods, which is a fluent API type and also uses the  </code>filter` method internally. If you want to know more about this concept, <a href="http://www.smashingmagazine.com/2012/10/09/designing-javascript-apis-usability/">I recommend Smashing Magazine article “Designing Better JavaScript APIs”</a>.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="lineno">1</span> <span class="nx">filterChain</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-<span class="lineno">2</span>     <span class="kd">var</span> <span class="nx">left</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">expression</span><span class="p">();</span>
-<span class="lineno">3</span>     <span class="kd">var</span> <span class="nx">token</span><span class="p">;</span>
-<span class="lineno">4</span>     <span class="k">while</span> <span class="p">((</span><span class="nx">token</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">expect</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="p">)))</span> <span class="p">{</span>
-<span class="lineno">5</span>       <span class="nx">left</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">left</span><span class="p">);</span>
-<span class="lineno">6</span>     <span class="p">}</span>
-<span class="lineno">7</span>     <span class="k">return</span> <span class="nx">left</span><span class="p">;</span>
-<span class="lineno">8</span>   <span class="p">},</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8</pre></td><td class="code"><pre><span class="nx">filterChain</span><span class="err">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">left</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">expression</span><span class="p">();</span>
+    <span class="kd">var</span> <span class="nx">token</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">((</span><span class="nx">token</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">expect</span><span class="p">(</span><span class="s1">'|'</span><span class="p">)))</span> <span class="p">{</span>
+      <span class="nx">left</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">left</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">left</span><span class="p">;</span>
+  <span class="p">},</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
 
-<p><code>filter</code>: Method that deals with all passed values from filter and returns the final value.</p>
+<p><code class="highlighter-rouge">filter</code>: Method that deals with all passed values from filter and returns the final value.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="lineno"> 1</span> <span class="nx">filter</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">inputFn</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno"> 2</span>     <span class="kd">var</span> <span class="nx">fn</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">$filter</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">consume</span><span class="p">().</span><span class="nx">text</span><span class="p">);</span>
-<span class="lineno"> 3</span>     <span class="kd">var</span> <span class="nx">argsFn</span><span class="p">;</span>
-<span class="lineno"> 4</span>     <span class="kd">var</span> <span class="nx">args</span><span class="p">;</span>
-<span class="lineno"> 5</span> 
-<span class="lineno"> 6</span>     <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">peek</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">))</span> <span class="p">{</span>
-<span class="lineno"> 7</span>       <span class="nx">argsFn</span> <span class="o">=</span> <span class="p">[];</span>
-<span class="lineno"> 8</span>       <span class="nx">args</span> <span class="o">=</span> <span class="p">[];</span> <span class="c1">// we can safely reuse the array</span>
-<span class="lineno"> 9</span>       <span class="k">while</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">expect</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">))</span> <span class="p">{</span>
-<span class="lineno">10</span>         <span class="nx">argsFn</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">expression</span><span class="p">());</span>
-<span class="lineno">11</span>       <span class="p">}</span>
-<span class="lineno">12</span>     <span class="p">}</span>
-<span class="lineno">13</span> 
-<span class="lineno">14</span>     <span class="kd">var</span> <span class="nx">inputs</span> <span class="o">=</span> <span class="p">[</span><span class="nx">inputFn</span><span class="p">].</span><span class="nx">concat</span><span class="p">(</span><span class="nx">argsFn</span> <span class="o">||</span> <span class="p">[]);</span>
-<span class="lineno">15</span> 
-<span class="lineno">16</span>     <span class="k">return</span> <span class="nx">extend</span><span class="p">(</span><span class="kd">function</span> <span class="nx">$parseFilter</span><span class="p">(</span><span class="nx">self</span><span class="p">,</span> <span class="nx">locals</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno">17</span>       <span class="kd">var</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">inputFn</span><span class="p">(</span><span class="nx">self</span><span class="p">,</span> <span class="nx">locals</span><span class="p">);</span>
-<span class="lineno">18</span>       <span class="k">if</span> <span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno">19</span>         <span class="nx">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nx">input</span><span class="p">;</span>
-<span class="lineno">20</span> 
-<span class="lineno">21</span>         <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">argsFn</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
-<span class="lineno">22</span>         <span class="k">while</span> <span class="p">(</span><span class="nx">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno">23</span>           <span class="nx">args</span><span class="p">[</span><span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">argsFn</span><span class="p">[</span><span class="nx">i</span><span class="p">](</span><span class="nx">self</span><span class="p">,</span> <span class="nx">locals</span><span class="p">);</span>
-<span class="lineno">24</span>         <span class="p">}</span>
-<span class="lineno">25</span> 
-<span class="lineno">26</span>         <span class="k">return</span> <span class="nx">fn</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span> <span class="nx">args</span><span class="p">);</span>
-<span class="lineno">27</span>       <span class="p">}</span>
-<span class="lineno">28</span> 
-<span class="lineno">29</span>       <span class="k">return</span> <span class="nx">fn</span><span class="p">(</span><span class="nx">input</span><span class="p">);</span>
-<span class="lineno">30</span>     <span class="p">},</span> <span class="p">{</span>
-<span class="lineno">31</span>       <span class="nx">constant</span><span class="o">:</span> <span class="o">!</span><span class="nx">fn</span><span class="p">.</span><span class="nx">$stateful</span> <span class="o">&amp;&amp;</span> <span class="nx">inputs</span><span class="p">.</span><span class="nx">every</span><span class="p">(</span><span class="nx">isConstant</span><span class="p">),</span>
-<span class="lineno">32</span>       <span class="nx">inputs</span><span class="o">:</span> <span class="o">!</span><span class="nx">fn</span><span class="p">.</span><span class="nx">$stateful</span> <span class="o">&amp;&amp;</span> <span class="nx">inputs</span>
-<span class="lineno">33</span>     <span class="p">});</span>
-<span class="lineno">34</span>   <span class="p">},</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34</pre></td><td class="code"><pre><span class="nx">filter</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">inputFn</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">fn</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">$filter</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">consume</span><span class="p">().</span><span class="nx">text</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">argsFn</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">args</span><span class="p">;</span>
 
-<p>Knowing that the filters are only functions which transform the input to some requested output. However filters need of a dependency injection. Because this, filters consist of a factory function (which is already provided internally by AngularJS) with annotations of your dependencies and this is where the <code>$ filterProvider</code> is presented to us from <code>$ filterProvider.register()</code> method.</p>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">peek</span><span class="p">(</span><span class="s1">':'</span><span class="p">))</span> <span class="p">{</span>
+      <span class="nx">argsFn</span> <span class="o">=</span> <span class="p">[];</span>
+      <span class="nx">args</span> <span class="o">=</span> <span class="p">[];</span> <span class="c1">// we can safely reuse the array</span>
+      <span class="k">while</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">expect</span><span class="p">(</span><span class="s1">':'</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nx">argsFn</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">expression</span><span class="p">());</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">var</span> <span class="nx">inputs</span> <span class="o">=</span> <span class="p">[</span><span class="nx">inputFn</span><span class="p">].</span><span class="nx">concat</span><span class="p">(</span><span class="nx">argsFn</span> <span class="o">||</span> <span class="p">[]);</span>
+
+    <span class="k">return</span> <span class="nx">extend</span><span class="p">(</span><span class="kd">function</span> <span class="nx">$parseFilter</span><span class="p">(</span><span class="nx">self</span><span class="p">,</span> <span class="nx">locals</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">inputFn</span><span class="p">(</span><span class="nx">self</span><span class="p">,</span> <span class="nx">locals</span><span class="p">);</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nx">input</span><span class="p">;</span>
+
+        <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">argsFn</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="nx">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">args</span><span class="p">[</span><span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">argsFn</span><span class="p">[</span><span class="nx">i</span><span class="p">](</span><span class="nx">self</span><span class="p">,</span> <span class="nx">locals</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="nx">fn</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span> <span class="nx">args</span><span class="p">);</span>
+      <span class="p">}</span>
+
+      <span class="k">return</span> <span class="nx">fn</span><span class="p">(</span><span class="nx">input</span><span class="p">);</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="na">constant</span><span class="p">:</span> <span class="o">!</span><span class="nx">fn</span><span class="p">.</span><span class="nx">$stateful</span> <span class="o">&amp;&amp;</span> <span class="nx">inputs</span><span class="p">.</span><span class="nx">every</span><span class="p">(</span><span class="nx">isConstant</span><span class="p">),</span>
+      <span class="na">inputs</span><span class="p">:</span> <span class="o">!</span><span class="nx">fn</span><span class="p">.</span><span class="nx">$stateful</span> <span class="o">&amp;&amp;</span> <span class="nx">inputs</span>
+    <span class="p">});</span>
+  <span class="p">},</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Knowing that the filters are only functions which transform the input to some requested output. However filters need of a dependency injection. Because this, filters consist of a factory function (which is already provided internally by AngularJS) with annotations of your dependencies and this is where the <code class="highlighter-rouge">$ filterProvider</code> is presented to us from <code class="highlighter-rouge">$ filterProvider.register()</code> method.</p>
 
 <h2 id="best-practices">BEST PRACTICES</h2>
 
@@ -243,31 +289,56 @@
 
 <p>If you use a $filter with another filter dependencies or use a filter with strategy pattern is simple as well, since you will have to test all filters and parameters. An example of a filter with this strategy pattern is dates. We know that the $filter already has a default filter by date, but in an app that supports multi-language, you could use the following format (it’s just a example. We have better ways to use this functionality):</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="lineno"> 1</span> <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;filters&#39;</span><span class="p">,</span> <span class="p">[])</span>
-<span class="lineno"> 2</span>     <span class="c1">// Call all filters</span>
-<span class="lineno"> 3</span>     <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="s1">&#39;strategyMoneyFilter&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$filter</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno"> 4</span>         <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">attribute</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno"> 5</span>             <span class="k">return</span> <span class="nx">$filter</span><span class="p">(</span><span class="s1">&#39;moneyFormat&#39;</span> <span class="o">+</span> <span class="p">(</span><span class="nx">attribute</span><span class="p">.</span><span class="nx">country</span><span class="p">.</span><span class="nx">toUpper</span><span class="p">()</span> <span class="o">||</span> <span class="s1">&#39;BR&#39;</span><span class="p">))(</span><span class="nx">attribute</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
-<span class="lineno"> 6</span>         <span class="p">};</span>
-<span class="lineno"> 7</span>     <span class="p">})</span>
-<span class="lineno"> 8</span>     <span class="c1">// Brazillian format</span>
-<span class="lineno"> 9</span>     <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="s1">&#39;moneyFormatBR&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-<span class="lineno">10</span>         <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno">11</span>             <span class="c1">// trato e retorno o formato com base no país</span>
-<span class="lineno">12</span>         <span class="p">};</span>
-<span class="lineno">13</span>     <span class="p">})</span>
-<span class="lineno">14</span>     <span class="c1">// US format</span>
-<span class="lineno">15</span>     <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="s1">&#39;moneyFormatUS&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-<span class="lineno">16</span>         <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno">17</span>             <span class="c1">// trato e retorno o formato com base no país</span>
-<span class="lineno">18</span>         <span class="p">};</span>
-<span class="lineno">19</span>     <span class="p">})</span>
-<span class="lineno">20</span>     <span class="c1">// EU Format</span>
-<span class="lineno">21</span>     <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="s1">&#39;moneyFormatEU&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-<span class="lineno">22</span>         <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno">23</span>             <span class="c1">// trato e retorno o formato com base no país</span>
-<span class="lineno">24</span>         <span class="p">};</span>
-<span class="lineno">25</span>     <span class="p">});</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></td><td class="code"><pre><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'filters'</span><span class="p">,</span> <span class="p">[])</span>
+    <span class="c1">// Call all filters</span>
+    <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="s1">'strategyMoneyFilter'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$filter</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">attribute</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">$filter</span><span class="p">(</span><span class="s1">'moneyFormat'</span> <span class="o">+</span> <span class="p">(</span><span class="nx">attribute</span><span class="p">.</span><span class="nx">country</span><span class="p">.</span><span class="nx">toUpper</span><span class="p">()</span> <span class="o">||</span> <span class="s1">'BR'</span><span class="p">))(</span><span class="nx">attribute</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+        <span class="p">};</span>
+    <span class="p">})</span>
+    <span class="c1">// Brazillian format</span>
+    <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="s1">'moneyFormatBR'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// trato e retorno o formato com base no país</span>
+        <span class="p">};</span>
+    <span class="p">})</span>
+    <span class="c1">// US format</span>
+    <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="s1">'moneyFormatUS'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// trato e retorno o formato com base no país</span>
+        <span class="p">};</span>
+    <span class="p">})</span>
+    <span class="c1">// EU Format</span>
+    <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="s1">'moneyFormatEU'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// trato e retorno o formato com base no país</span>
+        <span class="p">};</span>
+    <span class="p">});</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>This way, with only one parameter we can use the best of each parameter and this can be easily worked in javascript, since instead of if’s what define the data stream output format is an information passed to your filter and this information may come from a database, for example!</p>
 
@@ -281,27 +352,45 @@
 
 <p>Testa ire importants in your application in many aspects. i’m not speak “why to tests your application”, but if you want to delve advise <a href="http://tdd.caelum.com.br/">content produced for Caelum by Maurice Aniche, a Brazillian reference when it comes to Software Testing</a>. A test format for custom filters is shown in <a href="https://docs.angularjs.org/tutorial/step_09">tutorial provided by the official website’s project</a>. In this tutorial we have the code example and your tests, respectively. Based on it we can have a north of how to test our filters.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="lineno">1</span> <span class="c1">// phonecatFilters.js</span>
-<span class="lineno">2</span> <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;phonecatFilters&#39;</span><span class="p">,</span> <span class="p">[]).</span><span class="nx">filter</span><span class="p">(</span><span class="s1">&#39;checkmark&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-<span class="lineno">3</span>   <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">input</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno">4</span>     <span class="k">return</span> <span class="nx">input</span> <span class="o">?</span> <span class="s1">&#39;\u2713&#39;</span> <span class="o">:</span> <span class="s1">&#39;\u2718&#39;</span><span class="p">;</span>
-<span class="lineno">5</span>   <span class="p">};</span>
-<span class="lineno">6</span> <span class="p">});</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6</pre></td><td class="code"><pre><span class="c1">// phonecatFilters.js</span>
+<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'phonecatFilters'</span><span class="p">,</span> <span class="p">[]).</span><span class="nx">filter</span><span class="p">(</span><span class="s1">'checkmark'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">input</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">input</span> <span class="p">?</span> <span class="s1">'\u2713'</span> <span class="p">:</span> <span class="s1">'\u2718'</span><span class="p">;</span>
+  <span class="p">};</span>
+<span class="p">});</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Based on the custom filter <code>phonecatFilter</code> previously created, now let’s take a look at your test code.</p>
+<p>Based on the custom filter <code class="highlighter-rouge">phonecatFilter</code> previously created, now let’s take a look at your test code.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="lineno"> 1</span> <span class="c1">// phonecatFiltersTest.js</span>
-<span class="lineno"> 2</span> <span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;filter&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-<span class="lineno"> 3</span> 
-<span class="lineno"> 4</span>   <span class="nx">beforeEach</span><span class="p">(</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;phonecatFilters&#39;</span><span class="p">));</span>
-<span class="lineno"> 5</span> 
-<span class="lineno"> 6</span>   <span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;checkmark&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-<span class="lineno"> 7</span>     <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should convert boolean values to unicode checkmark or cross&#39;</span><span class="p">,</span> <span class="nx">inject</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">checkmarkFilter</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno"> 8</span>       <span class="nx">expect</span><span class="p">(</span><span class="nx">checkmarkFilter</span><span class="p">(</span><span class="kc">true</span><span class="p">)).</span><span class="nx">toBe</span><span class="p">(</span><span class="s1">&#39;\u2713&#39;</span><span class="p">);</span>
-<span class="lineno"> 9</span>       <span class="nx">expect</span><span class="p">(</span><span class="nx">checkmarkFilter</span><span class="p">(</span><span class="kc">false</span><span class="p">)).</span><span class="nx">toBe</span><span class="p">(</span><span class="s1">&#39;\u2718&#39;</span><span class="p">);</span>
-<span class="lineno">10</span>     <span class="p">}));</span>
-<span class="lineno">11</span>   <span class="p">});</span>
-<span class="lineno">12</span> <span class="p">});</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12</pre></td><td class="code"><pre><span class="c1">// phonecatFiltersTest.js</span>
+<span class="nx">describe</span><span class="p">(</span><span class="s1">'filter'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="nx">beforeEach</span><span class="p">(</span><span class="nx">module</span><span class="p">(</span><span class="s1">'phonecatFilters'</span><span class="p">));</span>
+
+  <span class="nx">describe</span><span class="p">(</span><span class="s1">'checkmark'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">it</span><span class="p">(</span><span class="s1">'should convert boolean values to unicode checkmark or cross'</span><span class="p">,</span> <span class="nx">inject</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">checkmarkFilter</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">expect</span><span class="p">(</span><span class="nx">checkmarkFilter</span><span class="p">(</span><span class="kc">true</span><span class="p">)).</span><span class="nx">toBe</span><span class="p">(</span><span class="s1">'\u2713'</span><span class="p">);</span>
+      <span class="nx">expect</span><span class="p">(</span><span class="nx">checkmarkFilter</span><span class="p">(</span><span class="kc">false</span><span class="p">)).</span><span class="nx">toBe</span><span class="p">(</span><span class="s1">'\u2718'</span><span class="p">);</span>
+    <span class="p">}));</span>
+  <span class="p">});</span>
+<span class="p">});</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h3 id="conclusion">CONCLUSION</h3>
 
