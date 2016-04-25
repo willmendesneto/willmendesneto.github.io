@@ -1,7 +1,7 @@
 # Build settings
 markdown: kramdown
-highlighter: pygments
-gems: [pygments.rb, kramdown, jekyll-paginate, jekyll-gist]
+highlighter: rouge
+gems: [rouge, kramdown, jekyll-paginate, jekyll-gist]
 
 # Site settings
 title: "Wilson Mendes - Blog"
