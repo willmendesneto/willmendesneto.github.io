@@ -5,9 +5,116 @@
     <description>This is my blog, where i talk about technologies</description>
     <link>http://willmendesneto.github.io/</link>
     <atom:link href="http://willmendesneto.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 11 Mar 2016 11:27:04 +0000</pubDate>
-    <lastBuildDate>Fri, 11 Mar 2016 11:27:04 +0000</lastBuildDate>
-    <generator>Jekyll v3.1.2</generator>
+    <pubDate>Mon, 25 Apr 2016 13:51:38 +0000</pubDate>
+    <lastBuildDate>Mon, 25 Apr 2016 13:51:38 +0000</lastBuildDate>
+    <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>Comunicação entre processos no ElectronJS</title>
+        <description>&lt;p&gt;Fala galera. Este post é bem simples, apesar de focar alguns aspectos mais intermediários sobre o ElectronJS. Para quem não conhece é um framework para cross-platform desktop apps, com base nas tecnologias como NodeJS e Chromium.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Caso tenha interesse em uma introdução ao ElectronJS, acesse ao post do Henrique Sosa no Tableless &lt;a href=&quot;http://tableless.com.br/introducao-ao-electron/&quot;&gt;Introdução ao Electron&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;E neste momento você deve estar se perguntando: “Mas o que tem a ver o Electron com processos? Realmente tenho que saber sobre isso?”. A resposta é sim, você precisa (felizmente ou infelizmente). Infelizmente a documentação do ElectronJS é realmente deficitária neste ponto, daí a idéia deste post.&lt;/p&gt;
+
+&lt;h1 id=&quot;sobre-os-processos&quot;&gt;Sobre os Processos&lt;/h1&gt;
+
+&lt;p&gt;Todo o ciclo de sua aplicação electron está baseada nos processos:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;main: O processo principal é aonde lida-se diretamente com A API electron, como Tray, BrowserWindow, etc. Nele você dará o &lt;code&gt;bootstrap&lt;/code&gt; de sua aplicação com informações como tamanho da tela da aplicação, se existirá um menu com ícone integrado (Tray) além de outros opcionais. Para maiores detalhes acesse a &lt;a href=&quot;http://electron.atom.io/docs/all/&quot;&gt;documentação do Electron&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;renderer: Camada onde a aplicação realmente estará ativa e possui acessos ao DOM e stylesheets, por exemplo;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Em alguns momentos você quer criar uma maior e melhor interação entre usuário e app, como por exemplo inserir algumas preferências para o usuário. Vamos pensar no seguinte cenário:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;O usuário pode ir na página de “Preferências” e escolher se o app poderá enviar notificações nativas para o usuário.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Se pensarmos de uma maneira técnica, devemos pensar em armazenar estas informações localmente e carregarmos no momento do carregamento do aplicativo. Para isso vamos usar um banco simples, como o &lt;a href=&quot;https://www.sqlite.org/&quot;&gt;SQLite&lt;/a&gt; ou o &lt;a href=&quot;http://typicode.github.io/lowdb/&quot;&gt;LowDB&lt;/a&gt;. Alguns pontos que você precisa saber são:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A depender a sua opção de armazenamento de dados estas informações só poderão ser acessadas no momento que o processo de renderização iniciar;&lt;/li&gt;
+  &lt;li&gt;O DOM não pode ser acessado no processo principal, somente no de renderização;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;conhecendo-os-ipcs&quot;&gt;Conhecendo os IPC’s&lt;/h1&gt;
+
+&lt;p&gt;Para fazer esta comunicação entra em cena o &lt;a href=&quot;http://electron.atom.io/docs/v0.33.0/api/ipc-renderer/&quot;&gt;IPC Renderer&lt;/a&gt; e o &lt;a href=&quot;http://electron.atom.io/docs/v0.33.0/api/ipc-main-process/&quot;&gt;IPC Main&lt;/a&gt;. O IPC Main será utilizado no arquivo de bootstrap do aplicativo (configurado no &lt;code&gt;package.json&lt;/code&gt; do seu app) e o IPC Renderer será utilizado no arquivo principal do da sua aplicação realmente dita (com os comportamentos, acesso ao DOM, etc). Todos os IPC’s tem os mesmos eventos que são:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;.on(): cria o listener do evento;&lt;/li&gt;
+  &lt;li&gt;.send(): faz o trigger do evento previamente criado;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Então para isso o seu arquivo principal terá o seguinte código.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;import {ipcMain} from &#39;electron&#39;;
+...
+// Iniciando o evento que aguarda o trigger do `ipc-renderer`
+ipcMain.on(&#39;app:updateAppWithConfigInformations&#39;, function(event, config){
+  ...
+  // Retorno de sucesso ou erro para o `ipc-renderer`
+  // Neste exemplo sempre retornará com sucesso
+  event.sender.send(&#39;app:updateAppWithConfigInformationsCallback&#39;, {success: true});
+});
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;E no seu processo de renderização você acessa da seguinte maneira.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;import ipcRenderer from &#39;ipc-renderer&#39;;
+
+...
+// Acesso ao seu formato de armazenamento
+ipc.send(&#39;app:updateAppWithConfigInformations&#39;, config);
+...
+// Listener para verificar se a operação no processo principal foi finalizada com sucesso
+ipcRenderer.on(&#39;app:updateAppWithConfigInformationsCallback&#39;, function(event, response) {
+  // Validação do retorno do processo principal
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&quot;concluso&quot;&gt;Conclusão&lt;/h1&gt;
+
+&lt;p&gt;Este exemplo é simples, lembrando o &lt;a href=&quot;http://redis.io/commands/ping&quot;&gt;comando PING entre o Redis Client e Redis Server&lt;/a&gt;. Desta forma, você consegue adicionar várias outras integrações entre os processos da sua aplicação desktop. Como esta integração não é muito bem documentada pelo framework (infelizmente vários projetos open source sofrem deste mal), fica uma dica bem interessante de sua utilização com uma situação real.&lt;/p&gt;
+
+&lt;p&gt;E aí? Já utilizou esta comunicação entre processos antes? Qual foi a sua necessidade? Compartilhe sua experiência!&lt;/p&gt;
+
+&lt;p&gt;Links:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Tableless - Introdução ao Electron: &lt;a href=&quot;http://tableless.com.br/introducao-ao-electron/&quot;&gt;http://tableless.com.br/introducao-ao-electron/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Documentação do ElectronJs: &lt;a href=&quot;http://electron.atom.io/docs/all/&quot;&gt;http://electron.atom.io/docs/all/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;LowDB: &lt;a href=&quot;http://typicode.github.io/lowdb/&quot;&gt;http://typicode.github.io/lowdb/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;SQLite: &lt;a href=&quot;https://www.sqlite.org/&quot;&gt;https://www.sqlite.org/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;ElectronJS - IPC Renderer: &lt;a href=&quot;http://electron.atom.io/docs/v0.33.0/api/ipc-renderer/&quot;&gt;http://electron.atom.io/docs/v0.33.0/api/ipc-renderer/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;ElectronJS - IPC Main: &lt;a href=&quot;http://electron.atom.io/docs/v0.33.0/api/ipc-main-process/&quot;&gt;http://electron.atom.io/docs/v0.33.0/api/ipc-main-process/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Redis - Comando PING: &lt;a href=&quot;http://redis.io/commands/ping&quot;&gt;http://redis.io/commands/ping&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Mon, 25 Apr 2016 00:00:00 +0000</pubDate>
+        <link>http://willmendesneto.github.io/2016/04/25/comunicacao-entre-processos-no-electron-js</link>
+        <guid isPermaLink="true">http://willmendesneto.github.io/2016/04/25/comunicacao-entre-processos-no-electron-js</guid>
+        
+        <category>desktop</category>
+        
+        <category>apps</category>
+        
+        <category>nodejs</category>
+        
+        
+        <category>desktop</category>
+        
+        <category>apps</category>
+        
+        <category>nodejs</category>
+        
+      </item>
     
       <item>
         <title>Otimizando o watch do jekyll</title>
@@ -1395,446 +1502,6 @@ exports.config = {
         <category>end-to-end</category>
         
         <category>tests</category>
-        
-      </item>
-    
-      <item>
-        <title>CLI: Funções e Alias</title>
-        <description>&lt;h2 id=&quot;introduo&quot;&gt;INTRODUÇÃO&lt;/h2&gt;
-
-&lt;p&gt;Faz algum tempo que optei por utilizar editores de texto ao invés de utilizar IDE’s mais robustas. A partir daí utilizo bastante os editores VIM e Sublime Text e adaptei algumas coisas ao meu workflow quando estou no ambiente CLI. Esta postagem mostra algumas alterações que fiz no meu workflow para melhorar o ambiente CLI e que podem ajudar outros devs.&lt;/p&gt;
-
-&lt;h2 id=&quot;linha-de-comando&quot;&gt;LINHA DE COMANDO&lt;/h2&gt;
-
-&lt;p&gt;É sempre uma boa prática modularizar os arquivos. Para isto criaremos 2 arquivos:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;.functions&lt;/code&gt;: arquivo onde ficarão as funções;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;.aliases&lt;/code&gt;: arquivo onde ficarão os atalhos/aliases;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Utilizo como base algumas configurações do Paul Irish, uma das referências quando se fala em frontend atualmente, e os arquivos ficaram com o seguinte conteúdo:&lt;/p&gt;
-
-&lt;p&gt;.functions&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;# Simple calculator
-function calc() {
-    local result=&quot;&quot;;
-    result=&quot;$(printf &quot;scale=10;$*\n&quot; | bc --mathlib | tr -d &#39;\\\n&#39;)&quot;;
-    #                       └─ default (when `--mathlib` is used) is 20
-    #
-    if [[ &quot;$result&quot; == *.* ]]; then
-        # improve the output for decimal numbers
-        printf &quot;$result&quot; |
-        sed -e &#39;s/^\./0./&#39;        `# add &quot;0&quot; for cases like &quot;.5&quot;` \
-            -e &#39;s/^-\./-0./&#39;      `# add &quot;0&quot; for cases like &quot;-.5&quot;`\
-            -e &#39;s/0*$//;s/\.$//&#39;;  # remove trailing zeros
-    else
-        printf &quot;$result&quot;;
-    fi;
-    printf &quot;\n&quot;;
-}
-
-# Create a new directory and enter it
-function mkd() {
-    mkdir -p &quot;$@&quot; &amp;amp;&amp;amp; cd &quot;$_&quot;;
-}
-
-# Create a .tar.gz archive, using `zopfli`, `pigz` or `gzip` for compression
-function targz() {
-    local tmpFile=&quot;${@%/}.tar&quot;;
-    tar -cvf &quot;${tmpFile}&quot; --exclude=&quot;.DS_Store&quot; &quot;${@}&quot; || return 1;
-
-    size=$(
-        stat -f&quot;%z&quot; &quot;${tmpFile}&quot; 2&amp;gt; /dev/null; # OS X `stat`
-        stat -c&quot;%s&quot; &quot;${tmpFile}&quot; 2&amp;gt; /dev/null # GNU `stat`
-    );
-
-    local cmd=&quot;&quot;;
-    if (( size &amp;lt; 52428800 )) &amp;amp;&amp;amp; hash zopfli 2&amp;gt; /dev/null; then
-        # the .tar file is smaller than 50 MB and Zopfli is available; use it
-        cmd=&quot;zopfli&quot;;
-    else
-        if hash pigz 2&amp;gt; /dev/null; then
-            cmd=&quot;pigz&quot;;
-        else
-            cmd=&quot;gzip&quot;;
-        fi;
-    fi;
-
-    echo &quot;Compressing .tar using \`${cmd}\`…&quot;;
-    &quot;${cmd}&quot; -v &quot;${tmpFile}&quot; || return 1;
-    [ -f &quot;${tmpFile}&quot; ] &amp;amp;&amp;amp; rm &quot;${tmpFile}&quot;;
-    echo &quot;${tmpFile}.gz created successfully.&quot;;
-}
-
-# Create a new directory and enter it
-function md() {
-    mkdir -p &quot;$@&quot; &amp;amp;&amp;amp; cd &quot;$@&quot;
-}
-
-
-# find shorthand
-function f() {
-    find . -name &quot;$1&quot;
-}
-
-# Start an HTTP server from a directory, optionally specifying the port
-function server() {
-    local port=&quot;${1:-8000}&quot;
-    open &quot;http://localhost:${port}/&quot;
-    # Set the default Content-Type to `text/plain` instead of `application/octet-stream`
-    # And serve everything as UTF-8 (although not technically correct, this doesn’t break anything for binary files)
-    python -c $&#39;import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[&quot;&quot;] = &quot;text/plain&quot;;\nfor key, value in map.items():\n\tmap[key] = value + &quot;;charset=UTF-8&quot;;\nSimpleHTTPServer.test();&#39; &quot;$port&quot;
-}
-
-# git log with per-commit cmd-clickable GitHub URLs (iTerm)
-function gf() {
-  local remote=&quot;$(git remote -v | awk &#39;/^origin.*\(push\)$/ {print $2}&#39;)&quot;
-  [[ &quot;$remote&quot; ]] || return
-  local user_repo=&quot;$(echo &quot;$remote&quot; | perl -pe &#39;s/.*://;s/\.git$//&#39;)&quot;
-  git log $* --name-status --color | awk &quot;$(cat &amp;lt;&amp;lt;AWK
-    /^.*commit [0-9a-f]{40}/ {sha=substr(\$2,1,7)}
-    /^[MA]\t/ {printf &quot;%s\thttps://github.com/$user_repo/blob/%s/%s\n&quot;, \$1, sha, \$2; next}
-    /.*/ {print \$0}
-AWK
-  )&quot; | less -F
-}
-
-
-# Copy w/ progress
-cp_p () {
-  rsync -WavP --human-readable --progress $1 $2
-}
-
-
-# Test if HTTP compression (RFC 2616 + SDCH) is enabled for a given URL.
-# Send a fake UA string for sites that sniff it instead of using the Accept-Encoding header. (Looking at you, ajax.googleapis.com!)
-function httpcompression() {
-    encoding=&quot;$(curl -LIs -H &#39;User-Agent: Mozilla/5 Gecko&#39; -H &#39;Accept-Encoding: gzip,deflate,compress,sdch&#39; &quot;$1&quot; | grep &#39;^Content-Encoding:&#39;)&quot; &amp;amp;&amp;amp; echo &quot;$1 is encoded using ${encoding#* }&quot; || echo &quot;$1 is not using any encoding&quot;
-}
-
-# Syntax-highlight JSON strings or files
-function json() {
-    if [ -p /dev/stdin ]; then
-        # piping, e.g. `echo &#39;{&quot;foo&quot;:42}&#39; | json`
-        python -mjson.tool | pygmentize -l javascript
-    else
-        # e.g. `json &#39;{&quot;foo&quot;:42}&#39;`
-        python -mjson.tool &amp;lt;&amp;lt;&amp;lt; &quot;$*&quot; | pygmentize -l javascript
-    fi
-}
-
-# take this repo and copy it to somewhere else minus the .git stuff.
-function gitexport(){
-    mkdir -p &quot;$1&quot;
-    git archive master | tar -x -C &quot;$1&quot;
-}
-
-
-
-# get gzipped size
-function gz() {
-    echo &quot;orig size    (bytes): &quot;
-    cat &quot;$1&quot; | wc -c
-    echo &quot;gzipped size (bytes): &quot;
-    gzip -c &quot;$1&quot; | wc -c
-}
-
-
-# Extract archives - use: extract &amp;lt;file&amp;gt;
-# Based on http://dotfiles.org/~pseup/.bashrc
-function extract() {
-    if [ -f &quot;$1&quot; ] ; then
-        local filename=$(basename &quot;$1&quot;)
-        local foldername=&quot;${filename%%.*}&quot;
-        local fullpath=`perl -e &#39;use Cwd &quot;abs_path&quot;;print abs_path(shift)&#39; &quot;$1&quot;`
-        local didfolderexist=false
-        if [ -d &quot;$foldername&quot; ]; then
-            didfolderexist=true
-            read -p &quot;$foldername already exists, do you want to overwrite it? (y/n) &quot; -n 1
-            echo
-            if [[ $REPLY =~ ^[Nn]$ ]]; then
-                return
-            fi
-        fi
-        mkdir -p &quot;$foldername&quot; &amp;amp;&amp;amp; cd &quot;$foldername&quot;
-        case $1 in
-            *.tar.bz2) tar xjf &quot;$fullpath&quot; ;;
-            *.tar.gz) tar xzf &quot;$fullpath&quot; ;;
-            *.tar.xz) tar Jxvf &quot;$fullpath&quot; ;;
-            *.tar.Z) tar xzf &quot;$fullpath&quot; ;;
-            *.tar) tar xf &quot;$fullpath&quot; ;;
-            *.taz) tar xzf &quot;$fullpath&quot; ;;
-            *.tb2) tar xjf &quot;$fullpath&quot; ;;
-            *.tbz) tar xjf &quot;$fullpath&quot; ;;
-            *.tbz2) tar xjf &quot;$fullpath&quot; ;;
-            *.tgz) tar xzf &quot;$fullpath&quot; ;;
-            *.txz) tar Jxvf &quot;$fullpath&quot; ;;
-            *.zip) unzip &quot;$fullpath&quot; ;;
-            *) echo &quot;&#39;$1&#39; cannot be extracted via extract()&quot; &amp;amp;&amp;amp; cd .. &amp;amp;&amp;amp; ! $didfolderexist &amp;amp;&amp;amp; rm -r &quot;$foldername&quot; ;;
-        esac
-    else
-        echo &quot;&#39;$1&#39; is not a valid file&quot;
-    fi
-}
-
-
-# animated gifs from any video
-# from alex sexton   gist.github.com/SlexAxton/4989674
-gifify() {
-  if [[ -n &quot;$1&quot; ]]; then
-    if [[ $2 == &#39;--good&#39; ]]; then
-      ffmpeg -i $1 -r 10 -vcodec png out-static-%05d.png
-      time convert -verbose +dither -layers Optimize -resize 900x900\&amp;gt; out-static*.png  GIF:- | gifsicle --colors 128 --delay=5 --loop --optimize=3 --multifile - &amp;gt; $1.gif
-      rm out-static*.png
-    else
-      ffmpeg -i $1 -s 600x400 -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=3 &amp;gt; $1.gif
-    fi
-  else
-    echo &quot;proper usage: gifify &amp;lt;input_movie.mov&amp;gt;. You DO need to include extension.&quot;
-  fi
-}
-
-# turn that video into webm.
-# brew reinstall ffmpeg --with-libvpx
-webmify(){
-    ffmpeg -i $1 -vcodec libvpx -acodec libvorbis -isync -copyts -aq 80 -threads 3 -qmax 30 -y $2 $1.webm
-}
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Agora o arquivo .aliases&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;
-################################################################################
-#       Default Aliases
-################################################################################
-
-# Easier navigation: .., ..., ...., ....., ~ and -
-alias ..=&quot;cd ..&quot;
-alias ...=&quot;cd ../..&quot;
-alias ....=&quot;cd ../../..&quot;
-alias .....=&quot;cd ../../../..&quot;
-alias ~=&quot;cd ~&quot; # `cd` is probably faster to type though
-alias -- -=&quot;cd -&quot;
-
-# List only directories
-alias listdir=&quot;ls -lF ${colorflag} | grep --color=never &#39;^d&#39;&quot;
-
-alias sha1=&#39;openssl sha1&#39;
-
-alias path=&#39;echo -e ${PATH//:/\\n}&#39;
-alias now=&#39;date +&quot;%T&quot;&#39;
-alias nowtime=now
-alias nowdate=&#39;date +&quot;%d-%m-%Y&quot;&#39;
-
-# Stop after sending count ECHO_REQUEST packets #
-alias ping=&#39;ping -c 5&#39;
-# Do not wait interval 1 second, go fast #
-alias fastping=&#39;ping -c 100 -s.2&#39;
-
-alias ports=&#39;netstat -tulanp&#39;
-
-# get web server headers #
-alias header=&#39;curl -I&#39;
-
-# find out if remote server supports gzip / mod_deflate or not #
-alias headerc=&#39;curl -I --compress&#39;
-
-## shortcut  for iptables and pass it via sudo#
-alias ipt=&#39;sudo /sbin/iptables&#39;
-
-# display all rules #
-alias iptlist=&#39;sudo /sbin/iptables -L -n -v --line-numbers&#39;
-alias iptlistin=&#39;sudo /sbin/iptables -L INPUT -n -v --line-numbers&#39;
-alias iptlistout=&#39;sudo /sbin/iptables -L OUTPUT -n -v --line-numbers&#39;
-alias iptlistfw=&#39;sudo /sbin/iptables -L FORWARD -n -v --line-numbers&#39;
-alias firewall=iptlist
-
-## Colorize the grep command output for ease of use (good for log files)##
-alias grep=&#39;grep --color=auto&#39;
-alias egrep=&#39;egrep --color=auto&#39;
-alias fgrep=&#39;fgrep --color=auto&#39;
-
-# YUM Package manager alias
-alias yumupdate=&#39;sudo yum update &amp;amp;&amp;amp; sudo yum upgrade&#39;
-alias yumsearch=&#39;sudo yum search&#39;
-alias yumremove=&#39;sudo yum remove&#39;
-
-# Shortcuts
-alias dl=&quot;cd ~/Downloads&quot;
-alias dt=&quot;cd ~/Desktop&quot;
-alias p=&quot;cd ~/projects&quot;
-alias g=&quot;git&quot;
-alias h=&quot;history&quot;
-alias j=&quot;jobs&quot;
-
-# IP addresses
-alias ip=&quot;dig +short myip.opendns.com @resolver1.opendns.com&quot;
-alias localip=&quot;ifconfig getifaddr en1&quot;
-alias ips=&quot;ifconfig -a | perl -nle&#39;/(\d+\.\d+\.\d+\.\d+)/ &amp;amp;&amp;amp; print $1&#39;&quot;
-
-
-# Copy my public key to the pasteboard
-alias pubkey=&quot;more ~/.ssh/id_rsa.pub | pbcopy | printf &#39;=&amp;gt; Public key copied to pasteboard.\n&#39;&quot;
-
-# Flush Directory Service cache
-alias flush=&quot;dscacheutil -flushcache&quot;
-
-# View HTTP traffic
-alias sniff=&quot;sudo ngrep -d &#39;en1&#39; -t &#39;^(GET|POST) &#39; &#39;tcp and port 80&#39;&quot;
-alias httpdump=&quot;sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \&quot;Host\: .*|GET \/.*\&quot;&quot;
-
-# File size
-alias fs=&quot;stat -f \&quot;%z bytes\&quot;&quot;
-
-# Recursively delete `.DS_Store` files
-alias cleanup=&quot;find . -type f -name &#39;*.DS_Store&#39; -ls -delete&quot;
-alias xlog=&quot;sudo grep --binary-files=without-match --color -nsie &#39;(EE)&#39; -e &#39;(WW)&#39; /var/log/Xorg.0.log&quot;
-alias which=&quot;whence&quot;
-alias sd=&#39;export DISPLAY=:0.0&#39;
-alias cpan=&quot;perl -MCPAN -e shell&quot;
-alias cup=&#39;cvs -z3 update -Pd&#39;
-alias mv=&#39;nocorrect /bin/mv&#39;
-alias rm=&#39;nocorrect /bin/rm -i&#39;
-alias shred=&#39;nocorrect ionice -c3 /usr/bin/shred -fuz&#39;
-alias wipe=&#39;nocorrect ionice -c3 /usr/bin/wipe -l2 -v -x -r&#39;
-alias man=&#39;nocorrect man&#39;
-alias mkdir=&#39;nocorrect /bin/mkdir -p&#39;
-alias find=&#39;noglob find&#39;
-
-# Jekyll alias
-alias jsw=&#39;jekyll serve -w&#39;
-
-# alias wget=&quot;wget -c&quot;
-alias lsd=&#39;ls -Fld *(-/DN)&#39;
-alias weather=&quot;/home/gregf/code/bin/forecast/forecast.rb&quot;
-alias ncmpc=&quot;ncmpc -c&quot;
-alias fixdbus=&quot;sudo -s dbus-uuidgen --ensure&quot;
-
-alias v=&quot;vim&quot;
-alias o=&quot;open&quot;
-alias d=&quot;devtodo -A&quot;
-alias s=&quot;sudo subl&quot;
-alias subl=&quot;sudo subl&quot;
-
-# Reload the shell (i.e. invoke as a login shell)
-alias reloadshell=&quot;exec $SHELL -l&quot;
-
-# Concatenate and print content of files (add line numbers)
-alias catn=&quot;cat -n&quot;
-
-# Kill all the tabs in Chrome to free up memory
-# [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
-alias chromekill=&quot;ps ux | grep &#39;[C]hrome Helper --type=renderer&#39; | grep -v extension-process | tr -s &#39; &#39; | cut -d &#39; &#39; -f2 | xargs kill&quot;
-
-alias tlog=&#39;tail -f log/development.log&#39;
-alias rst=&#39;touch tmp/restart.txt&#39;
-alias giti=&quot;vim .gitignore&quot;
-alias g=&#39;gthumb&#39;
-alias burniso=&#39;wodim -v dev=/dev/cdrw&#39;
-alias burndvdiso=&#39;growisofs -speed=8 -dvd-compat -Z /dev/dvdrw=$1&#39;
-alias biosinfo=&#39;sudo dmidecode&#39;
-alias f-spot=&#39;dbus-launch f-spot&#39;
-alias gnp=&quot;git-notpushed&quot;
-alias k=&quot;killall&quot;
-alias poweroff=&#39;sudo poweroff&#39;
-alias reboot=&#39;sudo reboot&#39;
-alias lsnoext=&quot;ls | grep -v &#39;\.&#39;&quot;
-alias ipager=&#39;k ipager; sleep 1; ipager &amp;amp;&#39;
-alias gis=&quot;git status | grep --color=always &#39;^[^a-z]\+\(new file:\|modified:\)&#39; | cut -d&#39;#&#39; -f2-&quot;
-alias ports=&#39;netstat --inet -pln&#39;
-
-alias subl=&quot;sudo subl&quot;
-alias la=&quot;ls -la&quot;
-alias srm=&quot;sudo rm -rf&quot;
-alias smkdir=&quot;sudo mkdir&quot;
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;oh-my-zsh&quot;&gt;OH-MY-ZSH&lt;/h2&gt;
-
-&lt;p&gt;Algumas informações para inserirmos algumas funções e aliases no ambiente CLI. Como utilizo e contribuo para o projeto oh-my-zsh, ele por padrão utiliza um arquivo &lt;code&gt;.zshrc&lt;/code&gt; para carregar alguns plugins, alias e funções. Existe uma linha para o carregamento automático dos plugins do oh-my-zsh e alguns que carrego por padrão são:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;plugins=(git rails ruby frontend-search nvm rvm vagrant)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;E adicionamos estas linhas no arquivo &lt;code&gt;.zshrc&lt;/code&gt; para carregar as nossas configurações.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;##############################################################################
-#       Clear screen on logout
-##############################################################################
-trap clear 0
-
-################################################################################
-# Resource Limits
-################################################################################
-limit stack 8192
-#limit core unlimited
-limit core 0
-limit -s
-
-# Source global definitions
-if [ -f ~/.functions ]; then
-    . ~/.functions
-fi
-
-# Source global definitions
-if [ -f ~/.aliases ]; then
-    . ~/.aliases
-fi
-
-
-# User configuration
-export PATH=&quot;$PATH:$HOME/bin:/usr/local/bin&quot;
-
-devilspie -a &amp;amp; clear;
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;concluso&quot;&gt;CONCLUSÃO&lt;/h2&gt;
-
-&lt;p&gt;Estas são algumas configurações que utilizo ao trabalhar em ambientes CLI, o que acontece diariamente já que minhas ferramentas de trabalho “default” são um editor de texto e um terminal.&lt;/p&gt;
-
-&lt;p&gt;Tem outro workflow para ambientes CLI? Comente e compartilhe essa experiência, pois…&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Conhecimento bom é conhecimento compartilhado&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Abraço e até mais!&lt;/p&gt;
-
-&lt;p&gt;Links:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Gist: arquivo .functions &lt;a href=&quot;https://gist.github.com/willmendesneto/b6bc8ab4f868a9ec459c&quot;&gt;https://gist.github.com/willmendesneto/b6bc8ab4f868a9ec459c&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Gist: arquivo .aliases &lt;a href=&quot;https://gist.github.com/willmendesneto/3c1c150666b02232e494&quot;&gt;https://gist.github.com/willmendesneto/3c1c150666b02232e494&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Fri, 13 Feb 2015 00:00:00 +0000</pubDate>
-        <link>http://willmendesneto.github.io/2015/02/13/cli-funcoes-e-alias</link>
-        <guid isPermaLink="true">http://willmendesneto.github.io/2015/02/13/cli-funcoes-e-alias</guid>
-        
-        <category>oh-my-zsh</category>
-        
-        <category>workflow</category>
-        
-        <category>frontend</category>
-        
-        <category>backend</category>
-        
-        <category>cli</category>
-        
-        <category>functions</category>
-        
-        <category>aliases</category>
-        
-        
-        <category>oh-my-zsh</category>
-        
-        <category>workflow</category>
         
       </item>
     

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <!-- (1) Optimize for mobile versions: http://goo.gl/EOpFl -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- (1) force latest IE rendering engine: bit.ly/1c8EiC9 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Comunicação entre processos no ElectronJS</title>
+  <meta name="description" content="This is my blog, where i talk about technologies" />
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="canonical" href="http://willmendesneto.github.io/2016/04/25/comunicacao-entre-processos-no-electron-js">
+
+  
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="cache-control" content="no-store, no-cache, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-store, no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE" />
+    <meta http-equiv="PRAGMA" content="NO-CACHE" />
+    <meta name="domain" content="willmendesneto.github.io" />
+    <meta name="url" content="/2016/04/25/comunicacao-entre-processos-no-electron-js" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Comunicação entre processos no ElectronJS" />
+    <meta property="og:url" content="/2016/04/25/comunicacao-entre-processos-no-electron-js" />
+    <meta property="og:description" content="" />
+    <meta property="article:author" content="" />
+    <meta property="og:site_name" content="Wilson Mendes - Blog" />
+    <meta property="og:image" content="" />
+    <meta name="twitter:site" content="@willmendesneto" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="autor" content="Wilson Mendes" />
+    <meta name="reply-to" content="willmendesneto@gmail.com">
+    <meta name="revisit-after" content="3" />
+    <meta name="title" content="Wilson Mendes - Blog">
+    <meta name="description" content="This is my blog, where i talk about technologies">
+    <meta name="keywords" content="["desktop",, "apps",, "nodejs"]" />
+  
+
+  <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Pesquisa no Blog" />
+
+  <link rel="shortcut icon" href="/assets/images/favicon.ico">
+<!--  <link rel="stylesheet" href=""> -->
+  <!-- <link rel="stylesheet" href="http://brick.a.ssl.fastly.net/Linux+Libertine:400,400i,700,700i/Open+Sans:400,400i,700,700i"> -->
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700,800" rel="stylesheet" type="text/css">
+
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/main.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/mini-preview.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/solarized-dark.css" />
+  <link rel="stylesheet" type="text/css" media="print" href="/assets/css/print.css" />
+</head>
+
+  <body itemscope itemtype="http://schema.org/Article">
+    <!-- header start -->
+
+<!-- <a href="http://willmendesneto.github.io" class="logo-readium"><span class="logo" style="background-image: url()"></span></a> -->
+
+<!-- header end -->
+
+    <main class="content" role="main">
+      <article class="post">
+        
+        <div class="noarticleimage">
+          <div class="post-meta">
+            <h1 class="post-title">Comunicação entre processos no ElectronJS</h1>
+            <div class="cf post-meta-text">
+              <div class="author-image" style="background-image: url(https://pt.gravatar.com/userimage/20307137/677413a79461cdfd62c8a65143214850.png?size=300)">Blog Logo</div>
+              <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person"></h4>
+              on
+              <time datetime="2016-04-25T00:00:00+00:00">25 Apr 2016</time>
+              <!-- , tagged on <span class="post-tag-">, <a href="/tag/"></a></span> -->
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        
+        <section class="post-content">
+
+          <a class="home-button"  href="/">&laquo; Home</a>
+          <div class="post-reading">
+            Lido a <span class="post-reading-time"></span>
+          </div>
+          <a name="topofpage"></a>
+          <div id="post-content-page">
+            <p>Fala galera. Este post é bem simples, apesar de focar alguns aspectos mais intermediários sobre o ElectronJS. Para quem não conhece é um framework para cross-platform desktop apps, com base nas tecnologias como NodeJS e Chromium.</p>
+
+<blockquote>
+  <p>Caso tenha interesse em uma introdução ao ElectronJS, acesse ao post do Henrique Sosa no Tableless <a href="http://tableless.com.br/introducao-ao-electron/">Introdução ao Electron</a></p>
+</blockquote>
+
+<p>E neste momento você deve estar se perguntando: “Mas o que tem a ver o Electron com processos? Realmente tenho que saber sobre isso?”. A resposta é sim, você precisa (felizmente ou infelizmente). Infelizmente a documentação do ElectronJS é realmente deficitária neste ponto, daí a idéia deste post.</p>
+
+<h1 id="sobre-os-processos">Sobre os Processos</h1>
+
+<p>Todo o ciclo de sua aplicação electron está baseada nos processos:</p>
+
+<ul>
+  <li>main: O processo principal é aonde lida-se diretamente com A API electron, como Tray, BrowserWindow, etc. Nele você dará o <code>bootstrap</code> de sua aplicação com informações como tamanho da tela da aplicação, se existirá um menu com ícone integrado (Tray) além de outros opcionais. Para maiores detalhes acesse a <a href="http://electron.atom.io/docs/all/">documentação do Electron</a>.</li>
+  <li>renderer: Camada onde a aplicação realmente estará ativa e possui acessos ao DOM e stylesheets, por exemplo;</li>
+</ul>
+
+<p>Em alguns momentos você quer criar uma maior e melhor interação entre usuário e app, como por exemplo inserir algumas preferências para o usuário. Vamos pensar no seguinte cenário:</p>
+
+<blockquote>
+  <p>O usuário pode ir na página de “Preferências” e escolher se o app poderá enviar notificações nativas para o usuário.</p>
+</blockquote>
+
+<p>Se pensarmos de uma maneira técnica, devemos pensar em armazenar estas informações localmente e carregarmos no momento do carregamento do aplicativo. Para isso vamos usar um banco simples, como o <a href="https://www.sqlite.org/">SQLite</a> ou o <a href="http://typicode.github.io/lowdb/">LowDB</a>. Alguns pontos que você precisa saber são:</p>
+
+<ul>
+  <li>A depender a sua opção de armazenamento de dados estas informações só poderão ser acessadas no momento que o processo de renderização iniciar;</li>
+  <li>O DOM não pode ser acessado no processo principal, somente no de renderização;</li>
+</ul>
+
+<h1 id="conhecendo-os-ipcs">Conhecendo os IPC’s</h1>
+
+<p>Para fazer esta comunicação entra em cena o <a href="http://electron.atom.io/docs/v0.33.0/api/ipc-renderer/">IPC Renderer</a> e o <a href="http://electron.atom.io/docs/v0.33.0/api/ipc-main-process/">IPC Main</a>. O IPC Main será utilizado no arquivo de bootstrap do aplicativo (configurado no <code>package.json</code> do seu app) e o IPC Renderer será utilizado no arquivo principal do da sua aplicação realmente dita (com os comportamentos, acesso ao DOM, etc). Todos os IPC’s tem os mesmos eventos que são:</p>
+
+<ul>
+  <li>.on(): cria o listener do evento;</li>
+  <li>.send(): faz o trigger do evento previamente criado;</li>
+</ul>
+
+<p>Então para isso o seu arquivo principal terá o seguinte código.</p>
+
+<pre><code class="language-javascript">import {ipcMain} from 'electron';
+...
+// Iniciando o evento que aguarda o trigger do `ipc-renderer`
+ipcMain.on('app:updateAppWithConfigInformations', function(event, config){
+  ...
+  // Retorno de sucesso ou erro para o `ipc-renderer`
+  // Neste exemplo sempre retornará com sucesso
+  event.sender.send('app:updateAppWithConfigInformationsCallback', {success: true});
+});
+
+</code></pre>
+
+<p>E no seu processo de renderização você acessa da seguinte maneira.</p>
+
+<pre><code class="language-javascript">import ipcRenderer from 'ipc-renderer';
+
+...
+// Acesso ao seu formato de armazenamento
+ipc.send('app:updateAppWithConfigInformations', config);
+...
+// Listener para verificar se a operação no processo principal foi finalizada com sucesso
+ipcRenderer.on('app:updateAppWithConfigInformationsCallback', function(event, response) {
+  // Validação do retorno do processo principal
+});
+</code></pre>
+
+<h1 id="concluso">Conclusão</h1>
+
+<p>Este exemplo é simples, lembrando o <a href="http://redis.io/commands/ping">comando PING entre o Redis Client e Redis Server</a>. Desta forma, você consegue adicionar várias outras integrações entre os processos da sua aplicação desktop. Como esta integração não é muito bem documentada pelo framework (infelizmente vários projetos open source sofrem deste mal), fica uma dica bem interessante de sua utilização com uma situação real.</p>
+
+<p>E aí? Já utilizou esta comunicação entre processos antes? Qual foi a sua necessidade? Compartilhe sua experiência!</p>
+
+<p>Links:</p>
+
+<ul>
+  <li>Tableless - Introdução ao Electron: <a href="http://tableless.com.br/introducao-ao-electron/">http://tableless.com.br/introducao-ao-electron/</a></li>
+  <li>Documentação do ElectronJs: <a href="http://electron.atom.io/docs/all/">http://electron.atom.io/docs/all/</a></li>
+  <li>LowDB: <a href="http://typicode.github.io/lowdb/">http://typicode.github.io/lowdb/</a></li>
+  <li>SQLite: <a href="https://www.sqlite.org/">https://www.sqlite.org/</a></li>
+  <li>ElectronJS - IPC Renderer: <a href="http://electron.atom.io/docs/v0.33.0/api/ipc-renderer/">http://electron.atom.io/docs/v0.33.0/api/ipc-renderer/</a></li>
+  <li>ElectronJS - IPC Main: <a href="http://electron.atom.io/docs/v0.33.0/api/ipc-main-process/">http://electron.atom.io/docs/v0.33.0/api/ipc-main-process/</a></li>
+  <li>Redis - Comando PING: <a href="http://redis.io/commands/ping">http://redis.io/commands/ping</a></li>
+</ul>
+
+
+          </div>
+        </section>
+
+        
+          <section class="newsletter-content">
+    <form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=willmendesneto', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true;" >
+        <h3 class="newsletter-title">Receba novidades por e-mail</h3>
+        <p class="newsletter-text">Inscreva-se na minha newsletter para receber notificações de novos artigos no seu e-mail.</p>
+        <input class="input-newsletter" type="email" name="email" placeholder="Digite o seu email"/>
+        <input type="hidden" value="willmendesneto" name="uri"/>
+        <input type="hidden" name="loc" value="en_US"/>
+        <input class="btn btn-newsletter" type="submit" value="Assinar" />
+    </form>
+</section>
+
+        
+
+        <footer class="post-footer">
+
+          <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+  <a class="addthis_button_preferred_1"></a>
+  <a class="addthis_button_preferred_2"></a>
+  <a class="addthis_button_preferred_3"></a>
+  <a class="addthis_button_preferred_4"></a>
+  <a class="addthis_button_preferred_5"></a>
+</div>
+
+
+          <!-- <section class="share">
+            
+              
+                <a class="icon-twitter" href="http://twitter.com/share?text=Comunica%C3%A7%C3%A3o+entre+processos+no+ElectronJS&amp;url=http://willmendesneto.github.io/2016/04/25/comunicacao-entre-processos-no-electron-js"
+                  onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
+                <i class="fa fa-twitter"></i><span class="hidden">twitter</span>
+                </a>
+              
+            
+              
+                <a class="icon-facebook" href="//www.facebook.com/sharer.php?t=Comunica%C3%A7%C3%A3o+entre+processos+no+ElectronJS&amp;u=http://willmendesneto.github.io/2016/04/25/comunicacao-entre-processos-no-electron-js"
+                  onclick="window.open(this.href, 'facebook-share', 'width=550,height=255');return false;">
+                <i class="fa fa-facebook"></i><span class="hidden">facebook</span>
+                </a>
+              
+            
+              
+            
+              
+                <a class="icon-google-plus" href="https://plus.google.com/share?t=Comunica%C3%A7%C3%A3o+entre+processos+no+ElectronJS&amp;url=http://willmendesneto.github.io/2016/04/25/comunicacao-entre-processos-no-electron-js"
+                  onclick="window.open(this.href, 'google-plus-share', 'width=550,height=255');return false;">
+                <i class="fa fa-google-plus"></i><span class="hidden">google-plus</span>
+                </a>
+              
+            
+          </section> -->
+        </footer>
+        <div class="bottom-teaser cf">
+          <div class="isLeft">
+            <section class="author">
+              <div class="author-image" style="background-image: url(https://pt.gravatar.com/userimage/20307137/677413a79461cdfd62c8a65143214850.png?size=300)">Blog Logo</div>
+              <h4>Wilson Mendes</h4>
+              
+                <p class="bio">Google Developer Expert (GDE) AngularJS e Google Developer Group (GDG) Salvador Organizer. Músico e desenhista nas horas vagas.</p>
+              
+              <hr>
+              <p class="published">Publicado em <time datetime="2016-04-25 00:00">25 Apr 2016</time></p>
+            </section>
+            <footer class="site-footer">
+              <section class="poweredby">Mais um blog feito com <a href="http://jekyllrb.com">Jekyll</a></section>
+              <a class="subscribe" href="/feed.xml" target="_blank"> <span class="tooltip"> <i class="fa fa-rss"></i> Assine o feed.</span></a>
+            </footer>
+          </div>
+          
+        </div>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'willmendesnetogithubio'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+
+        'use strict';
+
+        function load() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+          // Remove o evento
+          window.onscroll = function() {};
+        }
+
+        window.onscroll = function() {
+          if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 2000)) {
+            load();
+          }
+        };
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </article>
+
+    </main>
+    <div class="bottom-closer">
+      <div class="background-closer-image"  style="background-image: url(/assets/images/background-1.jpg)">
+        Image
+      </div>
+      <div class="inner">
+        <h1 class="blog-title">Wilson Mendes - Blog</h1>
+        <h2 class="blog-description">This is my blog, where i talk about technologies</h2>
+        <a href="/" class="btn">Back to Home</a>
+      </div>
+    </div>
+
+    
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53c591e4471ce379" async="async"></script>
+
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="/assets/js/mini-preview.js"></script>
+<script type="text/javascript" src="/assets/js/index.js"></script>
+<script type="text/javascript" src="/assets/js/readingTime.min.js"></script>
+<script>
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-58169656-1', 'auto');
+ga('send', 'pageview');
+
+(function ($) {
+  "use strict";
+  $(document).ready(function(){
+
+    var $window = $(window),
+    $image = $('.post-image-image, .teaserimage-image');
+    $window.on('scroll', function() {
+      var top = $window.scrollTop();
+
+      if (top < 0 || top > 1500) { return; }
+      $image
+        .css('transform', 'translate3d(0px, '+top/3+'px, 0px)')
+        .css('opacity', 1-Math.max(top/700, 0));
+    });
+    $window.trigger('scroll');
+
+    var height = $('.article-image').height();
+    $('.post-content').css('padding-top', height + 'px');
+
+    $('a[href*=#]:not([href=#])').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+       && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html,body').animate({ scrollTop: target.offset().top }, 500);
+          return false;
+        }
+      }
+    });
+  });
+}(jQuery));
+</script>
+
+  </body>
+</html>
