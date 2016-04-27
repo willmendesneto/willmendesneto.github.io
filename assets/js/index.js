@@ -7,12 +7,13 @@
     "use strict";
 
     $(document).ready(function(){
-
         $(".post-content").fitVids();
 
-        // if ( $(window).width() >720 ) {
-        //   $('#post-content-page a').miniPreview({ prefetch: 'pageload' });
-        // }
+        if ( $(window).width() >720 ) {
+            var hammer = new Hammer(document.getElementById('body-content'));
+            hammer.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+            // $('#post-content-page a').miniPreview({ prefetch: 'pageload' });
+        }
 
         // Calculates Reading Time
         $('.post-content').readingTime({
