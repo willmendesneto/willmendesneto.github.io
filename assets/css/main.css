@@ -3,6 +3,9 @@
   display: table;
   clear: both; }
 
+#body-content {
+  position: initial; }
+
 .pagination {
   text-align: center;
   padding: 48px 0 0;
