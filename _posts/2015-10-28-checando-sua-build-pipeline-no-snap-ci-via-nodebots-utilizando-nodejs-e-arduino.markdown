@@ -11,6 +11,7 @@ meta: {}
 author:
 ---
 
+<a class="page-link" href="{{ '/2016/05/15/checking-your-build-in-snap-ci-via-nodebots-using-nodejs-and-arduino' | prepend: site.baseurl | replace: '//', '/' }}">Veja a versão em inglês</a>
 
 # Introdução
 
