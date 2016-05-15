@@ -134,7 +134,7 @@
 
 <p>Então para isso o seu arquivo principal terá o seguinte código.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span><span class="nx">ipcMain</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">'electron'</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span><span class="nx">ipcMain</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">'electron'</span><span class="p">;</span>
 <span class="p">...</span>
 <span class="c1">// Iniciando o evento que aguarda o trigger do `ipc-renderer`</span>
 <span class="nx">ipcMain</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'app:updateAppWithConfigInformations'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">config</span><span class="p">){</span>
@@ -149,7 +149,7 @@
 
 <p>E no seu processo de renderização você acessa da seguinte maneira.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="nx">ipcRenderer</span> <span class="nx">from</span> <span class="s1">'ipc-renderer'</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="nx">ipcRenderer</span> <span class="nx">from</span> <span class="s1">'ipc-renderer'</span><span class="p">;</span>
 
 <span class="p">...</span>
 <span class="c1">// Acesso ao seu formato de armazenamento</span>

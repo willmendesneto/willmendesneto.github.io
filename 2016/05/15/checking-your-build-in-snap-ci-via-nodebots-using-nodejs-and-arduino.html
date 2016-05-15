@@ -7,7 +7,7 @@
   <!-- (1) force latest IE rendering engine: bit.ly/1c8EiC9 -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>Checando sua build pipeline no Snap-CI via NodeBots utilizando NodeJS e Arduino</title>
+  <title>Checking your build in SNAP-CI via nodebots using NodeJS and Arduino</title>
   <meta name="description" content="This is my blog, where i talk about technologies" />
 
   <meta name="HandheldFriendly" content="True" />
@@ -15,7 +15,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-  <link rel="canonical" href="http://willmendesneto.github.io/2015/10/28/checando-sua-build-pipeline-no-snap-ci-via-nodebots-utilizando-nodejs-e-arduino">
+  <link rel="canonical" href="http://willmendesneto.github.io/2016/05/15/checking-your-build-in-snap-ci-via-nodebots-using-nodejs-and-arduino">
 
   
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -25,11 +25,11 @@
     <meta http-equiv="CACHE-CONTROL" content="NO-CACHE" />
     <meta http-equiv="PRAGMA" content="NO-CACHE" />
     <meta name="domain" content="willmendesneto.github.io" />
-    <meta name="url" content="/2015/10/28/checando-sua-build-pipeline-no-snap-ci-via-nodebots-utilizando-nodejs-e-arduino" />
+    <meta name="url" content="/2016/05/15/checking-your-build-in-snap-ci-via-nodebots-using-nodejs-and-arduino" />
 
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Checando sua build pipeline no Snap-CI via NodeBots utilizando NodeJS e Arduino" />
-    <meta property="og:url" content="/2015/10/28/checando-sua-build-pipeline-no-snap-ci-via-nodebots-utilizando-nodejs-e-arduino" />
+    <meta property="og:title" content="Checking your build in SNAP-CI via nodebots using NodeJS and Arduino" />
+    <meta property="og:url" content="/2016/05/15/checking-your-build-in-snap-ci-via-nodebots-using-nodejs-and-arduino" />
     <meta property="og:description" content="" />
     <meta property="article:author" content="" />
     <meta property="og:site_name" content="Wilson Mendes - Blog" />
@@ -74,12 +74,12 @@
             Article Image
           </div>
           <div class="post-meta">
-            <h1 class="post-title">Checando sua build pipeline no Snap-CI via NodeBots utilizando NodeJS e Arduino</h1>
+            <h1 class="post-title">Checking your build in SNAP-CI via nodebots using NodeJS and Arduino</h1>
             <div class="cf post-meta-text">
               <div class="author-image" style="background-image: url(https://pt.gravatar.com/userimage/20307137/677413a79461cdfd62c8a65143214850.png?size=300)">Blog Logo</div>
               <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">Wilson Mendes</h4>
               on
-              <time datetime="2015-10-28 00:00">28 Oct 2015</time>
+              <time datetime="2016-05-15 00:00">15 May 2016</time>
               <!-- , tagged on <span class="post-tag-">, <a href="/tag/"></a></span> -->
             </div>
             <div style="text-align:center">
@@ -96,59 +96,57 @@
           </div>
           <a name="topofpage"></a>
           <div id="post-content-page">
-            <p><a class="page-link" href="/2016/05/15/checking-your-build-in-snap-ci-via-nodebots-using-nodejs-and-arduino/">Veja a versão em inglês</a></p>
+            <p><a class="page-link" href="/2015/10/28/checando-sua-build-pipeline-no-snap-ci-via-nodebots-utilizando-nodejs-e-arduino/">Read the Brazilian Portuguese version</a></p>
 
-<h1 id="introduo">Introdução</h1>
+<h1 id="intro">Intro</h1>
 
-<p>A idéia desta postagem é compartilhar alguns conceitos básicos sobre a utilização de open hardware manipulando-o a partir do Javascript.</p>
+<p>The idea of this post is share some basic concepts about open hardware usage and management using Javascript.</p>
 
-<p>Sempre que começamos o contato com o <a href="https://www.arduino.cc/">Arduino</a>, por exemplo, fazemos o exemplo de piscas as leds, comumento conhecido como blink. Neste exemplo mostrarei uma forma mais atrativa de abordar este exemplo para o nosso cotidiano, baseado em modelos como Hubot e Retaliation para checarmos a nossa build pipeline e averiguarmos a saúde de nossa aplicação utilizando <a href="https://www.arduino.cc/">Arduino</a> + NodeJS + <a href="https://johnny-five.io/">Johnny-Five</a> em uma introdução a <a href="https://nodebots.io/">NodeBots</a>.</p>
+<p>When we start with the contact with <a href="https://www.arduino.cc/">Arduino</a> for example, the most common example is blink the led. But this time I will show a more atractive approach based in models like Hubot e Retaliation to check our build pipeline and validate our application healthy using <a href="https://www.arduino.cc/">Arduino</a> + NodeJS + <a href="https://johnny-five.io/">Johnny-Five</a> in a <a href="https://nodebots.io/">NodeBots</a> introduction.</p>
 
 <h1 id="build-pipeline">Build pipeline</h1>
 
-<p>Em algumas apresentações percebi que este termo não é conhecido por muitas pessoas, mesmo as que são mais familiarizadas com abordagens como integração contínua e entrega contínua. Build pipeline é um conceito que foi construído em meados de 2005 e é baseado na idéia de paralelização de tarefas, separando cada etapa em pequenos critérios de aceitação para a aplicação. Vale lembrar que esses passos podem automáticos ou manuais.</p>
+<p>In some presentations I realize that this terminology is not common for lots of people, even those most familiar with continous integration or continuous deployment. Build pipeline is a concept created in 2005 based in the task paralelization, splitting each step by small application acceptance criterias. It’s nice to know that these steps can be happening manually or automatically.</p>
 
-<p>Um exemplo de um serviço gratuito que utiliza este conceito é o <a href="https://snap-ci.com/">Snap-CI</a>, que te dá várias facilidades, suporte a outras linguagens, deploy em diversas plataformas, dentre outras funcionalidades bem bacanas.</p>
+<p>An example of freemium service that use this concept by default is <a href="https://snap-ci.com/">Snap-CI</a>, that gives plenty facilities, a good programming languages support, deployment and other cool features.</p>
 
-<p>Para este exemplo de nosso build-checker criei um projeto de exemplo no github e o integrei no nosso <a href="https://snap-ci.com/">Snap-CI</a>. Após as configurações iniciais (uma das coisas bacanas no projeto é que ele tem um guia bem bacana e simples) podemos verificar o nosso build mais atual a partir da aba de notificações. Você</p>
+<p>There’s a github repository example with <a href="https://snap-ci.com/">Snap-CI</a> integration for our build-checker project. After some initial configuraitons (this step is really simple) you can verify our latest build in notifications tab.</p>
 
 <h1 id="nodebots">NodeBots</h1>
 
-<p>NodeBots é um conceito que une a linguagem de programação Javascript e robótica. Isso foi possível graças ao surgimento do NodeJS, que possibilita a utilização do Javascript em outros ambientes além dos navegadores (como em geladeiras, micro controladores e outras opções) e o pacote node-serialport, criado por Chris Williams, permitindo que os desenvolvedores controlassem hardware a partir da utilização do javascript.</p>
+<p>Nodebots is a concept based in the union of Javascript and robotic, possible because the advent of NodeJS, that makes the javascript popular beyond the browsers (such as in fridges, microcontrollers, etc) and node-serialport package, created by Chris Williams, enabling hardware control via javascript.</p>
 
 <h1 id="arduino">Arduino</h1>
 
-<p><a href="https://www.arduino.cc/">Arduino</a> é uma plataforma open-source baseada em hardware e software de fácil utilização. Com isso qualquer um pode construir interações utilizando-o em projetos dos mais diversos. Até podendo evoluir aos seu bel prazer, já que o projeto é de código aberto.</p>
+<p><a href="https://www.arduino.cc/">Arduino</a> is a open-source platform (hardware and software) that is really easy to use. With that one, is anybody is able to make hardware/eletronic interactions in a different ways or do whatever you want.</p>
 
-<p>Dentre as suas vantagens encontramos:</p>
+<p>Some advantages:</p>
 
 <ul>
-  <li>Custo: o valor de um arduino é menor do que $50</li>
-  <li>Cross-platform: Arduino é uma plataforma open-source
-compatível com todos os sistemas operacionais;</li>
-  <li>Simples: Não exige de quem vai manipulá-lo um vasto conhecimento em eletrônica. Basta ter uma noção básica de desenvolvimento e você já pode fazer coisas bem bacanas;</li>
+  <li>Cost: the arduino amount is less than $50;</li>
+  <li>Cross-platform: Arduino is a open-source platform, compatible with all existent SO’s;</li>
+  <li>Easy: It’s no necessary a bigger eletronic knowledgment. If you have basic ideas and know how to develop a simple code, it’s enought (after the first step you have to learn, of course) and you can do cool things with that one!</li>
 </ul>
 
-<p>Baseado nestas características, vamos ao que interessa o nosso projeto de introdução a <a href="https://nodebots.io/">NodeBots</a> com a ferramenta <a href="https://github.com/willmendesneto/build-checker">build-checker</a>.</p>
+<p>Based in these characteristics let’s talk about our <a href="https://nodebots.io/">NodeBots</a> introduction project with the <a href="https://github.com/willmendesneto/build-checker">build-checker</a>.</p>
 
-<h1 id="build-checker-o-projeto">Build checker: o projeto</h1>
+<h1 id="build-checker-the-project">Build checker: the project</h1>
 
-<p>O projeto foi baseado no CCmenu, projeto criado pelo ThoughtWorker Erik Doernenburg para checar e mostrar o
-status de um determinado projeto em um servidor de integração contínua.</p>
+<p>The project was based in CCMenu, a project created by the ThoughtWorker Erik Doernenburg to check and shows the status of a specific projecy in a continous integration server.</p>
 
-<p>No nosso caso passamos a idéia para algo físico, utilizando open hardware e NodeJS. Nossa aplicação consumirá um XML com as informações retornadas pelo <a href="https://snap-ci.com/">Snap-CI</a>. A partir destes dados checaremos o estado atual da aplicação e o retornaremos utilizando alguns artifícios como Arduino e Led’s para avisar ao nosso time de que algo de errado aconteceu com o nosso build e devemos corrigir o quanto antes.</p>
+<p>In our case let’s use something physic, with open hardware and NodeJS. Our application will consume a XML with some informations responsed by the <a href="https://snap-ci.com/">Snap-CI</a> and we will check the current application status, using Arduino and leds for let us know that something wrong is happening with our build and we have to fix ASAP.</p>
 
-<p>Primeiramente precisamos instalar o NodeJS em nossa máquina. Sua instalação é muito simples e pode ser feita seguindo as instruções contidas no próprio site do projeto.</p>
+<p>Firstly we need to install NodeJS in our PC/laptop/computational device. For do this you can take a loook in nodejs project website, for example.</p>
 
-<p>O nosso próximo passo é a instalação do Arduino IDE. Após instalado, vamos nas opções &gt; Arquivos &gt; Exemplos &gt; StandardFirmata.</p>
+<p>The next step is install the Arduino IDE. After installation, try access: <code class="highlighter-rouge">Options &gt; Files &gt; Exaples &gt; StandardFirmata</code>.</p>
 
-<p><img src="/assets/images/open-firmata-example.png" alt="Abrindo opções de exemplo no Arduino IDE" /></p>
+<p><img src="/assets/images/open-firmata-example.png" alt="Accessing options tab in Arduino IDE" /></p>
 
-<p>Com o Arduino plugado no nosso computador rodamos o código a seguir e aguardamos a mensagem da IDE de que tudo ocorreu com sucesso.</p>
+<p>With the arduino plugged in our laptop, we will run this specific code and wait for the IDE display the success message.</p>
 
-<p><img src="/assets/images/upload-firmata-example.png" alt="Tudo ok. Firmata rodando" /></p>
+<p><img src="/assets/images/upload-firmata-example.png" alt="It's all ok. Firmata running" /></p>
 
-<p>Agora vamos ao nosso build checker. Para isso utilizaremos o pacote NodeJs <a href="https://johnny-five.io/">Johnny-Five</a>. O código é bem simples.</p>
+<p>Now is time of our build checker. For do this we will use the <a href="https://johnny-five.io/">Johnny-Five</a> package. The code is really simple.</p>
 
 <noscript><pre>var request = require(&#39;request&#39;);
 var five = require(&#39;johnny-five&#39;);
@@ -209,48 +207,44 @@ board.on(&#39;ready&#39;, function() {
 });</pre></noscript>
 <script src="https://gist.github.com/willmendesneto/b5f92a932ec3b7ffadd0.js"> </script>
 
-<p>Como vocês podem ver a interface do Johnny-Five é bem intuitiva. Ele possui o evento <code class="highlighter-rouge">board.on('ready')</code> que é similar ao evento <code class="highlighter-rouge">$(document).ready()</code> do jQuery. Quando todo o ambiente está preparado, iniciamos com base no conteúdo desta função.</p>
+<p>As I said before, you can be really familiar with the Johnny-Five’s interface. It has <code class="highlighter-rouge">board.on('ready')</code> event, for example, that is similar of jQuery <code class="highlighter-rouge">$(document).ready()</code>. With all environment configured, let’s start based in this event, right? We need to plug 2 leds: 1 red (for display when build is broken) and 1 green (for display when the build is fine). We will put the success build in port number 12 + GND (ground) port and use the port number 10 + GND (ground) for display when our build is correct in our arduino as you can take a look in the image.</p>
 
-<p>Agora basta plugarmos 2 leds: 1 vermelha (para sinalizar o build quebrado) e 1 verde (para sinalizar o build sem problemas). Colocamos o build de sucesso na porta de número 12 + uma porta GND do nosso Arduino e o build de erro na porta de número 10 + uma porta GND do nosso Arduino, como podem ver na imagem.</p>
+<p><img src="/assets/images/connecting-arduino-leds.png" alt="Connecting Arduino: ports and LEDS" /></p>
 
-<p><img src="/assets/images/connecting-arduino-leds.png" alt="Conectando o Arduino: portas e LEDS" /></p>
+<p>Now we will create the request for consume the content via HTTP GET status in <a href="https://snap-ci.com/">SNAP-CI</a>, our continuous integration service, that uses the build pipeline, a really interesting concept; About the pros, this approach give a fast feedback for the developers (async or sync) and definition of all build based in steps. <a href="http://www.martinfowler.com/articles/continuousIntegration.html">If you like to know more about it, please access this link</a>.</p>
 
-<p>A partir daí criamos uma requisição para pegar o conteúdo via GET no <a href="https://snap-ci.com/">SNAP-CI</a>, o nosso serviço de integração contínua. O SNAP-CI utiliza um conceito de build pipeline que é bem interessante e um dos prós dele é o de feedbacks mais rápidos (dando a possibilidade de paralelismo ou não) e definição de etapas para o build total. <a href="http://www.martinfowler.com/articles/continuousIntegration.html">Para maiores informações sobre Build Pipeline recomendo esta leitura</a>.</p>
+<p>Let’s access SNAP-CI website, do the login (if you don’t have account there, it’s really fast =) ) and add a project.</p>
 
-<p>Vamos no site do SNAP-CI, efetuamos o login (caso não tenha cadastro você terá que criar um, mas é bem rápido =) ) e cadastramos um projeto.</p>
+<p><img src="/assets/images/snap-ci-setup-repo.png" alt="SNAP-CI &quot;Add new repository&quot;" /></p>
 
-<p><img src="/assets/images/snap-ci-setup-repo.png" alt="SNAP-CI &quot;Adicionar novo Repositório&quot;" /></p>
+<p><img src="/assets/images/snap-ci-choosing-repo.png" alt="Add integration in the new repository" /></p>
 
-<p><img src="/assets/images/snap-ci-choosing-repo.png" alt="Adicionando Repositório para integração" /></p>
+<p>When you add the project it will display a field with “CCTray” name that, when clicked, makes a redirect for the XML file with all build informations.</p>
 
-<p>Ao cadastrar o projeto ele vai aparecer na parte superior, à direita, um campo com o nome “CCTray” que, ao clicarmos, direciona para o arquivo XML com as informações do build.</p>
+<p><img src="/assets/images/snap-ci-cctray.png" alt="SNAP-CI: CCTray Alert" /></p>
 
-<p><img src="/assets/images/snap-ci-cctray.png" alt="SNAP-CI: Alerta CCTray" /></p>
+<p>The <code class="highlighter-rouge">.xml</code> will be like that one.</p>
 
-<p>São estas informações que serão consultadas pelo nosso build-checker.</p>
+<p><img src="/assets/images/snap-ci-build-xml.png" alt="&quot;cctray.xml&quot; file with all build informations" /></p>
 
-<p><img src="/assets/images/snap-ci-build-xml.png" alt="Arquivo &quot;cctray.xml&quot; com as informações do BUILD" /></p>
+<p>The Build Checker will check the data in a poller of 500 miliseconds, previewed configured and validating the current state of the build pipeline. If the response contains “Success” in the response, something wrong is happening and our build checker will blink the red led, otherwise the green led will be lighter and that’s all fine!</p>
 
-<p>Ele consultará os dados em um intervalo de 500 milisegundos previamente configurado e verifica o estado atual do build, baseado nas informações de todas as pipelines. Caso não haja a palavra “Success” no response da requisição, algo de errado aconteceu e o nosso build-checker irá acender a luz vermelha, caso contrário a luz verde continua acesa, sinalizando que está tudo ok.</p>
-
-<p>Para conferirmos o resultado final, basta rodarmos os comandos</p>
+<p>If you like to take a look in the final result, just run the commands</p>
 
 <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>npm install <span class="c"># instala todas as dependências do projeto</span>
 <span class="gp">$ </span>node index.js <span class="c"># roda o código do build checker</span>
 </code></pre>
 </div>
 
-<p>Caso queiram saber mais sobre o projeto, <a href="https://github.com/willmendesneto/build-checker">cliquem aqui e o projeto Build-Checker no github</a>. O código é open-source, então sintam-se à vontade para feedbacks, sugestões e críticas construtivas. Lembrando também que estrelas no github são sempre bem vindas também!</p>
-
-<p>Este projeto foi baseado no projeto <a href="https://www.youtube.com/watch?v=1EGk2rvZe8A">Relatiation</a>, feito pelo pessoal do Github para verificar a situação do build no Jenkins e dar um feedback ao time. Fica a dica deste vídeo bem simples e bacana mostrando como o Retaliation funciona.</p>
+<p>And if you like to know more about the project, <a href="https://github.com/willmendesneto/build-checker">visit the github Build-Checker project</a>. The code is open-source, so feel free to give me some feedback, suggestions for constructive feedback (and github stars are always welcome). This project was based in <a href="https://www.youtube.com/watch?v=1EGk2rvZe8A">Relatiation</a> project, by github to validate the Jenkins build status and give some “special feedback” for the team member. Watch this video and take a look how retaliation works.</p>
 
 <p><a href="https://www.youtube.com/watch?v=1EGk2rvZe8A"><img src="http://img.youtube.com/vi/1EGk2rvZe8A/0.jpg" alt="Retaliation" /></a></p>
 
-<h1 id="concluso">Conclusão</h1>
+<h1 id="conclusion">Conclusion</h1>
 
-<p>Este é um projeto bem introdutório do poder nos <a href="https://nodebots.io/">NodeBots</a>, utilizando um dos exemplos mais simples para introdução ao Arduino, que é o código que faz com que uma led pisque (caso tenha interesse em ver como este código funciona, pesquise por “blink”). Este exemplo de led piscando é algo totalmente didático, mas ao utilizarmos NodeJS percebemos todo o poder que temos para aliar vários conceitos juntamente a um dos exemplos mais clássicos do Arduino. A partir daí é com você.</p>
+<p>This project is a quickly NodeBots]<a href="https://nodebots.io/">nodebots</a> introduction, using the most simplest arduino example, that is the blink code (if you are interested, google it for “blink” or access the Arduino examples). This blink example is something totally didatic, but using NodeJS we realized all the power that we have using some concepts combined with the most classic arduino example … and the next steps are yours!</p>
 
-<p>E aí? O que você tem feito com <a href="https://nodebots.io/">NodeBots</a>, Javascript e/ou Arduino? Compartilhe sua experiência!</p>
+<p>What are you doing using <a href="https://nodebots.io/">NodeBots</a>, Javascript and/or Arduino? Share your experiences!</p>
 
 <p>Links:</p>
 
@@ -271,12 +265,12 @@ board.on(&#39;ready&#39;, function() {
         
           <section class="newsletter-content">
     <form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=willmendesneto', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true;" >
-        <h3 class="newsletter-title">Receba novidades por e-mail</h3>
-        <p class="newsletter-text">Inscreva-se na minha newsletter para receber notificações de novos artigos no seu e-mail.</p>
-        <input class="input-newsletter" type="email" name="email" placeholder="Digite o seu email"/>
+        <h3 class="newsletter-title">Receive news by email</h3>
+        <p class="newsletter-text">Subscribe to my newsletter to receive notifications of new articles in your e- mail</p>
+        <input class="input-newsletter" type="email" name="email" placeholder="email"/>
         <input type="hidden" value="willmendesneto" name="uri"/>
         <input type="hidden" name="loc" value="en_US"/>
-        <input class="btn btn-newsletter" type="submit" value="Assinar" />
+        <input class="btn btn-newsletter" type="submit" value="Subscribe" />
     </form>
 </section>
 
@@ -296,14 +290,14 @@ board.on(&#39;ready&#39;, function() {
           <!-- <section class="share">
             
               
-                <a class="icon-twitter" href="http://twitter.com/share?text=Checando+sua+build+pipeline+no+Snap-CI+via+NodeBots+utilizando+NodeJS+e+Arduino&amp;url=http://willmendesneto.github.io/2015/10/28/checando-sua-build-pipeline-no-snap-ci-via-nodebots-utilizando-nodejs-e-arduino"
+                <a class="icon-twitter" href="http://twitter.com/share?text=Checking+your+build+in+SNAP-CI+via+nodebots+using+NodeJS+and+Arduino&amp;url=http://willmendesneto.github.io/2016/05/15/checking-your-build-in-snap-ci-via-nodebots-using-nodejs-and-arduino"
                   onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
                 <i class="fa fa-twitter"></i><span class="hidden">twitter</span>
                 </a>
               
             
               
-                <a class="icon-facebook" href="//www.facebook.com/sharer.php?t=Checando+sua+build+pipeline+no+Snap-CI+via+NodeBots+utilizando+NodeJS+e+Arduino&amp;u=http://willmendesneto.github.io/2015/10/28/checando-sua-build-pipeline-no-snap-ci-via-nodebots-utilizando-nodejs-e-arduino"
+                <a class="icon-facebook" href="//www.facebook.com/sharer.php?t=Checking+your+build+in+SNAP-CI+via+nodebots+using+NodeJS+and+Arduino&amp;u=http://willmendesneto.github.io/2016/05/15/checking-your-build-in-snap-ci-via-nodebots-using-nodejs-and-arduino"
                   onclick="window.open(this.href, 'facebook-share', 'width=550,height=255');return false;">
                 <i class="fa fa-facebook"></i><span class="hidden">facebook</span>
                 </a>
@@ -312,7 +306,7 @@ board.on(&#39;ready&#39;, function() {
               
             
               
-                <a class="icon-google-plus" href="https://plus.google.com/share?t=Checando+sua+build+pipeline+no+Snap-CI+via+NodeBots+utilizando+NodeJS+e+Arduino&amp;url=http://willmendesneto.github.io/2015/10/28/checando-sua-build-pipeline-no-snap-ci-via-nodebots-utilizando-nodejs-e-arduino"
+                <a class="icon-google-plus" href="https://plus.google.com/share?t=Checking+your+build+in+SNAP-CI+via+nodebots+using+NodeJS+and+Arduino&amp;url=http://willmendesneto.github.io/2016/05/15/checking-your-build-in-snap-ci-via-nodebots-using-nodejs-and-arduino"
                   onclick="window.open(this.href, 'google-plus-share', 'width=550,height=255');return false;">
                 <i class="fa fa-google-plus"></i><span class="hidden">google-plus</span>
                 </a>
@@ -326,10 +320,10 @@ board.on(&#39;ready&#39;, function() {
               <div class="author-image" style="background-image: url(https://pt.gravatar.com/userimage/20307137/677413a79461cdfd62c8a65143214850.png?size=300)">Blog Logo</div>
               <h4>Wilson Mendes</h4>
               
-                <p class="bio">Google Developer Expert (GDE) AngularJS e Google Developer Group (GDG) Salvador Organizer. Músico e desenhista nas horas vagas.</p>
+                <p class="bio">Google Developer Expert (GDE) AngularJS and GDG Salvador Organizer. Musician and designer in his spare time.</p>
               
               <hr>
-              <p class="published">Publicado em <time datetime="2015-10-28 00:00">28 Oct 2015</time></p>
+              <p class="published">Publicado em <time datetime="2016-05-15 00:00">15 May 2016</time></p>
             </section>
             <footer class="site-footer">
               <section class="poweredby">Mais um blog feito com <a href="http://jekyllrb.com">Jekyll</a></section>

@@ -140,7 +140,7 @@
 
 <p>Use ng-if instead ng-show when you can, because ng-show manipulate element display, but it already exist in DOM and two-way data binding already active, decreasing performance.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">ng-if=</span><span class="s">"!vm.usingOneTimeBinding"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">ng-if=</span><span class="s">"!vm.usingOneTimeBinding"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;p&gt;</span>
     Makes more sense
   <span class="nt">&lt;/p&gt;</span>
@@ -158,7 +158,7 @@
 
 <p>Manipulate data in a once moment and pass the data for template instead $filter’s usage in template;</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">...</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">...</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">users</span> <span class="o">=</span> <span class="p">[</span>
   <span class="p">{</span><span class="na">firstName</span><span class="p">:</span> <span class="s1">'eu'</span><span class="p">,</span> <span class="na">lastName</span><span class="p">:</span> <span class="s1">'ea'</span><span class="p">},</span>
   <span class="p">{</span><span class="na">firstName</span><span class="p">:</span> <span class="s1">'William'</span><span class="p">,</span> <span class="na">lastName</span><span class="p">:</span> <span class="s1">'Wallace'</span><span class="p">}</span>
@@ -168,7 +168,7 @@
 </div>
 <p>Based in this data, avoid use filter in template…</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>...
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>...
 <span class="nt">&lt;div</span> <span class="na">ng-repeat=</span><span class="s">"item in vm.users"</span><span class="nt">&gt;</span>
   
 <span class="nt">&lt;/div&gt;</span>
@@ -181,7 +181,7 @@
 
 <p>… instead this manipulate the stream’s data in controller, passing the data in your final format only for render in template. In this example is used <code class="highlighter-rouge">.map()</code> javascript function for it.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">...</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">...</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">users</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">el</span><span class="p">){</span>
   <span class="nx">el</span><span class="p">.</span><span class="nx">username</span> <span class="o">=</span> <span class="nx">el</span><span class="p">.</span><span class="nx">firstName</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nx">el</span><span class="p">.</span><span class="nx">lastName</span><span class="p">;</span>
 <span class="p">});</span>
@@ -189,7 +189,7 @@
 </code></pre>
 </div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>...
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>...
 <span class="nt">&lt;div</span> <span class="na">ng-repeat=</span><span class="s">"item in vm.users"</span><span class="nt">&gt;</span>
   
 <span class="nt">&lt;/div&gt;</span>
@@ -201,7 +201,7 @@
 
 <p>Track by in elements are always welcome! ngRepeat is more fast when tracking something.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>
 <span class="c">&lt;!-- Without track by --&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">ng-repeat=</span><span class="s">"item in vm.users"</span><span class="nt">&gt;</span>
   
@@ -223,7 +223,7 @@
 
 <p>Use one-time-binding when you can, your app and your users are grateful for it!</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">ng-repeat=</span><span class="s">"item in ::vm.users track by $index"</span> <span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">ng-repeat=</span><span class="s">"item in ::vm.users track by $index"</span> <span class="nt">&gt;</span>
   
 <span class="nt">&lt;/div&gt;</span>
 
@@ -243,7 +243,7 @@
 
 <p>Debounce is a pattern for how many times the event/method will be called in your application. A example of your usage is a simple search in a list.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">autocomplete=</span><span class="s">"off"</span> <span class="na">role=</span><span class="s">"form"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">autocomplete=</span><span class="s">"off"</span> <span class="na">role=</span><span class="s">"form"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;fieldset&gt;</span>
       <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"search"</span> <span class="na">name=</span><span class="s">"search"</span> <span class="na">id=</span><span class="s">"search"</span> <span class="na">placeholder=</span><span class="s">"Search..."</span> <span class="na">ng-model=</span><span class="s">"vm.searchItem"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="nt">/&gt;</span>
@@ -260,7 +260,7 @@
 
 <p>In this example the search will be called each user add character in input for search. But this isn’t a good idea. So let’t take a look in debounce usage.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">...</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">...</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">myModelOptions</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">updateOn</span><span class="p">:</span> <span class="s1">'keydown blur'</span><span class="p">,</span>
   <span class="na">debounce</span><span class="p">:</span> <span class="p">{</span>
@@ -272,7 +272,7 @@
 </code></pre>
 </div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">autocomplete=</span><span class="s">"off"</span> <span class="na">role=</span><span class="s">"form"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">autocomplete=</span><span class="s">"off"</span> <span class="na">role=</span><span class="s">"form"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;fieldset&gt;</span>
       <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"search"</span> <span class="na">name=</span><span class="s">"search"</span> <span class="na">id=</span><span class="s">"search"</span> <span class="na">placeholder=</span><span class="s">"Search..."</span> <span class="na">ng-model=</span><span class="s">"vm.searchItem"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">ng-model-options=</span><span class="s">"vm.myModelOptions"</span> <span class="nt">/&gt;</span>
@@ -293,7 +293,7 @@
 
 <p>For memoization pattern you can use <code class="highlighter-rouge">$provide.decorator()</code> approach, modifying default behaviour of angular, improving and enable cache by default or other possibilities, for example.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// Creating a new module for enable cache by default</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// Creating a new module for enable cache by default</span>
 <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'perf.rootScope'</span><span class="p">,</span> <span class="p">[])</span>
   <span class="c1">// $rootScope modified</span>
   <span class="p">.</span><span class="nx">decorate</span><span class="p">(</span><span class="s1">'$rootScope'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$delegate</span><span class="p">){</span>
