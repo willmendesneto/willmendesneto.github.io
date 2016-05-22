@@ -5,9 +5,9 @@
     <description>This is my blog, where i talk about technologies</description>
     <link>http://willmendesneto.github.io/</link>
     <atom:link href="http://willmendesneto.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 15 May 2016 12:01:16 +0000</pubDate>
-    <lastBuildDate>Sun, 15 May 2016 12:01:16 +0000</lastBuildDate>
-    <generator>Jekyll v3.1.3</generator>
+    <pubDate>Sun, 22 May 2016 01:11:40 +0000</pubDate>
+    <lastBuildDate>Sun, 22 May 2016 01:11:40 +0000</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
     
       <item>
         <title>Checking your build in SNAP-CI via nodebots using NodeJS and Arduino</title>
@@ -160,6 +160,14 @@ board.on(&amp;#39;ready&amp;#39;, function() {
 &lt;p&gt;This project is a quickly NodeBots]&lt;a href=&quot;https://nodebots.io/&quot;&gt;nodebots&lt;/a&gt; introduction, using the most simplest arduino example, that is the blink code (if you are interested, google it for “blink” or access the Arduino examples). This blink example is something totally didatic, but using NodeJS we realized all the power that we have using some concepts combined with the most classic arduino example … and the next steps are yours!&lt;/p&gt;
 
 &lt;p&gt;What are you doing using &lt;a href=&quot;https://nodebots.io/&quot;&gt;NodeBots&lt;/a&gt;, Javascript and/or Arduino? Share your experiences!&lt;/p&gt;
+
+&lt;h1 id=&quot;update&quot;&gt;Update&lt;/h1&gt;
+
+&lt;p&gt;After write this post and share in the social networks, I receive some good feedback and &lt;a href=&quot;https://twitter.com/rwaldron&quot;&gt;Rick Waldron&lt;/a&gt;, creator of &lt;a href=&quot;https://johnny-five.io/&quot;&gt;johnny-five&lt;/a&gt; package, send this message to me.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/rwaldron-feedback.jpeg&quot; alt=&quot;Rick Waldron: Feedback about this post&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Was really amazing! Thanks &lt;a href=&quot;https://twitter.com/rwaldron&quot;&gt;Rick Waldron&lt;/a&gt;!&lt;/p&gt;
 
 &lt;p&gt;Links:&lt;/p&gt;
 
@@ -509,6 +517,14 @@ board.on(&amp;#39;ready&amp;#39;, function() {
 &lt;p&gt;Este é um projeto bem introdutório do poder nos &lt;a href=&quot;https://nodebots.io/&quot;&gt;NodeBots&lt;/a&gt;, utilizando um dos exemplos mais simples para introdução ao Arduino, que é o código que faz com que uma led pisque (caso tenha interesse em ver como este código funciona, pesquise por “blink”). Este exemplo de led piscando é algo totalmente didático, mas ao utilizarmos NodeJS percebemos todo o poder que temos para aliar vários conceitos juntamente a um dos exemplos mais clássicos do Arduino. A partir daí é com você.&lt;/p&gt;
 
 &lt;p&gt;E aí? O que você tem feito com &lt;a href=&quot;https://nodebots.io/&quot;&gt;NodeBots&lt;/a&gt;, Javascript e/ou Arduino? Compartilhe sua experiência!&lt;/p&gt;
+
+&lt;h1 id=&quot;update&quot;&gt;Update&lt;/h1&gt;
+
+&lt;p&gt;Depois de escrever este artigo e compartilhar nas redes sociais venho recebendo bons comentários e feedback…dentre eles um que foi muito bacana foi o do &lt;a href=&quot;https://twitter.com/rwaldron&quot;&gt;Rick Waldron&lt;/a&gt;, criador do &lt;a href=&quot;https://johnny-five.io/&quot;&gt;johnny-five&lt;/a&gt; (pacote node que estou utilizando neste post/artigo).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/rwaldron-feedback.jpeg&quot; alt=&quot;Rick Waldron: Feedback about this post&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Sensacional! E só para compartilhar: Muito obrigado &lt;a href=&quot;https://twitter.com/rwaldron&quot;&gt;Rick Waldron&lt;/a&gt;!&lt;/p&gt;
 
 &lt;p&gt;Links:&lt;/p&gt;
 
