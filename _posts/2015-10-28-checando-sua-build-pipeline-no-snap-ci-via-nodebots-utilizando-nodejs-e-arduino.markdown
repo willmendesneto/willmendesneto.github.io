@@ -113,6 +113,14 @@ Este é um projeto bem introdutório do poder nos [NodeBots][nodebots], utilizan
 
 E aí? O que você tem feito com [NodeBots][nodebots], Javascript e/ou Arduino? Compartilhe sua experiência!
 
+# Update
+
+Depois de escrever este artigo e compartilhar nas redes sociais venho recebendo bons comentários e feedback...dentre eles um que foi muito bacana foi o do [Rick Waldron][rwaldron-twitter], criador do [johnny-five][johnny-five] (pacote node que estou utilizando neste post/artigo).
+
+![Rick Waldron: Feedback about this post](/assets/images/rwaldron-feedback.jpeg)
+
+Sensacional! E só para compartilhar: Muito obrigado [Rick Waldron][rwaldron-twitter]!
+
 Links:
 
 * Build Checker: [http://github.com/willmendesneto/build-checker][build-checker]
@@ -124,6 +132,7 @@ Links:
 * Retaliation: [https://www.youtube.com/watch?v=1EGk2rvZe8A][retaliation]
 
 
+[rwaldron-twitter]: https://twitter.com/rwaldron
 [build-checker]:https://github.com/willmendesneto/build-checker
 [johnny-five]:https://johnny-five.io/
 [snap-ci]:https://snap-ci.com/
