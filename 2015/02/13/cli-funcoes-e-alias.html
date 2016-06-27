@@ -113,7 +113,7 @@
 
 <p>.functions</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># Simple calculator</span>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># Simple calculator</span>
 <span class="k">function </span>calc<span class="o">()</span> <span class="o">{</span>
     <span class="nb">local </span><span class="nv">result</span><span class="o">=</span><span class="s2">""</span>;
     <span class="nv">result</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span><span class="nb">printf</span> <span class="s2">"scale=10;</span><span class="nv">$*</span><span class="se">\n</span><span class="s2">"</span> | bc --mathlib | tr -d <span class="s1">'\\\n'</span><span class="k">)</span><span class="s2">"</span>;
@@ -303,7 +303,7 @@ webmify(){
 
 <p>Agora o arquivo .aliases</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>
+<div class="highlighter-rouge"><pre class="highlight"><code>
 <span class="c">################################################################################</span>
 <span class="c">#       Default Aliases</span>
 <span class="c">################################################################################</span>
@@ -455,13 +455,13 @@ webmify(){
 
 <p>Algumas informações para inserirmos algumas funções e aliases no ambiente CLI. Como utilizo e contribuo para o projeto oh-my-zsh, ele por padrão utiliza um arquivo <code class="highlighter-rouge">.zshrc</code> para carregar alguns plugins, alias e funções. Existe uma linha para o carregamento automático dos plugins do oh-my-zsh e alguns que carrego por padrão são:</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nv">plugins</span><span class="o">=(</span>git rails ruby frontend-search nvm rvm vagrant<span class="o">)</span>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nv">plugins</span><span class="o">=(</span>git rails ruby frontend-search nvm rvm vagrant<span class="o">)</span>
 </code></pre>
 </div>
 
 <p>E adicionamos estas linhas no arquivo <code class="highlighter-rouge">.zshrc</code> para carregar as nossas configurações.</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c">##############################################################################</span>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c">##############################################################################</span>
 <span class="c">#       Clear screen on logout</span>
 <span class="c">##############################################################################</span>
 <span class="nb">trap </span>clear 0
