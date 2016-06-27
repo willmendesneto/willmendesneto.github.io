@@ -157,7 +157,7 @@
 
 <p>Let me show you a simple example. We have 2 directives: one with ReactJS and another without. Based in a simple Devtools profiler for this example the results are:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// without react</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// without react</span>
 <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'angularPerformanceApp'</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">directive</span><span class="p">(</span><span class="s1">'myMessage'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">{</span>
@@ -170,7 +170,7 @@
 
 <p><img src="/assets/images/without-react.png" alt="Using Angular directives" title="Using Angular directives" /></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// with react</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// with react</span>
 <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'angularPerformanceApp'</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">directive</span><span class="p">(</span><span class="s1">'myReactMessage'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
 

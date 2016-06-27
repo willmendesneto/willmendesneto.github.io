@@ -118,7 +118,7 @@
   <p>A example of Page object construction</p>
 </blockquote>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">PageObject</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">PageObject</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="c1">// properties</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">property</span> <span class="o">=</span> <span class="nx">element</span><span class="p">(</span><span class="nx">by</span><span class="p">.</span><span class="nx">id</span><span class="p">(</span><span class="s1">'property'</span><span class="p">))</span>
     <span class="p">...</span>
@@ -134,7 +134,7 @@
 
 <p>A simple example using Page Objects in your protractor tests.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
 <span class="nx">describe</span><span class="p">(</span><span class="s1">'angularjs homepage todo list'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">pageObject</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'page.js'</span><span class="p">);</span>
 
@@ -160,14 +160,14 @@
 
 <p>All page events returns for you test like as promise. In this case, your have to resolve the promises get your result and finish your test correctly. For example</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">PageObject</span><span class="p">.</span><span class="nx">property</span><span class="p">.</span><span class="nx">click</span><span class="p">();</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">PageObject</span><span class="p">.</span><span class="nx">property</span><span class="p">.</span><span class="nx">click</span><span class="p">();</span>
 <span class="c1">// your assertions are here</span>
 </code></pre>
 </div>
 
 <p>can be used this way too</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">PageObject</span><span class="p">.</span><span class="nx">property</span><span class="p">.</span><span class="nx">click</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">PageObject</span><span class="p">.</span><span class="nx">property</span><span class="p">.</span><span class="nx">click</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
    <span class="c1">// your assertions are here</span>
    <span class="p">...</span>
 <span class="p">});</span>
@@ -176,13 +176,13 @@
 
 <p>You can use <code class="highlighter-rouge">waitForAngular()</code> method for that Protractor waits for AngularJS event finalization.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">browser</span><span class="p">.</span><span class="nx">waitForAngular</span><span class="p">();</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">browser</span><span class="p">.</span><span class="nx">waitForAngular</span><span class="p">();</span>
 </code></pre>
 </div>
 
 <p><code class="highlighter-rouge">expect()</code> method resolve the promises in your tests. For example:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">expect</span><span class="p">(</span><span class="nx">PageObject</span><span class="p">.</span><span class="nx">property</span><span class="p">.</span><span class="nx">getText</span><span class="p">()).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s1">'your test'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">expect</span><span class="p">(</span><span class="nx">PageObject</span><span class="p">.</span><span class="nx">property</span><span class="p">.</span><span class="nx">getText</span><span class="p">()).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s1">'your test'</span><span class="p">);</span>
 </code></pre>
 </div>
 
@@ -190,13 +190,13 @@
 
 <p>Test your application with animation disabled. In many times has no sense to test your app with animations enabled and with this resource disabled the tests run more fast.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">allowAnimations</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">allowAnimations</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
 </code></pre>
 </div>
 
 <p>To disable angular debug informations is a best practice too, because you should use protractor debug for it.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">$compileProvider</span><span class="p">.</span><span class="nx">debugInfoEnabled</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">$compileProvider</span><span class="p">.</span><span class="nx">debugInfoEnabled</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
 </code></pre>
 </div>
 
@@ -204,7 +204,7 @@
 
 <p>In some cases you can the option of use NodeJS with protractor methods for more elaborated tests. In this example we are testing a ordenation click event in a tablesorter component, but using NodeJS for set table headers in our tests and caching table headers elements (get all elements that <code class="highlighter-rouge">by.css()</code> method return, resolving your promise and managing tests based in <code class="highlighter-rouge">items</code> values).</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// spec.js</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// spec.js</span>
 <span class="nx">describe</span><span class="p">(</span><span class="s1">'TableSorter: testing component'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
 
   <span class="kd">var</span> <span class="nx">tableSorter</span><span class="p">;</span>
