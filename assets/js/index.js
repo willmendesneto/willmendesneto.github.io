@@ -6,7 +6,7 @@
 (function ($) {
     "use strict";
 
-    $(document).ready(function(){
+    $(window).load(function(){
         $(".post-content").fitVids();
 
         if ( $(window).width() >720 ) {
