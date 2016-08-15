@@ -107,9 +107,9 @@
 
 <h2 id="about-angular-apps-and-loops">About Angular apps and loops</h2>
 
-<p>Since angular borns the idea was (and still is): make the WebApps development easier. And the framework provide us lots of tools to make our life simple as possible and the business delivery fast.</p>
+<p>Since angular borns the idea was (and still is): make the WebApps development easier. And the framework provide us lots of tools to make our life simple as possible and delivery business value fast.</p>
 
-<p>Yeah! <em>business delivery</em>! If your code doesn’t delivery business value, so we have something wrong…but I will talk more about that in the next posts.</p>
+<p>Yeah! <em>delivery business value</em>! If your code doesn’t delivery business value, so we have something wrong…but I will talk more about that in the next posts.</p>
 
 <p>We have the concept of directives: a new way to handle with WebApps creating decoupled components with specific rules based in your application domain. All built in core directives use <code class="highlighter-rouge">ng*</code> pattern and that’s the case of our <code class="highlighter-rouge">ngRepeat</code>.</p>
 
@@ -146,7 +146,7 @@
 </code></pre>
 </div>
 
-<p>So in this code example we are not tracking our collection and the angular creates a unique key to avoid <a href="ng-repeat-dupes">Duplicate Key in Repeater error</a> in our code. This generated unique key is <code class="highlighter-rouge">$$hashKey</code>.</p>
+<p>So in this code example we are not tracking our collection and the angular creates a unique key to avoid <a href="https://docs.angularjs.org/error/ngRepeat/dupes">Duplicate Key in Repeater error</a> in our code. This generated unique key is <code class="highlighter-rouge">$$hashKey</code>.</p>
 
 <p><img src="/assets/images/ng-repeat-error-duplicate-key.png" alt="Duplicate Key in Repeater error" /></p>
 
@@ -156,7 +156,7 @@
   <p>But wait! This is a big performance issue in the framework!</p>
 </blockquote>
 
-<p>No, it’s not. This is the common “Read the documentation” error. You can find all the details in <code class="highlighter-rouge">ngRepeat</code> documentation.</p>
+<p>No, it’s not. This is the common “Read the documentation” error. You can <a href="https://docs.angularjs.org/api/ng/directive/ngRepeat">find all the details in ngRepeat documentation</a>.</p>
 
 <p><img src="/assets/images/hashkey-ng-repeat.png" alt="Angular documentation: who ngRepeat approach with $$hashKey works" /></p>
 
@@ -168,7 +168,7 @@
 </code></pre>
 </div>
 
-<p>PS: If you like to see this code running, please access the <a href="plunker-angular-1">plunker with this example using Angular1</a>.</p>
+<p>PS: If you like to see this code running, please access the <a href="https://embed.plnkr.co/vIZP3U">plunker with this example using Angular1</a>.</p>
 
 <h2 id="track-by-in-angular2-apps">Track by in Angular2 apps</h2>
 
@@ -199,7 +199,7 @@
 </code></pre>
 </div>
 
-<p>PS: If you like to see this code running, please access the <a href="plunker-angular-2">plunker with this example using Angular2</a>.</p>
+<p>PS: If you like to see this code running, please access the <a href="http://embed.plnkr.co/oi0OIzoJA9o6ppiMEjQM">plunker with this example using Angular2</a>.</p>
 
 <h2 id="conclusion">Conclusion</h2>
 
@@ -210,10 +210,10 @@
 <p>Links:</p>
 
 <ul>
-  <li>Angular <code class="highlighter-rouge">ngRepeat</code> documentation: <a href="ng-repeat-docs">https://docs.angularjs.org/api/ng/directive/ngRepeat</a></li>
-  <li><code class="highlighter-rouge">Duplicate Key in Repeater</code> error: <a href="ng-repeat-dupes">https://docs.angularjs.org/error/ngRepeat/dupes</a></li>
-  <li>Angular2 - If you are using Angular2, use <code class="highlighter-rouge">ngForTrackBy</code> in ngFor…PLEASE!: <a href="plunker-angular-2">http://embed.plnkr.co/oi0OIzoJA9o6ppiMEjQM/</a></li>
-  <li>Angular1 - Use <code class="highlighter-rouge">track by</code> in ngRepeat…PLEASE!: <a href="plunker-angular-1">https://embed.plnkr.co/vIZP3U/</a></li>
+  <li>Angular <code class="highlighter-rouge">ngRepeat</code> documentation: <a href="https://docs.angularjs.org/api/ng/directive/ngRepeat">https://docs.angularjs.org/api/ng/directive/ngRepeat</a></li>
+  <li><code class="highlighter-rouge">Duplicate Key in Repeater</code> error: <a href="https://docs.angularjs.org/error/ngRepeat/dupes">https://docs.angularjs.org/error/ngRepeat/dupes</a></li>
+  <li>Angular2 - If you are using Angular2, use <code class="highlighter-rouge">ngForTrackBy</code> in ngFor…PLEASE!: <a href="http://embed.plnkr.co/oi0OIzoJA9o6ppiMEjQM">http://embed.plnkr.co/oi0OIzoJA9o6ppiMEjQM/</a></li>
+  <li>Angular1 - Use <code class="highlighter-rouge">track by</code> in ngRepeat…PLEASE!: <a href="https://embed.plnkr.co/vIZP3U">https://embed.plnkr.co/vIZP3U/</a></li>
 </ul>
 
 

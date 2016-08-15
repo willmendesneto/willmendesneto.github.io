@@ -5,8 +5,8 @@
     <description>This is my blog, where i talk about technologies</description>
     <link>http://willmendesneto.github.io/</link>
     <atom:link href="http://willmendesneto.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 15 Aug 2016 14:00:11 +0000</pubDate>
-    <lastBuildDate>Mon, 15 Aug 2016 14:00:11 +0000</lastBuildDate>
+    <pubDate>Mon, 15 Aug 2016 22:38:29 +0000</pubDate>
+    <lastBuildDate>Mon, 15 Aug 2016 22:38:29 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -25,9 +25,9 @@
 
 &lt;h2 id=&quot;about-angular-apps-and-loops&quot;&gt;About Angular apps and loops&lt;/h2&gt;
 
-&lt;p&gt;Since angular borns the idea was (and still is): make the WebApps development easier. And the framework provide us lots of tools to make our life simple as possible and the business delivery fast.&lt;/p&gt;
+&lt;p&gt;Since angular borns the idea was (and still is): make the WebApps development easier. And the framework provide us lots of tools to make our life simple as possible and delivery business value fast.&lt;/p&gt;
 
-&lt;p&gt;Yeah! &lt;em&gt;business delivery&lt;/em&gt;! If your code doesn’t delivery business value, so we have something wrong…but I will talk more about that in the next posts.&lt;/p&gt;
+&lt;p&gt;Yeah! &lt;em&gt;delivery business value&lt;/em&gt;! If your code doesn’t delivery business value, so we have something wrong…but I will talk more about that in the next posts.&lt;/p&gt;
 
 &lt;p&gt;We have the concept of directives: a new way to handle with WebApps creating decoupled components with specific rules based in your application domain. All built in core directives use &lt;code class=&quot;highlighter-rouge&quot;&gt;ng*&lt;/code&gt; pattern and that’s the case of our &lt;code class=&quot;highlighter-rouge&quot;&gt;ngRepeat&lt;/code&gt;.&lt;/p&gt;
 
@@ -64,7 +64,7 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;So in this code example we are not tracking our collection and the angular creates a unique key to avoid &lt;a href=&quot;ng-repeat-dupes&quot;&gt;Duplicate Key in Repeater error&lt;/a&gt; in our code. This generated unique key is &lt;code class=&quot;highlighter-rouge&quot;&gt;$$hashKey&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;So in this code example we are not tracking our collection and the angular creates a unique key to avoid &lt;a href=&quot;https://docs.angularjs.org/error/ngRepeat/dupes&quot;&gt;Duplicate Key in Repeater error&lt;/a&gt; in our code. This generated unique key is &lt;code class=&quot;highlighter-rouge&quot;&gt;$$hashKey&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/ng-repeat-error-duplicate-key.png&quot; alt=&quot;Duplicate Key in Repeater error&quot; /&gt;&lt;/p&gt;
 
@@ -74,7 +74,7 @@
   &lt;p&gt;But wait! This is a big performance issue in the framework!&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;No, it’s not. This is the common “Read the documentation” error. You can find all the details in &lt;code class=&quot;highlighter-rouge&quot;&gt;ngRepeat&lt;/code&gt; documentation.&lt;/p&gt;
+&lt;p&gt;No, it’s not. This is the common “Read the documentation” error. You can &lt;a href=&quot;https://docs.angularjs.org/api/ng/directive/ngRepeat&quot;&gt;find all the details in ngRepeat documentation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/hashkey-ng-repeat.png&quot; alt=&quot;Angular documentation: who ngRepeat approach with $$hashKey works&quot; /&gt;&lt;/p&gt;
 
@@ -86,7 +86,7 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;PS: If you like to see this code running, please access the &lt;a href=&quot;plunker-angular-1&quot;&gt;plunker with this example using Angular1&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;PS: If you like to see this code running, please access the &lt;a href=&quot;https://embed.plnkr.co/vIZP3U&quot;&gt;plunker with this example using Angular1&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;track-by-in-angular2-apps&quot;&gt;Track by in Angular2 apps&lt;/h2&gt;
 
@@ -117,7 +117,7 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;PS: If you like to see this code running, please access the &lt;a href=&quot;plunker-angular-2&quot;&gt;plunker with this example using Angular2&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;PS: If you like to see this code running, please access the &lt;a href=&quot;http://embed.plnkr.co/oi0OIzoJA9o6ppiMEjQM&quot;&gt;plunker with this example using Angular2&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
@@ -128,10 +128,10 @@
 &lt;p&gt;Links:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Angular &lt;code class=&quot;highlighter-rouge&quot;&gt;ngRepeat&lt;/code&gt; documentation: &lt;a href=&quot;ng-repeat-docs&quot;&gt;https://docs.angularjs.org/api/ng/directive/ngRepeat&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Duplicate Key in Repeater&lt;/code&gt; error: &lt;a href=&quot;ng-repeat-dupes&quot;&gt;https://docs.angularjs.org/error/ngRepeat/dupes&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Angular2 - If you are using Angular2, use &lt;code class=&quot;highlighter-rouge&quot;&gt;ngForTrackBy&lt;/code&gt; in ngFor…PLEASE!: &lt;a href=&quot;plunker-angular-2&quot;&gt;http://embed.plnkr.co/oi0OIzoJA9o6ppiMEjQM/&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Angular1 - Use &lt;code class=&quot;highlighter-rouge&quot;&gt;track by&lt;/code&gt; in ngRepeat…PLEASE!: &lt;a href=&quot;plunker-angular-1&quot;&gt;https://embed.plnkr.co/vIZP3U/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Angular &lt;code class=&quot;highlighter-rouge&quot;&gt;ngRepeat&lt;/code&gt; documentation: &lt;a href=&quot;https://docs.angularjs.org/api/ng/directive/ngRepeat&quot;&gt;https://docs.angularjs.org/api/ng/directive/ngRepeat&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Duplicate Key in Repeater&lt;/code&gt; error: &lt;a href=&quot;https://docs.angularjs.org/error/ngRepeat/dupes&quot;&gt;https://docs.angularjs.org/error/ngRepeat/dupes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Angular2 - If you are using Angular2, use &lt;code class=&quot;highlighter-rouge&quot;&gt;ngForTrackBy&lt;/code&gt; in ngFor…PLEASE!: &lt;a href=&quot;http://embed.plnkr.co/oi0OIzoJA9o6ppiMEjQM&quot;&gt;http://embed.plnkr.co/oi0OIzoJA9o6ppiMEjQM/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Angular1 - Use &lt;code class=&quot;highlighter-rouge&quot;&gt;track by&lt;/code&gt; in ngRepeat…PLEASE!: &lt;a href=&quot;https://embed.plnkr.co/vIZP3U&quot;&gt;https://embed.plnkr.co/vIZP3U/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 </description>
