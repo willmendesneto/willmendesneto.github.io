@@ -1,82 +1,135 @@
----
-layout: default
----
 
-<div class="teaserimage">
-    <div class="teaserimage-image" {% if site.cover %}style="background-image: url({{ site.cover }})"{% endif %}>
-        Teaser Image
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- (1) Optimize for mobile versions: http://goo.gl/EOpFl -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- (1) force latest IE rendering engine: bit.ly/1c8EiC9 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Will Mendes | Sofware engineer</title>
+
+  <link rel="stylesheet" href="/assets/css/index.css">
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="canonical" href="/">
+</head>
+<body>
+  <div class="row">
+    <h1 class="hidden-text">Will Mendes | Fullstack Engineer</h1>
+    <div class="large-12 large-centered columns">
+      <header class="masthead">
+        <img src="/assets/images/profile.png" alt="Will Mendes">
+      </header>
     </div>
-</div>
+  </div>
 
-<header class="blog-header">
-    {% if site.logo %}
-      <a class="blog-logo" href="{{site.url}}" style="background-image: url('{{ site.author_image }}')">{{ site.title }}</a>
-    {% endif %}
-    <h1 class="blog-title">{{ site.title }}</h1>
-    <h2 class="blog-description">{{ site.description }}</h2>
-    <div class="custom-links">
-      {% for social in site.social %}
-        {% if social.url %}
-            <a class="icon-{{ social.icon }}" href="{{ social.url }}" target="_blank">
-              <i class="fa fa-{{ social.icon }}"></i>
-            </a>
-            &nbsp;&nbsp;·&nbsp;&nbsp;
-        {% endif %}
-      {% endfor %}
-      <a href="/about/">About</a>
+  <div class="row">
+    <div class="large-6 large-offset-3 columns">
+
+      <div class="content-section">
+        <p>
+          Hello, there. I’m Will Mendes. I’m a Brazilian Software engineer, current based in Sydney. <a href="https://developers.google.com/experts/people/wilson-mendes-neto">Angular and Web technologies Google Developer Expert</a> and currently I create a free e-book <a href="https://leanpub.com/nodebots-javascript-and-robotic-in-the-real-world">"Nodebots: javascript and robots in the real world"</a>.
+          I’ve also contribute in several open source projects such as <a href="https://github.com/webpack/webpack/graphs/contributors">Webpack</a>, <a href="https://github.com/robbyrussell/oh-my-zsh/graphs/contributors">Oh-My-Zsh</a>,  created a number of <a href="https://github.com/willmendesneto/projects">open source projects</a> using JavaScript, Angular, React, NodeJS, PHP, Python, Docker &amp; others.</p>
+        <p>I’m currently lending my brain to <a href="https://pragma.team">Pragmateam</a> and in my free times I'm speaking and training at various conferencesvents around the world in keynotes, workshops, and sessions for events such as <a href="http://qconsp.com/sp2015/speaker/wilson-mendes.html">QCon</a>, <a href="http://www.devfest.org.au/">DevFest</a> and others.</p>
+      </div>
+
+      <hr>
+      <main>
+        <h2>Open Source projects</h2>
+        <div class="project-post">
+          <h3><a href="https://github.com/willmendesneto/build-checker-app">Build Checker App</a></h3>
+          <p>A simple desktop application for check status CI status using Electron JS, ReactJS, SASS and Webpack. For now BuildCheckerApp works with all CI/CD servers that response a CCTray XML file.</p>
+        </div>
+        <div class="project-post">
+          <h3><a href="https://github.com/willmendesneto/build-checker-app">Marighella</a></h3>
+          <p>CMS to work with staticsite with Jekyll using Angular, NodeJS, Grunt, Jekyll, Github API, Snap-CI, Flickr API, Sinatra and Oauth integration and more to be used for ONG's and/or similar organizations around the world.</p>
+        </div>
+        <div class="project-post">
+          <h3><a href="https://github.com/willmendesneto/build-checker-app">UMRUM - Ultimate Magic Realtime User Monitoring</a></h3>
+          <p>An open source Real User Monitoring built using NodeJS, ReactJS, Redis and Docker.</p>
+        </div>
+        <div class="project-post">
+          <h3><a href="https://github.com/willmendesneto/keepr">Keepr: A simple list of Angular components</a></h3>
+          <p>Angular module with a list of services, directives and filters for begin your application with idea of simplify your bootstrap with Angular.</p>
+        </div>
+        <div class="project-post">
+          <h3><a href="https://github.com/willmendesneto/angular2-feature-toggle">Angular Feature Toggle</a></h3>
+          <p>Your module to handle with feature toggles in Angular2 applications easily.</p>
+        </div>
+        <div class="project-post">
+          <h3><a href="https://github.com/willmendesneto/fire-alarm">Fire Alarm</a></h3>
+          <p>A Nodebots fire alarm using NodeJS and Johnny-five, AppVeyor, Travis-CI, Coveralls and testing using MochaJS and SinonJS.</p>
+        </div>
+        <div class="project-post">
+          <h3><a href="https://github.com/willmendesneto/generator-reactor">Yeoman Generator Reactor</a></h3>
+          <p>Yeoman generator for ReactJS - lets you quickly set up a project including karma test runner and Webpack module system. Using NPM Scripts, Karma and WebPack by default.</p>
+        </div>
+        <div class="project-post">
+          <h3><a href="https://github.com/willmendesneto/offline-model">Offline Model</a></h3>
+          <p>Making Offline operations easier with VanillaJS</p>
+        </div>
+
+        <hr>
+        <h2>Talks</h2>
+        <div class="project-post">
+          <p><a href="http://slides.com/willmendesneto/frontend-tests-what-nobody-said-to-you">Frontend Tests: what nobody said to you</a></p>
+        </div>
+        <div class="project-post">
+          <p><a href="http://slides.com/willmendesneto/frontend-evolution-on-1st-wagering-webapp-in-australia">Frontend evolution on 1st wagering WebApp in Australia</a></p>
+        </div>
+        <div class="project-post">
+          <p><a href="http://slides.com/willmendesneto/angularjs-the-next-steps#/">AngularJS: the next steps</a></p>
+        </div>
+        <div class="project-post">
+          <p><a href="http://slides.com/willmendesneto/desktop-apps-with-electron-js#/">Cross platform desktop apps with ElectronJS</a></p>
+        </div>
+        <div class="project-post">
+          <p><a href="http://slides.com/willmendesneto/performance-com-angularjs#/">Performance com Angular</a></p>
+        </div>
+        <div class="project-post">
+          <p><a href="https://docs.google.com/presentation/d/1J0fkxU3RzinOR0n3nMUMU3pzLcAfiNQzuTkeMFud21M/edit#slide=id.g36e0c5d0c_00">HTML5 API:  Hero, antagonist and your usage in real applications</a></p>
+        </div>
+      </main>
+
+      <footer>
+        <h2>Contact Me</h2>
+
+        <p>
+        Send me an <a href="mailto:willmendesneto@gmail.com?Subject=Hello,%20Will!">email</a> or ping me on <a href="https://twitter.com/willmendesneto">Twitter</a>. Feel free to contact me also on <a href="https://github.com/willmendesneto">Github</a> and <a href="https://www.linkedin.com/in/willmendesneto/en">Linkedin</a> as well if you like to know more about my skills, professional works and other topics.
+        </p>
+
+        <p class="copyright">
+          &copy; <time datetime="2017-01-26T01:14:30+00:00">2017</time>. All rights reserved.
+        </p>
+      </footer>
     </div>
-</header>
 
-
-<main class="content" role="main">
-
-    {% if site.tags.featured %}
-    <h5 class="index-headline featured"><span>Featured</span></h5>
-
-    <div class="container featured">
-      {% for post in site.tags.featured %}
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
-          <div class="article-item">
-            <header class="post-header">
-              <h2 class="post-title" itemprop="name"><a href="{{ post.url }}" itemprop="url">{{ post.title }}</a></h2>
-            </header>
-            <section class="post-excerpt" itemprop="description">
-              <p>{{ post.content | strip_html | truncatewords: 50 }}</p>
-            </section>
-            <div class="post-meta">
-              <time datetime="{{ post.date | date_to_long_string }}">{{ post.date | date_to_long_string }}</time>
-  <!--            <span class="post-tags-set">on {{#foreach tags}}<span class="post-tag-{{slug}}">{{#if @first}}{{else}}, {{/if}}<a href="/tag/{{slug}}">{{name}}</a></span>{{/foreach}}</span>-->
-            </div>
-          <div>
-        </article>
-      {% endfor %}
+    <div class="large-2 large-offset-1 columns social">
+      <ul>
+        <li><a href="https://twitter.com/willmendesneto"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://github.com/willmendesneto"><i class="fa fa-github"></i></a></li>
+        <li><a href="https://medium.com/@willmendesneto"><i class="fa fa-medium"></i></a></li>
+      </ul>
     </div>
+  </div>
 
-    <h5 class="index-headline normal"><span>Regular</span></h5>
-    {% endif %}
+  <!-- Go to www.addthis.com/dashboard to customize your tools -->
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53c591e4471ce379" async="async"></script>
 
-    <div class="cf frame">
-      {% for post in paginator.posts %}
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
-          <div class="article-item">
-            <header class="post-header">
-              <h2 class="post-title" itemprop="name"><a href="{{ post.url }}" itemprop="url">{{ post.title }}</a></h2>
-            </header>
-            <section class="post-excerpt" itemprop="description">
-              <p>{{ post.content | strip_html | replace:'Veja a versão em inglês','' | replace:'INTRODUÇÃO','' | replace:'INTRODUCTION','' | replace:'Read the Brazillian Portuguese version','' | truncatewords: 50 }}</p>
-            </section>
-            <div class="post-meta">
-              <time datetime="{{ post.date | date_to_long_string }}">{{ post.date | date_to_long_string }}</time>
-<!--            <span class="post-tags-set">on {{#foreach tags}}<span class="post-tag-{{slug}}">{{#if @first}}{{else}}, {{/if}}<a href="/tag/{{slug}}">{{name}}</a></span>{{/foreach}}</span>-->
-            </div>
-          <div>
-        </article>
-      {% endfor %}
-    </div>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    {% include pagination.html %}
-
-    <!-- {{!! After all the posts, we have the previous/next pagination links }}
-    {{pagination}} -->
-
-</main>
+  ga('create', 'UA-58169656-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+</body>
+</html>

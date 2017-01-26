@@ -1,28 +1,19 @@
 # Build settings
 markdown: kramdown
 highlighter: rouge
-gems: [rouge, kramdown, jekyll-paginate, jekyll-gist]
+gems: [rouge, kramdown]
 
 # Site settings
 title: "Wilson Mendes - Blog"
 description: ""
 
-permalink: /:year/:month/:day/:title
-
 email: willmendesneto@gmail.com
-#blog logo
-#logo: "/assets/images/df_logo.jpg"
 logo: ""
-# blog cover
-cover: "/assets/images/background-1.jpg"
 
 name: 'Wilson Mendes'
 author: 'Wilson Mendes'
 author_image: "https://pt.gravatar.com/userimage/20307137/677413a79461cdfd62c8a65143214850.png?size=300"
-author_biography: Google Developer Expert (GDE) AngularJS e Google Developer Group (GDG) Salvador Organizer. Músico e desenhista nas horas vagas.
-author_biography_us: Google Developer Expert (GDE) AngularJS and GDG Salvador Organizer. Musician and designer in his spare time.
-
-paginate:   10
+author_biography: Google Developer Expert (GDE) AngularJS and GDG Salvador Organizer. Musician and designer in his spare time.
 
 url: "http://willmendesneto.github.io" # the base hostname & protocol for your site
 baseurl: ""
@@ -36,28 +27,5 @@ social:
     share_title: ?text=
     share_link: "&amp;url="
 
-  - icon:   facebook
-    url:    https://facebook.com/wilsonmendesneto
-    desc: Connect with me facebook
-    share_url: //www.facebook.com/sharer.php
-    share_title: ?t=
-    share_link: "&amp;u="
-
-  - icon:   github
-    url:    https://github.com/willmendesneto
-    desc:   Fork me on github
-    share_url:
-    share_title:
-    share_link:
-
-  - icon:   google-plus
-    url:    https://plus.google.com/106614160477906803303/posts?hl=pt_BR
-    desc:   Add me on google+
-    share_url: https://plus.google.com/share
-    share_title: ?t=
-    share_link: "&amp;url="
-
 twitter_username: willmendesneto
 description: "This is my blog, where i talk about technologies"
-disqus_short_name: willmendesneto
-disqus_show_comment_count: true
