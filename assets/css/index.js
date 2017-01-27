@@ -81,10 +81,10 @@ export default StyleSheet.create({
     "content-section": {
         "marginBottom": 4
     },
-    "project-post h3": {
+    "project-item h3": {
         "fontSize": 18
     },
-    "project-post p": {
+    "project-item p": {
         "fontSize": 18,
         "color": "#8e8e8e"
     },
@@ -199,7 +199,7 @@ export default StyleSheet.create({
         "marginTop": 4,
         "color": "#d1d1d1"
     },
-    "masthead": {
+    "profile-header": {
         "paddingTop": 1,
         "paddingRight": 0,
         "paddingBottom": 1,
@@ -209,7 +209,7 @@ export default StyleSheet.create({
         "marginBottom": 3,
         "marginLeft": 0
     },
-    "masthead img": {
+    "profile-header img": {
         "width": 300,
         "borderRadius": "50%",
         "marginTop": 0,

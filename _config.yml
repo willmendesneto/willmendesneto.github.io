@@ -3,29 +3,12 @@ markdown: kramdown
 highlighter: rouge
 gems: [rouge, kramdown]
 
-# Site settings
-title: "Wilson Mendes - Blog"
-description: ""
-
-email: willmendesneto@gmail.com
-logo: ""
-
-name: 'Wilson Mendes'
-author: 'Wilson Mendes'
-author_image: "https://pt.gravatar.com/userimage/20307137/677413a79461cdfd62c8a65143214850.png?size=300"
-author_biography: Google Developer Expert (GDE) AngularJS and GDG Salvador Organizer. Musician and designer in his spare time.
-
-url: "http://willmendesneto.github.io" # the base hostname & protocol for your site
-baseurl: ""
-
-# social icons and sharing options
-social:
-  - icon:   twitter
-    url:    https://twitter.com/willmendesneto
-    desc: Follow me on twitter
-    share_url: http://twitter.com/share
-    share_title: ?text=
-    share_link: "&amp;url="
-
-twitter_username: willmendesneto
-description: "This is my blog, where i talk about technologies"
+sass:
+  style: compressed
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  blanklines: false
+  profile: false
+  startings: [html, head, body]
