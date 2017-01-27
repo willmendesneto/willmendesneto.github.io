@@ -1,8 +1,6 @@
-# Blog - Wilson Mendes
+# Landing Page - Wilson Mendes
 
-> My personal blog built with [Jekyll](http://jekyllrb.com/).
-
-[![Build Status](https://snap-ci.com/willmendesneto/willmendesneto.github.io/branch/master/build_image)](https://snap-ci.com/willmendesneto/willmendesneto.github.io/branch/master)
+> My personal landing page built with [Jekyll](http://jekyllrb.com/).
 
 ## Requirements
 
@@ -12,9 +10,6 @@
 
 
 ## Usage
-
-
-### Run at Localhost
 
 Run this blog in your local host with the following steps:
 
@@ -26,16 +21,6 @@ Run this blog in your local host with the following steps:
     git clone git@github.com:willmendesneto/willmendesneto.github.io.git
 
 > If you have some performance problems in markdown compile task, please use  `jekyll serve --watch --limit_posts <number-of-posts-for-compile-using-watch>`. If you're using Jekyll >= 3.0 run `jekyll serve --incremental` command for a better feedback time
-
-
-### Deploy
-
-Run the command:
-
-```bash
-$ chmod +x deploy.sh
-$ ./deploy.sh production
-```
 
 
 ## Contribute
