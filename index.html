@@ -9,22 +9,33 @@ layout: default
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- (1) force latest IE rendering engine: bit.ly/1c8EiC9 -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-  <title>Will Mendes | Sofware engineer</title>
-  <link rel="stylesheet" lazyload="1" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
-  <link rel="stylesheet" lazyload="1" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.min.css">
-  <link rel="stylesheet" lazyload="1" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-  <link rel="stylesheet" lazyload="1" href="//fonts.googleapis.com/css?family=Merriweather:400,700">
-  <link rel="stylesheet" lazyload="1" href="/assets/css/index.css">
-
+  
+  <link rel="manifest" href="/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="msapplication-TileColor" content="#009999">
+  <meta name="theme-color" content="#009999">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Will Mendes | Senior Fullstack Sofware engineer">
+  
+  <title>Will Mendes | Senior Fullstack Sofware engineer</title>
+  
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
   <link rel="canonical" href="/">
+
+  <meta name="robots" content="nofollow">
+  <link rel="stylesheet" lazyload="1" async="true" href="/assets/css/normalize.min.css">
+  <link rel="stylesheet" lazyload="1" async="true" href="/assets/css/foundation.min.css">
+  <link rel="stylesheet" lazyload="1" async="true" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <link rel="stylesheet" lazyload="1" href="/assets/css/index.css">
+
 </head>
 <body>
+
   <a href="https://github.com/willmendesneto/willmendesneto.github.io" class="github-corner" aria-label="View source on Github">
     <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#009999; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
       <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
@@ -33,7 +44,7 @@ layout: default
     </svg>
   </a>
   <div class="row">
-    <h1 class="hidden-text">Will Mendes | Fullstack Engineer</h1>
+    <h1 class="hidden-text">Will Mendes | Senior Fullstack Software Engineer</h1>
     <div class="large-12 large-centered columns">
       <header class="profile-header">
         <img src="/assets/images/profile.png" alt="Will Mendes">
@@ -46,9 +57,9 @@ layout: default
 
       <div class="content-section">
         <p>
-        Hello, there. I’m Will Mendes. I’m a Brazilian Software engineer, current based in Sydney. <a href="https://developers.google.com/experts/people/wilson-mendes-neto">Angular and Web technologies Google Developer Expert</a>. I published a free e-book <a href="https://leanpub.com/nodebots-javascript-and-robotic-in-the-real-world">"Nodebots: javascript and robots in the real world"</a>, which explains several architectural points such as testability, task automation and application evolution in IoT applications.
-          I’ve also contribute in several open source projects such as <a href="https://github.com/webpack/webpack/graphs/contributors">Webpack</a>, <a href="https://github.com/robbyrussell/oh-my-zsh/graphs/contributors">Oh-My-Zsh</a>,  created a number of <a href="https://github.com/willmendesneto/projects">open source projects</a> using JavaScript, Angular, React, NodeJS, PHP, Python, Docker &amp; others.</p>
-        <p>I’m currently lending my brain to <a href="https://pragma.team">Pragmateam</a> and in my free times I'm speaking and training at various conferencesvents around the world in keynotes, workshops, and sessions for events such as <a href="http://qconsp.com/sp2015/speaker/wilson-mendes.html">QCon</a>, <a href="http://www.devfest.org.au">DevFest</a> and others.</p>
+        Hello, there. I’m Will Mendes. I’m a Brazilian Software engineer (or any cool name that you want to call me), current based in Sydney. <a href="https://developers.google.com/experts/people/wilson-mendes-neto">Angular and Web technologies Google Developer Expert</a>. I published a free e-book <a href="https://leanpub.com/nodebots-javascript-and-robotic-in-the-real-world">"Nodebots: javascript and robots in the real world"</a> in English and Brazilian Portuguese, which explains several architectural points such as testability, task automation and application evolution in IoT applications.
+          I’ve also contribute in several open source projects such as <a href="https://github.com/webpack/webpack/graphs/contributors">Webpack</a>, <a href="https://github.com/paulirish/pwmetrics/graphs/contributors">PWMetrics</a>, <a href="https://github.com/robbyrussell/oh-my-zsh/graphs/contributors">Oh-My-Zsh</a>,  created a number of <a href="https://github.com/willmendesneto/projects">open source projects</a> using JavaScript, Angular, React, NodeJS, PHP, Python, C#, Serverless Architecture, Docker &amp; others languages and technologies.</p>
+        <p>I’m currently lending my brain to <a href="https://www.domain.com.au/group/">Domain Group</a> and in my free times I'm speaking and training at various conferencesvents around the world in keynotes, workshops, and sessions for events such as <a href="http://qconsp.com/sp2015/speaker/wilson-mendes.html">QCon</a>, <a href="http://ngjapan.org">NG-Japan</a>, <a href="http://2016.devfest.org.au">DevFest Australia</a>, <a href="https://gdg-siberia.com/speakers/">DevFest Siberia</a> and other conferences around the world.</p>
       </div>
 
       <hr>
@@ -57,6 +68,10 @@ layout: default
         <div class="project-item">
           <h3><a href="https://github.com/willmendesneto/build-checker-app">Build Checker App</a></h3>
           <p>A simple desktop application for check status CI status using Electron JS, ReactJS, SASS and Webpack. For now BuildCheckerApp works with all CI/CD servers that response a CCTray XML file.</p>
+        </div>
+        <div class="project-item">
+          <h3><a href="https://github.com/willmendesneto/micro-frontend-pages">Micro Frontend Pages</a></h3>
+          <p>Docker orchestration with an example of Micro Frontend architecture pages.</p>
         </div>
         <div class="project-item">
           <h3><a href="https://github.com/willmendesneto/build-checker-app">Marighella</a></h3>
@@ -71,8 +86,12 @@ layout: default
           <p>Angular module with a list of services, directives and filters for begin your application with idea of simplify your bootstrap with Angular.</p>
         </div>
         <div class="project-item">
-          <h3><a href="https://github.com/willmendesneto/angular2-feature-toggle">Angular Feature Toggle</a></h3>
-          <p>Your module to handle with feature toggles in Angular2 applications easily.</p>
+          <h3><a href="https://github.com/willmendesneto/ngx-feature-toggle">NGX-Feature Toggle</a></h3>
+          <p>Your module to handle with feature toggles in Angular applications easier.</p>
+        </div>
+        <div class="project-item">
+          <h3><a href="https://github.com/willmendesneto/reactor-feature-toggle">Reactor Feature Toggle</a></h3>
+          <p>Feature toggle components integration for your ReactJS application.</p>
         </div>
         <div class="project-item">
           <h3><a href="https://github.com/willmendesneto/fire-alarm">Fire Alarm</a></h3>
@@ -90,6 +109,12 @@ layout: default
         <hr>
         <h2>Talks</h2>
         <div class="project-item">
+          <p><a href="http://slides.com/willmendesneto/flow-type-system-from-facebook-to-your-pwa">Flow type system: From Facebook to your PWA</a></p>
+        </div>
+        <div class="project-item">
+          <p><a href="http://slides.com/willmendesneto/best-practices-for-shared-modules-in-angular">Best practices for shared modules in Angular</a></p>
+        </div>
+        <div class="project-item">
           <p><a href="http://slides.com/willmendesneto/frontend-tests-what-nobody-said-to-you">Frontend Tests: what nobody said to you</a></p>
         </div>
         <div class="project-item">
@@ -105,7 +130,7 @@ layout: default
           <p><a href="http://slides.com/willmendesneto/performance-com-angularjs#/">Performance com Angular</a></p>
         </div>
         <div class="project-item">
-          <p><a href="https://docs.google.com/presentation/d/1J0fkxU3RzinOR0n3nMUMU3pzLcAfiNQzuTkeMFud21M/edit#slide=id.g36e0c5d0c_00">HTML5 API:  Hero, antagonist and your usage in real applications</a></p>
+          <p><a href="https://docs.google.com/presentation/d/1J0fkxU3RzinOR0n3nMUMU3pzLcAfiNQzuTkeMFud21M/edit#slide=id.g36e0c5d0c_00">HTML5 API: Hero, antagonist and your usage in real applications</a></p>
         </div>
       </main>
 
@@ -133,7 +158,7 @@ layout: default
   </div>
 
   <!-- Go to www.addthis.com/dashboard to customize your tools -->
-  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53c591e4471ce379" async="async"></script>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53c591e4471ce379" async defer></script>
 
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -143,6 +168,34 @@ layout: default
 
   ga('create', 'UA-58169656-1', 'auto');
   ga('send', 'pageview');
+
+  var WebFontConfig = {
+    google: {
+      families: [ 'Merriweather:400,700' ],
+    },
+  };
+
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    wf.defer = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+
+  // if('serviceWorker' in navigator) {
+  //   navigator.serviceWorker.register('/sw.js', { scope: '/' })
+  //     .then(function(registration) {
+  //       console.log('Service Worker Registered');
+  //     });
+
+  //   navigator.serviceWorker.ready.then(function(registration) {
+  //     console.log('Service Worker Ready');
+  //   });
+  // }
   </script>
 </body>
 </html>
