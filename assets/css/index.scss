@@ -2,237 +2,102 @@
 ---
 
 * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box
-}
-
-html,
-body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-@media (min-width: 38em) {
-  html {
-    font-size:20px;
-  }
+html {
+  height: 100%;
 }
 
 body {
-  font-family: "Merriweather", sans-serif;
-  font-size: 22px;
-  line-height: 2;
-  color: #515151;
-  background-color: #fff;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%
+  font-family: Quicksand,sans-serif;
+  background: #fff;
+  color: #666;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
 }
 
-a {
-  color: #6c6666;
-  text-decoration: none;
-  font-weight: bold;
-  -webkit-transition: color 0.2s ease-in-out;
-  -moz-transition: color 0.2s ease-in-out;
-  -o-transition: color 0.2s ease-in-out;
-  transition: color 0.2s ease-in-out;
-  text-decoration: underline;
-
-  &:hover,
-  &:focus {
-    color: #009999;
-  }
-
-  strong {
-    color: inherit;
-  }
+body > div {
+  max-width: 408px;
+  min-width: 300px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
 img {
-  display: block;
-  max-width: 100%;
-  margin: 0 0 1rem;
-  border-radius: 5px;
-}
-
-ul {
-  margin-left: 0;
-
-  li {
-    list-style: none;
-    text-align: left;
-  }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-bottom: .5rem;
-  font-weight: 600;
-  line-height: 1.25;
-  color: #4b4040;
-  text-rendering: optimizeLegibility;
+  width: 40%;
+  float: right;
+  border: 1px solid #666;
+  border-radius: 50%;
+  margin: 15px 0 10px 10px;
+  box-shadow: 0 1px 4px;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 35px;
+  font-weight: 300;
+  margin-bottom: .5em;
 }
 
 h2 {
-  margin-top: 1rem;
-  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 400;
 }
 
-h3 {
-  margin-top: 1.5rem;
-  font-size: 1.25rem;
-}
-
-h4,
-h5,
-h6 {
-  margin-top: 1rem;
-  font-size: 1rem;
+a {
+  color: #000;
+  
+  & img {
+    text-decoration: none;
+  }
 }
 
 p {
-  color: #6c6666;
-  margin-top: 0;
-  margin-bottom: 1rem
-}
+  a {
+    text-decoration: underline;
 
-strong {
-  color: #6c6666
-}
-
-ul,
-ol {
-  margin-top: 0;
-  margin-bottom: 1rem
-}
-
-hr {
-  position: relative;
-  margin: 1.5rem 0;
-  border: 0;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #fff
-}
-
-abbr {
-  font-size: 85%;
-  font-weight: bold;
-  color: #555;
-  text-transform: uppercase
-}
-
-abbr[title] {
-  cursor: help;
-  border-bottom: 1px dotted #e5e5e5
-}
-
-main {
-  h2 {
-    font-size: 22px;
-    margin-bottom: 2em;
-  }
-}
-
-.hidden-text {
-  text-indent: -1000vh;
-  height: 0;
-}
-
-.project-item {
-  h3,
-  p {
-    font-size: 18px;
-  }
-
-  p {
-    color: #8e8e8e;
-  }
-}
-
-.content-section {
-  margin-bottom: 4em;
-
-  p {
-    line-height: 2
-  }
-}
-
-.social {
-  i {
-    font-size: 28px;
-  }
-
-  ul {
-    @media only screen and (max-width: 40em) {
-      text-align: center;
-    }
-
-    @media only screen and (min-width: 40.063em) and (max-width: 64em) {
-      text-align: center;
+    &:hover {
+      color: #009999;
     }
   }
+}
+
+dt {
+  width: 25%;
+  margin-bottom: 10px;
+}
+
+dd, dt {
+  display: inline-block;
+}
+
+dd {
+  width: 70%;
+}
+
+dt.space {
+  margin-top: .6rem;
+}
+
+ul {
+  list-style: none;
+  margin-bottom: 2em;
 
   li {
-    margin-bottom: 0.75em;
-
-    @media only screen and (max-width: 40em) {
-      display:inline-block;
-      padding-right: 1em;
-    }
-
-    @media only screen and (min-width: 40.063em) and (max-width: 64em) {
-      display:inline-block;
-      padding-right: 1em;
-    }
+    margin-bottom: .75em;
   }
 }
 
-footer {
-  margin: 4em 0;
 
-  h2 {
-    margin-bottom: 1em;
-    font-size: 22px;
-  }
-
-  p {
-    font-size: 18px;
-  }
-
-  .copyright {
-    margin-top: 4em;
-    color: #d1d1d1;
-
-    @media only screen and (max-width: 40em) {
-      text-align: center;
-    }
-
-    @media only screen and (min-width: 40.063em) and (max-width: 64em) {
-      text-align: center;
-    }
-  }
-}
-
-.profile-header {
-  padding: 1rem 0;
-  margin: 3rem 0;
-
-  img {
-    width: 300px;
-    border-radius: 50%;
-    margin: 0 auto;
-    display: table;
-    box-shadow: 0 1px 7px;
-  }
+em {
+  font-style: normal;
+  text-decoration: underline;
 }
 
 .github-corner {
@@ -272,5 +137,20 @@ footer {
     .octo-arm{
       animation:octocat-wave 560ms ease-in-out;
     }
+  }
+}
+
+@media (min-width:800px){
+  body {
+    font-size: 18px;
+  }
+
+  body>div {
+    max-width: 640px;
+  }
+
+  img {
+    width: 30%;
+    margin: 5px;
   }
 }

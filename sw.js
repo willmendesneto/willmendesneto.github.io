@@ -7,8 +7,6 @@ self.addEventListener('install', function(e) {
       return cache.addAll([
         '/',
         '/index.html?timestamp=' + timeStamp,
-        '/assets/css/normalize.min.css?timestamp=' + timeStamp,
-        '/assets/css/foundation.min.css?timestamp=' + timeStamp,
         '/assets/css/index.css?timestamp=' + timeStamp,
         '/assets/images/profile.png?timestamp=' + timeStamp
       ])
