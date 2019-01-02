@@ -1,149 +1,279 @@
---- layout: default ---
+---
+layout: default
+---
+
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- (1) Optimize for mobile versions: http://goo.gl/EOpFl -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- (1) force latest IE rendering engine: bit.ly/1c8EiC9 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-<head>
-  <meta charset="UTF-8">
-  <!-- (1) Optimize for mobile versions: http://goo.gl/EOpFl -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- (1) force latest IE rendering engine: bit.ly/1c8EiC9 -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="msapplication-TileColor" content="#009999" />
+    <meta name="theme-color" content="#009999" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta
+      name="apple-mobile-web-app-title"
+      content="Will Mendes | Senior Fullstack Sofware engineer"
+    />
 
-  <link rel="manifest" href="/manifest.json">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="msapplication-TileColor" content="#009999">
-  <meta name="theme-color" content="#009999">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Will Mendes | Senior Fullstack Sofware engineer">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
 
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="MobileOptimized" content="320" />
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="canonical" href="https://willmendesneto.github.io" />
+    <title>Will Mendes | Senior Fullstack Sofware engineer</title>
+    <link
+      rel="stylesheet"
+      lazyload="1"
+      async="true"
+      href="/assets/css/index.css"
+    />
+  </head>
 
-  <link rel="canonical" href="https://willmendesneto.github.io" />
-  <title>Will Mendes | Senior Fullstack Sofware engineer</title>
-  <link rel="stylesheet" lazyload="1" async="true" href="/assets/css/index.css">
-</head>
-
-<body>
-  <a href="https://github.com/willmendesneto/willmendesneto.github.io" class="github-corner" aria-label="View source on Github">
-    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#009999; color:#fff; position: absolute; top: 0; border: 0; right: 0;"
-      aria-hidden="true">
-      <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
-      <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
-        fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
-      <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
-        fill="currentColor" class="octo-body"></path>
-    </svg>
-  </a>
-  <div>
-    <a href="/assets/images/profile.jpg">
-      <img src="/assets/images/profile-150.jpg" srcset="/assets/images/profile-150.jpg 1x, /assets/images/profile-300.jpg 2x" alt="Wilson Mendes, Senior Sofware engineer, Google Developer Expert Web Technologies">
+  <body>
+    <a
+      href="https://github.com/willmendesneto/willmendesneto.github.io"
+      class="github-corner"
+      aria-label="View source on Github"
+    >
+      <svg
+        width="80"
+        height="80"
+        viewBox="0 0 250 250"
+        style="fill:#009999; color:#fff; position: absolute; top: 0; border: 0; right: 0;"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px;"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path>
+      </svg>
     </a>
+    <div>
+      <a href="/assets/images/profile.jpg">
+        <img
+          src="/assets/images/profile-150.jpg"
+          srcset="
+            /assets/images/profile-150.jpg 1x,
+            /assets/images/profile-300.jpg 2x
+          "
+          alt="Wilson Mendes, Senior Sofware engineer, Google Developer Expert Web Technologies"
+        />
+      </a>
 
-    <h1>Will Mendes</h1>
+      <h1>Will Mendes</h1>
 
-    <br>
-    <h2>Senior Software Engineer<br>Sydney, Australia</h2><br/>
-    <p>Hello, there. I’m a Brazilian Software engineer (or any cool name that you want to call me), current based in Sydney.</p><br/><br/>
-    <p><a href="https://developers.google.com/experts/people/wilson-mendes-neto">Google Developer Expert Angular and Web
-        technologies
-      </a>. I published a free e-book <a href="https://leanpub.com/nodebots-javascript-and-robotic-in-the-real-world">"Nodebots:
-        javascript and robotics in the real world"</a> in English and Brazilian Portuguese, which explains several architectural
-      points such as testability, task automation and application evolution in IoT applications.</p><br/><br/>
-    <p>I’ve also contribute in several open source projects such as <a href="https://github.com/webpack/webpack/graphs/contributors">Webpack</a>,
-      <a href="https://github.com/paulirish/pwmetrics/graphs/contributors">PWMetrics</a>, <a href="https://github.com/robbyrussell/oh-my-zsh/graphs/contributors">Oh-My-Zsh</a>,
-      created a number of <a href="https://github.com/willmendesneto?tab=repositories">open source projects</a> using JavaScript,
-      Angular, React, NodeJS, PHP, Python, C#, Serverless Architecture, Docker &amp; others languages and technologies.</p><br/><br/>
-    <p>I’m currently lending my brain to <a href="https://www.atlassian.com/">Atlassian</a> and in my free times I'm speaking
-      and training at various conferences around the world in keynotes, workshops, and sessions for events such as <a href="https://2018.jsconf.asia/">JSConf</a>,
-      <a href="http://qconsp.com/sp2015/speaker/wilson-mendes.html">QCon</a>, <a href="http://ngjapan.org">NG-Japan</a>,
-      <a href="http://2016.devfest.org.au">DevFest Australia</a>, <a href="https://gdg-siberia.com/speakers/">DevFest Siberia</a>
-      and others.</p><br/><br/>
+      <br />
+      <h2>Senior Software Engineer<br />Sydney, Australia</h2>
+      <br />
+      <p>
+        Hello, there. I’m a Brazilian Software engineer (or any cool name that
+        you want to call me), current based in Sydney.
+      </p>
+      <br /><br />
+      <p>
+        <a
+          href="https://developers.google.com/experts/people/wilson-mendes-neto"
+          >Google Developer Expert Angular and Web technologies </a
+        >. I published a free e-book
+        <a
+          href="https://leanpub.com/nodebots-javascript-and-robotic-in-the-real-world"
+          >"Nodebots: javascript and robotics in the real world"</a
+        >
+        in English and Brazilian Portuguese, which explains several
+        architectural points such as testability, task automation and
+        application evolution in IoT applications.
+      </p>
+      <br /><br />
+      <p>
+        I’ve also contribute in several open source projects such as
+        <a href="https://github.com/webpack/webpack/graphs/contributors"
+          >Webpack</a
+        >,
+        <a href="https://github.com/paulirish/pwmetrics/graphs/contributors"
+          >PWMetrics</a
+        >,
+        <a href="https://github.com/robbyrussell/oh-my-zsh/graphs/contributors"
+          >Oh-My-Zsh</a
+        >, created a number of
+        <a href="https://github.com/willmendesneto?tab=repositories"
+          >open source projects</a
+        >
+        using JavaScript, Angular, React, NodeJS, PHP, Python, C#, Serverless
+        Architecture, Docker &amp; others languages and technologies.
+      </p>
+      <br /><br />
+      <p>
+        I’m currently lending my brain to
+        <a href="https://www.atlassian.com/">Atlassian</a> and in my free times
+        I'm speaking and training at various conferences around the world in
+        keynotes, workshops, and sessions for events such as
+        <a href="https://2018.jsconf.asia/">JSConf</a>,
+        <a href="http://qconsp.com/sp2015/speaker/wilson-mendes.html">QCon</a>,
+        <a href="http://ngjapan.org">NG-Japan</a>,
+        <a href="http://2016.devfest.org.au">DevFest Australia</a>,
+        <a href="https://gdg-siberia.com/speakers/">DevFest Siberia</a> and
+        others.
+      </p>
+      <br /><br />
 
-    <br>
-    <br>
-    <h2>Talks</h2>
-    <ul>
-      <li>
-        <a href="http://slides.com/willmendesneto/micro-frontend-a-microservice-architecture-from-your-frontend-web-apps">Micro
-          Frontend: a microservice architecture from your frontend web apps</a>
-      </li>
-      <li>
-        <a href="http://slides.com/willmendesneto/domain-listing-details-from-monolith-to-microfrontend">Listing Details
-          page: From monolith to Page architecture</a>
-      </li>
-      <li>
-        <a href="http://slides.com/willmendesneto/flow-type-system-from-facebook-to-your-pwa">Flow type system: From Facebook
-          to your PWA</a>
-      </li>
-      <li>
-        <a href="http://slides.com/willmendesneto/best-practices-for-shared-modules-in-angular">Best practices for shared
-          modules in Angular</a>
-      </li>
-      <li>
-        <a href="http://slides.com/willmendesneto/frontend-tests-what-nobody-said-to-you">Frontend Tests: what nobody said
-          to you</a>
-      </li>
-      <li>
-        <a href="http://slides.com/willmendesneto/frontend-evolution-on-1st-wagering-webapp-in-australia">Frontend evolution
-          on 1st wagering WebApp in Australia</a>
-      </li>
-      <li>
-        <a href="http://slides.com/willmendesneto/angularjs-the-next-steps#/">AngularJS: the next steps</a>
-      </li>
-      <li>
-        <a href="http://slides.com/willmendesneto/desktop-apps-with-electron-js#/">Cross platform desktop apps with ElectronJS</a>
-      </li>
-      <li>
-        <a href="http://slides.com/willmendesneto/performance-com-angularjs#/">Performance com Angular</a>
-      </li>
-      <li>
-        <a href="https://docs.google.com/presentation/d/1J0fkxU3RzinOR0n3nMUMU3pzLcAfiNQzuTkeMFud21M/edit#slide=id.g36e0c5d0c_00">HTML5
-          API: Hero, antagonist and your usage in real applications</a>
-      </li>
-    </ul>
+      <br />
+      <br />
+      <h2>Talks</h2>
+      <ul>
+        <li>
+          <a
+            href="http://slides.com/willmendesneto/micro-frontend-a-microservice-architecture-from-your-frontend-web-apps"
+            >Micro Frontend: a microservice architecture from your frontend web
+            apps</a
+          >
+        </li>
+        <li>
+          <a
+            href="http://slides.com/willmendesneto/domain-listing-details-from-monolith-to-microfrontend"
+            >Listing Details page: From monolith to Page architecture</a
+          >
+        </li>
+        <li>
+          <a
+            href="http://slides.com/willmendesneto/flow-type-system-from-facebook-to-your-pwa"
+            >Flow type system: From Facebook to your PWA</a
+          >
+        </li>
+        <li>
+          <a
+            href="http://slides.com/willmendesneto/best-practices-for-shared-modules-in-angular"
+            >Best practices for shared modules in Angular</a
+          >
+        </li>
+        <li>
+          <a
+            href="http://slides.com/willmendesneto/frontend-tests-what-nobody-said-to-you"
+            >Frontend Tests: what nobody said to you</a
+          >
+        </li>
+        <li>
+          <a
+            href="http://slides.com/willmendesneto/frontend-evolution-on-1st-wagering-webapp-in-australia"
+            >Frontend evolution on 1st wagering WebApp in Australia</a
+          >
+        </li>
+        <li>
+          <a href="http://slides.com/willmendesneto/angularjs-the-next-steps#/"
+            >AngularJS: the next steps</a
+          >
+        </li>
+        <li>
+          <a
+            href="http://slides.com/willmendesneto/desktop-apps-with-electron-js#/"
+            >Cross platform desktop apps with ElectronJS</a
+          >
+        </li>
+        <li>
+          <a href="http://slides.com/willmendesneto/performance-com-angularjs#/"
+            >Performance com Angular</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://docs.google.com/presentation/d/1J0fkxU3RzinOR0n3nMUMU3pzLcAfiNQzuTkeMFud21M/edit#slide=id.g36e0c5d0c_00"
+            >HTML5 API: Hero, antagonist and your usage in real applications</a
+          >
+        </li>
+      </ul>
 
-    <br>
-    <h2>Contact Me</h2>
-    <dl>
-      <dt>Medium</dt>
-      <dd><a href="https://medium.com/@willmendesneto">medium.com/@willmendesneto</a></dd>
-      <dt class="space">Twitter</dt>
-      <dd><a href="https://twitter.com/willmendesneto">twitter.com/willmendesneto</a></dd>
-      <dt>Github</dt>
-      <dd><a href="https://github.com/willmendesneto">github.com/willmendesneto</a></dd>
-      <dt>Talks</dt>
-      <dd><a href="https://slides.com/willmendesneto">slides.com/willmendesneto</a></dd>
-      <dt>LinkedIn</dt>
-      <dd><a href="https://www.linkedin.com/in/willmendesneto/">linkedin.com/in/willmendesneto/</a></dd>
-    </dl>
-  </div>
-  <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
-  <!-- Go to www.addthis.com/dashboard to customize your tools -->
-  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53c591e4471ce379" async defer></script>
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "Person",
-      "image": "https://willmendesneto.github.io/images/profile.jpg",
-      "jobTitle": "Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Wen Technologies",
-      "name": "Wilson Mendes",
-			"url": "https://willmendesneto.github.io",
-			"workLocation": {
-				"@type": "PostalAddress",
-				"addressLocality": "Sydney",
-				"addressCountry": "Australia"
-			}
-    }
-	</script>
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-58169656-1', 'auto'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
-</body>
-
+      <br />
+      <h2>Contact Me</h2>
+      <dl>
+        <dt>Medium</dt>
+        <dd>
+          <a href="https://medium.com/@willmendesneto"
+            >medium.com/@willmendesneto</a
+          >
+        </dd>
+        <dt class="space">Twitter</dt>
+        <dd>
+          <a href="https://twitter.com/willmendesneto"
+            >twitter.com/willmendesneto</a
+          >
+        </dd>
+        <dt>Github</dt>
+        <dd>
+          <a href="https://github.com/willmendesneto"
+            >github.com/willmendesneto</a
+          >
+        </dd>
+        <dt>Talks</dt>
+        <dd>
+          <a href="https://slides.com/willmendesneto"
+            >slides.com/willmendesneto</a
+          >
+        </dd>
+        <dt>LinkedIn</dt>
+        <dd>
+          <a href="https://www.linkedin.com/in/willmendesneto/"
+            >linkedin.com/in/willmendesneto/</a
+          >
+        </dd>
+      </dl>
+    </div>
+    <link
+      href="https://fonts.googleapis.com/css?family=Quicksand:300,400"
+      rel="stylesheet"
+    />
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script
+      type="text/javascript"
+      src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53c591e4471ce379"
+      async
+      defer
+    ></script>
+    <script type="application/ld+json">
+       {
+         "@context": "http://schema.org",
+         "@type": "Person",
+         "image": "https://willmendesneto.github.io/images/profile.jpg",
+         "jobTitle": "Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Wen Technologies",
+         "name": "Wilson Mendes",
+      "url": "https://willmendesneto.github.io",
+      "workLocation": {
+      	"@type": "PostalAddress",
+      	"addressLocality": "Sydney",
+      	"addressCountry": "Australia"
+      }
+       }
+    </script>
+    <script>
+      window.ga = function() {
+        ga.q.push(arguments);
+      };
+      ga.q = [];
+      ga.l = +new Date();
+      ga('create', 'UA-58169656-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script
+      src="https://www.google-analytics.com/analytics.js"
+      async
+      defer
+    ></script>
+  </body>
 </html>
