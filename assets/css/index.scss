@@ -226,3 +226,13 @@ em {
   }
 }
 // TOGGLE
+
+@media print {
+  .github-corner,
+  .switch-toggle {
+    display: none;
+  }
+  a {
+    color: #009999;
+  }
+}
