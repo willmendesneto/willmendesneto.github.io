@@ -341,7 +341,6 @@ layout: default
       isMatchMediaSupported = typeof window.matchMedia === "function";
       if (isMatchMediaSupported) {
         var darkModeMatches = window.matchMedia("(prefers-color-scheme: dark)");
-        console.log(darkModeMatches);
         /** Checks if dark mode is enabled via OS on page load */
         if (darkModeMatches.matches) {
           toggleSiteTheme();
