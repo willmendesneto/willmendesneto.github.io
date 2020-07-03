@@ -53,7 +53,14 @@ layout: default
         width="80"
         height="80"
         viewBox="0 0 250 250"
-        style="fill:#009999; color:#fff; position: absolute; top: 0; border: 0; right: 0;"
+        style="
+          fill: #009999;
+          color: #fff;
+          position: absolute;
+          top: 0;
+          border: 0;
+          right: 0;
+        "
         aria-hidden="true"
       >
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
@@ -71,10 +78,24 @@ layout: default
       </svg>
     </a>
     <div>
+      <div class="switch-toggle">
+        <input type="checkbox" id="switch-checkbox" />
+        <label for="switch" id="theme-switch"
+          >Enable/disable Dark Mode Theme</label
+        >
+      </div>
+
       <a href="/assets/images/profile.jpg">
         <img
           loading="lazy"
-          style="width: 40%; height: 40%; border-radius: 50%; background: #b9b9b9;"
+          width="243"
+          height="243"
+          style="
+            width: 40%;
+            height: 40%;
+            border-radius: 50%;
+            background: #b9b9b9;
+          "
           src="/assets/images/profile-150.jpg"
           srcset="
             /assets/images/profile-150.jpg 1x,
@@ -296,13 +317,58 @@ layout: default
       }
     </script>
     <script>
-      window.ga = function() {
+      /** Adding Google Analytics */
+      window.ga = function () {
         ga.q.push(arguments);
       };
       ga.q = [];
       ga.l = +new Date();
       ga("create", "UA-58169656-1", "auto");
       ga("send", "pageview");
+
+      function toggleSiteTheme(e) {
+        var html = document.getElementsByTagName("html");
+        var className = html[0].classList.value;
+
+        /** Gets the target by checking if it was triggered by clicking on the switch or if via OS configuration changes */
+        var target =
+          e && e.target ? e.target : document.getElementById("theme-switch");
+
+        var isLightMode = target.className === "" || className === "light-mode";
+
+        html[0].className = isLightMode ? "dark-mode" : "light-mode";
+
+        target.className = isLightMode ? "active" : "";
+
+        document.getElementById("switch-checkbox").checked = isLightMode
+          ? true
+          : false;
+      }
+
+      isMatchMediaSupported = typeof window.matchMedia === "function";
+      if (isMatchMediaSupported) {
+        var darkModeMatches = window.matchMedia("(prefers-color-scheme: dark)");
+        console.log(darkModeMatches);
+        /** Checks if dark mode is enabled via OS on page load */
+        if (darkModeMatches.matches) {
+          toggleSiteTheme();
+        }
+
+        /** Adds a listener for dark mode changes in OS */
+        darkModeMatches.addListener(function (e) {
+          toggleSiteTheme();
+        });
+      }
+
+      /** Checks if it's a mobile device or not */
+      var isMobileDevice =
+        typeof window.orientation !== "undefined" ||
+        navigator.userAgent.indexOf("IEMobile") !== -1;
+      document.getElementById("theme-switch").addEventListener(
+        /** Using touchstart if is a mobile device. Otherwise, it will trigger based on the click */
+        isMobileDevice ? "touchstart" : "click",
+        toggleSiteTheme
+      );
     </script>
     <script
       src="https://www.google-analytics.com/analytics.js"
