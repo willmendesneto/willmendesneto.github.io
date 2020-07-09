@@ -8,6 +8,10 @@
 }
 
 html {
+  // BACKGROUND COLOR NEEDS TO BE ADDED
+  // IF NOT, FIREFOX WON'T APPLY THE FILTER PROPERLY
+  // WHEN CALLED
+  background: #fff;
   height: 100%;
 
   &.dark-mode {
