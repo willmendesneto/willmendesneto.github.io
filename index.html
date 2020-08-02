@@ -19,11 +19,11 @@ layout: default
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta
       name="apple-mobile-web-app-title"
-      content="Will Mendes | Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Wen Technologies"
+      content="Will Mendes | Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Wen Technologies, Microsoft MVP Developer Technologies"
     />
     <meta
       name="description"
-      content="Will Mendes | Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Wen Technologies"
+      content="Will Mendes | Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Wen Technologies, Microsoft MVP Developer Technologies"
     />
 
     <meta name="HandheldFriendly" content="True" />
@@ -35,7 +35,10 @@ layout: default
     />
 
     <link rel="canonical" href="https://willmendesneto.github.io" />
-    <title>Will Mendes | Senior Fullstack Sofware engineer</title>
+    <title>
+      Will Mendes | Senior Frontend-Engineer, Senior Software-Developer, Google
+      Developer Expert Wen Technologies, Microsoft MVP Developer Technologies
+    </title>
     <link rel="stylesheet" lazyload="1" async href="/assets/css/index.css" />
     <link rel="dns-prefetch" href="https://www.google-analytics.com" />
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
@@ -122,8 +125,14 @@ layout: default
       <p>
         I'm a
         <a
-          href="https://developers.google.com/experts/people/wilson-mendes-neto"
-          >Google Developer Expert in Angular and Web technologies</a
+          href="https://developers.google.com/community/experts/directory/profile/profile-wilson_mendes"
+          >Google Developer Expert (GDE) in Angular and Web technologies</a
+        >
+        and
+        <a
+          href="https://mvp.microsoft.com/en-us/PublicProfile/5003872?fullName=Wilson%20Mendes%20Neto"
+          >Microsoft Most Valuable Professional (MVP) in Developer
+          technologies</a
         >. I published a free e-book titled
         <a
           href="https://leanpub.com/nodebots-javascript-and-robotic-in-the-real-world"
@@ -300,7 +309,7 @@ layout: default
         "@context": "http://schema.org",
         "@type": "Person",
         "image": "https://willmendesneto.github.io/images/profile.jpg",
-        "jobTitle": "Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Wen Technologies",
+        "jobTitle": "Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Angular & Web Technologies, Microsoft MVP Developer Technologies",
         "name": "Wilson Mendes",
         "url": "https://willmendesneto.github.io",
         "workLocation": {
@@ -357,6 +366,7 @@ layout: default
       var isMobileDevice =
         typeof window.orientation !== "undefined" ||
         navigator.userAgent.indexOf("IEMobile") !== -1;
+
       document.getElementById("theme-switch").addEventListener(
         /** Using touchstart if is a mobile device. Otherwise, it will trigger based on the click */
         isMobileDevice ? "touchstart" : "click",
