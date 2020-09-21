@@ -329,7 +329,7 @@ layout: default
       ga("create", "UA-58169656-1", "auto");
       ga("send", "pageview");
 
-      function toggleSiteTheme(e) {
+      function toggleSiteTheme(e, isLightModeLocalStorage) {
         var html = document.getElementsByTagName("html");
         var className = html[0].classList.value;
 
@@ -337,11 +337,17 @@ layout: default
         var target =
           e && e.target ? e.target : document.getElementById("theme-switch");
 
-        var isLightMode = target.className === "" || className === "light-mode";
+        var isLightMode =
+          typeof isLightModeLocalStorage === "string"
+            ? isLightModeLocalStorage === "true"
+            : target.className === "" || className === "light-mode";
 
         html[0].className = isLightMode ? "dark-mode" : "light-mode";
 
         target.className = isLightMode ? "active" : "";
+
+        /** Adding the current value into localStorage */
+        localStorage.setItem("website-is-dark-mode", isLightMode);
 
         document.getElementById("switch-checkbox").checked = isLightMode
           ? true
@@ -350,16 +356,26 @@ layout: default
 
       isMatchMediaSupported = typeof window.matchMedia === "function";
       if (isMatchMediaSupported) {
+        var isLightModeFromLocalStorage = localStorage.getItem(
+          "website-is-dark-mode"
+        );
         var darkModeMatches = window.matchMedia("(prefers-color-scheme: dark)");
-        /** Checks if dark mode is enabled via OS on page load */
-        if (darkModeMatches.matches) {
-          toggleSiteTheme();
-        }
 
         /** Adds a listener for dark mode changes in OS */
         darkModeMatches.addListener(function (e) {
-          toggleSiteTheme();
+          toggleSiteTheme(
+            {},
+            (e && e.matches && e.matches.toString()) || undefined
+          );
         });
+
+        /** Checks if the browser already have any theme information */
+        if (isLightModeFromLocalStorage) {
+          toggleSiteTheme({}, isLightModeFromLocalStorage);
+        } else if (darkModeMatches.matches) {
+          /** Checks if dark mode is enabled via OS on page load */
+          toggleSiteTheme();
+        }
       }
 
       /** Checks if it's a mobile device or not */
