@@ -1,26 +1,22 @@
-# Landing Page - Wilson Mendes
+### 🚀 My personal page 🚀
+>URL: [willmendesneto.com](http://willmendesneto.com)
 
-> My personal landing page built with [Jekyll](http://jekyllrb.com/).
+### 🧩 Tech Stack
 
-## Requirements
+- NVM
+- React
+- Styled-components
+- GatsbyJS
+- GraphQL
 
-- [Git](http://git-scm.com/downloads);
-- [Ruby](http://www.ruby-lang.org/pt/downloads/);
-- [Jekyll](http://jekyllrb.com/);
+### 💻 Steps to run
 
-
-## Usage
-
-Run this blog in your local host with the following steps:
-
-    1. First, you need to execute the command bellow to:
-     - Clone the repository
-     - Access the generated folder
-     - Run `jekyll serve` or `jekyll serve -w`
-
-    git clone git@github.com:willmendesneto/willmendesneto.github.io.git
-
-> If you have some performance problems in markdown compile task, please use  `jekyll serve --watch --limit_posts <number-of-posts-for-compile-using-watch>`. If you're using Jekyll >= 3.0 run `jekyll serve --incremental` command for a better feedback time
+- git clone https://github.com/willmendesneto/willmendesneto.github.io.git willmendesneto.com
+- cd willmendesneto.com
+- nvm use
+- npm install
+- npm start
+- On browser [localhost:8000/](http://localhost:8000/)
 
 
 ## Contribute
