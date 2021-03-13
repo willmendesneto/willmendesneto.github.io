@@ -1,0 +1,1336 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.8a3be474ae26740c6f65.css" id="gatsby-global-css">code[class*=language-],pre[class*=language-]{color:#f8f8f2;background:none;text-shadow:0 1px rgba(0,0,0,.3);font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto;border-radius:.3em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#272822}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#8292a2}.token.punctuation{color:#f8f8f2}.token.namespace{opacity:.7}.token.constant,.token.deleted,.token.property,.token.symbol,.token.tag{color:#f92672}.token.boolean,.token.number{color:#ae81ff}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#a6e22e}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url,.token.variable{color:#f8f8f2}.token.atrule,.token.attr-value,.token.class-name,.token.function{color:#e6db74}.token.keyword{color:#66d9ef}.token.important,.token.regex{color:#fd971f}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}html{font-family:Poppins,sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-size:30px;font-weight:500;padding:20px 0 0;line-height:1.8em;position:relative;color:#333;width:100%;height:100%}body{box-sizing:border-box;background:#fff;margin:0;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;color:#333;-webkit-text-decoration-skip:objects;font-weight:700}a:active,a:hover{outline-width:0;color:#099;opacity:.8}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:30px}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:112.5%/1.45em;box-sizing:border-box;overflow-y:scroll}*,:after,:before{box-sizing:inherit}body{font-weight:400;word-wrap:break-word;-webkit-font-kerning:normal;font-kerning:normal;-ms-font-feature-settings:"kern","liga","clig","calt";font-feature-settings:"kern","liga","clig","calt"}img{max-width:100%;padding:0;margin:0 0 1.45rem}h1{font-size:2.25rem}h1,h2{padding:0;margin:0 0 1.45rem;color:inherit;font-weight:700;text-rendering:optimizeLegibility;line-height:1.1}h2{font-size:1.62671rem}h3{font-size:1.38316rem}h3,h4{padding:0;margin:0 0 1.45rem;color:inherit;font-weight:700;text-rendering:optimizeLegibility;line-height:1.1}h4{font-size:1rem}h5{font-size:.85028rem}h5,h6{padding:0;margin:0 0 1.45rem;color:inherit;font-weight:700;text-rendering:optimizeLegibility;line-height:1.1}h6{font-size:.78405rem}hgroup{padding:0;margin:0 0 1.45rem}ol,ul{padding:0;margin:0 0 1.45rem 1.45rem;list-style-position:outside;list-style-image:none}dd,dl{margin:0 0 1.45rem}dd,dl,p{padding:0}p{margin-left:0;margin-right:0;margin-top:0}figure{padding:0}figure,pre{margin:0 0 1.45rem}pre{font-size:.85rem;line-height:1.42;background:rgba(0,0,0,.04);border-radius:3px;overflow:auto;word-wrap:normal;padding:1.45rem}table{font-size:1rem;line-height:1.45rem;border-collapse:collapse;width:100%}fieldset,table{padding:0;margin:0 0 1.45rem}blockquote{padding:20px 0 10px;margin:0 1.45rem 1.45rem;color:#757575}form,iframe,noscript{padding:0;margin:0 0 1.45rem}hr{padding:0;margin:0 0 calc(1.45rem - 1px);background:rgba(0,0,0,.2);border:none;height:1px}address{padding:0;margin:0 0 1.45rem}b,dt,strong,th{font-weight:700}li{margin-bottom:.725rem}ol li,ul li{padding-left:0}li>ol,li>ul{margin-left:1.45rem;margin-bottom:.725rem;margin-top:.725rem}blockquote :last-child,li :last-child,p :last-child{margin-bottom:0}li>p{margin-bottom:.725rem}code,kbd,samp{font-size:.85rem;line-height:1.45rem}abbr,abbr[title],acronym{border-bottom:1px dotted rgba(0,0,0,.5);cursor:help}abbr[title]{text-decoration:none}td,th,thead{text-align:left}td,th{border-bottom:1px solid rgba(0,0,0,.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding:.725rem .96667rem calc(.725rem - 1px)}td:first-child,th:first-child{padding-left:0}td:last-child,th:last-child{padding-right:0}code,tt{background-color:rgba(0,0,0,.04);border-radius:3px;font-family:SFMono-Regular,Consolas,Roboto Mono,Droid Sans Mono,Liberation Mono,Menlo,Courier,monospace;padding:.2em 0}pre code{background:none;line-height:1.42}code:after,code:before,tt:after,tt:before{letter-spacing:-.2em;content:" "}pre code:after,pre code:before,pre tt:after,pre tt:before{content:""}h1,h2,h3,h4,h5,h6{color:#333}h1{font-weight:500}h2,h3,h4,h5,h6{background:transparent;margin-top:40px;font-weight:700;display:inline-block}.gatsby-highlight{border-radius:20px;margin:10px 0 20px}@media only screen and (max-width:480px){html{font-size:100%}}</style><meta name="generator" content="Gatsby 3.0.4"/><style data-styled="" data-styled-version="5.2.1">.hKUvcS{max-width:1280px;margin:0 auto;padding-top:0;}/*!sc*/
+.hKUvcS h1{font-size:34px;}/*!sc*/
+@media (min-width:1024px){.hKUvcS h1{font-size:50px;}}/*!sc*/
+@media (min-width:1024px){.hKUvcS{padding-top:50px;}}/*!sc*/
+data-styled.g1[id="Section-zthcy2-0"]{content:"hKUvcS,"}/*!sc*/
+.RfRpu{display:inline-block;text-align:left;width:40%;}/*!sc*/
+data-styled.g3[id="Header__Logo-sc-160kmj-1"]{content:"RfRpu,"}/*!sc*/
+.bHSrwR{display:inline-block;height:40px;width:20%;}/*!sc*/
+@media (min-width:768px){.bHSrwR{display:none;}}/*!sc*/
+.bHSrwR img{border-radius:50%;margin-bottom:0;}/*!sc*/
+data-styled.g4[id="Header__LogoMobile-sc-160kmj-2"]{content:"bHSrwR,"}/*!sc*/
+.kzsPVe{display:none;}/*!sc*/
+@media (min-width:768px){.kzsPVe{display:inline-block;}}/*!sc*/
+data-styled.g5[id="Header__LogoDesktop-sc-160kmj-3"]{content:"kzsPVe,"}/*!sc*/
+.Ocybt{background:#000;color:#fff;margin:0 auto;padding:10px 15px;position:fixed;text-transform:uppercase;top:0;width:100%;z-index:10;box-sizing:border-box;pointer-events:auto;}/*!sc*/
+@media (min-width:768px){.Ocybt{line-height:auto;padding:15px;right:0;padding-top:2vw;padding-bottom:2vw;padding-left:4vw;padding-right:4vw;}}/*!sc*/
+.Ocybt a{font-weight:900;color:#fff;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.Ocybt a:hover{color:#fff;opacity:1;-webkit-text-decoration:underline;text-decoration:underline;text-underline-offset:10px;}/*!sc*/
+data-styled.g6[id="Header__Nav-sc-160kmj-4"]{content:"Ocybt,"}/*!sc*/
+.PjytW{position:relative;overflow-x:auto;padding-top:0;font-size:21px;}/*!sc*/
+@media (min-width:1024px){.PjytW{padding:0 20px;max-width:1280px;}}/*!sc*/
+data-styled.g7[id="Header__Wrapper-sc-160kmj-5"]{content:"PjytW,"}/*!sc*/
+.iLSqRZ{display:inline-block;position:absolute;right:0;}/*!sc*/
+@media (min-width:768px){.iLSqRZ{line-height:inherit;}}/*!sc*/
+.iLSqRZ a{padding:0;font-size:15px;margin-right:10px;}/*!sc*/
+.iLSqRZ a:last-child:after{margin-right:0;}/*!sc*/
+@media (min-width:768px){.iLSqRZ a{font-size:21px;margin-right:25px;}}/*!sc*/
+data-styled.g8[id="Header__Links-sc-160kmj-6"]{content:"iLSqRZ,"}/*!sc*/
+.llqpgS{color:#000;font-size:16px;padding:15px 0;text-align:center;}/*!sc*/
+data-styled.g9[id="Footer__Text-sc-14qtz8p-0"]{content:"llqpgS,"}/*!sc*/
+.evCYdc{width:100%;min-height:200px;border-top:2px solid #f0f0f2;margin:75px 0 0 0;font-size:16px;text-transform:uppercase;text-align:center;box-sizing:border-box;background:#f0f0f2;}/*!sc*/
+.evCYdc ul{display:block;margin:0;margin-bottom:70px;}/*!sc*/
+@media (min-width:768px){.evCYdc ul{display:inline-block;vertical-align:middle;}}/*!sc*/
+.evCYdc li{display:block;padding:10px;}/*!sc*/
+@media (min-width:768px){.evCYdc li{display:inline-block;margin-right:25px;}}/*!sc*/
+.evCYdc li a:hover{opacity:0.8;}/*!sc*/
+data-styled.g10[id="Footer__PageFooter-sc-14qtz8p-1"]{content:"evCYdc,"}/*!sc*/
+.cIXHvf{padding:15px 7px 15px 0;margin:0 auto;width:100%;overflow:hidden;max-width:1280px;font-size:20px;line-height:1.5em;padding:30px 0 0;position:relative;vertical-align:top;}/*!sc*/
+@media (min-width:768px){.cIXHvf{font-size:22px;}}/*!sc*/
+.cIXHvf pre{border-radius:0;font-size:0.8em;}/*!sc*/
+data-styled.g11[id="Layout__Wrapper-xnlv4k-0"]{content:"cIXHvf,"}/*!sc*/
+.bBuSAy{display:inline-block;padding:15px;vertical-align:top;width:100%;}/*!sc*/
+data-styled.g12[id="Layout__Main-xnlv4k-1"]{content:"bBuSAy,"}/*!sc*/
+.fNwryo{font-style:normal;font-weight:900;line-height:1em;margin:50px 0 20px 0;font-size:30px;-webkit-letter-spacing:-2px;-moz-letter-spacing:-2px;-ms-letter-spacing:-2px;letter-spacing:-2px;}/*!sc*/
+@media (min-width:768px){.fNwryo{font-size:50px;line-height:1em;margin:70px 0 20px 0;}}/*!sc*/
+data-styled.g13[id="Title-sc-1g46602-0"]{content:"fNwryo,"}/*!sc*/
+.kSQOnO img{vertical-align:middle;aspect-ratio:auto 245 / 192;}/*!sc*/
+.kSQOnO p img{text-align:center;display:block;margin:20px auto;}/*!sc*/
+.kSQOnO p .language-text{margin-right:5px;}/*!sc*/
+.kSQOnO hr{border:none;background:transparent;color:#111;-webkit-letter-spacing:1em;-moz-letter-spacing:1em;-ms-letter-spacing:1em;letter-spacing:1em;text-align:center;margin-top:10px;margin-bottom:50px;}/*!sc*/
+@media (min-width:768px){.kSQOnO hr{margin-bottom:70px;}}/*!sc*/
+.kSQOnO hr:before{content:'...';}/*!sc*/
+data-styled.g24[id="PostContent__PostWrapper-sc-1jf6w5a-0"]{content:"kSQOnO,"}/*!sc*/
+.dVZbmD{color:#4e4c4c;display:block;font-style:italic;margin-bottom:20px;-webkit-letter-spacing:normal;-moz-letter-spacing:normal;-ms-letter-spacing:normal;letter-spacing:normal;line-height:1em;margin-top:10px;text-align:left;text-transform:capitalize;font-size:20px;}/*!sc*/
+data-styled.g25[id="PostDate-okmp83-0"]{content:"dVZbmD,"}/*!sc*/
+</style><title data-react-helmet="true">Dark Side Is In Our Blood — Dark mode in you pages using CSS Filters | Wilson Mendes</title><meta data-react-helmet="true" name="description" content="Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Wen Technologies, Microsoft MVP Developer Technologies"/><meta data-react-helmet="true" property="og:title" content="Dark Side Is In Our Blood — Dark mode in you pages using CSS Filters"/><meta data-react-helmet="true" property="og:description" content="Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Wen Technologies, Microsoft MVP Developer Technologies"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:title" content="Dark Side Is In Our Blood — Dark mode in you pages using CSS Filters"/><meta data-react-helmet="true" name="twitter:creator" content=""/><meta data-react-helmet="true" name="twitter:description" content="Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Wen Technologies, Microsoft MVP Developer Technologies"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><link href="https://github.githubassets.com/assets/gist-embed-b3b573358bfc66d89e1e95dbf8319c09.css" rel="stylesheet"/><link rel="icon" href="/favicon-32x32.png?v=b897f62d006f8ad8d87b6fc5786692ba" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/poppins/v15/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/poppins/v15/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/poppins/v15/pxiByp8kv8JHgFVrLBT5Z1xlFQ.woff2"/><style>@font-face{font-family:Poppins;font-style:normal;font-weight:500;src:url(/static/webfonts/s/poppins/v15/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2) format("woff2");font-display:swap}@font-face{font-family:Poppins;font-style:normal;font-weight:700;src:url(/static/webfonts/s/poppins/v15/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2) format("woff2");font-display:swap}@font-face{font-family:Poppins;font-style:normal;font-weight:900;src:url(/static/webfonts/s/poppins/v15/pxiByp8kv8JHgFVrLBT5Z1xlFQ.woff2) format("woff2");font-display:swap}@font-face{font-family:Poppins;font-style:normal;font-weight:500;src:url(/static/webfonts/s/poppins/v15/pxiByp8kv8JHgFVrLGT9Z1xlEw.woff) format("woff");font-display:swap}@font-face{font-family:Poppins;font-style:normal;font-weight:700;src:url(/static/webfonts/s/poppins/v15/pxiByp8kv8JHgFVrLCz7Z1xlEw.woff) format("woff");font-display:swap}@font-face{font-family:Poppins;font-style:normal;font-weight:900;src:url(/static/webfonts/s/poppins/v15/pxiByp8kv8JHgFVrLBT5Z1xlEw.woff) format("woff");font-display:swap}</style><link rel="preconnect" href="https://www.google-analytics.com"/><link rel="dns-prefetch" href="https://www.google-analytics.com"/><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link rel="alternate" type="application/rss+xml" title="Will Mendes Blog RSS Feed" href="/rss.xml"/><link as="script" rel="preload" href="/webpack-runtime-23e80c2ddd056a24e52f.js"/><link as="script" rel="preload" href="/framework-5a0f89685a3614932ea6.js"/><link as="script" rel="preload" href="/app-a4dce349d972e2f96f4f.js"/><link as="script" rel="preload" href="/c38806a22704b1411d609490b31463a94158f97c-251d4b46df1e4f161a6b.js"/><link as="script" rel="preload" href="/component---src-templates-post-js-20d5c25fe44c354044f8.js"/><link as="fetch" rel="preload" href="/page-data/posts/dark-side-is-in-our-blood-dark-mode-in-you-pages-using-css-filters/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/63159454.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><header class="Header__PageHeader-sc-160kmj-0 coHUrI"><nav class="Header__Nav-sc-160kmj-4 Ocybt"><section class="Section-zthcy2-0 Header__Wrapper-sc-160kmj-5 hKUvcS PjytW"><span class="Header__Logo-sc-160kmj-1 Header__LogoMobile-sc-160kmj-2 RfRpu bHSrwR"><a href="/">WM</a></span><span class="Header__Logo-sc-160kmj-1 Header__LogoDesktop-sc-160kmj-3 RfRpu kzsPVe"><a href="/">Wilson Mendes</a></span><div class="Header__Links-sc-160kmj-6 iLSqRZ"><a href="/posts/">posts</a><a href="/talks/">talks</a></div></section></nav></header><div class="Layout__Wrapper-xnlv4k-0 cIXHvf"><main class="Layout__Main-xnlv4k-1 bBuSAy"><section class="Section-zthcy2-0 hKUvcS"><h1 class="Title-sc-1g46602-0 fNwryo">Dark Side Is In Our Blood — Dark mode in you pages using CSS Filters</h1><time class="PostDate-okmp83-0 dVZbmD">July 06, 2020<!-- --> - <!-- -->18 min read</time><article class="PostContent__PostWrapper-sc-1jf6w5a-0 kSQOnO"><div><p><img src="https://cdn-images-1.medium.com/max/2560/1*wVLiNqxa4OyomTMG8VaGbg.png"></p>
+<blockquote>
+<p>TL;DR; use these tips and get a dark mode in your web app. You can find a pull request adding the changes in <a href="https://github.com/willmendesneto/willmendesneto.github.io/commit/da46a0e4a22791861231cbbd481124367769e352" target="_blank" rel="nofollow noopener noreferrer">this link</a> Enjoy! 🎉</p>
+</blockquote>
+<h3>Dark mode and Web Accessibility: respecting the user's choice</h3>
+<p>We can see several pages with the dark-mode theme available for the users. This approach is more than design-only purposes but also covers usability and accessibility.</p>
+<p>One of the most popular responses when you ask someone who is using dark-mode option on their web apps and/or their OS — operational systems — is that "it helps my eyes," or even "it’s elegant/neat/beautiful." However, Dark Mode developer documentation explicitly writes: "The choice of whether to enable light or dark appearance is an aesthetic one for most users, and might not relate to ambient lighting conditions."</p>
+<p>Besides that, people with low vision can have some benefits having the option as well, preferring light text on a dark background by inverting the colors on the display, except for images, media, and some apps that use dark color styles. So that means your web app should support dark-mode if you're thinking and targeting accessibility.</p>
+<blockquote>
+<p>It’s more than a choice, it’s about to build a web for everybody.</p>
+</blockquote>
+<p><img src="https://cdn-images-1.medium.com/max/800/1*T4yacXhMVUhfCKpcgFrJAg.gif"></p>
+<h3>Dark mode via CSS media query</h3>
+<p>Thinking about the web as a powerful platform it is, we should expect an easy and simple integration. In this section, we'll dive into the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme" target="_blank" rel="nofollow noopener noreferrer"><strong>prefers-color-scheme</strong></a> media query and how we can use CSS to support dark mode.</p>
+<p>The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme" target="_blank" rel="nofollow noopener noreferrer"><strong>prefers-color-scheme</strong></a> media feature can detect if the user has requested the page to use a light or dark color theme via operational system configuration. It accepts <em>light</em> or <em>dark</em> as values to notify the page if the current user chooses a page that has a light or dark theme.</p>
+<p>One of the common approaches used to implement this feature is by adding a CSS Filter in your page. When you add the <em>invert()</em> CSS filter when it's dark and your background is white and your text is black, it inverts the colors.</p>
+<blockquote>
+<p>Please check the <a href="https://caniuse.com/#search=css%20filter" target="_blank" rel="nofollow noopener noreferrer"><strong>browser support for CSS Filter</strong></a> based in your browser support list before use it</p>
+</blockquote>
+<p><div id="gist104160624" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-dark-mode-via-css-media-query-css" class="file my-2">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-css  ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-css-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-dark-mode-via-css-media-query-css-LC1" class="blob-code blob-code-inner js-file-line"><span class=pl-ent>html</span> {    </td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-css-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-dark-mode-via-css-media-query-css-LC2" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>background</span><span class=pl-kos>:</span> <span class=pl-pds><span class=pl-kos>#</span>FFFFFF</span>;</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-css-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-dark-mode-via-css-media-query-css-LC3" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-css-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-dark-mode-via-css-media-query-css-LC4" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-css-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-dark-mode-via-css-media-query-css-LC5" class="blob-code blob-code-inner js-file-line"><span class=pl-c1>/</span><span class=pl-c1>/</span> Detect if the user has requested the system</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-css-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-dark-mode-via-css-media-query-css-LC6" class="blob-code blob-code-inner js-file-line"><span class=pl-c1>/</span><span class=pl-c1>/</span> use a light <span class=pl-c1>or</span> dark col<span class=pl-c1>or</span> theme.</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-css-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-dark-mode-via-css-media-query-css-LC7" class="blob-code blob-code-inner js-file-line"><span class=pl-c1>/</span><span class=pl-c1>/</span> M<span class=pl-c1>or</span>e details about `prefers<span class=pl-c1>-</span>col<span class=pl-c1>or</span><span class=pl-c1>-</span>scheme` in https<span class=pl-kos>:</span><span class=pl-c1>/</span><span class=pl-c1>/</span>web.<span class=pl-c1>dev</span><span class=pl-c1>/</span>prefers<span class=pl-c1>-</span>col<span class=pl-c1>or</span><span class=pl-c1>-</span>scheme<span class=pl-c1>/</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-css-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-dark-mode-via-css-media-query-css-LC8" class="blob-code blob-code-inner js-file-line"><span class=pl-k>@media</span> (<span class=pl-c1>prefers-color-scheme</span><span class=pl-kos>:</span> <span class=pl-s>&quot;dark&quot;</span>) {</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-css-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-dark-mode-via-css-media-query-css-LC9" class="blob-code blob-code-inner js-file-line">  <span class=pl-ent>html</span> {    </td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-css-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-dark-mode-via-css-media-query-css-LC10" class="blob-code blob-code-inner js-file-line">    <span class=pl-c1>filter</span><span class=pl-kos>:</span> <span class=pl-en>invert</span>(<span class=pl-c1>100<span class=pl-smi>%</span></span>);</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-css-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-dark-mode-via-css-media-query-css-LC11" class="blob-code blob-code-inner js-file-line">  }</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-css-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-dark-mode-via-css-media-query-css-LC12" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-css-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-dark-mode-via-css-media-query-css-LC13" class="blob-code blob-code-inner js-file-line">  <span class=pl-ent>img</span><span class=pl-kos>,</span> <span class=pl-ent>video</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-css-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-dark-mode-via-css-media-query-css-LC14" class="blob-code blob-code-inner js-file-line">    <span class=pl-c1>filter</span><span class=pl-kos>:</span> <span class=pl-en>invert</span>(<span class=pl-c1>100<span class=pl-smi>%</span></span>);</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-css-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-dark-mode-via-css-media-query-css-LC15" class="blob-code blob-code-inner js-file-line">  }</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-css-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-dark-mode-via-css-media-query-css-LC16" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+</table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/willmendesneto/34f501c84d8562cbbce165af9f0094dd/raw/aa0011ef4ed47de5b5849df2cbb764948d21d6f7/dark-mode-via-css-media-query.css" style="float:right">view raw</a>
+        <a href="https://gist.github.com/willmendesneto/34f501c84d8562cbbce165af9f0094dd#file-dark-mode-via-css-media-query-css">dark-mode-via-css-media-query.css</a>
+        hosted with &#10084; by <a href="https://github.com">GitHub</a>
+      </div>
+    </div>
+</div></p>
+<p>At the end, when the user system is with using dark-mode enabled, the page applies the rules added inside the media query content, so the background will be turned into black and the text will be white.</p>
+<p><img src="https://cdn-images-1.medium.com/max/800/1*5gGJBP_1RjhyIg-jQvtn1w.gif"></p>
+<h3>Dynamic Dark-Mode Javascript</h3>
+<p>Your pages can integrate dark-mode using Javascript as a combination to do so. It's important to understand that CSS and Javascript will use different memory partitions in your browser, so your users could have some benefits in performance and usability by combining both approaches.</p>
+<h3>Changing the theme by adding CSS classes</h3>
+<p>First of all, let's add a switch on the page to give the user the choice to toggle between light and dark modes. So when it's clicked, the page will be dark and by default, it will be using the light theme.</p>
+<p>This is the HTML markup for the toggle that will be added in your page</p>
+<p><div id="gist104161228" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-dark-mode-switch-toggle-html" class="file my-2">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-html  ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip>
+      <tr>
+        <td id="file-dark-mode-switch-toggle-html-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-dark-mode-switch-toggle-html-LC1" class="blob-code blob-code-inner js-file-line"><span class=pl-c>&lt;!-- Adding dark-mode switch toggle in your page --&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-switch-toggle-html-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-dark-mode-switch-toggle-html-LC2" class="blob-code blob-code-inner js-file-line"><span class=pl-kos>&lt;</span><span class=pl-ent>div</span> <span class=pl-c1>class</span>=&quot;<span class=pl-s>switch-toggle</span>&quot;<span class=pl-kos>&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-switch-toggle-html-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-dark-mode-switch-toggle-html-LC3" class="blob-code blob-code-inner js-file-line">  <span class=pl-kos>&lt;</span><span class=pl-ent>input</span> <span class=pl-c1>type</span>=&quot;<span class=pl-s>checkbox</span>&quot; <span class=pl-c1>id</span>=&quot;<span class=pl-s>switch-checkbox</span>&quot; /&gt;</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-switch-toggle-html-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-dark-mode-switch-toggle-html-LC4" class="blob-code blob-code-inner js-file-line">  <span class=pl-kos>&lt;</span><span class=pl-ent>label</span> <span class=pl-c1>for</span>=&quot;<span class=pl-s>switch</span>&quot; <span class=pl-c1>id</span>=&quot;<span class=pl-s>theme-switch</span>&quot;</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-switch-toggle-html-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-dark-mode-switch-toggle-html-LC5" class="blob-code blob-code-inner js-file-line">    <span class=pl-kos>&gt;</span>Enable/disable Dark Mode Theme<span class=pl-kos>&lt;/</span><span class=pl-ent>label</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-switch-toggle-html-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-dark-mode-switch-toggle-html-LC6" class="blob-code blob-code-inner js-file-line">  <span class=pl-kos>&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-switch-toggle-html-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-dark-mode-switch-toggle-html-LC7" class="blob-code blob-code-inner js-file-line"><span class=pl-kos>&lt;/</span><span class=pl-ent>div</span><span class=pl-kos>&gt;</span></td>
+      </tr>
+</table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/willmendesneto/68cd8926941a6d5657c31de40627997c/raw/8a22ac1b204eeae6fa49c91397a300a15b6e7f3f/dark-mode-switch-toggle.html" style="float:right">view raw</a>
+        <a href="https://gist.github.com/willmendesneto/68cd8926941a6d5657c31de40627997c#file-dark-mode-switch-toggle-html">dark-mode-switch-toggle.html</a>
+        hosted with &#10084; by <a href="https://github.com">GitHub</a>
+      </div>
+    </div>
+</div></p>
+<p>Besides that, we need to apply some changes in our CSS. Now it also has classes to define if the current theme on the page is light or dark by adding <strong>light-mode</strong> and <strong>dark-mode</strong> classes and the styles for Switch Toggle Element into our HTML element. This will be the CSS with these changes.</p>
+<p><div id="gist104161006" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css" class="file my-2">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-css  ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC1" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC2" class="blob-code blob-code-inner js-file-line"><span class=pl-c>/** Common CSS */</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC3" class="blob-code blob-code-inner js-file-line"><span class=pl-ent>html</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC4" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>background</span><span class=pl-kos>:</span> <span class=pl-pds><span class=pl-kos>#</span>FFFFFF</span>;</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC5" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC6" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC7" class="blob-code blob-code-inner js-file-line"><span class=pl-ent>html</span>.<span class=pl-c1>dark-mode</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC8" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>filter</span><span class=pl-kos>:</span> <span class=pl-en>invert</span>(<span class=pl-c1>100<span class=pl-smi>%</span></span>);</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC9" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC10" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC11" class="blob-code blob-code-inner js-file-line"><span class=pl-ent>html</span>.<span class=pl-c1>dark-mode</span> <span class=pl-ent>img</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC12" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>filter</span><span class=pl-kos>:</span> <span class=pl-en>invert</span>(<span class=pl-c1>100<span class=pl-smi>%</span></span>);</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC13" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC14" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC15" class="blob-code blob-code-inner js-file-line"><span class=pl-c1>/</span><span class=pl-c1>/</span> Detect if the user has requested the system</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC16" class="blob-code blob-code-inner js-file-line"><span class=pl-c1>/</span><span class=pl-c1>/</span> use a light <span class=pl-c1>or</span> dark col<span class=pl-c1>or</span> theme.</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC17" class="blob-code blob-code-inner js-file-line"><span class=pl-c1>/</span><span class=pl-c1>/</span> M<span class=pl-c1>or</span>e details about `prefers<span class=pl-c1>-</span>col<span class=pl-c1>or</span><span class=pl-c1>-</span>scheme` in https<span class=pl-kos>:</span><span class=pl-c1>/</span><span class=pl-c1>/</span>web.<span class=pl-c1>dev</span><span class=pl-c1>/</span>prefers<span class=pl-c1>-</span>col<span class=pl-c1>or</span><span class=pl-c1>-</span>scheme<span class=pl-c1>/</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC18" class="blob-code blob-code-inner js-file-line"><span class=pl-k>@media</span> (<span class=pl-c1>prefers-color-scheme</span><span class=pl-kos>:</span> dark) {</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC19" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>/</span><span class=pl-c1>/</span> Imp<span class=pl-c1>or</span>tant</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC20" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>/</span><span class=pl-c1>/</span> you should add dark<span class=pl-c1>-</span>mode if your html element</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC21" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>/</span><span class=pl-c1>/</span> does <span class=pl-c1>not</span> have `.<span class=pl-c1>light-mode</span>` <span class=pl-ent>class</span> <span class=pl-ent>in</span> <span class=pl-ent>place</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC22" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>/</span><span class=pl-c1>/</span> <span class=pl-ent>so</span> <span class=pl-ent>you</span> <span class=pl-ent>page</span> <span class=pl-ent>can</span> <span class=pl-ent>still</span> <span class=pl-ent>respect</span> <span class=pl-ent>the</span> <span class=pl-ent>dark</span> <span class=pl-ent>theme</span> <span class=pl-ent>configuration</span> </td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC23" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>/</span><span class=pl-c1>/</span> <span class=pl-ent>from</span> <span class=pl-ent>your</span> <span class=pl-ent>user</span> <span class=pl-ent>system</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC24" class="blob-code blob-code-inner js-file-line">  <span class=pl-ent>html</span><span class=pl-kos>:</span><span class=pl-c1>not</span>(.<span class=pl-c1>light-mode</span>) {</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC25" class="blob-code blob-code-inner js-file-line">    <span class=pl-c1>filter</span><span class=pl-kos>:</span> <span class=pl-en>invert</span>(<span class=pl-c1>100<span class=pl-smi>%</span></span>);</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC26" class="blob-code blob-code-inner js-file-line">  }</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC27" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC28" class="blob-code blob-code-inner js-file-line">  <span class=pl-ent>html</span><span class=pl-kos>:</span><span class=pl-c1>not</span>(.<span class=pl-c1>light-mode</span>) <span class=pl-ent>img</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC29" class="blob-code blob-code-inner js-file-line">    <span class=pl-c1>filter</span><span class=pl-kos>:</span> <span class=pl-en>invert</span>(<span class=pl-c1>100<span class=pl-smi>%</span></span>);</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L30" class="blob-num js-line-number" data-line-number="30"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC30" class="blob-code blob-code-inner js-file-line">  }</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L31" class="blob-num js-line-number" data-line-number="31"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC31" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L32" class="blob-num js-line-number" data-line-number="32"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC32" class="blob-code blob-code-inner js-file-line"><span class=pl-c>/** Common CSS */</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L33" class="blob-num js-line-number" data-line-number="33"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC33" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L34" class="blob-num js-line-number" data-line-number="34"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC34" class="blob-code blob-code-inner js-file-line"><span class=pl-c>/** Switch styles */</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L35" class="blob-num js-line-number" data-line-number="35"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC35" class="blob-code blob-code-inner js-file-line">.<span class=pl-c1>switch-toggle</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L36" class="blob-num js-line-number" data-line-number="36"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC36" class="blob-code blob-code-inner js-file-line">  <span class=pl-c>/** The display value will be changes via Javascript.</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L37" class="blob-num js-line-number" data-line-number="37"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC37" class="blob-code blob-code-inner js-file-line"><span class=pl-c>    So it the browser supports media query manipulation, </span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L38" class="blob-num js-line-number" data-line-number="38"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC38" class="blob-code blob-code-inner js-file-line"><span class=pl-c>    it shows this option */</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L39" class="blob-num js-line-number" data-line-number="39"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC39" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>display</span><span class=pl-kos>:</span> none;</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L40" class="blob-num js-line-number" data-line-number="40"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC40" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>flex-direction</span><span class=pl-kos>:</span> row;</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L41" class="blob-num js-line-number" data-line-number="41"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC41" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>margin-bottom</span><span class=pl-kos>:</span> <span class=pl-c1>45<span class=pl-smi>px</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L42" class="blob-num js-line-number" data-line-number="42"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC42" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>margin-top</span><span class=pl-kos>:</span> <span class=pl-c1>20<span class=pl-smi>px</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L43" class="blob-num js-line-number" data-line-number="43"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC43" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>min-height</span><span class=pl-kos>:</span> <span class=pl-c1>50<span class=pl-smi>px</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L44" class="blob-num js-line-number" data-line-number="44"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC44" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L45" class="blob-num js-line-number" data-line-number="45"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC45" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L46" class="blob-num js-line-number" data-line-number="46"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC46" class="blob-code blob-code-inner js-file-line">.<span class=pl-c1>switch-toggle</span> <span class=pl-ent>input</span>[<span class=pl-c1>type</span><span class=pl-c1>=</span><span class=pl-s>checkbox</span>] {</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L47" class="blob-num js-line-number" data-line-number="47"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC47" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>height</span><span class=pl-kos>:</span> <span class=pl-c1>0</span>;</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L48" class="blob-num js-line-number" data-line-number="48"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC48" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>width</span><span class=pl-kos>:</span> <span class=pl-c1>0</span>;</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L49" class="blob-num js-line-number" data-line-number="49"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC49" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>visibility</span><span class=pl-kos>:</span> hidden;</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L50" class="blob-num js-line-number" data-line-number="50"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC50" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L51" class="blob-num js-line-number" data-line-number="51"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC51" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L52" class="blob-num js-line-number" data-line-number="52"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC52" class="blob-code blob-code-inner js-file-line">.<span class=pl-c1>switch-toggle</span> <span class=pl-ent>label</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L53" class="blob-num js-line-number" data-line-number="53"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC53" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>cursor</span><span class=pl-kos>:</span> pointer;</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L54" class="blob-num js-line-number" data-line-number="54"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC54" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>text-indent</span><span class=pl-kos>:</span> <span class=pl-c1>-9999<span class=pl-smi>px</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L55" class="blob-num js-line-number" data-line-number="55"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC55" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>width</span><span class=pl-kos>:</span> <span class=pl-c1>100<span class=pl-smi>px</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L56" class="blob-num js-line-number" data-line-number="56"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC56" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>height</span><span class=pl-kos>:</span> <span class=pl-c1>50<span class=pl-smi>px</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L57" class="blob-num js-line-number" data-line-number="57"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC57" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>background</span><span class=pl-kos>:</span> <span class=pl-pds><span class=pl-kos>#</span>bada55</span>;</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L58" class="blob-num js-line-number" data-line-number="58"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC58" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>display</span><span class=pl-kos>:</span> block;</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L59" class="blob-num js-line-number" data-line-number="59"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC59" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>border-radius</span><span class=pl-kos>:</span> <span class=pl-c1>50<span class=pl-smi>px</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L60" class="blob-num js-line-number" data-line-number="60"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC60" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>position</span><span class=pl-kos>:</span> relative;</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L61" class="blob-num js-line-number" data-line-number="61"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC61" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L62" class="blob-num js-line-number" data-line-number="62"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC62" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L63" class="blob-num js-line-number" data-line-number="63"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC63" class="blob-code blob-code-inner js-file-line">.<span class=pl-c1>switch-toggle</span> <span class=pl-ent>label</span><span class=pl-kos>:</span><span class=pl-c1>after</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L64" class="blob-num js-line-number" data-line-number="64"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC64" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>content</span><span class=pl-kos>:</span> <span class=pl-s>&quot;&quot;</span>;</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L65" class="blob-num js-line-number" data-line-number="65"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC65" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>position</span><span class=pl-kos>:</span> absolute;</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L66" class="blob-num js-line-number" data-line-number="66"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC66" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>top</span><span class=pl-kos>:</span> <span class=pl-c1>5<span class=pl-smi>px</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L67" class="blob-num js-line-number" data-line-number="67"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC67" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>left</span><span class=pl-kos>:</span> <span class=pl-c1>5<span class=pl-smi>px</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L68" class="blob-num js-line-number" data-line-number="68"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC68" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>width</span><span class=pl-kos>:</span> <span class=pl-c1>40<span class=pl-smi>px</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L69" class="blob-num js-line-number" data-line-number="69"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC69" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>height</span><span class=pl-kos>:</span> <span class=pl-c1>40<span class=pl-smi>px</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L70" class="blob-num js-line-number" data-line-number="70"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC70" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>background</span><span class=pl-kos>:</span> <span class=pl-pds><span class=pl-kos>#</span>fff</span>;</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L71" class="blob-num js-line-number" data-line-number="71"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC71" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>border-radius</span><span class=pl-kos>:</span> <span class=pl-c1>40<span class=pl-smi>px</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L72" class="blob-num js-line-number" data-line-number="72"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC72" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>transition</span><span class=pl-kos>:</span> <span class=pl-c1>0.3<span class=pl-smi>s</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L73" class="blob-num js-line-number" data-line-number="73"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC73" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L74" class="blob-num js-line-number" data-line-number="74"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC74" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L75" class="blob-num js-line-number" data-line-number="75"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC75" class="blob-code blob-code-inner js-file-line">.<span class=pl-c1>switch-toggle</span> <span class=pl-ent>input</span><span class=pl-kos>:</span><span class=pl-c1>checked</span> <span class=pl-c1>+</span> .<span class=pl-c1>active</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L76" class="blob-num js-line-number" data-line-number="76"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC76" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>background</span><span class=pl-kos>:</span> <span class=pl-pds><span class=pl-kos>#</span>bada55</span>;</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L77" class="blob-num js-line-number" data-line-number="77"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC77" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L78" class="blob-num js-line-number" data-line-number="78"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC78" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L79" class="blob-num js-line-number" data-line-number="79"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC79" class="blob-code blob-code-inner js-file-line">.<span class=pl-c1>switch-toggle</span> <span class=pl-ent>input</span><span class=pl-kos>:</span><span class=pl-c1>checked</span> <span class=pl-c1>+</span> .<span class=pl-c1>active</span><span class=pl-kos>:</span><span class=pl-c1>after</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L80" class="blob-num js-line-number" data-line-number="80"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC80" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>left</span><span class=pl-kos>:</span> <span class=pl-en>calc</span>(<span class=pl-c1>100<span class=pl-smi>%</span></span> <span class=pl-c1>-</span> <span class=pl-c1>5<span class=pl-smi>px</span></span>);</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L81" class="blob-num js-line-number" data-line-number="81"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC81" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>transform</span><span class=pl-kos>:</span> <span class=pl-en>translateX</span>(<span class=pl-c1>-100<span class=pl-smi>%</span></span>);</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L82" class="blob-num js-line-number" data-line-number="82"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC82" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L83" class="blob-num js-line-number" data-line-number="83"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC83" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L84" class="blob-num js-line-number" data-line-number="84"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC84" class="blob-code blob-code-inner js-file-line">.<span class=pl-c1>switch-toggle</span> <span class=pl-ent>label</span><span class=pl-kos>:</span><span class=pl-c1>after</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L85" class="blob-num js-line-number" data-line-number="85"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC85" class="blob-code blob-code-inner js-file-line">  <span class=pl-c1>width</span><span class=pl-kos>:</span> <span class=pl-c1>65<span class=pl-smi>px</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L86" class="blob-num js-line-number" data-line-number="86"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC86" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L87" class="blob-num js-line-number" data-line-number="87"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC87" class="blob-code blob-code-inner js-file-line"><span class=pl-c>/** Switch styles */</span></td>
+      </tr>
+</table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/willmendesneto/344f4226cfd30e24027b7d8f6b96020d/raw/f3bc8ab501c158916a6ee1cc3bd2db6f55f907ef/dark-mode-via-css-media-query-and-classes-via-javascript.css" style="float:right">view raw</a>
+        <a href="https://gist.github.com/willmendesneto/344f4226cfd30e24027b7d8f6b96020d#file-dark-mode-via-css-media-query-and-classes-via-javascript-css">dark-mode-via-css-media-query-and-classes-via-javascript.css</a>
+        hosted with &#10084; by <a href="https://github.com">GitHub</a>
+      </div>
+    </div>
+</div></p>
+<p>After these changes, let's write the Javascript to manipulate and add the class to our page. Firstly, we should check if window.matchMedia is available on the user’s browser. If it is, we can start the javascript manipulation.</p>
+<p>Secondly, it should check if dark mode is enabled via OS on page load, so it can add the dark-mode class and trigger the toggle on the switch. If it's supported we'll check if the HTML element already has any class (on page-load it won't have any class on it) so it adds or switches between light and dark mode classes and triggers a change on the switch to keep aligned with the current theme state.</p>
+<p>Another good point in this step is that it should change the Switch Toggle content to be visible in case the browser supports it. Otherwise, it will be hidden via CSS.</p>
+<p>This is the final state for the Javascript integration.</p>
+<p><div id="gist104161425" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js" class="file my-2">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-javascript  ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC1" class="blob-code blob-code-inner js-file-line"><span class=pl-k>function</span> <span class=pl-en>toggleSiteTheme</span><span class=pl-kos>(</span><span class=pl-s1>e</span><span class=pl-kos>)</span> <span class=pl-kos>{</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC2" class="blob-code blob-code-inner js-file-line">  <span class=pl-k>var</span> <span class=pl-s1>html</span> <span class=pl-c1>=</span> <span class=pl-smi>document</span><span class=pl-kos>.</span><span class=pl-en>getElementsByTagName</span><span class=pl-kos>(</span><span class=pl-s>&quot;html&quot;</span><span class=pl-kos>)</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC3" class="blob-code blob-code-inner js-file-line">  <span class=pl-k>var</span> <span class=pl-s1>className</span> <span class=pl-c1>=</span> <span class=pl-s1>html</span><span class=pl-kos>[</span><span class=pl-c1>0</span><span class=pl-kos>]</span><span class=pl-kos>.</span><span class=pl-c1>classList</span><span class=pl-kos>.</span><span class=pl-c1>value</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC4" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC5" class="blob-code blob-code-inner js-file-line">  <span class=pl-c>/** Gets the target by checking if it was triggered by </span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC6" class="blob-code blob-code-inner js-file-line"><span class=pl-c>    clicking on the switch or if via OS configuration changes */</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC7" class="blob-code blob-code-inner js-file-line">  <span class=pl-k>var</span> <span class=pl-s1>target</span> <span class=pl-c1>=</span> <span class=pl-smi>document</span><span class=pl-kos>.</span><span class=pl-en>getElementById</span><span class=pl-kos>(</span><span class=pl-s>&quot;theme-switch&quot;</span><span class=pl-kos>)</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC8" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC9" class="blob-code blob-code-inner js-file-line">  <span class=pl-k>var</span> <span class=pl-s1>isLightMode</span> <span class=pl-c1>=</span> <span class=pl-s1>target</span><span class=pl-kos>.</span><span class=pl-c1>className</span> <span class=pl-c1>===</span> <span class=pl-s>&quot;&quot;</span> <span class=pl-c1>||</span> <span class=pl-s1>className</span> <span class=pl-c1>===</span> <span class=pl-s>&quot;light-mode&quot;</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC10" class="blob-code blob-code-inner js-file-line">  <span class=pl-c>/** Adds the class into our HTML to determine if it will be light or dark mode */</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC11" class="blob-code blob-code-inner js-file-line">  <span class=pl-s1>html</span><span class=pl-kos>[</span><span class=pl-c1>0</span><span class=pl-kos>]</span><span class=pl-kos>.</span><span class=pl-c1>className</span> <span class=pl-c1>=</span> <span class=pl-s1>isLightMode</span> ? <span class=pl-s>&quot;dark-mode&quot;</span> : <span class=pl-s>&quot;light-mode&quot;</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC12" class="blob-code blob-code-inner js-file-line">  <span class=pl-c>/** Adds the class into our switch to show the user choices </span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC13" class="blob-code blob-code-inner js-file-line"><span class=pl-c>    for light or dark mode is active or not */</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC14" class="blob-code blob-code-inner js-file-line">  <span class=pl-s1>target</span><span class=pl-kos>.</span><span class=pl-c1>className</span> <span class=pl-c1>=</span> <span class=pl-s1>isLightMode</span> ? <span class=pl-s>&quot;active&quot;</span> : <span class=pl-s>&quot;&quot;</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC15" class="blob-code blob-code-inner js-file-line">  <span class=pl-c>/** Checks the input and change the value of it. </span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC16" class="blob-code blob-code-inner js-file-line"><span class=pl-c>    So the CSS changes can be applies */</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC17" class="blob-code blob-code-inner js-file-line">  <span class=pl-smi>document</span><span class=pl-kos>.</span><span class=pl-en>getElementById</span><span class=pl-kos>(</span><span class=pl-s>&quot;switch-checkbox&quot;</span><span class=pl-kos>)</span><span class=pl-kos>.</span><span class=pl-c1>checked</span> <span class=pl-c1>=</span> <span class=pl-s1>isLightMode</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC18" class="blob-code blob-code-inner js-file-line">    ? <span class=pl-c1>true</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC19" class="blob-code blob-code-inner js-file-line">    : <span class=pl-c1>false</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC20" class="blob-code blob-code-inner js-file-line"><span class=pl-kos>}</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC21" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC22" class="blob-code blob-code-inner js-file-line"><span class=pl-c>/** Firstly, we should check if window.matchMedia is available </span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC23" class="blob-code blob-code-inner js-file-line"><span class=pl-c>  on the user&#39;s browser */</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC24" class="blob-code blob-code-inner js-file-line"><span class=pl-k>const</span> <span class=pl-s1>isMatchMediaSupported</span> <span class=pl-c1>=</span> <span class=pl-k>typeof</span> <span class=pl-smi>window</span><span class=pl-kos>.</span><span class=pl-c1>matchMedia</span> <span class=pl-c1>===</span> <span class=pl-s>&quot;function&quot;</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC25" class="blob-code blob-code-inner js-file-line"><span class=pl-c>/** if it is, we can start the javascript manipulation */</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC26" class="blob-code blob-code-inner js-file-line"><span class=pl-k>if</span> <span class=pl-kos>(</span><span class=pl-s1>isMatchMediaSupported</span><span class=pl-kos>)</span> <span class=pl-kos>{</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC27" class="blob-code blob-code-inner js-file-line">  </td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC28" class="blob-code blob-code-inner js-file-line">  <span class=pl-k>const</span> <span class=pl-s1>darkModeMatches</span> <span class=pl-c1>=</span> <span class=pl-smi>window</span><span class=pl-kos>.</span><span class=pl-en>matchMedia</span><span class=pl-kos>(</span><span class=pl-s>&quot;(prefers-color-scheme: dark)&quot;</span><span class=pl-kos>)</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC29" class="blob-code blob-code-inner js-file-line">  <span class=pl-c>/** Checks if dark mode is enabled via OS on page load, </span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L30" class="blob-num js-line-number" data-line-number="30"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC30" class="blob-code blob-code-inner js-file-line"><span class=pl-c>    so it can add the dark-mode class and trigger the </span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L31" class="blob-num js-line-number" data-line-number="31"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC31" class="blob-code blob-code-inner js-file-line"><span class=pl-c>    toggle on the switch */</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L32" class="blob-num js-line-number" data-line-number="32"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC32" class="blob-code blob-code-inner js-file-line">  <span class=pl-k>if</span> <span class=pl-kos>(</span><span class=pl-s1>darkModeMatches</span><span class=pl-kos>.</span><span class=pl-c1>matches</span><span class=pl-kos>)</span> <span class=pl-kos>{</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L33" class="blob-num js-line-number" data-line-number="33"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC33" class="blob-code blob-code-inner js-file-line">    <span class=pl-en>toggleSiteTheme</span><span class=pl-kos>(</span><span class=pl-kos>)</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L34" class="blob-num js-line-number" data-line-number="34"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC34" class="blob-code blob-code-inner js-file-line">  <span class=pl-kos>}</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L35" class="blob-num js-line-number" data-line-number="35"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC35" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L36" class="blob-num js-line-number" data-line-number="36"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC36" class="blob-code blob-code-inner js-file-line">  <span class=pl-c>/** Adding a listener for the switch toggle */</span>  </td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L37" class="blob-num js-line-number" data-line-number="37"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC37" class="blob-code blob-code-inner js-file-line">  <span class=pl-smi>document</span><span class=pl-kos>.</span><span class=pl-en>getElementById</span><span class=pl-kos>(</span><span class=pl-s>&quot;theme-switch&quot;</span><span class=pl-kos>)</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L38" class="blob-num js-line-number" data-line-number="38"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC38" class="blob-code blob-code-inner js-file-line">    <span class=pl-kos>.</span><span class=pl-en>addEventListener</span><span class=pl-kos>(</span><span class=pl-s>&quot;click&quot;</span><span class=pl-kos>,</span> <span class=pl-s1>toggleSiteTheme</span><span class=pl-kos>)</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L39" class="blob-num js-line-number" data-line-number="39"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC39" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L40" class="blob-num js-line-number" data-line-number="40"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC40" class="blob-code blob-code-inner js-file-line">  <span class=pl-c>/** If the browser supports it, we can change the switch content</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L41" class="blob-num js-line-number" data-line-number="41"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC41" class="blob-code blob-code-inner js-file-line"><span class=pl-c>    to be visible. Otherwise, it will be hidden via CSS */</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L42" class="blob-num js-line-number" data-line-number="42"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC42" class="blob-code blob-code-inner js-file-line">  <span class=pl-smi>document</span><span class=pl-kos>.</span><span class=pl-en>getElementById</span><span class=pl-kos>(</span><span class=pl-s>&quot;switch-checkbox&quot;</span><span class=pl-kos>)</span><span class=pl-kos>.</span><span class=pl-c1>style</span><span class=pl-kos>.</span><span class=pl-c1>display</span> <span class=pl-c1>=</span> <span class=pl-s>&#39;flex&#39;</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L43" class="blob-num js-line-number" data-line-number="43"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC43" class="blob-code blob-code-inner js-file-line">  </td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L44" class="blob-num js-line-number" data-line-number="44"></td>
+        <td id="file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC44" class="blob-code blob-code-inner js-file-line"><span class=pl-kos>}</span></td>
+      </tr>
+</table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/willmendesneto/9e5b57e68b2b032de8212a6083b07019/raw/8026e565249cfaa8a3e15ec357c01d7f0d3f6dea/dark-mode-via-css-media-query-and-classes-via-javascript.js" style="float:right">view raw</a>
+        <a href="https://gist.github.com/willmendesneto/9e5b57e68b2b032de8212a6083b07019#file-dark-mode-via-css-media-query-and-classes-via-javascript-js">dark-mode-via-css-media-query-and-classes-via-javascript.js</a>
+        hosted with &#10084; by <a href="https://github.com">GitHub</a>
+      </div>
+    </div>
+</div></p>
+<p>And this is the result of the switch to turn on and off your dark-mode in your page.</p>
+<p><img src="https://cdn-images-1.medium.com/max/800/1*dIp1YtdPuHqlU6NQ0XdsAA.gif"></p>
+<h3>Listening for dark mode changes in OS</h3>
+<p>Now we can change slightly our javascript file to Adds a listener for dark mode changes via user system preferences. We can reuse the previous value for <a href="https://caniuse.com/#search=matchMedia" target="_blank" rel="nofollow noopener noreferrer"><strong>matchMedia</strong></a> method and add a listener to the changes.</p>
+<p><div id="gist104161793" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js" class="file my-2">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-javascript  ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC1" class="blob-code blob-code-inner js-file-line"><span class=pl-k>function</span> <span class=pl-en>toggleSiteTheme</span><span class=pl-kos>(</span><span class=pl-s1>e</span><span class=pl-kos>)</span> <span class=pl-kos>{</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC2" class="blob-code blob-code-inner js-file-line">  <span class=pl-k>var</span> <span class=pl-s1>html</span> <span class=pl-c1>=</span> <span class=pl-smi>document</span><span class=pl-kos>.</span><span class=pl-en>getElementsByTagName</span><span class=pl-kos>(</span><span class=pl-s>&quot;html&quot;</span><span class=pl-kos>)</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC3" class="blob-code blob-code-inner js-file-line">  <span class=pl-k>var</span> <span class=pl-s1>className</span> <span class=pl-c1>=</span> <span class=pl-s1>html</span><span class=pl-kos>[</span><span class=pl-c1>0</span><span class=pl-kos>]</span><span class=pl-kos>.</span><span class=pl-c1>classList</span><span class=pl-kos>.</span><span class=pl-c1>value</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC4" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC5" class="blob-code blob-code-inner js-file-line">  <span class=pl-c>/** Gets the target by checking if it was triggered by </span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC6" class="blob-code blob-code-inner js-file-line"><span class=pl-c>    clicking on the switch or if via OS configuration changes */</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC7" class="blob-code blob-code-inner js-file-line">  <span class=pl-k>var</span> <span class=pl-s1>target</span> <span class=pl-c1>=</span> <span class=pl-smi>document</span><span class=pl-kos>.</span><span class=pl-en>getElementById</span><span class=pl-kos>(</span><span class=pl-s>&quot;theme-switch&quot;</span><span class=pl-kos>)</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC8" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC9" class="blob-code blob-code-inner js-file-line">  <span class=pl-k>var</span> <span class=pl-s1>isLightMode</span> <span class=pl-c1>=</span> <span class=pl-s1>target</span><span class=pl-kos>.</span><span class=pl-c1>className</span> <span class=pl-c1>===</span> <span class=pl-s>&quot;&quot;</span> <span class=pl-c1>||</span> <span class=pl-s1>className</span> <span class=pl-c1>===</span> <span class=pl-s>&quot;light-mode&quot;</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC10" class="blob-code blob-code-inner js-file-line">  <span class=pl-c>/** Adds the class into our HTML to determine if it will be light or dark mode */</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC11" class="blob-code blob-code-inner js-file-line">  <span class=pl-s1>html</span><span class=pl-kos>[</span><span class=pl-c1>0</span><span class=pl-kos>]</span><span class=pl-kos>.</span><span class=pl-c1>className</span> <span class=pl-c1>=</span> <span class=pl-s1>isLightMode</span> ? <span class=pl-s>&quot;dark-mode&quot;</span> : <span class=pl-s>&quot;light-mode&quot;</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC12" class="blob-code blob-code-inner js-file-line">  <span class=pl-c>/** Adds the class into our switch to show the user choices </span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC13" class="blob-code blob-code-inner js-file-line"><span class=pl-c>    for light or dark mode is active or not */</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC14" class="blob-code blob-code-inner js-file-line">  <span class=pl-s1>target</span><span class=pl-kos>.</span><span class=pl-c1>className</span> <span class=pl-c1>=</span> <span class=pl-s1>isLightMode</span> ? <span class=pl-s>&quot;active&quot;</span> : <span class=pl-s>&quot;&quot;</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC15" class="blob-code blob-code-inner js-file-line">  <span class=pl-c>/** Checks the input and change the value of it. </span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC16" class="blob-code blob-code-inner js-file-line"><span class=pl-c>    So the CSS changes can be applies */</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC17" class="blob-code blob-code-inner js-file-line">  <span class=pl-smi>document</span><span class=pl-kos>.</span><span class=pl-en>getElementById</span><span class=pl-kos>(</span><span class=pl-s>&quot;switch-checkbox&quot;</span><span class=pl-kos>)</span><span class=pl-kos>.</span><span class=pl-c1>checked</span> <span class=pl-c1>=</span> <span class=pl-s1>isLightMode</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC18" class="blob-code blob-code-inner js-file-line">    ? <span class=pl-c1>true</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC19" class="blob-code blob-code-inner js-file-line">    : <span class=pl-c1>false</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC20" class="blob-code blob-code-inner js-file-line"><span class=pl-kos>}</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC21" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC22" class="blob-code blob-code-inner js-file-line"><span class=pl-c>/** Firstly, we should check if window.matchMedia is available </span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC23" class="blob-code blob-code-inner js-file-line"><span class=pl-c>  on the user&#39;s browser */</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC24" class="blob-code blob-code-inner js-file-line"><span class=pl-k>const</span> <span class=pl-s1>isMatchMediaSupported</span> <span class=pl-c1>=</span> <span class=pl-k>typeof</span> <span class=pl-smi>window</span><span class=pl-kos>.</span><span class=pl-c1>matchMedia</span> <span class=pl-c1>===</span> <span class=pl-s>&quot;function&quot;</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC25" class="blob-code blob-code-inner js-file-line"><span class=pl-c>/** if it is, we can start the javascript manipulation */</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC26" class="blob-code blob-code-inner js-file-line"><span class=pl-k>if</span> <span class=pl-kos>(</span><span class=pl-s1>isMatchMediaSupported</span><span class=pl-kos>)</span> <span class=pl-kos>{</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC27" class="blob-code blob-code-inner js-file-line">  </td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC28" class="blob-code blob-code-inner js-file-line">  <span class=pl-k>const</span> <span class=pl-s1>darkModeMatches</span> <span class=pl-c1>=</span> <span class=pl-smi>window</span><span class=pl-kos>.</span><span class=pl-en>matchMedia</span><span class=pl-kos>(</span><span class=pl-s>&quot;(prefers-color-scheme: dark)&quot;</span><span class=pl-kos>)</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC29" class="blob-code blob-code-inner js-file-line">  <span class=pl-c>/** Checks if dark mode is enabled via OS on page load, </span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L30" class="blob-num js-line-number" data-line-number="30"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC30" class="blob-code blob-code-inner js-file-line"><span class=pl-c>    so it can add the dark-mode class and trigger the </span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L31" class="blob-num js-line-number" data-line-number="31"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC31" class="blob-code blob-code-inner js-file-line"><span class=pl-c>    toggle on the switch */</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L32" class="blob-num js-line-number" data-line-number="32"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC32" class="blob-code blob-code-inner js-file-line">  <span class=pl-k>if</span> <span class=pl-kos>(</span><span class=pl-s1>darkModeMatches</span><span class=pl-kos>.</span><span class=pl-c1>matches</span><span class=pl-kos>)</span> <span class=pl-kos>{</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L33" class="blob-num js-line-number" data-line-number="33"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC33" class="blob-code blob-code-inner js-file-line">    <span class=pl-en>toggleSiteTheme</span><span class=pl-kos>(</span><span class=pl-kos>)</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L34" class="blob-num js-line-number" data-line-number="34"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC34" class="blob-code blob-code-inner js-file-line">  <span class=pl-kos>}</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L35" class="blob-num js-line-number" data-line-number="35"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC35" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L36" class="blob-num js-line-number" data-line-number="36"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC36" class="blob-code blob-code-inner js-file-line">  <span class=pl-c>/** Adds a listener for dark-mode changes in OS */</span>	</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L37" class="blob-num js-line-number" data-line-number="37"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC37" class="blob-code blob-code-inner js-file-line">  <span class=pl-s1>darkModeMatches</span><span class=pl-kos>.</span><span class=pl-en>addListener</span><span class=pl-kos>(</span><span class=pl-kos>(</span><span class=pl-s1>e</span><span class=pl-kos>)</span> <span class=pl-c1>=&gt;</span> <span class=pl-en>toggleSiteTheme</span><span class=pl-kos>(</span><span class=pl-kos>)</span><span class=pl-kos>)</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L38" class="blob-num js-line-number" data-line-number="38"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC38" class="blob-code blob-code-inner js-file-line">  </td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L39" class="blob-num js-line-number" data-line-number="39"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC39" class="blob-code blob-code-inner js-file-line">  <span class=pl-c>/** Adding a listener for the switch toggle */</span>  </td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L40" class="blob-num js-line-number" data-line-number="40"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC40" class="blob-code blob-code-inner js-file-line">  <span class=pl-smi>document</span><span class=pl-kos>.</span><span class=pl-en>getElementById</span><span class=pl-kos>(</span><span class=pl-s>&quot;theme-switch&quot;</span><span class=pl-kos>)</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L41" class="blob-num js-line-number" data-line-number="41"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC41" class="blob-code blob-code-inner js-file-line">    <span class=pl-kos>.</span><span class=pl-en>addEventListener</span><span class=pl-kos>(</span><span class=pl-s>&quot;click&quot;</span><span class=pl-kos>,</span> <span class=pl-s1>toggleSiteTheme</span><span class=pl-kos>)</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L42" class="blob-num js-line-number" data-line-number="42"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC42" class="blob-code blob-code-inner js-file-line">  </td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L43" class="blob-num js-line-number" data-line-number="43"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC43" class="blob-code blob-code-inner js-file-line">  <span class=pl-c>/** If the browser supports it, we can change the switch content</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L44" class="blob-num js-line-number" data-line-number="44"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC44" class="blob-code blob-code-inner js-file-line"><span class=pl-c>    to be visible. Otherwise, it will be hidden via CSS */</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L45" class="blob-num js-line-number" data-line-number="45"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC45" class="blob-code blob-code-inner js-file-line">  <span class=pl-smi>document</span><span class=pl-kos>.</span><span class=pl-en>getElementById</span><span class=pl-kos>(</span><span class=pl-s>&quot;switch-checkbox&quot;</span><span class=pl-kos>)</span><span class=pl-kos>.</span><span class=pl-c1>style</span><span class=pl-kos>.</span><span class=pl-c1>display</span> <span class=pl-c1>=</span> <span class=pl-s>&#39;flex&#39;</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L46" class="blob-num js-line-number" data-line-number="46"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC46" class="blob-code blob-code-inner js-file-line"><span class=pl-kos>}</span></td>
+      </tr>
+</table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/willmendesneto/eb5e53905582757f982aa836b453c363/raw/7160f00e30c2af786b7d1a285c0bf4c9376bba3f/dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript.js" style="float:right">view raw</a>
+        <a href="https://gist.github.com/willmendesneto/eb5e53905582757f982aa836b453c363#file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js">dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript.js</a>
+        hosted with &#10084; by <a href="https://github.com">GitHub</a>
+      </div>
+    </div>
+</div></p>
+<h3>Adding better events</h3>
+<p>Another improvement you can apply is to use the better event listener for the current user device by using <strong>touchstart</strong> if is a mobile device. Otherwise, it will trigger based on the <strong>click</strong> event.</p>
+<p>With all these changes, this will be the final version of the Javascript file.</p>
+<p><div id="gist104161898" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js" class="file my-2">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-javascript  ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC1" class="blob-code blob-code-inner js-file-line"><span class=pl-k>function</span> <span class=pl-en>toggleSiteTheme</span><span class=pl-kos>(</span><span class=pl-s1>e</span><span class=pl-kos>)</span> <span class=pl-kos>{</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC2" class="blob-code blob-code-inner js-file-line">  <span class=pl-k>const</span> <span class=pl-s1>html</span> <span class=pl-c1>=</span> <span class=pl-smi>document</span><span class=pl-kos>.</span><span class=pl-en>getElementsByTagName</span><span class=pl-kos>(</span><span class=pl-s>&quot;html&quot;</span><span class=pl-kos>)</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC3" class="blob-code blob-code-inner js-file-line">  <span class=pl-k>const</span> <span class=pl-s1>className</span> <span class=pl-c1>=</span> <span class=pl-s1>html</span><span class=pl-kos>[</span><span class=pl-c1>0</span><span class=pl-kos>]</span><span class=pl-kos>.</span><span class=pl-c1>classList</span><span class=pl-kos>.</span><span class=pl-c1>value</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC4" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC5" class="blob-code blob-code-inner js-file-line">  <span class=pl-c>/** Gets the target by checking if it was triggered by clicking on the switch or if via OS configuration changes */</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC6" class="blob-code blob-code-inner js-file-line">  <span class=pl-k>const</span> <span class=pl-s1>target</span> <span class=pl-c1>=</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC7" class="blob-code blob-code-inner js-file-line">    <span class=pl-s1>e</span> <span class=pl-c1>&amp;&amp;</span> <span class=pl-s1>e</span><span class=pl-kos>.</span><span class=pl-c1>target</span> ? <span class=pl-s1>e</span><span class=pl-kos>.</span><span class=pl-c1>target</span> : <span class=pl-smi>document</span><span class=pl-kos>.</span><span class=pl-en>getElementById</span><span class=pl-kos>(</span><span class=pl-s>&quot;theme-switch&quot;</span><span class=pl-kos>)</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC8" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC9" class="blob-code blob-code-inner js-file-line">  <span class=pl-k>const</span> <span class=pl-s1>isLightMode</span> <span class=pl-c1>=</span> <span class=pl-s1>target</span><span class=pl-kos>.</span><span class=pl-c1>className</span> <span class=pl-c1>===</span> <span class=pl-s>&quot;&quot;</span> <span class=pl-c1>||</span> <span class=pl-s1>className</span> <span class=pl-c1>===</span> <span class=pl-s>&quot;light-mode&quot;</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC10" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC11" class="blob-code blob-code-inner js-file-line">  <span class=pl-c>/** Adds the class into our HTML to determine if it will be light or dark mode */</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC12" class="blob-code blob-code-inner js-file-line">  <span class=pl-s1>html</span><span class=pl-kos>[</span><span class=pl-c1>0</span><span class=pl-kos>]</span><span class=pl-kos>.</span><span class=pl-c1>className</span> <span class=pl-c1>=</span> <span class=pl-s1>isLightMode</span> ? <span class=pl-s>&quot;dark-mode&quot;</span> : <span class=pl-s>&quot;light-mode&quot;</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC13" class="blob-code blob-code-inner js-file-line">  </td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC14" class="blob-code blob-code-inner js-file-line">  <span class=pl-c>/** Adds the class into our switch to show the user choices </span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC15" class="blob-code blob-code-inner js-file-line"><span class=pl-c>    for light or dark mode is active or not */</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC16" class="blob-code blob-code-inner js-file-line">  <span class=pl-s1>target</span><span class=pl-kos>.</span><span class=pl-c1>className</span> <span class=pl-c1>=</span> <span class=pl-s1>isLightMode</span> ? <span class=pl-s>&quot;active&quot;</span> : <span class=pl-s>&quot;&quot;</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC17" class="blob-code blob-code-inner js-file-line">  </td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC18" class="blob-code blob-code-inner js-file-line">  <span class=pl-c>/** Checks the input and change the value of it. </span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC19" class="blob-code blob-code-inner js-file-line"><span class=pl-c>    So the CSS changes can be applies */</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC20" class="blob-code blob-code-inner js-file-line">  <span class=pl-smi>document</span><span class=pl-kos>.</span><span class=pl-en>getElementById</span><span class=pl-kos>(</span><span class=pl-s>&quot;switch-checkbox&quot;</span><span class=pl-kos>)</span><span class=pl-kos>.</span><span class=pl-c1>checked</span> <span class=pl-c1>=</span> <span class=pl-s1>isLightMode</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC21" class="blob-code blob-code-inner js-file-line">    ? <span class=pl-c1>true</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC22" class="blob-code blob-code-inner js-file-line">    : <span class=pl-c1>false</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC23" class="blob-code blob-code-inner js-file-line"><span class=pl-kos>}</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC24" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC25" class="blob-code blob-code-inner js-file-line"><span class=pl-c>/** Firstly, we should check if window.matchMedia is available </span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC26" class="blob-code blob-code-inner js-file-line"><span class=pl-c>  on the user&#39;s browser */</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC27" class="blob-code blob-code-inner js-file-line"><span class=pl-k>const</span> <span class=pl-s1>isMatchMediaSupported</span> <span class=pl-c1>=</span> <span class=pl-k>typeof</span> <span class=pl-smi>window</span><span class=pl-kos>.</span><span class=pl-c1>matchMedia</span> <span class=pl-c1>===</span> <span class=pl-s>&quot;function&quot;</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC28" class="blob-code blob-code-inner js-file-line"><span class=pl-c>/** if it is, we can start the javascript manipulation */</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC29" class="blob-code blob-code-inner js-file-line"><span class=pl-k>if</span> <span class=pl-kos>(</span><span class=pl-s1>isMatchMediaSupported</span><span class=pl-kos>)</span> <span class=pl-kos>{</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L30" class="blob-num js-line-number" data-line-number="30"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC30" class="blob-code blob-code-inner js-file-line">  </td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L31" class="blob-num js-line-number" data-line-number="31"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC31" class="blob-code blob-code-inner js-file-line">  <span class=pl-k>const</span> <span class=pl-s1>darkModeMatches</span> <span class=pl-c1>=</span> <span class=pl-smi>window</span><span class=pl-kos>.</span><span class=pl-en>matchMedia</span><span class=pl-kos>(</span><span class=pl-s>&quot;(prefers-color-scheme: dark)&quot;</span><span class=pl-kos>)</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L32" class="blob-num js-line-number" data-line-number="32"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC32" class="blob-code blob-code-inner js-file-line">  <span class=pl-c>/** Checks if dark mode is enabled via OS on page load, </span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L33" class="blob-num js-line-number" data-line-number="33"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC33" class="blob-code blob-code-inner js-file-line"><span class=pl-c>    so it can add the dark-mode class and trigger the </span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L34" class="blob-num js-line-number" data-line-number="34"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC34" class="blob-code blob-code-inner js-file-line"><span class=pl-c>    toggle on the switch */</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L35" class="blob-num js-line-number" data-line-number="35"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC35" class="blob-code blob-code-inner js-file-line">  <span class=pl-k>if</span> <span class=pl-kos>(</span><span class=pl-s1>darkModeMatches</span><span class=pl-kos>.</span><span class=pl-c1>matches</span><span class=pl-kos>)</span> <span class=pl-kos>{</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L36" class="blob-num js-line-number" data-line-number="36"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC36" class="blob-code blob-code-inner js-file-line">    <span class=pl-en>toggleSiteTheme</span><span class=pl-kos>(</span><span class=pl-kos>)</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L37" class="blob-num js-line-number" data-line-number="37"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC37" class="blob-code blob-code-inner js-file-line">  <span class=pl-kos>}</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L38" class="blob-num js-line-number" data-line-number="38"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC38" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L39" class="blob-num js-line-number" data-line-number="39"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC39" class="blob-code blob-code-inner js-file-line">  <span class=pl-c>/** Adds a listener for dark mode changes in OS */</span>	</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L40" class="blob-num js-line-number" data-line-number="40"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC40" class="blob-code blob-code-inner js-file-line">  <span class=pl-s1>darkModeMatches</span><span class=pl-kos>.</span><span class=pl-en>addListener</span><span class=pl-kos>(</span><span class=pl-kos>(</span><span class=pl-s1>e</span><span class=pl-kos>)</span> <span class=pl-c1>=&gt;</span> <span class=pl-en>toggleSiteTheme</span><span class=pl-kos>(</span><span class=pl-kos>)</span><span class=pl-kos>)</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L41" class="blob-num js-line-number" data-line-number="41"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC41" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L42" class="blob-num js-line-number" data-line-number="42"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC42" class="blob-code blob-code-inner js-file-line">  <span class=pl-c>/** If the browser supports it, we can change the switch content</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L43" class="blob-num js-line-number" data-line-number="43"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC43" class="blob-code blob-code-inner js-file-line"><span class=pl-c>    to be visible. Otherwise, it will be hidden via CSS */</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L44" class="blob-num js-line-number" data-line-number="44"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC44" class="blob-code blob-code-inner js-file-line">  <span class=pl-smi>document</span><span class=pl-kos>.</span><span class=pl-en>getElementById</span><span class=pl-kos>(</span><span class=pl-s>&quot;switch-checkbox&quot;</span><span class=pl-kos>)</span><span class=pl-kos>.</span><span class=pl-c1>style</span><span class=pl-kos>.</span><span class=pl-c1>display</span> <span class=pl-c1>=</span> <span class=pl-s>&#39;flex&#39;</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L45" class="blob-num js-line-number" data-line-number="45"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC45" class="blob-code blob-code-inner js-file-line"><span class=pl-kos>}</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L46" class="blob-num js-line-number" data-line-number="46"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC46" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L47" class="blob-num js-line-number" data-line-number="47"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC47" class="blob-code blob-code-inner js-file-line"><span class=pl-c>/** Checks if it&#39;s a mobile device or not */</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L48" class="blob-num js-line-number" data-line-number="48"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC48" class="blob-code blob-code-inner js-file-line"><span class=pl-k>const</span> <span class=pl-s1>isMobileDevice</span> <span class=pl-c1>=</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L49" class="blob-num js-line-number" data-line-number="49"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC49" class="blob-code blob-code-inner js-file-line">  <span class=pl-k>typeof</span> <span class=pl-smi>window</span><span class=pl-kos>.</span><span class=pl-c1>orientation</span> <span class=pl-c1>!==</span> <span class=pl-s>&quot;undefined&quot;</span> <span class=pl-c1>||</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L50" class="blob-num js-line-number" data-line-number="50"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC50" class="blob-code blob-code-inner js-file-line">  <span class=pl-s1>navigator</span><span class=pl-kos>.</span><span class=pl-c1>userAgent</span><span class=pl-kos>.</span><span class=pl-en>indexOf</span><span class=pl-kos>(</span><span class=pl-s>&quot;IEMobile&quot;</span><span class=pl-kos>)</span> <span class=pl-c1>!==</span> <span class=pl-c1>-</span><span class=pl-c1>1</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L51" class="blob-num js-line-number" data-line-number="51"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC51" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L52" class="blob-num js-line-number" data-line-number="52"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC52" class="blob-code blob-code-inner js-file-line"><span class=pl-smi>document</span><span class=pl-kos>.</span><span class=pl-en>getElementById</span><span class=pl-kos>(</span><span class=pl-s>&quot;theme-switch&quot;</span><span class=pl-kos>)</span><span class=pl-kos>.</span><span class=pl-en>addEventListener</span><span class=pl-kos>(</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L53" class="blob-num js-line-number" data-line-number="53"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC53" class="blob-code blob-code-inner js-file-line">  <span class=pl-c>/** Using touchstart if is a mobile device.</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L54" class="blob-num js-line-number" data-line-number="54"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC54" class="blob-code blob-code-inner js-file-line"><span class=pl-c>    Otherwise, it will trigger based on the click */</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L55" class="blob-num js-line-number" data-line-number="55"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC55" class="blob-code blob-code-inner js-file-line">  <span class=pl-s1>isMobileDevice</span> ? <span class=pl-s>&quot;touchstart&quot;</span> : <span class=pl-s>&quot;click&quot;</span><span class=pl-kos>,</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L56" class="blob-num js-line-number" data-line-number="56"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC56" class="blob-code blob-code-inner js-file-line">  <span class=pl-s1>toggleSiteTheme</span></td>
+      </tr>
+      <tr>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L57" class="blob-num js-line-number" data-line-number="57"></td>
+        <td id="file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC57" class="blob-code blob-code-inner js-file-line"><span class=pl-kos>)</span><span class=pl-kos>;</span></td>
+      </tr>
+</table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/willmendesneto/fe150b05fda7a6ced2624c1254305515/raw/77f85924daeffec946f4562a695a557c8ed85dfc/dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript.js" style="float:right">view raw</a>
+        <a href="https://gist.github.com/willmendesneto/fe150b05fda7a6ced2624c1254305515#file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js">dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript.js</a>
+        hosted with &#10084; by <a href="https://github.com">GitHub</a>
+      </div>
+    </div>
+</div></p>
+<hr/>
+<h3>That’s all for now</h3>
+<p>It was great to write this blog post and see the evolution of the Web as Platform and how quick you can do amazing things like that — and even more if you like — in your pages.</p>
+<p>If you like to know more about it, I'm applying this and other experiments on my personal website <a href="https://willmendesneto.github.io/" target="_blank" rel="nofollow noopener noreferrer"><strong>https://willmendesneto.github.io</strong></a>, or check the pull request adding this feature on the <a href="https://github.com/willmendesneto/willmendesneto.github.io/commit/da46a0e4a22791861231cbbd481124367769e352" target="_blank" rel="nofollow noopener noreferrer"><strong>Github repository of my personal website</strong></a>.</p>
+<p>Last, but not least, this is one of the various approaches that can be used to support dark-mode in your app. In the end, most important than the approach is to add it, keeping in mind that:</p>
+<blockquote>
+<p>It can be Light or Dark mode, but more than this: let the users choose what’s best for them</p>
+</blockquote>
+<hr/>
+I hope you enjoyed this reading as much as I enjoyed writing it. Thank you so much for reading until the end and see you soon!
+<p><img src="https://cdn-images-1.medium.com/max/800/1*tT2KIJkX4dhynNYipnVNmg.gif"></p>
+<h3>Cya 👋</h3></div></article></section></main></div><footer class="Footer__PageFooter-sc-14qtz8p-1 evCYdc"><ul><li><a href="https://twitter.com/willmendesneto" target="_blank" rel="noopener noreferrer">Twitter</a></li><li><a href="https://github.com/willmendesneto" target="_blank" rel="noopener noreferrer">Github</a></li><li><a href="/rss.xml" target="_blank" rel="noopener noreferrer">RSS</a></li></ul><p class="Footer__Text-sc-14qtz8p-0 llqpgS">made by me with<!-- --> <span role="img" aria-label="love">❤️</span> <!-- -->since 2014</p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
+  
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'UA-58169656-1', 'auto', {});
+      
+      
+      
+      
+      
+      }</script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/posts/dark-side-is-in-our-blood-dark-mode-in-you-pages-using-css-filters";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-2645f3231365ba51a296.js"],"app":["/app-a4dce349d972e2f96f4f.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-1bc4087bda7d163b6bc1.js"],"component---src-pages-404-js":["/component---src-pages-404-js-d991251d90476ebcd163.js"],"component---src-pages-contact-js":["/component---src-pages-contact-js-0131fe49b0c3c81f4a45.js"],"component---src-pages-index-js":["/component---src-pages-index-js-768f221821aa187b9b2d.js"],"component---src-pages-posts-js":["/component---src-pages-posts-js-cc69178b0a79363bc455.js"],"component---src-pages-talks-js":["/component---src-pages-talks-js-f9aa2b44549f3d72d71f.js"],"component---src-pages-workshops-js":["/component---src-pages-workshops-js-a1bb33d608065aa003cf.js"],"component---src-templates-post-js":["/component---src-templates-post-js-20d5c25fe44c354044f8.js"]};/*]]>*/</script><script src="/polyfill-2645f3231365ba51a296.js" nomodule=""></script><script src="/component---src-templates-post-js-20d5c25fe44c354044f8.js" async=""></script><script src="/c38806a22704b1411d609490b31463a94158f97c-251d4b46df1e4f161a6b.js" async=""></script><script src="/app-a4dce349d972e2f96f4f.js" async=""></script><script src="/framework-5a0f89685a3614932ea6.js" async=""></script><script src="/webpack-runtime-23e80c2ddd056a24e52f.js" async=""></script></body></html>
