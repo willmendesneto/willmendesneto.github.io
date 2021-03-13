@@ -3,10 +3,10 @@
   "description": "Wilson Mendes's website",
   "version": "3.0.0",
   "author": "Wilson Mendes <contact@willmendesneto.com>",
-  "homepage": "http://willmendesneto.com",
+  "homepage": "https://willmendesneto.com",
   "repository": {
     "type": "git",
-    "url": "http://willmendesneto.com"
+    "url": "https://willmendesneto.com"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.12.0",

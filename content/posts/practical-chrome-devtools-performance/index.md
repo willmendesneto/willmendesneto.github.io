@@ -15,7 +15,7 @@ tags: ['frontend', 'performance', 'chrome', 'tips']
 
 ![](https://cdn-images-1.medium.com/max/2560/1*MjtZabdd0xkWLT-i9HxmAw.png)
 
-Part 1: [Practical Chrome Devtools — Common commands & Debugging](http://willmendesneto.com/posts/practical-chrome-devtools-common-commands-debugging)
+Part 1: [Practical Chrome Devtools — Common commands & Debugging](https://willmendesneto.com/posts/practical-chrome-devtools-common-commands-debugging)
 
 <hr/>
 

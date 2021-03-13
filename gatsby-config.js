@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: 'http://willmendesneto.com',
+    siteUrl: 'https://willmendesneto.com',
     title: 'Wilson Mendes',
     description:
       'Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Wen Technologies, Microsoft MVP Developer Technologies',

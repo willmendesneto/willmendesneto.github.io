@@ -1,5 +1,5 @@
 ### 🚀 My personal page 🚀
->URL: [willmendesneto.com](http://willmendesneto.com)
+>URL: [willmendesneto.com](https://willmendesneto.com)
 
 ### 🧩 Tech Stack
 
