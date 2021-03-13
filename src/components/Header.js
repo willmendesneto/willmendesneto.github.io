@@ -37,8 +37,8 @@ const LogoDesktop = styled(Logo)`
 `;
 
 const Nav = styled.nav`
-  background: #000;
-  color: #fff;
+  background: #fff;
+  color: #333;
   margin: 0 auto;
   padding: 10px 15px;
   position: fixed;
@@ -46,9 +46,9 @@ const Nav = styled.nav`
   top: 0;
   width: 100%;
   z-index: 10;
-
   box-sizing: border-box;
   pointer-events: auto;
+  box-shadow: inset 0 -1px 0 rgb(230 230 230);
 
   ${screen.md} {
     line-height: auto;
@@ -62,11 +62,10 @@ const Nav = styled.nav`
 
   a {
     font-weight: 900;
-    color: #fff;
+    color: #333;
     text-decoration: none;
 
     &:hover {
-      color: #fff;
       opacity: 1;
       text-decoration: underline;
       text-underline-offset: 10px;

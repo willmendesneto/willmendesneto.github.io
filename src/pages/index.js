@@ -7,7 +7,7 @@ import Title from '../components/Title';
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Will Mendes | Home" />
+    <SEO title="Home" />
     <Title>Will Mendes</Title>
     <Hello />
   </Layout>
