@@ -5,16 +5,13 @@ title: >-
   web apps
 description: "TL;DR; this eslint rule will give you feedback if your code requires polyfills based on browser support… in our dev loop. Enjoy! \U0001F389"
 date: '2020-02-07T07:22:41.152Z'
-categories: []
-keywords: []
 path: >-
-  /blog/avoiding-uncaught-and-unexpected-eslint-checks-for-missing-polyfills-in-your-web-apps
-
+  /posts/avoiding-uncaught-and-unexpected-eslint-checks-for-missing-polyfills-in-your-web-apps
 category: "post"
-lang: end
+lang: en
 layout: post
 author: Wilson Mendes
-tags: ['wordpress', 'jekyll']
+tags: ['javascript', 'frontend', 'tooling']
 ---
 
 > TL;DR; this eslint rule will give you feedback if your code requires polyfills based on browser support… in our dev loop. Enjoy! 🎉
@@ -34,7 +31,6 @@ The applied changes in our repository can help us to avoid issues like [**Uncaug
 ‌
 
 ![](https://cdn-images-1.medium.com/max/800/1*-CV4VXIvf80eCi_JQZywHQ.png)
-undefined
 
 ### 😎 A great start for us to move towards automation
 

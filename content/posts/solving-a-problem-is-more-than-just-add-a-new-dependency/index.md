@@ -5,20 +5,16 @@ description: >-
   My main goal in this post is starting some discussions about the criteria used
   to add a new dependency on several projects. So this should…
 date: '2020-01-19T09:13:00.419Z'
-categories: []
-keywords: []
 path: >-
-  /blog/solving-a-problem-is-more-than-just-add-a-new-dependency
-
+  /posts/solving-a-problem-is-more-than-just-add-a-new-dependency
 category: "post"
-lang: end
+lang: en
 layout: post
 author: Wilson Mendes
-tags: ['wordpress', 'jekyll']
+tags: ['frontend', 'performance', 'javascript', 'tests']
 ---
 
 ![](https://cdn-images-1.medium.com/max/2560/1*t6F7uYkRCKuCM2Rh_D0NVA.png)
-undefined
 
 > _My main goal in this post is starting some discussions about the criteria used to add a new dependency on several projects. So this should be something to keep in mind and start a broader discussion._
 
@@ -47,7 +43,6 @@ To give us a better page-load and improve the performance of our products, we de
 In order to achieve that, some techniques such as code-splitting, async loading, and stream content were applied and we got a huge benefit in our request files with optimized and parallelized and the bundle size for the package was reduced massively: from **500kB** to **30kB!**
 
 ![](https://cdn-images-1.medium.com/max/800/1*iPDfR_B9VRtLUBbDNCp-qA.png)
-undefined
 
 > You can find more details about the code on the Atlaskit pull request adding [**code-splitting on Navigation next component**](https://bitbucket.org/atlassian/atlaskit-mk-2/pull-requests/3639/code-splitting-components-and-exposing/diff).
 

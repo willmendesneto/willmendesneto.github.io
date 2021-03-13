@@ -6,12 +6,12 @@ description: >-
   actions of your route based on methods of controllers app knows…
 date: '2014-10-28T00:00:00.000Z'
 path: >-
-  /blog/creating-a-single-crud-in-a-single-angularjs-controller
+  /posts/creating-a-single-crud-in-a-single-angularjs-controller
 category: "post"
 lang: en
 layout: post
 author: Wilson Mendes
-tags: ['wordpress', 'jekyll']
+tags: ['angularjs', 'frontend']
 ---
 
 For those already working with some backend languages ​​and can direct the actions of your route based on methods of controllers app knows how this can be interesting in some apps (I made a Pull Request for AngularJS for this feature was something standard in the Framework, if want to know more about or vote for it to be built, take a look at this link), but for now, no framework front-end (I know, of course) is something to this level by default.
@@ -21,7 +21,6 @@ However most of the examples I see simple things many controllers are used for o
 In this case mean that if I have three operations, I create three controllers, one for each page/view? No!
 
 ![](https://cdn-images-1.medium.com/max/800/0*ZN86bHc3LeehxEsI.gif)
-undefined
 
 Our example is based on a simple contact list, as the list of contacts from your mobile phone, for example. A simple concept, but general knowledge. Too often we update the content of our contacts for various reasons and are doing something simple, but functional.
 

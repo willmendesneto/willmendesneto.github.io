@@ -30,6 +30,8 @@ module.exports = {
         plugins: [
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-reading-time',
+          'gatsby-remark-embed-gist',
+          'gatsby-plugin-twitter',
           {
             resolve: 'gatsby-remark-external-links',
             options: {

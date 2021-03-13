@@ -5,15 +5,12 @@ description: >-
   This is one of the posts about the improvements I've done on
   ngx-feature-toggle module and in today the topic is: how to publish a new…
 date: '2018-08-15T13:32:40.738Z'
-categories: []
-keywords: []
-path: /blog/publishing-angular-module-with-np-package
-
+path: /posts/publishing-angular-module-with-np-package
 category: "post"
-lang: end
+lang: en
 layout: post
 author: Wilson Mendes
-tags: ['wordpress', 'jekyll']
+tags: ['angular', 'tooling', 'module']
 ---
 
 This is one of the posts about the improvements I've done on [ngx-feature-toggle module](https://github.com/willmendesneto/ngx-feature-toggle/) and in today the topic is: how to publish a new version of my angular module or angular application.
@@ -37,13 +34,11 @@ Another good decision the Angular CLI team applied was to integrate the publish 
 
 Some projects are using shell scripts…
 
-undefined
-undefined
+`gist:willmendesneto/2fe057f934507247760c751be95cda86`
 
 …or even build systems using Gulp, as used on [Angular Material](https://github.com/angular/material2/blob/master/package.json#L15-L25).
 
 ![](https://cdn-images-1.medium.com/max/800/1*8bRO8CtMTJv5ONcKN3cF_Q.png)
-undefined
 
 However, the`npm publish` command by default doesn't trigger any tests and validations. So what you we do in that case?
 
@@ -54,6 +49,10 @@ How to use it:
 *   Follow the npm events that [**np**](https://www.npmjs.com/package/np) triggers: `test`, `version` and `publish`;
 *   Make sure that the bundle folder with the `package.json` generated internally by NG-Packagr has the `package.json` in the root folder;
 *   Be happy, you don’t need more shell-scripts or manual steps to publish you code!
+
+> You can find more about it [in this tweet](https://twitter.com/willmendesneto/status/1000705491385790464)
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">NP package `v3.0.0` now has support to specify the subdirectory to publish, as we have on `npm publish` command. Stop create shell-scripts to publish your NPM packages, just run `np &lt;patch|minor|major&gt; --contents=&lt;your-folder&gt;`<a href="https://t.co/mENfCABotE">https://t.co/mENfCABotE</a> <a href="https://twitter.com/hashtag/gde?src=hash&amp;ref_src=twsrc%5Etfw">#gde</a> <a href="https://twitter.com/hashtag/js?src=hash&amp;ref_src=twsrc%5Etfw">#js</a> <a href="https://twitter.com/hashtag/opensource?src=hash&amp;ref_src=twsrc%5Etfw">#opensource</a> <a href="https://twitter.com/hashtag/node?src=hash&amp;ref_src=twsrc%5Etfw">#node</a> <a href="https://t.co/7CyMSxUKCf">pic.twitter.com/7CyMSxUKCf</a></p>&mdash; Will Mendes (@willmendesneto) <a href="https://twitter.com/willmendesneto/status/1000705491385790464?ref_src=twsrc%5Etfw">May 27, 2018</a></blockquote>
 
 
 <hr/>

@@ -5,12 +5,12 @@ description: >-
   This time something simple, but without good information about it is how to
   add unit tests in Nodebots apps.
 date: '2016-06-27T00:00:00.000Z'
-path: /blog/unit-test-in-johnny-five-nodebot-apps
+path: /posts/unit-test-in-johnny-five-nodebot-apps
 category: "post"
-lang: end
+lang: en
 layout: post
 author: Wilson Mendes
-tags: ['wordpress', 'jekyll']
+tags: ['nodejs', 'nodebots', 'javascript', 'tests']
 ---
 
 This time something simple, but without good information about it is how to add unit tests in Nodebots apps.
@@ -26,7 +26,6 @@ But relax … this is not a big deal ;)
 Unit test is only one way to test your software. Based in the [test pyramid](http://martinfowler.com/bliki/TestPyramid.html) this is the way that you can organize the tests your application.
 
 ![](https://cdn-images-1.medium.com/max/800/0*3njsTEPjz8qom_kl.png)
-undefined
 
 > _In this post we will talk only of unit tests, if you like to know more about all the layers, please read_ [_“TestPyramid” post of Martin Fowler_](http://martinfowler.com/bliki/TestPyramid.html)
 
@@ -42,17 +41,20 @@ One aspect that nobody explain very well is about the tests in nodebots. The mai
 
 One useful package is [mock-firmata](https://github.com/rwaldron/mock-firmata), created by Rick Waldron to make the tests in [Johnny-Five](http://johnny-five.io) easier. The integration is really simple, you just need to load and create your board component in the test.
 
+```js
 require('should');
-var mockFirmata = require('mock-firmata');
-var five = require('johnny-five');
-var Board = five.Board;
-var Accelerometer = five.Accelerometer;
 
-var board = new Board({
+const mockFirmata = require('mock-firmata');
+const five = require('johnny-five');
+const Board = five.Board;
+const Accelerometer = five.Accelerometer;
+
+const board = new Board({
   io: new mockFirmata.Firmata(),
   debug: false,
   repl: false
 });
+```
 
 After the integration, the unit tests is using mocha test framework (but you can use others, if you like), [sinon js](http://sinonjs.org/) in test spies, stubs and mocks and [should js](https://shouldjs.github.io/) for the assertions.
 
@@ -60,46 +62,48 @@ One simple way to validation is when the build checker should blink the led. Bas
 
 After this is create the scenario for validate this case. Nothing really hard, right? Some things that you need to remember about the test is that your beforeEach method should be a documentation about the steps to reproduce your scenario.
 
+```js
 require('should');
+
 const request = require('request');
 const sinon = require('sinon');
 
 ...
 describe('When the CI server send success response', () => {
   beforeEach(() => {
-    successResponseCI = \`your awesome response\`;
+    successResponseCI = `your awesome response`;
 
-this.clock = sinon.useFakeTimers();
+    this.clock = sinon.useFakeTimers();
     sinon.stub(request, 'get').yields(null, null, successResponseCI);
     sinon.spy(buildChecker.ledSuccess, 'on');
     sinon.spy(buildChecker.ledError, 'off');
 
-buildChecker.startPolling();
+    buildChecker.startPolling();
     this.clock.tick(CONFIG.INTERVAL);
   });
 
-afterEach(() => {
+  afterEach(() => {
     request.get.restore();
     this.clock.restore();
   });
 
-it('should turn on the success led', () => {
+  it('should turn on the success led', () => {
     buildChecker.ledSuccess.on.calledOnce.should.be.true;
   });
 
-it('should turn off the error led', () => {
+  it('should turn off the error led', () => {
     buildChecker.ledError.off.calledOnce.should.be.true;
   });
 
 });
 ...
+```
 
 After this you can add more tests and create your pipeline correctly, so you are sure that your code is covered. The final result is :
 
 ![](https://cdn-images-1.medium.com/max/800/0*Guw1r56Nwz6N0E0n.png)
-undefined
 
-\*\*\* This don’t remove other validations, as validation with software, but it’s another way to validate first the new features, updates, etc.
+*** This don’t remove other validations, as validation with software, but it’s another way to validate first the new features, updates, etc.
 
 > If you like to know more about Nodebots, please check my book [“Nodebots — Javascript and robotic in the real world”](https://leanpub.com/nodebots-javascript-and-robotic-in-the-real-world)
 
@@ -115,12 +119,10 @@ Thank you and see you soon!
 
 Links:
 
-\- Johnny-Five: [http://johnny-five.io](http://johnny-five.io)
-\- Test pyramid: [http://martinfowler.com/bliki/TestPyramid.html](http://martinfowler.com/bliki/TestPyramid.html)
-\- Mock Firmata: [https://github.com/rwaldron/mock-firmata](https://github.com/rwaldron/mock-firmata)
-\- Build Checker: [https://github.com/willmendesneto/build-checker](https://github.com/willmendesneto/build-checker)
-\- Sinon JS: [http://sinonjs.org/](http://sinonjs.org/)
-\- Should JS: [https://shouldjs.github.io/](https://shouldjs.github.io/)
-\- Mocha JS: [https://mochajs.org/](https://mochajs.org/)
-
-_Originally published at_ [_willmendesneto.github.io_](http://willmendesneto.github.io/2016/06/27/unit-test-in-johnny-five-nodebot-apps) _on June 27, 2016._
+- Johnny-Five: [http://johnny-five.io](http://johnny-five.io)
+- Test pyramid: [http://martinfowler.com/bliki/TestPyramid.html](http://martinfowler.com/bliki/TestPyramid.html)
+- Mock Firmata: [https://github.com/rwaldron/mock-firmata](https://github.com/rwaldron/mock-firmata)
+- Build Checker: [https://github.com/willmendesneto/build-checker](https://github.com/willmendesneto/build-checker)
+- Sinon JS: [http://sinonjs.org/](http://sinonjs.org/)
+- Should JS: [https://shouldjs.github.io/](https://shouldjs.github.io/)
+- Mocha JS: [https://mochajs.org/](https://mochajs.org/)

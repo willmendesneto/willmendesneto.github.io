@@ -7,16 +7,13 @@ description: >-
   TL;DR; You can start using NGX Skeleton Loader module in your Angular apps
   right now and get the built-in performance, accessibility, and…
 date: '2020-07-19T08:23:47.870Z'
-categories: []
-keywords: []
 path: >-
-  /blog/ngx-skeleton-loader-states-animations-performance-and-accessibility-for-your-angular-app
-
+  /posts/ngx-skeleton-loader-states-animations-performance-and-accessibility-for-your-angular-app
 category: "post"
-lang: end
+lang: en
 layout: post
 author: Wilson Mendes
-tags: ['wordpress', 'jekyll']
+tags: ['frontend', 'angular', 'open-source', 'css', 'tooling', 'performance']
 ---
 
 ![](https://cdn-images-1.medium.com/max/2560/1*TPUWgYtggpkyzkhPVCad5g.png)

@@ -3,19 +3,15 @@ status: "active"
 title: Using Typescript in a NodeJS module
 description: … or Typescript + NodeJS = ❤
 date: '2017-07-30T14:02:22.225Z'
-categories: []
-keywords: []
-path: /blog/using-typescript-in-a-nodejs-module
-
+path: /posts/using-typescript-in-a-nodejs-module
 category: "post"
-lang: end
+lang: en
 layout: post
 author: Wilson Mendes
-tags: ['wordpress', 'jekyll']
+tags: ['javascript', 'typescript', 'nodejs', 'tooling']
 ---
 
 ![](https://cdn-images-1.medium.com/max/2560/1*SSo_VpLEJ49WTi_ubpTVGQ.png)
-undefined
 
 … or Typescript + NodeJS = ❤
 
@@ -46,8 +42,9 @@ These packages are:
 *   typescript: Support for Typescript in NodeJS;
 *   typings: TypeScript Definition Manager;
 
-To do this we will use the `tsc` and `typings` command line executables inside our node\_modules folder. These were installed via Typescript and Typings respectively. So that, we will create the `tsconfig.json` file using the command `./node_modules/.bin/tsc --init` with all information related to your application.
+To do this we will use the `tsc` and `typings` command line executables inside our node_modules folder. These were installed via Typescript and Typings respectively. So that, we will create the `tsconfig.json` file using the command `./node_modules/.bin/tsc --init` with all information related to your application.
 
+```json
 {
   "compilerOptions": {
     "target": "ES5",
@@ -59,16 +56,19 @@ To do this we will use the `tsc` and `typings` command line executables inside o
     "strict": true
   }
 }
+```
 
 That’s the default configuration for the published package. With that the first step is migrate all the files from `.js` to `.ts`, adding types when is required. Typescript is really smart, so in some functions, classes and methods you can suppress type syntax, because it's something already implicit via code.
 
 As a example, this snippet with the function `isOn` is return a `boolean` by default since the operator `!!` transforms the response in a boolean by default. This logic can be applied for methods `void` and other methods as well.
 
+```ts
 const settings: any = {};
 
 const isOn = (key: string) => {
-  return !!settings\[key\];
+  return !!settings[key];
 }
+```
 
 ### Unit tests
 
@@ -78,14 +78,14 @@ Unit tests is something **_crucial_** if you're thinking in best practices to ev
 
 The tests have a small requirement to build the `.ts` files and after that call use the bundle files in your test suit.
 
-“scripts”: {
-
-"compile": "tsc",
-  “test”: “npm run compile && npm run code-coverage”,
-  "code-coverage": "NODE\_ENV=test nyc — reporter=lcov — reporter=text-summary mocha ./test/\*.spec.js — require ./test/setup.js",
+```json
+"scripts": {
+  "compile": "tsc",
+  "test": "npm run compile && npm run code-coverage",
+  "code-coverage": "NODE_ENV=test nyc — reporter=lcov — reporter=text-summary mocha ./test/*.spec.js — require ./test/setup.js",
   "pretest": "tslint src"
-
 }
+```
 
 So that when `yarn test` is running all the lint and code coverage is triggered by default.
 
@@ -96,7 +96,7 @@ Publish a package is a common task in every single package release and a good to
 If you want to know how to integrate this package into your repository and understand all required steps, please watch the Egghead's video "**How to Write a JavaScript Library — Automating Releases with semantic-release**".
 
 [**Automating Releases with semantic-release - js Video Tutorial #free**
-_There are so many repeated steps when releasing a new version of a library. The tool semantic-release automates this…_egghead.io](https://egghead.io/lessons/javascript-how-to-write-a-javascript-library-automating-releases-with-semantic-release "https://egghead.io/lessons/javascript-how-to-write-a-javascript-library-automating-releases-with-semantic-release")[](https://egghead.io/lessons/javascript-how-to-write-a-javascript-library-automating-releases-with-semantic-release)
+_There are so many repeated steps when releasing a new version of a library. The tool semantic-release automates this…_egghead.io](https://egghead.io/lessons/javascript-how-to-write-a-javascript-library-automating-releases-with-semantic-release)
 
 Another approach that can be combined is the [Canary build](https://www.thoughtworks.com/radar/techniques/canary-builds), which can be added in your repository using [Greenkeeper](https://greenkeeper.io/), sending pull requests in real time with all bumps and updates for NPM dependencies.
 

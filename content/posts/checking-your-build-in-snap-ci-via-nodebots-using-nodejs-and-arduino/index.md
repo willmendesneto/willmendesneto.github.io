@@ -6,12 +6,12 @@ description: >-
   and management using Javascript.
 date: '2016-05-15T00:00:00.000Z'
 path: >-
-  /blog/checking-your-build-in-snap-ci-via-nodebots-using-nodejs-and-arduino
+  /posts/checking-your-build-in-snap-ci-via-nodebots-using-nodejs-and-arduino
 category: "post"
-lang: end
+lang: en
 layout: post
 author: Wilson Mendes
-tags: ['wordpress', 'jekyll']
+tags: ['nodejs', 'nodebots']
 ---
 
 The idea of this post is share some basic concepts about open hardware usage and management using Javascript.
@@ -55,37 +55,32 @@ Firstly we need to install NodeJS in our PC/laptop/computational device. For do 
 The next step is install the Arduino IDE. After installation, try access: Options > Files > Exaples > StandardFirmata.
 
 ![](https://cdn-images-1.medium.com/max/800/0*LpdkXAyM5noDw1hX.png)
-undefined
 
 With the arduino plugged in our laptop, we will run this specific code and wait for the IDE display the success message.
 
 ![](https://cdn-images-1.medium.com/max/800/0*RO6rCQjS-1xFimEw.png)
-undefined
 
 Now is time of our build checker. For do this we will use the [Johnny-Five](https://johnny-five.io/) package. The code is really simple.
 
 As I said before, you can be really familiar with the Johnny-Five’s interface. It has board.on(‘ready’) event, for example, that is similar of jQuery $(document).ready(). With all environment configured, let’s start based in this event, right? We need to plug 2 leds: 1 red (for display when build is broken) and 1 green (for display when the build is fine). We will put the success build in port number 12 + GND (ground) port and use the port number 10 + GND (ground) for display when our build is correct in our arduino as you can take a look in the image.
 
 ![](https://cdn-images-1.medium.com/max/800/0*gP2oYx-uKfRaaXhJ.png)
-undefined
 
 Now we will create the request for consume the content via HTTP GET status in [SNAP-CI](https://snap-ci.com/), our continuous integration service, that uses the build pipeline, a really interesting concept; About the pros, this approach give a fast feedback for the developers (async or sync) and definition of all build based in steps. [If you like to know more about it, please access this link](http://www.martinfowler.com/articles/continuousIntegration.html).
 
 Let’s access SNAP-CI website, do the login (if you don’t have account there, it’s really fast =) ) and add a project.
 
 ![](https://cdn-images-1.medium.com/max/800/0*YMjBkyvxMN-kk7BR.png)
-undefined![](https://cdn-images-1.medium.com/max/800/0*Rm87PU4f3BPmn3sm.png)
-undefined
+
+![](https://cdn-images-1.medium.com/max/800/0*Rm87PU4f3BPmn3sm.png)
 
 When you add the project it will display a field with “CCTray” name that, when clicked, makes a redirect for the XML file with all build informations.
 
 ![](https://cdn-images-1.medium.com/max/800/0*OTXIfnfsNGKY4EkV.png)
-undefined
 
 The .xml will be like that one.
 
 ![](https://cdn-images-1.medium.com/max/800/0*LFbkVndGDIYzD4lo.png)
-undefined
 
 The Build Checker will check the data in a poller of 500 miliseconds, previewed configured and validating the current state of the build pipeline. If the response contains “Success” in the response, something wrong is happening and our build checker will blink the red led, otherwise the green led will be lighter and that’s all fine!
 
@@ -109,9 +104,8 @@ What are you doing using [NodeBots](https://nodebots.io/), Javascript and/or Ard
 After write this post and share in the social networks, I receive some good feedback and [Rick Waldron](https://twitter.com/rwaldron), creator of [johnny-five](https://johnny-five.io/) package, send this message to me.
 
 ![](https://cdn-images-1.medium.com/max/800/0*OEaFMWiyLFrfkZRE.jpeg)
-undefined
 
-Was really amazing! Thanks [Rick Waldron](https://twitter.com/rwaldron)!
+That was really amazing! Thanks [Rick Waldron](https://twitter.com/rwaldron)!
 
 Links:
 
@@ -123,4 +117,3 @@ Links:
 *   Build Pipeline: [http://www.martinfowler.com/articles/continuousIntegration.html](http://www.martinfowler.com/articles/continuousIntegration.html)
 *   Retaliation: [https://www.youtube.com/watch?v=1EGk2rvZe8A](https://www.youtube.com/watch?v=1EGk2rvZe8A)
 
-_Originally published at_ [_willmendesneto.github.io_](http://willmendesneto.github.io/2016/05/15/checking-your-build-in-snap-ci-via-nodebots-using-nodejs-and-arduino) _on May 15, 2016._

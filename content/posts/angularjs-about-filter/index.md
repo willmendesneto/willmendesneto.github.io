@@ -1,11 +1,11 @@
 ---
 status: "active"
 title: 'AngularJS: About $filter'
-description: Introduction
+description: In this post we will talk about filter concepts and how is the interface $filter flux in AngularJS
 date: '2014-12-14T00:00:00.000Z'
-path: /blog/angularjs-about-filter
+path: /posts/angularjs-about-filter
 category: "post"
-lang: end
+lang: en
 layout: post
 author: Wilson Mendes
 tags: ['wordpress', 'jekyll']

@@ -7,13 +7,13 @@ description: >-
   The AngularJS directives concept is a bit very interesting for apps, if you
   think in software aspects as reuse, portability, modularity…
 date: '2014-09-23'
-path: /blog/working-with-thin-directives-in-angularjs/
+path: /posts/working-with-thin-directives-in-angularjs/
 category: "post"
 lang: en
-tags: ['wordpress', 'jekyll']
+tags: ['frontend', 'angularjs']
 ---
 
-The AngularJS directives concept is a bit very interesting for apps, if you think in software aspects as reuse, portability, modularity, among others. However, depending on the complexity of your directive, some tests become more complex. One approach to simplify some procedures is the construction of directives based on the concept of Thin Directives. I met this concept in Joel Hooks post [“Let’s Make Full-Ass AngularJS Directives”](http://joelhooks.com/blog/2014/02/11/lets-make-full-ass-angularjs-directives/), where he discusses the concept of a very simple way. I recommend reading this, very explanatory!
+AngularJS directives concept is a bit very interesting for apps, if you think in software aspects as reuse, portability, modularity, among others. However, depending on the complexity of your directive, some tests become more complex. One approach to simplify some procedures is the construction of directives based on the concept of Thin Directives. I met this concept in Joel Hooks post [“Let’s Make Full-Ass AngularJS Directives”](http://joelhooks.com/posts/2014/02/11/lets-make-full-ass-angularjs-directives/), where he discusses the concept of a very simple way. I recommend reading this, very explanatory!
 
 The thin directives conception is based in construction of an angular directive using other components (as Controllers Services, factories, etc.) based on a directive for better integration and testability. With this approach the tests are much simpler, as you delegate some responsibilities to other Angular components.
 
@@ -25,7 +25,7 @@ For this task we will create three files to works directly with this directive:
 *   `navbar-ctrl.js`: Controller for our menu. He will be responsible for making the integration so that our controller works perfectly;
 *   `navbar.js`: our directive really. This file is very compact, it will have only a few simple settings;
 
-Basing our directive’s building in [TDD concepts](http://pt.wikipedia.org/wiki/Test_Driven_Development), we will focus on the concept of [Red, Green, Refactor](http://www.jamesshore.com/Blog/Red-Green-Refactor.html), so beyond the Thin Directives, we still have knowledge of TDD (for whom have doubts/questions about it).
+Basing our directive’s building in [TDD concepts](http://pt.wikipedia.org/wiki/Test_Driven_Development), we will focus on the concept of [Red, Green, Refactor](http://www.jamesshore.com/posts/Red-Green-Refactor.html), so beyond the Thin Directives, we still have knowledge of TDD (for whom have doubts/questions about it).
 
 ### Creating our directive
 
@@ -69,9 +69,9 @@ app.js:
 ```js
 'use strict';
 
-angular.module('plunkerApp', \[
+angular.module('plunkerApp', [
   'ngRoute'
-\])
+])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -143,12 +143,13 @@ it('should create a navbar header with ng-controller value equals "NavbarCtrl"',
   });
 
 });
-```html
+```
 
 And now, let’s go to create the navbar directive really.
 
 navbar.js:
 
+```js
 'use strict';
 
 angular.module('plunkerApp')
@@ -159,6 +160,7 @@ angular.module('plunkerApp')
       controller: 'NavbarCtrl',
     };
   });
+```
 
 We are using the directive with the “element” element. Now, we have some formats for directives:
 
@@ -167,6 +169,7 @@ We are using the directive with the “element” element. Now, we have some for
 
 These options can be combined, which opens a range of new possibilities for the more directives. ex:
 
+```js
 'use strict';
 
 angular.module('plunkerApp')
@@ -177,6 +180,7 @@ angular.module('plunkerApp')
       controller: 'NavbarCtrl',
     };
   });
+```
 
 If you have to know more about directives, please take a look in [AngularJS directives documentation](https://docs.angularjs.org/guide/directive).
 
@@ -186,18 +190,19 @@ Still, our test will not be correct, because we don’t have our controller crea
 
 navbar-ctrl-test.js:
 
+```js
 'use strict';
 
 describe('Controller: NavbarCtrl', function () {
 
-// load the controller's module
+  // load the controller's module
   beforeEach(module('plunkerApp'));
 
-var NavbarCtrl,
+  var NavbarCtrl,
     scope,
     location;
 
-// Initialize the controller and a mock scope
+  // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope, $location) {
     location = $location;
     scope = $rootScope.$new();
@@ -206,24 +211,24 @@ var NavbarCtrl,
     });
   }));
 
-describe('isActive', function(){
+  describe('isActive', function(){
 
-  it('should return "true" when paths are the same', function () {
+    it('should return "true" when paths are the same', function () {
       location.path('/');
       expect(scope.isActive('/')).toBeTruthy();
     });
 
-  it('should return "false" when paths aren\'t the same', function () {
+    it('should return "false" when paths aren't the same', function () {
       location.path('/');
       expect(scope.isActive('/error')).toBeFalsy();
     });
 
-  it('should return "true" when word starts are the same', function () {
+    it('should return "true" when word starts are the same', function () {
       location.path('/contacts/1/edit');
       expect(scope.isActive('/contacts')).toBeTruthy();
     });
 
-  it('should return "true" when word starts are the same followed by query string', function () {
+    it('should return "true" when word starts are the same followed by query string', function () {
       location.path('/contacts?id=1');
       expect(scope.isActive('/contacts')).toBeTruthy();
     });
@@ -267,7 +272,7 @@ Thanks and I see you very soon!
 
 Links:
 
-*   Directives documentation: [https://docs.angularjs.org/guide/directive](https://docs.angularjs.org/guide/directive)
-*   Let’s Make Full-Ass AngularJS Directives: [http://joelhooks.com/blog/2014/02/11/lets-make-full-ass-angularjs-directives/](http://joelhooks.com/blog/2014/02/11/lets-make-full-ass-angularjs-directives/)
-*   Test Driven Development (TDD): [http://pt.wikipedia.org/wiki/Test\_Driven\_Development](http://pt.wikipedia.org/wiki/Test_Driven_Development)
-*   Red, Green, Refactor: [http://www.jamesshore.com/Blog/Red-Green-Refactor.html](http://www.jamesshore.com/Blog/Red-Green-Refactor.html)
+* Directives documentation: [https://docs.angularjs.org/guide/directive](https://docs.angularjs.org/guide/directive)
+* Let’s Make Full-Ass AngularJS Directives: [http://joelhooks.com/posts/2014/02/11/lets-make-full-ass-angularjs-directives/](http://joelhooks.com/posts/2014/02/11/lets-make-full-ass-angularjs-directives/)
+* Test Driven Development (TDD): [http://pt.wikipedia.org/wiki/Test_Driven_Development](http://pt.wikipedia.org/wiki/Test_Driven_Development)
+* Red, Green, Refactor: [http://www.jamesshore.com/posts/Red-Green-Refactor.html](http://www.jamesshore.com/posts/Red-Green-Refactor.html)

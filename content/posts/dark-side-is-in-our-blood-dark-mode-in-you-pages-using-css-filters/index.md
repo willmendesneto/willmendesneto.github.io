@@ -6,13 +6,13 @@ date: '2020-07-06T19:49:10.124Z'
 categories: []
 keywords: []
 path: >-
-  /blog/dark-side-is-in-our-blood-dark-mode-in-you-pages-using-css-filters
+  /posts/dark-side-is-in-our-blood-dark-mode-in-you-pages-using-css-filters
 
 category: "post"
-lang: end
+lang: en
 layout: post
 author: Wilson Mendes
-tags: ['wordpress', 'jekyll']
+tags: ['frontend', 'css', 'javascript']
 ---
 
 ![](https://cdn-images-1.medium.com/max/2560/1*wVLiNqxa4OyomTMG8VaGbg.png)
@@ -41,7 +41,7 @@ One of the common approaches used to implement this feature is by adding a CSS F
 
 > Please check the [**browser support for CSS Filter**](https://caniuse.com/#search=css%20filter) based in your browser support list before use it
 
-undefined
+`gist:willmendesneto/34f501c84d8562cbbce165af9f0094dd`
 
 At the end, when the user system is with using dark-mode enabled, the page applies the rules added inside the media query content, so the background will be turned into black and the text will be white.
 
@@ -57,11 +57,11 @@ First of all, let's add a switch on the page to give the user the choice to togg
 
 This is the HTML markup for the toggle that will be added in your page
 
-undefined
+`gist:willmendesneto/68cd8926941a6d5657c31de40627997c`
 
 Besides that, we need to apply some changes in our CSS. Now it also has classes to define if the current theme on the page is light or dark by adding **light-mode** and **dark-mode** classes and the styles for Switch Toggle Element into our HTML element. This will be the CSS with these changes.
 
-undefined
+`gist:willmendesneto/344f4226cfd30e24027b7d8f6b96020d`
 
 After these changes, let's write the Javascript to manipulate and add the class to our page. Firstly, we should check if window.matchMedia is available on the user’s browser. If it is, we can start the javascript manipulation.
 
@@ -71,7 +71,7 @@ Another good point in this step is that it should change the Switch Toggle conte
 
 This is the final state for the Javascript integration.
 
-undefined
+`gist:willmendesneto/9e5b57e68b2b032de8212a6083b07019`
 
 And this is the result of the switch to turn on and off your dark-mode in your page.
 
@@ -81,13 +81,15 @@ And this is the result of the switch to turn on and off your dark-mode in your p
 
 Now we can change slightly our javascript file to Adds a listener for dark mode changes via user system preferences. We can reuse the previous value for [**matchMedia**](https://caniuse.com/#search=matchMedia) method and add a listener to the changes.
 
-undefined
+`gist:willmendesneto/eb5e53905582757f982aa836b453c363`
 
 ### Adding better events
 
 Another improvement you can apply is to use the better event listener for the current user device by using **touchstart** if is a mobile device. Otherwise, it will trigger based on the **click** event.
 
 With all these changes, this will be the final version of the Javascript file.
+
+`gist:willmendesneto/fe150b05fda7a6ced2624c1254305515`
 
 <hr/>
 
@@ -101,6 +103,7 @@ Last, but not least, this is one of the various approaches that can be used to s
 
 > It can be Light or Dark mode, but more than this: let the users choose what’s best for them
 
+<hr/>
 I hope you enjoyed this reading as much as I enjoyed writing it. Thank you so much for reading until the end and see you soon!
 
 ![](https://cdn-images-1.medium.com/max/800/1*tT2KIJkX4dhynNYipnVNmg.gif)

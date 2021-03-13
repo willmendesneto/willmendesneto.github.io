@@ -5,16 +5,13 @@ description: >-
   And here we go: this time is about a talk I gave in Singapore in the beginning
   of this year. I was asked to make a presentation about some…
 date: '2018-03-31T14:33:58.095Z'
-categories: []
-keywords: []
 path: >-
-  /blog/jsconf-asia-2018-microfrontend-best-practices-and-more
-
+  /posts/jsconf-asia-2018-microfrontend-best-practices-and-more
 category: "post"
-lang: end
+lang: en
 layout: post
 author: Wilson Mendes
-tags: ['wordpress', 'jekyll']
+tags: ['frontend', 'conferences', 'talks']
 ---
 
 And here we go: this time is about a talk I gave in Singapore in the beginning of this year. I was asked to make a presentation about some changes I’ve done, this time in a famous Property platform in Australia at JSConf.Asia 2018 in Singapore last January.
@@ -23,18 +20,18 @@ The talk is sharing some common issues that happens in some projects and how to 
 
 This is the video of my talk published at JSConf channel on Youtube.
 
+[![](http://img.youtube.com/vi/Kphwg2IsJfA/0.jpg)](http://www.youtube.com/watch?v=Kphwg2IsJfA "")
 
 <hr/>
 
 Unfortunately, I can't show the code example, but if you are interested in check the code and understand the approach, that’s the repository I shared with the Micro frontend approach.
 
 [**willmendesneto/micro-frontend-pages**
-_micro-frontend-pages — Docker orchestration for micro Frontend pages_github.com](https://github.com/willmendesneto/micro-frontend-pages "https://github.com/willmendesneto/micro-frontend-pages")[](https://github.com/willmendesneto/micro-frontend-pages)
+_micro-frontend-pages — Docker orchestration for micro Frontend pages](https://github.com/willmendesneto/micro-frontend-pages)
 
 You can also check the slides of this talk on my Slides.com:
 
-[**Micro Frontend: a microservice architecture from your frontend web apps by willmendesneto**
-_Are you working with a big Frontend application and you are facing some problems in your project? Do you want migrate…_slides.com](https://slides.com/willmendesneto/micro-frontend-a-microservice-architecture-from-your-frontend-web-apps "https://slides.com/willmendesneto/micro-frontend-a-microservice-architecture-from-your-frontend-web-apps")[](https://slides.com/willmendesneto/micro-frontend-a-microservice-architecture-from-your-frontend-web-apps)
+[**Micro Frontend: a microservice architecture from your frontend web apps](https://slides.com/willmendesneto/micro-frontend-a-microservice-architecture-from-your-frontend-web-apps)
 
 I am really happy and proud of this presentation and share some of the points about Micro Frontend with some folks, having great chats after my talk…that's the best feedback I can receive.
 

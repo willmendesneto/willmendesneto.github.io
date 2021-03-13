@@ -5,19 +5,16 @@ description: >-
   This summary is based in some papers I read, some discussion with other folks
   from different companies and personal experience. There’s no…
 date: '2018-12-03T09:18:41.385Z'
-categories: []
-keywords: []
-path: /blog/feedback-is-a-gift-lets-talk-about-it
-
+path: /posts/feedback-is-a-gift-lets-talk-about-it
 category: "post"
-lang: end
+lang: en
 layout: post
 author: Wilson Mendes
-tags: ['wordpress', 'jekyll']
+tags: ['blog', 'soft-skills']
 ---
 
 ![](https://cdn-images-1.medium.com/max/2560/1*peOAhRY0uaazJhHM6uSG9A.jpeg)
-undefined
+
 
 _This summary is based in some papers I read, some discussion with other folks from different companies and personal experience. There’s no “black or white” in this are and it can be different based on various aspects, such as personal experience, culture, etc._
 

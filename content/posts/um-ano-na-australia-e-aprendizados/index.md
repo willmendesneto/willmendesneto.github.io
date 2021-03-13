@@ -5,15 +5,12 @@ description: >-
   E este é o meu primeiro post sobre algo não técnico. Caso não saibam estou
   trabalhando para uma empresa Australiana desde Novembro de 2015…
 date: '2017-02-13T12:55:11.020Z'
-categories: []
-keywords: []
-path: /blog/um-ano-na-australia-e-aprendizados
-
+path: /posts/um-ano-na-australia-e-aprendizados
 category: "post"
-lang: end
+lang: pt-br
 layout: post
 author: Wilson Mendes
-tags: ['wordpress', 'jekyll']
+tags: ['life', 'blog', 'expat']
 ---
 
 E este é o meu primeiro post sobre algo não técnico. Caso não saibam estou trabalhando para uma empresa Australiana desde Novembro de 2015 e vivendo em Sydney desde Janeiro de 2016. Como algumas pessoas me perguntam sobre alguns aspectos da mudança, decidi escrever um post para compartilhar como foi o meu processo de mudança para a Austrália: os medos, problemas, aprendizados e maravilhas de viver na terra dos cangurus e outros animais.
@@ -38,7 +35,10 @@ Este exame de proficiência do inglês é obrigatório para o visto de acordo co
 
 O idioma padrão daqui é o inglês, mas a depender de onde você more pode ter algo como “inglês australiano”. Algumas gírias e um sotaque diferente, mas nada demais.
 
-undefined
+[![](http://img.youtube.com/vi/yDb_WsAt_Z0/0.jpg)](http://www.youtube.com/watch?v=yDb_WsAt_Z0 "")
+
+> Quando comento sobre inglês Australiano, é disso que estou comentando.
+
 
 Como a cidade é bem diversificada entre nacionalidades, vale aprender outras línguas como Alemão, Russo, Mandarim, Hindi, etc.
 
@@ -73,8 +73,6 @@ Os pagamentos do aluguel são feitos **semanalmente** e a média de um apartamen
 > Caso queiram dar uma olhada na faixa de valores, vale dar uma olhada nos sites [Domain](https://www.domain.com.au) e [Real states](https://www.realestate.com.au/).
 
 Porém, mobiliar uma casa aqui é algo bem simples, então se acharem uma casa não mobiliada muito mais barata por semana vale a pena. Um site que gosto muito aqui e que vai te ajudar bastante é o [Gumtree](http://www.gumtree.com.au/), que seria o nosso OLX, Mercado Livre ou similar, mas melhorado para a Austrália. Recomendo fortemente, pois comprei um sofá e 2 poltronas em excelente estado por apenas AU $50.
-
-undefined
 
 Um ponto importante a se pensar é o valor do transporte, que gira entre AU $30 a AU $40 por semana. Então a depender fica mais vantajoso conseguir algo mais perto do trabalho pagando um pouco mais e ir andando com toda a comodidade ou pegar um transporte e ter outros benefícios, como morar perto da praia 🌞 .
 

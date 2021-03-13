@@ -5,16 +5,13 @@ description: >-
   It’s not common for me to talk about something unrelated to code. But this is
   a great example how I learned that delivering value can be…
 date: '2016-11-07T10:31:20.623Z'
-categories: []
-keywords: []
 path: >-
-  /blog/pandora-box-and-how-creating-an-ice-breaker-helped-me-as-consultant
-
+  /posts/pandora-box-and-how-creating-an-ice-breaker-helped-me-as-consultant
 category: "post"
-lang: end
+lang: en
 layout: post
 author: Wilson Mendes
-tags: ['wordpress', 'jekyll']
+tags: ['blog', 'soft-skills', 'agile']
 ---
 
 It’s not common for me to talk about something unrelated to code. But this is a great example how I learned that delivering value can be totally unrelated to code. Let me explain:

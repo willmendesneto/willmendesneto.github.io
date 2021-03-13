@@ -5,23 +5,23 @@ description: >-
   Chrome DevTools is a set of tools that can help you edit, measure and audit
   pages, diagnosing problems quickly, which ultimately helps you…
 date: '2019-09-15T08:04:32.893Z'
-categories: []
-keywords: []
-path: /blog/practical-chrome-devtools-performance
-
+path: /posts/practical-chrome-devtools-performance
 category: "post"
-lang: end
+lang: en
 layout: post
 author: Wilson Mendes
-tags: ['wordpress', 'jekyll']
+tags: ['frontend', 'performance', 'chrome', 'tips']
 ---
 
 ![](https://cdn-images-1.medium.com/max/2560/1*MjtZabdd0xkWLT-i9HxmAw.png)
-undefined
 
-Part 1: [Practical Chrome Devtools — Common commands & Debugging](https://medium.com/blog/practical-chrome-devtools-common-commands-debugging-891636b5fbf1)
+Part 1: [Practical Chrome Devtools — Common commands & Debugging](http://willmendesneto.com/posts/practical-chrome-devtools-common-commands-debugging)
+
+<hr/>
 
 Chrome DevTools is a set of tools that can help you edit, measure and audit pages, diagnosing problems quickly, which ultimately helps you build better websites, faster. This is a summary of the most useful features of this powerful toolset that will help you in your daily basis work.
+
+<hr/>
 
 > When running audits and/or performance profilings, keep in mind to always do that in an incognito browser. This is the best way to avoid external chrome extensions or specific browser configurations to affect the data.
 
@@ -33,7 +33,6 @@ A practical tool to check and measure the performance impacts in a page is the *
 *   Use the page and check the FPS changes in real-time.
 
 ![](https://cdn-images-1.medium.com/max/800/1*P23A-Kjb-aYp_QxZ2tGjKw.gif)
-undefined
 
 ### Layout thrashing and Paint flashing
 
@@ -43,8 +42,7 @@ undefined
 
 If you want to know more about reflows and repaints, I recommend you to look at this post. It's old, but **_for sure_** is gold.
 
-undefined
-undefined
+`gist:paulirish/5d52fb081b3570c81e3a`
 
 To see which CSS properties trigger layout or style recalcs, check out this resource: [csstriggers.com](https://csstriggers.com/).
 
@@ -58,7 +56,6 @@ These are clear scenarios when async load the content will be useful for everyon
 *   Choose **Start instrumenting coverage and reload page** option
 
 ![](https://cdn-images-1.medium.com/max/800/1*SrNwk8HzuNLJfLweVkdBUg.gif)
-undefined
 
 When you chose this option your page will be reloaded and you can use simulate the user steps to visualize that content/feature. When finishing with the investigation, stop the record and check the coverage by.
 
@@ -66,7 +63,6 @@ When you chose this option your page will be reloaded and you can use simulate t
 *   Choose **Show Coverage** option
 
 ![](https://cdn-images-1.medium.com/max/800/1*QLwaIfhnzzrrZOMSzfcCuQ.gif)
-undefined
 
 This option will show the loaded files and the percentage used or not in these files based on your navigation, clicks and other events. It will give you a good idea of stylesheets, features, components, and modules you can import asynchronously. Applying these changes will help you to improve some metrics such as **page load** and **page interaction**
 
@@ -74,13 +70,11 @@ This option will show the loaded files and the percentage used or not in these f
 
 What if you want to track a specific feature in your code? Let's say something like check how long a specific HTTP is taking from the request start to render the content on your page. User timings API for the rescue!
 
-undefined
-undefined
+`gist:willmendesneto/ed6be58debc611fcd1c0f3289d3a744f`
 
 You can check in the browser the time that took for this function to run and return the expected result. That will give you some insights about the reasons around the specific API request to be improved, cached for a long time or even avoided to be called multiple times.
 
 ![](https://cdn-images-1.medium.com/max/800/1*XPrDJ7zLCrsvHlkBCpdJ_w.gif)
-undefined
 
 ### HTTP Archive (HAR)
 
@@ -107,7 +101,6 @@ Start an audition is quite simple:
 *   Click **Perform an audit**. DevTools shows you a list of audit categories. Enabled the relevant options for your audit and click **Run audit** and wait for the task finishes.
 
 ![](https://cdn-images-1.medium.com/max/800/1*JqVXUpD4Xue9LvrjnRbe7g.gif)
-undefined
 
 Lighthouse gives you a report on the page showing the scores of topics like performance and accessibility. Also, the report shares some pain points and approaches to solve these problems.
 
@@ -121,7 +114,6 @@ You can run them by:
 *   Type `!name-of-your-local-script`
 
 ![](https://cdn-images-1.medium.com/max/800/1*UTsu52pVdsH-8X1EPSfdwA.gif)
-undefined
 
 There are loads of different snippets if you do a quick search. I would recommend you to have a look in these 2 links:
 

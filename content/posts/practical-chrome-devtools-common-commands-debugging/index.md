@@ -5,22 +5,20 @@ description: >-
   Chrome DevTools is a set of tools that can help you edit, measure and audit
   pages, diagnosing problems quickly, which ultimately helps you…
 date: '2019-09-02T06:09:22.005Z'
-categories: []
-keywords: []
 path: >-
-  /blog/practical-chrome-devtools-common-commands-debugging
-
+  /posts/practical-chrome-devtools-common-commands-debugging
 category: "post"
-lang: end
+lang: en
 layout: post
 author: Wilson Mendes
-tags: ['wordpress', 'jekyll']
+tags: ['frontend', 'debugging', 'chrome', 'tips']
 ---
 
 ![](https://cdn-images-1.medium.com/max/2560/1*MjtZabdd0xkWLT-i9HxmAw.png)
-undefined
 
-Part 2: [Practical Chrome Devtools — Performance](https://medium.com/blog/practical-chrome-devtools-performance-d1dc7300496a)
+Part 2: [Practical Chrome Devtools — Performance](http://willmendesneto.com/posts/practical-chrome-devtools-performance)
+
+<hr/>
 
 Chrome DevTools is a set of tools that can help you edit, measure and audit pages, diagnosing problems quickly, which ultimately helps you build better websites, faster. This is a summary of the most useful features of this powerful toolset that will help you in your daily basis work.
 
