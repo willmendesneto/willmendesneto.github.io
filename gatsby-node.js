@@ -7,10 +7,21 @@
 // You can delete this file if you're not using it
 const path = require(`path`);
 
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions;
+  if (node.internal.type === 'MarkdownRemark') {
+    createNodeField({
+      node,
+      name: 'slug',
+      value: node.frontmatter.path,
+    });
+  }
+};
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
 
-  const postTemplate = path.resolve(`src/templates/post.js`);
+  const postTemplate = path.resolve('src/templates/post.js');
 
   const result = await graphql(`
     {

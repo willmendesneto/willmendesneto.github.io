@@ -17,6 +17,7 @@ const Date = styled(ItemDate)`
 `;
 
 const Wrapper = styled.a`
+  cursor: pointer;
   border-bottom: 2px dashed #eee;
   display: block;
   font-size: 20px;

@@ -1,17 +1,20 @@
 ---
 status: "active"
-title: Solving a problem is more than just add a new dependency
+title: Solving a problem is more than just adding a new dependency
 description: >-
   My main goal in this post is starting some discussions about the criteria used
   to add a new dependency on several projects. So this should…
 date: '2020-01-19T09:13:00.419Z'
 path: >-
-  /posts/solving-a-problem-is-more-than-just-add-a-new-dependency
+  /posts/solving-a-problem-is-more-than-just-adding-a-new-dependency
 category: "post"
 lang: en
 layout: post
 author: Wilson Mendes
 tags: ['frontend', 'performance', 'javascript', 'tests']
+redirect_from:
+  - /posts/solving-a-problem-is-more-than-just-add-a-new-dependency
+  - /posts/solving-a-problem-is-more-than-just-add-a-new-dependency/
 ---
 
 ![](https://cdn-images-1.medium.com/max/2560/1*t6F7uYkRCKuCM2Rh_D0NVA.png)
