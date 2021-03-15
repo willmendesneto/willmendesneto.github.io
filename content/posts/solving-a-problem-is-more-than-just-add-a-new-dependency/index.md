@@ -21,7 +21,7 @@ redirect_from:
 
 > _My main goal in this post is starting some discussions about the criteria used to add a new dependency on several projects. So this should be something to keep in mind and start a broader discussion._
 
-### First things first
+### Introduction: the problem
 
 On our daily basis work, we usually need to do some improvements, add some features or solve some bugs. For several times we need to have a look forward to a new library to solve those.
 
@@ -53,7 +53,7 @@ In order to achieve that, some techniques such as code-splitting, async loading,
 
 But that was a scenario when these things were clear, what about when they’re not that much? Some of these points can be happening with your team and, eventually, the chose package can show one or more of these points.
 
-### 1\. Lack of maintenance
+### 1. Lack of maintenance
 
 It can be related to different things such as the library is working fine and the problem they are trying to solve is done apart from a few bug fixes, the team deprecated the library in favor of another modern tooling, lack of reply in issues and open pull requests.
 
@@ -65,25 +65,25 @@ But this scenario can start another issue, having someone as a maintainer and ma
 
 Of course, it’s a case-by-case issue and each team has ownership to solve with the best knowledge they have.
 
-### 2\. Great tool, but nothing to guide you
+### 2. Great tool, but nothing to guide you
 
 In this section have proper/non-vague documentation is the main takeaway. We are in the land of the beauty when all the code examples are working like a charm, but it’s not friendly when you have to know something more than a "How to …", "Getting started" docs.
 
 In case you’re moving for this library anyways for some really valuable reason, such as this library is _way_ better than all the other options, please make sure you will contribute with their official docs, writing blog posts (internally and externally) or in the worse scenario sharing your knowledge with your team.
 
-### 3\. Hard to contribute on the codebase
+### 3. Hard to contribute on the codebase
 
 This is not the place you want to be, neither an experience you’re keen to have. That’s the scenario when the project is definitely _amazing_, but there’s a huge risk in use it because of reasons such as:
 
 *   Non-permissive license;
 *   There’s no continuous integration/continuous deployment/continuous delivery integration;
-*   There’s no \`CONTRIBUTION.md\` file or GitHub/BitBucket templates for issues and pull requests with a proper description;
+*   There’s no `CONTRIBUTION.md` file or GitHub/BitBucket templates for issues and pull requests with a proper description;
 *   No easy way to do a local setup, neither a good [**developer experience**](https://medium.com/@albertcavalcante/what-is-dx-developer-experience-401a0e44a9d9);
 *   Nothing defined regards to test architecture, code styling or possible candidates for some automation/validation;
 
 In case you want to move it forward with the option #3, _please_ make sure that you know that a _proactive approach_ can be applied in this case as well, not only inside your company and/or codebase 😉
 
-As an example, \`@atlaskit/navigation-next\` was using few libraries without some of these points and I sent some pull requests from those applying few improvements, such as:
+As an example, `@atlaskit/navigation-next` was using few libraries without some of these points and I sent some pull requests from those applying few improvements, such as:
 
 *   Adding a CI integration;
 *   Adding a test architecture;
