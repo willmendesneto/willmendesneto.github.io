@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Will Mendes Blog RSS Feed]]></title><description><![CDATA[Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Wen Technologies, Microsoft MVP Developer Technologies]]></description><link>https://willmendesneto.com</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 15 Mar 2021 02:16:31 GMT</lastBuildDate><item><title><![CDATA[NGX-Skeleton-Loader — States, Animations, Performance, and Accessibility for your Angular App]]></title><link>https://willmendesneto.com/posts/ngx-skeleton-loader-states-animations-performance-and-accessibility-for-your-angular-app</link><guid isPermaLink="false">https://willmendesneto.com/posts/ngx-skeleton-loader-states-animations-performance-and-accessibility-for-your-angular-app</guid><pubDate>Sun, 19 Jul 2020 08:23:47 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2560/1*TPUWgYtggpkyzkhPVCad5g.png&quot;&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Will Mendes Blog RSS Feed]]></title><description><![CDATA[Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Wen Technologies, Microsoft MVP Developer Technologies]]></description><link>https://willmendesneto.com</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 15 Mar 2021 02:20:47 GMT</lastBuildDate><item><title><![CDATA[NGX-Skeleton-Loader — States, Animations, Performance, and Accessibility for your Angular App]]></title><link>https://willmendesneto.com/posts/ngx-skeleton-loader-states-animations-performance-and-accessibility-for-your-angular-app</link><guid isPermaLink="false">https://willmendesneto.com/posts/ngx-skeleton-loader-states-animations-performance-and-accessibility-for-your-angular-app</guid><pubDate>Sun, 19 Jul 2020 08:23:47 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2560/1*TPUWgYtggpkyzkhPVCad5g.png&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;TL;DR; You can start using &lt;a href=&quot;http://bit.ly/ngx-skeleton-loader&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;NGX Skeleton Loader&lt;/a&gt; module in your Angular apps right now and get the built-in performance, accessibility, and extensibility benefits. Support the project by starring the Github repository and enjoy! 🎉&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1353,7 +1353,7 @@ I hope you enjoyed this reading as much as I enjoyed writing it. Thank you so mu
 &lt;blockquote&gt;
 &lt;p&gt;&lt;em&gt;My main goal in this post is starting some discussions about the criteria used to add a new dependency on several projects. So this should be something to keep in mind and start a broader discussion.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3&gt;First things first&lt;/h3&gt;
+&lt;h3&gt;Introduction: the problem&lt;/h3&gt;
 &lt;p&gt;On our daily basis work, we usually need to do some improvements, add some features or solve some bugs. For several times we need to have a look forward to a new library to solve those.&lt;/p&gt;
 &lt;p&gt;As good — and also lazy — developers, one of the first things that came in our mind will be &quot;Don’t reinvent the wheel&quot; and looking for options you found a library that can help you in your issue, feature, or improvement.&lt;/p&gt;
 &lt;h3&gt;First things first: why should I use this library?&lt;/h3&gt;
@@ -1389,12 +1389,12 @@ I hope you enjoyed this reading as much as I enjoyed writing it. Thank you so mu
 &lt;ul&gt;
 &lt;li&gt;Non-permissive license;&lt;/li&gt;
 &lt;li&gt;There’s no continuous integration/continuous deployment/continuous delivery integration;&lt;/li&gt;
-&lt;li&gt;There’s no `CONTRIBUTION.md` file or GitHub/BitBucket templates for issues and pull requests with a proper description;&lt;/li&gt;
+&lt;li&gt;There’s no &lt;code class=&quot;language-text&quot;&gt;CONTRIBUTION.md&lt;/code&gt; file or GitHub/BitBucket templates for issues and pull requests with a proper description;&lt;/li&gt;
 &lt;li&gt;No easy way to do a local setup, neither a good &lt;a href=&quot;https://medium.com/@albertcavalcante/what-is-dx-developer-experience-401a0e44a9d9&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;&lt;strong&gt;developer experience&lt;/strong&gt;&lt;/a&gt;;&lt;/li&gt;
 &lt;li&gt;Nothing defined regards to test architecture, code styling or possible candidates for some automation/validation;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In case you want to move it forward with the option #3, &lt;em&gt;please&lt;/em&gt; make sure that you know that a &lt;em&gt;proactive approach&lt;/em&gt; can be applied in this case as well, not only inside your company and/or codebase 😉&lt;/p&gt;
-&lt;p&gt;As an example, `@atlaskit/navigation-next` was using few libraries without some of these points and I sent some pull requests from those applying few improvements, such as:&lt;/p&gt;
+&lt;p&gt;As an example, &lt;code class=&quot;language-text&quot;&gt;@atlaskit/navigation-next&lt;/code&gt; was using few libraries without some of these points and I sent some pull requests from those applying few improvements, such as:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Adding a CI integration;&lt;/li&gt;
 &lt;li&gt;Adding a test architecture;&lt;/li&gt;
