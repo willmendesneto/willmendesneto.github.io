@@ -24,7 +24,7 @@ const Wrapper = styled.div`
   overflow: hidden;
   max-width: ${screen.max};
   font-size: 20px;
-  line-height: 1.5em;
+  line-height: 1.8em;
   padding: 30px 0 0;
   position: relative;
   vertical-align: top;

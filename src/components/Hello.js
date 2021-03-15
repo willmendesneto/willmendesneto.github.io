@@ -47,7 +47,8 @@ const Sidebar = () => (
       <h2>
         Senior Software Engineer
         <br />
-        Sydney, Australia
+        Solution Architect
+        <br />
       </h2>
       <p>
         Hello, there. I’m a Brazilian Software Engineer (or any cool name that you want to call me) with more than 10

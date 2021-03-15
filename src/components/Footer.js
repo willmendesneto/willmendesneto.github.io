@@ -59,13 +59,18 @@ const Footer = () => (
   <PageFooter>
     <ul>
       <li>
+        <a href="https://github.com/willmendesneto" target="_blank" rel="noopener noreferrer">
+          Github
+        </a>
+      </li>
+      <li>
         <a href="https://twitter.com/willmendesneto" target="_blank" rel="noopener noreferrer">
           Twitter
         </a>
       </li>
       <li>
-        <a href="https://github.com/willmendesneto" target="_blank" rel="noopener noreferrer">
-          Github
+        <a href="https://www.linkedin.com/in/willmendesneto" target="_blank" rel="noopener noreferrer">
+          LinkedIn
         </a>
       </li>
       <li>
