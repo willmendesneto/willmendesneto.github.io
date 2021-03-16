@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Will Mendes Blog RSS Feed]]></title><description><![CDATA[Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Wen Technologies, Microsoft MVP Developer Technologies]]></description><link>https://willmendesneto.com</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 16 Mar 2021 16:45:54 GMT</lastBuildDate><item><title><![CDATA[NGX-Skeleton-Loader — States, Animations, Performance, and Accessibility for your Angular App]]></title><link>https://willmendesneto.com/posts/ngx-skeleton-loader-states-animations-performance-and-accessibility-for-your-angular-app</link><guid isPermaLink="false">https://willmendesneto.com/posts/ngx-skeleton-loader-states-animations-performance-and-accessibility-for-your-angular-app</guid><pubDate>Sun, 19 Jul 2020 08:23:47 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2560/1*TPUWgYtggpkyzkhPVCad5g.png&quot;&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Will Mendes Blog RSS Feed]]></title><description><![CDATA[Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Wen Technologies, Microsoft MVP Developer Technologies]]></description><link>https://willmendesneto.com</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 16 Mar 2021 16:51:22 GMT</lastBuildDate><item><title><![CDATA[NGX-Skeleton-Loader — States, Animations, Performance, and Accessibility for your Angular App]]></title><link>https://willmendesneto.com/posts/ngx-skeleton-loader-states-animations-performance-and-accessibility-for-your-angular-app</link><guid isPermaLink="false">https://willmendesneto.com/posts/ngx-skeleton-loader-states-animations-performance-and-accessibility-for-your-angular-app</guid><pubDate>Sun, 19 Jul 2020 08:23:47 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2560/1*TPUWgYtggpkyzkhPVCad5g.png&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;TL;DR; You can start using &lt;a href=&quot;http://bit.ly/ngx-skeleton-loader&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;NGX Skeleton Loader&lt;/a&gt; module in your Angular apps right now and get the built-in performance, accessibility, and extensibility benefits. Support the project by starring the Github repository and enjoy! 🎉&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -7,7 +7,7 @@
 &lt;h3&gt;Introduction&lt;/h3&gt;
 &lt;p&gt;Have you ever accessed some old pages and what you saw was a spinner for such a long time that you could never know if the page was loading or if there was an error on the page-loading step? Or even sometimes it shows all the content coming from anywhere, it just popped up in your eyes after long seconds?&lt;/p&gt;
 &lt;figure&gt;
-  &lt;img src=&quot;https://cdn-images-1.medium.com/max/800/1*-n9l0MwCAAQktkERYmFK4g.gif&quot; alt=&quot;Example of how spinner can be counter-intuitive in your page to describe intention for the users&quot;&gt;
+  &lt;img loading=&quot;lazy&quot; src=&quot;https://cdn-images-1.medium.com/max/800/1*-n9l0MwCAAQktkERYmFK4g.gif&quot; alt=&quot;Example of how spinner can be counter-intuitive in your page to describe intention for the users&quot;&gt;
   &lt;figcaption&gt;Example of how spinner can be counter-intuitive in your page to describe intention for the users&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;Skeleton screens show users that content is loading, offering a vague preview of how content will look once it fully loads.&lt;/p&gt;
@@ -15,7 +15,7 @@
 &lt;p&gt;&lt;a href=&quot;https://web.dev/progressive-web-apps/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;&lt;strong&gt;Progressive Web Apps — PWAs&lt;/strong&gt;&lt;/a&gt; are using &lt;a href=&quot;http://www.lukew.com/ff/entry.asp?1797&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;&lt;strong&gt;skeleton screens&lt;/strong&gt;&lt;/a&gt; to make it feel like the content is loading immediately even when it isn’t. This improves perceived performance, make sure the users are aware that the page content is loading and there&apos;s something in progress.&lt;/p&gt;
 &lt;p&gt;Some apps, such as Youtube, can also use this approach as a whole page load. So it has the first view for the page as a single skeleton describing what to expect on that page as a layout.&lt;/p&gt;
 &lt;figure&gt;
-  &lt;img src=&quot;https://cdn-images-1.medium.com/max/800/1*XQAZ5stbFMjeufrycJ9CGQ.png&quot; alt=&quot;Youtube page skeleton: using skeletons as the first state englobing the page as a whole&quot;&gt;
+  &lt;img loading=&quot;lazy&quot; src=&quot;https://cdn-images-1.medium.com/max/800/1*XQAZ5stbFMjeufrycJ9CGQ.png&quot; alt=&quot;Youtube page skeleton: using skeletons as the first state englobing the page as a whole&quot;&gt;
   &lt;figcaption&gt;Youtube page skeleton: using skeletons as the first state englobing the page as a whole&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;h3&gt;Animations aligned to the crucial importance for users&lt;/h3&gt;
@@ -24,12 +24,12 @@
 &lt;h3&gt;Changing the themes using CSS or Angular attributes&lt;/h3&gt;
 &lt;p&gt;More than beautiful and pleasant, animations are one of the main foundations of skeletons on the page, having consistent animations. And more than this, In this topic, the main point is &lt;em&gt;consistency&lt;/em&gt;: &lt;strong&gt;not only&lt;/strong&gt; on the animations but &lt;strong&gt;as a whole experience&lt;/strong&gt; across your app.&lt;/p&gt;
 &lt;figure&gt;
-  &lt;img src=&quot;https://cdn-images-1.medium.com/max/1200/1*FGrSIWQK3ktEl5ZUz71DrQ.gif&quot; alt=&quot;NGX Skeleton Loader: component appearances&quot;&gt;
+  &lt;img loading=&quot;lazy&quot; src=&quot;https://cdn-images-1.medium.com/max/1200/1*FGrSIWQK3ktEl5ZUz71DrQ.gif&quot; alt=&quot;NGX Skeleton Loader: component appearances&quot;&gt;
   &lt;figcaption&gt;NGX Skeleton Loader: component appearances&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;&lt;a href=&quot;http://bit.ly/ngx-skeleton-loader&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;&lt;strong&gt;NGX Skeleton Loader&lt;/strong&gt;&lt;/a&gt; module already has some of the most common animation themes and appearances already available, which makes also the developer experience as pleasant as possible by using component attributes as configuration.&lt;/p&gt;
 &lt;figure&gt;
-  &lt;img src=&quot;https://cdn-images-1.medium.com/max/800/1*NiQHjkgj880Jx1dugqF9Eg.gif&quot; alt=&quot;NGX Skeleton Loader: some examples of supported skeletons
+  &lt;img loading=&quot;lazy&quot; src=&quot;https://cdn-images-1.medium.com/max/800/1*NiQHjkgj880Jx1dugqF9Eg.gif&quot; alt=&quot;NGX Skeleton Loader: some examples of supported skeletons
 &quot;&gt;
   &lt;figcaption&gt;NGX Skeleton Loader: some examples of supported skeletons
 &lt;/figcaption&gt;
@@ -44,7 +44,7 @@
 &lt;h3&gt;Combining states and accessibility&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.w3.org/WAI/standards-guidelines/aria/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;&lt;strong&gt;Accessible Rich Internet Applications Suite — WAI-ARIA&lt;/strong&gt;&lt;/a&gt; — defines a way to make Web accessible to people with any type of disabilities by defining technical approaches for the pages to inform specificities about the content to the browser. Attributes such as &lt;code class=&quot;language-text&quot;&gt;tabindex&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;role&lt;/code&gt;, and &lt;code class=&quot;language-text&quot;&gt;aria-busy&lt;/code&gt; are extremely important for assistive technologies such as &lt;a href=&quot;https://en.wikipedia.org/wiki/Screen_reader&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;&lt;strong&gt;screen readers&lt;/strong&gt;&lt;/a&gt;. So that, users with any type of visual disabilities can understand that the specific state of the fragment of your page is currently loading, as an example.&lt;/p&gt;
 &lt;figure&gt;
-  &lt;img src=&quot;https://cdn-images-1.medium.com/max/1200/1*FXn4QDw4SdbxZmMHBZXsjw.png&quot; alt=&quot;NGX Skeleton Loader: an example of HTML attributes for better accessibility
+  &lt;img loading=&quot;lazy&quot; src=&quot;https://cdn-images-1.medium.com/max/1200/1*FXn4QDw4SdbxZmMHBZXsjw.png&quot; alt=&quot;NGX Skeleton Loader: an example of HTML attributes for better accessibility
 &quot;&gt;
   &lt;figcaption&gt;NGX Skeleton Loader: an example of HTML attributes for better accessibility
 &lt;/figcaption&gt;
@@ -63,7 +63,7 @@
 &lt;p&gt;More details about `prefers-reduced-motion` in &lt;a href=&quot;https://web.dev/prefers-reduced-motion/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://web.dev/prefers-reduced-motion/&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;figure&gt;
-  &lt;img src=&quot;https://cdn-images-1.medium.com/max/800/1*6q1glLYIhpzpo3oiUOHCYQ.gif&quot; alt=&quot;NGX Skeleton Loader: Reduce Motion in action&quot;&gt;
+  &lt;img loading=&quot;lazy&quot; src=&quot;https://cdn-images-1.medium.com/max/800/1*6q1glLYIhpzpo3oiUOHCYQ.gif&quot; alt=&quot;NGX Skeleton Loader: Reduce Motion in action&quot;&gt;
   &lt;figcaption&gt;NGX Skeleton Loader: Reduce Motion in action&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;h3&gt;Bundle and package size matters&lt;/h3&gt;
