@@ -1,7 +1,8 @@
-### 🚀 My personal page 🚀
->URL: [willmendesneto.com](https://willmendesneto.com)
+# 🚀 My personal page 🚀
 
-### 🧩 Tech Stack
+> URL: [willmendesneto.com](https://willmendesneto.com)
+
+## 🧩 Tech Stack
 
 - NVM
 - React
@@ -9,7 +10,7 @@
 - GatsbyJS
 - GraphQL
 
-### 💻 Steps to run
+## 💻 Steps to run
 
 - git clone https://github.com/willmendesneto/willmendesneto.github.io.git willmendesneto.com
 - cd willmendesneto.com

@@ -28,7 +28,10 @@ tags: ['frontend', 'angular', 'open-source', 'css', 'tooling', 'performance']
 
 Have you ever accessed some old pages and what you saw was a spinner for such a long time that you could never know if the page was loading or if there was an error on the page-loading step? Or even sometimes it shows all the content coming from anywhere, it just popped up in your eyes after long seconds?
 
-![](https://cdn-images-1.medium.com/max/800/1*-n9l0MwCAAQktkERYmFK4g.gif)
+<figure>
+  <img src="https://cdn-images-1.medium.com/max/800/1*-n9l0MwCAAQktkERYmFK4g.gif" alt="Example of how spinner can be counter-intuitive in your page to describe intention for the users">
+  <figcaption>Example of how spinner can be counter-intuitive in your page to describe intention for the users</figcaption>
+</figure>
 
 Skeleton screens show users that content is loading, offering a vague preview of how content will look once it fully loads.
 
@@ -38,7 +41,10 @@ Skeleton screens show users that content is loading, offering a vague preview of
 
 Some apps, such as Youtube, can also use this approach as a whole page load. So it has the first view for the page as a single skeleton describing what to expect on that page as a layout.
 
-![](https://cdn-images-1.medium.com/max/800/1*XQAZ5stbFMjeufrycJ9CGQ.png)
+<figure>
+  <img src="https://cdn-images-1.medium.com/max/800/1*XQAZ5stbFMjeufrycJ9CGQ.png" alt="Youtube page skeleton: using skeletons as the first state englobing the page as a whole">
+  <figcaption>Youtube page skeleton: using skeletons as the first state englobing the page as a whole</figcaption>
+</figure>
 
 ### Animations aligned to the crucial importance for users
 
@@ -50,11 +56,19 @@ Animations are crucial for the perceived performance purposes since it shows for
 
 More than beautiful and pleasant, animations are one of the main foundations of skeletons on the page, having consistent animations. And more than this, In this topic, the main point is _consistency_: **not only** on the animations but **as a whole experience** across your app.
 
-![](https://cdn-images-1.medium.com/max/1200/1*FGrSIWQK3ktEl5ZUz71DrQ.gif)
+<figure>
+  <img src="https://cdn-images-1.medium.com/max/1200/1*FGrSIWQK3ktEl5ZUz71DrQ.gif" alt="NGX Skeleton Loader: component appearances">
+  <figcaption>NGX Skeleton Loader: component appearances</figcaption>
+</figure>
 
 [**NGX Skeleton Loader**](http://bit.ly/ngx-skeleton-loader) module already has some of the most common animation themes and appearances already available, which makes also the developer experience as pleasant as possible by using component attributes as configuration.
 
-![](https://cdn-images-1.medium.com/max/800/1*NiQHjkgj880Jx1dugqF9Eg.gif)
+<figure>
+  <img src="https://cdn-images-1.medium.com/max/800/1*NiQHjkgj880Jx1dugqF9Eg.gif" alt="NGX Skeleton Loader: some examples of supported skeletons
+">
+  <figcaption>NGX Skeleton Loader: some examples of supported skeletons
+</figcaption>
+</figure>
 
 Besides that, the module supports theming the skeleton passing `[theme]` information as an attribute who receives an object with CSS values. Another approach is to change the styles on the host element where the component is added.
 
@@ -66,7 +80,12 @@ Besides that, the module supports theming the skeleton passing `[theme]` informa
 
 [**Accessible Rich Internet Applications Suite — WAI-ARIA**](https://www.w3.org/WAI/standards-guidelines/aria/) — defines a way to make Web accessible to people with any type of disabilities by defining technical approaches for the pages to inform specificities about the content to the browser. Attributes such as `tabindex`, `role`, and `aria-busy` are extremely important for assistive technologies such as [**screen readers**](https://en.wikipedia.org/wiki/Screen_reader). So that, users with any type of visual disabilities can understand that the specific state of the fragment of your page is currently loading, as an example.
 
-![](https://cdn-images-1.medium.com/max/1200/1*FXn4QDw4SdbxZmMHBZXsjw.png)
+<figure>
+  <img src="https://cdn-images-1.medium.com/max/1200/1*FXn4QDw4SdbxZmMHBZXsjw.png" alt="NGX Skeleton Loader: an example of HTML attributes for better accessibility
+">
+  <figcaption>NGX Skeleton Loader: an example of HTML attributes for better accessibility
+</figcaption>
+</figure>
 
 Different than other packages, [**NGX Skeleton Loader**](http://bit.ly/ngx-skeleton-loader) module covers this aspect as well by adding aria attributes on the skeleton content which informs the browser that the specific fragment of the page is not accessible at the moment since that block on the page is busy loading the final content to be displayed.
 
@@ -86,7 +105,10 @@ By using the \`prefers-reduced-motion\` CSS media query you can add this support
 
 > More details about \`prefers-reduced-motion\` in [https://web.dev/prefers-reduced-motion/](https://web.dev/prefers-reduced-motion/)
 
-![](https://cdn-images-1.medium.com/max/800/1*6q1glLYIhpzpo3oiUOHCYQ.gif)
+<figure>
+  <img src="https://cdn-images-1.medium.com/max/800/1*6q1glLYIhpzpo3oiUOHCYQ.gif" alt="NGX Skeleton Loader: Reduce Motion in action">
+  <figcaption>NGX Skeleton Loader: Reduce Motion in action</figcaption>
+</figure>
 
 ### Bundle and package size matters
 

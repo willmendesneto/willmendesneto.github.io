@@ -68,7 +68,7 @@ const TalksPage = () => (
         in your project? Send me a message! I’ll respond as quickly as possible.
       </p>
 
-      <form action="https://formspree.io/f/xgepgvql" method="POST">
+      <form action="https://formspree.io/f/xgepgvql" autoComplete="off" method="POST">
         <FormRow>
           <FormLabel>Your email *</FormLabel>
           <FormInput type="email" aria-required="true" required="true" name="_replyto" />

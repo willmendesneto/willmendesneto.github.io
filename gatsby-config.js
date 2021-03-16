@@ -72,6 +72,13 @@ module.exports = {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 1280,
+              showCaptions: true,
+              quality: 80,
+              withWebp: true,
+              withAvif: true,
+              loading: 'lazy',
+              // Based on screen breakpoints. More details in `src/styles/screen.js`
+              srcSetBreakpoints: [320, 768, 1024, 1280, 1920],
             },
           },
           'gatsby-remark-responsive-iframe',
@@ -185,6 +192,8 @@ module.exports = {
         ],
       },
     },
+    // THE ORDER MATTERS HERE !
+    // These last should be the last one
     'gatsby-redirect-from',
     'gatsby-plugin-meta-redirect',
   ],

@@ -4,6 +4,24 @@ import { screen } from '../styles/screen';
 
 const PostWrapper = styled.article`
 
+  figure {
+    margin-bottom: 1.45rem;
+    vertical-align: middle;
+    text-align: center;
+    display: block;
+    padding: 0;
+    margin: 50px auto;
+  }
+
+  figcaption {
+    color: #666;
+    font-size: 12px;
+    line-height: 1.5em;
+    ${screen.lg} {
+      font-size: 16px;
+    }
+  }
+
   img {
     vertical-align: middle;
     aspect-ratio: auto 245 / 192;
