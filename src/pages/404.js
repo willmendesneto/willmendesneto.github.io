@@ -9,8 +9,8 @@ const Wrapper = styled.div`
   padding-top: 100px;
 `;
 
-const NotFoundPage = () => (
-  <Layout>
+const NotFoundPage = ({ location }) => (
+  <Layout location={location}>
     <Wrapper>
       <SEO title="404: Not found" />
       <Title>404</Title>

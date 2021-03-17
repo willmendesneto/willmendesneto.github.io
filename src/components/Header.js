@@ -59,18 +59,6 @@ const Nav = styled.nav`
     padding-left: 4vw;
     padding-right: 4vw;
   }
-
-  a {
-    font-weight: 900;
-    color: #333;
-    text-decoration: none;
-
-    &:hover {
-      opacity: 1;
-      text-decoration: underline;
-      text-underline-offset: 10px;
-    }
-  }
 `;
 
 const Wrapper = styled(Section)`
@@ -110,25 +98,53 @@ const Links = styled.div`
   }
 `;
 
-const Header = () => (
-  <PageHeader>
-    <Nav>
-      <Wrapper>
-        <LogoMobile>
-          <Link to="/">WM</Link>
-        </LogoMobile>
-        <LogoDesktop>
-          <Link to="/">Wilson Mendes</Link>
-        </LogoDesktop>
+const NavLink = styled(Link)`
+  font-weight: 900;
+  color: #333;
+  ${props =>
+    props.active === 'true'
+      ? `
+    text-decoration: underline;
+    text-underline-offset: 10px;
+  `
+      : `
+    text-decoration: none;
+  `}
 
-        <Links>
-          <Link to="/posts/">posts</Link>
-          <Link to="/talks/">talks</Link>
-          <Link to="/contact/">contact</Link>
-        </Links>
-      </Wrapper>
-    </Nav>
-  </PageHeader>
-);
+  &:hover {
+    opacity: 1;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+  }
+`;
+
+const Header = ({ currentPath }) => {
+  return (
+    <PageHeader>
+      <Nav>
+        <Wrapper>
+          <LogoMobile>
+            <NavLink to="/">WM</NavLink>
+          </LogoMobile>
+          <LogoDesktop>
+            <NavLink to="/">Wilson Mendes</NavLink>
+          </LogoDesktop>
+
+          <Links>
+            <NavLink to="/posts/" active={(currentPath === '/posts/').toString()}>
+              posts
+            </NavLink>
+            <NavLink to="/talks/" active={(currentPath === '/talks/').toString()}>
+              talks
+            </NavLink>
+            <NavLink to="/contact/" active={(currentPath === '/contact/').toString()}>
+              contact
+            </NavLink>
+          </Links>
+        </Wrapper>
+      </Nav>
+    </PageHeader>
+  );
+};
 
 export default Header;

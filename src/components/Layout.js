@@ -46,16 +46,18 @@ const Main = styled.main`
   width: 100%;
 `;
 
-const Layout = ({ children }) => (
-  <>
-    <Header />
-    <Wrapper>
-      <Main>
-        <Section>{children}</Section>
-      </Main>
-    </Wrapper>
-    <Footer />
-  </>
-);
+const Layout = ({ children, location = {} }) => {
+  return (
+    <>
+      <Header currentPath={location.pathname} />
+      <Wrapper>
+        <Main>
+          <Section>{children}</Section>
+        </Main>
+      </Wrapper>
+      <Footer />
+    </>
+  );
+};
 
 export default Layout;

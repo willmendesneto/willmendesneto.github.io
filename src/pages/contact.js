@@ -57,8 +57,8 @@ const FormButton = styled.button`
   }
 `;
 
-const TalksPage = () => (
-  <Layout>
+const TalksPage = ({ location }) => (
+  <Layout location={location}>
     <>
       <SEO title="Contact" />
       <Title>CONTACT</Title>

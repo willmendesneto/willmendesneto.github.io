@@ -16,13 +16,14 @@ const BlogPage = ({
   data: {
     allMarkdownRemark: { edges },
   },
+  location,
 }) => {
   const Workshops = edges
     .filter(edge => !!edge.node.frontmatter.date)
     .map(edge => <PostLink key={edge.node.id} post={edge.node} />);
 
   return (
-    <Layout>
+    <Layout location={location}>
       <SEO title="Workshops" />
       <Title>Workshops</Title>
 

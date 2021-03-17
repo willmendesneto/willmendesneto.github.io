@@ -5,8 +5,8 @@ import Link from '../components/Link';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
-const TalksPage = () => (
-  <Layout>
+const TalksPage = ({ location }) => (
+  <Layout location={location}>
     <>
       <SEO title="Talks" />
       <Title>TALKS</Title>
