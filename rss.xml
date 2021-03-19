@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Will Mendes Blog RSS Feed]]></title><description><![CDATA[Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Wen Technologies, Microsoft MVP Developer Technologies]]></description><link>https://willmendesneto.com</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 17 Mar 2021 22:01:04 GMT</lastBuildDate><item><title><![CDATA[Linting Web Accessibility issues in your HTML using just CSS!]]></title><link>https://willmendesneto.com/posts/linting-web-accessibility-issues-in-your-html-using-just-css/</link><guid isPermaLink="false">https://willmendesneto.com/posts/linting-web-accessibility-issues-in-your-html-using-just-css/</guid><pubDate>Wed, 17 Mar 2021 09:13:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Will Mendes Blog RSS Feed]]></title><description><![CDATA[Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Wen Technologies, Microsoft MVP Developer Technologies]]></description><link>https://willmendesneto.com</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 19 Mar 2021 21:12:24 GMT</lastBuildDate><item><title><![CDATA[Linting Web Accessibility issues in your HTML using just CSS!]]></title><link>https://willmendesneto.com/posts/linting-web-accessibility-issues-in-your-html-using-just-css/</link><guid isPermaLink="false">https://willmendesneto.com/posts/linting-web-accessibility-issues-in-your-html-using-just-css/</guid><pubDate>Wed, 17 Mar 2021 09:13:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;🧪 The main goal of this post is to research, trying to find new solutions by adding innovation and improving your dev experience - aka DX. You should have that in mind, exploring a simple and easiest way to have that added in your devloop, without any time friction. 🧪&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr/&gt;
@@ -42,7 +42,7 @@
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-a11y-dev-mode-css-L6&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;6&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-a11y-dev-mode-css-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-c1&gt;border&lt;/span&gt;&lt;span class=pl-kos&gt;:&lt;/span&gt; &lt;span class=pl-c1&gt;2&lt;span class=pl-smi&gt;px&lt;/span&gt;&lt;/span&gt; dotted red;&lt;/td&gt;
+        &lt;td id=&quot;file-a11y-dev-mode-css-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-c1&gt;border&lt;/span&gt;&lt;span class=pl-kos&gt;:&lt;/span&gt; &lt;span class=pl-c1&gt;2&lt;span class=pl-smi&gt;px&lt;/span&gt;&lt;/span&gt; dotted red &lt;span class=pl-k&gt;!important&lt;/span&gt;;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-a11y-dev-mode-css-L7&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;7&quot;&gt;&lt;/td&gt;
@@ -63,7 +63,7 @@
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-a11y-dev-mode-css-L11&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;11&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-a11y-dev-mode-css-LC11&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-c1&gt;filter&lt;/span&gt;&lt;span class=pl-kos&gt;:&lt;/span&gt; &lt;span class=pl-en&gt;blur&lt;/span&gt;(&lt;span class=pl-c1&gt;5&lt;span class=pl-smi&gt;px&lt;/span&gt;&lt;/span&gt;);&lt;/td&gt;
+        &lt;td id=&quot;file-a11y-dev-mode-css-LC11&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-c1&gt;filter&lt;/span&gt;&lt;span class=pl-kos&gt;:&lt;/span&gt; &lt;span class=pl-en&gt;blur&lt;/span&gt;(&lt;span class=pl-c1&gt;5&lt;span class=pl-smi&gt;px&lt;/span&gt;&lt;/span&gt;) &lt;span class=pl-k&gt;!important&lt;/span&gt;;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-a11y-dev-mode-css-L12&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;12&quot;&gt;&lt;/td&gt;
@@ -84,7 +84,7 @@
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-a11y-dev-mode-css-L16&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;16&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-a11y-dev-mode-css-LC16&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-c1&gt;outline&lt;/span&gt;&lt;span class=pl-kos&gt;:&lt;/span&gt; &lt;span class=pl-c1&gt;2&lt;span class=pl-smi&gt;px&lt;/span&gt;&lt;/span&gt; dotted red;&lt;/td&gt;
+        &lt;td id=&quot;file-a11y-dev-mode-css-LC16&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-c1&gt;outline&lt;/span&gt;&lt;span class=pl-kos&gt;:&lt;/span&gt; &lt;span class=pl-c1&gt;2&lt;span class=pl-smi&gt;px&lt;/span&gt;&lt;/span&gt; dotted red &lt;span class=pl-k&gt;!important&lt;/span&gt;;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-a11y-dev-mode-css-L17&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;17&quot;&gt;&lt;/td&gt;
@@ -117,7 +117,7 @@
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-a11y-dev-mode-css-L24&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;24&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-a11y-dev-mode-css-LC24&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-c1&gt;outline&lt;/span&gt;&lt;span class=pl-kos&gt;:&lt;/span&gt; &lt;span class=pl-c1&gt;2&lt;span class=pl-smi&gt;px&lt;/span&gt;&lt;/span&gt; dotted red;&lt;/td&gt;
+        &lt;td id=&quot;file-a11y-dev-mode-css-LC24&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-c1&gt;outline&lt;/span&gt;&lt;span class=pl-kos&gt;:&lt;/span&gt; &lt;span class=pl-c1&gt;2&lt;span class=pl-smi&gt;px&lt;/span&gt;&lt;/span&gt; dotted red &lt;span class=pl-k&gt;!important&lt;/span&gt;;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-a11y-dev-mode-css-L25&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;25&quot;&gt;&lt;/td&gt;
@@ -146,7 +146,7 @@
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-a11y-dev-mode-css-L31&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;31&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-a11y-dev-mode-css-LC31&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-c1&gt;border&lt;/span&gt;&lt;span class=pl-kos&gt;:&lt;/span&gt; &lt;span class=pl-c1&gt;2&lt;span class=pl-smi&gt;px&lt;/span&gt;&lt;/span&gt; dotted red;&lt;/td&gt;
+        &lt;td id=&quot;file-a11y-dev-mode-css-LC31&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-c1&gt;border&lt;/span&gt;&lt;span class=pl-kos&gt;:&lt;/span&gt; &lt;span class=pl-c1&gt;2&lt;span class=pl-smi&gt;px&lt;/span&gt;&lt;/span&gt; dotted red &lt;span class=pl-k&gt;!important&lt;/span&gt;;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-a11y-dev-mode-css-L32&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;32&quot;&gt;&lt;/td&gt;
@@ -171,7 +171,7 @@
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-a11y-dev-mode-css-L37&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;37&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-a11y-dev-mode-css-LC37&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-c1&gt;text-decoration&lt;/span&gt;&lt;span class=pl-kos&gt;:&lt;/span&gt; blink;&lt;/td&gt;
+        &lt;td id=&quot;file-a11y-dev-mode-css-LC37&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-c1&gt;text-decoration&lt;/span&gt;&lt;span class=pl-kos&gt;:&lt;/span&gt; blink &lt;span class=pl-k&gt;!important&lt;/span&gt;;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-a11y-dev-mode-css-L38&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;38&quot;&gt;&lt;/td&gt;
@@ -196,7 +196,7 @@
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-a11y-dev-mode-css-L43&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;43&quot;&gt;&lt;/td&gt;
-        &lt;td id=&quot;file-a11y-dev-mode-css-LC43&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-c1&gt;border&lt;/span&gt;&lt;span class=pl-kos&gt;:&lt;/span&gt; &lt;span class=pl-c1&gt;2&lt;span class=pl-smi&gt;px&lt;/span&gt;&lt;/span&gt; dotted red;&lt;/td&gt;
+        &lt;td id=&quot;file-a11y-dev-mode-css-LC43&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-c1&gt;border&lt;/span&gt;&lt;span class=pl-kos&gt;:&lt;/span&gt; &lt;span class=pl-c1&gt;2&lt;span class=pl-smi&gt;px&lt;/span&gt;&lt;/span&gt; dotted red &lt;span class=pl-k&gt;!important&lt;/span&gt;;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td id=&quot;file-a11y-dev-mode-css-L44&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;44&quot;&gt;&lt;/td&gt;
@@ -212,7 +212,7 @@
 
       &lt;/div&gt;
       &lt;div class=&quot;gist-meta&quot;&gt;
-        &lt;a href=&quot;https://gist.github.com/willmendesneto/4302de65ed6fa0e3661d3c0c08cf2a28/raw/ac4fc1f2b5c9b0574d6f7bcc1320e21eee72cced/a11y-dev-mode.css&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/willmendesneto/4302de65ed6fa0e3661d3c0c08cf2a28/raw/cdbfc55d04cc5f0fb5d85257c6ae6f7357071171/a11y-dev-mode.css&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
         &lt;a href=&quot;https://gist.github.com/willmendesneto/4302de65ed6fa0e3661d3c0c08cf2a28#file-a11y-dev-mode-css&quot;&gt;a11y-dev-mode.css&lt;/a&gt;
         hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
       &lt;/div&gt;
@@ -3081,8 +3081,6 @@ $ node index.js # roda o código do build checker&lt;/p&gt;
 &lt;li&gt;Retaliation: &lt;a href=&quot;https://www.youtube.com/watch?v=1EGk2rvZe8A&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://www.youtube.com/watch?v=1EGk2rvZe8A&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
                 &lt;div style=&quot;margin-top=55px; font-style: italic;&quot;&gt;(This is an article posted to my blog at willmendesneto.com. You can read it online by &lt;a href=&quot;https://willmendesneto.com/posts/checking-your-build-in-snap-ci-via-nodebots-using-nodejs-and-arduino&quot;&gt;clicking here&lt;/a&gt;.)&lt;/div&gt;
-              </content:encoded></item><item><title><![CDATA[NodeBots: Workshop]]></title><link>https://willmendesneto.com/workshops/nodebots-workshop</link><guid isPermaLink="false">https://willmendesneto.com/workshops/nodebots-workshop</guid><pubDate>Sun, 14 Dec 2014 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Workshop based on the examples of my book.&lt;/p&gt;
-                &lt;div style=&quot;margin-top=55px; font-style: italic;&quot;&gt;(This is an article posted to my blog at willmendesneto.com. You can read it online by &lt;a href=&quot;https://willmendesneto.com/workshops/nodebots-workshop&quot;&gt;clicking here&lt;/a&gt;.)&lt;/div&gt;
               </content:encoded></item><item><title><![CDATA[AngularJS: About $filter]]></title><link>https://willmendesneto.com/posts/angularjs-about-filter</link><guid isPermaLink="false">https://willmendesneto.com/posts/angularjs-about-filter</guid><pubDate>Sun, 14 Dec 2014 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;Introduction&lt;/h3&gt;
 &lt;p&gt;In this post we will talk about filter concepts and how is the interface $filter flux in AngularJS. Of course, this is the first, but the idea isn’t make it something like the &lt;a href=&quot;http://teropa.info/build-your-own-angular&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Building your own AngularJS&lt;/a&gt; (and I don’t have this pretension), but in something that share initially some good tips, fundamentals and cool aspects, showing more than “overview” in some approaches with these points for only one simple reason:&lt;/p&gt;
 &lt;blockquote&gt;
