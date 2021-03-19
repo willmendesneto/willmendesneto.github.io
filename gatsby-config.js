@@ -168,7 +168,7 @@ module.exports = {
               {
                 allMarkdownRemark(
                   limit: 1000,
-                  filter: { frontmatter: { status: { eq: "active" } } },
+                  filter: { frontmatter: { status: { eq: "active" }, category: { eq: "post" } } }
                   sort: { order: DESC, fields: [frontmatter___date] }
                 ) {
                   edges {
