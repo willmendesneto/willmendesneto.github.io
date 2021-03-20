@@ -16,7 +16,7 @@ tags: ['frontend', 'css', 'javascript', 'tip', 'js', 'tooling']
 
 ## Introduction
 
-Usually, when you have to create components in your frontend app you have to cover different views in several devices, with different screens and sizes. CSS Media Queries - `@media` - were created to make this process easier. There are several ways ot organize your CSS using well known techniques, such as BEM SMACSS and OOCSS to avoid css rules clashing and changing different components across your page.
+Usually, when you have to create components in your frontend app you have to cover different views in several devices, with different screens and sizes. CSS Media Queries - `@media` - were created to make this process easier. There are several ways ot organize your CSS using well known techniques, such as [BEM](http://getbem.com/), [SMACSS](http://smacss.com/) and [OOCSS](http://oocss.org/) to avoid css rules clashing and changing different components across your page.
 
 ## The problem
 
