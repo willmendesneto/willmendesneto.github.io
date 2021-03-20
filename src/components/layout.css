@@ -642,6 +642,10 @@ h2, h3, h4, h5, h6 {
   margin: 10px 0 20px;
 }
 
+.gatsby-resp-image-figcaption {
+  margin-top: 40px;
+}
+
 .twitter-tweet {
   margin: 10px auto;
 }
