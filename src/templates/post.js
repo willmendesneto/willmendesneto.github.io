@@ -6,10 +6,11 @@ import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import PostContent from '../components/PostContent';
 import PostDate from '../components/PostDate';
+import Share from '../components/Share';
 
 export default function Template({
   data: {
-    markdownRemark: { frontmatter, html, timeToRead },
+    markdownRemark: { frontmatter, html, timeToRead, tags },
   },
 }) {
   return (
@@ -23,6 +24,7 @@ export default function Template({
       <PostContent itemprop="articleBody">
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </PostContent>
+      <Share path={frontmatter.path} title={frontmatter.title} tags={tags} />
     </Layout>
   );
 }
@@ -35,6 +37,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
+        tags
       }
       timeToRead
     }
