@@ -22,6 +22,7 @@ const commonStyles = `
   width: 100%;
   display: flex;
   margin-bottom: 10px;
+  transition: background-color 300ms;
 
   ${screen.md} {
     display: inline-flex;
@@ -95,29 +96,21 @@ const Share = ({ title, tags, path }) => {
     <ShareWrapper>
       <p>Share this post via:</p>
       <StyledFacebookButton>
-        <FacebookShareButton url={url} className="button is-outlined is-rounded facebook">
-          <span className="text">Facebook</span>
-        </FacebookShareButton>
+        <FacebookShareButton url={url}>Facebook</FacebookShareButton>
       </StyledFacebookButton>
       <StyledTwitterButton>
-        <TwitterShareButton
-          url={url}
-          className="button is-outlined is-rounded twitter"
-          title={title}
-          via={site.siteMetadata.author.split('@').join('')}
-          hashtags={tags}
-        >
-          <span className="text">Twitter</span>
+        <TwitterShareButton url={url} title={title} via={site.siteMetadata.author.split('@').join('')} hashtags={tags}>
+          Twitter
         </TwitterShareButton>
       </StyledTwitterButton>
       <StyledLinkedInButton>
-        <LinkedinShareButton url={url} className="button is-outlined is-rounded linkedin" title={title}>
-          <span className="text">LinkedIn</span>
+        <LinkedinShareButton url={url} title={title}>
+          LinkedIn
         </LinkedinShareButton>
       </StyledLinkedInButton>
       <StyledWhatsAppButton>
-        <WhatsappShareButton url={url} className="button is-outlined is-rounded whatsapp" title={title}>
-          <span className="text">WhatsApp</span>
+        <WhatsappShareButton url={url} title={title}>
+          WhatsApp
         </WhatsappShareButton>
       </StyledWhatsAppButton>
     </ShareWrapper>
