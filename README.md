@@ -23,3 +23,10 @@
 ## Contribute
 
 Feel free to [contribute](https://github.com/willmendesneto/willmendesneto.github.io/pulls) with this project or leave a [suggestion](https://github.com/willmendesneto/willmendesneto.github.io/issues).
+
+## Author
+
+**Wilson Mendes (willmendesneto)**
+
+- <https://twitter.com/willmendesneto>
+- <http://github.com/willmendesneto>
