@@ -1,5 +1,5 @@
 ---
-status: "draft"
+status: "active"
 title: "Easy and reusable Media Query Breakpoints for your CSS-In-JS components"
 layout: post
 author: Wilson Mendes
