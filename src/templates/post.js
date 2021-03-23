@@ -25,6 +25,14 @@ export default function Template({
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </PostContent>
       <Share path={frontmatter.path} title={frontmatter.title} tags={tags} />
+      <h3>Subscribe</h3>
+      <p>
+        To keep up with posts on this blog, you can also{' '}
+        <a href="/rss.xml" target="_blank" rel="noopener noreferrer">
+          subscribe via RSS
+        </a>
+        .
+      </p>
     </Layout>
   );
 }
