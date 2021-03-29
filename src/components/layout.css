@@ -655,6 +655,15 @@ h2, h3, h4, h5, h6 {
   margin-bottom: 30px;
 }
 
+.gist .gist-data{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.gist .blob-num {
+  border-bottom: none;
+}
+
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
