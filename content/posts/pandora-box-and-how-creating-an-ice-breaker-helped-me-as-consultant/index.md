@@ -16,7 +16,7 @@ tags: ['blog', 'soft-skills', 'agile']
 
 It’s not common for me to talk about something unrelated to code. But this is a great example how I learned that delivering value can be totally unrelated to code. Let me explain:
 
-I’m living in Australia and working at [Pragmateam](http://pragma.team) as a consultant and we have lots of good cases of agile and delivery transformation and I’m working helping and learning with the team. In one scenario we had to completely change our mindset: we did some feature planning sessions, the code coverage of our codebase was increased from 8% to 80% (only this case can be other post by itself, but let’s focus on our case) and changing the state where we were scheduling deploys every 2 months for the one where now we are deploying our microservice ecosystem every week, looking forward to a scenario with continuous deployment.
+When I was living in Australia and working as a consultant in a local company, we have lots of good cases of agile delivery transformation. Also, I was working helping, but also learning with the team. In one scenario we had to completely change our mindset: we did some feature planning sessions, the code coverage of our codebase was increased from 8% to 80% (only this case can be other post by itself, but let’s focus on our case) and changing the state where we were scheduling deploys every 2 months for the one where now we are deploying our microservice ecosystem every week, looking forward to a scenario with continuous deployment.
 
 But we had to change, and thinking in making this activity more productive and disruptive was when I had the idea to create a different ice-breaker called “Pandora box”. The mechanics is really simple and you will need:
 

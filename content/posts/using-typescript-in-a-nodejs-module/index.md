@@ -27,8 +27,7 @@ As a example of this approach you can take a look into [Angular](https://github.
 
 > If you want to know more about best practices designing NodeJS systems, take a look in this thread on Quora.
 
-[**What are some best architecture practices when designing a nodejs system?**
-_Answer (1 of 3): Don’t write big apps. The more custom code is running in the same process, the harder it gets to…_www.quora.com](https://www.quora.com/What-are-some-best-architecture-practices-when-designing-a-nodejs-system "https://www.quora.com/What-are-some-best-architecture-practices-when-designing-a-nodejs-system")[](https://www.quora.com/What-are-some-best-architecture-practices-when-designing-a-nodejs-system)
+[**What are some best architecture practices when designing a nodejs system?**](https://www.quora.com/What-are-some-of-the-best-architecture-practices-when-designing-a-Node-js-system-How-modular-should-I-make-my-design-Should-different-parts-of-the-website-be-served-by-different-nodes-How-do-I-design-to-make-use-of-a-multi-core)
 
 ### Setup
 
@@ -42,7 +41,7 @@ These packages are:
 *   typescript: Support for Typescript in NodeJS;
 *   typings: TypeScript Definition Manager;
 
-To do this we will use the `tsc` and `typings` command line executables inside our node_modules folder. These were installed via Typescript and Typings respectively. So that, we will create the `tsconfig.json` file using the command `./node_modules/.bin/tsc --init` with all information related to your application.
+To do this we will use the `tsc` and `typings` command line executables inside our node\_modules folder. These were installed via Typescript and Typings respectively. So that, we will create the `tsconfig.json` file using the command `./node_modules/.bin/tsc --init` with all information related to your application.
 
 ```json
 {
@@ -93,10 +92,7 @@ So that when `yarn test` is running all the lint and code coverage is triggered 
 
 Publish a package is a common task in every single package release and a good tool for help on package publish automation is [semantic-version](https://www.npmjs.com/package/semantic-release), which can runs in your continuous integration/continuous delivery. It's not a Typescript tooling, but it's heavily used in OSS — _Open source projects_.
 
-If you want to know how to integrate this package into your repository and understand all required steps, please watch the Egghead's video "**How to Write a JavaScript Library — Automating Releases with semantic-release**".
-
-[**Automating Releases with semantic-release - js Video Tutorial #free**
-_There are so many repeated steps when releasing a new version of a library. The tool semantic-release automates this…_egghead.io](https://egghead.io/lessons/javascript-how-to-write-a-javascript-library-automating-releases-with-semantic-release)
+If you want to know how to integrate this package into your repository and understand all required steps, please watch the Egghead's video ["**How to Write a JavaScript Library — Automating Releases with semantic-release**"](https://egghead.io/lessons/javascript-automating-releases-with-semantic-release).
 
 Another approach that can be combined is the [Canary build](https://www.thoughtworks.com/radar/techniques/canary-builds), which can be added in your repository using [Greenkeeper](https://greenkeeper.io/), sending pull requests in real time with all bumps and updates for NPM dependencies.
 
@@ -105,7 +101,7 @@ Another approach that can be combined is the [Canary build](https://www.thoughtw
 > Please read the post by Kent C Dodds sharing some good points about open source and how to contribute.
 
 [**Introducing: How to Contribute to Open Source**
-_My new, free, first-timer friendly Egghead.io series all about how to contribute to open source projects on GitHub._medium.com](https://medium.com/@kentcdodds/introducing-how-to-contribute-to-open-source-be67917eb704 "https://medium.com/@kentcdodds/introducing-how-to-contribute-to-open-source-be67917eb704")[](https://medium.com/@kentcdodds/introducing-how-to-contribute-to-open-source-be67917eb704)
+](https://kentcdodds.com/blog/introducing-how-to-contribute-to-open-source)
 
 <hr/>
 
@@ -117,12 +113,8 @@ IF you are interested in see the final solution, please take a look in the [Gith
 
 ### Links
 
-Martin Fowler: post about feature toggles [https://martinfowler.com/articles/feature-toggles.html](https://martinfowler.com/articles/feature-toggles.html)
-
-Feature toggle service: [https://github.com/willmendesneto/feature-toggle-service](https://github.com/willmendesneto/feature-toggle-service)
-
-NGX Feature toggle: Angular component for feature toggles [https://github.com/willmendesneto/ngx-feature-toggle](https://github.com/willmendesneto/ngx-feature-toggle)
-
-Reactor Feature toggle: React component for feature toggles [https://github.com/willmendesneto/reactor-feature-toggle](https://github.com/willmendesneto/reactor-feature-toggle)
-
-Introducing: How to Contribute to Open Source: [https://medium.com/@kentcdodds/introducing-how-to-contribute-to-open-source-be67917eb704](https://medium.com/@kentcdodds/introducing-how-to-contribute-to-open-source-be67917eb704)
+- Martin Fowler: post about feature toggles [https://martinfowler.com/articles/feature-toggles.html](https://martinfowler.com/articles/feature-toggles.html)
+- Feature toggle service: [https://github.com/willmendesneto/feature-toggle-service](https://github.com/willmendesneto/feature-toggle-service)
+- NGX Feature toggle: Angular component for feature toggles [https://github.com/willmendesneto/ngx-feature-toggle](https://github.com/willmendesneto/ngx-feature-toggle)
+- Reactor Feature toggle: React component for feature toggles [https://github.com/willmendesneto/reactor-feature-toggle](https://github.com/willmendesneto/reactor-feature-toggle)
+- Introducing: How to Contribute to Open Source: [https://medium.com/@kentcdodds/introducing-how-to-contribute-to-open-source-be67917eb704](https://medium.com/@kentcdodds/introducing-how-to-contribute-to-open-source-be67917eb704)
