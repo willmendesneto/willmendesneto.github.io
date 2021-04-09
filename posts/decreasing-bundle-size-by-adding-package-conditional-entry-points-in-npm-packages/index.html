@@ -1,0 +1,632 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.5732ca1b73dd34ab0a97.css" id="gatsby-global-css">code[class*=language-],pre[class*=language-]{color:#f8f8f2;background:none;text-shadow:0 1px rgba(0,0,0,.3);font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto;border-radius:.3em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#272822}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#8292a2}.token.punctuation{color:#f8f8f2}.token.namespace{opacity:.7}.token.constant,.token.deleted,.token.property,.token.symbol,.token.tag{color:#f92672}.token.boolean,.token.number{color:#ae81ff}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#a6e22e}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url,.token.variable{color:#f8f8f2}.token.atrule,.token.attr-value,.token.class-name,.token.function{color:#e6db74}.token.keyword{color:#66d9ef}.token.important,.token.regex{color:#fd971f}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}html{font-family:Poppins,sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-size:30px;font-weight:500;padding:20px 0 0;line-height:1.8em;position:relative;color:#333;width:100%;height:100%}body{box-sizing:border-box;background:#fff;margin:0;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;color:#333;-webkit-text-decoration-skip:objects;font-weight:700}a:active,a:hover{outline-width:0;color:#099;opacity:.8}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:30px}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:112.5%/1.45em;box-sizing:border-box;overflow-y:scroll}*,:after,:before{box-sizing:inherit}body{font-weight:400;word-wrap:break-word;-webkit-font-kerning:normal;font-kerning:normal;-ms-font-feature-settings:"kern","liga","clig","calt";font-feature-settings:"kern","liga","clig","calt"}img{max-width:100%;padding:0;margin:0 0 1.45rem}h1{font-size:2.25rem}h1,h2{padding:0;margin:0 0 1.45rem;color:inherit;font-weight:700;text-rendering:optimizeLegibility;line-height:1.1}h2{font-size:1.62671rem}h3{font-size:1.38316rem}h3,h4{padding:0;margin:0 0 1.45rem;color:inherit;font-weight:700;text-rendering:optimizeLegibility;line-height:1.1}h4{font-size:1rem}h5{font-size:.85028rem}h5,h6{padding:0;margin:0 0 1.45rem;color:inherit;font-weight:700;text-rendering:optimizeLegibility;line-height:1.1}h6{font-size:.78405rem}hgroup{padding:0;margin:0 0 1.45rem}ol,ul{padding:0;margin:0 0 1.45rem 1.45rem;list-style-position:outside;list-style-image:none}dl{text-align:justify}dd,dl{margin:0 0 1.45rem}dd,dl,p{padding:0}p{margin:0 0 30px}figure{padding:0}figure,pre{margin:0 0 1.45rem}pre{font-size:.85rem;line-height:1.42;background:rgba(0,0,0,.04);border-radius:3px;overflow:auto;word-wrap:normal;padding:1.45rem}table{font-size:1rem;line-height:1.45rem;border-collapse:collapse;width:100%}fieldset,table{padding:0;margin:0 0 1.45rem}blockquote{padding:20px 0 10px;margin:0 1.45rem 1.45rem;color:#757575}form,iframe,noscript{padding:0;margin:0 0 1.45rem}hr{padding:0;margin:0 0 calc(1.45rem - 1px);background:rgba(0,0,0,.2);border:none;height:1px}address{padding:0;margin:0 0 1.45rem}b,dt,strong,th{font-weight:700}li{margin-bottom:.725rem}ol li,ul li{padding-left:0}li>ol,li>ul{margin-left:1.45rem;margin-bottom:.725rem;margin-top:.725rem}blockquote :last-child,li :last-child,p :last-child{margin-bottom:0}li>p{margin-bottom:.725rem}code,kbd,samp{font-size:.85rem;line-height:1.45rem}abbr,abbr[title],acronym{border-bottom:1px dotted rgba(0,0,0,.5);cursor:help}abbr[title]{text-decoration:none}td,th,thead{text-align:left}td,th{border-bottom:1px solid rgba(0,0,0,.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding:.725rem .96667rem calc(.725rem - 1px)}td:first-child,th:first-child{padding-left:0}td:last-child,th:last-child{padding-right:0}code,tt{background-color:rgba(0,0,0,.04);border-radius:3px;font-family:SFMono-Regular,Consolas,Roboto Mono,Droid Sans Mono,Liberation Mono,Menlo,Courier,monospace;padding:.2em 0}pre code{background:none;line-height:1.42}code:after,code:before,tt:after,tt:before{letter-spacing:-.2em;content:" "}pre code:after,pre code:before,pre tt:after,pre tt:before{content:""}h1,h2,h3,h4,h5,h6{color:#333}h1{font-weight:500}h2,h3,h4,h5,h6{background:transparent;margin-top:40px;font-weight:700;display:inline-block}.gatsby-highlight{border-radius:20px;margin:10px 0 20px}.gatsby-resp-image-figcaption{margin-top:40px}.twitter-tweet{margin:10px auto}.gist{margin-top:30px;margin-bottom:30px}.gist .gist-data{padding-top:10px;padding-bottom:10px}.gist .blob-num{border-bottom:none}@media only screen and (max-width:480px){html{font-size:100%}}</style><meta name="generator" content="Gatsby 3.0.4"/><style data-styled="" data-styled-version="5.2.1">.hKUvcS{max-width:1280px;margin:0 auto;padding-top:0;}/*!sc*/
+.hKUvcS h1{font-size:34px;}/*!sc*/
+@media (min-width:1024px){.hKUvcS h1{font-size:50px;}}/*!sc*/
+@media (min-width:1024px){.hKUvcS{padding-top:50px;}}/*!sc*/
+data-styled.g1[id="Section-zthcy2-0"]{content:"hKUvcS,"}/*!sc*/
+.RfRpu{display:inline-block;text-align:left;width:40%;}/*!sc*/
+data-styled.g3[id="Header__Logo-sc-160kmj-1"]{content:"RfRpu,"}/*!sc*/
+.bHSrwR{display:inline-block;height:40px;width:20%;}/*!sc*/
+@media (min-width:768px){.bHSrwR{display:none;}}/*!sc*/
+.bHSrwR img{border-radius:50%;margin-bottom:0;}/*!sc*/
+data-styled.g4[id="Header__LogoMobile-sc-160kmj-2"]{content:"bHSrwR,"}/*!sc*/
+.kzsPVe{display:none;}/*!sc*/
+@media (min-width:768px){.kzsPVe{display:inline-block;}}/*!sc*/
+data-styled.g5[id="Header__LogoDesktop-sc-160kmj-3"]{content:"kzsPVe,"}/*!sc*/
+.Ocybt{background:#fff;color:#333;margin:0 auto;padding:10px 15px;position:fixed;text-transform:uppercase;top:0;width:100%;z-index:10;box-sizing:border-box;pointer-events:auto;box-shadow:inset 0 -1px 0 rgb(230 230 230);}/*!sc*/
+@media (min-width:768px){.Ocybt{line-height:auto;padding:15px;right:0;padding-top:2vw;padding-bottom:2vw;padding-left:4vw;padding-right:4vw;}}/*!sc*/
+data-styled.g6[id="Header__Nav-sc-160kmj-4"]{content:"Ocybt,"}/*!sc*/
+.PjytW{position:relative;overflow-x:auto;padding-top:0;font-size:21px;}/*!sc*/
+@media (min-width:1024px){.PjytW{padding:0 20px;max-width:1280px;}}/*!sc*/
+data-styled.g7[id="Header__Wrapper-sc-160kmj-5"]{content:"PjytW,"}/*!sc*/
+.iLSqRZ{display:inline-block;position:absolute;right:0;}/*!sc*/
+@media (min-width:768px){.iLSqRZ{line-height:inherit;}}/*!sc*/
+.iLSqRZ a{padding:0;font-size:15px;margin-right:10px;}/*!sc*/
+.iLSqRZ a:last-child:after{margin-right:0;}/*!sc*/
+@media (min-width:768px){.iLSqRZ a{font-size:21px;margin-right:25px;}}/*!sc*/
+data-styled.g8[id="Header__Links-sc-160kmj-6"]{content:"iLSqRZ,"}/*!sc*/
+.foKHhW{font-weight:900;color:#333;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.foKHhW:hover{opacity:1;-webkit-text-decoration:underline;text-decoration:underline;text-underline-offset:10px;}/*!sc*/
+data-styled.g9[id="Header__NavLink-sc-160kmj-7"]{content:"foKHhW,"}/*!sc*/
+.llqpgS{color:#000;font-size:16px;padding:15px 0;text-align:center;}/*!sc*/
+data-styled.g10[id="Footer__Text-sc-14qtz8p-0"]{content:"llqpgS,"}/*!sc*/
+.evCYdc{width:100%;min-height:200px;border-top:2px solid #f0f0f2;margin:75px 0 0 0;font-size:16px;text-transform:uppercase;text-align:center;box-sizing:border-box;background:#f0f0f2;}/*!sc*/
+.evCYdc ul{display:block;margin:0;margin-bottom:70px;}/*!sc*/
+@media (min-width:768px){.evCYdc ul{display:inline-block;vertical-align:middle;}}/*!sc*/
+.evCYdc li{display:block;padding:10px;}/*!sc*/
+@media (min-width:768px){.evCYdc li{display:inline-block;margin-right:25px;}}/*!sc*/
+.evCYdc li a:hover{opacity:0.8;}/*!sc*/
+data-styled.g11[id="Footer__PageFooter-sc-14qtz8p-1"]{content:"evCYdc,"}/*!sc*/
+.cIXHvf{padding:15px 7px 15px 0;margin:0 auto;width:100%;overflow:hidden;max-width:1280px;font-size:20px;line-height:1.8em;padding:30px 0 0;position:relative;vertical-align:top;}/*!sc*/
+@media (min-width:768px){.cIXHvf{font-size:22px;}}/*!sc*/
+.cIXHvf pre{border-radius:0;font-size:0.8em;}/*!sc*/
+data-styled.g12[id="Layout__Wrapper-xnlv4k-0"]{content:"cIXHvf,"}/*!sc*/
+.bBuSAy{display:inline-block;padding:15px;vertical-align:top;width:100%;}/*!sc*/
+data-styled.g13[id="Layout__Main-xnlv4k-1"]{content:"bBuSAy,"}/*!sc*/
+.fNwryo{font-style:normal;font-weight:900;line-height:1em;margin:50px 0 20px 0;font-size:30px;-webkit-letter-spacing:-2px;-moz-letter-spacing:-2px;-ms-letter-spacing:-2px;letter-spacing:-2px;}/*!sc*/
+@media (min-width:768px){.fNwryo{font-size:50px;line-height:1em;margin:70px 0 20px 0;}}/*!sc*/
+data-styled.g14[id="Title-sc-1g46602-0"]{content:"fNwryo,"}/*!sc*/
+.kSQOnO figure{margin-bottom:1.45rem;vertical-align:middle;text-align:center;display:block;padding:0;margin:50px auto;}/*!sc*/
+.kSQOnO figcaption{color:#666;font-size:12px;line-height:1.5em;}/*!sc*/
+@media (min-width:1024px){.kSQOnO figcaption{font-size:16px;}}/*!sc*/
+.kSQOnO img{vertical-align:middle;aspect-ratio:auto 245 / 192;}/*!sc*/
+.kSQOnO p img{text-align:center;display:block;margin:20px auto;}/*!sc*/
+.kSQOnO p .language-text{margin-right:5px;}/*!sc*/
+.kSQOnO hr{border:none;background:transparent;color:#111;-webkit-letter-spacing:1em;-moz-letter-spacing:1em;-ms-letter-spacing:1em;letter-spacing:1em;text-align:center;margin-top:10px;margin-bottom:50px;}/*!sc*/
+@media (min-width:768px){.kSQOnO hr{margin-bottom:70px;}}/*!sc*/
+.kSQOnO hr:before{content:'...';}/*!sc*/
+data-styled.g30[id="PostContent__PostWrapper-sc-1jf6w5a-0"]{content:"kSQOnO,"}/*!sc*/
+.dVZbmD{color:#4e4c4c;display:block;font-style:italic;margin-bottom:20px;-webkit-letter-spacing:normal;-moz-letter-spacing:normal;-ms-letter-spacing:normal;letter-spacing:normal;line-height:1em;margin-top:10px;text-align:left;text-transform:capitalize;font-size:20px;}/*!sc*/
+data-styled.g31[id="PostDate-okmp83-0"]{content:"dVZbmD,"}/*!sc*/
+.gpEOWW{border-radius:20px;background:#f0f0f2;padding:20px 10px;margin-top:40px;margin-bottom:30px;}/*!sc*/
+data-styled.g32[id="Share__ShareWrapper-sc-1rx8md7-0"]{content:"gpEOWW,"}/*!sc*/
+.dYOHuc{cursor:pointer;color:#fff;padding:10px 20px;margin-right:20px;border-radius:10px;width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-bottom:10px;-webkit-transition:background-color 300ms;transition:background-color 300ms;background-color:#3b5998;border:2px solid #3b5998;}/*!sc*/
+@media (min-width:768px){.dYOHuc{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;width:auto;}}/*!sc*/
+.dYOHuc:hover{background-color:transparent;color:#3b5998;}/*!sc*/
+data-styled.g33[id="Share__StyledFacebookButton-sc-1rx8md7-1"]{content:"dYOHuc,"}/*!sc*/
+.dbAEAm{cursor:pointer;color:#fff;padding:10px 20px;margin-right:20px;border-radius:10px;width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-bottom:10px;-webkit-transition:background-color 300ms;transition:background-color 300ms;background-color:#1da1f2;border:2px solid #1da1f2;}/*!sc*/
+@media (min-width:768px){.dbAEAm{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;width:auto;}}/*!sc*/
+.dbAEAm:hover{background-color:transparent;color:#1da1f2;}/*!sc*/
+data-styled.g34[id="Share__StyledTwitterButton-sc-1rx8md7-2"]{content:"dbAEAm,"}/*!sc*/
+.fKvaYM{cursor:pointer;color:#fff;padding:10px 20px;margin-right:20px;border-radius:10px;width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-bottom:10px;-webkit-transition:background-color 300ms;transition:background-color 300ms;background-color:#3b5998;border:2px solid #3b5998;}/*!sc*/
+@media (min-width:768px){.fKvaYM{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;width:auto;}}/*!sc*/
+.fKvaYM:hover{background-color:transparent;color:#3b5998;}/*!sc*/
+data-styled.g35[id="Share__StyledLinkedInButton-sc-1rx8md7-3"]{content:"fKvaYM,"}/*!sc*/
+.fHaLcF{cursor:pointer;color:#fff;padding:10px 20px;margin-right:20px;border-radius:10px;width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-bottom:10px;-webkit-transition:background-color 300ms;transition:background-color 300ms;background-color:#128c7e;border:2px solid #128c7e;}/*!sc*/
+@media (min-width:768px){.fHaLcF{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;width:auto;}}/*!sc*/
+.fHaLcF:hover{background-color:transparent;color:#128c7e;}/*!sc*/
+data-styled.g36[id="Share__StyledWhatsAppButton-sc-1rx8md7-4"]{content:"fHaLcF,"}/*!sc*/
+</style><title data-react-helmet="true">Decreasing bundle size by adding Package Conditional Entry Points in NPM Packages | Wilson Mendes</title><meta data-react-helmet="true" name="description" content="Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies"/><meta data-react-helmet="true" property="og:title" content="Decreasing bundle size by adding Package Conditional Entry Points in NPM Packages"/><meta data-react-helmet="true" property="og:description" content="Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:title" content="Decreasing bundle size by adding Package Conditional Entry Points in NPM Packages"/><meta data-react-helmet="true" name="twitter:creator" content=""/><meta data-react-helmet="true" name="twitter:description" content="Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><link href="https://github.githubassets.com/assets/gist-embed-b3b573358bfc66d89e1e95dbf8319c09.css" rel="stylesheet"/><link rel="icon" href="/favicon-32x32.png?v=b897f62d006f8ad8d87b6fc5786692ba" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/poppins/v15/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/poppins/v15/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/poppins/v15/pxiByp8kv8JHgFVrLBT5Z1xlFQ.woff2"/><style>@font-face{font-family:Poppins;font-style:normal;font-weight:500;src:url(/static/webfonts/s/poppins/v15/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2) format("woff2");font-display:swap}@font-face{font-family:Poppins;font-style:normal;font-weight:700;src:url(/static/webfonts/s/poppins/v15/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2) format("woff2");font-display:swap}@font-face{font-family:Poppins;font-style:normal;font-weight:900;src:url(/static/webfonts/s/poppins/v15/pxiByp8kv8JHgFVrLBT5Z1xlFQ.woff2) format("woff2");font-display:swap}@font-face{font-family:Poppins;font-style:normal;font-weight:500;src:url(/static/webfonts/s/poppins/v15/pxiByp8kv8JHgFVrLGT9Z1xlEw.woff) format("woff");font-display:swap}@font-face{font-family:Poppins;font-style:normal;font-weight:700;src:url(/static/webfonts/s/poppins/v15/pxiByp8kv8JHgFVrLCz7Z1xlEw.woff) format("woff");font-display:swap}@font-face{font-family:Poppins;font-style:normal;font-weight:900;src:url(/static/webfonts/s/poppins/v15/pxiByp8kv8JHgFVrLBT5Z1xlEw.woff) format("woff");font-display:swap}</style><link rel="preconnect" href="https://www.google-analytics.com"/><link rel="dns-prefetch" href="https://www.google-analytics.com"/><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link rel="alternate" type="application/rss+xml" title="Will Mendes Blog RSS Feed" href="/rss.xml"/><link as="script" rel="preload" href="/webpack-runtime-e2b15f879d68d374f3e2.js"/><link as="script" rel="preload" href="/framework-5a0f89685a3614932ea6.js"/><link as="script" rel="preload" href="/app-db5a2464f63690a6213b.js"/><link as="script" rel="preload" href="/c38806a22704b1411d609490b31463a94158f97c-5e54864974a395acac0b.js"/><link as="script" rel="preload" href="/component---src-templates-post-js-c0a5b29f6b5866cf90f3.js"/><link as="fetch" rel="preload" href="/page-data/posts/decreasing-bundle-size-by-adding-package-conditional-entry-points-in-npm-packages/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/1559850390.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/63159454.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><header class="Header__PageHeader-sc-160kmj-0 coHUrI"><nav class="Header__Nav-sc-160kmj-4 Ocybt"><section class="Section-zthcy2-0 Header__Wrapper-sc-160kmj-5 hKUvcS PjytW"><span class="Header__Logo-sc-160kmj-1 Header__LogoMobile-sc-160kmj-2 RfRpu bHSrwR"><a class="Header__NavLink-sc-160kmj-7 foKHhW" href="/">WM</a></span><span class="Header__Logo-sc-160kmj-1 Header__LogoDesktop-sc-160kmj-3 RfRpu kzsPVe"><a class="Header__NavLink-sc-160kmj-7 foKHhW" href="/">Wilson Mendes</a></span><div class="Header__Links-sc-160kmj-6 iLSqRZ"><a active="false" class="Header__NavLink-sc-160kmj-7 foKHhW" href="/posts/">posts</a><a active="false" class="Header__NavLink-sc-160kmj-7 foKHhW" href="/talks/">talks</a><a active="false" class="Header__NavLink-sc-160kmj-7 foKHhW" href="/contact/">contact</a></div></section></nav></header><div class="Layout__Wrapper-xnlv4k-0 cIXHvf"><main class="Layout__Main-xnlv4k-1 bBuSAy"><section class="Section-zthcy2-0 hKUvcS"><h1 class="Title-sc-1g46602-0 fNwryo">Decreasing bundle size by adding Package Conditional Entry Points in NPM Packages</h1><time class="PostDate-okmp83-0 dVZbmD">April 01, 2021<!-- --> - <!-- -->12 min read</time><article class="PostContent__PostWrapper-sc-1jf6w5a-0 kSQOnO"><div><p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1280px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/a3f659a68618bfb7f8602a78231c26da/e93f2/package-entrypoints.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 43.4375%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAABYlAAAWJQFJUiTwAAABYUlEQVQoz3WSzU/CQBDF+a89KYl4NTGKfMSLiagBoh68GU08cfLgAY0aiJRYWoiC2+62u213n+22QIE4yctsZya/vJm0gCyUUjpLKcGFwHo9zWqRe0TidSrRsaNFP1Fh/kjiczCAPZ5AxMBevw/KvBVozIHMnjdGiEYvxMGL+B9IGQPnAlEk4boUvs/nPkEChXafw/wmcH5nuO56aDwz1J6CVeD6ukEQ6JXDMMxqaa87kSjdMxhfY1iWiVbHwemjg+qDWAcuHRrGECPLBoudvr1/wOeZQyXBuMRwIsA8rk9hz4SWOQ03V9bHiSNxlThUsVPP9+PVQ6xHMikilRA2e/mVVW4gP0spg2mOQAjRMD2n59NzJMr/CRp4ckWxXSbYqxPs1pYq1R0Uyz/Y2rewU57q79U+QbFCcHjuxhulUA1s33m6WG1RVJpuTlTr+JKi2qS5WtpPakcXLs5uWXzvFPgHzzChq2NztfUAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/a3f659a68618bfb7f8602a78231c26da/fb34c/package-entrypoints.avif 320w,
+/static/a3f659a68618bfb7f8602a78231c26da/646cd/package-entrypoints.avif 768w,
+/static/a3f659a68618bfb7f8602a78231c26da/8b485/package-entrypoints.avif 1024w,
+/static/a3f659a68618bfb7f8602a78231c26da/a73d6/package-entrypoints.avif 1280w,
+/static/a3f659a68618bfb7f8602a78231c26da/a7f9f/package-entrypoints.avif 1920w,
+/static/a3f659a68618bfb7f8602a78231c26da/0cf61/package-entrypoints.avif 3316w"
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              type="image/avif"
+            /><source
+              srcset="/static/a3f659a68618bfb7f8602a78231c26da/cb523/package-entrypoints.webp 320w,
+/static/a3f659a68618bfb7f8602a78231c26da/cd067/package-entrypoints.webp 768w,
+/static/a3f659a68618bfb7f8602a78231c26da/53334/package-entrypoints.webp 1024w,
+/static/a3f659a68618bfb7f8602a78231c26da/4b075/package-entrypoints.webp 1280w,
+/static/a3f659a68618bfb7f8602a78231c26da/f3ff0/package-entrypoints.webp 1920w,
+/static/a3f659a68618bfb7f8602a78231c26da/71f3f/package-entrypoints.webp 3316w"
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/a3f659a68618bfb7f8602a78231c26da/d4f27/package-entrypoints.png 320w,
+/static/a3f659a68618bfb7f8602a78231c26da/778aa/package-entrypoints.png 768w,
+/static/a3f659a68618bfb7f8602a78231c26da/658fc/package-entrypoints.png 1024w,
+/static/a3f659a68618bfb7f8602a78231c26da/26c69/package-entrypoints.png 1280w,
+/static/a3f659a68618bfb7f8602a78231c26da/7d442/package-entrypoints.png 1920w,
+/static/a3f659a68618bfb7f8602a78231c26da/e93f2/package-entrypoints.png 3316w"
+            sizes="(max-width: 1280px) 100vw, 1280px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/a3f659a68618bfb7f8602a78231c26da/26c69/package-entrypoints.png"
+            alt="package entrypoints"
+            title="package entrypoints"
+            loading="lazy"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<h2>Introduction</h2>
+<p>Among the evolution or large codebases, concerns about performance are always raised. That might be by different techniques: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#dynamic_imports" target="_blank" rel="nofollow noopener noreferrer">dynamic async imports</a>, defining <a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/analyzing-crp" target="_blank" rel="nofollow noopener noreferrer">Critical Resource, Critical Path Length and Critical Bytes</a>, lazy loading images via <a href="https://web.dev/lazy-loading-images/" target="_blank" rel="nofollow noopener noreferrer">libraries</a> or by <a href="https://web.dev/browser-level-image-lazy-loading/" target="_blank" rel="nofollow noopener noreferrer">using the browser-level image lazy-loading support</a> and so on and so forth.</p>
+<p>Even though these are quite good ideas, having application performance boost as final results, it's usually done on the application side. If you're using design system and javascript libraries you should also care about their bundle sizes. </p>
+<blockquote>
+<p>Some of these points were covered on <a href="https://willmendesneto.com/posts/solving-a-problem-is-more-than-just-adding-a-new-dependency" target="_blank" rel="nofollow noopener noreferrer">"Solving a problem is more than just adding a new dependency"</a> post. The intention of this post is specifically to show you how to integrate entry points in your NPM Packages.</p>
+</blockquote>
+<h3>The problem with large Javascript bundle size</h3>
+<p>Even with the advent of HTTP2, prefetch, preload and parallelization, content minified, uglified and compressed, the bundle issue still persists. The bright side of it is that's a common solution and there are several ways to solve that.</p>
+<p>For some applications this is more than enough, covering several scenarios that might affect the performance of your app. However, these approaches are focused on the file after-bundle procress, not covering usage before-bundle.</p>
+<p>For scenarios like libraries, frameworks or design systems, having several components being shared across multiples pages and components of your project is a huge problem. Even having tree-shaking suport for your bundler, the algorithm is not covering all the cases.</p>
+<p>For example, if you have a design system on the namespace <code class="language-text">@myapp/</code> and you have a button which imports some icons, you'll ending up having <code class="language-text">@myapp/buttons</code> and <code class="language-text">@myapp/icons</code> in your dependencies. Also, if your build distribution is sharing only CommonJS, you might have all the buttons and icons. And it's even worse, because CommonJS not tree-shakable! 😱</p>
+<p>To ilustrate this scenario, let's imagine you have 2 components in your <code class="language-text">@myapp/buttons</code> package. From now on you'll have <code class="language-text">Button</code> and <code class="language-text">ButtonWithIcon</code> and there are several components inside <code class="language-text">@myapp/icons</code> -  it can be more than 30 components, for example.</p>
+<p><div id="gist108921521" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-first-app-structure-md" class="file my-2">
+    
+  <div id="file-first-app-structure-md-readme" class="Box-body readme blob js-code-block-container p-5 p-xl-6 ">
+    <article class="markdown-body entry-content container-lg" itemprop="text"><pre><code>node_modules/
+  @myapp/
+    buttons/index.js &lt;-- final button with all components, even if you're using only 1 of them
+    icons/index.js &lt;-- final bundle with all icons, even the ones you're not using
+</code></pre>
+</article>
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/willmendesneto/4790ece61053fbbcd00f121e6cdb4313/raw/b401acf8e0251cd1a4fe190dda4b8c65e955c9b5/first-app-structure.md" style="float:right">view raw</a>
+        <a href="https://gist.github.com/willmendesneto/4790ece61053fbbcd00f121e6cdb4313#file-first-app-structure-md">first-app-structure.md</a>
+        hosted with &#10084; by <a href="https://github.com">GitHub</a>
+      </div>
+    </div>
+</div></p>
+<p>Even knowing I'm using a single button and a single icon, how can I solve the problem of have all these unused components on the final bundle of my project? </p>
+<h3>Distributing ESM and CommonJS in your bundles to have tree-shaking support</h3>
+<p>First of all, you should make sure that all your components are having <em>at least</em> CommonJS and ESM in your bundle distribution. So that you can expose the different bundles in your <code class="language-text">package.json</code>. ESM will be exposed on <code class="language-text">modules</code> and commonjs will be exposed on <code class="language-text">main</code> fields, respectively.</p>
+<p>In a 100% ESM module world, identifying side effects is an easy job. However, we aren't there just yet, so in the mean time it's necessary to provide hints to webpack's compiler on the "pureness" of your code.</p>
+<blockquote>
+<p>If you want to know more about side-effects, why they're required and the impact in your app, please read the <a href="https://webpack.js.org/guides/tree-shaking/#mark-the-file-as-side-effect-free" target="_blank" rel="nofollow noopener noreferrer">Webpack's tree-shaking docs page</a></p>
+</blockquote>
+<p>With all these changes in place, the first version of your <code class="language-text">package.json</code> will be like that.</p>
+<p><div id="gist108921552" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-exposing-esm-file-package-ison-md" class="file my-2">
+    
+  <div id="file-exposing-esm-file-package-ison-md-readme" class="Box-body readme blob js-code-block-container p-5 p-xl-6 ">
+    <article class="markdown-body entry-content container-lg" itemprop="text"><div class="highlight highlight-source-json"><pre>{
+  <span class="pl-ii">...</span>
+  <span class="pl-s"><span class="pl-pds">"</span>sideEffects<span class="pl-pds">"</span></span>: <span class="pl-c1">false</span>,
+  <span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>@myapp/buttons<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>main<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>../dist/cjs/index.js<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>module<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>../dist/esm/index.js<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>cjs<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>../dist/cjs/index.js<span class="pl-pds">"</span></span>,
+  <span class="pl-ii">...</span>
+}</pre></div>
+</article>
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/willmendesneto/85aa95888267e6c889a36850dda82b82/raw/ee90efd4f84da35f477201dfd670414ec0681691/exposing-esm-file-package-ison.md" style="float:right">view raw</a>
+        <a href="https://gist.github.com/willmendesneto/85aa95888267e6c889a36850dda82b82#file-exposing-esm-file-package-ison-md">exposing-esm-file-package-ison.md</a>
+        hosted with &#10084; by <a href="https://github.com">GitHub</a>
+      </div>
+    </div>
+</div></p>
+<p>Now it's time to have all the benefits of tree-shaking and reduce the bundle size of your app.</p>
+<h3>Taking advantage of tree-shaking by reduce bundle size</h3>
+<p>Your <code class="language-text">@myapp/buttons</code> package will have the build distribution organized that way.</p>
+<p><div id="gist108921570" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-build-structure-with-cjs-and-esm-md" class="file my-2">
+    
+  <div id="file-build-structure-with-cjs-and-esm-md-readme" class="Box-body readme blob js-code-block-container p-5 p-xl-6 ">
+    <article class="markdown-body entry-content container-lg" itemprop="text"><pre><code>@myapp/
+  buttons/
+    cjs/index.js &lt;-- final button with all components, even if you're using only 1 of them
+    esm/
+      ButtonWithIcon.js   &lt;-- `ButtonWithIcon` component
+      Button.js           &lt;-- `Button` component
+      index.js            &lt;-- main file exporting both components
+</code></pre>
+</article>
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/willmendesneto/7cacd4cef0a978a4b3193159dc6642e2/raw/377c9538f17f1d2effe578a28398e2b979af36f6/build-structure-with-cjs-and-esm.md" style="float:right">view raw</a>
+        <a href="https://gist.github.com/willmendesneto/7cacd4cef0a978a4b3193159dc6642e2#file-build-structure-with-cjs-and-esm-md">build-structure-with-cjs-and-esm.md</a>
+        hosted with &#10084; by <a href="https://github.com">GitHub</a>
+      </div>
+    </div>
+</div></p>
+<p>Your bundler will try to use ESM before CommonJS in order to avoid bundle increase. So it knows if your package has any ESM bundle by checking <code class="language-text">module</code> field in your <code class="language-text">package.json</code>.</p>
+<p>You can notice that if you import the package using <code class="language-text">import Button from &#39;@myapp/buttons/esm/Button.js</code> that will work. </p>
+<p><figure class="gatsby-resp-image-figure" style="">
+    <span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1280px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/7d8420a51f1dab65830ddc274c3ef67e/45a5e/however.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 27.187499999999996%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAABYlAAAWJQFJUiTwAAABbElEQVQY0x2Q2yuDcRjH37+GGGLk9C+Qbdi4lOspJRcjymE51JxjkxwmsVJcTOZUuBgLUyynSZphE/bG2vuOi4/f6+Lb8zyf59u3nkdKWoqQawr4Ekoac4jUlfNeW4hszCNRnU9C1DcxRy0lvNaXCU8uiRo9UXMxsbpS4hq3FKMYdKTMeqQXAQKjdo4H2tmdHMK/NMvLsoszl4PDuSnO3E58i3Mc+zY49yxwPd7LlqOHvQ0voXUPB84RAtubyIMtqCJUejLpOdrb4fbygtPQFdHFCfbdM9wE/ITuwjy+xjj3eQmGH4hM2gl617gPnuDf3eZWeA4Xprl6ekZed5OuyEDSzooPtBLrtpK0NxF39hHzzCBbDXyOdZIYsvFuayC6Oo881sFHWyPKiI1Il5U37wqR4Q6+XXbU/mYUUy6Sai5ANeqEcv7/8GPI5ldIEbNalYUipO00nq7N/+9TgqVNgmlchKQqM0mJqogf/gEm3xd1mj1PCAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/7d8420a51f1dab65830ddc274c3ef67e/fb34c/however.avif 320w,
+/static/7d8420a51f1dab65830ddc274c3ef67e/646cd/however.avif 768w,
+/static/7d8420a51f1dab65830ddc274c3ef67e/8b485/however.avif 1024w,
+/static/7d8420a51f1dab65830ddc274c3ef67e/a73d6/however.avif 1280w,
+/static/7d8420a51f1dab65830ddc274c3ef67e/c7b6c/however.avif 1546w"
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              type="image/avif"
+            /><source
+              srcset="/static/7d8420a51f1dab65830ddc274c3ef67e/cb523/however.webp 320w,
+/static/7d8420a51f1dab65830ddc274c3ef67e/cd067/however.webp 768w,
+/static/7d8420a51f1dab65830ddc274c3ef67e/53334/however.webp 1024w,
+/static/7d8420a51f1dab65830ddc274c3ef67e/4b075/however.webp 1280w,
+/static/7d8420a51f1dab65830ddc274c3ef67e/32645/however.webp 1546w"
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/7d8420a51f1dab65830ddc274c3ef67e/d4f27/however.png 320w,
+/static/7d8420a51f1dab65830ddc274c3ef67e/778aa/however.png 768w,
+/static/7d8420a51f1dab65830ddc274c3ef67e/658fc/however.png 1024w,
+/static/7d8420a51f1dab65830ddc274c3ef67e/26c69/however.png 1280w,
+/static/7d8420a51f1dab65830ddc274c3ef67e/45a5e/however.png 1546w"
+            sizes="(max-width: 1280px) 100vw, 1280px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/7d8420a51f1dab65830ddc274c3ef67e/26c69/however.png"
+            alt="It is always a good to keep in mind that every choice has pros, but also have cons"
+            title="It is always a good to keep in mind that every choice has pros, but also have cons"
+            loading="lazy"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span>
+    <figcaption class="gatsby-resp-image-figcaption">It is always a good to keep in mind that every choice has pros, but also have cons</figcaption>
+  </figure></p>
+<p>However, this is not ideal since you're coupling your app with the internal code structure of your dependency. This will raise massive issues with common tasks, such as update a package dependecy.</p>
+<p>Now that your application knows too much about the dependency directories, that might also implies breaking changes in case of dependency structure changes as well. In summary, it means that if for some reason the build distribution was changed and now it's in <code class="language-text">@myapp/buttons/dist/esm/Button.js</code> you have a broken app!</p>
+<blockquote>
+<p>You should not access your dependency directories directly, unless it's something <em>extremelly</em> necessary. A small change in your dependencies and your app might be broken</p>
+</blockquote>
+<p><div id="gist108921578" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-breaking-changes-because-the-package-structure-changed-md" class="file my-2">
+    
+  <div id="file-breaking-changes-because-the-package-structure-changed-md-readme" class="Box-body readme blob js-code-block-container p-5 p-xl-6 ">
+    <article class="markdown-body entry-content container-lg" itemprop="text"><pre><code>@myapp/
+  buttons/
+    # Oops! Your app will face the consequences
+    dist/
+      cjs/index.js
+      esm/
+        ButtonWithIcon.js   
+        Button.js           
+        index.js            
+</code></pre>
+</article>
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/willmendesneto/f10a675c29dc89c79f1c12d794bb9285/raw/82abcd8cf7172666dba2ae08827aa34fc9154978/breaking-changes-because-the-package-structure-changed.md" style="float:right">view raw</a>
+        <a href="https://gist.github.com/willmendesneto/f10a675c29dc89c79f1c12d794bb9285#file-breaking-changes-because-the-package-structure-changed-md">breaking-changes-because-the-package-structure-changed.md</a>
+        hosted with &#10084; by <a href="https://github.com">GitHub</a>
+      </div>
+    </div>
+</div></p>
+<h3>Package Conditional Exports and Creating Declarative Entry-Points in your package.json</h3>
+<p>Let's make a quick recap before jump in this topic. Now we know that ESM is a tree-shakable distribution format and we can have the benefits by using it. We also know that we shouldn't access the package files directly by navigating through the dependency structure.</p>
+<p><figure class="gatsby-resp-image-figure" style="">
+    <span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1280px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/7f1deb558c80ea76bb5067053a7d2351/ba0a7/main-concerns.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 63.74999999999999%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAABUUlEQVQ4y61TW27CMBDMdTlDewf+2hPAEfqVVv2seJWSpDwbE5GQh/OkSUQoyTQxogqVkajoSKPV2uvR2rMWUENRFCyGYQhd1xFFETzPYzmllLHKsyw7qa9D4AlWBxVFgSzLkCQJg8GAcTgcsui67mWC54p4OFcn5EWOvNwsaszz0/ywlv/wuHYUrosLuALcK7dIC2N/CuruYDgxqJ9Ct2J4YVqaESBNUwRBwIzZbDbwfZ+9YZIk/A5v327wsHzEbJ6gJ9voSg6eXgx8aAHWhg7btrFYLEAIgaqqLFZ5ZRxXUIs1JLv4/67c6DbQnrahjgl6/Q6IZuG5s0ZfcVjBvmbCb3I7HPkj0O2h/ePAfu35nVwyUsL9/A7iUoRjODAtE5PJpPwlK8y1EK/vFEG0/dN8Cs1xE+JKRORGsGwLpmmyB9etT8xI6Wyc/U3wml/Bwzc+v+59D6/6nwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/7f1deb558c80ea76bb5067053a7d2351/fb34c/main-concerns.avif 320w,
+/static/7f1deb558c80ea76bb5067053a7d2351/646cd/main-concerns.avif 768w,
+/static/7f1deb558c80ea76bb5067053a7d2351/8b485/main-concerns.avif 1024w,
+/static/7f1deb558c80ea76bb5067053a7d2351/a73d6/main-concerns.avif 1280w,
+/static/7f1deb558c80ea76bb5067053a7d2351/8c45f/main-concerns.avif 1792w"
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              type="image/avif"
+            /><source
+              srcset="/static/7f1deb558c80ea76bb5067053a7d2351/cb523/main-concerns.webp 320w,
+/static/7f1deb558c80ea76bb5067053a7d2351/cd067/main-concerns.webp 768w,
+/static/7f1deb558c80ea76bb5067053a7d2351/53334/main-concerns.webp 1024w,
+/static/7f1deb558c80ea76bb5067053a7d2351/4b075/main-concerns.webp 1280w,
+/static/7f1deb558c80ea76bb5067053a7d2351/7cc8d/main-concerns.webp 1792w"
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/7f1deb558c80ea76bb5067053a7d2351/d4f27/main-concerns.png 320w,
+/static/7f1deb558c80ea76bb5067053a7d2351/778aa/main-concerns.png 768w,
+/static/7f1deb558c80ea76bb5067053a7d2351/658fc/main-concerns.png 1024w,
+/static/7f1deb558c80ea76bb5067053a7d2351/26c69/main-concerns.png 1280w,
+/static/7f1deb558c80ea76bb5067053a7d2351/ba0a7/main-concerns.png 1792w"
+            sizes="(max-width: 1280px) 100vw, 1280px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/7f1deb558c80ea76bb5067053a7d2351/26c69/main-concerns.png"
+            alt="Some of the main concerns when using Package Entry-Points"
+            title="Some of the main concerns when using Package Entry-Points"
+            loading="lazy"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span>
+    <figcaption class="gatsby-resp-image-figcaption">Some of the main concerns when using Package Entry-Points</figcaption>
+  </figure></p>
+<p>Keeping these points in mind, one way to solve is by using an entrypoint structure. Entry-points is a way to expose a specific function, class or component intentionally to be consumed to your users. So that, the consumers can only import a specific piece of code instead of all the functions of the used dependency, enabling bundle decrease and having a better understanding of what's being used in your app. </p>
+<p>This architecture is called <a href="https://nodejs.org/docs/latest-v12.x/api/packages.html#packages_conditional_exports" target="_blank" rel="nofollow noopener noreferrer">"Package Conditional Exports"</a> - AKA "Package Entry-Points" - and some packages such as lodash and others are using this technique to decouple their functions, so their consumers can export only what's needed for them.</p>
+<p>The idea here is to install all the package functions, but delay the decision of which function is required on development time. On lodash case, it add some benefits. So it won't be needed to install <code class="language-text">lodash.compact</code>, <code class="language-text">lodash.debounce</code> and other packages one by one since you can access them via entry-points via <code class="language-text">lodash/compact</code> and <code class="language-text">lodash/debounce</code>, respectively.</p>
+<p><figure class="gatsby-resp-image-figure" style="">
+    <span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1280px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/f8074d2424d22cb4f528c0a79891b915/2de51/lodash-entrypoints.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 66.875%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAACtklEQVQ4y42T2U8TURTGJ8FpNSxtp7O0pewGiqIE34xxJ1GJhgdfFEJEFNyDETGgBjUSRBuKUVp2WluWTtsBWttSUMKm8c/6PLelJD7hwy/nnG/O+e6dO3O50Mo2GGpyC8vrfzA4FsTz/lG8+DCOviEvhqbCeOPyoffjJDGFnsHJdL0Q30Q4tYPsfBaOidkHkdVf8GlrGJv/TsQx4o9ieEbDF99SOvfMxjARTMAdiCKYyBiGaS7rweAiu6JKDWp8g/ItRFLb0AgWI1SzXFvd2dNYriY2EKR+NsNmmQfz4kLJTYR2V1tIbCEYyzRmUeP/1ns6zbBZZsJgC7DNcGE6O9dEAFcbGtF4rQEXGhtwuv4yzly8tC9n66/g1Ll63Lh1F7NLa2lTju2g+70TNYKI8w4DTHUG5OQeBJ/Dg9fpcECnRw6vp5zg+Qyks6jT68FxHCqrazC1EMV87Ce4wNIquvsGYJYlWAsVKBQFxQbRXgLBUgjFIsNGuiArMBcWpxGsdoolEG1FyCsw4GjtCYx4VTAv7ltkBU9730FWJByusMJqJUNqlMqrYLIWkaGIkmIFBlGBWFoJsbh897mD8grkG4yoPlaL4YlZ+LUUOF8kic6et3uGdrsFkizDbC+FVFZJuymCWVJQXmaBhczZInJFFe3eBpMg4FBuLhw1x8kwkDH0L6bQ9bofRsFEAwIEswkFRkKywECvXCCYqTZClEzUY0QenbWR9HxTRufpHB1H6vB1OojAIjMkV9e4Hw+7XqKl4wma2x6g6fZ9NLV2EO2U30vXN1szsZnVpLPY0v4Idx49Q9fAK3jmgphbpo8yF/2BGZVuRkDDZzoHp8eLT+6Z/2AaLk8ATt8org+eRKe7gy4B/dgq/ZzzsfX0+3vDCTKPpxfYj2nCG0piMqLhsbsNzvAQtJXf+At4hVo3WYT/LAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/f8074d2424d22cb4f528c0a79891b915/fb34c/lodash-entrypoints.avif 320w,
+/static/f8074d2424d22cb4f528c0a79891b915/646cd/lodash-entrypoints.avif 768w,
+/static/f8074d2424d22cb4f528c0a79891b915/8b485/lodash-entrypoints.avif 1024w,
+/static/f8074d2424d22cb4f528c0a79891b915/a73d6/lodash-entrypoints.avif 1280w,
+/static/f8074d2424d22cb4f528c0a79891b915/3c806/lodash-entrypoints.avif 1848w"
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              type="image/avif"
+            /><source
+              srcset="/static/f8074d2424d22cb4f528c0a79891b915/cb523/lodash-entrypoints.webp 320w,
+/static/f8074d2424d22cb4f528c0a79891b915/cd067/lodash-entrypoints.webp 768w,
+/static/f8074d2424d22cb4f528c0a79891b915/53334/lodash-entrypoints.webp 1024w,
+/static/f8074d2424d22cb4f528c0a79891b915/4b075/lodash-entrypoints.webp 1280w,
+/static/f8074d2424d22cb4f528c0a79891b915/ab20a/lodash-entrypoints.webp 1848w"
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/f8074d2424d22cb4f528c0a79891b915/d4f27/lodash-entrypoints.png 320w,
+/static/f8074d2424d22cb4f528c0a79891b915/778aa/lodash-entrypoints.png 768w,
+/static/f8074d2424d22cb4f528c0a79891b915/658fc/lodash-entrypoints.png 1024w,
+/static/f8074d2424d22cb4f528c0a79891b915/26c69/lodash-entrypoints.png 1280w,
+/static/f8074d2424d22cb4f528c0a79891b915/2de51/lodash-entrypoints.png 1848w"
+            sizes="(max-width: 1280px) 100vw, 1280px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/f8074d2424d22cb4f528c0a79891b915/26c69/lodash-entrypoints.png"
+            alt="Entry points: Lodash example"
+            title="Entry points: Lodash example"
+            loading="lazy"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span>
+    <figcaption class="gatsby-resp-image-figcaption">Entry points: Lodash example</figcaption>
+  </figure></p>
+<p>On the case of our <code class="language-text">@myapp/buttons</code>, we can achieve the same idea by exposing entry-points in folders on the root project. Each folder will have a <code class="language-text">package.json</code> with the specified configuration for it. This is great for your app and avoids breaking changes in case of code structure.</p>
+<p>Even though this solves the problem, have a robust way to expose a set of functions if needed is something that's always useful. To have that in place easily, we can create a folder called <code class="language-text">entrypoints</code>. The folder will have the entrypoints defined by files and, more than this, by features.</p>
+<p>If you need a specific entry point to expose more than 1 component, that can be done easily by the file. In this case, 2 new components were added in <code class="language-text">@myapp/buttons</code>: <code class="language-text">ButtonGroup</code> and <code class="language-text">ButtonTheme</code>. </p>
+<p>Instead of creating a entry-point for each of the files, a new entry-point calledn <code class="language-text">@myapp/buttons/utils</code> was created, giving the choice of export each of them to the app consumer.</p>
+<p><div id="gist108921592" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-utils-entrypoint-example-js" class="file my-2">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-javascript  ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip>
+      <tr>
+        <td id="file-utils-entrypoint-example-js-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-utils-entrypoint-example-js-LC1" class="blob-code blob-code-inner js-file-line"><span class=pl-c>// `./entrypoints/utils.js` file content</span></td>
+      </tr>
+      <tr>
+        <td id="file-utils-entrypoint-example-js-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-utils-entrypoint-example-js-LC2" class="blob-code blob-code-inner js-file-line"><span class=pl-c>// Accessed via `@myapp/butons/utils` entry-point</span></td>
+      </tr>
+      <tr>
+        <td id="file-utils-entrypoint-example-js-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-utils-entrypoint-example-js-LC3" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-utils-entrypoint-example-js-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-utils-entrypoint-example-js-LC4" class="blob-code blob-code-inner js-file-line"><span class=pl-k>export</span> <span class=pl-c1>*</span> <span class=pl-k>from</span> <span class=pl-s>&#39;../ButtonGroup&#39;</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-utils-entrypoint-example-js-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-utils-entrypoint-example-js-LC5" class="blob-code blob-code-inner js-file-line"><span class=pl-k>export</span> <span class=pl-c1>*</span> <span class=pl-k>from</span> <span class=pl-s>&#39;../ButtonTheme&#39;</span><span class=pl-kos>;</span></td>
+      </tr>
+</table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/willmendesneto/fc59e6e69cdba23c4ec12fcc7555f97a/raw/76d0693648377e544d78607948801e79d5c36c03/utils-entrypoint-example.js" style="float:right">view raw</a>
+        <a href="https://gist.github.com/willmendesneto/fc59e6e69cdba23c4ec12fcc7555f97a#file-utils-entrypoint-example-js">utils-entrypoint-example.js</a>
+        hosted with &#10084; by <a href="https://github.com">GitHub</a>
+      </div>
+    </div>
+</div></p>
+<p>Based on that specific case, the package json inside of <code class="language-text">@myapp/buttons/utils</code> folder will be </p>
+<p><div id="gist108921598" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-package-json" class="file my-2">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-json  ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip>
+      <tr>
+        <td id="file-package-json-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-package-json-LC1" class="blob-code blob-code-inner js-file-line">{</td>
+      </tr>
+      <tr>
+        <td id="file-package-json-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-package-json-LC2" class="blob-code blob-code-inner js-file-line">  <span class="pl-ii">...</span></td>
+      </tr>
+      <tr>
+        <td id="file-package-json-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-package-json-LC3" class="blob-code blob-code-inner js-file-line">  <span class="pl-s"><span class="pl-pds">&quot;</span>name<span class="pl-pds">&quot;</span></span>: <span class="pl-s"><span class="pl-pds">&quot;</span>@myapp/buttons/utils<span class="pl-pds">&quot;</span></span>,</td>
+      </tr>
+      <tr>
+        <td id="file-package-json-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-package-json-LC4" class="blob-code blob-code-inner js-file-line">  <span class="pl-s"><span class="pl-pds">&quot;</span>main<span class="pl-pds">&quot;</span></span>: <span class="pl-s"><span class="pl-pds">&quot;</span>../dist/cjs/entrypoints/utils.js<span class="pl-pds">&quot;</span></span>,</td>
+      </tr>
+      <tr>
+        <td id="file-package-json-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-package-json-LC5" class="blob-code blob-code-inner js-file-line">  <span class="pl-s"><span class="pl-pds">&quot;</span>module<span class="pl-pds">&quot;</span></span>: <span class="pl-s"><span class="pl-pds">&quot;</span>../dist/esm/entrypoints/utils.js<span class="pl-pds">&quot;</span></span>,</td>
+      </tr>
+      <tr>
+        <td id="file-package-json-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-package-json-LC6" class="blob-code blob-code-inner js-file-line">  <span class="pl-s"><span class="pl-pds">&quot;</span>cjs<span class="pl-pds">&quot;</span></span>: <span class="pl-s"><span class="pl-pds">&quot;</span>../dist/cjs/entrypoints/utils.js<span class="pl-pds">&quot;</span></span>,</td>
+      </tr>
+      <tr>
+        <td id="file-package-json-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-package-json-LC7" class="blob-code blob-code-inner js-file-line">  <span class="pl-ii">...</span></td>
+      </tr>
+      <tr>
+        <td id="file-package-json-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-package-json-LC8" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+</table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/willmendesneto/22594cb79f8fe89b7769e502ebb1ac92/raw/c9e3b64bb6ff3fda6cfa9c2fce076e3724bef20c/package.json" style="float:right">view raw</a>
+        <a href="https://gist.github.com/willmendesneto/22594cb79f8fe89b7769e502ebb1ac92#file-package-json">package.json</a>
+        hosted with &#10084; by <a href="https://github.com">GitHub</a>
+      </div>
+    </div>
+</div></p>
+<p>With these changes applied, that will be the structure of your package, supporting entry-points 🤘🤘🤘🤘</p>
+<p><div id="gist108921609" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-final-structure-with-entry-points-md" class="file my-2">
+    
+  <div id="file-final-structure-with-entry-points-md-readme" class="Box-body readme blob js-code-block-container p-5 p-xl-6 ">
+    <article class="markdown-body entry-content container-lg" itemprop="text"><pre><code>@myapp/
+  buttons/
+    entrypoints/
+      utils.js &lt;-- Exporting `ButtonGroup` and `ButtonTheme` components
+      ButtonWithIcon.js &lt;-- Exporting `ButtonWithIcon` component
+      Button.js         &lt;-- Exporting `Button` component
+    ButtonGroup.js   
+    ButtonTheme.js   
+    ButtonWithIcon.js   
+    Button.js           
+    index.js
+</code></pre>
+</article>
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/willmendesneto/beaf9b570766245d3ca3d64372bc2a77/raw/cd53cfbe6704de6bba0573a7c79191ae090cde71/final-structure-with-entry-points.md" style="float:right">view raw</a>
+        <a href="https://gist.github.com/willmendesneto/beaf9b570766245d3ca3d64372bc2a77#file-final-structure-with-entry-points-md">final-structure-with-entry-points.md</a>
+        hosted with &#10084; by <a href="https://github.com">GitHub</a>
+      </div>
+    </div>
+</div></p>
+<hr/>
+<h3>Better Entry-Points support on NPM in a near future</h3>
+<p>As you might have noticed, entry-points are a massive help to decrease the bundle of your application, giving your more flexibility in your app, being easy to integrate - and also to remove, having a massive role in other performance initiatives, such as code-splitting, if necessary.</p>
+<p>A lot of heavy-used packages are using it such as <a href="https://date-fns.org/" target="_blank" rel="nofollow noopener noreferrer">date-fns</a>, <a href="https://lodash.com/" target="_blank" rel="nofollow noopener noreferrer">Lodash</a> and Design Systems such as <a href="https://atlaskit.atlassian.com/" target="_blank" rel="nofollow noopener noreferrer">Atlaskit</a> are also using it - 🤩 I'm really glad to add the <a href="https://bitbucket.org/atlassian/atlaskit-mk-2/pull-requests/3639/code-splitting-components-and-exposing/diff" target="_blank" rel="nofollow noopener noreferrer">first support for entry-points in this Design System</a>, in specific 🤩 - , having huge performance gains before-bundle and before deployment to production.</p>
+<p>This technique is getting so much traction that a even better way to integrate them into your app is being defined by NPM. And - spoiler alert - the support will be built-in, in your <code class="language-text">package.json</code>.</p>
+<hr/>
+<blockquote>
+<p>You can find more details about <code class="language-text">Package Conditional Exports</code> on <a href="https://nodejs.org/docs/latest-v12.x/api/packages.html#packages_conditional_exports" target="_blank" rel="nofollow noopener noreferrer">"Modules: Packages" NPM Documentation page</a></p>
+</blockquote>
+<hr/>
+I encourage you to see all of these steps in action by using [perf-marks entry-points](https://github.com/willmendesneto/perf-marks#entrypoints) in your application. It's a cross-platform performance measurement package powered by User Timing API and it has a simple and straightforward usage.
+<hr/>
+<blockquote>
+<p>You can find more details about Perf-Marks on <a href="https://willmendesneto.com/posts/cross-platform-performance-measurements-with-user-timing-apiand-perf-marks/" target="_blank" rel="nofollow noopener noreferrer">"Cross-platform performance measurements with User Timing API and perf-marks"</a> post.</p>
+</blockquote>
+<hr/>
+<h3>That’s all for now</h3>
+<p>I hope you enjoyed this reading as much as I enjoyed writing it. Thank you so much for reading until the end and see you soon!</p>
+<hr />
+<h3>Cya 👋</h3></div></article><div class="Share__ShareWrapper-sc-1rx8md7-0 gpEOWW"><p>Share this post via:</p><span class="Share__StyledFacebookButton-sc-1rx8md7-1 dYOHuc"><button aria-label="facebook" class="react-share__ShareButton" style="background-color:transparent;border:none;padding:0;font:inherit;color:inherit;cursor:pointer">Facebook</button></span><span class="Share__StyledTwitterButton-sc-1rx8md7-2 dbAEAm"><button aria-label="twitter" class="react-share__ShareButton" style="background-color:transparent;border:none;padding:0;font:inherit;color:inherit;cursor:pointer">Twitter</button></span><span class="Share__StyledLinkedInButton-sc-1rx8md7-3 fKvaYM"><button aria-label="linkedin" class="react-share__ShareButton" style="background-color:transparent;border:none;padding:0;font:inherit;color:inherit;cursor:pointer">LinkedIn</button></span><span class="Share__StyledWhatsAppButton-sc-1rx8md7-4 fHaLcF"><button aria-label="whatsapp" class="react-share__ShareButton" style="background-color:transparent;border:none;padding:0;font:inherit;color:inherit;cursor:pointer">WhatsApp</button></span></div><h3>Subscribe</h3><p>To keep up with posts on this blog, you can also<!-- --> <a href="/rss.xml" target="_blank" rel="noopener noreferrer">subscribe via RSS</a>.</p></section></main></div><footer class="Footer__PageFooter-sc-14qtz8p-1 evCYdc"><ul><li><a href="https://github.com/willmendesneto" target="_blank" rel="noopener noreferrer">Github</a></li><li><a href="https://twitter.com/willmendesneto" target="_blank" rel="noopener noreferrer">Twitter</a></li><li><a href="https://www.linkedin.com/in/willmendesneto" target="_blank" rel="noopener noreferrer">LinkedIn</a></li><li><a href="/rss.xml" target="_blank" rel="noopener noreferrer">RSS</a></li></ul><p class="Footer__Text-sc-14qtz8p-0 llqpgS">made by me with<!-- --> <span role="img" aria-label="love">❤️</span> <!-- -->since 2014</p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
+  
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'UA-58169656-1', 'auto', {});
+      
+      
+      
+      
+      
+      }</script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/posts/decreasing-bundle-size-by-adding-package-conditional-entry-points-in-npm-packages";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-3f8d1fe81ec91fde83f5.js"],"app":["/app-db5a2464f63690a6213b.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-1bc4087bda7d163b6bc1.js"],"component---src-pages-404-js":["/component---src-pages-404-js-1ce121e982c5d3a44bcd.js"],"component---src-pages-contact-js":["/component---src-pages-contact-js-93adadb8beb54169656b.js"],"component---src-pages-index-js":["/component---src-pages-index-js-579cd97cdf5373dcc4a4.js"],"component---src-pages-posts-js":["/component---src-pages-posts-js-0276efd23844ae77441f.js"],"component---src-pages-talks-js":["/component---src-pages-talks-js-70e5140266b386372d84.js"],"component---src-pages-workshops-js":["/component---src-pages-workshops-js-bad3cfacc70fed849582.js"],"component---src-templates-post-js":["/component---src-templates-post-js-c0a5b29f6b5866cf90f3.js"]};/*]]>*/</script><script src="/polyfill-3f8d1fe81ec91fde83f5.js" nomodule=""></script><script src="/component---src-templates-post-js-c0a5b29f6b5866cf90f3.js" async=""></script><script src="/c38806a22704b1411d609490b31463a94158f97c-5e54864974a395acac0b.js" async=""></script><script src="/app-db5a2464f63690a6213b.js" async=""></script><script src="/framework-5a0f89685a3614932ea6.js" async=""></script><script src="/webpack-runtime-e2b15f879d68d374f3e2.js" async=""></script></body></html>

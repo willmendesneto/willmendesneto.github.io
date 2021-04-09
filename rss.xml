@@ -1,52 +1,498 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Will Mendes Blog RSS Feed]]></title><description><![CDATA[Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies]]></description><link>https://willmendesneto.com</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 31 Mar 2021 13:47:35 GMT</lastBuildDate><item><title><![CDATA[Cross-platform performance measurements with User Timing API and perf-marks]]></title><link>https://willmendesneto.com/posts/cross-platform-performance-measurements-with-user-timing-apiand-perf-marks/</link><guid isPermaLink="false">https://willmendesneto.com/posts/cross-platform-performance-measurements-with-user-timing-apiand-perf-marks/</guid><pubDate>Mon, 29 Mar 2021 09:13:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
-    &lt;span
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Will Mendes Blog RSS Feed]]></title><description><![CDATA[Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies]]></description><link>https://willmendesneto.com</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 09 Apr 2021 21:26:15 GMT</lastBuildDate><item><title><![CDATA[Decreasing bundle size by adding Package Conditional Entry Points in NPM Packages]]></title><link>https://willmendesneto.com/posts/decreasing-bundle-size-by-adding-package-conditional-entry-points-in-npm-packages</link><guid isPermaLink="false">https://willmendesneto.com/posts/decreasing-bundle-size-by-adding-package-conditional-entry-points-in-npm-packages</guid><pubDate>Thu, 01 Apr 2021 09:13:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1280px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/8313c/perf-marks.png&quot;
+    href=&quot;https://willmendesneto.com/static/a3f659a68618bfb7f8602a78231c26da/e93f2/package-entrypoints.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 27.500000000000004%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAABYlAAAWJQFJUiTwAAABIElEQVQY04WQQUsCURSF5+fVKlz1C2oT1g9okTXiLklzE0HQQMqAk0UxypCYu1m0mDTLXSBpTrooCmYaZ+Zr3pDiIvLA4Z333jmXe68UBAGCYRgyrwUFvjwP47YBv/ep5y+KjMQ/+PS+ea43sC4uGdg2/mTCIkiKcoqqqhiGEZ+aptFpt7lrtbi/usZZWYV6k/fIPB6NME2TUqmIruvUajXK5TKVyjnVqh5npULhkHw+Rza7Tzotk8sd0LYszM4DveMTwqUE7vYuTuGI8VMXpXjG1mYSWd6L/GlSqR0ymQyijtCzkV3Xne1R4DXq5rHZ5GM9ibecYLC2wVu/H/+J0b1ot4K+78c5oR3HQZoufx7TNzcMeIm66t3UsYdDQhbjByKVrLtnfEd2AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 43.4375%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAABYlAAAWJQFJUiTwAAABYUlEQVQoz3WSzU/CQBDF+a89KYl4NTGKfMSLiagBoh68GU08cfLgAY0aiJRYWoiC2+62u213n+22QIE4yctsZya/vJm0gCyUUjpLKcGFwHo9zWqRe0TidSrRsaNFP1Fh/kjiczCAPZ5AxMBevw/KvBVozIHMnjdGiEYvxMGL+B9IGQPnAlEk4boUvs/nPkEChXafw/wmcH5nuO56aDwz1J6CVeD6ukEQ6JXDMMxqaa87kSjdMxhfY1iWiVbHwemjg+qDWAcuHRrGECPLBoudvr1/wOeZQyXBuMRwIsA8rk9hz4SWOQ03V9bHiSNxlThUsVPP9+PVQ6xHMikilRA2e/mVVW4gP0spg2mOQAjRMD2n59NzJMr/CRp4ckWxXSbYqxPs1pYq1R0Uyz/Y2rewU57q79U+QbFCcHjuxhulUA1s33m6WG1RVJpuTlTr+JKi2qS5WtpPakcXLs5uWXzvFPgHzzChq2NztfUAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;picture&gt;
           &lt;source
-              srcset=&quot;https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/fb34c/perf-marks.avif 320w,https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/646cd/perf-marks.avif 768w,https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/8b485/perf-marks.avif 1024w,https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/a73d6/perf-marks.avif 1280w,https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/551a4/perf-marks.avif 1674w&quot;
+              srcset=&quot;https://willmendesneto.com/static/a3f659a68618bfb7f8602a78231c26da/fb34c/package-entrypoints.avif 320w,https://willmendesneto.com/static/a3f659a68618bfb7f8602a78231c26da/646cd/package-entrypoints.avif 768w,https://willmendesneto.com/static/a3f659a68618bfb7f8602a78231c26da/8b485/package-entrypoints.avif 1024w,https://willmendesneto.com/static/a3f659a68618bfb7f8602a78231c26da/a73d6/package-entrypoints.avif 1280w,https://willmendesneto.com/static/a3f659a68618bfb7f8602a78231c26da/a7f9f/package-entrypoints.avif 1920w,https://willmendesneto.com/static/a3f659a68618bfb7f8602a78231c26da/0cf61/package-entrypoints.avif 3316w&quot;
               sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
               type=&quot;image/avif&quot;
             /&gt;&lt;source
-              srcset=&quot;https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/cb523/perf-marks.webp 320w,https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/cd067/perf-marks.webp 768w,https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/53334/perf-marks.webp 1024w,https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/4b075/perf-marks.webp 1280w,https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/3d969/perf-marks.webp 1674w&quot;
+              srcset=&quot;https://willmendesneto.com/static/a3f659a68618bfb7f8602a78231c26da/cb523/package-entrypoints.webp 320w,https://willmendesneto.com/static/a3f659a68618bfb7f8602a78231c26da/cd067/package-entrypoints.webp 768w,https://willmendesneto.com/static/a3f659a68618bfb7f8602a78231c26da/53334/package-entrypoints.webp 1024w,https://willmendesneto.com/static/a3f659a68618bfb7f8602a78231c26da/4b075/package-entrypoints.webp 1280w,https://willmendesneto.com/static/a3f659a68618bfb7f8602a78231c26da/f3ff0/package-entrypoints.webp 1920w,https://willmendesneto.com/static/a3f659a68618bfb7f8602a78231c26da/71f3f/package-entrypoints.webp 3316w&quot;
               sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
               type=&quot;image/webp&quot;
             /&gt;
           &lt;source
-            srcset=&quot;https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/d4f27/perf-marks.png 320w,https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/778aa/perf-marks.png 768w,https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/658fc/perf-marks.png 1024w,https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/26c69/perf-marks.png 1280w,https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/8313c/perf-marks.png 1674w&quot;
+            srcset=&quot;https://willmendesneto.com/static/a3f659a68618bfb7f8602a78231c26da/d4f27/package-entrypoints.png 320w,https://willmendesneto.com/static/a3f659a68618bfb7f8602a78231c26da/778aa/package-entrypoints.png 768w,https://willmendesneto.com/static/a3f659a68618bfb7f8602a78231c26da/658fc/package-entrypoints.png 1024w,https://willmendesneto.com/static/a3f659a68618bfb7f8602a78231c26da/26c69/package-entrypoints.png 1280w,https://willmendesneto.com/static/a3f659a68618bfb7f8602a78231c26da/7d442/package-entrypoints.png 1920w,https://willmendesneto.com/static/a3f659a68618bfb7f8602a78231c26da/e93f2/package-entrypoints.png 3316w&quot;
             sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
             type=&quot;image/png&quot;
           /&gt;
           &lt;img
             class=&quot;gatsby-resp-image-image&quot;
-            src=&quot;https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/26c69/perf-marks.png&quot;
-            alt=&quot;Perf-Marks NPM Package Logo&quot;
-            title=&quot;Perf-Marks NPM Package Logo&quot;
+            src=&quot;https://willmendesneto.com/static/a3f659a68618bfb7f8602a78231c26da/26c69/package-entrypoints.png&quot;
+            alt=&quot;package entrypoints&quot;
+            title=&quot;package entrypoints&quot;
+            loading=&quot;lazy&quot;
+            style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+          /&gt;
+        &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Among the evolution or large codebases, concerns about performance are always raised. That might be by different techniques: &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#dynamic_imports&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;dynamic async imports&lt;/a&gt;, defining &lt;a href=&quot;https://developers.google.com/web/fundamentals/performance/critical-rendering-path/analyzing-crp&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Critical Resource, Critical Path Length and Critical Bytes&lt;/a&gt;, lazy loading images via &lt;a href=&quot;https://web.dev/lazy-loading-images/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;libraries&lt;/a&gt; or by &lt;a href=&quot;https://web.dev/browser-level-image-lazy-loading/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;using the browser-level image lazy-loading support&lt;/a&gt; and so on and so forth.&lt;/p&gt;
+&lt;p&gt;Even though these are quite good ideas, having application performance boost as final results, it&apos;s usually done on the application side. If you&apos;re using design system and javascript libraries you should also care about their bundle sizes. &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Some of these points were covered on &lt;a href=&quot;https://willmendesneto.com/posts/solving-a-problem-is-more-than-just-adding-a-new-dependency&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;&quot;Solving a problem is more than just adding a new dependency&quot;&lt;/a&gt; post. The intention of this post is specifically to show you how to integrate entry points in your NPM Packages.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;The problem with large Javascript bundle size&lt;/h3&gt;
+&lt;p&gt;Even with the advent of HTTP2, prefetch, preload and parallelization, content minified, uglified and compressed, the bundle issue still persists. The bright side of it is that&apos;s a common solution and there are several ways to solve that.&lt;/p&gt;
+&lt;p&gt;For some applications this is more than enough, covering several scenarios that might affect the performance of your app. However, these approaches are focused on the file after-bundle procress, not covering usage before-bundle.&lt;/p&gt;
+&lt;p&gt;For scenarios like libraries, frameworks or design systems, having several components being shared across multiples pages and components of your project is a huge problem. Even having tree-shaking suport for your bundler, the algorithm is not covering all the cases.&lt;/p&gt;
+&lt;p&gt;For example, if you have a design system on the namespace &lt;code class=&quot;language-text&quot;&gt;@myapp/&lt;/code&gt; and you have a button which imports some icons, you&apos;ll ending up having &lt;code class=&quot;language-text&quot;&gt;@myapp/buttons&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;@myapp/icons&lt;/code&gt; in your dependencies. Also, if your build distribution is sharing only CommonJS, you might have all the buttons and icons. And it&apos;s even worse, because CommonJS not tree-shakable! 😱&lt;/p&gt;
+&lt;p&gt;To ilustrate this scenario, let&apos;s imagine you have 2 components in your &lt;code class=&quot;language-text&quot;&gt;@myapp/buttons&lt;/code&gt; package. From now on you&apos;ll have &lt;code class=&quot;language-text&quot;&gt;Button&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;ButtonWithIcon&lt;/code&gt; and there are several components inside &lt;code class=&quot;language-text&quot;&gt;@myapp/icons&lt;/code&gt; -  it can be more than 30 components, for example.&lt;/p&gt;
+&lt;p&gt;&lt;div id=&quot;gist108921521&quot; class=&quot;gist&quot;&gt;
+    &lt;div class=&quot;gist-file&quot;&gt;
+      &lt;div class=&quot;gist-data&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+  &lt;div id=&quot;file-first-app-structure-md&quot; class=&quot;file my-2&quot;&gt;
+    
+  &lt;div id=&quot;file-first-app-structure-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
+    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;pre&gt;&lt;code&gt;node_modules/
+  @myapp/
+    buttons/index.js &amp;lt;-- final button with all components, even if you&apos;re using only 1 of them
+    icons/index.js &amp;lt;-- final bundle with all icons, even the ones you&apos;re not using
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/article&gt;
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;gist-meta&quot;&gt;
+        &lt;a href=&quot;https://gist.github.com/willmendesneto/4790ece61053fbbcd00f121e6cdb4313/raw/b401acf8e0251cd1a4fe190dda4b8c65e955c9b5/first-app-structure.md&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/willmendesneto/4790ece61053fbbcd00f121e6cdb4313#file-first-app-structure-md&quot;&gt;first-app-structure.md&lt;/a&gt;
+        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;Even knowing I&apos;m using a single button and a single icon, how can I solve the problem of have all these unused components on the final bundle of my project? &lt;/p&gt;
+&lt;h3&gt;Distributing ESM and CommonJS in your bundles to have tree-shaking support&lt;/h3&gt;
+&lt;p&gt;First of all, you should make sure that all your components are having &lt;em&gt;at least&lt;/em&gt; CommonJS and ESM in your bundle distribution. So that you can expose the different bundles in your &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt;. ESM will be exposed on &lt;code class=&quot;language-text&quot;&gt;modules&lt;/code&gt; and commonjs will be exposed on &lt;code class=&quot;language-text&quot;&gt;main&lt;/code&gt; fields, respectively.&lt;/p&gt;
+&lt;p&gt;In a 100% ESM module world, identifying side effects is an easy job. However, we aren&apos;t there just yet, so in the mean time it&apos;s necessary to provide hints to webpack&apos;s compiler on the &quot;pureness&quot; of your code.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you want to know more about side-effects, why they&apos;re required and the impact in your app, please read the &lt;a href=&quot;https://webpack.js.org/guides/tree-shaking/#mark-the-file-as-side-effect-free&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Webpack&apos;s tree-shaking docs page&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;With all these changes in place, the first version of your &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt; will be like that.&lt;/p&gt;
+&lt;p&gt;&lt;div id=&quot;gist108921552&quot; class=&quot;gist&quot;&gt;
+    &lt;div class=&quot;gist-file&quot;&gt;
+      &lt;div class=&quot;gist-data&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+  &lt;div id=&quot;file-exposing-esm-file-package-ison-md&quot; class=&quot;file my-2&quot;&gt;
+    
+  &lt;div id=&quot;file-exposing-esm-file-package-ison-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
+    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-json&quot;&gt;&lt;pre&gt;{
+  &lt;span class=&quot;pl-ii&quot;&gt;...&lt;/span&gt;
+  &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;sideEffects&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;pl-c1&quot;&gt;false&lt;/span&gt;,
+  &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;name&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;@myapp/buttons&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;,
+  &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;main&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;../dist/cjs/index.js&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;,
+  &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;module&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;../dist/esm/index.js&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;,
+  &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;cjs&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;../dist/cjs/index.js&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;,
+  &lt;span class=&quot;pl-ii&quot;&gt;...&lt;/span&gt;
+}&lt;/pre&gt;&lt;/div&gt;
+&lt;/article&gt;
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;gist-meta&quot;&gt;
+        &lt;a href=&quot;https://gist.github.com/willmendesneto/85aa95888267e6c889a36850dda82b82/raw/ee90efd4f84da35f477201dfd670414ec0681691/exposing-esm-file-package-ison.md&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/willmendesneto/85aa95888267e6c889a36850dda82b82#file-exposing-esm-file-package-ison-md&quot;&gt;exposing-esm-file-package-ison.md&lt;/a&gt;
+        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;Now it&apos;s time to have all the benefits of tree-shaking and reduce the bundle size of your app.&lt;/p&gt;
+&lt;h3&gt;Taking advantage of tree-shaking by reduce bundle size&lt;/h3&gt;
+&lt;p&gt;Your &lt;code class=&quot;language-text&quot;&gt;@myapp/buttons&lt;/code&gt; package will have the build distribution organized that way.&lt;/p&gt;
+&lt;p&gt;&lt;div id=&quot;gist108921570&quot; class=&quot;gist&quot;&gt;
+    &lt;div class=&quot;gist-file&quot;&gt;
+      &lt;div class=&quot;gist-data&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+  &lt;div id=&quot;file-build-structure-with-cjs-and-esm-md&quot; class=&quot;file my-2&quot;&gt;
+    
+  &lt;div id=&quot;file-build-structure-with-cjs-and-esm-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
+    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;pre&gt;&lt;code&gt;@myapp/
+  buttons/
+    cjs/index.js &amp;lt;-- final button with all components, even if you&apos;re using only 1 of them
+    esm/
+      ButtonWithIcon.js   &amp;lt;-- `ButtonWithIcon` component
+      Button.js           &amp;lt;-- `Button` component
+      index.js            &amp;lt;-- main file exporting both components
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/article&gt;
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;gist-meta&quot;&gt;
+        &lt;a href=&quot;https://gist.github.com/willmendesneto/7cacd4cef0a978a4b3193159dc6642e2/raw/377c9538f17f1d2effe578a28398e2b979af36f6/build-structure-with-cjs-and-esm.md&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/willmendesneto/7cacd4cef0a978a4b3193159dc6642e2#file-build-structure-with-cjs-and-esm-md&quot;&gt;build-structure-with-cjs-and-esm.md&lt;/a&gt;
+        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;Your bundler will try to use ESM before CommonJS in order to avoid bundle increase. So it knows if your package has any ESM bundle by checking &lt;code class=&quot;language-text&quot;&gt;module&lt;/code&gt; field in your &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;You can notice that if you import the package using &lt;code class=&quot;language-text&quot;&gt;import Button from &amp;#39;@myapp/buttons/esm/Button.js&lt;/code&gt; that will work. &lt;/p&gt;
+&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1280px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;https://willmendesneto.com/static/7d8420a51f1dab65830ddc274c3ef67e/45a5e/however.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 27.187499999999996%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAABYlAAAWJQFJUiTwAAABbElEQVQY0x2Q2yuDcRjH37+GGGLk9C+Qbdi4lOspJRcjymE51JxjkxwmsVJcTOZUuBgLUyynSZphE/bG2vuOi4/f6+Lb8zyf59u3nkdKWoqQawr4Ekoac4jUlfNeW4hszCNRnU9C1DcxRy0lvNaXCU8uiRo9UXMxsbpS4hq3FKMYdKTMeqQXAQKjdo4H2tmdHMK/NMvLsoszl4PDuSnO3E58i3Mc+zY49yxwPd7LlqOHvQ0voXUPB84RAtubyIMtqCJUejLpOdrb4fbygtPQFdHFCfbdM9wE/ITuwjy+xjj3eQmGH4hM2gl617gPnuDf3eZWeA4Xprl6ekZed5OuyEDSzooPtBLrtpK0NxF39hHzzCBbDXyOdZIYsvFuayC6Oo881sFHWyPKiI1Il5U37wqR4Q6+XXbU/mYUUy6Sai5ANeqEcv7/8GPI5ldIEbNalYUipO00nq7N/+9TgqVNgmlchKQqM0mJqogf/gEm3xd1mj1PCAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+          &lt;source
+              srcset=&quot;https://willmendesneto.com/static/7d8420a51f1dab65830ddc274c3ef67e/fb34c/however.avif 320w,https://willmendesneto.com/static/7d8420a51f1dab65830ddc274c3ef67e/646cd/however.avif 768w,https://willmendesneto.com/static/7d8420a51f1dab65830ddc274c3ef67e/8b485/however.avif 1024w,https://willmendesneto.com/static/7d8420a51f1dab65830ddc274c3ef67e/a73d6/however.avif 1280w,https://willmendesneto.com/static/7d8420a51f1dab65830ddc274c3ef67e/c7b6c/however.avif 1546w&quot;
+              sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+              type=&quot;image/avif&quot;
+            /&gt;&lt;source
+              srcset=&quot;https://willmendesneto.com/static/7d8420a51f1dab65830ddc274c3ef67e/cb523/however.webp 320w,https://willmendesneto.com/static/7d8420a51f1dab65830ddc274c3ef67e/cd067/however.webp 768w,https://willmendesneto.com/static/7d8420a51f1dab65830ddc274c3ef67e/53334/however.webp 1024w,https://willmendesneto.com/static/7d8420a51f1dab65830ddc274c3ef67e/4b075/however.webp 1280w,https://willmendesneto.com/static/7d8420a51f1dab65830ddc274c3ef67e/32645/however.webp 1546w&quot;
+              sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+              type=&quot;image/webp&quot;
+            /&gt;
+          &lt;source
+            srcset=&quot;https://willmendesneto.com/static/7d8420a51f1dab65830ddc274c3ef67e/d4f27/however.png 320w,https://willmendesneto.com/static/7d8420a51f1dab65830ddc274c3ef67e/778aa/however.png 768w,https://willmendesneto.com/static/7d8420a51f1dab65830ddc274c3ef67e/658fc/however.png 1024w,https://willmendesneto.com/static/7d8420a51f1dab65830ddc274c3ef67e/26c69/however.png 1280w,https://willmendesneto.com/static/7d8420a51f1dab65830ddc274c3ef67e/45a5e/however.png 1546w&quot;
+            sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+            type=&quot;image/png&quot;
+          /&gt;
+          &lt;img
+            class=&quot;gatsby-resp-image-image&quot;
+            src=&quot;https://willmendesneto.com/static/7d8420a51f1dab65830ddc274c3ef67e/26c69/however.png&quot;
+            alt=&quot;It is always a good to keep in mind that every choice has pros, but also have cons&quot;
+            title=&quot;It is always a good to keep in mind that every choice has pros, but also have cons&quot;
             loading=&quot;lazy&quot;
             style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
           /&gt;
         &lt;/picture&gt;
   &lt;/a&gt;
     &lt;/span&gt;
-    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;Perf-Marks NPM Package Logo&lt;/figcaption&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;It is always a good to keep in mind that every choice has pros, but also have cons&lt;/figcaption&gt;
   &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;However, this is not ideal since you&apos;re coupling your app with the internal code structure of your dependency. This will raise massive issues with common tasks, such as update a package dependecy.&lt;/p&gt;
+&lt;p&gt;Now that your application knows too much about the dependency directories, that might also implies breaking changes in case of dependency structure changes as well. In summary, it means that if for some reason the build distribution was changed and now it&apos;s in &lt;code class=&quot;language-text&quot;&gt;@myapp/buttons/dist/esm/Button.js&lt;/code&gt; you have a broken app!&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;TL;DR; You can start using &lt;a href=&quot;https://github.com/willmendesneto/perf-marks&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Perf-Marks&lt;/a&gt; package in your Frontend (Angular, React, VueJS, Svelte, Ember among others) and Backend apps right now and get the built-in performance, lightweight, isomorphic integration, and a simple and smooth developer experience benefits. Support the project by starring the Github repository and enjoy! 🎉&lt;/p&gt;
+&lt;p&gt;You should not access your dependency directories directly, unless it&apos;s something &lt;em&gt;extremelly&lt;/em&gt; necessary. A small change in your dependencies and your app might be broken&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;div id=&quot;gist108921578&quot; class=&quot;gist&quot;&gt;
+    &lt;div class=&quot;gist-file&quot;&gt;
+      &lt;div class=&quot;gist-data&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+  &lt;div id=&quot;file-breaking-changes-because-the-package-structure-changed-md&quot; class=&quot;file my-2&quot;&gt;
+    
+  &lt;div id=&quot;file-breaking-changes-because-the-package-structure-changed-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
+    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;pre&gt;&lt;code&gt;@myapp/
+  buttons/
+    # Oops! Your app will face the consequences
+    dist/
+      cjs/index.js
+      esm/
+        ButtonWithIcon.js   
+        Button.js           
+        index.js            
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/article&gt;
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;gist-meta&quot;&gt;
+        &lt;a href=&quot;https://gist.github.com/willmendesneto/f10a675c29dc89c79f1c12d794bb9285/raw/82abcd8cf7172666dba2ae08827aa34fc9154978/breaking-changes-because-the-package-structure-changed.md&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/willmendesneto/f10a675c29dc89c79f1c12d794bb9285#file-breaking-changes-because-the-package-structure-changed-md&quot;&gt;breaking-changes-because-the-package-structure-changed.md&lt;/a&gt;
+        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;h3&gt;Package Conditional Exports and Creating Declarative Entry-Points in your package.json&lt;/h3&gt;
+&lt;p&gt;Let&apos;s make a quick recap before jump in this topic. Now we know that ESM is a tree-shakable distribution format and we can have the benefits by using it. We also know that we shouldn&apos;t access the package files directly by navigating through the dependency structure.&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1280px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;https://willmendesneto.com/static/7f1deb558c80ea76bb5067053a7d2351/ba0a7/main-concerns.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 63.74999999999999%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAABUUlEQVQ4y61TW27CMBDMdTlDewf+2hPAEfqVVv2seJWSpDwbE5GQh/OkSUQoyTQxogqVkajoSKPV2uvR2rMWUENRFCyGYQhd1xFFETzPYzmllLHKsyw7qa9D4AlWBxVFgSzLkCQJg8GAcTgcsui67mWC54p4OFcn5EWOvNwsaszz0/ywlv/wuHYUrosLuALcK7dIC2N/CuruYDgxqJ9Ct2J4YVqaESBNUwRBwIzZbDbwfZ+9YZIk/A5v327wsHzEbJ6gJ9voSg6eXgx8aAHWhg7btrFYLEAIgaqqLFZ5ZRxXUIs1JLv4/67c6DbQnrahjgl6/Q6IZuG5s0ZfcVjBvmbCb3I7HPkj0O2h/ePAfu35nVwyUsL9/A7iUoRjODAtE5PJpPwlK8y1EK/vFEG0/dN8Cs1xE+JKRORGsGwLpmmyB9etT8xI6Wyc/U3wml/Bwzc+v+59D6/6nwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+          &lt;source
+              srcset=&quot;https://willmendesneto.com/static/7f1deb558c80ea76bb5067053a7d2351/fb34c/main-concerns.avif 320w,https://willmendesneto.com/static/7f1deb558c80ea76bb5067053a7d2351/646cd/main-concerns.avif 768w,https://willmendesneto.com/static/7f1deb558c80ea76bb5067053a7d2351/8b485/main-concerns.avif 1024w,https://willmendesneto.com/static/7f1deb558c80ea76bb5067053a7d2351/a73d6/main-concerns.avif 1280w,https://willmendesneto.com/static/7f1deb558c80ea76bb5067053a7d2351/8c45f/main-concerns.avif 1792w&quot;
+              sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+              type=&quot;image/avif&quot;
+            /&gt;&lt;source
+              srcset=&quot;https://willmendesneto.com/static/7f1deb558c80ea76bb5067053a7d2351/cb523/main-concerns.webp 320w,https://willmendesneto.com/static/7f1deb558c80ea76bb5067053a7d2351/cd067/main-concerns.webp 768w,https://willmendesneto.com/static/7f1deb558c80ea76bb5067053a7d2351/53334/main-concerns.webp 1024w,https://willmendesneto.com/static/7f1deb558c80ea76bb5067053a7d2351/4b075/main-concerns.webp 1280w,https://willmendesneto.com/static/7f1deb558c80ea76bb5067053a7d2351/7cc8d/main-concerns.webp 1792w&quot;
+              sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+              type=&quot;image/webp&quot;
+            /&gt;
+          &lt;source
+            srcset=&quot;https://willmendesneto.com/static/7f1deb558c80ea76bb5067053a7d2351/d4f27/main-concerns.png 320w,https://willmendesneto.com/static/7f1deb558c80ea76bb5067053a7d2351/778aa/main-concerns.png 768w,https://willmendesneto.com/static/7f1deb558c80ea76bb5067053a7d2351/658fc/main-concerns.png 1024w,https://willmendesneto.com/static/7f1deb558c80ea76bb5067053a7d2351/26c69/main-concerns.png 1280w,https://willmendesneto.com/static/7f1deb558c80ea76bb5067053a7d2351/ba0a7/main-concerns.png 1792w&quot;
+            sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+            type=&quot;image/png&quot;
+          /&gt;
+          &lt;img
+            class=&quot;gatsby-resp-image-image&quot;
+            src=&quot;https://willmendesneto.com/static/7f1deb558c80ea76bb5067053a7d2351/26c69/main-concerns.png&quot;
+            alt=&quot;Some of the main concerns when using Package Entry-Points&quot;
+            title=&quot;Some of the main concerns when using Package Entry-Points&quot;
+            loading=&quot;lazy&quot;
+            style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+          /&gt;
+        &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;Some of the main concerns when using Package Entry-Points&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Keeping these points in mind, one way to solve is by using an entrypoint structure. Entry-points is a way to expose a specific function, class or component intentionally to be consumed to your users. So that, the consumers can only import a specific piece of code instead of all the functions of the used dependency, enabling bundle decrease and having a better understanding of what&apos;s being used in your app. &lt;/p&gt;
+&lt;p&gt;This architecture is called &lt;a href=&quot;https://nodejs.org/docs/latest-v12.x/api/packages.html#packages_conditional_exports&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;&quot;Package Conditional Exports&quot;&lt;/a&gt; - AKA &quot;Package Entry-Points&quot; - and some packages such as lodash and others are using this technique to decouple their functions, so their consumers can export only what&apos;s needed for them.&lt;/p&gt;
+&lt;p&gt;The idea here is to install all the package functions, but delay the decision of which function is required on development time. On lodash case, it add some benefits. So it won&apos;t be needed to install &lt;code class=&quot;language-text&quot;&gt;lodash.compact&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;lodash.debounce&lt;/code&gt; and other packages one by one since you can access them via entry-points via &lt;code class=&quot;language-text&quot;&gt;lodash/compact&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;lodash/debounce&lt;/code&gt;, respectively.&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1280px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;https://willmendesneto.com/static/f8074d2424d22cb4f528c0a79891b915/2de51/lodash-entrypoints.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 66.875%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAACtklEQVQ4y42T2U8TURTGJ8FpNSxtp7O0pewGiqIE34xxJ1GJhgdfFEJEFNyDETGgBjUSRBuKUVp2WluWTtsBWttSUMKm8c/6PLelJD7hwy/nnG/O+e6dO3O50Mo2GGpyC8vrfzA4FsTz/lG8+DCOviEvhqbCeOPyoffjJDGFnsHJdL0Q30Q4tYPsfBaOidkHkdVf8GlrGJv/TsQx4o9ieEbDF99SOvfMxjARTMAdiCKYyBiGaS7rweAiu6JKDWp8g/ItRFLb0AgWI1SzXFvd2dNYriY2EKR+NsNmmQfz4kLJTYR2V1tIbCEYyzRmUeP/1ns6zbBZZsJgC7DNcGE6O9dEAFcbGtF4rQEXGhtwuv4yzly8tC9n66/g1Ll63Lh1F7NLa2lTju2g+70TNYKI8w4DTHUG5OQeBJ/Dg9fpcECnRw6vp5zg+Qyks6jT68FxHCqrazC1EMV87Ce4wNIquvsGYJYlWAsVKBQFxQbRXgLBUgjFIsNGuiArMBcWpxGsdoolEG1FyCsw4GjtCYx4VTAv7ltkBU9730FWJByusMJqJUNqlMqrYLIWkaGIkmIFBlGBWFoJsbh897mD8grkG4yoPlaL4YlZ+LUUOF8kic6et3uGdrsFkizDbC+FVFZJuymCWVJQXmaBhczZInJFFe3eBpMg4FBuLhw1x8kwkDH0L6bQ9bofRsFEAwIEswkFRkKywECvXCCYqTZClEzUY0QenbWR9HxTRufpHB1H6vB1OojAIjMkV9e4Hw+7XqKl4wma2x6g6fZ9NLV2EO2U30vXN1szsZnVpLPY0v4Idx49Q9fAK3jmgphbpo8yF/2BGZVuRkDDZzoHp8eLT+6Z/2AaLk8ATt8org+eRKe7gy4B/dgq/ZzzsfX0+3vDCTKPpxfYj2nCG0piMqLhsbsNzvAQtJXf+At4hVo3WYT/LAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+          &lt;source
+              srcset=&quot;https://willmendesneto.com/static/f8074d2424d22cb4f528c0a79891b915/fb34c/lodash-entrypoints.avif 320w,https://willmendesneto.com/static/f8074d2424d22cb4f528c0a79891b915/646cd/lodash-entrypoints.avif 768w,https://willmendesneto.com/static/f8074d2424d22cb4f528c0a79891b915/8b485/lodash-entrypoints.avif 1024w,https://willmendesneto.com/static/f8074d2424d22cb4f528c0a79891b915/a73d6/lodash-entrypoints.avif 1280w,https://willmendesneto.com/static/f8074d2424d22cb4f528c0a79891b915/3c806/lodash-entrypoints.avif 1848w&quot;
+              sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+              type=&quot;image/avif&quot;
+            /&gt;&lt;source
+              srcset=&quot;https://willmendesneto.com/static/f8074d2424d22cb4f528c0a79891b915/cb523/lodash-entrypoints.webp 320w,https://willmendesneto.com/static/f8074d2424d22cb4f528c0a79891b915/cd067/lodash-entrypoints.webp 768w,https://willmendesneto.com/static/f8074d2424d22cb4f528c0a79891b915/53334/lodash-entrypoints.webp 1024w,https://willmendesneto.com/static/f8074d2424d22cb4f528c0a79891b915/4b075/lodash-entrypoints.webp 1280w,https://willmendesneto.com/static/f8074d2424d22cb4f528c0a79891b915/ab20a/lodash-entrypoints.webp 1848w&quot;
+              sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+              type=&quot;image/webp&quot;
+            /&gt;
+          &lt;source
+            srcset=&quot;https://willmendesneto.com/static/f8074d2424d22cb4f528c0a79891b915/d4f27/lodash-entrypoints.png 320w,https://willmendesneto.com/static/f8074d2424d22cb4f528c0a79891b915/778aa/lodash-entrypoints.png 768w,https://willmendesneto.com/static/f8074d2424d22cb4f528c0a79891b915/658fc/lodash-entrypoints.png 1024w,https://willmendesneto.com/static/f8074d2424d22cb4f528c0a79891b915/26c69/lodash-entrypoints.png 1280w,https://willmendesneto.com/static/f8074d2424d22cb4f528c0a79891b915/2de51/lodash-entrypoints.png 1848w&quot;
+            sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+            type=&quot;image/png&quot;
+          /&gt;
+          &lt;img
+            class=&quot;gatsby-resp-image-image&quot;
+            src=&quot;https://willmendesneto.com/static/f8074d2424d22cb4f528c0a79891b915/26c69/lodash-entrypoints.png&quot;
+            alt=&quot;Entry points: Lodash example&quot;
+            title=&quot;Entry points: Lodash example&quot;
+            loading=&quot;lazy&quot;
+            style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+          /&gt;
+        &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;Entry points: Lodash example&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;On the case of our &lt;code class=&quot;language-text&quot;&gt;@myapp/buttons&lt;/code&gt;, we can achieve the same idea by exposing entry-points in folders on the root project. Each folder will have a &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt; with the specified configuration for it. This is great for your app and avoids breaking changes in case of code structure.&lt;/p&gt;
+&lt;p&gt;Even though this solves the problem, have a robust way to expose a set of functions if needed is something that&apos;s always useful. To have that in place easily, we can create a folder called &lt;code class=&quot;language-text&quot;&gt;entrypoints&lt;/code&gt;. The folder will have the entrypoints defined by files and, more than this, by features.&lt;/p&gt;
+&lt;p&gt;If you need a specific entry point to expose more than 1 component, that can be done easily by the file. In this case, 2 new components were added in &lt;code class=&quot;language-text&quot;&gt;@myapp/buttons&lt;/code&gt;: &lt;code class=&quot;language-text&quot;&gt;ButtonGroup&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;ButtonTheme&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;Instead of creating a entry-point for each of the files, a new entry-point calledn &lt;code class=&quot;language-text&quot;&gt;@myapp/buttons/utils&lt;/code&gt; was created, giving the choice of export each of them to the app consumer.&lt;/p&gt;
+&lt;p&gt;&lt;div id=&quot;gist108921592&quot; class=&quot;gist&quot;&gt;
+    &lt;div class=&quot;gist-file&quot;&gt;
+      &lt;div class=&quot;gist-data&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+  &lt;div id=&quot;file-utils-entrypoint-example-js&quot; class=&quot;file my-2&quot;&gt;
+    
+
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+      
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-utils-entrypoint-example-js-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-utils-entrypoint-example-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-c&gt;// `./entrypoints/utils.js` file content&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-utils-entrypoint-example-js-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-utils-entrypoint-example-js-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-c&gt;// Accessed via `@myapp/butons/utils` entry-point&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-utils-entrypoint-example-js-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-utils-entrypoint-example-js-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-utils-entrypoint-example-js-L4&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-utils-entrypoint-example-js-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-k&gt;export&lt;/span&gt; &lt;span class=pl-c1&gt;*&lt;/span&gt; &lt;span class=pl-k&gt;from&lt;/span&gt; &lt;span class=pl-s&gt;&amp;#39;../ButtonGroup&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-utils-entrypoint-example-js-L5&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-utils-entrypoint-example-js-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-k&gt;export&lt;/span&gt; &lt;span class=pl-c1&gt;*&lt;/span&gt; &lt;span class=pl-k&gt;from&lt;/span&gt; &lt;span class=pl-s&gt;&amp;#39;../ButtonTheme&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+&lt;/table&gt;
+
+
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;gist-meta&quot;&gt;
+        &lt;a href=&quot;https://gist.github.com/willmendesneto/fc59e6e69cdba23c4ec12fcc7555f97a/raw/76d0693648377e544d78607948801e79d5c36c03/utils-entrypoint-example.js&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/willmendesneto/fc59e6e69cdba23c4ec12fcc7555f97a#file-utils-entrypoint-example-js&quot;&gt;utils-entrypoint-example.js&lt;/a&gt;
+        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;Based on that specific case, the package json inside of &lt;code class=&quot;language-text&quot;&gt;@myapp/buttons/utils&lt;/code&gt; folder will be &lt;/p&gt;
+&lt;p&gt;&lt;div id=&quot;gist108921598&quot; class=&quot;gist&quot;&gt;
+    &lt;div class=&quot;gist-file&quot;&gt;
+      &lt;div class=&quot;gist-data&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+  &lt;div id=&quot;file-package-json&quot; class=&quot;file my-2&quot;&gt;
+    
+
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-json  &quot;&gt;
+      
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-package-json-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-package-json-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;{&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-package-json-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-package-json-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-ii&quot;&gt;...&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-package-json-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-package-json-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;name&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;@myapp/buttons/utils&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-package-json-L4&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-package-json-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;main&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;../dist/cjs/entrypoints/utils.js&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-package-json-L5&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-package-json-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;module&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;../dist/esm/entrypoints/utils.js&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-package-json-L6&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;6&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-package-json-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;cjs&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;../dist/cjs/entrypoints/utils.js&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-package-json-L7&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;7&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-package-json-LC7&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-ii&quot;&gt;...&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-package-json-L8&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;8&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-package-json-LC8&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
+      &lt;/tr&gt;
+&lt;/table&gt;
+
+
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;gist-meta&quot;&gt;
+        &lt;a href=&quot;https://gist.github.com/willmendesneto/22594cb79f8fe89b7769e502ebb1ac92/raw/c9e3b64bb6ff3fda6cfa9c2fce076e3724bef20c/package.json&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/willmendesneto/22594cb79f8fe89b7769e502ebb1ac92#file-package-json&quot;&gt;package.json&lt;/a&gt;
+        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;With these changes applied, that will be the structure of your package, supporting entry-points 🤘🤘🤘🤘&lt;/p&gt;
+&lt;p&gt;&lt;div id=&quot;gist108921609&quot; class=&quot;gist&quot;&gt;
+    &lt;div class=&quot;gist-file&quot;&gt;
+      &lt;div class=&quot;gist-data&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+  &lt;div id=&quot;file-final-structure-with-entry-points-md&quot; class=&quot;file my-2&quot;&gt;
+    
+  &lt;div id=&quot;file-final-structure-with-entry-points-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
+    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;pre&gt;&lt;code&gt;@myapp/
+  buttons/
+    entrypoints/
+      utils.js &amp;lt;-- Exporting `ButtonGroup` and `ButtonTheme` components
+      ButtonWithIcon.js &amp;lt;-- Exporting `ButtonWithIcon` component
+      Button.js         &amp;lt;-- Exporting `Button` component
+    ButtonGroup.js   
+    ButtonTheme.js   
+    ButtonWithIcon.js   
+    Button.js           
+    index.js
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/article&gt;
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;gist-meta&quot;&gt;
+        &lt;a href=&quot;https://gist.github.com/willmendesneto/beaf9b570766245d3ca3d64372bc2a77/raw/cd53cfbe6704de6bba0573a7c79191ae090cde71/final-structure-with-entry-points.md&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/willmendesneto/beaf9b570766245d3ca3d64372bc2a77#file-final-structure-with-entry-points-md&quot;&gt;final-structure-with-entry-points.md&lt;/a&gt;
+        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h3&gt;Better Entry-Points support on NPM in a near future&lt;/h3&gt;
+&lt;p&gt;As you might have noticed, entry-points are a massive help to decrease the bundle of your application, giving your more flexibility in your app, being easy to integrate - and also to remove, having a massive role in other performance initiatives, such as code-splitting, if necessary.&lt;/p&gt;
+&lt;p&gt;A lot of heavy-used packages are using it such as &lt;a href=&quot;https://date-fns.org/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;date-fns&lt;/a&gt;, &lt;a href=&quot;https://lodash.com/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Lodash&lt;/a&gt; and Design Systems such as &lt;a href=&quot;https://atlaskit.atlassian.com/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Atlaskit&lt;/a&gt; are also using it - 🤩 I&apos;m really glad to add the &lt;a href=&quot;https://bitbucket.org/atlassian/atlaskit-mk-2/pull-requests/3639/code-splitting-components-and-exposing/diff&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;first support for entry-points in this Design System&lt;/a&gt;, in specific 🤩 - , having huge performance gains before-bundle and before deployment to production.&lt;/p&gt;
+&lt;p&gt;This technique is getting so much traction that a even better way to integrate them into your app is being defined by NPM. And - spoiler alert - the support will be built-in, in your &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt;.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You can find more details about &lt;code class=&quot;language-text&quot;&gt;Package Conditional Exports&lt;/code&gt; on &lt;a href=&quot;https://nodejs.org/docs/latest-v12.x/api/packages.html#packages_conditional_exports&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;&quot;Modules: Packages&quot; NPM Documentation page&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr/&gt;
-&lt;p&gt;** Feel free to play with the online demos powered by Stackblitz &lt;a href=&quot;https://stackblitz.com/edit/perf-marks-playground&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;&lt;strong&gt;https://stackblitz.com/edit/perf-marks-playground&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+I encourage you to see all of these steps in action by using [perf-marks entry-points](https://github.com/willmendesneto/perf-marks#entrypoints) in your application. It&apos;s a cross-platform performance measurement package powered by User Timing API and it has a simple and straightforward usage.
+&lt;hr/&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You can find more details about Perf-Marks on &lt;a href=&quot;https://willmendesneto.com/posts/cross-platform-performance-measurements-with-user-timing-apiand-perf-marks/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;&quot;Cross-platform performance measurements with User Timing API and perf-marks&quot;&lt;/a&gt; post.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;h3&gt;That’s all for now&lt;/h3&gt;
+&lt;p&gt;I hope you enjoyed this reading as much as I enjoyed writing it. Thank you so much for reading until the end and see you soon!&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Cya 👋&lt;/h3&gt;
+                &lt;div style=&quot;margin-top=55px; font-style: italic;&quot;&gt;(This is an article posted to my blog at willmendesneto.com. You can read it online by &lt;a href=&quot;https://willmendesneto.com/posts/decreasing-bundle-size-by-adding-package-conditional-entry-points-in-npm-packages&quot;&gt;clicking here&lt;/a&gt;.)&lt;/div&gt;
+              </content:encoded></item><item><title><![CDATA[Cross-platform performance measurements with User Timing API and npm-multiple-entry-points]]></title><link>https://willmendesneto.com/posts/cross-platform-performance-measurements-with-user-timing-apiand-npm-multiple-entry-points/</link><guid isPermaLink="false">https://willmendesneto.com/posts/cross-platform-performance-measurements-with-user-timing-apiand-npm-multiple-entry-points/</guid><pubDate>Mon, 29 Mar 2021 09:13:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;./npm-multiple-entry-points.png&quot; alt=&quot;npm-multiple-entry-points NPM Package Logo&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;TL;DR; You can start using &lt;a href=&quot;https://github.com/willmendesneto/npm-multiple-entry-points&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;npm-multiple-entry-points&lt;/a&gt; package in your Frontend (Angular, React, VueJS, Svelte, Ember among others) and Backend apps right now and get the built-in performance, lightweight, isomorphic integration, and a simple and smooth developer experience benefits. Support the project by starring the Github repository and enjoy! 🎉&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;p&gt;** Feel free to play with the online demos powered by Stackblitz &lt;a href=&quot;https://stackblitz.com/edit/npm-multiple-entry-points-playground&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;&lt;strong&gt;https://stackblitz.com/edit/npm-multiple-entry-points-playground&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Performance bottleneck is a common problem to be facing when working in large frontend application? Problems like memory leaks, and functions having high consume of memory can be real issues in your site and there are some other features there are really useful to improve the performance of your web app... but what if it’s not enough?&lt;/p&gt;
 &lt;p&gt;Also it&apos;s good to mention that browsers such as &lt;a href=&quot;https://techcrunch.com/2019/11/11/google-chrome-to-identify-and-label-slow-websites/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Google Chrome will identify and label slow websites&lt;/a&gt;. That means that performance is not just papercut, having an important role in your website.&lt;/p&gt;
@@ -346,7 +792,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
     &lt;/span&gt;
     &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;Example showing how LightHouse Auditions will show User Timing API instrumentation&lt;/figcaption&gt;
   &lt;/figure&gt;&lt;/p&gt;
-&lt;h2&gt;Simplifying User Timing API dev experience across Frontend and Backend with Perf-Marks package&lt;/h2&gt;
+&lt;h2&gt;Simplifying User Timing API dev experience across Frontend and Backend with npm-multiple-entry-points package&lt;/h2&gt;
 &lt;p&gt;Even though we have all built-in support for us to instrument and measure our pages and API&apos;s, their integrations are quite different between frontend and backend. It means that they don&apos;t have the same Developer Experience - aka DX - between isomorphic applications using Javascript! As an example, this is a simple code showing how to integrate User Timing API on the backend side in a NodeJS application.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist108709399&quot; class=&quot;gist&quot;&gt;
     &lt;div class=&quot;gist-file&quot;&gt;
@@ -475,15 +921,15 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
       &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;To solve this and other problems like having a common API between Backend and Frontend, with full support for intrumentation in isomorphic applications and more I created the package called &lt;a href=&quot;https://github.com/willmendesneto/perf-marks&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Perf-Marks&lt;/a&gt;. &lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.youtube.com/watch?v=vxNg3vM1P0A&quot; title=&quot;Video showing how to use perf-marks package&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;&lt;img src=&quot;http://img.youtube.com/vi/vxNg3vM1P0A/0.jpg&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/willmendesneto/perf-marks&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Perf-Marks&lt;/a&gt; is the isomorphic, simplest, and lightweight solution for User Timing API in Javascript - 🚀 only 208B 🚀. Tree-shaking and entry points built-in. Simple as that!&lt;/p&gt;
+&lt;p&gt;To solve this and other problems like having a common API between Backend and Frontend, with full support for intrumentation in isomorphic applications and more I created the package called &lt;a href=&quot;https://github.com/willmendesneto/npm-multiple-entry-points&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;npm-multiple-entry-points&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.youtube.com/watch?v=vxNg3vM1P0A&quot; title=&quot;Video showing how to use npm-multiple-entry-points package&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;&lt;img src=&quot;http://img.youtube.com/vi/vxNg3vM1P0A/0.jpg&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/willmendesneto/npm-multiple-entry-points&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;npm-multiple-entry-points&lt;/a&gt; is the isomorphic, simplest, and lightweight solution for User Timing API in Javascript - 🚀 only 208B 🚀. Tree-shaking and entry points built-in. Simple as that!&lt;/p&gt;
 &lt;h3&gt;Bundle and package size matters&lt;/h3&gt;
 &lt;p&gt;Bundle and package sizes are always important and this is something to keep in mind when thinking about this module.&lt;/p&gt;
 &lt;p&gt;The module supports multiple animations, themes, supports for better web accessibility and more feature with an impressive bundle size of &lt;strong&gt;208B&lt;/strong&gt; and the package has &lt;strong&gt;140kB&lt;/strong&gt; to be installed in an application 🎉&lt;/p&gt;
 &lt;h3&gt;Easy entry points integration to avoid increase in your bundle&lt;/h3&gt;
-&lt;p&gt;By using Perf-Marks you can easily instrument your Frontend Apps, components, libraries and API&apos;s without any friction. The integration is the same between layers and it also follows some best practices.&lt;/p&gt;
-&lt;p&gt;Instead of load all the package methods, you can import what you need via entry points and avoid your app the load unnecessary code at that moment. This example shows how to measure a specific method by exporting perf-marks &lt;code class=&quot;language-text&quot;&gt;profiler()&lt;/code&gt; function via &lt;code class=&quot;language-text&quot;&gt;perf-marks/profiler&lt;/code&gt; entry point.&lt;/p&gt;
+&lt;p&gt;By using npm-multiple-entry-points you can easily instrument your Frontend Apps, components, libraries and API&apos;s without any friction. The integration is the same between layers and it also follows some best practices.&lt;/p&gt;
+&lt;p&gt;Instead of load all the package methods, you can import what you need via entry points and avoid your app the load unnecessary code at that moment. This example shows how to measure a specific method by exporting npm-multiple-entry-points &lt;code class=&quot;language-text&quot;&gt;profiler()&lt;/code&gt; function via &lt;code class=&quot;language-text&quot;&gt;npm-multiple-entry-points/profiler&lt;/code&gt; entry point.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist108709502&quot; class=&quot;gist&quot;&gt;
     &lt;div class=&quot;gist-file&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
@@ -582,7 +1028,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
     &lt;/div&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;h3&gt;Smooth integration between Frontend and Backend&lt;/h3&gt;
-&lt;p&gt;All the logic to manage the integration between frontend and backend, client-side and server-side is handled by perf-marks. So your developers should have confidence on their instrumentation by simply doing something like this! Easy peasy, lemon squeezy 🍋!&lt;/p&gt;
+&lt;p&gt;All the logic to manage the integration between frontend and backend, client-side and server-side is handled by npm-multiple-entry-points. So your developers should have confidence on their instrumentation by simply doing something like this! Easy peasy, lemon squeezy 🍋!&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist108709664&quot; class=&quot;gist&quot;&gt;
     &lt;div class=&quot;gist-file&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
@@ -658,14 +1104,14 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/div&gt;&lt;/p&gt;
 &lt;h3&gt;Flexible ways to measure what matters in your app&lt;/h3&gt;
 &lt;p&gt;You might also measure things like A/B Testing time to load, interactions and user journey! For example, how long the users are interacting with your galleries, how long your API is responding some data to your consumers or how long your Frontend Application located in one AWS Region is taking to upload some files to a distinct AWS region, understand the delays and solve that in advance, in a proactive way!&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://willmendesneto.com/fd30a21513f805c11bcbf30f285232e1/user-journey-and-perf-marks-in-action.gif&quot; alt=&quot;User Journey and Perf-Marks in action&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./user-journey-and-npm-multiple-entry-points-in-action.gif&quot; alt=&quot;User Journey and npm-multiple-entry-points in action&quot;&gt;&lt;/p&gt;
 &lt;hr/&gt;
 &lt;h3&gt;That’s all for now&lt;/h3&gt;
 &lt;p&gt;Stay tuned because this is not the end, it&apos;s just the beginning. Let&apos;s keep building awesome stuff and have some &lt;strong&gt;#fun&lt;/strong&gt; 🚀&lt;/p&gt;
 &lt;p&gt;I hope you enjoyed this reading as much as I enjoyed writing it. Thank you so much for reading until the end and see you soon!&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h3&gt;Cya 👋&lt;/h3&gt;
-                &lt;div style=&quot;margin-top=55px; font-style: italic;&quot;&gt;(This is an article posted to my blog at willmendesneto.com. You can read it online by &lt;a href=&quot;https://willmendesneto.com/posts/cross-platform-performance-measurements-with-user-timing-apiand-perf-marks/&quot;&gt;clicking here&lt;/a&gt;.)&lt;/div&gt;
+                &lt;div style=&quot;margin-top=55px; font-style: italic;&quot;&gt;(This is an article posted to my blog at willmendesneto.com. You can read it online by &lt;a href=&quot;https://willmendesneto.com/posts/cross-platform-performance-measurements-with-user-timing-apiand-npm-multiple-entry-points/&quot;&gt;clicking here&lt;/a&gt;.)&lt;/div&gt;
               </content:encoded></item><item><title><![CDATA[Easy and reusable Media Query Breakpoints for your CSS-In-JS components]]></title><link>https://willmendesneto.com/posts/easy-and-reusable-media-query-breakpoints-for-your-css-in-js-components/</link><guid isPermaLink="false">https://willmendesneto.com/posts/easy-and-reusable-media-query-breakpoints-for-your-css-in-js-components/</guid><pubDate>Sat, 20 Mar 2021 09:13:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
     &lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
