@@ -1,24 +1,24 @@
 ---
 status: "active"
-title: "Cross-platform performance measurements with User Timing API and perf-marks"
+title: "Cross-platform performance measurements with User Timing API and npm-multiple-entry-points"
 layout: post
 author: Wilson Mendes
 description: >-
   Performance bottleneck is a common problem to be facing when working in large frontend application? Problems like memory leaks, and functions having high consume of memory can be real issues in your site and there are some other features there are really useful to improve the performance of your web app... but what if it’s not enough?
 date: '2021-03-29T09:13:00.419Z'
-path: /posts/cross-platform-performance-measurements-with-user-timing-apiand-perf-marks/
+path: /posts/cross-platform-performance-measurements-with-user-timing-apiand-npm-multiple-entry-points/
 category: "post"
 lang: en
 tags: ['frontend', 'nodejs', 'npm', 'javascript', 'tip', 'js', 'tooling', 'performance']
 ---
 
-![Perf-Marks NPM Package Logo](./perf-marks.png)
+![npm-multiple-entry-points NPM Package Logo](./npm-multiple-entry-points.png)
 
-> TL;DR; You can start using [Perf-Marks](https://github.com/willmendesneto/perf-marks) package in your Frontend (Angular, React, VueJS, Svelte, Ember among others) and Backend apps right now and get the built-in performance, lightweight, isomorphic integration, and a simple and smooth developer experience benefits. Support the project by starring the Github repository and enjoy! 🎉
+> TL;DR; You can start using [npm-multiple-entry-points](https://github.com/willmendesneto/npm-multiple-entry-points) package in your Frontend (Angular, React, VueJS, Svelte, Ember among others) and Backend apps right now and get the built-in performance, lightweight, isomorphic integration, and a simple and smooth developer experience benefits. Support the project by starring the Github repository and enjoy! 🎉
 
 <hr/>
 
-\*\* Feel free to play with the online demos powered by Stackblitz [**https://stackblitz.com/edit/perf-marks-playground**](https://stackblitz.com/edit/perf-marks-playground)
+\*\* Feel free to play with the online demos powered by Stackblitz [**https://stackblitz.com/edit/npm-multiple-entry-points-playground**](https://stackblitz.com/edit/npm-multiple-entry-points-playground)
 
 ## Introduction
 
@@ -83,18 +83,18 @@ These events are named by the instrumented application and can be set at any loc
 
 ![Example showing how LightHouse Auditions will show User Timing API instrumentation](./lighthouse-user-timing-report.png)
 
-## Simplifying User Timing API dev experience across Frontend and Backend with Perf-Marks package 
+## Simplifying User Timing API dev experience across Frontend and Backend with npm-multiple-entry-points package 
 
 Even though we have all built-in support for us to instrument and measure our pages and API's, their integrations are quite different between frontend and backend. It means that they don't have the same Developer Experience - aka DX - between isomorphic applications using Javascript! As an example, this is a simple code showing how to integrate User Timing API on the backend side in a NodeJS application.
 
 `gist:willmendesneto/c0abc2a0c8d0ced80c94fde7ac73e44e`
 
-To solve this and other problems like having a common API between Backend and Frontend, with full support for intrumentation in isomorphic applications and more I created the package called [Perf-Marks](https://github.com/willmendesneto/perf-marks). 
+To solve this and other problems like having a common API between Backend and Frontend, with full support for intrumentation in isomorphic applications and more I created the package called [npm-multiple-entry-points](https://github.com/willmendesneto/npm-multiple-entry-points). 
 
-[![](http://img.youtube.com/vi/vxNg3vM1P0A/0.jpg)](http://www.youtube.com/watch?v=vxNg3vM1P0A "Video showing how to use perf-marks package")
+[![](http://img.youtube.com/vi/vxNg3vM1P0A/0.jpg)](http://www.youtube.com/watch?v=vxNg3vM1P0A "Video showing how to use npm-multiple-entry-points package")
 
 
-[Perf-Marks](https://github.com/willmendesneto/perf-marks) is the isomorphic, simplest, and lightweight solution for User Timing API in Javascript - 🚀 only 208B 🚀. Tree-shaking and entry points built-in. Simple as that!
+[npm-multiple-entry-points](https://github.com/willmendesneto/npm-multiple-entry-points) is the isomorphic, simplest, and lightweight solution for User Timing API in Javascript - 🚀 only 208B 🚀. Tree-shaking and entry points built-in. Simple as that!
 
 ### Bundle and package size matters
 
@@ -104,15 +104,15 @@ The module supports multiple animations, themes, supports for better web accessi
 
 ### Easy entry points integration to avoid increase in your bundle
 
-By using Perf-Marks you can easily instrument your Frontend Apps, components, libraries and API's without any friction. The integration is the same between layers and it also follows some best practices.
+By using npm-multiple-entry-points you can easily instrument your Frontend Apps, components, libraries and API's without any friction. The integration is the same between layers and it also follows some best practices.
 
-Instead of load all the package methods, you can import what you need via entry points and avoid your app the load unnecessary code at that moment. This example shows how to measure a specific method by exporting perf-marks `profiler()` function via `perf-marks/profiler` entry point.
+Instead of load all the package methods, you can import what you need via entry points and avoid your app the load unnecessary code at that moment. This example shows how to measure a specific method by exporting npm-multiple-entry-points `profiler()` function via `npm-multiple-entry-points/profiler` entry point.
 
 `gist:willmendesneto/41985f16808602e62510f3c994edebbc`
 
 ### Smooth integration between Frontend and Backend
 
-All the logic to manage the integration between frontend and backend, client-side and server-side is handled by perf-marks. So your developers should have confidence on their instrumentation by simply doing something like this! Easy peasy, lemon squeezy 🍋!
+All the logic to manage the integration between frontend and backend, client-side and server-side is handled by npm-multiple-entry-points. So your developers should have confidence on their instrumentation by simply doing something like this! Easy peasy, lemon squeezy 🍋!
 
 `gist:willmendesneto/5b82b65ef17877b59c7434e9d495eb8d`
 
@@ -120,7 +120,7 @@ All the logic to manage the integration between frontend and backend, client-sid
 
 You might also measure things like A/B Testing time to load, interactions and user journey! For example, how long the users are interacting with your galleries, how long your API is responding some data to your consumers or how long your Frontend Application located in one AWS Region is taking to upload some files to a distinct AWS region, understand the delays and solve that in advance, in a proactive way!
 
-![User Journey and Perf-Marks in action](./user-journey-and-perf-marks-in-action.gif)
+![User Journey and npm-multiple-entry-points in action](./user-journey-and-npm-multiple-entry-points-in-action.gif)
 
 <hr/>
 
