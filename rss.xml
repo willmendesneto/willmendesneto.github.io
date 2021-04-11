@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Will Mendes Blog RSS Feed]]></title><description><![CDATA[Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies]]></description><link>https://willmendesneto.com</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 09 Apr 2021 21:42:03 GMT</lastBuildDate><item><title><![CDATA[Decreasing bundle size by adding Package Conditional Entry Points in NPM Packages]]></title><link>https://willmendesneto.com/posts/decreasing-bundle-size-by-adding-package-conditional-entry-points-in-npm-packages</link><guid isPermaLink="false">https://willmendesneto.com/posts/decreasing-bundle-size-by-adding-package-conditional-entry-points-in-npm-packages</guid><pubDate>Thu, 01 Apr 2021 09:13:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Will Mendes Blog RSS Feed]]></title><description><![CDATA[Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies]]></description><link>https://willmendesneto.com</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 11 Apr 2021 15:00:47 GMT</lastBuildDate><item><title><![CDATA[Decreasing bundle size by adding Package Conditional Entry Points in NPM Packages]]></title><link>https://willmendesneto.com/posts/decreasing-bundle-size-by-adding-package-conditional-entry-points-in-npm-packages</link><guid isPermaLink="false">https://willmendesneto.com/posts/decreasing-bundle-size-by-adding-package-conditional-entry-points-in-npm-packages</guid><pubDate>Thu, 01 Apr 2021 09:13:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1280px; &quot;
     &gt;
@@ -487,12 +487,55 @@ I encourage you to see all of these steps in action by using [perf-marks entry-p
 &lt;hr /&gt;
 &lt;h3&gt;Cya 👋&lt;/h3&gt;
                 &lt;div style=&quot;margin-top=55px; font-style: italic;&quot;&gt;(This is an article posted to my blog at willmendesneto.com. You can read it online by &lt;a href=&quot;https://willmendesneto.com/posts/decreasing-bundle-size-by-adding-package-conditional-entry-points-in-npm-packages&quot;&gt;clicking here&lt;/a&gt;.)&lt;/div&gt;
-              </content:encoded></item><item><title><![CDATA[Cross-platform performance measurements with User Timing API and npm-multiple-entry-points]]></title><link>https://willmendesneto.com/posts/cross-platform-performance-measurements-with-user-timing-apiand-npm-multiple-entry-points/</link><guid isPermaLink="false">https://willmendesneto.com/posts/cross-platform-performance-measurements-with-user-timing-apiand-npm-multiple-entry-points/</guid><pubDate>Mon, 29 Mar 2021 09:13:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;./npm-multiple-entry-points.png&quot; alt=&quot;npm-multiple-entry-points NPM Package Logo&quot;&gt;&lt;/p&gt;
+              </content:encoded></item><item><title><![CDATA[Cross-platform performance measurements with User Timing API and perf-marks]]></title><link>https://willmendesneto.com/posts/cross-platform-performance-measurements-with-user-timing-apiand-perf-marks/</link><guid isPermaLink="false">https://willmendesneto.com/posts/cross-platform-performance-measurements-with-user-timing-apiand-perf-marks/</guid><pubDate>Mon, 29 Mar 2021 09:13:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1280px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/8313c/perf-marks.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 27.500000000000004%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAABYlAAAWJQFJUiTwAAABIElEQVQY04WQQUsCURSF5+fVKlz1C2oT1g9okTXiLklzE0HQQMqAk0UxypCYu1m0mDTLXSBpTrooCmYaZ+Zr3pDiIvLA4Z333jmXe68UBAGCYRgyrwUFvjwP47YBv/ep5y+KjMQ/+PS+ea43sC4uGdg2/mTCIkiKcoqqqhiGEZ+aptFpt7lrtbi/usZZWYV6k/fIPB6NME2TUqmIruvUajXK5TKVyjnVqh5npULhkHw+Rza7Tzotk8sd0LYszM4DveMTwqUE7vYuTuGI8VMXpXjG1mYSWd6L/GlSqR0ymQyijtCzkV3Xne1R4DXq5rHZ5GM9ibecYLC2wVu/H/+J0b1ot4K+78c5oR3HQZoufx7TNzcMeIm66t3UsYdDQhbjByKVrLtnfEd2AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+          &lt;source
+              srcset=&quot;https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/fb34c/perf-marks.avif 320w,https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/646cd/perf-marks.avif 768w,https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/8b485/perf-marks.avif 1024w,https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/a73d6/perf-marks.avif 1280w,https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/551a4/perf-marks.avif 1674w&quot;
+              sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+              type=&quot;image/avif&quot;
+            /&gt;&lt;source
+              srcset=&quot;https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/cb523/perf-marks.webp 320w,https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/cd067/perf-marks.webp 768w,https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/53334/perf-marks.webp 1024w,https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/4b075/perf-marks.webp 1280w,https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/3d969/perf-marks.webp 1674w&quot;
+              sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+              type=&quot;image/webp&quot;
+            /&gt;
+          &lt;source
+            srcset=&quot;https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/d4f27/perf-marks.png 320w,https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/778aa/perf-marks.png 768w,https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/658fc/perf-marks.png 1024w,https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/26c69/perf-marks.png 1280w,https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/8313c/perf-marks.png 1674w&quot;
+            sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+            type=&quot;image/png&quot;
+          /&gt;
+          &lt;img
+            class=&quot;gatsby-resp-image-image&quot;
+            src=&quot;https://willmendesneto.com/static/c133372fc12b3c0ec752f494adfaf8ef/26c69/perf-marks.png&quot;
+            alt=&quot;Perf-Marks NPM Package Logo&quot;
+            title=&quot;Perf-Marks NPM Package Logo&quot;
+            loading=&quot;lazy&quot;
+            style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+          /&gt;
+        &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;Perf-Marks NPM Package Logo&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;TL;DR; You can start using &lt;a href=&quot;https://github.com/willmendesneto/npm-multiple-entry-points&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;npm-multiple-entry-points&lt;/a&gt; package in your Frontend (Angular, React, VueJS, Svelte, Ember among others) and Backend apps right now and get the built-in performance, lightweight, isomorphic integration, and a simple and smooth developer experience benefits. Support the project by starring the Github repository and enjoy! 🎉&lt;/p&gt;
+&lt;p&gt;TL;DR; You can start using &lt;a href=&quot;https://github.com/willmendesneto/perf-marks&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Perf-Marks&lt;/a&gt; package in your Frontend (Angular, React, VueJS, Svelte, Ember among others) and Backend apps right now and get the built-in performance, lightweight, isomorphic integration, and a simple and smooth developer experience benefits. Support the project by starring the Github repository and enjoy! 🎉&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr/&gt;
-&lt;p&gt;** Feel free to play with the online demos powered by Stackblitz &lt;a href=&quot;https://stackblitz.com/edit/npm-multiple-entry-points-playground&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;&lt;strong&gt;https://stackblitz.com/edit/npm-multiple-entry-points-playground&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;** Feel free to play with the online demos powered by Stackblitz &lt;a href=&quot;https://stackblitz.com/edit/perf-marks-playground&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;&lt;strong&gt;https://stackblitz.com/edit/perf-marks-playground&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Performance bottleneck is a common problem to be facing when working in large frontend application? Problems like memory leaks, and functions having high consume of memory can be real issues in your site and there are some other features there are really useful to improve the performance of your web app... but what if it’s not enough?&lt;/p&gt;
 &lt;p&gt;Also it&apos;s good to mention that browsers such as &lt;a href=&quot;https://techcrunch.com/2019/11/11/google-chrome-to-identify-and-label-slow-websites/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Google Chrome will identify and label slow websites&lt;/a&gt;. That means that performance is not just papercut, having an important role in your website.&lt;/p&gt;
@@ -792,7 +835,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
     &lt;/span&gt;
     &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;Example showing how LightHouse Auditions will show User Timing API instrumentation&lt;/figcaption&gt;
   &lt;/figure&gt;&lt;/p&gt;
-&lt;h2&gt;Simplifying User Timing API dev experience across Frontend and Backend with npm-multiple-entry-points package&lt;/h2&gt;
+&lt;h2&gt;Simplifying User Timing API dev experience across Frontend and Backend with Perf-Marks package&lt;/h2&gt;
 &lt;p&gt;Even though we have all built-in support for us to instrument and measure our pages and API&apos;s, their integrations are quite different between frontend and backend. It means that they don&apos;t have the same Developer Experience - aka DX - between isomorphic applications using Javascript! As an example, this is a simple code showing how to integrate User Timing API on the backend side in a NodeJS application.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist108709399&quot; class=&quot;gist&quot;&gt;
     &lt;div class=&quot;gist-file&quot;&gt;
@@ -921,15 +964,15 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
       &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;&lt;/p&gt;
-&lt;p&gt;To solve this and other problems like having a common API between Backend and Frontend, with full support for intrumentation in isomorphic applications and more I created the package called &lt;a href=&quot;https://github.com/willmendesneto/npm-multiple-entry-points&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;npm-multiple-entry-points&lt;/a&gt;. &lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.youtube.com/watch?v=vxNg3vM1P0A&quot; title=&quot;Video showing how to use npm-multiple-entry-points package&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;&lt;img src=&quot;http://img.youtube.com/vi/vxNg3vM1P0A/0.jpg&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/willmendesneto/npm-multiple-entry-points&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;npm-multiple-entry-points&lt;/a&gt; is the isomorphic, simplest, and lightweight solution for User Timing API in Javascript - 🚀 only 208B 🚀. Tree-shaking and entry points built-in. Simple as that!&lt;/p&gt;
-&lt;h3&gt;Bundle and package size matters&lt;/h3&gt;
+&lt;p&gt;To solve this and other problems like having a common API between Backend and Frontend, with full support for intrumentation in isomorphic applications and more I created the package called &lt;a href=&quot;https://github.com/willmendesneto/perf-marks&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Perf-Marks&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.youtube.com/watch?v=vxNg3vM1P0A&quot; title=&quot;Video showing how to use perf-marks package&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;&lt;img src=&quot;http://img.youtube.com/vi/vxNg3vM1P0A/0.jpg&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/willmendesneto/perf-marks&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Perf-Marks&lt;/a&gt; is the isomorphic, simplest, and lightweight solution for User Timing API in Javascript - 🚀 only 208B 🚀. Tree-shaking and entry points built-in. Simple as that!&lt;/p&gt;
+&lt;h3&gt;Bundle and package size matters&lt;/h3&gt;
 &lt;p&gt;Bundle and package sizes are always important and this is something to keep in mind when thinking about this module.&lt;/p&gt;
 &lt;p&gt;The module supports multiple animations, themes, supports for better web accessibility and more feature with an impressive bundle size of &lt;strong&gt;208B&lt;/strong&gt; and the package has &lt;strong&gt;140kB&lt;/strong&gt; to be installed in an application 🎉&lt;/p&gt;
 &lt;h3&gt;Easy entry points integration to avoid increase in your bundle&lt;/h3&gt;
-&lt;p&gt;By using npm-multiple-entry-points you can easily instrument your Frontend Apps, components, libraries and API&apos;s without any friction. The integration is the same between layers and it also follows some best practices.&lt;/p&gt;
-&lt;p&gt;Instead of load all the package methods, you can import what you need via entry points and avoid your app the load unnecessary code at that moment. This example shows how to measure a specific method by exporting npm-multiple-entry-points &lt;code class=&quot;language-text&quot;&gt;profiler()&lt;/code&gt; function via &lt;code class=&quot;language-text&quot;&gt;npm-multiple-entry-points/profiler&lt;/code&gt; entry point.&lt;/p&gt;
+&lt;p&gt;By using Perf-Marks you can easily instrument your Frontend Apps, components, libraries and API&apos;s without any friction. The integration is the same between layers and it also follows some best practices.&lt;/p&gt;
+&lt;p&gt;Instead of load all the package methods, you can import what you need via entry points and avoid your app the load unnecessary code at that moment. This example shows how to measure a specific method by exporting perf-marks &lt;code class=&quot;language-text&quot;&gt;profiler()&lt;/code&gt; function via &lt;code class=&quot;language-text&quot;&gt;perf-marks/profiler&lt;/code&gt; entry point.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist108709502&quot; class=&quot;gist&quot;&gt;
     &lt;div class=&quot;gist-file&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
@@ -1028,7 +1071,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
     &lt;/div&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;h3&gt;Smooth integration between Frontend and Backend&lt;/h3&gt;
-&lt;p&gt;All the logic to manage the integration between frontend and backend, client-side and server-side is handled by npm-multiple-entry-points. So your developers should have confidence on their instrumentation by simply doing something like this! Easy peasy, lemon squeezy 🍋!&lt;/p&gt;
+&lt;p&gt;All the logic to manage the integration between frontend and backend, client-side and server-side is handled by perf-marks. So your developers should have confidence on their instrumentation by simply doing something like this! Easy peasy, lemon squeezy 🍋!&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist108709664&quot; class=&quot;gist&quot;&gt;
     &lt;div class=&quot;gist-file&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
@@ -1104,14 +1147,14 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/div&gt;&lt;/p&gt;
 &lt;h3&gt;Flexible ways to measure what matters in your app&lt;/h3&gt;
 &lt;p&gt;You might also measure things like A/B Testing time to load, interactions and user journey! For example, how long the users are interacting with your galleries, how long your API is responding some data to your consumers or how long your Frontend Application located in one AWS Region is taking to upload some files to a distinct AWS region, understand the delays and solve that in advance, in a proactive way!&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;./user-journey-and-npm-multiple-entry-points-in-action.gif&quot; alt=&quot;User Journey and npm-multiple-entry-points in action&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://willmendesneto.com/fd30a21513f805c11bcbf30f285232e1/user-journey-and-perf-marks-in-action.gif&quot; alt=&quot;User Journey and Perf-Marks in action&quot;&gt;&lt;/p&gt;
 &lt;hr/&gt;
-&lt;h3&gt;That’s all for now&lt;/h3&gt;
+&lt;h3&gt;That’s all for now&lt;/h3&gt;
 &lt;p&gt;Stay tuned because this is not the end, it&apos;s just the beginning. Let&apos;s keep building awesome stuff and have some &lt;strong&gt;#fun&lt;/strong&gt; 🚀&lt;/p&gt;
 &lt;p&gt;I hope you enjoyed this reading as much as I enjoyed writing it. Thank you so much for reading until the end and see you soon!&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h3&gt;Cya 👋&lt;/h3&gt;
-                &lt;div style=&quot;margin-top=55px; font-style: italic;&quot;&gt;(This is an article posted to my blog at willmendesneto.com. You can read it online by &lt;a href=&quot;https://willmendesneto.com/posts/cross-platform-performance-measurements-with-user-timing-apiand-npm-multiple-entry-points/&quot;&gt;clicking here&lt;/a&gt;.)&lt;/div&gt;
+                &lt;div style=&quot;margin-top=55px; font-style: italic;&quot;&gt;(This is an article posted to my blog at willmendesneto.com. You can read it online by &lt;a href=&quot;https://willmendesneto.com/posts/cross-platform-performance-measurements-with-user-timing-apiand-perf-marks/&quot;&gt;clicking here&lt;/a&gt;.)&lt;/div&gt;
               </content:encoded></item><item><title><![CDATA[Easy and reusable Media Query Breakpoints for your CSS-In-JS components]]></title><link>https://willmendesneto.com/posts/easy-and-reusable-media-query-breakpoints-for-your-css-in-js-components/</link><guid isPermaLink="false">https://willmendesneto.com/posts/easy-and-reusable-media-query-breakpoints-for-your-css-in-js-components/</guid><pubDate>Sat, 20 Mar 2021 09:13:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
     &lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
