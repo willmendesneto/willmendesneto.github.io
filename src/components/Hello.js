@@ -1,6 +1,7 @@
 import React from 'react';
 
 import styled from 'styled-components';
+
 import profile from '../images/profile.jpg';
 import { screen } from '../styles/screen';
 
