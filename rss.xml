@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Will Mendes Blog RSS Feed]]></title><description><![CDATA[Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies]]></description><link>https://willmendesneto.com</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 11 Apr 2021 15:00:47 GMT</lastBuildDate><item><title><![CDATA[Decreasing bundle size by adding Package Conditional Entry Points in NPM Packages]]></title><link>https://willmendesneto.com/posts/decreasing-bundle-size-by-adding-package-conditional-entry-points-in-npm-packages</link><guid isPermaLink="false">https://willmendesneto.com/posts/decreasing-bundle-size-by-adding-package-conditional-entry-points-in-npm-packages</guid><pubDate>Thu, 01 Apr 2021 09:13:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Will Mendes Blog RSS Feed]]></title><description><![CDATA[Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies]]></description><link>https://willmendesneto.com</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 14 Apr 2021 15:55:16 GMT</lastBuildDate><item><title><![CDATA[Decreasing bundle size by adding Package Conditional Entry Points in NPM Packages]]></title><link>https://willmendesneto.com/posts/decreasing-bundle-size-by-adding-package-conditional-entry-points-in-npm-packages</link><guid isPermaLink="false">https://willmendesneto.com/posts/decreasing-bundle-size-by-adding-package-conditional-entry-points-in-npm-packages</guid><pubDate>Thu, 01 Apr 2021 09:13:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1280px; &quot;
     &gt;
@@ -56,8 +56,7 @@
       &lt;div class=&quot;gist-data&quot;&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-first-app-structure-md&quot; class=&quot;file my-2&quot;&gt;
-    
-  &lt;div id=&quot;file-first-app-structure-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
+      &lt;div id=&quot;file-first-app-structure-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
     &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;pre&gt;&lt;code&gt;node_modules/
   @myapp/
     buttons/index.js &amp;lt;-- final button with all components, even if you&apos;re using only 1 of them
@@ -90,8 +89,7 @@
       &lt;div class=&quot;gist-data&quot;&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-exposing-esm-file-package-ison-md&quot; class=&quot;file my-2&quot;&gt;
-    
-  &lt;div id=&quot;file-exposing-esm-file-package-ison-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
+      &lt;div id=&quot;file-exposing-esm-file-package-ison-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
     &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-json&quot;&gt;&lt;pre&gt;{
   &lt;span class=&quot;pl-ii&quot;&gt;...&lt;/span&gt;
   &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;sideEffects&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;pl-c1&quot;&gt;false&lt;/span&gt;,
@@ -123,8 +121,7 @@
       &lt;div class=&quot;gist-data&quot;&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-build-structure-with-cjs-and-esm-md&quot; class=&quot;file my-2&quot;&gt;
-    
-  &lt;div id=&quot;file-build-structure-with-cjs-and-esm-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
+      &lt;div id=&quot;file-build-structure-with-cjs-and-esm-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
     &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;pre&gt;&lt;code&gt;@myapp/
   buttons/
     cjs/index.js &amp;lt;-- final button with all components, even if you&apos;re using only 1 of them
@@ -203,8 +200,7 @@
       &lt;div class=&quot;gist-data&quot;&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-breaking-changes-because-the-package-structure-changed-md&quot; class=&quot;file my-2&quot;&gt;
-    
-  &lt;div id=&quot;file-breaking-changes-because-the-package-structure-changed-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
+      &lt;div id=&quot;file-breaking-changes-because-the-package-structure-changed-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
     &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;pre&gt;&lt;code&gt;@myapp/
   buttons/
     # Oops! Your app will face the consequences
@@ -332,7 +328,6 @@
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-utils-entrypoint-example-js&quot; class=&quot;file my-2&quot;&gt;
     
-
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
@@ -380,7 +375,6 @@
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-package-json&quot; class=&quot;file my-2&quot;&gt;
     
-
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-json  &quot;&gt;
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
@@ -438,8 +432,7 @@
       &lt;div class=&quot;gist-data&quot;&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-final-structure-with-entry-points-md&quot; class=&quot;file my-2&quot;&gt;
-    
-  &lt;div id=&quot;file-final-structure-with-entry-points-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
+      &lt;div id=&quot;file-final-structure-with-entry-points-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
     &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;pre&gt;&lt;code&gt;@myapp/
   buttons/
     entrypoints/
@@ -597,7 +590,6 @@ I encourage you to see all of these steps in action by using [perf-marks entry-p
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-performance-observer-js&quot; class=&quot;file my-2&quot;&gt;
     
-
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
@@ -843,7 +835,6 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-perf-node-js&quot; class=&quot;file my-2&quot;&gt;
     
-
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
@@ -979,7 +970,6 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-using-perf-marks-js&quot; class=&quot;file my-2&quot;&gt;
     
-
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
@@ -1078,7 +1068,6 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-perf-marks-js&quot; class=&quot;file my-2&quot;&gt;
     
-
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
@@ -1224,7 +1213,6 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-css-in-js-breakpoints-js&quot; class=&quot;file my-2&quot;&gt;
     
-
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
@@ -1456,7 +1444,6 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-a11y-dev-mode-css&quot; class=&quot;file my-2&quot;&gt;
     
-
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-css  &quot;&gt;
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
@@ -1830,7 +1817,6 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-dark-mode-via-css-media-query-css&quot; class=&quot;file my-2&quot;&gt;
     
-
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-css  &quot;&gt;
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
@@ -1929,7 +1915,6 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-dark-mode-switch-toggle-html&quot; class=&quot;file my-2&quot;&gt;
     
-
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-html  &quot;&gt;
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
@@ -1984,7 +1969,6 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-dark-mode-via-css-media-query-and-classes-via-javascript-css&quot; class=&quot;file my-2&quot;&gt;
     
-
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-css  &quot;&gt;
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
@@ -2374,7 +2358,6 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-dark-mode-via-css-media-query-and-classes-via-javascript-js&quot; class=&quot;file my-2&quot;&gt;
     
-
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
@@ -2585,7 +2568,6 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js&quot; class=&quot;file my-2&quot;&gt;
     
-
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
@@ -2802,7 +2784,6 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js&quot; class=&quot;file my-2&quot;&gt;
     
-
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
@@ -3191,8 +3172,7 @@ I hope you enjoyed this reading as much as I enjoyed writing it. Thank you so mu
       &lt;div class=&quot;gist-data&quot;&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-what-forces-layout-md&quot; class=&quot;file my-2&quot;&gt;
-    
-  &lt;div id=&quot;file-what-forces-layout-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
+      &lt;div id=&quot;file-what-forces-layout-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
     &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;h1&gt;&lt;a id=&quot;user-content-what-forces-layout--reflow&quot; class=&quot;anchor&quot; aria-hidden=&quot;true&quot; href=&quot;#what-forces-layout--reflow&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;What forces layout / reflow&lt;/h1&gt;
 &lt;p&gt;All of the below properties or methods, when requested/called in JavaScript, will trigger the browser to synchronously calculate the style and layout*. This is also called reflow or &lt;a href=&quot;http://www.kellegous.com/j/2013/01/26/layout-performance/&quot; rel=&quot;nofollow&quot;&gt;layout thrashing&lt;/a&gt;, and is common performance bottleneck.&lt;/p&gt;
 &lt;p&gt;Generally, all APIs that synchronously provide layout metrics will trigger forced reflow / layout. Read on for additional cases and details.&lt;/p&gt;
@@ -3366,7 +3346,6 @@ This list in incomplete:&lt;/p&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-fetch-some-data-js&quot; class=&quot;file my-2&quot;&gt;
     
-
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
@@ -3638,7 +3617,6 @@ This list in incomplete:&lt;/p&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-ng-publish-sh&quot; class=&quot;file my-2&quot;&gt;
     
-
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-shell  &quot;&gt;
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
@@ -3746,7 +3724,6 @@ This list in incomplete:&lt;/p&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-config-yml&quot; class=&quot;file my-2&quot;&gt;
     
-
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-yaml  &quot;&gt;
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
