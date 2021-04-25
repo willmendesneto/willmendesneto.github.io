@@ -1,4 +1,219 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Will Mendes Blog RSS Feed]]></title><description><![CDATA[Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies]]></description><link>https://willmendesneto.com</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 19 Apr 2021 04:04:30 GMT</lastBuildDate><item><title><![CDATA[Building your TinyMCE theme in React with Material-UI]]></title><link>https://willmendesneto.com/posts/building-your-tinymce-theme-in-react-with-material-ui/</link><guid isPermaLink="false">https://willmendesneto.com/posts/building-your-tinymce-theme-in-react-with-material-ui/</guid><pubDate>Mon, 19 Apr 2021 09:13:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Will Mendes Blog RSS Feed]]></title><description><![CDATA[Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies]]></description><link>https://willmendesneto.com</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 25 Apr 2021 15:30:41 GMT</lastBuildDate><item><title><![CDATA[Validating dependencies in your project with depcheck package]]></title><link>https://willmendesneto.com/posts/validating-dependencies-in-your-project-with-depcheck-package/</link><guid isPermaLink="false">https://willmendesneto.com/posts/validating-dependencies-in-your-project-with-depcheck-package/</guid><pubDate>Thu, 22 Apr 2021 09:13:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1280px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;https://willmendesneto.com/static/4e1bbc659276b1de6cf0d6b7c4358b68/3eede/package-dependencies-validation.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 20.9375%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAECBP/EABcBAAMBAAAAAAAAAAAAAAAAAAECAwT/2gAMAwEAAhADEAAAAd8iXoBl/8QAFRABAQAAAAAAAAAAAAAAAAAAEBH/2gAIAQEAAQUCj//EABYRAAMAAAAAAAAAAAAAAAAAAAIQMf/aAAgBAwEBPwE4v//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABQQAQAAAAAAAAAAAAAAAAAAABD/2gAIAQEABj8Cf//EABoQAAICAwAAAAAAAAAAAAAAAAABESExQXH/2gAIAQEAAT8hcttcIoeT/9oADAMBAAIAAwAAABCD7//EABURAQEAAAAAAAAAAAAAAAAAABAx/9oACAEDAQE/EKn/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAbEAEAAgIDAAAAAAAAAAAAAAABABEhMWFxkf/aAAgBAQABPxCzfUpDQt8sILB5P//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+          &lt;source
+              srcset=&quot;https://willmendesneto.com/static/4e1bbc659276b1de6cf0d6b7c4358b68/fb34c/package-dependencies-validation.avif 320w,https://willmendesneto.com/static/4e1bbc659276b1de6cf0d6b7c4358b68/646cd/package-dependencies-validation.avif 768w,https://willmendesneto.com/static/4e1bbc659276b1de6cf0d6b7c4358b68/8b485/package-dependencies-validation.avif 1024w,https://willmendesneto.com/static/4e1bbc659276b1de6cf0d6b7c4358b68/a73d6/package-dependencies-validation.avif 1280w,https://willmendesneto.com/static/4e1bbc659276b1de6cf0d6b7c4358b68/d511f/package-dependencies-validation.avif 1510w&quot;
+              sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+              type=&quot;image/avif&quot;
+            /&gt;&lt;source
+              srcset=&quot;https://willmendesneto.com/static/4e1bbc659276b1de6cf0d6b7c4358b68/cb523/package-dependencies-validation.webp 320w,https://willmendesneto.com/static/4e1bbc659276b1de6cf0d6b7c4358b68/cd067/package-dependencies-validation.webp 768w,https://willmendesneto.com/static/4e1bbc659276b1de6cf0d6b7c4358b68/53334/package-dependencies-validation.webp 1024w,https://willmendesneto.com/static/4e1bbc659276b1de6cf0d6b7c4358b68/4b075/package-dependencies-validation.webp 1280w,https://willmendesneto.com/static/4e1bbc659276b1de6cf0d6b7c4358b68/00ee2/package-dependencies-validation.webp 1510w&quot;
+              sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+              type=&quot;image/webp&quot;
+            /&gt;
+          &lt;source
+            srcset=&quot;https://willmendesneto.com/static/4e1bbc659276b1de6cf0d6b7c4358b68/32622/package-dependencies-validation.jpg 320w,https://willmendesneto.com/static/4e1bbc659276b1de6cf0d6b7c4358b68/ec2bf/package-dependencies-validation.jpg 768w,https://willmendesneto.com/static/4e1bbc659276b1de6cf0d6b7c4358b68/c3413/package-dependencies-validation.jpg 1024w,https://willmendesneto.com/static/4e1bbc659276b1de6cf0d6b7c4358b68/38b44/package-dependencies-validation.jpg 1280w,https://willmendesneto.com/static/4e1bbc659276b1de6cf0d6b7c4358b68/3eede/package-dependencies-validation.jpg 1510w&quot;
+            sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+            type=&quot;image/jpeg&quot;
+          /&gt;
+          &lt;img
+            class=&quot;gatsby-resp-image-image&quot;
+            src=&quot;https://willmendesneto.com/static/4e1bbc659276b1de6cf0d6b7c4358b68/38b44/package-dependencies-validation.jpg&quot;
+            alt=&quot;Package Dependencies Validation&quot;
+            title=&quot;Package Dependencies Validation&quot;
+            loading=&quot;lazy&quot;
+            style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+          /&gt;
+        &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;Package Dependencies Validation&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;This will be a quick post! Today I&apos;ll be sharing how to validate if your project dependency has beem used in your repository. This is a common issue as your project scales and you need to make sure you&apos;re not using, installing or even downloading unnecessary dependencies in your local environment, in your CI/CD pipelines or even deploying these packages in your production environment.&lt;/p&gt;
+&lt;h3&gt;Checking for unused project dependencies with depcheck&lt;/h3&gt;
+&lt;p&gt;To make this a quick process, we can use a NPM package called &lt;a href=&quot;https://www.npmjs.com/package/depcheck&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;depcheck&lt;/a&gt;. This package will validate every dependency of your codebase and check if the dependency if you missing to declare some specific dependencies (in order to avoid imports of packages added as transitient dependencies by another dependency of your project) and if the packages have been used or not in your project folder.&lt;/p&gt;
+&lt;h3&gt;Creating a project to simulate the problem&lt;/h3&gt;
+&lt;p&gt;To create our project inside a folder called &lt;code class=&quot;language-text&quot;&gt;my-project&lt;/code&gt;. Inside this folder, we can run a command &lt;code class=&quot;language-text&quot;&gt;npm init -y&lt;/code&gt;. This command will start a NPM project to be used as an example.&lt;/p&gt;
+&lt;p&gt;&lt;div id=&quot;gist109139942&quot; class=&quot;gist&quot;&gt;
+    &lt;div class=&quot;gist-file&quot;&gt;
+      &lt;div class=&quot;gist-data&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+  &lt;div id=&quot;file-creating-project-md&quot; class=&quot;file my-2&quot;&gt;
+      &lt;div id=&quot;file-creating-project-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
+    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-shell&quot;&gt;&lt;pre&gt;mkdir my-project
+&lt;span class=&quot;pl-c1&quot;&gt;cd&lt;/span&gt; my-project
+npm init -y&lt;/pre&gt;&lt;/div&gt;
+&lt;/article&gt;
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;gist-meta&quot;&gt;
+        &lt;a href=&quot;https://gist.github.com/willmendesneto/fa5a3771487c6d9d89c1034a38456257/raw/3ec73f215b6e9a7f755b223a37def071c73cb917/creating-project.md&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/willmendesneto/fa5a3771487c6d9d89c1034a38456257#file-creating-project-md&quot;&gt;creating-project.md&lt;/a&gt;
+        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;The &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt; file generated initially for this project won&apos;t have any dependencies, neither dev dependencies. As a next step, we&apos;ll install a new dev dependency, a NPM package called &lt;a href=&quot;https://www.npmjs.com/package/perf-marks&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;perf-marks&lt;/a&gt; by using the command &lt;code class=&quot;language-text&quot;&gt;npm install perf-marks --save-dev&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;&lt;div id=&quot;gist109140017&quot; class=&quot;gist&quot;&gt;
+    &lt;div class=&quot;gist-file&quot;&gt;
+      &lt;div class=&quot;gist-data&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+  &lt;div id=&quot;file-installing-dependency-md&quot; class=&quot;file my-2&quot;&gt;
+      &lt;div id=&quot;file-installing-dependency-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
+    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-shell&quot;&gt;&lt;pre&gt;npm install perf-marks --save-dev&lt;/pre&gt;&lt;/div&gt;
+&lt;/article&gt;
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;gist-meta&quot;&gt;
+        &lt;a href=&quot;https://gist.github.com/willmendesneto/f7e7e1e1c67889ce55461e8da77d06a0/raw/a1dcb20549f3d3165c144a64386e97e952f4f29e/installing-dependency.md&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/willmendesneto/f7e7e1e1c67889ce55461e8da77d06a0#file-installing-dependency-md&quot;&gt;installing-dependency.md&lt;/a&gt;
+        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;When the command finishes, you might see a new field called &lt;code class=&quot;language-text&quot;&gt;devDependencies&lt;/code&gt; in your &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;&lt;div id=&quot;gist109140045&quot; class=&quot;gist&quot;&gt;
+    &lt;div class=&quot;gist-file&quot;&gt;
+      &lt;div class=&quot;gist-data&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+  &lt;div id=&quot;file-package-json-with-new-dependency-json&quot; class=&quot;file my-2&quot;&gt;
+    
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-json  &quot;&gt;
+      
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-package-json-with-new-dependency-json-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-package-json-with-new-dependency-json-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;{&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-package-json-with-new-dependency-json-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-package-json-with-new-dependency-json-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-ii&quot;&gt;...&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-package-json-with-new-dependency-json-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-package-json-with-new-dependency-json-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;devDependencies&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: {&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-package-json-with-new-dependency-json-L4&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-package-json-with-new-dependency-json-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;     &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;perf-marks&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;^1.14.2&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-package-json-with-new-dependency-json-L5&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-package-json-with-new-dependency-json-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  }&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-package-json-with-new-dependency-json-L6&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;6&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-package-json-with-new-dependency-json-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-ii&quot;&gt;...&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-package-json-with-new-dependency-json-L7&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;7&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-package-json-with-new-dependency-json-LC7&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
+      &lt;/tr&gt;
+&lt;/table&gt;
+
+
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;gist-meta&quot;&gt;
+        &lt;a href=&quot;https://gist.github.com/willmendesneto/af151eeb8fcc74b5aa07e0d408087f87/raw/c79f6835c43256c398974b2a1dac4aecd56c1364/package-json-with-new-dependency.json&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/willmendesneto/af151eeb8fcc74b5aa07e0d408087f87#file-package-json-with-new-dependency-json&quot;&gt;package-json-with-new-dependency.json&lt;/a&gt;
+        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;Now if you run the command &lt;code class=&quot;language-text&quot;&gt;npx depcheck&lt;/code&gt; you might see a message like that, listing &lt;code class=&quot;language-text&quot;&gt;perf-marks&lt;/code&gt; as an unused dependency.&lt;/p&gt;
+&lt;p&gt;&lt;div id=&quot;gist109140104&quot; class=&quot;gist&quot;&gt;
+    &lt;div class=&quot;gist-file&quot;&gt;
+      &lt;div class=&quot;gist-data&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+  &lt;div id=&quot;file-unused-dependency-depcheck-output-md&quot; class=&quot;file my-2&quot;&gt;
+      &lt;div id=&quot;file-unused-dependency-depcheck-output-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
+    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-shell&quot;&gt;&lt;pre&gt;Unused dependencies
+&lt;span class=&quot;pl-k&quot;&gt;*&lt;/span&gt; perf-marks&lt;/pre&gt;&lt;/div&gt;
+&lt;/article&gt;
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;gist-meta&quot;&gt;
+        &lt;a href=&quot;https://gist.github.com/willmendesneto/da7ad7137f22ac97aeb5623fbe84a42a/raw/67242e207ed223e09d1b3f115f8e6468349a7e6f/unused-dependency-depcheck-output.md&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/willmendesneto/da7ad7137f22ac97aeb5623fbe84a42a#file-unused-dependency-depcheck-output-md&quot;&gt;unused-dependency-depcheck-output.md&lt;/a&gt;
+        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;And that&apos;s it! 🎉&lt;/p&gt;
+&lt;h3&gt;Ignoring a dependency in depcheck&lt;/h3&gt;
+&lt;p&gt;In case you want to ignore a specific dependency for some reason, you can do it too! Just need to create a file called &lt;code class=&quot;language-text&quot;&gt;.depcheckrc&lt;/code&gt; at the root of your repository.&lt;/p&gt;
+&lt;p&gt;In this file, you can add &lt;code class=&quot;language-text&quot;&gt;perf-marks&lt;/code&gt; as a package to be ignored by depcheck validation.&lt;/p&gt;
+&lt;p&gt;&lt;div id=&quot;gist109140149&quot; class=&quot;gist&quot;&gt;
+    &lt;div class=&quot;gist-file&quot;&gt;
+      &lt;div class=&quot;gist-data&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+  &lt;div id=&quot;file-gistfile1-txt&quot; class=&quot;file my-2&quot;&gt;
+    
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-text  &quot;&gt;
+      
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-gistfile1-txt-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-gistfile1-txt-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;ignores: [&amp;quot;perf-marks&amp;quot;]&lt;/td&gt;
+      &lt;/tr&gt;
+&lt;/table&gt;
+
+
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;gist-meta&quot;&gt;
+        &lt;a href=&quot;https://gist.github.com/willmendesneto/01f6e15a547e8ef50d5cab0fcbe76518/raw/25095b2d0c7c2e887fc7bca48de02921d37ba405/gistfile1.txt&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/willmendesneto/01f6e15a547e8ef50d5cab0fcbe76518#file-gistfile1-txt&quot;&gt;gistfile1.txt&lt;/a&gt;
+        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;So, in the next time you run &lt;code class=&quot;language-text&quot;&gt;npx depcheck&lt;/code&gt; command, the call should not return any error message.&lt;/p&gt;
+&lt;p&gt;Also, this is a video I recorded showing how to use &lt;code class=&quot;language-text&quot;&gt;depcheck&lt;/code&gt; package in your project. Enjoy 🤘🤘🤘&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.youtube.com/watch?v=lwnZCsafahM&quot; title=&quot;Video showing how to use depcheck package&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;&lt;img src=&quot;http://img.youtube.com/vi/lwnZCsafahM/0.jpg&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h3&gt;That’s all for now&lt;/h3&gt;
+&lt;p&gt;I hope you enjoyed this reading as much as I enjoyed writing it. Thank you so much for reading until the end and see you soon!&lt;/p&gt;
+&lt;p&gt;🚀🚀🚀🚀🚀🚀&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Cya 👋&lt;/h3&gt;
+                &lt;div style=&quot;margin-top=55px; font-style: italic;&quot;&gt;(This is an article posted to my blog at willmendesneto.com. You can read it online by &lt;a href=&quot;https://willmendesneto.com/posts/validating-dependencies-in-your-project-with-depcheck-package/&quot;&gt;clicking here&lt;/a&gt;.)&lt;/div&gt;
+              </content:encoded></item><item><title><![CDATA[Building your TinyMCE theme in React with Material-UI]]></title><link>https://willmendesneto.com/posts/building-your-tinymce-theme-in-react-with-material-ui/</link><guid isPermaLink="false">https://willmendesneto.com/posts/building-your-tinymce-theme-in-react-with-material-ui/</guid><pubDate>Mon, 19 Apr 2021 09:13:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1280px; &quot;
     &gt;
