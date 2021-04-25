@@ -1,16 +1,14 @@
 ---
-status: "active"
-title: "Validating dependencies in your project with depcheck package"
+status: "draft"
+title: "Automating launchdarkly feature flags cleanup in your codebase"
 layout: post
 author: Wilson Mendes
-date: '2021-04-22T09:13:00.419Z'
-path: /posts/validating-dependencies-in-your-project-with-depcheck-package/
+date: '2021-05-03T09:13:00.419Z'
+path: /posts/automating-launchdarkly-feature-flags-cleanup-in-your-codebase/
 category: "post"
 lang: en
 tags: ['frontend', 'javascript', 'frontend', 'tip', 'js', 'tooling', 'architecture', 'dependencies']
 ---
-
-![Package Dependencies Validation](./package-dependencies-validation.jpg)
 
 ## Introduction
 
