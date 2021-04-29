@@ -158,7 +158,7 @@ At the end you will have this results on the file with name predetermined and pa
 
 ![](./list-of-unused-feature-flags-in-file.png)
 
-And voila! All done 🎉 Now you have a list of all feature flags that can be safely removed from your launchdarkly instance. That could be because you're using them for some A/B test validation or even validating a release using progressive rollout to do so. In any case, a great cleanup in your feature flag platform is always good, isn't it? And it might also save some money of yur company 😉
+And voila! All done 🎉 Now you have a list of all feature flags that can be safely removed from your launchdarkly instance. That could be because you're using them for some A/B test validation or even validating a release using progressive rollout to do so. In any case, a great cleanup in your feature flag platform is always good, isn't it? And it might also save some money of your company 😉
 
 Jokes aside, this is just an idea of things you can do to make the maintenance of large codebases smooth. You can evolve this script to do more things, such as create a time-to-live for feature flags in your codebase or anything else that makes sense for your aplication. The ideas are limitless, up to you and your team to decide!
 
