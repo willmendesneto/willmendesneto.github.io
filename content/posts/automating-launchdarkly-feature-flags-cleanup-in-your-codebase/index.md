@@ -1,5 +1,5 @@
 ---
-status: "draft"
+status: "active"
 title: "Automating launchdarkly feature flags cleanup in your codebase"
 layout: post
 author: Wilson Mendes
