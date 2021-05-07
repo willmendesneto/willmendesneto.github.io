@@ -1,6 +1,6 @@
 ---
 status: "active"
-title: Dark Side Is In Our Blood — Dark mode in you pages using CSS Filters
+title: Dark Side Is In Our Blood — Dark mode in your pages using CSS Filters
 description: "TL;DR; use these tips and get a dark mode in your web app. You can find a pull request adding the changes in this link Enjoy! \U0001F389"
 date: '2020-07-06T19:49:10.124Z'
 categories: []
