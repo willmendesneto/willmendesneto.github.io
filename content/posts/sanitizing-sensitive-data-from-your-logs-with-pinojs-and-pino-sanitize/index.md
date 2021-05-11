@@ -1,9 +1,9 @@
 ---
-status: "draft"
+status: "active"
 title: "Sanitizing sensitive data from your logs with PinoJS and Pino-Sanitize"
 layout: post
 author: Wilson Mendes
-date: '2021-05-10T09:13:00.419Z'
+date: '2021-05-11T09:13:00.419Z'
 path: /posts/sanitizing-sensitive-data-from-your-logs-with-pinojs-and-pino-sanitize/
 category: "post"
 lang: en
