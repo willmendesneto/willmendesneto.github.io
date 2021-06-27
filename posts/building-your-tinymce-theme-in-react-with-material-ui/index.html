@@ -212,7 +212,7 @@ data-styled.g36[id="Share__StyledWhatsAppButton-sc-1rx8md7-4"]{content:"fHaLcF,"
 </ul>
 <p>Having these constraints in mind, the folder structure will be something like this.</p>
 <p><div id="gist109070280" class="gist">
-    <div class="gist-file">
+    <div class="gist-file" translate="no">
       <div class="gist-data">
         <div class="js-gist-file-update-container js-task-list-container file-box">
   <div id="file-common-editor-structure-md" class="file my-2">
@@ -243,7 +243,7 @@ editor/
 <h3>Creating a Material UI component to wrap the theme of your Editor</h3>
 <p>Now let's write our components. The first one will have all the defaults for editor's initialisation, initial text value and a callback to be called when the editor content has some changes.</p>
 <p><div id="gist109070089" class="gist">
-    <div class="gist-file">
+    <div class="gist-file" translate="no">
       <div class="gist-data">
         <div class="js-gist-file-update-container js-task-list-container file-box">
   <div id="file-editor-js" class="file my-2">
@@ -476,7 +476,7 @@ editor/
 <p>Bear in mind that WYSiWYG editors are often with default classes and styles. So we can reuse the classes and override their styles. This is an example sharing how to increase toolbar styles, changing colors, border-radius, and more. Another good point of that: there are also some changes on the last toolbar list of items. This will be interesting to make sure the last list of items are <em>always</em> on the right, it doesn't matter what.</p>
 <p>So this will be the component wrapping the theme styles of your editor. You can always create other wrappers and define the usage on the consumer side.</p>
 <p><div id="gist109070030" class="gist">
-    <div class="gist-file">
+    <div class="gist-file" translate="no">
       <div class="gist-data">
         <div class="js-gist-file-update-container js-task-list-container file-box">
   <div id="file-minimal-js" class="file my-2">
@@ -660,7 +660,7 @@ editor/
 </div></p>
 <p>The last file to be covered in this section will have all the icons that will be used in the editor.</p>
 <p><div id="gist109070546" class="gist">
-    <div class="gist-file">
+    <div class="gist-file" translate="no">
       <div class="gist-data">
         <div class="js-gist-file-update-container js-task-list-container file-box">
   <div id="file-icons-js" class="file my-2">
@@ -784,7 +784,7 @@ editor/
 <p>How these requirements can be covered? In our case, we will create a new prop called <code class="language-text">onSetupActions</code> that will receive some specific configuration for actions, icons and buttons on the consumer side.</p>
 <p>So, at the end the component will receive these props as configuration and it will make the icons and toolbar actions available. These actions will be added and/or removed based on the toolbar configuration.</p>
 <p><div id="gist109070538" class="gist">
-    <div class="gist-file">
+    <div class="gist-file" translate="no">
       <div class="gist-data">
         <div class="js-gist-file-update-container js-task-list-container file-box">
   <div id="file-app-js" class="file my-2">
@@ -1331,7 +1331,7 @@ editor/
 </div></p>
 <p>This configuration passed via <code class="language-text">onSetupActions</code> will be used on the Editor component by calling <code class="language-text">editor.ui.registry.addIcon</code> in case of adding and/overriding an icon in your application and <code class="language-text">editor.ui.registry.addToggleButton</code> if you the prop has some configuration for add a new toolbar action.</p>
 <p><div id="gist109070440" class="gist">
-    <div class="gist-file">
+    <div class="gist-file" translate="no">
       <div class="gist-data">
         <div class="js-gist-file-update-container js-task-list-container file-box">
   <div id="file-editor-with-setup-for-actions-js" class="file my-2">

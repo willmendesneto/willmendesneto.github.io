@@ -144,7 +144,7 @@ data-styled.g36[id="Share__StyledWhatsAppButton-sc-1rx8md7-4"]{content:"fHaLcF,"
 <p>For example, if you have a design system on the namespace <code class="language-text">@myapp/</code> and you have a button which imports some icons, you'll ending up having <code class="language-text">@myapp/buttons</code> and <code class="language-text">@myapp/icons</code> in your dependencies. Also, if your build distribution is sharing only CommonJS, you might have all the buttons and icons. And it's even worse, because CommonJS not tree-shakable! 😱</p>
 <p>To ilustrate this scenario, let's imagine you have 2 components in your <code class="language-text">@myapp/buttons</code> package. From now on you'll have <code class="language-text">Button</code> and <code class="language-text">ButtonWithIcon</code> and there are several components inside <code class="language-text">@myapp/icons</code> -  it can be more than 30 components, for example.</p>
 <p><div id="gist108921521" class="gist">
-    <div class="gist-file">
+    <div class="gist-file" translate="no">
       <div class="gist-data">
         <div class="js-gist-file-update-container js-task-list-container file-box">
   <div id="file-first-app-structure-md" class="file my-2">
@@ -177,7 +177,7 @@ data-styled.g36[id="Share__StyledWhatsAppButton-sc-1rx8md7-4"]{content:"fHaLcF,"
 </blockquote>
 <p>With all these changes in place, the first version of your <code class="language-text">package.json</code> will be like that.</p>
 <p><div id="gist108921552" class="gist">
-    <div class="gist-file">
+    <div class="gist-file" translate="no">
       <div class="gist-data">
         <div class="js-gist-file-update-container js-task-list-container file-box">
   <div id="file-exposing-esm-file-package-ison-md" class="file my-2">
@@ -209,7 +209,7 @@ data-styled.g36[id="Share__StyledWhatsAppButton-sc-1rx8md7-4"]{content:"fHaLcF,"
 <h3>Code-Splitting and taking advantage of tree-shaking by reduce bundle size</h3>
 <p>Your <code class="language-text">@myapp/buttons</code> package will have the build distribution organized that way.</p>
 <p><div id="gist108921570" class="gist">
-    <div class="gist-file">
+    <div class="gist-file" translate="no">
       <div class="gist-data">
         <div class="js-gist-file-update-container js-task-list-container file-box">
   <div id="file-build-structure-with-cjs-and-esm-md" class="file my-2">
@@ -300,7 +300,7 @@ data-styled.g36[id="Share__StyledWhatsAppButton-sc-1rx8md7-4"]{content:"fHaLcF,"
 <p>You should not access your dependency directories directly, unless it's something <em>extremelly</em> necessary. A small change in your dependencies and your app might be broken</p>
 </blockquote>
 <p><div id="gist108921578" class="gist">
-    <div class="gist-file">
+    <div class="gist-file" translate="no">
       <div class="gist-data">
         <div class="js-gist-file-update-container js-task-list-container file-box">
   <div id="file-breaking-changes-because-the-package-structure-changed-md" class="file my-2">
@@ -451,7 +451,7 @@ data-styled.g36[id="Share__StyledWhatsAppButton-sc-1rx8md7-4"]{content:"fHaLcF,"
 <p>If you need a specific entry point to expose more than 1 component, that can be done easily by the file. In this case, 2 new components were added in <code class="language-text">@myapp/buttons</code>: <code class="language-text">ButtonGroup</code> and <code class="language-text">ButtonTheme</code>. </p>
 <p>Instead of creating a entry-point for each of the files, a new entry-point calledn <code class="language-text">@myapp/buttons/utils</code> was created, giving the choice of export each of them to the app consumer.</p>
 <p><div id="gist108921592" class="gist">
-    <div class="gist-file">
+    <div class="gist-file" translate="no">
       <div class="gist-data">
         <div class="js-gist-file-update-container js-task-list-container file-box">
   <div id="file-utils-entrypoint-example-js" class="file my-2">
@@ -498,7 +498,7 @@ data-styled.g36[id="Share__StyledWhatsAppButton-sc-1rx8md7-4"]{content:"fHaLcF,"
 </div></p>
 <p>Based on that specific case, the package json inside of <code class="language-text">@myapp/buttons/utils</code> folder will be </p>
 <p><div id="gist108921598" class="gist">
-    <div class="gist-file">
+    <div class="gist-file" translate="no">
       <div class="gist-data">
         <div class="js-gist-file-update-container js-task-list-container file-box">
   <div id="file-package-json" class="file my-2">
@@ -556,7 +556,7 @@ data-styled.g36[id="Share__StyledWhatsAppButton-sc-1rx8md7-4"]{content:"fHaLcF,"
 </div></p>
 <p>With these changes applied, that will be the structure of your package, supporting entry-points 🤘🤘🤘🤘</p>
 <p><div id="gist108921609" class="gist">
-    <div class="gist-file">
+    <div class="gist-file" translate="no">
       <div class="gist-data">
         <div class="js-gist-file-update-container js-task-list-container file-box">
   <div id="file-final-structure-with-entry-points-md" class="file my-2">
