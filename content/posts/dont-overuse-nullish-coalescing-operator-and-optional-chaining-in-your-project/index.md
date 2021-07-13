@@ -3,7 +3,7 @@ status: "active"
 title: "Don't overuse Nullish coalescing operator and Optional Chaining in your project"
 layout: post
 author: Wilson Mendes
-date: '2021-05-17T09:13:00.419Z'
+date: '2021-06-27T09:13:00.419Z'
 path: /posts/dont-overuse-nullish-coalescing-operator-and-optional-chaining-in-your-project/
 category: "post"
 lang: en
