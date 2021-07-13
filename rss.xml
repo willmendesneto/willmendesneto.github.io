@@ -1,4 +1,397 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Will Mendes Blog RSS Feed]]></title><description><![CDATA[Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies]]></description><link>https://willmendesneto.com</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 27 Jun 2021 22:45:14 GMT</lastBuildDate><item><title><![CDATA[Don't overuse Nullish coalescing operator and Optional Chaining in your project]]></title><link>https://willmendesneto.com/posts/dont-overuse-nullish-coalescing-operator-and-optional-chaining-in-your-project/</link><guid isPermaLink="false">https://willmendesneto.com/posts/dont-overuse-nullish-coalescing-operator-and-optional-chaining-in-your-project/</guid><pubDate>Mon, 17 May 2021 09:13:00 GMT</pubDate><content:encoded>&lt;h2&gt;Introduction&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Will Mendes Blog RSS Feed]]></title><description><![CDATA[Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies]]></description><link>https://willmendesneto.com</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 13 Jul 2021 03:49:11 GMT</lastBuildDate><item><title><![CDATA[Installing Multiple Versions of the Same Package in your project via package aliases]]></title><link>https://willmendesneto.com/posts/installing-multiple-versions-of-the-same-package-in-your-project-via-package-aliases/</link><guid isPermaLink="false">https://willmendesneto.com/posts/installing-multiple-versions-of-the-same-package-in-your-project-via-package-aliases/</guid><pubDate>Tue, 13 Jul 2021 09:13:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1280px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;https://willmendesneto.com/static/889cca9a1309d75820689f4a65700c19/c1679/hero.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 37.8125%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABYlAAAWJQFJUiTwAAABSUlEQVQoz3WSu0oDQRiFx9mNAS+dPoEgSCqx0MbCxsbCIlgJopUPYNSdXbWInaCIwYBioWhAQrDVxlYfwNeY2ZsbLI9zW3VNUnz87FzOf/Y/Q0q+gMsEhgNTHU/CuFmTe0P7HCVmqsss3mCIupiLOh4vVLLDMX4osHwTYeEyAtnloLrhYEg5sB9/xJQjUuNYvUuwdB1hox2j+hBj+jSEK88T5Vi5Z70QJeb+F5NOpk5CXLx1sdVJsXIba5rvXVTOI93MCZQA74FQK2gs21/d45isCxy/Zlhrpeh8fGHxKsFcI8J8M9ajoMqp34dfQSPqWqgMoXqfYLOdYvvpE7ONGOuPKWbOzCwd3zhU93P6OCzOUiVbkQLsOQN7yfQYiE1dN/bMOWopFx2KH4e5aJ60ej7Uk2I1GQoL5b5h7CjEqHwFqo4cCEzUQ3wDZrKPkpVGi4UAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+          &lt;source
+              srcset=&quot;https://willmendesneto.com/static/889cca9a1309d75820689f4a65700c19/fb34c/hero.avif 320w,https://willmendesneto.com/static/889cca9a1309d75820689f4a65700c19/646cd/hero.avif 768w,https://willmendesneto.com/static/889cca9a1309d75820689f4a65700c19/8b485/hero.avif 1024w,https://willmendesneto.com/static/889cca9a1309d75820689f4a65700c19/a73d6/hero.avif 1280w,https://willmendesneto.com/static/889cca9a1309d75820689f4a65700c19/7d69a/hero.avif 1456w&quot;
+              sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+              type=&quot;image/avif&quot;
+            /&gt;&lt;source
+              srcset=&quot;https://willmendesneto.com/static/889cca9a1309d75820689f4a65700c19/cb523/hero.webp 320w,https://willmendesneto.com/static/889cca9a1309d75820689f4a65700c19/cd067/hero.webp 768w,https://willmendesneto.com/static/889cca9a1309d75820689f4a65700c19/53334/hero.webp 1024w,https://willmendesneto.com/static/889cca9a1309d75820689f4a65700c19/4b075/hero.webp 1280w,https://willmendesneto.com/static/889cca9a1309d75820689f4a65700c19/7d36c/hero.webp 1456w&quot;
+              sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+              type=&quot;image/webp&quot;
+            /&gt;
+          &lt;source
+            srcset=&quot;https://willmendesneto.com/static/889cca9a1309d75820689f4a65700c19/d4f27/hero.png 320w,https://willmendesneto.com/static/889cca9a1309d75820689f4a65700c19/778aa/hero.png 768w,https://willmendesneto.com/static/889cca9a1309d75820689f4a65700c19/658fc/hero.png 1024w,https://willmendesneto.com/static/889cca9a1309d75820689f4a65700c19/26c69/hero.png 1280w,https://willmendesneto.com/static/889cca9a1309d75820689f4a65700c19/c1679/hero.png 1456w&quot;
+            sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+            type=&quot;image/png&quot;
+          /&gt;
+          &lt;img
+            class=&quot;gatsby-resp-image-image&quot;
+            src=&quot;https://willmendesneto.com/static/889cca9a1309d75820689f4a65700c19/26c69/hero.png&quot;
+            alt=&quot;hero&quot;
+            title=&quot;hero&quot;
+            loading=&quot;lazy&quot;
+            style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+          /&gt;
+        &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;There are some really known patterns to migrate packages in large applications. You might find some code referencing to a different package (such as &lt;code class=&quot;language-text&quot;&gt;@my-namespace/my-package/next&lt;/code&gt;) or specific branches (like &lt;code class=&quot;language-text&quot;&gt;@my-namespace/my-package#next&lt;/code&gt;). All of this is applied in order to mitigate risks during this migration. So you can use a common architectural practice focused on having the project evolution in steps called &lt;a href=&quot;https://martinfowler.com/bliki/StranglerFigApplication.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Strangler pattern&lt;/a&gt;, having both packages in use until the previous usage is totally removed from the codebase.&lt;/p&gt;
+&lt;p&gt;However, we can make it really simple to be done in some cases by adding different package names pointing to the same package.&lt;/p&gt;
+&lt;h2&gt;Using an old and the latest version of the package in the same project&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Please make sure you are using Node Version &gt;=10.16.0 and NPM version &gt;=6.9.0 in your repository or it won&apos;t work as expected&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Firstly, let&apos;s create the project to show a real example of this approach in action. In order to start, let&apos;s first create a folder called &lt;code class=&quot;language-text&quot;&gt;multiple-package-versions-in-project&lt;/code&gt; and, inside of this folder, initialize a node project by running &lt;code class=&quot;language-text&quot;&gt;npm init -y&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;After that, we can install the old and latest versions of the package. The package used in this example is &lt;code class=&quot;language-text&quot;&gt;feature-toggle-service&lt;/code&gt;, a lightweight package to manage feature toggle in your app.&lt;/p&gt;
+&lt;p&gt;You can have it done directly via NPM! What will be done in this case is to use an idea called &quot;package aliases&quot; by using this pattern on the install command:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;package-name-alias&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;@npm:&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;package-name&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# Or if you want to point on a specific version&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;package-name-alias&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;@npm:&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;package-name&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;@&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;package-version&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In your example, we&apos;ll call &lt;code class=&quot;language-text&quot;&gt;feature-toggle-service&lt;/code&gt; when using the old version of the package and &lt;code class=&quot;language-text&quot;&gt;feature-toggle-service-next&lt;/code&gt; when using the latest version. At the end, this will be the commands you have to run to get the setup done in your local environment.&lt;/p&gt;
+&lt;p&gt;&lt;div id=&quot;gist110641063&quot; class=&quot;gist&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+      &lt;div class=&quot;gist-data&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+  &lt;div id=&quot;file-setting-up-the-project-md&quot; class=&quot;file my-2&quot;&gt;
+      &lt;div id=&quot;file-setting-up-the-project-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
+    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-shell&quot;&gt;&lt;pre&gt;&lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;#&lt;/span&gt; Creating folder jumping on the created folder&lt;/span&gt;
+mkdir multiple-package-versions-in-project &lt;span class=&quot;pl-k&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; \
+&lt;span class=&quot;pl-c1&quot;&gt;cd&lt;/span&gt; multiple-package-versions-in-project \
+&lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;#&lt;/span&gt; Starting a NPM project&lt;/span&gt;
+npm init -y &lt;span class=&quot;pl-k&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; \
+&lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;#&lt;/span&gt; Installing old &amp;amp; new versions of `feature-toggle-service` package&lt;/span&gt;
+npm install --save \
+  feature-toggle-service@npm:feature-toggle-service@4.0.0 \
+  feature-toggle-service-next@npm:feature-toggle-service@6.0.0&lt;/pre&gt;&lt;/div&gt;
+&lt;/article&gt;
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;gist-meta&quot;&gt;
+        &lt;a href=&quot;https://gist.github.com/willmendesneto/fda99dd27859571649e74d2cb2e02a54/raw/38b315486124d5196e774fd68c01bb7cac0bbb00/setting-up-the-project.md&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/willmendesneto/fda99dd27859571649e74d2cb2e02a54#file-setting-up-the-project-md&quot;&gt;setting-up-the-project.md&lt;/a&gt;
+        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;As you can see on the code below, your &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt; file now is pointing to different versions of the same package, having that available calling their respective aliases by calling via &lt;code class=&quot;language-text&quot;&gt;import&lt;/code&gt; or &lt;code class=&quot;language-text&quot;&gt;require&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;div id=&quot;gist110641009&quot; class=&quot;gist&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+      &lt;div class=&quot;gist-data&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+  &lt;div id=&quot;file-package-json&quot; class=&quot;file my-2&quot;&gt;
+    
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-json  &quot;&gt;
+
+      
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-package-json-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-package-json-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;{&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-package-json-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-package-json-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;name&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;multiple-versions-of-package-in-project&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-package-json-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-package-json-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;version&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;1.0.0&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-package-json-L4&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-package-json-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;description&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;Using multiple versions of the same package in a project&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-package-json-L5&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-package-json-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;main&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;index.js&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-package-json-L6&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;6&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-package-json-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;scripts&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: {&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-package-json-L7&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;7&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-package-json-LC7&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;start&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;node index.js&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-package-json-L8&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;8&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-package-json-LC8&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  },&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-package-json-L9&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;9&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-package-json-LC9&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;keywords&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: [],&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-package-json-L10&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;10&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-package-json-LC10&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;author&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;Will Mendes &amp;lt;willmendesneto@gmail.com&amp;gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-package-json-L11&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;11&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-package-json-LC11&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;license&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;ISC&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-package-json-L12&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;12&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-package-json-LC12&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;dependencies&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: {&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-package-json-L13&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;13&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-package-json-LC13&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;feature-toggle-service&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;npm:feature-toggle-service@^4.0.0&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;,&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-package-json-L14&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;14&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-package-json-LC14&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;feature-toggle-service-next&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;npm:feature-toggle-service@^6.0.0&lt;span class=&quot;pl-pds&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-package-json-L15&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;15&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-package-json-LC15&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  }&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-package-json-L16&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;16&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-package-json-LC16&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
+      &lt;/tr&gt;
+&lt;/table&gt;
+
+
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;gist-meta&quot;&gt;
+        &lt;a href=&quot;https://gist.github.com/willmendesneto/0c6790fee63e328d220268784b7dcc8e/raw/e673158d8d5b7feffa03cd76c4ed986f5a996eea/package.json&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/willmendesneto/0c6790fee63e328d220268784b7dcc8e#file-package-json&quot;&gt;package.json&lt;/a&gt;
+        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;Now, let&apos;s write some code using these packages. This can be done by importing both packages and methods and printing their outputs by passing their values in &lt;code class=&quot;language-text&quot;&gt;console.log()&lt;/code&gt; functions.&lt;/p&gt;
+&lt;p&gt;&lt;div id=&quot;gist110641036&quot; class=&quot;gist&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+      &lt;div class=&quot;gist-data&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+  &lt;div id=&quot;file-index-js&quot; class=&quot;file my-2&quot;&gt;
+    
+  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+
+      
+&lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-index-js-L1&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-index-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-k&gt;const&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt; isOn&lt;span class=pl-kos&gt;,&lt;/span&gt; set &lt;span class=pl-kos&gt;}&lt;/span&gt; &lt;span class=pl-c1&gt;=&lt;/span&gt; &lt;span class=pl-en&gt;require&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s&gt;&amp;#39;feature-toggle-service&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-index-js-L2&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-index-js-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-k&gt;const&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt; &lt;span class=pl-c1&gt;isOn&lt;/span&gt;: &lt;span class=pl-s1&gt;isOnNext&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt; &lt;span class=pl-c1&gt;set&lt;/span&gt;: &lt;span class=pl-s1&gt;setNext&lt;/span&gt; &lt;span class=pl-kos&gt;}&lt;/span&gt; &lt;span class=pl-c1&gt;=&lt;/span&gt; &lt;span class=pl-en&gt;require&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s&gt;&amp;#39;feature-toggle-service-next&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-index-js-L3&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-index-js-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-index-js-L4&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-index-js-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-k&gt;const&lt;/span&gt; &lt;span class=pl-s1&gt;defaultConfig&lt;/span&gt; &lt;span class=pl-c1&gt;=&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt; &lt;span class=pl-c1&gt;enableFirstSection&lt;/span&gt;: &lt;span class=pl-c1&gt;true&lt;/span&gt; &lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-index-js-L5&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-index-js-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-en&gt;set&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s1&gt;defaultConfig&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-index-js-L6&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;6&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-index-js-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-s1&gt;setNext&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s1&gt;defaultConfig&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-index-js-L7&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;7&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-index-js-LC7&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-index-js-L8&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;8&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-index-js-LC8&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-c&gt;// ❌ Old version: does NOT have a `debug` option&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-index-js-L9&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;9&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-index-js-LC9&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-smi&gt;console&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;log&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-en&gt;isOn&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s&gt;&amp;#39;enableFirstSection&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-index-js-L10&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;10&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-index-js-LC10&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-c&gt;// ✅ Latest version: does have a `debug` option available&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td id=&quot;file-index-js-L11&quot; class=&quot;blob-num js-line-number&quot; data-line-number=&quot;11&quot;&gt;&lt;/td&gt;
+        &lt;td id=&quot;file-index-js-LC11&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-smi&gt;console&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;log&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s1&gt;isOnNext&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s&gt;&amp;#39;enableFirstSection&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt; &lt;span class=pl-c1&gt;true&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+&lt;/table&gt;
+
+
+  &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;gist-meta&quot;&gt;
+        &lt;a href=&quot;https://gist.github.com/willmendesneto/a2d08bc4ba22387955f9fb52d7fe8186/raw/9b182df5d50d11ad7ef6424a6e8ef18d768f303f/index.js&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/willmendesneto/a2d08bc4ba22387955f9fb52d7fe8186#file-index-js&quot;&gt;index.js&lt;/a&gt;
+        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;In this case, we have a new feature on &lt;code class=&quot;language-text&quot;&gt;isOn&lt;/code&gt; method on the latest version, which is the only one who has &lt;code class=&quot;language-text&quot;&gt;debug&lt;/code&gt; option.&lt;/p&gt;
+&lt;p&gt;Also, you can check in your Editor/IDE that their JSDocs are totally different as well. It confirms that the package aliases are up and running in your project.&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1280px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;https://willmendesneto.com/static/a67dbcb9c27be072d449fbf387823acc/4bf5c/old-version.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 34.6875%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABYlAAAWJQFJUiTwAAABSUlEQVQoz32R3XKbQAxGeZU4Nj+GXWB3YQGDAQfbadrpZHLX93+QU8E4mV60vTgjrWb20ycpCI8FYVoSZobDJ3FOeCw5KMc+s+xTK3WJ8j6khudYCZrdI36R5AQ3NzCYjmF5Y5pudOeF+/UHbTvTzN9phjuXn7+oxm/0pytOyLsF5WfK/o6qJ3Rz2cjsiSA75iSrw9wTC5H2KNugXIs2kpeeouqItSMSp/HqckUch7re4uFR24tOcKpe8OM72fSBnt9R0j2WsapupvA95QPtTiQyTaQsT5Haxt39GbdcE+hixNY3Ijfi/Zmx7bF+opTPYSbuteGYW9LSiVsnYtm2q38RrEJxfaE0E755w9VXzPkVve6pXciaF1TV8yzH260HlKPtHgf4q2BszyTVTG5GcXXBuIXUyoirmCxceVl2LU2LhsQOJHn1X8Hfc4fcWZyirRwAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+          &lt;source
+              srcset=&quot;https://willmendesneto.com/static/a67dbcb9c27be072d449fbf387823acc/fb34c/old-version.avif 320w,https://willmendesneto.com/static/a67dbcb9c27be072d449fbf387823acc/646cd/old-version.avif 768w,https://willmendesneto.com/static/a67dbcb9c27be072d449fbf387823acc/8b485/old-version.avif 1024w,https://willmendesneto.com/static/a67dbcb9c27be072d449fbf387823acc/a73d6/old-version.avif 1280w,https://willmendesneto.com/static/a67dbcb9c27be072d449fbf387823acc/9a0ee/old-version.avif 1642w&quot;
+              sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+              type=&quot;image/avif&quot;
+            /&gt;&lt;source
+              srcset=&quot;https://willmendesneto.com/static/a67dbcb9c27be072d449fbf387823acc/cb523/old-version.webp 320w,https://willmendesneto.com/static/a67dbcb9c27be072d449fbf387823acc/cd067/old-version.webp 768w,https://willmendesneto.com/static/a67dbcb9c27be072d449fbf387823acc/53334/old-version.webp 1024w,https://willmendesneto.com/static/a67dbcb9c27be072d449fbf387823acc/4b075/old-version.webp 1280w,https://willmendesneto.com/static/a67dbcb9c27be072d449fbf387823acc/42f11/old-version.webp 1642w&quot;
+              sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+              type=&quot;image/webp&quot;
+            /&gt;
+          &lt;source
+            srcset=&quot;https://willmendesneto.com/static/a67dbcb9c27be072d449fbf387823acc/d4f27/old-version.png 320w,https://willmendesneto.com/static/a67dbcb9c27be072d449fbf387823acc/778aa/old-version.png 768w,https://willmendesneto.com/static/a67dbcb9c27be072d449fbf387823acc/658fc/old-version.png 1024w,https://willmendesneto.com/static/a67dbcb9c27be072d449fbf387823acc/26c69/old-version.png 1280w,https://willmendesneto.com/static/a67dbcb9c27be072d449fbf387823acc/4bf5c/old-version.png 1642w&quot;
+            sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+            type=&quot;image/png&quot;
+          /&gt;
+          &lt;img
+            class=&quot;gatsby-resp-image-image&quot;
+            src=&quot;https://willmendesneto.com/static/a67dbcb9c27be072d449fbf387823acc/26c69/old-version.png&quot;
+            alt=&quot;Old version of `feature-toggle-service` package without `debug` support&quot;
+            title=&quot;Old version of `feature-toggle-service` package without `debug` support&quot;
+            loading=&quot;lazy&quot;
+            style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+          /&gt;
+        &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;Old version of `feature-toggle-service` package without `debug` support&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1280px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;https://willmendesneto.com/static/76b521d8bc84292ad39a99bbc63d261e/f8b84/new-version.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 33.4375%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABYlAAAWJQFJUiTwAAABWklEQVQoz01Q2XKDMBDjP9q0CbcB2xjMZY5AQqfH9Kn9/29R1256PGjk9exqtfKOqcAp4QgzCaEHMKEh5AJejiiqDkxqFKoFr3sI4qJsULYjMsuNcXyMc9Io4JOWV4oGuepQEgxB1QPO13eIakCUS1rEkXCFVFSIM0FDOeKiRMC4Yz8t8Bgx5PVEfRqe4jXyyritup9QOYxoxgXttLpadSNkMziBY5zh3o9xd4oc7Nv+ZaThBAfzgmL7hBiuNGhQjxtUvzgRbRaYdSfx1S2sh5n+zs7tKcnJvXDuHsL07+SufQZrNvB+xbTtbsBmZ5uzUoNXlJtqKMva1bmyGRrqaaFoiT3ZCgZMOnhZt0PqDbrb0E1XGqDGfgajsA8hbY8y4vT2Zr/n/vAhSJzLgNz5VpD1T5D1inZ4Qzd/QLYX6PMrSrOjaFdyfvnORxnwZkbIBDn5h/QGEvNTiS+x/NlrurAyRgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+          &lt;source
+              srcset=&quot;https://willmendesneto.com/static/76b521d8bc84292ad39a99bbc63d261e/fb34c/new-version.avif 320w,https://willmendesneto.com/static/76b521d8bc84292ad39a99bbc63d261e/646cd/new-version.avif 768w,https://willmendesneto.com/static/76b521d8bc84292ad39a99bbc63d261e/8b485/new-version.avif 1024w,https://willmendesneto.com/static/76b521d8bc84292ad39a99bbc63d261e/a73d6/new-version.avif 1280w,https://willmendesneto.com/static/76b521d8bc84292ad39a99bbc63d261e/7b40d/new-version.avif 1682w&quot;
+              sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+              type=&quot;image/avif&quot;
+            /&gt;&lt;source
+              srcset=&quot;https://willmendesneto.com/static/76b521d8bc84292ad39a99bbc63d261e/cb523/new-version.webp 320w,https://willmendesneto.com/static/76b521d8bc84292ad39a99bbc63d261e/cd067/new-version.webp 768w,https://willmendesneto.com/static/76b521d8bc84292ad39a99bbc63d261e/53334/new-version.webp 1024w,https://willmendesneto.com/static/76b521d8bc84292ad39a99bbc63d261e/4b075/new-version.webp 1280w,https://willmendesneto.com/static/76b521d8bc84292ad39a99bbc63d261e/1c0ca/new-version.webp 1682w&quot;
+              sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+              type=&quot;image/webp&quot;
+            /&gt;
+          &lt;source
+            srcset=&quot;https://willmendesneto.com/static/76b521d8bc84292ad39a99bbc63d261e/d4f27/new-version.png 320w,https://willmendesneto.com/static/76b521d8bc84292ad39a99bbc63d261e/778aa/new-version.png 768w,https://willmendesneto.com/static/76b521d8bc84292ad39a99bbc63d261e/658fc/new-version.png 1024w,https://willmendesneto.com/static/76b521d8bc84292ad39a99bbc63d261e/26c69/new-version.png 1280w,https://willmendesneto.com/static/76b521d8bc84292ad39a99bbc63d261e/f8b84/new-version.png 1682w&quot;
+            sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+            type=&quot;image/png&quot;
+          /&gt;
+          &lt;img
+            class=&quot;gatsby-resp-image-image&quot;
+            src=&quot;https://willmendesneto.com/static/76b521d8bc84292ad39a99bbc63d261e/26c69/new-version.png&quot;
+            alt=&quot;Latest version of `feature-toggle-service` package with `debug` support&quot;
+            title=&quot;Latest version of `feature-toggle-service` package with `debug` support&quot;
+            loading=&quot;lazy&quot;
+            style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+          /&gt;
+        &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;Latest version of `feature-toggle-service` package with `debug` support&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;At the end, this will be the output when you run the code by calling &lt;code class=&quot;language-text&quot;&gt;npm start&lt;/code&gt; or &lt;code class=&quot;language-text&quot;&gt;node index.js&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1280px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;https://willmendesneto.com/static/e48424f845e5563b7fccbd041fc0a6a7/29f2d/final-output.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 64.6875%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAACU0lEQVQ4y32SzY7TMBDH8xhoV9ukcRLHdmzHcdqkqpaFXZC4cOQIDRLwONATgu2BE8/Ih7Mexmm3KqzE4ZcZy/HMfz6im0v5ilvzlZTy4ywvt3HO9mTldoYkBduW0kzMC47nPfNCbOdUoC+2hMlPudCfZ6S0kbL6u+4tNHYJuWih4A1ioZALyGULVC2BaryrGkhLdUDCnFaQFAExnQlTcEHK99GsUF+EaMCY/ge3V06bx07aS2cW106h1e0TJ9pLx+zalWa1R3cuY9qlCAm21D9DIgz+OkpotePVAhb9C8evXnreXYPQFrhugSFBZcZrSKk8UahQkb7HI2PwUekmws+O6g5k98zZ5Y1v+ufoP50Qdg0UAxaVxXYYpDlgTvHIGHxMuomwF7uMGyj0ynHZe65WgGUBa9ZQ1v2+l6L5V9WpWo+MwY9zvplKJpWBhHJXCIXZNJaoACcKFykFnPQBdgS3IDyeBpNxjW/qMQzmgtBNFGNAtroCsVg6JWvPmhYq2wGuCUzBmYQCbY5Jgp8d7IxQwNUKwX2SszEkPU8y7CGlO2UMcGUd7pWfY+aUCiBlNT28t/eEc2AKFpQT6mNCx+Cfz/NNRCt1a7sVSLPEdek8r62nVe1RlUeVE6juL2hljv8Uog7+GJLtFXJxS7seiNK/GKvuKt7eYQkPQAX/43dowVlC3kTYg29x2HqKTcZmJxk/GcSe+GjZNKxAkvODL45nvH8bUaFXBZMfuGw2uOnDo1k6nCf5A87ibMDAA7ZmELodsMyBqWaQTTfZnOt3s5SmfwD2Xl+9a9kuHAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+          &lt;source
+              srcset=&quot;https://willmendesneto.com/static/e48424f845e5563b7fccbd041fc0a6a7/fb34c/final-output.avif 320w,https://willmendesneto.com/static/e48424f845e5563b7fccbd041fc0a6a7/646cd/final-output.avif 768w,https://willmendesneto.com/static/e48424f845e5563b7fccbd041fc0a6a7/8b485/final-output.avif 1024w,https://willmendesneto.com/static/e48424f845e5563b7fccbd041fc0a6a7/a73d6/final-output.avif 1280w,https://willmendesneto.com/static/e48424f845e5563b7fccbd041fc0a6a7/a7f9f/final-output.avif 1920w,https://willmendesneto.com/static/e48424f845e5563b7fccbd041fc0a6a7/ec3fe/final-output.avif 3808w&quot;
+              sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+              type=&quot;image/avif&quot;
+            /&gt;&lt;source
+              srcset=&quot;https://willmendesneto.com/static/e48424f845e5563b7fccbd041fc0a6a7/cb523/final-output.webp 320w,https://willmendesneto.com/static/e48424f845e5563b7fccbd041fc0a6a7/cd067/final-output.webp 768w,https://willmendesneto.com/static/e48424f845e5563b7fccbd041fc0a6a7/53334/final-output.webp 1024w,https://willmendesneto.com/static/e48424f845e5563b7fccbd041fc0a6a7/4b075/final-output.webp 1280w,https://willmendesneto.com/static/e48424f845e5563b7fccbd041fc0a6a7/f3ff0/final-output.webp 1920w,https://willmendesneto.com/static/e48424f845e5563b7fccbd041fc0a6a7/1d53d/final-output.webp 3808w&quot;
+              sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+              type=&quot;image/webp&quot;
+            /&gt;
+          &lt;source
+            srcset=&quot;https://willmendesneto.com/static/e48424f845e5563b7fccbd041fc0a6a7/d4f27/final-output.png 320w,https://willmendesneto.com/static/e48424f845e5563b7fccbd041fc0a6a7/778aa/final-output.png 768w,https://willmendesneto.com/static/e48424f845e5563b7fccbd041fc0a6a7/658fc/final-output.png 1024w,https://willmendesneto.com/static/e48424f845e5563b7fccbd041fc0a6a7/26c69/final-output.png 1280w,https://willmendesneto.com/static/e48424f845e5563b7fccbd041fc0a6a7/7d442/final-output.png 1920w,https://willmendesneto.com/static/e48424f845e5563b7fccbd041fc0a6a7/29f2d/final-output.png 3808w&quot;
+            sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+            type=&quot;image/png&quot;
+          /&gt;
+          &lt;img
+            class=&quot;gatsby-resp-image-image&quot;
+            src=&quot;https://willmendesneto.com/static/e48424f845e5563b7fccbd041fc0a6a7/26c69/final-output.png&quot;
+            alt=&quot;Code output in action&quot;
+            title=&quot;Code output in action&quot;
+            loading=&quot;lazy&quot;
+            style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+          /&gt;
+        &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;Code output in action&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;The code is quite simple, but the idea is not at all. In fact, this will become quite handy if you need to migrate and/or upgrade packages with several major versions bumped. This will avoid your webapp to face issues in potential due to breaking changes affecting core features, lack of backward compatibilities - which is expected in major packages bumps - and so on, and so forth.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h3&gt;That’s all for now&lt;/h3&gt;
+&lt;p&gt;I hope you enjoyed this reading as much as I enjoyed writing it. Thank you so much for reading until the end and see you soon!&lt;/p&gt;
+&lt;p&gt;🚀🚀🚀🚀🚀🚀&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Cya 👋&lt;/h3&gt;
+                &lt;div style=&quot;margin-top=55px; font-style: italic;&quot;&gt;(This is an article posted to my blog at willmendesneto.com. You can read it online by &lt;a href=&quot;https://willmendesneto.com/posts/installing-multiple-versions-of-the-same-package-in-your-project-via-package-aliases/&quot;&gt;clicking here&lt;/a&gt;.)&lt;/div&gt;
+              </content:encoded></item><item><title><![CDATA[Don't overuse Nullish coalescing operator and Optional Chaining in your project]]></title><link>https://willmendesneto.com/posts/dont-overuse-nullish-coalescing-operator-and-optional-chaining-in-your-project/</link><guid isPermaLink="false">https://willmendesneto.com/posts/dont-overuse-nullish-coalescing-operator-and-optional-chaining-in-your-project/</guid><pubDate>Sun, 27 Jun 2021 09:13:00 GMT</pubDate><content:encoded>&lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;This will be a quick tip about &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Nullish Coalescing operator&lt;/a&gt; and &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Optional chaining&lt;/a&gt; I just raised few weeks ago &lt;a href=&quot;https://twitter.com/willmendesneto/status/1402687604471078912&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;in this Tweet&lt;/a&gt;. The nullish coalescing operator (&lt;code class=&quot;language-text&quot;&gt;??&lt;/code&gt;) is a logical operator that returns the assigned value in case of the check is done in a variable/attribute with value as &lt;code class=&quot;language-text&quot;&gt;null&lt;/code&gt; or &lt;code class=&quot;language-text&quot;&gt;undefined&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;It&apos;s definitely such great operator (in specifically if you had the pleasure to work with Coffeescript or similars) and it&apos;s way cleaner than some other approaches, but there are also some small caveats to be aware. For example, in a comparison of nullish coalescing (&lt;code class=&quot;language-text&quot;&gt;??&lt;/code&gt;) and or (&lt;code class=&quot;language-text&quot;&gt;||&lt;/code&gt;) operators the app will get different results since &lt;code class=&quot;language-text&quot;&gt;||&lt;/code&gt; will check for falsy values, which includes empty strings and the number 0, in the example below.&lt;/p&gt;
 &lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
@@ -99,6 +492,7 @@
   &lt;div id=&quot;file-do-not-abuse-of-nullish-coalescing-usage-in-ts&quot; class=&quot;file my-2&quot;&gt;
     
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-typescript  &quot;&gt;
+
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
@@ -401,6 +795,7 @@
   &lt;div id=&quot;file-pino-sanitize-example-js&quot; class=&quot;file my-2&quot;&gt;
     
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
@@ -923,6 +1318,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
   &lt;div id=&quot;file-index-js&quot; class=&quot;file my-2&quot;&gt;
     
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
@@ -1169,6 +1565,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
   &lt;div id=&quot;file-package-json&quot; class=&quot;file my-2&quot;&gt;
     
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-json  &quot;&gt;
+
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
@@ -1281,6 +1678,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
   &lt;div id=&quot;file-list-unused-feature-flags-in-code-sh&quot; class=&quot;file my-2&quot;&gt;
     
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-shell  &quot;&gt;
+
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
@@ -2170,6 +2568,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
   &lt;div id=&quot;file-package-json-with-new-dependency-json&quot; class=&quot;file my-2&quot;&gt;
     
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-json  &quot;&gt;
+
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
@@ -2250,6 +2649,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
   &lt;div id=&quot;file-gistfile1-txt&quot; class=&quot;file my-2&quot;&gt;
     
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-text  &quot;&gt;
+
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
@@ -2429,6 +2829,7 @@ editor/
   &lt;div id=&quot;file-editor-js&quot; class=&quot;file my-2&quot;&gt;
     
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
@@ -2662,6 +3063,7 @@ editor/
   &lt;div id=&quot;file-minimal-js&quot; class=&quot;file my-2&quot;&gt;
     
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
@@ -2846,6 +3248,7 @@ editor/
   &lt;div id=&quot;file-icons-js&quot; class=&quot;file my-2&quot;&gt;
     
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
@@ -2961,6 +3364,7 @@ editor/
   &lt;div id=&quot;file-app-js&quot; class=&quot;file my-2&quot;&gt;
     
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
@@ -3508,6 +3912,7 @@ editor/
   &lt;div id=&quot;file-editor-with-setup-for-actions-js&quot; class=&quot;file my-2&quot;&gt;
     
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
@@ -4148,6 +4553,7 @@ editor/
   &lt;div id=&quot;file-utils-entrypoint-example-js&quot; class=&quot;file my-2&quot;&gt;
     
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
@@ -4195,6 +4601,7 @@ editor/
   &lt;div id=&quot;file-package-json&quot; class=&quot;file my-2&quot;&gt;
     
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-json  &quot;&gt;
+
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
@@ -4410,6 +4817,7 @@ I encourage you to see all of these steps in action by using [perf-marks entry-p
   &lt;div id=&quot;file-performance-observer-js&quot; class=&quot;file my-2&quot;&gt;
     
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
@@ -4655,6 +5063,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
   &lt;div id=&quot;file-perf-node-js&quot; class=&quot;file my-2&quot;&gt;
     
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
@@ -4790,6 +5199,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
   &lt;div id=&quot;file-using-perf-marks-js&quot; class=&quot;file my-2&quot;&gt;
     
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
@@ -4888,6 +5298,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
   &lt;div id=&quot;file-perf-marks-js&quot; class=&quot;file my-2&quot;&gt;
     
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
@@ -5033,6 +5444,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
   &lt;div id=&quot;file-css-in-js-breakpoints-js&quot; class=&quot;file my-2&quot;&gt;
     
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
@@ -5264,6 +5676,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
   &lt;div id=&quot;file-a11y-dev-mode-css&quot; class=&quot;file my-2&quot;&gt;
     
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-css  &quot;&gt;
+
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
@@ -5637,6 +6050,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
   &lt;div id=&quot;file-dark-mode-via-css-media-query-css&quot; class=&quot;file my-2&quot;&gt;
     
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-css  &quot;&gt;
+
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
@@ -5735,6 +6149,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
   &lt;div id=&quot;file-dark-mode-switch-toggle-html&quot; class=&quot;file my-2&quot;&gt;
     
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-html  &quot;&gt;
+
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
@@ -5789,6 +6204,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
   &lt;div id=&quot;file-dark-mode-via-css-media-query-and-classes-via-javascript-css&quot; class=&quot;file my-2&quot;&gt;
     
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-css  &quot;&gt;
+
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
@@ -6178,6 +6594,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
   &lt;div id=&quot;file-dark-mode-via-css-media-query-and-classes-via-javascript-js&quot; class=&quot;file my-2&quot;&gt;
     
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
@@ -6388,6 +6805,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
   &lt;div id=&quot;file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js&quot; class=&quot;file my-2&quot;&gt;
     
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
@@ -6604,6 +7022,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
   &lt;div id=&quot;file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js&quot; class=&quot;file my-2&quot;&gt;
     
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
@@ -7166,6 +7585,7 @@ This list in incomplete:&lt;/p&gt;
   &lt;div id=&quot;file-fetch-some-data-js&quot; class=&quot;file my-2&quot;&gt;
     
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
@@ -7437,6 +7857,7 @@ This list in incomplete:&lt;/p&gt;
   &lt;div id=&quot;file-ng-publish-sh&quot; class=&quot;file my-2&quot;&gt;
     
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-shell  &quot;&gt;
+
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;
@@ -7544,6 +7965,7 @@ This list in incomplete:&lt;/p&gt;
   &lt;div id=&quot;file-config-yml&quot; class=&quot;file my-2&quot;&gt;
     
   &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-yaml  &quot;&gt;
+
       
 &lt;table class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip&gt;
       &lt;tr&gt;

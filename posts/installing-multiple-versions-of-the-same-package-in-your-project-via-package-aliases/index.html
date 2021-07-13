@@ -1,0 +1,536 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.5732ca1b73dd34ab0a97.css" id="gatsby-global-css">code[class*=language-],pre[class*=language-]{color:#f8f8f2;background:none;text-shadow:0 1px rgba(0,0,0,.3);font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto;border-radius:.3em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#272822}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#8292a2}.token.punctuation{color:#f8f8f2}.token.namespace{opacity:.7}.token.constant,.token.deleted,.token.property,.token.symbol,.token.tag{color:#f92672}.token.boolean,.token.number{color:#ae81ff}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#a6e22e}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url,.token.variable{color:#f8f8f2}.token.atrule,.token.attr-value,.token.class-name,.token.function{color:#e6db74}.token.keyword{color:#66d9ef}.token.important,.token.regex{color:#fd971f}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}html{font-family:Poppins,sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-size:30px;font-weight:500;padding:20px 0 0;line-height:1.8em;position:relative;color:#333;width:100%;height:100%}body{box-sizing:border-box;background:#fff;margin:0;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;color:#333;-webkit-text-decoration-skip:objects;font-weight:700}a:active,a:hover{outline-width:0;color:#099;opacity:.8}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:30px}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:112.5%/1.45em;box-sizing:border-box;overflow-y:scroll}*,:after,:before{box-sizing:inherit}body{font-weight:400;word-wrap:break-word;-webkit-font-kerning:normal;font-kerning:normal;-ms-font-feature-settings:"kern","liga","clig","calt";font-feature-settings:"kern","liga","clig","calt"}img{max-width:100%;padding:0;margin:0 0 1.45rem}h1{font-size:2.25rem}h1,h2{padding:0;margin:0 0 1.45rem;color:inherit;font-weight:700;text-rendering:optimizeLegibility;line-height:1.1}h2{font-size:1.62671rem}h3{font-size:1.38316rem}h3,h4{padding:0;margin:0 0 1.45rem;color:inherit;font-weight:700;text-rendering:optimizeLegibility;line-height:1.1}h4{font-size:1rem}h5{font-size:.85028rem}h5,h6{padding:0;margin:0 0 1.45rem;color:inherit;font-weight:700;text-rendering:optimizeLegibility;line-height:1.1}h6{font-size:.78405rem}hgroup{padding:0;margin:0 0 1.45rem}ol,ul{padding:0;margin:0 0 1.45rem 1.45rem;list-style-position:outside;list-style-image:none}dl{text-align:justify}dd,dl{margin:0 0 1.45rem}dd,dl,p{padding:0}p{margin:0 0 30px}figure{padding:0}figure,pre{margin:0 0 1.45rem}pre{font-size:.85rem;line-height:1.42;background:rgba(0,0,0,.04);border-radius:3px;overflow:auto;word-wrap:normal;padding:1.45rem}table{font-size:1rem;line-height:1.45rem;border-collapse:collapse;width:100%}fieldset,table{padding:0;margin:0 0 1.45rem}blockquote{padding:20px 0 10px;margin:0 1.45rem 1.45rem;color:#757575}form,iframe,noscript{padding:0;margin:0 0 1.45rem}hr{padding:0;margin:0 0 calc(1.45rem - 1px);background:rgba(0,0,0,.2);border:none;height:1px}address{padding:0;margin:0 0 1.45rem}b,dt,strong,th{font-weight:700}li{margin-bottom:.725rem}ol li,ul li{padding-left:0}li>ol,li>ul{margin-left:1.45rem;margin-bottom:.725rem;margin-top:.725rem}blockquote :last-child,li :last-child,p :last-child{margin-bottom:0}li>p{margin-bottom:.725rem}code,kbd,samp{font-size:.85rem;line-height:1.45rem}abbr,abbr[title],acronym{border-bottom:1px dotted rgba(0,0,0,.5);cursor:help}abbr[title]{text-decoration:none}td,th,thead{text-align:left}td,th{border-bottom:1px solid rgba(0,0,0,.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding:.725rem .96667rem calc(.725rem - 1px)}td:first-child,th:first-child{padding-left:0}td:last-child,th:last-child{padding-right:0}code,tt{background-color:rgba(0,0,0,.04);border-radius:3px;font-family:SFMono-Regular,Consolas,Roboto Mono,Droid Sans Mono,Liberation Mono,Menlo,Courier,monospace;padding:.2em 0}pre code{background:none;line-height:1.42}code:after,code:before,tt:after,tt:before{letter-spacing:-.2em;content:" "}pre code:after,pre code:before,pre tt:after,pre tt:before{content:""}h1,h2,h3,h4,h5,h6{color:#333}h1{font-weight:500}h2,h3,h4,h5,h6{background:transparent;margin-top:40px;font-weight:700;display:inline-block}.gatsby-highlight{border-radius:20px;margin:10px 0 20px}.gatsby-resp-image-figcaption{margin-top:40px}.twitter-tweet{margin:10px auto}.gist{margin-top:30px;margin-bottom:30px}.gist .gist-data{padding-top:10px;padding-bottom:10px}.gist .blob-num{border-bottom:none}@media only screen and (max-width:480px){html{font-size:100%}}</style><meta name="generator" content="Gatsby 3.0.4"/><style data-styled="" data-styled-version="5.2.1">.hKUvcS{max-width:1280px;margin:0 auto;padding-top:0;}/*!sc*/
+.hKUvcS h1{font-size:34px;}/*!sc*/
+@media (min-width:1024px){.hKUvcS h1{font-size:50px;}}/*!sc*/
+@media (min-width:1024px){.hKUvcS{padding-top:50px;}}/*!sc*/
+data-styled.g1[id="Section-zthcy2-0"]{content:"hKUvcS,"}/*!sc*/
+.RfRpu{display:inline-block;text-align:left;width:40%;}/*!sc*/
+data-styled.g3[id="Header__Logo-sc-160kmj-1"]{content:"RfRpu,"}/*!sc*/
+.bHSrwR{display:inline-block;height:40px;width:20%;}/*!sc*/
+@media (min-width:768px){.bHSrwR{display:none;}}/*!sc*/
+.bHSrwR img{border-radius:50%;margin-bottom:0;}/*!sc*/
+data-styled.g4[id="Header__LogoMobile-sc-160kmj-2"]{content:"bHSrwR,"}/*!sc*/
+.kzsPVe{display:none;}/*!sc*/
+@media (min-width:768px){.kzsPVe{display:inline-block;}}/*!sc*/
+data-styled.g5[id="Header__LogoDesktop-sc-160kmj-3"]{content:"kzsPVe,"}/*!sc*/
+.Ocybt{background:#fff;color:#333;margin:0 auto;padding:10px 15px;position:fixed;text-transform:uppercase;top:0;width:100%;z-index:10;box-sizing:border-box;pointer-events:auto;box-shadow:inset 0 -1px 0 rgb(230 230 230);}/*!sc*/
+@media (min-width:768px){.Ocybt{line-height:auto;padding:15px;right:0;padding-top:2vw;padding-bottom:2vw;padding-left:4vw;padding-right:4vw;}}/*!sc*/
+data-styled.g6[id="Header__Nav-sc-160kmj-4"]{content:"Ocybt,"}/*!sc*/
+.PjytW{position:relative;overflow-x:auto;padding-top:0;font-size:21px;}/*!sc*/
+@media (min-width:1024px){.PjytW{padding:0 20px;max-width:1280px;}}/*!sc*/
+data-styled.g7[id="Header__Wrapper-sc-160kmj-5"]{content:"PjytW,"}/*!sc*/
+.iLSqRZ{display:inline-block;position:absolute;right:0;}/*!sc*/
+@media (min-width:768px){.iLSqRZ{line-height:inherit;}}/*!sc*/
+.iLSqRZ a{padding:0;font-size:15px;margin-right:10px;}/*!sc*/
+.iLSqRZ a:last-child:after{margin-right:0;}/*!sc*/
+@media (min-width:768px){.iLSqRZ a{font-size:21px;margin-right:25px;}}/*!sc*/
+data-styled.g8[id="Header__Links-sc-160kmj-6"]{content:"iLSqRZ,"}/*!sc*/
+.foKHhW{font-weight:900;color:#333;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.foKHhW:hover{opacity:1;-webkit-text-decoration:underline;text-decoration:underline;text-underline-offset:10px;}/*!sc*/
+data-styled.g9[id="Header__NavLink-sc-160kmj-7"]{content:"foKHhW,"}/*!sc*/
+.llqpgS{color:#000;font-size:16px;padding:15px 0;text-align:center;}/*!sc*/
+data-styled.g10[id="Footer__Text-sc-14qtz8p-0"]{content:"llqpgS,"}/*!sc*/
+.evCYdc{width:100%;min-height:200px;border-top:2px solid #f0f0f2;margin:75px 0 0 0;font-size:16px;text-transform:uppercase;text-align:center;box-sizing:border-box;background:#f0f0f2;}/*!sc*/
+.evCYdc ul{display:block;margin:0;margin-bottom:70px;}/*!sc*/
+@media (min-width:768px){.evCYdc ul{display:inline-block;vertical-align:middle;}}/*!sc*/
+.evCYdc li{display:block;padding:10px;}/*!sc*/
+@media (min-width:768px){.evCYdc li{display:inline-block;margin-right:25px;}}/*!sc*/
+.evCYdc li a:hover{opacity:0.8;}/*!sc*/
+data-styled.g11[id="Footer__PageFooter-sc-14qtz8p-1"]{content:"evCYdc,"}/*!sc*/
+.cIXHvf{padding:15px 7px 15px 0;margin:0 auto;width:100%;overflow:hidden;max-width:1280px;font-size:20px;line-height:1.8em;padding:30px 0 0;position:relative;vertical-align:top;}/*!sc*/
+@media (min-width:768px){.cIXHvf{font-size:22px;}}/*!sc*/
+.cIXHvf pre{border-radius:0;font-size:0.8em;}/*!sc*/
+data-styled.g12[id="Layout__Wrapper-xnlv4k-0"]{content:"cIXHvf,"}/*!sc*/
+.bBuSAy{display:inline-block;padding:15px;vertical-align:top;width:100%;}/*!sc*/
+data-styled.g13[id="Layout__Main-xnlv4k-1"]{content:"bBuSAy,"}/*!sc*/
+.fNwryo{font-style:normal;font-weight:900;line-height:1em;margin:50px 0 20px 0;font-size:30px;-webkit-letter-spacing:-2px;-moz-letter-spacing:-2px;-ms-letter-spacing:-2px;letter-spacing:-2px;}/*!sc*/
+@media (min-width:768px){.fNwryo{font-size:50px;line-height:1em;margin:70px 0 20px 0;}}/*!sc*/
+data-styled.g14[id="Title-sc-1g46602-0"]{content:"fNwryo,"}/*!sc*/
+.kSQOnO figure{margin-bottom:1.45rem;vertical-align:middle;text-align:center;display:block;padding:0;margin:50px auto;}/*!sc*/
+.kSQOnO figcaption{color:#666;font-size:12px;line-height:1.5em;}/*!sc*/
+@media (min-width:1024px){.kSQOnO figcaption{font-size:16px;}}/*!sc*/
+.kSQOnO img{vertical-align:middle;aspect-ratio:auto 245 / 192;}/*!sc*/
+.kSQOnO p img{text-align:center;display:block;margin:20px auto;}/*!sc*/
+.kSQOnO p .language-text{margin-right:5px;}/*!sc*/
+.kSQOnO hr{border:none;background:transparent;color:#111;-webkit-letter-spacing:1em;-moz-letter-spacing:1em;-ms-letter-spacing:1em;letter-spacing:1em;text-align:center;margin-top:10px;margin-bottom:50px;}/*!sc*/
+@media (min-width:768px){.kSQOnO hr{margin-bottom:70px;}}/*!sc*/
+.kSQOnO hr:before{content:'...';}/*!sc*/
+data-styled.g30[id="PostContent__PostWrapper-sc-1jf6w5a-0"]{content:"kSQOnO,"}/*!sc*/
+.dVZbmD{color:#4e4c4c;display:block;font-style:italic;margin-bottom:20px;-webkit-letter-spacing:normal;-moz-letter-spacing:normal;-ms-letter-spacing:normal;letter-spacing:normal;line-height:1em;margin-top:10px;text-align:left;text-transform:capitalize;font-size:20px;}/*!sc*/
+data-styled.g31[id="PostDate-okmp83-0"]{content:"dVZbmD,"}/*!sc*/
+.gpEOWW{border-radius:20px;background:#f0f0f2;padding:20px 10px;margin-top:40px;margin-bottom:30px;}/*!sc*/
+data-styled.g32[id="Share__ShareWrapper-sc-1rx8md7-0"]{content:"gpEOWW,"}/*!sc*/
+.dYOHuc{cursor:pointer;color:#fff;padding:10px 20px;margin-right:20px;border-radius:10px;width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-bottom:10px;-webkit-transition:background-color 300ms;transition:background-color 300ms;background-color:#3b5998;border:2px solid #3b5998;}/*!sc*/
+@media (min-width:768px){.dYOHuc{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;width:auto;}}/*!sc*/
+.dYOHuc:hover{background-color:transparent;color:#3b5998;}/*!sc*/
+data-styled.g33[id="Share__StyledFacebookButton-sc-1rx8md7-1"]{content:"dYOHuc,"}/*!sc*/
+.dbAEAm{cursor:pointer;color:#fff;padding:10px 20px;margin-right:20px;border-radius:10px;width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-bottom:10px;-webkit-transition:background-color 300ms;transition:background-color 300ms;background-color:#1da1f2;border:2px solid #1da1f2;}/*!sc*/
+@media (min-width:768px){.dbAEAm{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;width:auto;}}/*!sc*/
+.dbAEAm:hover{background-color:transparent;color:#1da1f2;}/*!sc*/
+data-styled.g34[id="Share__StyledTwitterButton-sc-1rx8md7-2"]{content:"dbAEAm,"}/*!sc*/
+.fKvaYM{cursor:pointer;color:#fff;padding:10px 20px;margin-right:20px;border-radius:10px;width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-bottom:10px;-webkit-transition:background-color 300ms;transition:background-color 300ms;background-color:#3b5998;border:2px solid #3b5998;}/*!sc*/
+@media (min-width:768px){.fKvaYM{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;width:auto;}}/*!sc*/
+.fKvaYM:hover{background-color:transparent;color:#3b5998;}/*!sc*/
+data-styled.g35[id="Share__StyledLinkedInButton-sc-1rx8md7-3"]{content:"fKvaYM,"}/*!sc*/
+.fHaLcF{cursor:pointer;color:#fff;padding:10px 20px;margin-right:20px;border-radius:10px;width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-bottom:10px;-webkit-transition:background-color 300ms;transition:background-color 300ms;background-color:#128c7e;border:2px solid #128c7e;}/*!sc*/
+@media (min-width:768px){.fHaLcF{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;width:auto;}}/*!sc*/
+.fHaLcF:hover{background-color:transparent;color:#128c7e;}/*!sc*/
+data-styled.g36[id="Share__StyledWhatsAppButton-sc-1rx8md7-4"]{content:"fHaLcF,"}/*!sc*/
+</style><title data-react-helmet="true">Installing Multiple Versions of the Same Package in your project via package aliases | Wilson Mendes</title><meta data-react-helmet="true" name="description" content="Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies"/><meta data-react-helmet="true" property="og:title" content="Installing Multiple Versions of the Same Package in your project via package aliases"/><meta data-react-helmet="true" property="og:description" content="Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:title" content="Installing Multiple Versions of the Same Package in your project via package aliases"/><meta data-react-helmet="true" name="twitter:creator" content=""/><meta data-react-helmet="true" name="twitter:description" content="Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><link href="https://github.githubassets.com/assets/gist-embed-b3b573358bfc66d89e1e95dbf8319c09.css" rel="stylesheet"/><link rel="icon" href="/favicon-32x32.png?v=b897f62d006f8ad8d87b6fc5786692ba" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/poppins/v15/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/poppins/v15/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/poppins/v15/pxiByp8kv8JHgFVrLBT5Z1xlFQ.woff2"/><style>@font-face{font-family:Poppins;font-style:normal;font-weight:500;src:url(/static/webfonts/s/poppins/v15/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2) format("woff2");font-display:swap}@font-face{font-family:Poppins;font-style:normal;font-weight:700;src:url(/static/webfonts/s/poppins/v15/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2) format("woff2");font-display:swap}@font-face{font-family:Poppins;font-style:normal;font-weight:900;src:url(/static/webfonts/s/poppins/v15/pxiByp8kv8JHgFVrLBT5Z1xlFQ.woff2) format("woff2");font-display:swap}@font-face{font-family:Poppins;font-style:normal;font-weight:500;src:url(/static/webfonts/s/poppins/v15/pxiByp8kv8JHgFVrLGT9Z1xlEw.woff) format("woff");font-display:swap}@font-face{font-family:Poppins;font-style:normal;font-weight:700;src:url(/static/webfonts/s/poppins/v15/pxiByp8kv8JHgFVrLCz7Z1xlEw.woff) format("woff");font-display:swap}@font-face{font-family:Poppins;font-style:normal;font-weight:900;src:url(/static/webfonts/s/poppins/v15/pxiByp8kv8JHgFVrLBT5Z1xlEw.woff) format("woff");font-display:swap}</style><link rel="preconnect" href="https://www.google-analytics.com"/><link rel="dns-prefetch" href="https://www.google-analytics.com"/><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link rel="alternate" type="application/rss+xml" title="Will Mendes Blog RSS Feed" href="/rss.xml"/><link as="script" rel="preload" href="/webpack-runtime-b4303f3aa64421fa687d.js"/><link as="script" rel="preload" href="/framework-5a0f89685a3614932ea6.js"/><link as="script" rel="preload" href="/app-db5a2464f63690a6213b.js"/><link as="script" rel="preload" href="/c38806a22704b1411d609490b31463a94158f97c-5e54864974a395acac0b.js"/><link as="script" rel="preload" href="/component---src-templates-post-js-c0a5b29f6b5866cf90f3.js"/><link as="fetch" rel="preload" href="/page-data/posts/installing-multiple-versions-of-the-same-package-in-your-project-via-package-aliases/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/1559850390.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/63159454.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><header class="Header__PageHeader-sc-160kmj-0 coHUrI"><nav class="Header__Nav-sc-160kmj-4 Ocybt"><section class="Section-zthcy2-0 Header__Wrapper-sc-160kmj-5 hKUvcS PjytW"><span class="Header__Logo-sc-160kmj-1 Header__LogoMobile-sc-160kmj-2 RfRpu bHSrwR"><a class="Header__NavLink-sc-160kmj-7 foKHhW" href="/">WM</a></span><span class="Header__Logo-sc-160kmj-1 Header__LogoDesktop-sc-160kmj-3 RfRpu kzsPVe"><a class="Header__NavLink-sc-160kmj-7 foKHhW" href="/">Wilson Mendes</a></span><div class="Header__Links-sc-160kmj-6 iLSqRZ"><a active="false" class="Header__NavLink-sc-160kmj-7 foKHhW" href="/posts/">posts</a><a active="false" class="Header__NavLink-sc-160kmj-7 foKHhW" href="/talks/">talks</a><a active="false" class="Header__NavLink-sc-160kmj-7 foKHhW" href="/contact/">contact</a></div></section></nav></header><div class="Layout__Wrapper-xnlv4k-0 cIXHvf"><main class="Layout__Main-xnlv4k-1 bBuSAy"><section class="Section-zthcy2-0 hKUvcS"><h1 class="Title-sc-1g46602-0 fNwryo">Installing Multiple Versions of the Same Package in your project via package aliases</h1><time class="PostDate-okmp83-0 dVZbmD">July 13, 2021<!-- --> - <!-- -->6 min read</time><article class="PostContent__PostWrapper-sc-1jf6w5a-0 kSQOnO"><div><p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1280px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/889cca9a1309d75820689f4a65700c19/c1679/hero.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 37.8125%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABYlAAAWJQFJUiTwAAABSUlEQVQoz3WSu0oDQRiFx9mNAS+dPoEgSCqx0MbCxsbCIlgJopUPYNSdXbWInaCIwYBioWhAQrDVxlYfwNeY2ZsbLI9zW3VNUnz87FzOf/Y/Q0q+gMsEhgNTHU/CuFmTe0P7HCVmqsss3mCIupiLOh4vVLLDMX4osHwTYeEyAtnloLrhYEg5sB9/xJQjUuNYvUuwdB1hox2j+hBj+jSEK88T5Vi5Z70QJeb+F5NOpk5CXLx1sdVJsXIba5rvXVTOI93MCZQA74FQK2gs21/d45isCxy/Zlhrpeh8fGHxKsFcI8J8M9ajoMqp34dfQSPqWqgMoXqfYLOdYvvpE7ONGOuPKWbOzCwd3zhU93P6OCzOUiVbkQLsOQN7yfQYiE1dN/bMOWopFx2KH4e5aJ60ej7Uk2I1GQoL5b5h7CjEqHwFqo4cCEzUQ3wDZrKPkpVGi4UAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/889cca9a1309d75820689f4a65700c19/fb34c/hero.avif 320w,
+/static/889cca9a1309d75820689f4a65700c19/646cd/hero.avif 768w,
+/static/889cca9a1309d75820689f4a65700c19/8b485/hero.avif 1024w,
+/static/889cca9a1309d75820689f4a65700c19/a73d6/hero.avif 1280w,
+/static/889cca9a1309d75820689f4a65700c19/7d69a/hero.avif 1456w"
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              type="image/avif"
+            /><source
+              srcset="/static/889cca9a1309d75820689f4a65700c19/cb523/hero.webp 320w,
+/static/889cca9a1309d75820689f4a65700c19/cd067/hero.webp 768w,
+/static/889cca9a1309d75820689f4a65700c19/53334/hero.webp 1024w,
+/static/889cca9a1309d75820689f4a65700c19/4b075/hero.webp 1280w,
+/static/889cca9a1309d75820689f4a65700c19/7d36c/hero.webp 1456w"
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/889cca9a1309d75820689f4a65700c19/d4f27/hero.png 320w,
+/static/889cca9a1309d75820689f4a65700c19/778aa/hero.png 768w,
+/static/889cca9a1309d75820689f4a65700c19/658fc/hero.png 1024w,
+/static/889cca9a1309d75820689f4a65700c19/26c69/hero.png 1280w,
+/static/889cca9a1309d75820689f4a65700c19/c1679/hero.png 1456w"
+            sizes="(max-width: 1280px) 100vw, 1280px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/889cca9a1309d75820689f4a65700c19/26c69/hero.png"
+            alt="hero"
+            title="hero"
+            loading="lazy"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<h2>Introduction</h2>
+<p>There are some really known patterns to migrate packages in large applications. You might find some code referencing to a different package (such as <code class="language-text">@my-namespace/my-package/next</code>) or specific branches (like <code class="language-text">@my-namespace/my-package#next</code>). All of this is applied in order to mitigate risks during this migration. So you can use a common architectural practice focused on having the project evolution in steps called <a href="https://martinfowler.com/bliki/StranglerFigApplication.html" target="_blank" rel="nofollow noopener noreferrer">Strangler pattern</a>, having both packages in use until the previous usage is totally removed from the codebase.</p>
+<p>However, we can make it really simple to be done in some cases by adding different package names pointing to the same package.</p>
+<h2>Using an old and the latest version of the package in the same project</h2>
+<blockquote>
+<p>Please make sure you are using Node Version >=10.16.0 and NPM version >=6.9.0 in your repository or it won't work as expected</p>
+</blockquote>
+<p>Firstly, let's create the project to show a real example of this approach in action. In order to start, let's first create a folder called <code class="language-text">multiple-package-versions-in-project</code> and, inside of this folder, initialize a node project by running <code class="language-text">npm init -y</code>.</p>
+<p>After that, we can install the old and latest versions of the package. The package used in this example is <code class="language-text">feature-toggle-service</code>, a lightweight package to manage feature toggle in your app.</p>
+<p>You can have it done directly via NPM! What will be done in this case is to use an idea called "package aliases" by using this pattern on the install command:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> <span class="token operator">&lt;</span>package-name-alias<span class="token operator">></span>@npm:<span class="token operator">&lt;</span>package-name<span class="token operator">></span>
+<span class="token comment"># Or if you want to point on a specific version</span>
+<span class="token function">npm</span> <span class="token function">install</span> <span class="token operator">&lt;</span>package-name-alias<span class="token operator">></span>@npm:<span class="token operator">&lt;</span>package-name<span class="token operator">></span>@<span class="token operator">&lt;</span>package-version<span class="token operator">></span></code></pre></div>
+<p>In your example, we'll call <code class="language-text">feature-toggle-service</code> when using the old version of the package and <code class="language-text">feature-toggle-service-next</code> when using the latest version. At the end, this will be the commands you have to run to get the setup done in your local environment.</p>
+<p><div id="gist110641063" class="gist">
+    <div class="gist-file" translate="no">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-setting-up-the-project-md" class="file my-2">
+      <div id="file-setting-up-the-project-md-readme" class="Box-body readme blob js-code-block-container p-5 p-xl-6 ">
+    <article class="markdown-body entry-content container-lg" itemprop="text"><div class="highlight highlight-source-shell"><pre><span class="pl-c"><span class="pl-c">#</span> Creating folder jumping on the created folder</span>
+mkdir multiple-package-versions-in-project <span class="pl-k">&amp;&amp;</span> \
+<span class="pl-c1">cd</span> multiple-package-versions-in-project \
+<span class="pl-c"><span class="pl-c">#</span> Starting a NPM project</span>
+npm init -y <span class="pl-k">&amp;&amp;</span> \
+<span class="pl-c"><span class="pl-c">#</span> Installing old &amp; new versions of `feature-toggle-service` package</span>
+npm install --save \
+  feature-toggle-service@npm:feature-toggle-service@4.0.0 \
+  feature-toggle-service-next@npm:feature-toggle-service@6.0.0</pre></div>
+</article>
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/willmendesneto/fda99dd27859571649e74d2cb2e02a54/raw/38b315486124d5196e774fd68c01bb7cac0bbb00/setting-up-the-project.md" style="float:right">view raw</a>
+        <a href="https://gist.github.com/willmendesneto/fda99dd27859571649e74d2cb2e02a54#file-setting-up-the-project-md">setting-up-the-project.md</a>
+        hosted with &#10084; by <a href="https://github.com">GitHub</a>
+      </div>
+    </div>
+</div></p>
+<p>As you can see on the code below, your <code class="language-text">package.json</code> file now is pointing to different versions of the same package, having that available calling their respective aliases by calling via <code class="language-text">import</code> or <code class="language-text">require</code>.</p>
+<p><div id="gist110641009" class="gist">
+    <div class="gist-file" translate="no">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-package-json" class="file my-2">
+    
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-json  ">
+
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip>
+      <tr>
+        <td id="file-package-json-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-package-json-LC1" class="blob-code blob-code-inner js-file-line">{</td>
+      </tr>
+      <tr>
+        <td id="file-package-json-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-package-json-LC2" class="blob-code blob-code-inner js-file-line">  <span class="pl-s"><span class="pl-pds">&quot;</span>name<span class="pl-pds">&quot;</span></span>: <span class="pl-s"><span class="pl-pds">&quot;</span>multiple-versions-of-package-in-project<span class="pl-pds">&quot;</span></span>,</td>
+      </tr>
+      <tr>
+        <td id="file-package-json-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-package-json-LC3" class="blob-code blob-code-inner js-file-line">  <span class="pl-s"><span class="pl-pds">&quot;</span>version<span class="pl-pds">&quot;</span></span>: <span class="pl-s"><span class="pl-pds">&quot;</span>1.0.0<span class="pl-pds">&quot;</span></span>,</td>
+      </tr>
+      <tr>
+        <td id="file-package-json-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-package-json-LC4" class="blob-code blob-code-inner js-file-line">  <span class="pl-s"><span class="pl-pds">&quot;</span>description<span class="pl-pds">&quot;</span></span>: <span class="pl-s"><span class="pl-pds">&quot;</span>Using multiple versions of the same package in a project<span class="pl-pds">&quot;</span></span>,</td>
+      </tr>
+      <tr>
+        <td id="file-package-json-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-package-json-LC5" class="blob-code blob-code-inner js-file-line">  <span class="pl-s"><span class="pl-pds">&quot;</span>main<span class="pl-pds">&quot;</span></span>: <span class="pl-s"><span class="pl-pds">&quot;</span>index.js<span class="pl-pds">&quot;</span></span>,</td>
+      </tr>
+      <tr>
+        <td id="file-package-json-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-package-json-LC6" class="blob-code blob-code-inner js-file-line">  <span class="pl-s"><span class="pl-pds">&quot;</span>scripts<span class="pl-pds">&quot;</span></span>: {</td>
+      </tr>
+      <tr>
+        <td id="file-package-json-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-package-json-LC7" class="blob-code blob-code-inner js-file-line">    <span class="pl-s"><span class="pl-pds">&quot;</span>start<span class="pl-pds">&quot;</span></span>: <span class="pl-s"><span class="pl-pds">&quot;</span>node index.js<span class="pl-pds">&quot;</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-package-json-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-package-json-LC8" class="blob-code blob-code-inner js-file-line">  },</td>
+      </tr>
+      <tr>
+        <td id="file-package-json-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-package-json-LC9" class="blob-code blob-code-inner js-file-line">  <span class="pl-s"><span class="pl-pds">&quot;</span>keywords<span class="pl-pds">&quot;</span></span>: [],</td>
+      </tr>
+      <tr>
+        <td id="file-package-json-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-package-json-LC10" class="blob-code blob-code-inner js-file-line">  <span class="pl-s"><span class="pl-pds">&quot;</span>author<span class="pl-pds">&quot;</span></span>: <span class="pl-s"><span class="pl-pds">&quot;</span>Will Mendes &lt;willmendesneto@gmail.com&gt;<span class="pl-pds">&quot;</span></span>,</td>
+      </tr>
+      <tr>
+        <td id="file-package-json-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-package-json-LC11" class="blob-code blob-code-inner js-file-line">  <span class="pl-s"><span class="pl-pds">&quot;</span>license<span class="pl-pds">&quot;</span></span>: <span class="pl-s"><span class="pl-pds">&quot;</span>ISC<span class="pl-pds">&quot;</span></span>,</td>
+      </tr>
+      <tr>
+        <td id="file-package-json-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-package-json-LC12" class="blob-code blob-code-inner js-file-line">  <span class="pl-s"><span class="pl-pds">&quot;</span>dependencies<span class="pl-pds">&quot;</span></span>: {</td>
+      </tr>
+      <tr>
+        <td id="file-package-json-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-package-json-LC13" class="blob-code blob-code-inner js-file-line">    <span class="pl-s"><span class="pl-pds">&quot;</span>feature-toggle-service<span class="pl-pds">&quot;</span></span>: <span class="pl-s"><span class="pl-pds">&quot;</span>npm:feature-toggle-service@^4.0.0<span class="pl-pds">&quot;</span></span>,</td>
+      </tr>
+      <tr>
+        <td id="file-package-json-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-package-json-LC14" class="blob-code blob-code-inner js-file-line">    <span class="pl-s"><span class="pl-pds">&quot;</span>feature-toggle-service-next<span class="pl-pds">&quot;</span></span>: <span class="pl-s"><span class="pl-pds">&quot;</span>npm:feature-toggle-service@^6.0.0<span class="pl-pds">&quot;</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-package-json-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-package-json-LC15" class="blob-code blob-code-inner js-file-line">  }</td>
+      </tr>
+      <tr>
+        <td id="file-package-json-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-package-json-LC16" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+</table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/willmendesneto/0c6790fee63e328d220268784b7dcc8e/raw/e673158d8d5b7feffa03cd76c4ed986f5a996eea/package.json" style="float:right">view raw</a>
+        <a href="https://gist.github.com/willmendesneto/0c6790fee63e328d220268784b7dcc8e#file-package-json">package.json</a>
+        hosted with &#10084; by <a href="https://github.com">GitHub</a>
+      </div>
+    </div>
+</div></p>
+<hr/>
+<p>Now, let's write some code using these packages. This can be done by importing both packages and methods and printing their outputs by passing their values in <code class="language-text">console.log()</code> functions.</p>
+<p><div id="gist110641036" class="gist">
+    <div class="gist-file" translate="no">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-index-js" class="file my-2">
+    
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-javascript  ">
+
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip>
+      <tr>
+        <td id="file-index-js-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-index-js-LC1" class="blob-code blob-code-inner js-file-line"><span class=pl-k>const</span> <span class=pl-kos>{</span> isOn<span class=pl-kos>,</span> set <span class=pl-kos>}</span> <span class=pl-c1>=</span> <span class=pl-en>require</span><span class=pl-kos>(</span><span class=pl-s>&#39;feature-toggle-service&#39;</span><span class=pl-kos>)</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-index-js-LC2" class="blob-code blob-code-inner js-file-line"><span class=pl-k>const</span> <span class=pl-kos>{</span> <span class=pl-c1>isOn</span>: <span class=pl-s1>isOnNext</span><span class=pl-kos>,</span> <span class=pl-c1>set</span>: <span class=pl-s1>setNext</span> <span class=pl-kos>}</span> <span class=pl-c1>=</span> <span class=pl-en>require</span><span class=pl-kos>(</span><span class=pl-s>&#39;feature-toggle-service-next&#39;</span><span class=pl-kos>)</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-index-js-LC3" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-index-js-LC4" class="blob-code blob-code-inner js-file-line"><span class=pl-k>const</span> <span class=pl-s1>defaultConfig</span> <span class=pl-c1>=</span> <span class=pl-kos>{</span> <span class=pl-c1>enableFirstSection</span>: <span class=pl-c1>true</span> <span class=pl-kos>}</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-index-js-LC5" class="blob-code blob-code-inner js-file-line"><span class=pl-en>set</span><span class=pl-kos>(</span><span class=pl-s1>defaultConfig</span><span class=pl-kos>)</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-index-js-LC6" class="blob-code blob-code-inner js-file-line"><span class=pl-s1>setNext</span><span class=pl-kos>(</span><span class=pl-s1>defaultConfig</span><span class=pl-kos>)</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-index-js-LC7" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-index-js-LC8" class="blob-code blob-code-inner js-file-line"><span class=pl-c>// ❌ Old version: does NOT have a `debug` option</span></td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-index-js-LC9" class="blob-code blob-code-inner js-file-line"><span class=pl-smi>console</span><span class=pl-kos>.</span><span class=pl-en>log</span><span class=pl-kos>(</span><span class=pl-en>isOn</span><span class=pl-kos>(</span><span class=pl-s>&#39;enableFirstSection&#39;</span><span class=pl-kos>)</span><span class=pl-kos>)</span><span class=pl-kos>;</span></td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-index-js-LC10" class="blob-code blob-code-inner js-file-line"><span class=pl-c>// ✅ Latest version: does have a `debug` option available</span></td>
+      </tr>
+      <tr>
+        <td id="file-index-js-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-index-js-LC11" class="blob-code blob-code-inner js-file-line"><span class=pl-smi>console</span><span class=pl-kos>.</span><span class=pl-en>log</span><span class=pl-kos>(</span><span class=pl-s1>isOnNext</span><span class=pl-kos>(</span><span class=pl-s>&#39;enableFirstSection&#39;</span><span class=pl-kos>,</span> <span class=pl-c1>true</span><span class=pl-kos>)</span><span class=pl-kos>)</span><span class=pl-kos>;</span></td>
+      </tr>
+</table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/willmendesneto/a2d08bc4ba22387955f9fb52d7fe8186/raw/9b182df5d50d11ad7ef6424a6e8ef18d768f303f/index.js" style="float:right">view raw</a>
+        <a href="https://gist.github.com/willmendesneto/a2d08bc4ba22387955f9fb52d7fe8186#file-index-js">index.js</a>
+        hosted with &#10084; by <a href="https://github.com">GitHub</a>
+      </div>
+    </div>
+</div></p>
+<p>In this case, we have a new feature on <code class="language-text">isOn</code> method on the latest version, which is the only one who has <code class="language-text">debug</code> option.</p>
+<p>Also, you can check in your Editor/IDE that their JSDocs are totally different as well. It confirms that the package aliases are up and running in your project.</p>
+<p><figure class="gatsby-resp-image-figure" style="">
+    <span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1280px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/a67dbcb9c27be072d449fbf387823acc/4bf5c/old-version.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 34.6875%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABYlAAAWJQFJUiTwAAABSUlEQVQoz32R3XKbQAxGeZU4Nj+GXWB3YQGDAQfbadrpZHLX93+QU8E4mV60vTgjrWb20ycpCI8FYVoSZobDJ3FOeCw5KMc+s+xTK3WJ8j6khudYCZrdI36R5AQ3NzCYjmF5Y5pudOeF+/UHbTvTzN9phjuXn7+oxm/0pytOyLsF5WfK/o6qJ3Rz2cjsiSA75iSrw9wTC5H2KNugXIs2kpeeouqItSMSp/HqckUch7re4uFR24tOcKpe8OM72fSBnt9R0j2WsapupvA95QPtTiQyTaQsT5Haxt39GbdcE+hixNY3Ijfi/Zmx7bF+opTPYSbuteGYW9LSiVsnYtm2q38RrEJxfaE0E755w9VXzPkVve6pXciaF1TV8yzH260HlKPtHgf4q2BszyTVTG5GcXXBuIXUyoirmCxceVl2LU2LhsQOJHn1X8Hfc4fcWZyirRwAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/a67dbcb9c27be072d449fbf387823acc/fb34c/old-version.avif 320w,
+/static/a67dbcb9c27be072d449fbf387823acc/646cd/old-version.avif 768w,
+/static/a67dbcb9c27be072d449fbf387823acc/8b485/old-version.avif 1024w,
+/static/a67dbcb9c27be072d449fbf387823acc/a73d6/old-version.avif 1280w,
+/static/a67dbcb9c27be072d449fbf387823acc/9a0ee/old-version.avif 1642w"
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              type="image/avif"
+            /><source
+              srcset="/static/a67dbcb9c27be072d449fbf387823acc/cb523/old-version.webp 320w,
+/static/a67dbcb9c27be072d449fbf387823acc/cd067/old-version.webp 768w,
+/static/a67dbcb9c27be072d449fbf387823acc/53334/old-version.webp 1024w,
+/static/a67dbcb9c27be072d449fbf387823acc/4b075/old-version.webp 1280w,
+/static/a67dbcb9c27be072d449fbf387823acc/42f11/old-version.webp 1642w"
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/a67dbcb9c27be072d449fbf387823acc/d4f27/old-version.png 320w,
+/static/a67dbcb9c27be072d449fbf387823acc/778aa/old-version.png 768w,
+/static/a67dbcb9c27be072d449fbf387823acc/658fc/old-version.png 1024w,
+/static/a67dbcb9c27be072d449fbf387823acc/26c69/old-version.png 1280w,
+/static/a67dbcb9c27be072d449fbf387823acc/4bf5c/old-version.png 1642w"
+            sizes="(max-width: 1280px) 100vw, 1280px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/a67dbcb9c27be072d449fbf387823acc/26c69/old-version.png"
+            alt="Old version of `feature-toggle-service` package without `debug` support"
+            title="Old version of `feature-toggle-service` package without `debug` support"
+            loading="lazy"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span>
+    <figcaption class="gatsby-resp-image-figcaption">Old version of `feature-toggle-service` package without `debug` support</figcaption>
+  </figure></p>
+<p><figure class="gatsby-resp-image-figure" style="">
+    <span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1280px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/76b521d8bc84292ad39a99bbc63d261e/f8b84/new-version.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 33.4375%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABYlAAAWJQFJUiTwAAABWklEQVQoz01Q2XKDMBDjP9q0CbcB2xjMZY5AQqfH9Kn9/29R1256PGjk9exqtfKOqcAp4QgzCaEHMKEh5AJejiiqDkxqFKoFr3sI4qJsULYjMsuNcXyMc9Io4JOWV4oGuepQEgxB1QPO13eIakCUS1rEkXCFVFSIM0FDOeKiRMC4Yz8t8Bgx5PVEfRqe4jXyyritup9QOYxoxgXttLpadSNkMziBY5zh3o9xd4oc7Nv+ZaThBAfzgmL7hBiuNGhQjxtUvzgRbRaYdSfx1S2sh5n+zs7tKcnJvXDuHsL07+SufQZrNvB+xbTtbsBmZ5uzUoNXlJtqKMva1bmyGRrqaaFoiT3ZCgZMOnhZt0PqDbrb0E1XGqDGfgajsA8hbY8y4vT2Zr/n/vAhSJzLgNz5VpD1T5D1inZ4Qzd/QLYX6PMrSrOjaFdyfvnORxnwZkbIBDn5h/QGEvNTiS+x/NlrurAyRgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/76b521d8bc84292ad39a99bbc63d261e/fb34c/new-version.avif 320w,
+/static/76b521d8bc84292ad39a99bbc63d261e/646cd/new-version.avif 768w,
+/static/76b521d8bc84292ad39a99bbc63d261e/8b485/new-version.avif 1024w,
+/static/76b521d8bc84292ad39a99bbc63d261e/a73d6/new-version.avif 1280w,
+/static/76b521d8bc84292ad39a99bbc63d261e/7b40d/new-version.avif 1682w"
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              type="image/avif"
+            /><source
+              srcset="/static/76b521d8bc84292ad39a99bbc63d261e/cb523/new-version.webp 320w,
+/static/76b521d8bc84292ad39a99bbc63d261e/cd067/new-version.webp 768w,
+/static/76b521d8bc84292ad39a99bbc63d261e/53334/new-version.webp 1024w,
+/static/76b521d8bc84292ad39a99bbc63d261e/4b075/new-version.webp 1280w,
+/static/76b521d8bc84292ad39a99bbc63d261e/1c0ca/new-version.webp 1682w"
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/76b521d8bc84292ad39a99bbc63d261e/d4f27/new-version.png 320w,
+/static/76b521d8bc84292ad39a99bbc63d261e/778aa/new-version.png 768w,
+/static/76b521d8bc84292ad39a99bbc63d261e/658fc/new-version.png 1024w,
+/static/76b521d8bc84292ad39a99bbc63d261e/26c69/new-version.png 1280w,
+/static/76b521d8bc84292ad39a99bbc63d261e/f8b84/new-version.png 1682w"
+            sizes="(max-width: 1280px) 100vw, 1280px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/76b521d8bc84292ad39a99bbc63d261e/26c69/new-version.png"
+            alt="Latest version of `feature-toggle-service` package with `debug` support"
+            title="Latest version of `feature-toggle-service` package with `debug` support"
+            loading="lazy"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span>
+    <figcaption class="gatsby-resp-image-figcaption">Latest version of `feature-toggle-service` package with `debug` support</figcaption>
+  </figure></p>
+<p>At the end, this will be the output when you run the code by calling <code class="language-text">npm start</code> or <code class="language-text">node index.js</code>.</p>
+<p><figure class="gatsby-resp-image-figure" style="">
+    <span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1280px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/e48424f845e5563b7fccbd041fc0a6a7/29f2d/final-output.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 64.6875%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAACU0lEQVQ4y32SzY7TMBDH8xhoV9ukcRLHdmzHcdqkqpaFXZC4cOQIDRLwONATgu2BE8/Ih7Mexmm3KqzE4ZcZy/HMfz6im0v5ilvzlZTy4ywvt3HO9mTldoYkBduW0kzMC47nPfNCbOdUoC+2hMlPudCfZ6S0kbL6u+4tNHYJuWih4A1ioZALyGULVC2BaryrGkhLdUDCnFaQFAExnQlTcEHK99GsUF+EaMCY/ge3V06bx07aS2cW106h1e0TJ9pLx+zalWa1R3cuY9qlCAm21D9DIgz+OkpotePVAhb9C8evXnreXYPQFrhugSFBZcZrSKk8UahQkb7HI2PwUekmws+O6g5k98zZ5Y1v+ufoP50Qdg0UAxaVxXYYpDlgTvHIGHxMuomwF7uMGyj0ynHZe65WgGUBa9ZQ1v2+l6L5V9WpWo+MwY9zvplKJpWBhHJXCIXZNJaoACcKFykFnPQBdgS3IDyeBpNxjW/qMQzmgtBNFGNAtroCsVg6JWvPmhYq2wGuCUzBmYQCbY5Jgp8d7IxQwNUKwX2SszEkPU8y7CGlO2UMcGUd7pWfY+aUCiBlNT28t/eEc2AKFpQT6mNCx+Cfz/NNRCt1a7sVSLPEdek8r62nVe1RlUeVE6juL2hljv8Uog7+GJLtFXJxS7seiNK/GKvuKt7eYQkPQAX/43dowVlC3kTYg29x2HqKTcZmJxk/GcSe+GjZNKxAkvODL45nvH8bUaFXBZMfuGw2uOnDo1k6nCf5A87ibMDAA7ZmELodsMyBqWaQTTfZnOt3s5SmfwD2Xl+9a9kuHAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/e48424f845e5563b7fccbd041fc0a6a7/fb34c/final-output.avif 320w,
+/static/e48424f845e5563b7fccbd041fc0a6a7/646cd/final-output.avif 768w,
+/static/e48424f845e5563b7fccbd041fc0a6a7/8b485/final-output.avif 1024w,
+/static/e48424f845e5563b7fccbd041fc0a6a7/a73d6/final-output.avif 1280w,
+/static/e48424f845e5563b7fccbd041fc0a6a7/a7f9f/final-output.avif 1920w,
+/static/e48424f845e5563b7fccbd041fc0a6a7/ec3fe/final-output.avif 3808w"
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              type="image/avif"
+            /><source
+              srcset="/static/e48424f845e5563b7fccbd041fc0a6a7/cb523/final-output.webp 320w,
+/static/e48424f845e5563b7fccbd041fc0a6a7/cd067/final-output.webp 768w,
+/static/e48424f845e5563b7fccbd041fc0a6a7/53334/final-output.webp 1024w,
+/static/e48424f845e5563b7fccbd041fc0a6a7/4b075/final-output.webp 1280w,
+/static/e48424f845e5563b7fccbd041fc0a6a7/f3ff0/final-output.webp 1920w,
+/static/e48424f845e5563b7fccbd041fc0a6a7/1d53d/final-output.webp 3808w"
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/e48424f845e5563b7fccbd041fc0a6a7/d4f27/final-output.png 320w,
+/static/e48424f845e5563b7fccbd041fc0a6a7/778aa/final-output.png 768w,
+/static/e48424f845e5563b7fccbd041fc0a6a7/658fc/final-output.png 1024w,
+/static/e48424f845e5563b7fccbd041fc0a6a7/26c69/final-output.png 1280w,
+/static/e48424f845e5563b7fccbd041fc0a6a7/7d442/final-output.png 1920w,
+/static/e48424f845e5563b7fccbd041fc0a6a7/29f2d/final-output.png 3808w"
+            sizes="(max-width: 1280px) 100vw, 1280px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/e48424f845e5563b7fccbd041fc0a6a7/26c69/final-output.png"
+            alt="Code output in action"
+            title="Code output in action"
+            loading="lazy"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span>
+    <figcaption class="gatsby-resp-image-figcaption">Code output in action</figcaption>
+  </figure></p>
+<hr/>
+<p>The code is quite simple, but the idea is not at all. In fact, this will become quite handy if you need to migrate and/or upgrade packages with several major versions bumped. This will avoid your webapp to face issues in potential due to breaking changes affecting core features, lack of backward compatibilities - which is expected in major packages bumps - and so on, and so forth.</p>
+<hr/>
+<h3>That’s all for now</h3>
+<p>I hope you enjoyed this reading as much as I enjoyed writing it. Thank you so much for reading until the end and see you soon!</p>
+<p>🚀🚀🚀🚀🚀🚀</p>
+<hr />
+<h3>Cya 👋</h3></div></article><div class="Share__ShareWrapper-sc-1rx8md7-0 gpEOWW"><p>Share this post via:</p><span class="Share__StyledFacebookButton-sc-1rx8md7-1 dYOHuc"><button aria-label="facebook" class="react-share__ShareButton" style="background-color:transparent;border:none;padding:0;font:inherit;color:inherit;cursor:pointer">Facebook</button></span><span class="Share__StyledTwitterButton-sc-1rx8md7-2 dbAEAm"><button aria-label="twitter" class="react-share__ShareButton" style="background-color:transparent;border:none;padding:0;font:inherit;color:inherit;cursor:pointer">Twitter</button></span><span class="Share__StyledLinkedInButton-sc-1rx8md7-3 fKvaYM"><button aria-label="linkedin" class="react-share__ShareButton" style="background-color:transparent;border:none;padding:0;font:inherit;color:inherit;cursor:pointer">LinkedIn</button></span><span class="Share__StyledWhatsAppButton-sc-1rx8md7-4 fHaLcF"><button aria-label="whatsapp" class="react-share__ShareButton" style="background-color:transparent;border:none;padding:0;font:inherit;color:inherit;cursor:pointer">WhatsApp</button></span></div><h3>Subscribe</h3><p>To keep up with posts on this blog, you can also<!-- --> <a href="/rss.xml" target="_blank" rel="noopener noreferrer">subscribe via RSS</a>.</p></section></main></div><footer class="Footer__PageFooter-sc-14qtz8p-1 evCYdc"><ul><li><a href="https://github.com/willmendesneto" target="_blank" rel="noopener noreferrer">Github</a></li><li><a href="https://twitter.com/willmendesneto" target="_blank" rel="noopener noreferrer">Twitter</a></li><li><a href="https://www.linkedin.com/in/willmendesneto" target="_blank" rel="noopener noreferrer">LinkedIn</a></li><li><a href="/rss.xml" target="_blank" rel="noopener noreferrer">RSS</a></li></ul><p class="Footer__Text-sc-14qtz8p-0 llqpgS">made by me with<!-- --> <span role="img" aria-label="love">❤️</span> <!-- -->since 2014</p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
+  
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'UA-58169656-1', 'auto', {});
+      
+      
+      
+      
+      
+      }</script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/posts/installing-multiple-versions-of-the-same-package-in-your-project-via-package-aliases/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-3f8d1fe81ec91fde83f5.js"],"app":["/app-db5a2464f63690a6213b.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-1bc4087bda7d163b6bc1.js"],"component---src-pages-404-js":["/component---src-pages-404-js-1ce121e982c5d3a44bcd.js"],"component---src-pages-contact-js":["/component---src-pages-contact-js-93adadb8beb54169656b.js"],"component---src-pages-index-js":["/component---src-pages-index-js-579cd97cdf5373dcc4a4.js"],"component---src-pages-posts-js":["/component---src-pages-posts-js-0276efd23844ae77441f.js"],"component---src-pages-talks-js":["/component---src-pages-talks-js-70e5140266b386372d84.js"],"component---src-pages-workshops-js":["/component---src-pages-workshops-js-bad3cfacc70fed849582.js"],"component---src-templates-post-js":["/component---src-templates-post-js-c0a5b29f6b5866cf90f3.js"]};/*]]>*/</script><script src="/polyfill-3f8d1fe81ec91fde83f5.js" nomodule=""></script><script src="/component---src-templates-post-js-c0a5b29f6b5866cf90f3.js" async=""></script><script src="/c38806a22704b1411d609490b31463a94158f97c-5e54864974a395acac0b.js" async=""></script><script src="/app-db5a2464f63690a6213b.js" async=""></script><script src="/framework-5a0f89685a3614932ea6.js" async=""></script><script src="/webpack-runtime-b4303f3aa64421fa687d.js" async=""></script></body></html>
