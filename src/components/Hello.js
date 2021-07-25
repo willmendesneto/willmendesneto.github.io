@@ -53,7 +53,7 @@ const Sidebar = () => (
       </h2>
       <p>
         Hello, there. I’m a Brazilian Software Engineer (or any cool name that you want to call me) with more than 10
-        years of experience in my career and currently based in Sydney.
+        years of experience in my career and currently based in Recife.
       </p>
     </FirstWrapper>
     <p>
