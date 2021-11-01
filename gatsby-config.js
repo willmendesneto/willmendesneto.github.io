@@ -10,12 +10,8 @@ module.exports = {
     'gatsby-alias-imports',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-react-helmet',
-    // {
-    //   resolve: 'gatsby-plugin-google-adsense',
-    //   options: {
-    //     publisherId: 'ca-pub-8777120103516663',
-    //   },
-    // },
+    'gatsby-plugin-perf-budgets',
+    'gatsby-plugin-webpack-bundle-analyser-v2',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
