@@ -10,6 +10,9 @@ const TalksPage = ({ location }) => (
     <>
       <SEO title="Talks" />
       <Title>TALKS</Title>
+      <Link href="https://slides.com/willmendesneto/building-large-monorepo-apps-with-nx">
+        Building Scalable Monorepos with NX
+      </Link>
       <Link href="https://slides.com/willmendesneto/performance-analytics-and-reliability-in-frontend-apps">
         Performance, Analytics and Reliability in Frontend Apps
       </Link>
