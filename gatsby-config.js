@@ -3,7 +3,7 @@ module.exports = {
     siteUrl: 'https://willmendesneto.com',
     title: 'Wilson Mendes',
     description:
-      'Senior Frontend-Engineer, Senior Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies',
+      'Principal Frontend-Engineer, Principal Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies',
     author: '@willmendesneto',
   },
   plugins: [

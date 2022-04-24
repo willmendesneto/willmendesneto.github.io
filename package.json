@@ -1,7 +1,7 @@
 {
   "name": "willmendesneto.com",
   "description": "Wilson Mendes's website",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "author": "Wilson Mendes <contact@willmendesneto.com>",
   "homepage": "https://willmendesneto.com",
   "repository": {
@@ -56,9 +56,10 @@
   "keywords": [
     "willmendesneto",
     "Wilson Mendes",
-    "Senior Software Engineer",
+    "Principal Software Engineer",
     "frontend",
     "Solution Architect",
+    "Principal Solution Architect",
     "front-end",
     "developer"
   ],

@@ -41,12 +41,12 @@ const Sidebar = () => (
         width="243"
         height="243"
         src={profile}
-        alt="Wilson Mendes, Senior Sofware engineer, Google Developer Expert Web Technologies"
+        alt="Wilson Mendes, Principal Sofware engineer, Google Developer Expert Web Technologies"
       />
     </SecondWrapper>
     <FirstWrapper>
       <h2>
-        Senior Software Engineer
+        Principal Software Engineer
         <br />
         Solution Architect
         <br />
