@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Will Mendes Blog RSS Feed]]></title><description><![CDATA[Principal Frontend-Engineer, Principal Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies]]></description><link>https://willmendesneto.com</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 24 Apr 2022 16:24:14 GMT</lastBuildDate><item><title><![CDATA[Installing Multiple Versions of the Same Package in your project via package aliases]]></title><link>https://willmendesneto.com/posts/installing-multiple-versions-of-the-same-package-in-your-project-via-package-aliases/</link><guid isPermaLink="false">https://willmendesneto.com/posts/installing-multiple-versions-of-the-same-package-in-your-project-via-package-aliases/</guid><pubDate>Tue, 13 Jul 2021 09:13:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Will Mendes Blog RSS Feed]]></title><description><![CDATA[Principal Frontend-Engineer, Principal Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies]]></description><link>https://willmendesneto.com</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 27 Sep 2022 14:55:06 GMT</lastBuildDate><item><title><![CDATA[Installing Multiple Versions of the Same Package in your project via package aliases]]></title><link>https://willmendesneto.com/posts/installing-multiple-versions-of-the-same-package-in-your-project-via-package-aliases/</link><guid isPermaLink="false">https://willmendesneto.com/posts/installing-multiple-versions-of-the-same-package-in-your-project-via-package-aliases/</guid><pubDate>Tue, 13 Jul 2021 09:13:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1280px; &quot;
     &gt;
@@ -60,7 +60,7 @@
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-setting-up-the-project-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-setting-up-the-project-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
-    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-shell&quot;&gt;&lt;pre&gt;&lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;#&lt;/span&gt; Creating folder jumping on the created folder&lt;/span&gt;
+    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-shell&quot; dir=&quot;auto&quot;&gt;&lt;pre&gt;&lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;#&lt;/span&gt; Creating folder jumping on the created folder&lt;/span&gt;
 mkdir multiple-package-versions-in-project &lt;span class=&quot;pl-k&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; \
 &lt;span class=&quot;pl-c1&quot;&gt;cd&lt;/span&gt; multiple-package-versions-in-project \
 &lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;#&lt;/span&gt; Starting a NPM project&lt;/span&gt;
@@ -92,9 +92,9 @@ npm install --save \
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-package-json&quot; class=&quot;file my-2&quot;&gt;
     
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-json  &quot;&gt;
+    &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-json  &quot;&gt;
 
-      
+        
 &lt;div class=&quot;js-check-bidi js-blob-code-container blob-code-content&quot;&gt;
 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
@@ -109,8 +109,7 @@ npm install --save \
     &lt;/span&gt;
 
 
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;      &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;  Show hidden characters
-  
+  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/template&gt;
@@ -121,7 +120,7 @@ npm install --save \
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JSON&quot; data-tagsearch-path=&quot;package.json&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JSON&quot; data-tagsearch-path=&quot;package.json&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-package-json-L1&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-package-json-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;{&lt;/td&gt;
@@ -190,7 +189,7 @@ npm install --save \
 &lt;/div&gt;
 
 
-  &lt;/div&gt;
+    &lt;/div&gt;
 
   &lt;/div&gt;
 &lt;/div&gt;
@@ -213,9 +212,9 @@ npm install --save \
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-index-js&quot; class=&quot;file my-2&quot;&gt;
     
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+    &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
 
-      
+        
 &lt;div class=&quot;js-check-bidi js-blob-code-container blob-code-content&quot;&gt;
 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
@@ -230,8 +229,7 @@ npm install --save \
     &lt;/span&gt;
 
 
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;      &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;  Show hidden characters
-  
+  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/template&gt;
@@ -242,7 +240,7 @@ npm install --save \
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;index.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;index.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-index-js-L1&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-index-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-k&gt;const&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt; isOn&lt;span class=pl-kos&gt;,&lt;/span&gt; set &lt;span class=pl-kos&gt;}&lt;/span&gt; &lt;span class=pl-c1&gt;=&lt;/span&gt; &lt;span class=pl-en&gt;require&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s&gt;&amp;#39;feature-toggle-service&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
@@ -293,7 +291,7 @@ npm install --save \
 &lt;/div&gt;
 
 
-  &lt;/div&gt;
+    &lt;/div&gt;
 
   &lt;/div&gt;
 &lt;/div&gt;
@@ -557,9 +555,9 @@ npm install --save \
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-do-not-abuse-of-nullish-coalescing-usage-in-ts&quot; class=&quot;file my-2&quot;&gt;
     
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-typescript  &quot;&gt;
+    &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-typescript  &quot;&gt;
 
-      
+        
 &lt;div class=&quot;js-check-bidi js-blob-code-container blob-code-content&quot;&gt;
 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
@@ -574,8 +572,7 @@ npm install --save \
     &lt;/span&gt;
 
 
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;      &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;  Show hidden characters
-  
+  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/template&gt;
@@ -586,7 +583,7 @@ npm install --save \
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;TypeScript&quot; data-tagsearch-path=&quot;do-not-abuse-of-nullish-coalescing-usage-in.ts&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;TypeScript&quot; data-tagsearch-path=&quot;do-not-abuse-of-nullish-coalescing-usage-in.ts&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-do-not-abuse-of-nullish-coalescing-usage-in-ts-L1&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-do-not-abuse-of-nullish-coalescing-usage-in-ts-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-c&gt;// Link for example in Typescript playground&lt;/span&gt;&lt;/td&gt;
@@ -626,7 +623,7 @@ npm install --save \
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-do-not-abuse-of-nullish-coalescing-usage-in-ts-L10&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;10&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-do-not-abuse-of-nullish-coalescing-usage-in-ts-LC10&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        &lt;span class=pl-c1&gt;theme&lt;/span&gt;?: &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;span class=pl-kos&gt;[&lt;/span&gt;&lt;span class=pl-s1&gt;k&lt;/span&gt;: &lt;span class=pl-smi&gt;string&lt;/span&gt;&lt;span class=pl-kos&gt;]&lt;/span&gt;: &lt;span class=pl-smi&gt;any&lt;/span&gt;&lt;span class=pl-kos&gt;}&lt;/span&gt; &lt;span class=pl-c1&gt;|&lt;/span&gt; &lt;span class=pl-smi&gt;null&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-do-not-abuse-of-nullish-coalescing-usage-in-ts-LC10&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        &lt;span class=pl-c1&gt;theme&lt;/span&gt;?: &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;span class=pl-kos&gt;[&lt;/span&gt;&lt;span class=pl-s1&gt;k&lt;/span&gt;: &lt;span class=pl-smi&gt;string&lt;/span&gt;&lt;span class=pl-kos&gt;]&lt;/span&gt;: &lt;span class=pl-smi&gt;any&lt;/span&gt;&lt;span class=pl-kos&gt;}&lt;/span&gt; &lt;span class=pl-c1&gt;|&lt;/span&gt; &lt;span class=pl-c1&gt;null&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-do-not-abuse-of-nullish-coalescing-usage-in-ts-L11&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;11&quot;&gt;&lt;/td&gt;
@@ -684,7 +681,7 @@ npm install --save \
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-do-not-abuse-of-nullish-coalescing-usage-in-ts-L24&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;24&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-do-not-abuse-of-nullish-coalescing-usage-in-ts-LC24&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        &lt;span class=pl-c1&gt;theme&lt;/span&gt;?: &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;span class=pl-kos&gt;[&lt;/span&gt;&lt;span class=pl-s1&gt;k&lt;/span&gt;: &lt;span class=pl-smi&gt;string&lt;/span&gt;&lt;span class=pl-kos&gt;]&lt;/span&gt;: &lt;span class=pl-smi&gt;any&lt;/span&gt;&lt;span class=pl-kos&gt;}&lt;/span&gt; &lt;span class=pl-c1&gt;|&lt;/span&gt; &lt;span class=pl-smi&gt;null&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-do-not-abuse-of-nullish-coalescing-usage-in-ts-LC24&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        &lt;span class=pl-c1&gt;theme&lt;/span&gt;?: &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;span class=pl-kos&gt;[&lt;/span&gt;&lt;span class=pl-s1&gt;k&lt;/span&gt;: &lt;span class=pl-smi&gt;string&lt;/span&gt;&lt;span class=pl-kos&gt;]&lt;/span&gt;: &lt;span class=pl-smi&gt;any&lt;/span&gt;&lt;span class=pl-kos&gt;}&lt;/span&gt; &lt;span class=pl-c1&gt;|&lt;/span&gt; &lt;span class=pl-c1&gt;null&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-do-not-abuse-of-nullish-coalescing-usage-in-ts-L25&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;25&quot;&gt;&lt;/td&gt;
@@ -758,7 +755,7 @@ npm install --save \
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-do-not-abuse-of-nullish-coalescing-usage-in-ts-L42&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;42&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-do-not-abuse-of-nullish-coalescing-usage-in-ts-LC42&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        &lt;span class=pl-c1&gt;theme&lt;/span&gt;?: &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;span class=pl-kos&gt;[&lt;/span&gt;&lt;span class=pl-s1&gt;k&lt;/span&gt;: &lt;span class=pl-smi&gt;string&lt;/span&gt;&lt;span class=pl-kos&gt;]&lt;/span&gt;: &lt;span class=pl-smi&gt;any&lt;/span&gt;&lt;span class=pl-kos&gt;}&lt;/span&gt; &lt;span class=pl-c1&gt;|&lt;/span&gt; &lt;span class=pl-smi&gt;null&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-do-not-abuse-of-nullish-coalescing-usage-in-ts-LC42&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;        &lt;span class=pl-c1&gt;theme&lt;/span&gt;?: &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;span class=pl-kos&gt;[&lt;/span&gt;&lt;span class=pl-s1&gt;k&lt;/span&gt;: &lt;span class=pl-smi&gt;string&lt;/span&gt;&lt;span class=pl-kos&gt;]&lt;/span&gt;: &lt;span class=pl-smi&gt;any&lt;/span&gt;&lt;span class=pl-kos&gt;}&lt;/span&gt; &lt;span class=pl-c1&gt;|&lt;/span&gt; &lt;span class=pl-c1&gt;null&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-do-not-abuse-of-nullish-coalescing-usage-in-ts-L43&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;43&quot;&gt;&lt;/td&gt;
@@ -789,7 +786,7 @@ npm install --save \
 &lt;/div&gt;
 
 
-  &lt;/div&gt;
+    &lt;/div&gt;
 
   &lt;/div&gt;
 &lt;/div&gt;
@@ -890,9 +887,9 @@ npm install --save \
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-pino-sanitize-example-js&quot; class=&quot;file my-2&quot;&gt;
     
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+    &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
 
-      
+        
 &lt;div class=&quot;js-check-bidi js-blob-code-container blob-code-content&quot;&gt;
 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
@@ -907,8 +904,7 @@ npm install --save \
     &lt;/span&gt;
 
 
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;      &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;  Show hidden characters
-  
+  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/template&gt;
@@ -919,7 +915,7 @@ npm install --save \
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;pino-sanitize-example.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;pino-sanitize-example.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L1&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-s&gt;&amp;#39;use strict&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
@@ -1088,7 +1084,7 @@ npm install --save \
 &lt;/div&gt;
 
 
-  &lt;/div&gt;
+    &lt;/div&gt;
 
   &lt;/div&gt;
 &lt;/div&gt;
@@ -1110,7 +1106,7 @@ npm install --save \
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-running-pino-sanitize-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-running-pino-sanitize-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
-    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-shell&quot;&gt;&lt;pre&gt;node example.js &lt;span class=&quot;pl-k&quot;&gt;|&lt;/span&gt; pino-sanitize -u=&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;:{UUID}&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; -h=&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;:{HASH}&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; -q=&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;:{QUERY-STRING}&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; -k=&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;err,msg,stack&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-shell&quot; dir=&quot;auto&quot;&gt;&lt;pre&gt;node example.js &lt;span class=&quot;pl-k&quot;&gt;|&lt;/span&gt; pino-sanitize -u=&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;:{UUID}&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; -h=&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;:{HASH}&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; -q=&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;:{QUERY-STRING}&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; -k=&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;err,msg,stack&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/article&gt;
   &lt;/div&gt;
 
@@ -1403,7 +1399,7 @@ npm install --save \
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-creating-project-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-creating-project-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
-    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-shell&quot;&gt;&lt;pre&gt;mkdir my-project
+    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-shell&quot; dir=&quot;auto&quot;&gt;&lt;pre&gt;mkdir my-project
 &lt;span class=&quot;pl-c1&quot;&gt;cd&lt;/span&gt; my-project
 npm init -y&lt;/pre&gt;&lt;/div&gt;
 &lt;/article&gt;
@@ -1429,7 +1425,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-installing-launchdarkly-node-server-sdk-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-installing-launchdarkly-node-server-sdk-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
-    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-shell&quot;&gt;&lt;pre&gt;npm install launchdarkly-node-server-sdk --save&lt;/pre&gt;&lt;/div&gt;
+    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-shell&quot; dir=&quot;auto&quot;&gt;&lt;pre&gt;npm install launchdarkly-node-server-sdk --save&lt;/pre&gt;&lt;/div&gt;
 &lt;/article&gt;
   &lt;/div&gt;
 
@@ -1453,9 +1449,9 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-index-js&quot; class=&quot;file my-2&quot;&gt;
     
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+    &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
 
-      
+        
 &lt;div class=&quot;js-check-bidi js-blob-code-container blob-code-content&quot;&gt;
 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
@@ -1470,8 +1466,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
     &lt;/span&gt;
 
 
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;      &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;  Show hidden characters
-  
+  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/template&gt;
@@ -1482,7 +1477,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;index.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;index.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-index-js-L1&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-index-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-k&gt;const&lt;/span&gt; &lt;span class=pl-s1&gt;assert&lt;/span&gt; &lt;span class=pl-c1&gt;=&lt;/span&gt; &lt;span class=pl-en&gt;require&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s&gt;&amp;#39;assert&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
@@ -1706,7 +1701,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 
-  &lt;/div&gt;
+    &lt;/div&gt;
 
   &lt;/div&gt;
 &lt;/div&gt;
@@ -1729,9 +1724,9 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-package-json&quot; class=&quot;file my-2&quot;&gt;
     
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-json  &quot;&gt;
+    &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-json  &quot;&gt;
 
-      
+        
 &lt;div class=&quot;js-check-bidi js-blob-code-container blob-code-content&quot;&gt;
 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
@@ -1746,8 +1741,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
     &lt;/span&gt;
 
 
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;      &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;  Show hidden characters
-  
+  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/template&gt;
@@ -1758,7 +1752,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JSON&quot; data-tagsearch-path=&quot;package.json&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JSON&quot; data-tagsearch-path=&quot;package.json&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-package-json-L1&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-package-json-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;{&lt;/td&gt;
@@ -1803,7 +1797,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 
-  &lt;/div&gt;
+    &lt;/div&gt;
 
   &lt;/div&gt;
 &lt;/div&gt;
@@ -1872,9 +1866,9 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-list-unused-feature-flags-in-code-sh&quot; class=&quot;file my-2&quot;&gt;
     
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-shell  &quot;&gt;
+    &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-shell  &quot;&gt;
 
-      
+        
 &lt;div class=&quot;js-check-bidi js-blob-code-container blob-code-content&quot;&gt;
 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
@@ -1889,8 +1883,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
     &lt;/span&gt;
 
 
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;      &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;  Show hidden characters
-  
+  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/template&gt;
@@ -1901,7 +1894,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;Shell&quot; data-tagsearch-path=&quot;list-unused-feature-flags-in-code.sh&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;Shell&quot; data-tagsearch-path=&quot;list-unused-feature-flags-in-code.sh&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-list-unused-feature-flags-in-code-sh-L1&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-list-unused-feature-flags-in-code-sh-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;#!&lt;/span&gt;/usr/bin/env bash&lt;/span&gt;&lt;/td&gt;
@@ -2603,7 +2596,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 
-  &lt;/div&gt;
+    &lt;/div&gt;
 
   &lt;/div&gt;
 &lt;/div&gt;
@@ -2747,7 +2740,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-creating-project-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-creating-project-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
-    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-shell&quot;&gt;&lt;pre&gt;mkdir my-project
+    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-shell&quot; dir=&quot;auto&quot;&gt;&lt;pre&gt;mkdir my-project
 &lt;span class=&quot;pl-c1&quot;&gt;cd&lt;/span&gt; my-project
 npm init -y&lt;/pre&gt;&lt;/div&gt;
 &lt;/article&gt;
@@ -2773,7 +2766,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-installing-dependency-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-installing-dependency-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
-    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-shell&quot;&gt;&lt;pre&gt;npm install perf-marks --save-dev&lt;/pre&gt;&lt;/div&gt;
+    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-shell&quot; dir=&quot;auto&quot;&gt;&lt;pre&gt;npm install perf-marks --save-dev&lt;/pre&gt;&lt;/div&gt;
 &lt;/article&gt;
   &lt;/div&gt;
 
@@ -2797,9 +2790,9 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-package-json-with-new-dependency-json&quot; class=&quot;file my-2&quot;&gt;
     
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-json  &quot;&gt;
+    &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-json  &quot;&gt;
 
-      
+        
 &lt;div class=&quot;js-check-bidi js-blob-code-container blob-code-content&quot;&gt;
 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
@@ -2814,8 +2807,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
     &lt;/span&gt;
 
 
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;      &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;  Show hidden characters
-  
+  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/template&gt;
@@ -2826,7 +2818,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JSON&quot; data-tagsearch-path=&quot;package-json-with-new-dependency.json&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JSON&quot; data-tagsearch-path=&quot;package-json-with-new-dependency.json&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-package-json-with-new-dependency-json-L1&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-package-json-with-new-dependency-json-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;{&lt;/td&gt;
@@ -2859,7 +2851,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 
-  &lt;/div&gt;
+    &lt;/div&gt;
 
   &lt;/div&gt;
 &lt;/div&gt;
@@ -2881,7 +2873,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-unused-dependency-depcheck-output-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-unused-dependency-depcheck-output-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
-    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-shell&quot;&gt;&lt;pre&gt;Unused dependencies
+    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-shell&quot; dir=&quot;auto&quot;&gt;&lt;pre&gt;Unused dependencies
 &lt;span class=&quot;pl-k&quot;&gt;*&lt;/span&gt; perf-marks&lt;/pre&gt;&lt;/div&gt;
 &lt;/article&gt;
   &lt;/div&gt;
@@ -2909,9 +2901,9 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-gistfile1-txt&quot; class=&quot;file my-2&quot;&gt;
     
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-text  &quot;&gt;
+    &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-text  &quot;&gt;
 
-      
+        
 &lt;div class=&quot;js-check-bidi js-blob-code-container blob-code-content&quot;&gt;
 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
@@ -2926,8 +2918,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
     &lt;/span&gt;
 
 
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;      &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;  Show hidden characters
-  
+  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/template&gt;
@@ -2938,7 +2929,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;Text&quot; data-tagsearch-path=&quot;gistfile1.txt&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;Text&quot; data-tagsearch-path=&quot;gistfile1.txt&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-gistfile1-txt-L1&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-gistfile1-txt-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;ignores: [&amp;quot;perf-marks&amp;quot;]&lt;/td&gt;
@@ -2947,7 +2938,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 
-  &lt;/div&gt;
+    &lt;/div&gt;
 
   &lt;/div&gt;
 &lt;/div&gt;
@@ -3089,7 +3080,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-common-editor-structure-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-common-editor-structure-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
-    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;pre data-sourcepos=&quot;1:1-10:3&quot;&gt;&lt;code&gt;...
+    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;pre&gt;&lt;code&gt;...
 editor/
   theming/
     ... list of theming
@@ -3122,9 +3113,9 @@ editor/
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-editor-js&quot; class=&quot;file my-2&quot;&gt;
     
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+    &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
 
-      
+        
 &lt;div class=&quot;js-check-bidi js-blob-code-container blob-code-content&quot;&gt;
 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
@@ -3139,8 +3130,7 @@ editor/
     &lt;/span&gt;
 
 
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;      &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;  Show hidden characters
-  
+  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/template&gt;
@@ -3151,7 +3141,7 @@ editor/
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;editor.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;editor.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-editor-js-L1&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-editor-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
@@ -3361,7 +3351,7 @@ editor/
 &lt;/div&gt;
 
 
-  &lt;/div&gt;
+    &lt;/div&gt;
 
   &lt;/div&gt;
 &lt;/div&gt;
@@ -3385,9 +3375,9 @@ editor/
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-minimal-js&quot; class=&quot;file my-2&quot;&gt;
     
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+    &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
 
-      
+        
 &lt;div class=&quot;js-check-bidi js-blob-code-container blob-code-content&quot;&gt;
 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
@@ -3402,8 +3392,7 @@ editor/
     &lt;/span&gt;
 
 
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;      &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;  Show hidden characters
-  
+  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/template&gt;
@@ -3414,7 +3403,7 @@ editor/
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;minimal.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;minimal.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L1&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-minimal-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-c&gt;// This file will live in `editor/themes/minimal.js`&lt;/span&gt;&lt;/td&gt;
@@ -3577,7 +3566,7 @@ editor/
 &lt;/div&gt;
 
 
-  &lt;/div&gt;
+    &lt;/div&gt;
 
   &lt;/div&gt;
 &lt;/div&gt;
@@ -3599,9 +3588,9 @@ editor/
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-icons-js&quot; class=&quot;file my-2&quot;&gt;
     
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+    &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
 
-      
+        
 &lt;div class=&quot;js-check-bidi js-blob-code-container blob-code-content&quot;&gt;
 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
@@ -3616,8 +3605,7 @@ editor/
     &lt;/span&gt;
 
 
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;      &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;  Show hidden characters
-  
+  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/template&gt;
@@ -3628,7 +3616,7 @@ editor/
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;icons.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;icons.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-icons-js-L1&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-icons-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-c&gt;// This file will live in `editor/icons.js`&lt;/span&gt;&lt;/td&gt;
@@ -3670,7 +3658,7 @@ editor/
 &lt;/div&gt;
 
 
-  &lt;/div&gt;
+    &lt;/div&gt;
 
   &lt;/div&gt;
 &lt;/div&gt;
@@ -3745,9 +3733,9 @@ editor/
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-app-js&quot; class=&quot;file my-2&quot;&gt;
     
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+    &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
 
-      
+        
 &lt;div class=&quot;js-check-bidi js-blob-code-container blob-code-content&quot;&gt;
 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
@@ -3762,8 +3750,7 @@ editor/
     &lt;/span&gt;
 
 
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;      &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;  Show hidden characters
-  
+  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/template&gt;
@@ -3774,7 +3761,7 @@ editor/
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;App.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;App.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-app-js-L1&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-app-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-k&gt;import&lt;/span&gt; &lt;span class=pl-v&gt;React&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt; &lt;span class=pl-s1&gt;useState&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt; &lt;span class=pl-s1&gt;useEffect&lt;/span&gt; &lt;span class=pl-kos&gt;}&lt;/span&gt; &lt;span class=pl-k&gt;from&lt;/span&gt; &lt;span class=pl-s&gt;&amp;quot;react&amp;quot;&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
@@ -4300,7 +4287,7 @@ editor/
 &lt;/div&gt;
 
 
-  &lt;/div&gt;
+    &lt;/div&gt;
 
   &lt;/div&gt;
 &lt;/div&gt;
@@ -4322,9 +4309,9 @@ editor/
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-editor-with-setup-for-actions-js&quot; class=&quot;file my-2&quot;&gt;
     
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+    &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
 
-      
+        
 &lt;div class=&quot;js-check-bidi js-blob-code-container blob-code-content&quot;&gt;
 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
@@ -4339,8 +4326,7 @@ editor/
     &lt;/span&gt;
 
 
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;      &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;  Show hidden characters
-  
+  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/template&gt;
@@ -4351,7 +4337,7 @@ editor/
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;editor-with-setup-for-actions.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;editor-with-setup-for-actions.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-editor-with-setup-for-actions-js-L1&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-editor-with-setup-for-actions-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-k&gt;import&lt;/span&gt; &lt;span class=pl-v&gt;React&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt; &lt;span class=pl-s1&gt;useEffect&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt; &lt;span class=pl-s1&gt;useState&lt;/span&gt; &lt;span class=pl-kos&gt;}&lt;/span&gt; &lt;span class=pl-k&gt;from&lt;/span&gt; &lt;span class=pl-s&gt;&amp;quot;react&amp;quot;&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
@@ -4631,7 +4617,7 @@ editor/
 &lt;/div&gt;
 
 
-  &lt;/div&gt;
+    &lt;/div&gt;
 
   &lt;/div&gt;
 &lt;/div&gt;
@@ -4722,7 +4708,7 @@ editor/
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-first-app-structure-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-first-app-structure-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
-    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;pre data-sourcepos=&quot;1:1-6:3&quot;&gt;&lt;code&gt;node_modules/
+    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;pre&gt;&lt;code&gt;node_modules/
   @myapp/
     buttons/index.js &amp;lt;-- final button with all components, even if you&apos;re using only 1 of them
     icons/index.js &amp;lt;-- final bundle with all icons, even the ones you&apos;re not using
@@ -4757,7 +4743,7 @@ editor/
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-exposing-esm-file-package-ison-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-exposing-esm-file-package-ison-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
-    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-json&quot;&gt;&lt;pre&gt;{
+    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-json&quot; dir=&quot;auto&quot;&gt;&lt;pre&gt;{
   &lt;span class=&quot;pl-ii&quot;&gt;...&lt;/span&gt;
   &lt;span class=&quot;pl-ent&quot;&gt;&quot;sideEffects&quot;&lt;/span&gt;: &lt;span class=&quot;pl-c1&quot;&gt;false&lt;/span&gt;,
   &lt;span class=&quot;pl-ent&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;@myapp/buttons&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;,
@@ -4791,7 +4777,7 @@ editor/
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-build-structure-with-cjs-and-esm-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-build-structure-with-cjs-and-esm-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
-    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;pre data-sourcepos=&quot;1:1-9:3&quot;&gt;&lt;code&gt;@myapp/
+    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;pre&gt;&lt;code&gt;@myapp/
   buttons/
     cjs/index.js &amp;lt;-- final button with all components, even if you&apos;re using only 1 of them
     esm/
@@ -4873,7 +4859,7 @@ editor/
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-breaking-changes-because-the-package-structure-changed-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-breaking-changes-because-the-package-structure-changed-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
-    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;pre data-sourcepos=&quot;1:1-11:3&quot;&gt;&lt;code&gt;@myapp/
+    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;pre&gt;&lt;code&gt;@myapp/
   buttons/
     # Oops! Your app will face the consequences
     dist/
@@ -5004,9 +4990,9 @@ editor/
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-utils-entrypoint-example-js&quot; class=&quot;file my-2&quot;&gt;
     
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+    &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
 
-      
+        
 &lt;div class=&quot;js-check-bidi js-blob-code-container blob-code-content&quot;&gt;
 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
@@ -5021,8 +5007,7 @@ editor/
     &lt;/span&gt;
 
 
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;      &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;  Show hidden characters
-  
+  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/template&gt;
@@ -5033,7 +5018,7 @@ editor/
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;utils-entrypoint-example.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;utils-entrypoint-example.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-utils-entrypoint-example-js-L1&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-utils-entrypoint-example-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-c&gt;// `./entrypoints/utils.js` file content&lt;/span&gt;&lt;/td&gt;
@@ -5059,7 +5044,7 @@ editor/
 &lt;/div&gt;
 
 
-  &lt;/div&gt;
+    &lt;/div&gt;
 
   &lt;/div&gt;
 &lt;/div&gt;
@@ -5081,9 +5066,9 @@ editor/
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-package-json&quot; class=&quot;file my-2&quot;&gt;
     
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-json  &quot;&gt;
+    &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-json  &quot;&gt;
 
-      
+        
 &lt;div class=&quot;js-check-bidi js-blob-code-container blob-code-content&quot;&gt;
 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
@@ -5098,8 +5083,7 @@ editor/
     &lt;/span&gt;
 
 
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;      &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;  Show hidden characters
-  
+  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/template&gt;
@@ -5110,7 +5094,7 @@ editor/
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JSON&quot; data-tagsearch-path=&quot;package.json&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JSON&quot; data-tagsearch-path=&quot;package.json&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-package-json-L1&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-package-json-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;{&lt;/td&gt;
@@ -5147,7 +5131,7 @@ editor/
 &lt;/div&gt;
 
 
-  &lt;/div&gt;
+    &lt;/div&gt;
 
   &lt;/div&gt;
 &lt;/div&gt;
@@ -5169,7 +5153,7 @@ editor/
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-final-structure-with-entry-points-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-final-structure-with-entry-points-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
-    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;pre data-sourcepos=&quot;1:1-13:3&quot;&gt;&lt;code&gt;@myapp/
+    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;pre&gt;&lt;code&gt;@myapp/
   buttons/
     entrypoints/
       utils.js &amp;lt;-- Exporting `ButtonGroup` and `ButtonTheme` components
@@ -5330,9 +5314,9 @@ I encourage you to see all of these steps in action by using [perf-marks entry-p
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-performance-observer-js&quot; class=&quot;file my-2&quot;&gt;
     
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+    &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
 
-      
+        
 &lt;div class=&quot;js-check-bidi js-blob-code-container blob-code-content&quot;&gt;
 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
@@ -5347,8 +5331,7 @@ I encourage you to see all of these steps in action by using [perf-marks entry-p
     &lt;/span&gt;
 
 
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;      &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;  Show hidden characters
-  
+  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/template&gt;
@@ -5359,7 +5342,7 @@ I encourage you to see all of these steps in action by using [perf-marks entry-p
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;performance-observer.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;performance-observer.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-performance-observer-js-L1&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-performance-observer-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-k&gt;const&lt;/span&gt; &lt;span class=pl-s1&gt;observer&lt;/span&gt; &lt;span class=pl-c1&gt;=&lt;/span&gt; &lt;span class=pl-k&gt;new&lt;/span&gt; &lt;span class=pl-v&gt;PerformanceObserver&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s1&gt;list&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt; &lt;span class=pl-c1&gt;=&amp;gt;&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
@@ -5425,7 +5408,7 @@ I encourage you to see all of these steps in action by using [perf-marks entry-p
 &lt;/div&gt;
 
 
-  &lt;/div&gt;
+    &lt;/div&gt;
 
   &lt;/div&gt;
 &lt;/div&gt;
@@ -5608,9 +5591,9 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-perf-node-js&quot; class=&quot;file my-2&quot;&gt;
     
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+    &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
 
-      
+        
 &lt;div class=&quot;js-check-bidi js-blob-code-container blob-code-content&quot;&gt;
 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
@@ -5625,8 +5608,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
     &lt;/span&gt;
 
 
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;      &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;  Show hidden characters
-  
+  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/template&gt;
@@ -5637,7 +5619,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;perf-node.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;perf-node.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-perf-node-js-L1&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-perf-node-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-k&gt;const&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt; performance&lt;span class=pl-kos&gt;,&lt;/span&gt; PerformanceObserver &lt;span class=pl-kos&gt;}&lt;/span&gt; &lt;span class=pl-c1&gt;=&lt;/span&gt; &lt;span class=pl-en&gt;require&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s&gt;&amp;#39;perf_hooks&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
@@ -5743,7 +5725,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/div&gt;
 
 
-  &lt;/div&gt;
+    &lt;/div&gt;
 
   &lt;/div&gt;
 &lt;/div&gt;
@@ -5773,9 +5755,9 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-using-perf-marks-js&quot; class=&quot;file my-2&quot;&gt;
     
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+    &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
 
-      
+        
 &lt;div class=&quot;js-check-bidi js-blob-code-container blob-code-content&quot;&gt;
 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
@@ -5790,8 +5772,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
     &lt;/span&gt;
 
 
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;      &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;  Show hidden characters
-  
+  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/template&gt;
@@ -5802,7 +5783,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;using-perf-marks.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;using-perf-marks.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-using-perf-marks-js-L1&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-using-perf-marks-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-k&gt;import&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt; &lt;span class=pl-s1&gt;profiler&lt;/span&gt; &lt;span class=pl-kos&gt;}&lt;/span&gt; &lt;span class=pl-k&gt;from&lt;/span&gt; &lt;span class=pl-s&gt;&amp;#39;perf-marks/profiler&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
@@ -5878,7 +5859,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/div&gt;
 
 
-  &lt;/div&gt;
+    &lt;/div&gt;
 
   &lt;/div&gt;
 &lt;/div&gt;
@@ -5901,9 +5882,9 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-perf-marks-js&quot; class=&quot;file my-2&quot;&gt;
     
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+    &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
 
-      
+        
 &lt;div class=&quot;js-check-bidi js-blob-code-container blob-code-content&quot;&gt;
 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
@@ -5918,8 +5899,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
     &lt;/span&gt;
 
 
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;      &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;  Show hidden characters
-  
+  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/template&gt;
@@ -5930,7 +5910,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;perf-marks.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;perf-marks.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-perf-marks-js-L1&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-perf-marks-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-k&gt;import&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt; &lt;span class=pl-s1&gt;start&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt; &lt;span class=pl-s1&gt;end&lt;/span&gt; &lt;span class=pl-kos&gt;}&lt;/span&gt; &lt;span class=pl-k&gt;from&lt;/span&gt; &lt;span class=pl-s&gt;&amp;#39;perf-marks/marks&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
@@ -5982,7 +5962,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/div&gt;
 
 
-  &lt;/div&gt;
+    &lt;/div&gt;
 
   &lt;/div&gt;
 &lt;/div&gt;
@@ -6077,9 +6057,9 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-css-in-js-breakpoints-js&quot; class=&quot;file my-2&quot;&gt;
     
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+    &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
 
-      
+        
 &lt;div class=&quot;js-check-bidi js-blob-code-container blob-code-content&quot;&gt;
 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
@@ -6094,8 +6074,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
     &lt;/span&gt;
 
 
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;      &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;  Show hidden characters
-  
+  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/template&gt;
@@ -6106,7 +6085,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;css-in-js-breakpoints.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;css-in-js-breakpoints.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-css-in-js-breakpoints-js-L1&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-css-in-js-breakpoints-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-c&gt;/**&lt;/span&gt;&lt;/td&gt;
@@ -6253,7 +6232,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/div&gt;
 
 
-  &lt;/div&gt;
+    &lt;/div&gt;
 
   &lt;/div&gt;
 &lt;/div&gt;
@@ -6339,9 +6318,9 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-a11y-dev-mode-css&quot; class=&quot;file my-2&quot;&gt;
     
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-css  &quot;&gt;
+    &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-css  &quot;&gt;
 
-      
+        
 &lt;div class=&quot;js-check-bidi js-blob-code-container blob-code-content&quot;&gt;
 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
@@ -6356,8 +6335,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
     &lt;/span&gt;
 
 
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;      &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;  Show hidden characters
-  
+  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/template&gt;
@@ -6368,7 +6346,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;CSS&quot; data-tagsearch-path=&quot;a11y-dev-mode.css&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;CSS&quot; data-tagsearch-path=&quot;a11y-dev-mode.css&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-a11y-dev-mode-css-L1&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-a11y-dev-mode-css-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-c&gt;/* Highliting accessibility errors in HTML */&lt;/span&gt;&lt;/td&gt;
@@ -6556,7 +6534,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/div&gt;
 
 
-  &lt;/div&gt;
+    &lt;/div&gt;
 
   &lt;/div&gt;
 &lt;/div&gt;
@@ -6743,9 +6721,9 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-dark-mode-via-css-media-query-css&quot; class=&quot;file my-2&quot;&gt;
     
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-css  &quot;&gt;
+    &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-css  &quot;&gt;
 
-      
+        
 &lt;div class=&quot;js-check-bidi js-blob-code-container blob-code-content&quot;&gt;
 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
@@ -6760,8 +6738,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
     &lt;/span&gt;
 
 
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;      &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;  Show hidden characters
-  
+  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/template&gt;
@@ -6772,7 +6749,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;CSS&quot; data-tagsearch-path=&quot;dark-mode-via-css-media-query.css&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;CSS&quot; data-tagsearch-path=&quot;dark-mode-via-css-media-query.css&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-dark-mode-via-css-media-query-css-L1&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-dark-mode-via-css-media-query-css-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-ent&gt;html&lt;/span&gt; {    &lt;/td&gt;
@@ -6843,7 +6820,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/div&gt;
 
 
-  &lt;/div&gt;
+    &lt;/div&gt;
 
   &lt;/div&gt;
 &lt;/div&gt;
@@ -6871,9 +6848,9 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-dark-mode-switch-toggle-html&quot; class=&quot;file my-2&quot;&gt;
     
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-html  &quot;&gt;
+    &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-html  &quot;&gt;
 
-      
+        
 &lt;div class=&quot;js-check-bidi js-blob-code-container blob-code-content&quot;&gt;
 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
@@ -6888,8 +6865,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
     &lt;/span&gt;
 
 
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;      &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;  Show hidden characters
-  
+  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/template&gt;
@@ -6900,7 +6876,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;HTML&quot; data-tagsearch-path=&quot;dark-mode-switch-toggle.html&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;HTML&quot; data-tagsearch-path=&quot;dark-mode-switch-toggle.html&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-dark-mode-switch-toggle-html-L1&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-dark-mode-switch-toggle-html-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-c&gt;&amp;lt;!-- Adding dark-mode switch toggle in your page --&amp;gt;&lt;/span&gt;&lt;/td&gt;
@@ -6933,7 +6909,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/div&gt;
 
 
-  &lt;/div&gt;
+    &lt;/div&gt;
 
   &lt;/div&gt;
 &lt;/div&gt;
@@ -6955,9 +6931,9 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-dark-mode-via-css-media-query-and-classes-via-javascript-css&quot; class=&quot;file my-2&quot;&gt;
     
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-css  &quot;&gt;
+    &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-css  &quot;&gt;
 
-      
+        
 &lt;div class=&quot;js-check-bidi js-blob-code-container blob-code-content&quot;&gt;
 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
@@ -6972,8 +6948,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
     &lt;/span&gt;
 
 
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;      &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;  Show hidden characters
-  
+  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/template&gt;
@@ -6984,7 +6959,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;CSS&quot; data-tagsearch-path=&quot;dark-mode-via-css-media-query-and-classes-via-javascript.css&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;CSS&quot; data-tagsearch-path=&quot;dark-mode-via-css-media-query-and-classes-via-javascript.css&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L1&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
@@ -7349,7 +7324,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/div&gt;
 
 
-  &lt;/div&gt;
+    &lt;/div&gt;
 
   &lt;/div&gt;
 &lt;/div&gt;
@@ -7374,9 +7349,9 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-dark-mode-via-css-media-query-and-classes-via-javascript-js&quot; class=&quot;file my-2&quot;&gt;
     
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+    &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
 
-      
+        
 &lt;div class=&quot;js-check-bidi js-blob-code-container blob-code-content&quot;&gt;
 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
@@ -7391,8 +7366,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
     &lt;/span&gt;
 
 
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;      &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;  Show hidden characters
-  
+  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/template&gt;
@@ -7403,7 +7377,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;dark-mode-via-css-media-query-and-classes-via-javascript.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;dark-mode-via-css-media-query-and-classes-via-javascript.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L1&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-k&gt;function&lt;/span&gt; &lt;span class=pl-en&gt;toggleSiteTheme&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s1&gt;e&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
@@ -7589,7 +7563,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/div&gt;
 
 
-  &lt;/div&gt;
+    &lt;/div&gt;
 
   &lt;/div&gt;
 &lt;/div&gt;
@@ -7614,9 +7588,9 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js&quot; class=&quot;file my-2&quot;&gt;
     
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+    &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
 
-      
+        
 &lt;div class=&quot;js-check-bidi js-blob-code-container blob-code-content&quot;&gt;
 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
@@ -7631,8 +7605,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
     &lt;/span&gt;
 
 
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;      &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;  Show hidden characters
-  
+  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/template&gt;
@@ -7643,7 +7616,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L1&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-k&gt;function&lt;/span&gt; &lt;span class=pl-en&gt;toggleSiteTheme&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s1&gt;e&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
@@ -7836,7 +7809,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/div&gt;
 
 
-  &lt;/div&gt;
+    &lt;/div&gt;
 
   &lt;/div&gt;
 &lt;/div&gt;
@@ -7860,9 +7833,9 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js&quot; class=&quot;file my-2&quot;&gt;
     
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+    &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
 
-      
+        
 &lt;div class=&quot;js-check-bidi js-blob-code-container blob-code-content&quot;&gt;
 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
@@ -7877,8 +7850,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
     &lt;/span&gt;
 
 
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;      &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;  Show hidden characters
-  
+  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/template&gt;
@@ -7889,7 +7861,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L1&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-k&gt;function&lt;/span&gt; &lt;span class=pl-en&gt;toggleSiteTheme&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s1&gt;e&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
@@ -8130,7 +8102,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/div&gt;
 
 
-  &lt;/div&gt;
+    &lt;/div&gt;
 
   &lt;/div&gt;
 &lt;/div&gt;
@@ -8385,7 +8357,7 @@ This list in incomplete:&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://cloud.githubusercontent.com/assets/39191/10144107/9fae0b48-65d0-11e5-8e87-c9a8e999b064.png&quot;&gt;&lt;img src=&quot;https://cloud.githubusercontent.com/assets/39191/10144107/9fae0b48-65d0-11e5-8e87-c9a8e999b064.png&quot; style=&quot;max-width: 100%;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;&lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://cloud.githubusercontent.com/assets/39191/10144107/9fae0b48-65d0-11e5-8e87-c9a8e999b064.png&quot;&gt;&lt;img src=&quot;https://cloud.githubusercontent.com/assets/39191/10144107/9fae0b48-65d0-11e5-8e87-c9a8e999b064.png&quot; style=&quot;max-width: 100%;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
  &lt;i&gt;Timeline trace of The Guardian. Outbrain is forcing layout repeatedly, probably in a loop.&lt;/i&gt;
 
 &lt;h5 dir=&quot;auto&quot;&gt;&lt;a id=&quot;user-content-cross-browser&quot; class=&quot;anchor&quot; aria-hidden=&quot;true&quot; href=&quot;#cross-browser&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Cross-browser&lt;/h5&gt;
@@ -8454,9 +8426,9 @@ This list in incomplete:&lt;/p&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-fetch-some-data-js&quot; class=&quot;file my-2&quot;&gt;
     
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
+    &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
 
-      
+        
 &lt;div class=&quot;js-check-bidi js-blob-code-container blob-code-content&quot;&gt;
 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
@@ -8471,8 +8443,7 @@ This list in incomplete:&lt;/p&gt;
     &lt;/span&gt;
 
 
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;      &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;  Show hidden characters
-  
+  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/template&gt;
@@ -8483,7 +8454,7 @@ This list in incomplete:&lt;/p&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;fetch-some-data.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;JavaScript&quot; data-tagsearch-path=&quot;fetch-some-data.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-fetch-some-data-js-L1&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-fetch-some-data-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-k&gt;const&lt;/span&gt; &lt;span class=pl-en&gt;fetchSomeData&lt;/span&gt; &lt;span class=pl-c1&gt;=&lt;/span&gt; &lt;span class=pl-k&gt;async&lt;/span&gt; &lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt; &lt;span class=pl-c1&gt;=&amp;gt;&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
@@ -8582,7 +8553,7 @@ This list in incomplete:&lt;/p&gt;
 &lt;/div&gt;
 
 
-  &lt;/div&gt;
+    &lt;/div&gt;
 
   &lt;/div&gt;
 &lt;/div&gt;
@@ -8755,9 +8726,9 @@ _The 6.0.0 release of Angular is here! This is a major release focused less on t
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-ng-publish-sh&quot; class=&quot;file my-2&quot;&gt;
     
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-shell  &quot;&gt;
+    &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-shell  &quot;&gt;
 
-      
+        
 &lt;div class=&quot;js-check-bidi js-blob-code-container blob-code-content&quot;&gt;
 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
@@ -8772,8 +8743,7 @@ _The 6.0.0 release of Angular is here! This is a major release focused less on t
     &lt;/span&gt;
 
 
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;      &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;  Show hidden characters
-  
+  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/template&gt;
@@ -8784,7 +8754,7 @@ _The 6.0.0 release of Angular is here! This is a major release focused less on t
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;Shell&quot; data-tagsearch-path=&quot;ng-publish.sh&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;Shell&quot; data-tagsearch-path=&quot;ng-publish.sh&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-ng-publish-sh-L1&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-ng-publish-sh-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;#&lt;/span&gt; Usage: &lt;/span&gt;&lt;/td&gt;
@@ -8826,7 +8796,7 @@ _The 6.0.0 release of Angular is here! This is a major release focused less on t
 &lt;/div&gt;
 
 
-  &lt;/div&gt;
+    &lt;/div&gt;
 
   &lt;/div&gt;
 &lt;/div&gt;
@@ -8892,9 +8862,9 @@ _The 6.0.0 release of Angular is here! This is a major release focused less on t
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
   &lt;div id=&quot;file-config-yml&quot; class=&quot;file my-2&quot;&gt;
     
-  &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-yaml  &quot;&gt;
+    &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-yaml  &quot;&gt;
 
-      
+        
 &lt;div class=&quot;js-check-bidi js-blob-code-container blob-code-content&quot;&gt;
 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
@@ -8909,8 +8879,7 @@ _The 6.0.0 release of Angular is here! This is a major release focused less on t
     &lt;/span&gt;
 
 
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;      &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;  Show hidden characters
-  
+  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
 &lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/template&gt;
@@ -8921,7 +8890,7 @@ _The 6.0.0 release of Angular is here! This is a major release focused less on t
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;YAML&quot; data-tagsearch-path=&quot;config.yml&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;YAML&quot; data-tagsearch-path=&quot;config.yml&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-config-yml-L1&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-config-yml-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=&quot;pl-ent&quot;&gt;version&lt;/span&gt;: &lt;span class=&quot;pl-c1&quot;&gt;2&lt;/span&gt;&lt;/td&gt;
@@ -9262,7 +9231,7 @@ _The 6.0.0 release of Angular is here! This is a major release focused less on t
 &lt;/div&gt;
 
 
-  &lt;/div&gt;
+    &lt;/div&gt;
 
   &lt;/div&gt;
 &lt;/div&gt;
