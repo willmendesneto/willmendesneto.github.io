@@ -53,7 +53,7 @@ const Sidebar = () => (
       </h2>
       <p>
         Hello, there. I’m a Brazilian Software Engineer (or any cool name that you want to call me) with more than 10
-        years of experience in my career and currently based in Recife.
+        years of experience in my career and currently based in Brazil.
       </p>
     </FirstWrapper>
     <p>
@@ -93,9 +93,9 @@ const Sidebar = () => (
       Feel free to watch, subscribe and share the videos with your social connections!
     </p>
     <p>
-      I’m currently lending my brain to <a href="https://innovacode.io">InnovaCode</a> and in my free time I'm a
-      speaker and trainer at various conferences around the world in keynotes, workshops, and sessions for events such
-      as <a href="https://2018.jsconf.asia/">JSConf</a>,{' '}
+      I’m currently lending my brain to <a href="https://innovacode.io">InnovaCode</a> and in my free time I'm a speaker
+      and trainer at various conferences around the world in keynotes, workshops, and sessions for events such as{' '}
+      <a href="https://2018.jsconf.asia/">JSConf</a>,{' '}
       <a href="http://qconsp.com/sp2015/speaker/wilson-mendes.html">QCon</a>, <a href="http://ngjapan.org">NG-Japan</a>,{' '}
       <a href="http://2016.devfest.org.au">DevFest Australia</a>,{' '}
       <a href="https://gdg-siberia.com/speakers/">DevFest Siberia</a> among others.
