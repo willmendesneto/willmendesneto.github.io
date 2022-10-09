@@ -73,7 +73,7 @@
     "lint": "eslint .",
     "format": "prettier --write \"./src/**/*.{js,json,md}\"",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "rm -rf ./public ./node_modules/.cache/gh-pages && gatsby build && echo \"$(git rev-parse --short HEAD)\" >> ./public/VERSION.txt && cp CNAME VERSION.txt ./public && gh-pages -d public -b master"
+    "deploy": "rm -rf ./public ./node_modules/.cache/gh-pages && gatsby build && echo \"$(git rev-parse --short HEAD)\" >> ./public/VERSION.txt && cp CNAME ./public && gh-pages -d public -b master"
   },
   "eslintConfig": {
     "extends": "react-app"
