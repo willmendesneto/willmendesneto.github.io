@@ -42,6 +42,9 @@ index.html:
   <title></title>
   <meta name="description" content="">
   <script>document.write('<base href="' + document.location + '" />');</script>
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  <meta http-equiv="pragma" content="no-cache">
   <meta name="viewport" content="width=device-width">
 
 </head>
