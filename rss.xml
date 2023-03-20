@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Will Mendes Blog RSS Feed]]></title><description><![CDATA[Principal Frontend-Engineer, Principal Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies]]></description><link>https://willmendesneto.com</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 09 Oct 2022 05:40:15 GMT</lastBuildDate><item><title><![CDATA[Installing Multiple Versions of the Same Package in your project via package aliases]]></title><link>https://willmendesneto.com/posts/installing-multiple-versions-of-the-same-package-in-your-project-via-package-aliases/</link><guid isPermaLink="false">https://willmendesneto.com/posts/installing-multiple-versions-of-the-same-package-in-your-project-via-package-aliases/</guid><pubDate>Tue, 13 Jul 2021 09:13:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Will Mendes Blog RSS Feed]]></title><description><![CDATA[Principal Frontend-Engineer, Principal Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies]]></description><link>https://willmendesneto.com</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 20 Mar 2023 17:28:24 GMT</lastBuildDate><item><title><![CDATA[Installing Multiple Versions of the Same Package in your project via package aliases]]></title><link>https://willmendesneto.com/posts/installing-multiple-versions-of-the-same-package-in-your-project-via-package-aliases/</link><guid isPermaLink="false">https://willmendesneto.com/posts/installing-multiple-versions-of-the-same-package-in-your-project-via-package-aliases/</guid><pubDate>Tue, 13 Jul 2021 09:13:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1280px; &quot;
     &gt;
@@ -100,9 +100,8 @@ npm install --save \
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
   &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
   &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
-  
     &lt;span&gt;
       This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
       &lt;a href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
@@ -116,7 +115,7 @@ npm install --save \
 &lt;template class=&quot;js-line-alert-template&quot;&gt;
   &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
     &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
@@ -220,9 +219,8 @@ npm install --save \
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
   &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
   &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
-  
     &lt;span&gt;
       This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
       &lt;a href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
@@ -236,7 +234,7 @@ npm install --save \
 &lt;template class=&quot;js-line-alert-template&quot;&gt;
   &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
     &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
@@ -563,9 +561,8 @@ npm install --save \
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
   &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
   &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
-  
     &lt;span&gt;
       This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
       &lt;a href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
@@ -579,7 +576,7 @@ npm install --save \
 &lt;template class=&quot;js-line-alert-template&quot;&gt;
   &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
     &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
@@ -895,9 +892,8 @@ npm install --save \
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
   &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
   &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
-  
     &lt;span&gt;
       This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
       &lt;a href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
@@ -911,7 +907,7 @@ npm install --save \
 &lt;template class=&quot;js-line-alert-template&quot;&gt;
   &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
     &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
@@ -1457,9 +1453,8 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
   &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
   &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
-  
     &lt;span&gt;
       This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
       &lt;a href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
@@ -1473,7 +1468,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
 &lt;template class=&quot;js-line-alert-template&quot;&gt;
   &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
     &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
@@ -1732,9 +1727,8 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
   &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
   &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
-  
     &lt;span&gt;
       This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
       &lt;a href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
@@ -1748,7 +1742,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
 &lt;template class=&quot;js-line-alert-template&quot;&gt;
   &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
     &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
@@ -1874,9 +1868,8 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
   &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
   &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
-  
     &lt;span&gt;
       This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
       &lt;a href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
@@ -1890,7 +1883,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
 &lt;template class=&quot;js-line-alert-template&quot;&gt;
   &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
     &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
@@ -2798,9 +2791,8 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
   &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
   &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
-  
     &lt;span&gt;
       This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
       &lt;a href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
@@ -2814,7 +2806,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
 &lt;template class=&quot;js-line-alert-template&quot;&gt;
   &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
     &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
@@ -2909,9 +2901,8 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
   &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
   &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
-  
     &lt;span&gt;
       This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
       &lt;a href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
@@ -2925,7 +2916,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
 &lt;template class=&quot;js-line-alert-template&quot;&gt;
   &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
     &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
@@ -3121,9 +3112,8 @@ editor/
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
   &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
   &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
-  
     &lt;span&gt;
       This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
       &lt;a href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
@@ -3137,7 +3127,7 @@ editor/
 &lt;template class=&quot;js-line-alert-template&quot;&gt;
   &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
     &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
@@ -3383,9 +3373,8 @@ editor/
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
   &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
   &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
-  
     &lt;span&gt;
       This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
       &lt;a href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
@@ -3399,7 +3388,7 @@ editor/
 &lt;template class=&quot;js-line-alert-template&quot;&gt;
   &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
     &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
@@ -3596,9 +3585,8 @@ editor/
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
   &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
   &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
-  
     &lt;span&gt;
       This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
       &lt;a href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
@@ -3612,7 +3600,7 @@ editor/
 &lt;template class=&quot;js-line-alert-template&quot;&gt;
   &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
     &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
@@ -3741,9 +3729,8 @@ editor/
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
   &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
   &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
-  
     &lt;span&gt;
       This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
       &lt;a href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
@@ -3757,7 +3744,7 @@ editor/
 &lt;template class=&quot;js-line-alert-template&quot;&gt;
   &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
     &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
@@ -4317,9 +4304,8 @@ editor/
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
   &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
   &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
-  
     &lt;span&gt;
       This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
       &lt;a href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
@@ -4333,7 +4319,7 @@ editor/
 &lt;template class=&quot;js-line-alert-template&quot;&gt;
   &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
     &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
@@ -4998,9 +4984,8 @@ editor/
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
   &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
   &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
-  
     &lt;span&gt;
       This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
       &lt;a href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
@@ -5014,7 +4999,7 @@ editor/
 &lt;template class=&quot;js-line-alert-template&quot;&gt;
   &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
     &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
@@ -5074,9 +5059,8 @@ editor/
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
   &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
   &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
-  
     &lt;span&gt;
       This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
       &lt;a href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
@@ -5090,7 +5074,7 @@ editor/
 &lt;template class=&quot;js-line-alert-template&quot;&gt;
   &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
     &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
@@ -5322,9 +5306,8 @@ I encourage you to see all of these steps in action by using [perf-marks entry-p
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
   &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
   &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
-  
     &lt;span&gt;
       This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
       &lt;a href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
@@ -5338,7 +5321,7 @@ I encourage you to see all of these steps in action by using [perf-marks entry-p
 &lt;template class=&quot;js-line-alert-template&quot;&gt;
   &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
     &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
@@ -5599,9 +5582,8 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
   &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
   &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
-  
     &lt;span&gt;
       This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
       &lt;a href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
@@ -5615,7 +5597,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;template class=&quot;js-line-alert-template&quot;&gt;
   &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
     &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
@@ -5763,9 +5745,8 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
   &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
   &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
-  
     &lt;span&gt;
       This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
       &lt;a href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
@@ -5779,7 +5760,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;template class=&quot;js-line-alert-template&quot;&gt;
   &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
     &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
@@ -5890,9 +5871,8 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
   &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
   &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
-  
     &lt;span&gt;
       This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
       &lt;a href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
@@ -5906,7 +5886,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;template class=&quot;js-line-alert-template&quot;&gt;
   &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
     &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
@@ -5987,8 +5967,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;hr /&gt;
 &lt;h3&gt;Cya 👋&lt;/h3&gt;
                 &lt;div style=&quot;margin-top=55px; font-style: italic;&quot;&gt;(This is an article posted to my blog at willmendesneto.com. You can read it online by &lt;a href=&quot;https://willmendesneto.com/posts/cross-platform-performance-measurements-with-user-timing-apiand-perf-marks/&quot;&gt;clicking here&lt;/a&gt;.)&lt;/div&gt;
-              </content:encoded></item><item><title><![CDATA[Easy and reusable Media Query Breakpoints for your CSS-In-JS components]]></title><link>https://willmendesneto.com/posts/easy-and-reusable-media-query-breakpoints-for-your-css-in-js-components/</link><guid isPermaLink="false">https://willmendesneto.com/posts/easy-and-reusable-media-query-breakpoints-for-your-css-in-js-components/</guid><pubDate>Sat, 20 Mar 2021 09:13:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
-    &lt;span
+              </content:encoded></item><item><title><![CDATA[Easy and reusable Media Query Breakpoints for your CSS-In-JS components]]></title><link>https://willmendesneto.com/posts/easy-and-reusable-media-query-breakpoints-for-your-css-in-js-components/</link><guid isPermaLink="false">https://willmendesneto.com/posts/easy-and-reusable-media-query-breakpoints-for-your-css-in-js-components/</guid><pubDate>Sat, 20 Mar 2021 09:13:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1280px; &quot;
     &gt;
@@ -6001,7 +5980,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 45.62500000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAAsTAAALEwEAmpwYAAABiUlEQVQozz2R646bMBCFef9Xaqtuo+z2sqFVYKOwQHCI8YVbCNgktsFmZdNW8g9rfMbzzTkeZoZwQ90pR0P5QpixRWbQYPZEHCtV8gWtRatZCLd3zIyHmSkGnTRqc+Kf3llI5aXX61uA5TYbX873Y6UoN6Cbt2D8HA9bMF56TZjxKDeHUvlo2hXyFUq/kH4hsBv7B4mvyf0FjG9UYmbR3kr1DciA2L8QMx7hJqqVn9VP7+1T3D2ntxA/MDOQLTFqULzLShZV0jEvcS2iU34sH8Qt4hG+7LFoziGhFJQ3VHV7NMLBwGFJK3avYd8PUaX+NleCoDxyzXbnYtDf8/tPKDfZ+CXhr/CxyfipnYiFlKCVWSMOpXLYC+jmoNSgm/9hMwN7nTbTqZ2SZip6TZ2ZsNeHUoZUhlRl15lwc+l1YmUqbaf8Zk21hh0rtYMiINKHAlzn1Zuonp7B+CO3hu2xINyk7fTr8giI/F2IFc1bjSWOag0ZuZDP3Zxd5/ymz90MXXhoMPi/zNF9AIkr8KsCUTGzAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 45.62500000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAAsTAAALEwEAmpwYAAABjUlEQVQozzWS646bMBCFef9XqrZq2mZX3WazIikKJIAJF18IhIsN2AabykYr+Yc9Hmm+c844kGpENWbmkGHFzDy3YtFrF/FLKQlbi61oexAzd0i1A6nOe3Wr5K+YfbvSMxZpq7a/ExK/wfCWjH4pMdOgWfbJ8HKlezCmrUJUO5hpj8hjMR8KccjFRy6OOYd27Cfk32/jKxg8LKCl84jcAXHGAjNdUO0gpoNSHuPHLqh/XJt92J7gBKnO6HorKhgcItL7pbDM6/XBg+h+IROyQhzEVhfyOnExRglpYdm4xZD1KuvXkLCpSvuuu5TSCGFrUHJcJD4ZEVuN5rxXb/fxPRc/wfByY3+zaRezqJ4R0/+ISGoBKu4RuWEnjTqXCjTLFzbVWafCeo6eS1jPea/wYNzKOuURccLyjGX8XBDTaafCao7qOayXuzXVGOaX8pBNJyQ+Mg6eyxaJ/5D7ZPhzH1/B6CKOmA7r+T01bZ8F39Aca6z6ino18dqQQbPEzyVtVdIsWac2/y283QUb9X+yRfDNbXF0rQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;picture&gt;
           &lt;source
@@ -6021,17 +6000,18 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
           &lt;img
             class=&quot;gatsby-resp-image-image&quot;
             src=&quot;https://willmendesneto.com/static/482053c5941dd46736a74b22bdac1d8a/26c69/screen-with-different-sizes.png&quot;
-            alt=&quot;Devices with different screen and sizes&quot;
-            title=&quot;Devices with different screen and sizes&quot;
+            alt=&quot;screen with different sizes&quot;
+            title=&quot;screen with different sizes&quot;
             loading=&quot;lazy&quot;
             decoding=&quot;async&quot;
             style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
           /&gt;
         &lt;/picture&gt;
   &lt;/a&gt;
-    &lt;/span&gt;
-    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;Devices with different screen and sizes&lt;/figcaption&gt;
-  &lt;/figure&gt;&lt;/p&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Image Author: Seobility &lt;a href=&quot;https://www.seobility.net/en/wiki/Media_Queries&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Media Queries&lt;/a&gt;, License: CC BY-SA 4.0&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Usually, when you have to create components in your frontend app you have to cover different views in several devices, with different screens and sizes. CSS Media Queries - &lt;code class=&quot;language-text&quot;&gt;@media&lt;/code&gt; - were created to make this process easier. There are several ways ot organize your CSS using well known techniques, such as &lt;a href=&quot;http://getbem.com/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;BEM&lt;/a&gt;, &lt;a href=&quot;http://smacss.com/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;SMACSS&lt;/a&gt; and &lt;a href=&quot;http://oocss.org/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;OOCSS&lt;/a&gt; to avoid css rules clashing and changing different components across your page.&lt;/p&gt;
 &lt;h2&gt;The problem&lt;/h2&gt;
@@ -6065,9 +6045,8 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
   &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
   &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
-  
     &lt;span&gt;
       This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
       &lt;a href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
@@ -6081,7 +6060,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;template class=&quot;js-line-alert-template&quot;&gt;
   &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
     &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
@@ -6263,7 +6242,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 30%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAGABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAIEBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAdmAWAf/xAAYEAACAwAAAAAAAAAAAAAAAAAAARExQ//aAAgBAQABBQKEaKv/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAYEAACAwAAAAAAAAAAAAAAAAAAARARMf/aAAgBAQAGPwLEVH//xAAZEAADAQEBAAAAAAAAAAAAAAAAAREhscH/2gAIAQEAAT8hdnwMwW3wqKf/2gAMAwEAAgADAAAAEAPP/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAGRABAQEBAQEAAAAAAAAAAAAAAREAMSFB/9oACAEBAAE/EG/WeyplEggjOGdhWeu//9k=&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 30%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAGABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAIEBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAdmAWAf/xAAYEAACAwAAAAAAAAAAAAAAAAAAARExQ//aAAgBAQABBQKEaKv/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAYEAACAwAAAAAAAAAAAAAAAAAAARARMf/aAAgBAQAGPwLEVH//xAAZEAADAQEBAAAAAAAAAAAAAAAAAREhscH/2gAIAQEAAT8hdHwKsFt8Kin/2gAMAwEAAgADAAAAEAPP/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAGRABAQEBAQEAAAAAAAAAAAAAAREAMSFB/9oACAEBAAE/EH/eeypkJBBGcMtRWeu//9k=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;picture&gt;
           &lt;source
@@ -6326,9 +6305,8 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
   &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
   &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
-  
     &lt;span&gt;
       This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
       &lt;a href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
@@ -6342,7 +6320,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;template class=&quot;js-line-alert-template&quot;&gt;
   &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
     &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
@@ -6576,7 +6554,324 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 97.1875%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAIAAAAf7rriAAAACXBIWXMAAAsTAAALEwEAmpwYAAABv0lEQVQ4y5WSv4/TMBTHvfM/gJCYEH/DwR9xCwMDO9OxMcMNLIhfAwxICOlA3HpLJybQDSCkEzqugUubpg0taezEsf2cxs9GacAgqGj60XewbPl99PxMwiDon5wEQT84/vzp6ChL04KxglKWZaosF1pXAAuACgCEkJyDlCAESAF5TkaD4XjybZlJHMdKKdA/AQAFoJZIpay1rqVdKEmSZLio1K9NW1WNw1/Wf4CItgXROmelIAcv3tzf6z98+f75fk+qqi3h/o8337lw7eKZ2+T846vXtysVb3BZSnLv0vYu2bpx+ea7/R2nh9afdTHfOnvl6bmtR693n/Ue6GK6mbl398nhwauP398eRh+E1s5ag+swBq1DIcgsm4lKN+WMrevadcGbw+N4+GUWfZ1xXgghsAveTKcpZWWRCz/q9fg5R6enUkrnnDEGO/K75yTJ8xwAbHe8eTIajeI4iqLm9/2TNeZ5v0/DkIUhTxLBGJ/PizQtKS0pVZyvfgVvno7HdlmsruvaGJ8WtHZFENE5lJJM4phlmeDcITYD/CuIK2JMMxhREkHpdDCoGLNCdE1ZWqlsmpKF1m1juFGcQw0/AOxNPAn18fWsAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 97.1875%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAIAAAAf7rriAAAACXBIWXMAAAsTAAALEwEAmpwYAAABwElEQVQ4y5WSz4rVMBTGs/UlVHDjxlfwzyuI4MKFT+BKNy4FUZfDKIgLcaMogxtBUFy5kHHjrAYd7y3tnba3l87tpG2anCZtkxOp5QZB59r74+MQEr7zkZyQmedNJxPPm04PDr7v79Msq4qCFUVJac151zStUoMkAHCuABQIVYMsSxIFs3i+mPdKojgGACml+k0tZb0CABDRDgyLGsgiOWyberWJTdM4859IKY0xOGAMWosgyPuXn7dee9tv9l7sfIK6GVrY9bjk++dunD91j5x9cv3m1QaiDcwAZOvCtUfk0q0rt7++vWNViO5sTPLd05efnbn4eOfB84/bskw3S/7w8Onuu1d76Zfd2TehpEXURpv1aG3QGiFIepz2Hmuxw7ZtcQzutYMf0eE0Df2UVUwIYcbgkvM0KwrBGAzX2cwc+j7UvVNrbUbizEeLRcmYlBLH4+6cRFEUx2EY9r/vL/0n+XjyMw/83PdZkvA8Z8tlmWUVpZzSmrFh7CcmH83nQ7Ou6zqtO63b1eLEV3DJSRznlIqqQmP6r+PqGmndD4ZzIihNg0AVBQqBQhjOXcV/1kEAuFySRql+vIibyVoj5S+7mDtEOVlfSQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+          &lt;source
+              srcset=&quot;https://willmendesneto.com/static/eb8691b3f5c01bfa9d8cef6f05c9a6f4/fb34c/a11y-dev-mode-in-action.avif 320w,https://willmendesneto.com/static/eb8691b3f5c01bfa9d8cef6f05c9a6f4/646cd/a11y-dev-mode-in-action.avif 768w,https://willmendesneto.com/static/eb8691b3f5c01bfa9d8cef6f05c9a6f4/8b485/a11y-dev-mode-in-action.avif 1024w,https://willmendesneto.com/static/eb8691b3f5c01bfa9d8cef6f05c9a6f4/a73d6/a11y-dev-mode-in-action.avif 1280w,https://willmendesneto.com/static/eb8691b3f5c01bfa9d8cef6f05c9a6f4/a82e4/a11y-dev-mode-in-action.avif 1836w&quot;
+              sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+              type=&quot;image/avif&quot;
+            /&gt;&lt;source
+              srcset=&quot;https://willmendesneto.com/static/eb8691b3f5c01bfa9d8cef6f05c9a6f4/cb523/a11y-dev-mode-in-action.webp 320w,https://willmendesneto.com/static/eb8691b3f5c01bfa9d8cef6f05c9a6f4/cd067/a11y-dev-mode-in-action.webp 768w,https://willmendesneto.com/static/eb8691b3f5c01bfa9d8cef6f05c9a6f4/53334/a11y-dev-mode-in-action.webp 1024w,https://willmendesneto.com/static/eb8691b3f5c01bfa9d8cef6f05c9a6f4/4b075/a11y-dev-mode-in-action.webp 1280w,https://willmendesneto.com/static/eb8691b3f5c01bfa9d8cef6f05c9a6f4/5a428/a11y-dev-mode-in-action.webp 1836w&quot;
+              sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+              type=&quot;image/webp&quot;
+            /&gt;
+          &lt;source
+            srcset=&quot;https://willmendesneto.com/static/eb8691b3f5c01bfa9d8cef6f05c9a6f4/d4f27/a11y-dev-mode-in-action.png 320w,https://willmendesneto.com/static/eb8691b3f5c01bfa9d8cef6f05c9a6f4/778aa/a11y-dev-mode-in-action.png 768w,https://willmendesneto.com/static/eb8691b3f5c01bfa9d8cef6f05c9a6f4/658fc/a11y-dev-mode-in-action.png 1024w,https://willmendesneto.com/static/eb8691b3f5c01bfa9d8cef6f05c9a6f4/26c69/a11y-dev-mode-in-action.png 1280w,https://willmendesneto.com/static/eb8691b3f5c01bfa9d8cef6f05c9a6f4/f7d36/a11y-dev-mode-in-action.png 1836w&quot;
+            sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+            type=&quot;image/png&quot;
+          /&gt;
+          &lt;img
+            class=&quot;gatsby-resp-image-image&quot;
+            src=&quot;https://willmendesneto.com/static/eb8691b3f5c01bfa9d8cef6f05c9a6f4/26c69/a11y-dev-mode-in-action.png&quot;
+            alt=&quot;Final result when using a11y-dev-mode.css file in your app&quot;
+            title=&quot;Final result when using a11y-dev-mode.css file in your app&quot;
+            loading=&quot;lazy&quot;
+            decoding=&quot;async&quot;
+            style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+          /&gt;
+        &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;Final result when using a11y-dev-mode.css file in your app&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;As you can see, this is quite useful and you can import the file only in your local development, improving your dev loop and avoiding these issues to be released to production.&lt;/p&gt;
+&lt;p&gt;🤘 Feel free to play with this example by accessing the &lt;a href=&quot;https://stackblitz.com/edit/css-skeleton-loader-wai-aria-attributes-twfmhx?file=styles.css&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Stackblitz demo for &quot;a11y-dev-mode.css&quot;&lt;/a&gt;. 🤘&lt;/p&gt;
+&lt;hr /&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⚠️ Please keep in mind this should not be published to production since it&apos;s a file used only for debugging purposes. Otherwise you might have issues in your website.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr /&gt;
+&lt;h3&gt;That’s all for now&lt;/h3&gt;
+&lt;p&gt;This was a quick one, but I hope you enjoyed this reading as much as I enjoyed writing it. Thank you so much for reading until the end and see you soon!&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Cya 👋&lt;/h3&gt;
+                &lt;div style=&quot;margin-top=55px; font-style: italic;&quot;&gt;(This is an article posted to my blog at willmendesneto.com. You can read it online by &lt;a href=&quot;https://willmendesneto.com/posts/linting-web-accessibility-issues-in-your-html-using-just-css/&quot;&gt;clicking here&lt;/a&gt;.)&lt;/div&gt;
+              </content:encoded></item><item><title><![CDATA[Linting Web Accessibility issues in your HTML using just CSS!]]></title><link>https://willmendesneto.com/posts/linting-web-accessibility-issues-in-your-html-using-just-css/</link><guid isPermaLink="false">https://willmendesneto.com/posts/linting-web-accessibility-issues-in-your-html-using-just-css/</guid><pubDate>Wed, 17 Mar 2021 09:13:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;p&gt;🧪 The main goal of this post is to research, trying to find new solutions by adding innovation and improving your dev experience - aka DX. You should have that in mind, exploring a simple and easiest way to have that added in your devloop, without any time friction. 🧪&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;h2&gt;The problem&lt;/h2&gt;
+&lt;p&gt;This time I&apos;ll share a quick code tip. Usually, when you have to validate Web accessibility in your project you might have to use some tooling, perhaps even run some commands in your tests and/or project pipeline.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⚠️ It goes without saying, but every task automation matters. That means this might add some time in your pipeline and/or add maintainance time in your automated tasks. You should also have that, but the idea of this post is explore a simple way to have that added in your devloop, without any time friction.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Using CSS for Accessibility linting in HTML elements&lt;/h2&gt;
+&lt;p&gt;To make this a smooth process with fast feedback, I just created a small, but totally useful Gist that I called &lt;em&gt;a11y-dev-mode.css&lt;/em&gt;! It has some CSS rules that applies some changes on elements without correct information such as missing attributes, having elements with empty content and assuming wrong &lt;a href=&quot;https://www.w3.org/WAI/standards-guidelines/aria/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Accessible Rich Internet Applications Suite — WAI-ARIA&lt;/a&gt; roles.&lt;/p&gt;
+&lt;p&gt;&lt;div id=&quot;gist100952079&quot; class=&quot;gist&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+      &lt;div class=&quot;gist-data&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+  &lt;div id=&quot;file-a11y-dev-mode-css&quot; class=&quot;file my-2&quot;&gt;
+    
+    &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-css  &quot;&gt;
+
+        
+&lt;div class=&quot;js-check-bidi js-blob-code-container blob-code-content&quot;&gt;
+
+  &lt;template class=&quot;js-file-alert-template&quot;&gt;
+  &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
+  &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
+&lt;/svg&gt;
+    &lt;span&gt;
+      This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
+      &lt;a href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
+    &lt;/span&gt;
+
+
+  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/template&gt;
+&lt;template class=&quot;js-line-alert-template&quot;&gt;
+  &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
+    &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;/span&gt;&lt;/template&gt;
+
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-lang=&quot;CSS&quot; data-tagsearch-path=&quot;a11y-dev-mode.css&quot;&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L1&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-c&gt;/* Highliting accessibility errors in HTML */&lt;/span&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L2&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L3&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-c&gt;/* highlight HTML element with invalid value for lang attribute */&lt;/span&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L4&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-ent&gt;html&lt;/span&gt;&lt;span class=pl-kos&gt;:&lt;/span&gt;&lt;span class=pl-c1&gt;not&lt;/span&gt;([&lt;span class=pl-c1&gt;lang&lt;/span&gt;])&lt;span class=pl-kos&gt;,&lt;/span&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L5&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-ent&gt;html&lt;/span&gt;[&lt;span class=pl-c1&gt;lang&lt;/span&gt;&lt;span class=pl-c1&gt;=&lt;/span&gt;&lt;span class=pl-s&gt;&amp;quot;&amp;quot;&lt;/span&gt;] {&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L6&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;6&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-c1&gt;border&lt;/span&gt;&lt;span class=pl-kos&gt;:&lt;/span&gt; &lt;span class=pl-c1&gt;2&lt;span class=pl-smi&gt;px&lt;/span&gt;&lt;/span&gt; dotted red &lt;span class=pl-k&gt;!important&lt;/span&gt;;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L7&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;7&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC7&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L8&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;8&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC8&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L9&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;9&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC9&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-c&gt;/*  highlight images missing alt text */&lt;/span&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L10&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;10&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC10&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-ent&gt;img&lt;/span&gt;&lt;span class=pl-kos&gt;:&lt;/span&gt;&lt;span class=pl-c1&gt;not&lt;/span&gt;([&lt;span class=pl-c1&gt;alt&lt;/span&gt;]) {&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L11&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;11&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC11&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-c1&gt;filter&lt;/span&gt;&lt;span class=pl-kos&gt;:&lt;/span&gt; &lt;span class=pl-en&gt;blur&lt;/span&gt;(&lt;span class=pl-c1&gt;5&lt;span class=pl-smi&gt;px&lt;/span&gt;&lt;/span&gt;) &lt;span class=pl-k&gt;!important&lt;/span&gt;;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L12&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;12&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC12&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L13&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;13&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC13&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L14&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;14&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC14&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-c&gt;/* highlight on all elements that are inside of lists but not a list item &amp;lt;li&amp;gt; and displays them with a red outline.*/&lt;/span&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L15&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;15&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC15&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-kos&gt;:&lt;/span&gt;&lt;span class=pl-c1&gt;is&lt;/span&gt;(&lt;span class=pl-ent&gt;ul&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt; &lt;span class=pl-ent&gt;ol&lt;/span&gt;) &lt;span class=pl-c1&gt;&amp;gt;&lt;/span&gt; &lt;span class=pl-ent&gt;&lt;span class=pl-c1&gt;*&lt;/span&gt;&lt;/span&gt;&lt;span class=pl-kos&gt;:&lt;/span&gt;&lt;span class=pl-c1&gt;not&lt;/span&gt;(&lt;span class=pl-ent&gt;li&lt;/span&gt;) {&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L16&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;16&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC16&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-c1&gt;outline&lt;/span&gt;&lt;span class=pl-kos&gt;:&lt;/span&gt; &lt;span class=pl-c1&gt;2&lt;span class=pl-smi&gt;px&lt;/span&gt;&lt;/span&gt; dotted red &lt;span class=pl-k&gt;!important&lt;/span&gt;;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L17&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;17&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC17&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L18&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;18&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC18&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L19&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;19&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC19&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-c&gt;/* highlight on links without valid href attribute */&lt;/span&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L20&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;20&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC20&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-ent&gt;a&lt;/span&gt;&lt;span class=pl-kos&gt;:&lt;/span&gt;&lt;span class=pl-c1&gt;not&lt;/span&gt;([&lt;span class=pl-c1&gt;href&lt;/span&gt;])&lt;span class=pl-kos&gt;,&lt;/span&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L21&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;21&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC21&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-ent&gt;a&lt;/span&gt;[&lt;span class=pl-c1&gt;href&lt;/span&gt;&lt;span class=pl-c1&gt;=&lt;/span&gt;&lt;span class=pl-s&gt;&amp;quot;#&amp;quot;&lt;/span&gt;]&lt;span class=pl-kos&gt;,&lt;/span&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L22&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;22&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC22&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-ent&gt;a&lt;/span&gt;[&lt;span class=pl-c1&gt;href&lt;/span&gt;&lt;span class=pl-c1&gt;=&lt;/span&gt;&lt;span class=pl-s&gt;&amp;quot;&amp;quot;&lt;/span&gt;]&lt;span class=pl-kos&gt;,&lt;/span&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L23&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;23&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC23&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-ent&gt;a&lt;/span&gt;[&lt;span class=pl-c1&gt;href&lt;/span&gt;&lt;span class=pl-c1&gt;*=&lt;/span&gt;&lt;span class=pl-s&gt;&amp;quot;javascript:void(0)&amp;quot;&lt;/span&gt;] {&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L24&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;24&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC24&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-c1&gt;outline&lt;/span&gt;&lt;span class=pl-kos&gt;:&lt;/span&gt; &lt;span class=pl-c1&gt;2&lt;span class=pl-smi&gt;px&lt;/span&gt;&lt;/span&gt; dotted red &lt;span class=pl-k&gt;!important&lt;/span&gt;;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L25&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;25&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC25&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L26&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;26&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC26&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L27&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;27&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC27&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-c&gt;/* highlights label with invalid for attribute */&lt;/span&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L28&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;28&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC28&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-ent&gt;label&lt;/span&gt;&lt;span class=pl-kos&gt;:&lt;/span&gt;&lt;span class=pl-c1&gt;not&lt;/span&gt;([&lt;span class=pl-c1&gt;for&lt;/span&gt;])&lt;span class=pl-kos&gt;,&lt;/span&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L29&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;29&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC29&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-ent&gt;label&lt;/span&gt;[&lt;span class=pl-c1&gt;for&lt;/span&gt;&lt;span class=pl-c1&gt;=&lt;/span&gt;&lt;span class=pl-s&gt;&amp;quot;#&amp;quot;&lt;/span&gt;]&lt;span class=pl-kos&gt;,&lt;/span&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L30&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;30&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC30&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-ent&gt;label&lt;/span&gt;[&lt;span class=pl-c1&gt;for&lt;/span&gt;&lt;span class=pl-c1&gt;=&lt;/span&gt;&lt;span class=pl-s&gt;&amp;quot;&amp;quot;&lt;/span&gt;] {&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L31&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;31&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC31&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-c1&gt;border&lt;/span&gt;&lt;span class=pl-kos&gt;:&lt;/span&gt; &lt;span class=pl-c1&gt;2&lt;span class=pl-smi&gt;px&lt;/span&gt;&lt;/span&gt; dotted red &lt;span class=pl-k&gt;!important&lt;/span&gt;;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L32&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;32&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC32&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L33&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;33&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC33&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L34&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;34&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC34&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-c&gt;/* Avoids div buttons from hell. More details in https://www.htmhell.dev/2-div-with-button-role/ */&lt;/span&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L35&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;35&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC35&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-ent&gt;div&lt;/span&gt;[&lt;span class=pl-c1&gt;role&lt;/span&gt;&lt;span class=pl-c1&gt;=&lt;/span&gt;&lt;span class=pl-s&gt;&amp;quot;button&amp;quot;&lt;/span&gt;] {&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L36&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;36&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC36&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-c1&gt;color&lt;/span&gt;&lt;span class=pl-kos&gt;:&lt;/span&gt; red;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L37&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;37&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC37&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-c1&gt;text-decoration&lt;/span&gt;&lt;span class=pl-kos&gt;:&lt;/span&gt; blink &lt;span class=pl-k&gt;!important&lt;/span&gt;;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L38&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;38&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC38&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L39&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;39&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC39&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
+&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L40&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;40&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC40&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-c&gt;/* highlight on empty anchors/buttons */&lt;/span&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L41&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;41&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC41&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-ent&gt;button&lt;/span&gt;&lt;span class=pl-kos&gt;:&lt;/span&gt;&lt;span class=pl-c1&gt;empty&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L42&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;42&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC42&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-ent&gt;a&lt;/span&gt;&lt;span class=pl-kos&gt;:&lt;/span&gt;&lt;span class=pl-c1&gt;empty&lt;/span&gt; {&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L43&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;43&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC43&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-c1&gt;border&lt;/span&gt;&lt;span class=pl-kos&gt;:&lt;/span&gt; &lt;span class=pl-c1&gt;2&lt;span class=pl-smi&gt;px&lt;/span&gt;&lt;/span&gt; dotted red &lt;span class=pl-k&gt;!important&lt;/span&gt;;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-L44&quot; class=&quot;blob-num js-line-number js-code-nav-line-number js-blob-rnum&quot; data-line-number=&quot;44&quot;&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-a11y-dev-mode-css-LC44&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
+        &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+
+
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;gist-meta&quot;&gt;
+        &lt;a href=&quot;https://gist.github.com/willmendesneto/4302de65ed6fa0e3661d3c0c08cf2a28/raw/cdbfc55d04cc5f0fb5d85257c6ae6f7357071171/a11y-dev-mode.css&quot; style=&quot;float:right&quot;&gt;view raw&lt;/a&gt;
+        &lt;a href=&quot;https://gist.github.com/willmendesneto/4302de65ed6fa0e3661d3c0c08cf2a28#file-a11y-dev-mode-css&quot;&gt;
+          a11y-dev-mode.css
+        &lt;/a&gt;
+        hosted with &amp;#10084; by &lt;a href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;h3&gt;What &quot;A11Y-Dev-Mode.css&quot; file is checking?&lt;/h3&gt;
+&lt;p&gt;This gist is covering most of the common issues, such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;HTML tag &lt;code class=&quot;language-text&quot;&gt;&amp;lt;html&gt;&lt;/code&gt; without &lt;code class=&quot;language-text&quot;&gt;[lang]&lt;/code&gt; definition;&lt;/li&gt;
+&lt;li&gt;Ordered/Unordered (&lt;code class=&quot;language-text&quot;&gt;&amp;lt;ol&gt;&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;&amp;lt;ul&gt;&lt;/code&gt;, respectively) HTML lists without a list inside (&lt;code class=&quot;language-text&quot;&gt;&amp;lt;li&gt;&lt;/code&gt;) of them;&lt;/li&gt;
+&lt;li&gt;Images (&lt;code class=&quot;language-text&quot;&gt;&amp;lt;img&gt;&lt;/code&gt;) without &lt;code class=&quot;language-text&quot;&gt;[alt]&lt;/code&gt; attribute;&lt;/li&gt;
+&lt;li&gt;Anchor tags (&lt;code class=&quot;language-text&quot;&gt;&amp;lt;a&gt;&lt;/code&gt;) without correct &lt;code class=&quot;language-text&quot;&gt;[href]&lt;/code&gt; or even empty;&lt;/li&gt;
+&lt;li&gt;Label tags without &lt;code class=&quot;language-text&quot;&gt;[for]&lt;/code&gt; attribute;&lt;/li&gt;
+&lt;li&gt;Empty &lt;code class=&quot;language-text&quot;&gt;&amp;lt;button&gt;&lt;/code&gt; tags;&lt;/li&gt;
+&lt;li&gt;Div tags using &lt;code class=&quot;language-text&quot;&gt;[role=&quot;button&quot;]&lt;/code&gt;. It affects some screen readers and browsers, changing the default behaviour of div for people with disabilities;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;The results&lt;/h2&gt;
+&lt;p&gt;As a final result, your page will display elements like this when they&apos;re missing some of the mandatory attributes.&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1280px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;https://willmendesneto.com/static/eb8691b3f5c01bfa9d8cef6f05c9a6f4/f7d36/a11y-dev-mode-in-action.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 97.1875%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAIAAAAf7rriAAAACXBIWXMAAAsTAAALEwEAmpwYAAABwElEQVQ4y5WSz4rVMBTGs/UlVHDjxlfwzyuI4MKFT+BKNy4FUZfDKIgLcaMogxtBUFy5kHHjrAYd7y3tnba3l87tpG2anCZtkxOp5QZB59r74+MQEr7zkZyQmedNJxPPm04PDr7v79Msq4qCFUVJac151zStUoMkAHCuABQIVYMsSxIFs3i+mPdKojgGACml+k0tZb0CABDRDgyLGsgiOWyberWJTdM4859IKY0xOGAMWosgyPuXn7dee9tv9l7sfIK6GVrY9bjk++dunD91j5x9cv3m1QaiDcwAZOvCtUfk0q0rt7++vWNViO5sTPLd05efnbn4eOfB84/bskw3S/7w8Onuu1d76Zfd2TehpEXURpv1aG3QGiFIepz2Hmuxw7ZtcQzutYMf0eE0Df2UVUwIYcbgkvM0KwrBGAzX2cwc+j7UvVNrbUbizEeLRcmYlBLH4+6cRFEUx2EY9r/vL/0n+XjyMw/83PdZkvA8Z8tlmWUVpZzSmrFh7CcmH83nQ7Ou6zqtO63b1eLEV3DJSRznlIqqQmP6r+PqGmndD4ZzIihNg0AVBQqBQhjOXcV/1kEAuFySRql+vIibyVoj5S+7mDtEOVlfSQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;picture&gt;
           &lt;source
@@ -6729,9 +7024,8 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
   &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
   &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
-  
     &lt;span&gt;
       This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
       &lt;a href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
@@ -6745,7 +7039,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;template class=&quot;js-line-alert-template&quot;&gt;
   &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
     &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
@@ -6856,9 +7150,8 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
   &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
   &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
-  
     &lt;span&gt;
       This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
       &lt;a href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
@@ -6872,7 +7165,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;template class=&quot;js-line-alert-template&quot;&gt;
   &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
     &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
@@ -6939,9 +7232,8 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
   &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
   &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
-  
     &lt;span&gt;
       This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
       &lt;a href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
@@ -6955,7 +7247,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;template class=&quot;js-line-alert-template&quot;&gt;
   &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
     &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
@@ -7357,9 +7649,8 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
   &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
   &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
-  
     &lt;span&gt;
       This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
       &lt;a href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
@@ -7373,7 +7664,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;template class=&quot;js-line-alert-template&quot;&gt;
   &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
     &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
@@ -7596,9 +7887,8 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
   &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
   &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
-  
     &lt;span&gt;
       This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
       &lt;a href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
@@ -7612,7 +7902,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;template class=&quot;js-line-alert-template&quot;&gt;
   &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
     &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
@@ -7841,9 +8131,8 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
   &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
   &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
-  
     &lt;span&gt;
       This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
       &lt;a href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
@@ -7857,7 +8146,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;template class=&quot;js-line-alert-template&quot;&gt;
   &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
     &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
@@ -8357,7 +8646,7 @@ This list in incomplete:&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p dir=&quot;auto&quot;&gt;&lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://cloud.githubusercontent.com/assets/39191/10144107/9fae0b48-65d0-11e5-8e87-c9a8e999b064.png&quot;&gt;&lt;img src=&quot;https://cloud.githubusercontent.com/assets/39191/10144107/9fae0b48-65d0-11e5-8e87-c9a8e999b064.png&quot; style=&quot;max-width: 100%;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;&lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;https://cloud.githubusercontent.com/assets/39191/10144107/9fae0b48-65d0-11e5-8e87-c9a8e999b064.png&quot;&gt;&lt;img src=&quot;https://cloud.githubusercontent.com/assets/39191/10144107/9fae0b48-65d0-11e5-8e87-c9a8e999b064.png&quot; style=&quot;max-width: 100%;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
  &lt;i&gt;Timeline trace of The Guardian. Outbrain is forcing layout repeatedly, probably in a loop.&lt;/i&gt;
 
 &lt;h5 dir=&quot;auto&quot;&gt;&lt;a id=&quot;user-content-cross-browser&quot; class=&quot;anchor&quot; aria-hidden=&quot;true&quot; href=&quot;#cross-browser&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Cross-browser&lt;/h5&gt;
@@ -8434,9 +8723,8 @@ This list in incomplete:&lt;/p&gt;
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
   &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
   &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
-  
     &lt;span&gt;
       This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
       &lt;a href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
@@ -8450,7 +8738,7 @@ This list in incomplete:&lt;/p&gt;
 &lt;template class=&quot;js-line-alert-template&quot;&gt;
   &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
     &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
@@ -8734,9 +9022,8 @@ _The 6.0.0 release of Angular is here! This is a major release focused less on t
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
   &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
   &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
-  
     &lt;span&gt;
       This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
       &lt;a href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
@@ -8750,7 +9037,7 @@ _The 6.0.0 release of Angular is here! This is a major release focused less on t
 &lt;template class=&quot;js-line-alert-template&quot;&gt;
   &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
     &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
@@ -8870,9 +9157,8 @@ _The 6.0.0 release of Angular is here! This is a major release focused less on t
   &lt;template class=&quot;js-file-alert-template&quot;&gt;
   &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
   &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
-  
     &lt;span&gt;
       This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
       &lt;a href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
@@ -8886,7 +9172,7 @@ _The 6.0.0 release of Angular is here! This is a major release focused less on t
 &lt;template class=&quot;js-line-alert-template&quot;&gt;
   &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
     &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path fill-rule=&quot;evenodd&quot; d=&quot;M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
