@@ -12,7 +12,9 @@ lang: en
 tags: ['frontend', 'css', 'javascript', 'tip', 'js', 'tooling']
 ---
 
-![Devices with different screen and sizes](./screen-with-different-sizes.png)
+![](./screen-with-different-sizes.png)
+
+> Image Author: Seobility [Media Queries](https://www.seobility.net/en/wiki/Media_Queries), License: CC BY-SA 4.0
 
 ## Introduction
 
