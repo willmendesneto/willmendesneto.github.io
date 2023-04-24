@@ -81,26 +81,15 @@ const Links = styled.div`
   ${screen.md} {
     line-height: inherit;
   }
-
-  a {
-    padding: 0;
-    font-size: 15px;
-    margin-right: 10px;
-
-    &:last-child:after {
-      margin-right: 0;
-    }
-
-    ${screen.md} {
-      font-size: 21px;
-      margin-right: 25px;
-    }
-  }
 `;
 
 const NavLink = styled(Link)`
   font-weight: 900;
   color: #333;
+  padding: 0;
+  font-size: 15px;
+  margin-right: 10px;
+
   ${props =>
     props.active === 'true'
       ? `
@@ -115,6 +104,15 @@ const NavLink = styled(Link)`
     opacity: 1;
     text-decoration: underline;
     text-underline-offset: 10px;
+  }
+
+  &:last-child:after {
+    margin-right: 0;
+  }
+
+  ${screen.md} {
+    font-size: 21px;
+    margin-right: 25px;
   }
 `;
 
@@ -131,15 +129,15 @@ const Header = ({ currentPath }) => {
           </LogoDesktop>
 
           <Links>
-            <NavLink to="/posts/" active={(currentPath === '/posts/').toString()}>
-              posts
-            </NavLink>
-            <NavLink to="/talks/" active={(currentPath === '/talks/').toString()}>
-              talks
-            </NavLink>
-            <NavLink to="/contact/" active={(currentPath === '/contact/').toString()}>
-              contact
-            </NavLink>
+            {[
+              { url: '/posts/', name: 'posts' },
+              { url: '/talks/', name: 'talks' },
+              { url: '/contact/', name: 'contact' },
+            ].map(link => (
+              <NavLink to={link.url} key={link.name} active={(currentPath === link.url).toString()}>
+                {link.name}
+              </NavLink>
+            ))}
           </Links>
         </Wrapper>
       </Nav>

@@ -151,19 +151,19 @@ module.exports = {
                 }">clicking here</a>.)</div>
               `;
 
-                let html = edge.node.html;
-                html = html
+                const html = edge.node.html
                   .replace(/href="\//g, `href="${siteUrl}/`)
                   .replace(/src="\//g, `src="${siteUrl}/`)
                   .replace(/"\/static\//g, `"${siteUrl}/static/`)
                   .replace(/,\s*\/static\//g, `,${siteUrl}/static/`);
 
-                return Object.assign({}, edge.node.frontmatter, {
+                return {
+                  ...edge.node.frontmatter,
                   date: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
                   guid: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
                   custom_elements: [{ 'content:encoded': html + postText }],
-                });
+                };
               });
             },
             query: `
