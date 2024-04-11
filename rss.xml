@@ -1,4 +1,72 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Will Mendes Blog RSS Feed]]></title><description><![CDATA[Principal Frontend-Engineer, Principal Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies]]></description><link>https://willmendesneto.com</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 15 Feb 2024 13:00:59 GMT</lastBuildDate><item><title><![CDATA[Introducing React Sweet Wizard: Simplifying the Form Flow of Your React App]]></title><link>https://willmendesneto.com/posts/introducing-react-sweet-wizard-simplifying-the-form-flow-of-your-react-app</link><guid isPermaLink="false">https://willmendesneto.com/posts/introducing-react-sweet-wizard-simplifying-the-form-flow-of-your-react-app</guid><pubDate>Thu, 15 Feb 2024 08:23:47 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Will Mendes Blog RSS Feed]]></title><description><![CDATA[Principal Frontend-Engineer, Principal Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies]]></description><link>https://willmendesneto.com</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 11 Apr 2024 16:43:40 GMT</lastBuildDate><item><title><![CDATA[hex-to-css-filter: Transforming Hex Colors into CSS Filters]]></title><link>https://willmendesneto.com/posts/hex-to-css-filter-transforming-hex-colors-into-css-filters</link><guid isPermaLink="false">https://willmendesneto.com/posts/hex-to-css-filter-transforming-hex-colors-into-css-filters</guid><pubDate>Wed, 10 Apr 2024 08:23:47 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1280px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;https://willmendesneto.com/static/578ca540f13fc113dc6d4ec3e8bc6cb3/4c3a8/hex-to-css-filter.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 42.1875%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABYlAAAWJQFJUiTwAAACS0lEQVQozwXB6UvTYQDA8ef5bR7p3OY2j6U527zwQMEDzBlkoaE508jSmTJEi1Iz85ySV5KWdmhaOodYRkYmaMTIkJRICkLojb2QqBdd/8W3z0esh6rYTQlkvyCEn63R/LoRw7+ZRH4/NvNjJpj9WQPffcl8XYll53kcG0spzD7I4q43kydb+dincxH9dlSjDuRINWLT6MdeajD7+Tr2zkWyVxvJfoeZb6Nm/qxZ+buZxt7bEraf5bEwGsP19mgqm6w03s+kdqWQQ4PliLYalPF2xFgX4r3Jn09RWnZsOjZyjWwVGvhSo2fbqeWj28iHoUg+L9mZn8il6kIiTe4c3At2km+eRHQ6kcMNqKe6UWankF4P4o1RjS9Mw3KEBl+6jnd5erz5oXhytMwV6/C4zKxN2lmatDMxXUqPt5zTniKs4+WI7jr8Xoyh2n2Jav0VyvImwmf057VZy2qUjgWbjt7DodTGW6i3mehM1zJcEM7sgJ2Jh2doezqMa7GT9MFSDL3ViL5OVLcHkXP3kENe5MAqYjEgBI9eQ1+IhlJ/DQ6NnhqLhVqbjWsZB7l6Io6WO5e5+Kgbx8wQaS1tCPslZHED8mwVyqlGlJIOlKpbyPoZRL8SglsdSKs6kPMHjDiCIijTWHCEJZAbnka2JZOSJhdH3F2oeucRjRMox5tQEsoQQTnIpHJkXh0ytQGR1Iq4Ik20qINpDjDQY8ym2ZDFseBY8vXxZJhSsJkyUFuLkJlOhHMEpaIH5agLJa0SGV2B1GUj1LHIsEKExcl/Uow6itxhYrQAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+          &lt;source
+              srcset=&quot;https://willmendesneto.com/static/578ca540f13fc113dc6d4ec3e8bc6cb3/fb34c/hex-to-css-filter.avif 320w,https://willmendesneto.com/static/578ca540f13fc113dc6d4ec3e8bc6cb3/646cd/hex-to-css-filter.avif 768w,https://willmendesneto.com/static/578ca540f13fc113dc6d4ec3e8bc6cb3/8b485/hex-to-css-filter.avif 1024w,https://willmendesneto.com/static/578ca540f13fc113dc6d4ec3e8bc6cb3/a73d6/hex-to-css-filter.avif 1280w,https://willmendesneto.com/static/578ca540f13fc113dc6d4ec3e8bc6cb3/d2148/hex-to-css-filter.avif 1754w&quot;
+              sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+              type=&quot;image/avif&quot;
+            /&gt;&lt;source
+              srcset=&quot;https://willmendesneto.com/static/578ca540f13fc113dc6d4ec3e8bc6cb3/cb523/hex-to-css-filter.webp 320w,https://willmendesneto.com/static/578ca540f13fc113dc6d4ec3e8bc6cb3/cd067/hex-to-css-filter.webp 768w,https://willmendesneto.com/static/578ca540f13fc113dc6d4ec3e8bc6cb3/53334/hex-to-css-filter.webp 1024w,https://willmendesneto.com/static/578ca540f13fc113dc6d4ec3e8bc6cb3/4b075/hex-to-css-filter.webp 1280w,https://willmendesneto.com/static/578ca540f13fc113dc6d4ec3e8bc6cb3/d2f3b/hex-to-css-filter.webp 1754w&quot;
+              sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+              type=&quot;image/webp&quot;
+            /&gt;
+          &lt;source
+            srcset=&quot;https://willmendesneto.com/static/578ca540f13fc113dc6d4ec3e8bc6cb3/d4f27/hex-to-css-filter.png 320w,https://willmendesneto.com/static/578ca540f13fc113dc6d4ec3e8bc6cb3/778aa/hex-to-css-filter.png 768w,https://willmendesneto.com/static/578ca540f13fc113dc6d4ec3e8bc6cb3/658fc/hex-to-css-filter.png 1024w,https://willmendesneto.com/static/578ca540f13fc113dc6d4ec3e8bc6cb3/26c69/hex-to-css-filter.png 1280w,https://willmendesneto.com/static/578ca540f13fc113dc6d4ec3e8bc6cb3/4c3a8/hex-to-css-filter.png 1754w&quot;
+            sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+            type=&quot;image/png&quot;
+          /&gt;
+          &lt;img
+            class=&quot;gatsby-resp-image-image&quot;
+            src=&quot;https://willmendesneto.com/static/578ca540f13fc113dc6d4ec3e8bc6cb3/26c69/hex-to-css-filter.png&quot;
+            alt=&quot;hex to css filter&quot;
+            title=&quot;hex to css filter&quot;
+            loading=&quot;lazy&quot;
+            decoding=&quot;async&quot;
+            style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+          /&gt;
+        &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;TL;DR; hex-to-css-filter: Revolutionize color manipulation in web development with seamless conversion of hexadecimal colors into CSS filter functions. Streamline styling, unleash creativity, and ensure cross-browser compatibility effortlessly. Elevate your projects with dynamic visual effects and efficient performance today! 🎉&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr /&gt;
+&lt;p&gt;** Feel free to play with the online demos powered by Stackblitz [**&lt;a href=&quot;https://stackblitz.com/edit/hex-to-css-filter-playground&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://stackblitz.com/edit/hex-to-css-filter-playground&lt;/a&gt;)&lt;/p&gt;
+&lt;h3&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;In the realm of web design and development, color manipulation is often a critical aspect of creating visually appealing interfaces. The ability to dynamically adjust colors can significantly enhance the aesthetics and user experience of a website or application. Enter &lt;a href=&quot;https://github.com/willmendesneto/hex-to-css-filter&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;hex-to-css-filter&lt;/a&gt;, a versatile tool designed to simplify color transformation through CSS filters. Let&apos;s explore how this package can revolutionize your web development workflow.&lt;/p&gt;
+&lt;h3&gt;What is hex-to-css-filter?&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/willmendesneto/hex-to-css-filter&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;hex-to-css-filter&lt;/a&gt; is a lightweight utility that enables developers to convert hexadecimal colors into CSS filter functions. With just a few lines of code, you can seamlessly apply a wide range of color effects, such as grayscale, sepia, invert, and more, to elements on your web page. This powerful functionality opens up a world of possibilities for enhancing visual appeal and creativity in your projects.&lt;/p&gt;
+&lt;h3&gt;Benefits and Features&lt;/h3&gt;
+&lt;h4&gt;1. Streamlined Color Manipulation&lt;/h4&gt;
+&lt;p&gt;By harnessing the power of CSS filters, &lt;a href=&quot;https://github.com/willmendesneto/hex-to-css-filter&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;hex-to-css-filter&lt;/a&gt; simplifies the process of color manipulation in web development. Instead of manually adjusting colors or relying on external tools, developers can effortlessly apply filter effects directly within their CSS or JavaScript code, saving time and effort.&lt;/p&gt;
+&lt;h4&gt;2. Dynamic Styling Options&lt;/h4&gt;
+&lt;p&gt;With &lt;a href=&quot;https://github.com/willmendesneto/hex-to-css-filter&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;hex-to-css-filter&lt;/a&gt;, developers gain access to a wide array of dynamic styling options for their web projects. Whether you&apos;re looking to create a monochromatic theme, add dramatic effects to images, or implement creative hover states, this package provides the tools you need to bring your design visions to life.&lt;/p&gt;
+&lt;h4&gt;3. Cross-Browser Compatibility&lt;/h4&gt;
+&lt;p&gt;One of the standout features of &lt;a href=&quot;https://github.com/willmendesneto/hex-to-css-filter&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;hex-to-css-filter&lt;/a&gt; is its compatibility with modern web browsers. The generated CSS filter functions work seamlessly across a variety of browsers, ensuring consistent visual effects and performance for users regardless of their chosen platform or device.&lt;/p&gt;
+&lt;h4&gt;4. Lightweight and Efficient&lt;/h4&gt;
+&lt;p&gt;As a lightweight utility, &lt;a href=&quot;https://github.com/willmendesneto/hex-to-css-filter&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;hex-to-css-filter&lt;/a&gt; adds minimal overhead to your web projects. Its efficient implementation ensures fast loading times and smooth performance, allowing you to focus on delivering an exceptional user experience without compromising on speed or responsiveness.&lt;/p&gt;
+&lt;h3&gt;Why Choose hex-to-css-filter&lt;/h3&gt;
+&lt;p&gt;Whether you&apos;re a seasoned web developer or a design enthusiast exploring new creative possibilities, &lt;a href=&quot;https://github.com/willmendesneto/hex-to-css-filter&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;hex-to-css-filter&lt;/a&gt; offers a valuable toolkit for transforming colors with ease. From its streamlined workflow and dynamic styling options to its cross-browser compatibility and efficiency, this package empowers you to unleash your creativity and elevate the visual impact of your web projects.&lt;/p&gt;
+&lt;p&gt;In conclusion, &lt;a href=&quot;https://github.com/willmendesneto/hex-to-css-filter&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;hex-to-css-filter&lt;/a&gt; is a must-have addition to any developer&apos;s toolkit. By simplifying color manipulation and offering a wide range of styling options, it enables you to create stunning visual effects and immersive user experiences that captivate and engage audiences. Try it out in your next project and discover the transformative power of CSS filters!&lt;/p&gt;
+&lt;h3&gt;That’s all for now&lt;/h3&gt;
+&lt;p&gt;I hope you enjoyed this reading as much as I enjoyed writing it. Thank you so much for reading until the end and see you soon!&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Cya 👋&lt;/h3&gt;
+                &lt;div style=&quot;margin-top=55px; font-style: italic;&quot;&gt;(This is an article posted to my blog at willmendesneto.com. You can read it online by &lt;a href=&quot;https://willmendesneto.com/posts/hex-to-css-filter-transforming-hex-colors-into-css-filters&quot;&gt;clicking here&lt;/a&gt;.)&lt;/div&gt;
+              </content:encoded></item><item><title><![CDATA[Introducing React Sweet Wizard: Simplifying the Form Flow of Your React App]]></title><link>https://willmendesneto.com/posts/introducing-react-sweet-wizard-simplifying-the-form-flow-of-your-react-app</link><guid isPermaLink="false">https://willmendesneto.com/posts/introducing-react-sweet-wizard-simplifying-the-form-flow-of-your-react-app</guid><pubDate>Thu, 15 Feb 2024 08:23:47 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 700px; &quot;
     &gt;
@@ -449,9 +517,9 @@
 &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;package-name-alias&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;@npm:&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;package-name&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;@&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;package-version&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;In your example, we&apos;ll call &lt;code class=&quot;language-text&quot;&gt;feature-toggle-service&lt;/code&gt; when using the old version of the package and &lt;code class=&quot;language-text&quot;&gt;feature-toggle-service-next&lt;/code&gt; when using the latest version. At the end, this will be the commands you have to run to get the setup done in your local environment.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist110641063&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-setting-up-the-project-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-setting-up-the-project-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
     &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-shell&quot; dir=&quot;auto&quot;&gt;&lt;pre&gt;&lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;#&lt;/span&gt; Creating folder jumping on the created folder&lt;/span&gt;
@@ -481,9 +549,9 @@ npm install --save \
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;As you can see on the code below, your &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt; file now is pointing to different versions of the same package, having that available calling their respective aliases by calling via &lt;code class=&quot;language-text&quot;&gt;import&lt;/code&gt; or &lt;code class=&quot;language-text&quot;&gt;require&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist110641009&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-package-json&quot; class=&quot;file my-2&quot;&gt;
     
     &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-json  &quot;&gt;
@@ -600,9 +668,9 @@ npm install --save \
 &lt;hr/&gt;
 &lt;p&gt;Now, let&apos;s write some code using these packages. This can be done by importing both packages and methods and printing their outputs by passing their values in &lt;code class=&quot;language-text&quot;&gt;console.log()&lt;/code&gt; functions.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist110641036&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-index-js&quot; class=&quot;file my-2&quot;&gt;
     
     &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
@@ -942,9 +1010,9 @@ npm install --save \
 &lt;p&gt;One thing to be aware about these operators though is how this is transpiled at the moment. If you are using Typescript and/or Babel in your app, you should be very conscious about the output code.&lt;/p&gt;
 &lt;p&gt;Let&apos;s imagine you have a simple function, like the one described below, in your app. This output will be suboptimal on bundle process.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist110019506&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-do-not-abuse-of-nullish-coalescing-usage-in-ts&quot; class=&quot;file my-2&quot;&gt;
     
     &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-typescript  &quot;&gt;
@@ -1273,9 +1341,9 @@ npm install --save \
 &lt;/ul&gt;
 &lt;p&gt;As an example, let&apos;s create a file and add some sensitive data into your logs.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist109250514&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-pino-sanitize-example-js&quot; class=&quot;file my-2&quot;&gt;
     
     &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
@@ -1491,9 +1559,9 @@ npm install --save \
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;if you have a file like this example here and run the command with the specified params. That&apos;s how easy it is to integrate &lt;code class=&quot;language-text&quot;&gt;pino-sanitize&lt;/code&gt; in your application.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist109250657&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-running-pino-sanitize-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-running-pino-sanitize-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
     &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-shell&quot; dir=&quot;auto&quot;&gt;&lt;pre&gt;node example.js &lt;span class=&quot;pl-k&quot;&gt;|&lt;/span&gt; pino-sanitize -u=&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;:{UUID}&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; -h=&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;:{HASH}&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; -q=&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;:{QUERY-STRING}&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; -k=&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;err,msg,stack&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -1784,9 +1852,9 @@ npm install --save \
 &lt;h3&gt;Running a code using LaunchDarkly and checking for feature flags&lt;/h3&gt;
 &lt;p&gt;Let&apos;s write some code! 💻 First let&apos;s create a new project by running the command &lt;code class=&quot;language-text&quot;&gt;npm init -y&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist109139942&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-creating-project-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-creating-project-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
     &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-shell&quot; dir=&quot;auto&quot;&gt;&lt;pre&gt;mkdir my-project
@@ -1810,9 +1878,9 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;After that, let&apos;s install the package &lt;code class=&quot;language-text&quot;&gt;launchdarkly-node-server-sdk&lt;/code&gt;, which is the LaunchDarkly SDK for NodeJS. So that, we can check if a specific feature flag is turned on of off via code.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist109213302&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-installing-launchdarkly-node-server-sdk-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-installing-launchdarkly-node-server-sdk-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
     &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-shell&quot; dir=&quot;auto&quot;&gt;&lt;pre&gt;npm install launchdarkly-node-server-sdk --save&lt;/pre&gt;&lt;/div&gt;
@@ -1834,9 +1902,9 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;With the dependency installed, let&apos;s create a file &lt;code class=&quot;language-text&quot;&gt;index.js&lt;/code&gt;. In this file, we will start a LaunchDarkly connection and check for the feature flag we created - in this case, &lt;code class=&quot;language-text&quot;&gt;is-app-enabled&lt;/code&gt;. So it will check if the feature is enabled or disabled, print the content and stop the process right after that.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist109213350&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-index-js&quot; class=&quot;file my-2&quot;&gt;
     
     &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
@@ -2108,9 +2176,9 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;As you might noticed, the code requires &lt;code class=&quot;language-text&quot;&gt;LD_SDK_KEY&lt;/code&gt; to be passed. You&apos;ll find this value on the project settings of your project.&lt;/p&gt;
 &lt;p&gt;A small change needs to be applied in our &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt; in order to have a better experience to run this code. So let&apos;s create a NPM script to start the project.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist109213397&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-package-json&quot; class=&quot;file my-2&quot;&gt;
     
     &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-json  &quot;&gt;
@@ -2249,9 +2317,9 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;So this filtered list of feature flags will be checked in your repository to see if it exists or not. If it&apos;s still in your codebase, they are some good candidates to be removed.&lt;/p&gt;
 &lt;p&gt;So, this is added in the script called &lt;code class=&quot;language-text&quot;&gt;list-unused-feature-flags-in-code.sh&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist109191723&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-list-unused-feature-flags-in-code-sh&quot; class=&quot;file my-2&quot;&gt;
     
     &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-shell  &quot;&gt;
@@ -3129,9 +3197,9 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;Creating a project to simulate the problem&lt;/h3&gt;
 &lt;p&gt;To create our project inside a folder called &lt;code class=&quot;language-text&quot;&gt;my-project&lt;/code&gt;. Inside this folder, we can run a command &lt;code class=&quot;language-text&quot;&gt;npm init -y&lt;/code&gt;. This command will start a NPM project to be used as an example.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist109139942&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-creating-project-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-creating-project-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
     &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-shell&quot; dir=&quot;auto&quot;&gt;&lt;pre&gt;mkdir my-project
@@ -3155,9 +3223,9 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;The &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt; file generated initially for this project won&apos;t have any dependencies, neither dev dependencies. As a next step, we&apos;ll install a new dev dependency, a NPM package called &lt;a href=&quot;https://www.npmjs.com/package/perf-marks&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;perf-marks&lt;/a&gt; by using the command &lt;code class=&quot;language-text&quot;&gt;npm install perf-marks --save-dev&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist109140017&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-installing-dependency-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-installing-dependency-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
     &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-shell&quot; dir=&quot;auto&quot;&gt;&lt;pre&gt;npm install perf-marks --save-dev&lt;/pre&gt;&lt;/div&gt;
@@ -3179,9 +3247,9 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;When the command finishes, you might see a new field called &lt;code class=&quot;language-text&quot;&gt;devDependencies&lt;/code&gt; in your &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist109140045&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-package-json-with-new-dependency-json&quot; class=&quot;file my-2&quot;&gt;
     
     &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-json  &quot;&gt;
@@ -3261,9 +3329,9 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;Now if you run the command &lt;code class=&quot;language-text&quot;&gt;npx depcheck&lt;/code&gt; you might see a message like that, listing &lt;code class=&quot;language-text&quot;&gt;perf-marks&lt;/code&gt; as an unused dependency.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist109140104&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-unused-dependency-depcheck-output-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-unused-dependency-depcheck-output-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
     &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-shell&quot; dir=&quot;auto&quot;&gt;&lt;pre&gt;Unused dependencies
@@ -3289,9 +3357,9 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;In case you want to ignore a specific dependency for some reason, you can do it too! Just need to create a file called &lt;code class=&quot;language-text&quot;&gt;.depcheckrc&lt;/code&gt; at the root of your repository.&lt;/p&gt;
 &lt;p&gt;In this file, you can add &lt;code class=&quot;language-text&quot;&gt;perf-marks&lt;/code&gt; as a package to be ignored by depcheck validation.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist109140149&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-gistfile1-txt&quot; class=&quot;file my-2&quot;&gt;
     
     &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-text  &quot;&gt;
@@ -3467,9 +3535,9 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
 &lt;/ul&gt;
 &lt;p&gt;Having these constraints in mind, the folder structure will be something like this.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist109070280&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-common-editor-structure-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-common-editor-structure-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
     &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;pre&gt;&lt;code&gt;...
@@ -3500,9 +3568,9 @@ editor/
 &lt;h3&gt;Creating a Material UI component to wrap the theme of your Editor&lt;/h3&gt;
 &lt;p&gt;Now let&apos;s write our components. The first one will have all the defaults for editor&apos;s initialisation, initial text value and a callback to be called when the editor content has some changes.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist109070089&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-editor-js&quot; class=&quot;file my-2&quot;&gt;
     
     &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
@@ -3761,9 +3829,9 @@ editor/
 &lt;p&gt;Bear in mind that WYSiWYG editors are often with default classes and styles. So we can reuse the classes and override their styles. This is an example sharing how to increase toolbar styles, changing colors, border-radius, and more. Another good point of that: there are also some changes on the last toolbar list of items. This will be interesting to make sure the last list of items are &lt;em&gt;always&lt;/em&gt; on the right, it doesn&apos;t matter what.&lt;/p&gt;
 &lt;p&gt;So this will be the component wrapping the theme styles of your editor. You can always create other wrappers and define the usage on the consumer side.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist109070030&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-minimal-js&quot; class=&quot;file my-2&quot;&gt;
     
     &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
@@ -3973,9 +4041,9 @@ editor/
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;The last file to be covered in this section will have all the icons that will be used in the editor.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist109070546&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-icons-js&quot; class=&quot;file my-2&quot;&gt;
     
     &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
@@ -4117,9 +4185,9 @@ editor/
 &lt;p&gt;How these requirements can be covered? In our case, we will create a new prop called &lt;code class=&quot;language-text&quot;&gt;onSetupActions&lt;/code&gt; that will receive some specific configuration for actions, icons and buttons on the consumer side.&lt;/p&gt;
 &lt;p&gt;So, at the end the component will receive these props as configuration and it will make the icons and toolbar actions available. These actions will be added and/or removed based on the toolbar configuration.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist109070538&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-app-js&quot; class=&quot;file my-2&quot;&gt;
     
     &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
@@ -4692,9 +4760,9 @@ editor/
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;This configuration passed via &lt;code class=&quot;language-text&quot;&gt;onSetupActions&lt;/code&gt; will be used on the Editor component by calling &lt;code class=&quot;language-text&quot;&gt;editor.ui.registry.addIcon&lt;/code&gt; in case of adding and/overriding an icon in your application and &lt;code class=&quot;language-text&quot;&gt;editor.ui.registry.addToggleButton&lt;/code&gt; if you the prop has some configuration for add a new toolbar action.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist109070440&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-editor-with-setup-for-actions-js&quot; class=&quot;file my-2&quot;&gt;
     
     &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
@@ -5090,9 +5158,9 @@ editor/
 &lt;p&gt;For example, if you have a design system on the namespace &lt;code class=&quot;language-text&quot;&gt;@myapp/&lt;/code&gt; and you have a button which imports some icons, you&apos;ll ending up having &lt;code class=&quot;language-text&quot;&gt;@myapp/buttons&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;@myapp/icons&lt;/code&gt; in your dependencies. Also, if your build distribution is sharing only CommonJS, you might have all the buttons and icons. And it&apos;s even worse, because CommonJS not tree-shakable! 😱&lt;/p&gt;
 &lt;p&gt;To ilustrate this scenario, let&apos;s imagine you have 2 components in your &lt;code class=&quot;language-text&quot;&gt;@myapp/buttons&lt;/code&gt; package. From now on you&apos;ll have &lt;code class=&quot;language-text&quot;&gt;Button&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;ButtonWithIcon&lt;/code&gt; and there are several components inside &lt;code class=&quot;language-text&quot;&gt;@myapp/icons&lt;/code&gt; -  it can be more than 30 components, for example.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist108921521&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-first-app-structure-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-first-app-structure-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
     &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;pre&gt;&lt;code&gt;node_modules/
@@ -5125,9 +5193,9 @@ editor/
 &lt;/blockquote&gt;
 &lt;p&gt;With all these changes in place, the first version of your &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt; will be like that.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist108921552&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-exposing-esm-file-package-ison-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-exposing-esm-file-package-ison-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
     &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-json&quot; dir=&quot;auto&quot;&gt;&lt;pre&gt;{
@@ -5159,9 +5227,9 @@ editor/
 &lt;h3&gt;Code-Splitting and taking advantage of tree-shaking by reduce bundle size&lt;/h3&gt;
 &lt;p&gt;Your &lt;code class=&quot;language-text&quot;&gt;@myapp/buttons&lt;/code&gt; package will have the build distribution organized that way.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist108921570&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-build-structure-with-cjs-and-esm-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-build-structure-with-cjs-and-esm-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
     &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;pre&gt;&lt;code&gt;@myapp/
@@ -5241,9 +5309,9 @@ editor/
 &lt;p&gt;You should not access your dependency directories directly, unless it&apos;s something &lt;em&gt;extremelly&lt;/em&gt; necessary. A small change in your dependencies and your app might be broken&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;div id=&quot;gist108921578&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-breaking-changes-because-the-package-structure-changed-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-breaking-changes-because-the-package-structure-changed-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
     &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;pre&gt;&lt;code&gt;@myapp/
@@ -5372,9 +5440,9 @@ editor/
 &lt;p&gt;If you need a specific entry point to expose more than 1 component, that can be done easily by the file. In this case, 2 new components were added in &lt;code class=&quot;language-text&quot;&gt;@myapp/buttons&lt;/code&gt;: &lt;code class=&quot;language-text&quot;&gt;ButtonGroup&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;ButtonTheme&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Instead of creating a entry-point for each of the files, a new entry-point calledn &lt;code class=&quot;language-text&quot;&gt;@myapp/buttons/utils&lt;/code&gt; was created, giving the choice of export each of them to the app consumer.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist108921592&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-utils-entrypoint-example-js&quot; class=&quot;file my-2&quot;&gt;
     
     &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
@@ -5447,9 +5515,9 @@ editor/
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;Based on that specific case, the package json inside of &lt;code class=&quot;language-text&quot;&gt;@myapp/buttons/utils&lt;/code&gt; folder will be&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist108921598&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-package-json&quot; class=&quot;file my-2&quot;&gt;
     
     &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-json  &quot;&gt;
@@ -5533,9 +5601,9 @@ editor/
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;With these changes applied, that will be the structure of your package, supporting entry-points 🤘🤘🤘🤘&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist108921609&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-final-structure-with-entry-points-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-final-structure-with-entry-points-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
     &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;pre&gt;&lt;code&gt;@myapp/
@@ -5694,9 +5762,9 @@ I encourage you to see all of these steps in action by using [perf-marks entry-p
 &lt;h3&gt;Rail Model&lt;/h3&gt;
 &lt;p&gt;The experimental Long Tasks API gives us visibility into tasks that take 50 milliseconds or more. The 50 ms threshold comes from the &lt;a href=&quot;https://web.dev/rail/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;RAIL Model&lt;/a&gt;, in particular the &quot;&lt;a href=&quot;https://web.dev/rail/#response&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Response: process events in under 50 ms&lt;/a&gt;&quot; section. These tasks that are blocking the main thread for 50 ms or more can raise issues such as delays on &quot;Time to interactive&quot; metric, High/variable input and event handling latency or even janky animations and scrolling in your project.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist108709059&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-performance-observer-js&quot; class=&quot;file my-2&quot;&gt;
     
     &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
@@ -5970,9 +6038,9 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;h2&gt;Simplifying User Timing API dev experience across Frontend and Backend with Perf-Marks package&lt;/h2&gt;
 &lt;p&gt;Even though we have all built-in support for us to instrument and measure our pages and API&apos;s, their integrations are quite different between frontend and backend. It means that they don&apos;t have the same Developer Experience - aka DX - between isomorphic applications using Javascript! As an example, this is a simple code showing how to integrate User Timing API on the backend side in a NodeJS application.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist108709399&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-perf-node-js&quot; class=&quot;file my-2&quot;&gt;
     
     &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
@@ -6133,9 +6201,9 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;p&gt;By using Perf-Marks you can easily instrument your Frontend Apps, components, libraries and API&apos;s without any friction. The integration is the same between layers and it also follows some best practices.&lt;/p&gt;
 &lt;p&gt;Instead of load all the package methods, you can import what you need via entry points and avoid your app the load unnecessary code at that moment. This example shows how to measure a specific method by exporting perf-marks &lt;code class=&quot;language-text&quot;&gt;profiler()&lt;/code&gt; function via &lt;code class=&quot;language-text&quot;&gt;perf-marks/profiler&lt;/code&gt; entry point.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist108709502&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-using-perf-marks-js&quot; class=&quot;file my-2&quot;&gt;
     
     &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
@@ -6259,9 +6327,9 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;h3&gt;Smooth integration between Frontend and Backend&lt;/h3&gt;
 &lt;p&gt;All the logic to manage the integration between frontend and backend, client-side and server-side is handled by perf-marks. So your developers should have confidence on their instrumentation by simply doing something like this! Easy peasy, lemon squeezy 🍋!&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist108709664&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-perf-marks-js&quot; class=&quot;file my-2&quot;&gt;
     
     &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
@@ -6433,9 +6501,9 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;hr/&gt;
 &lt;p&gt;Yes! For loads of applications this small script will solve all the scalability issues and it&apos;s so simple to evolve that you can have a single place to have specific logics for scenarios when you have to use something more complex, such as &lt;a href=&quot;https://www.smashingmagazine.com/2016/07/how-i-ended-up-with-element-queries-and-how-you-can-use-them-today/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Element Queries&lt;/a&gt;, for example.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist108559968&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-css-in-js-breakpoints-js&quot; class=&quot;file my-2&quot;&gt;
     
     &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
@@ -6694,9 +6762,9 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;h2&gt;Using CSS for Accessibility linting in HTML elements&lt;/h2&gt;
 &lt;p&gt;To make this a smooth process with fast feedback, I just created a small, but totally useful Gist that I called &lt;em&gt;a11y-dev-mode.css&lt;/em&gt;! It has some CSS rules that applies some changes on elements without correct information such as missing attributes, having elements with empty content and assuming wrong &lt;a href=&quot;https://www.w3.org/WAI/standards-guidelines/aria/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Accessible Rich Internet Applications Suite — WAI-ARIA&lt;/a&gt; roles.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist100952079&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-a11y-dev-mode-css&quot; class=&quot;file my-2&quot;&gt;
     
     &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-css  &quot;&gt;
@@ -7096,9 +7164,9 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;p&gt;Please check the &lt;a href=&quot;https://caniuse.com/#search=css%20filter&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;&lt;strong&gt;browser support for CSS Filter&lt;/strong&gt;&lt;/a&gt; based in your browser support list before use it&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;div id=&quot;gist104160624&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-dark-mode-via-css-media-query-css&quot; class=&quot;file my-2&quot;&gt;
     
     &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-css  &quot;&gt;
@@ -7222,9 +7290,9 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;p&gt;First of all, let&apos;s add a switch on the page to give the user the choice to toggle between light and dark modes. So when it&apos;s clicked, the page will be dark and by default, it will be using the light theme.&lt;/p&gt;
 &lt;p&gt;This is the HTML markup for the toggle that will be added in your page&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist104161228&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-dark-mode-switch-toggle-html&quot; class=&quot;file my-2&quot;&gt;
     
     &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-html  &quot;&gt;
@@ -7304,9 +7372,9 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;Besides that, we need to apply some changes in our CSS. Now it also has classes to define if the current theme on the page is light or dark by adding &lt;strong&gt;light-mode&lt;/strong&gt; and &lt;strong&gt;dark-mode&lt;/strong&gt; classes and the styles for Switch Toggle Element into our HTML element. This will be the CSS with these changes.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist104161006&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-dark-mode-via-css-media-query-and-classes-via-javascript-css&quot; class=&quot;file my-2&quot;&gt;
     
     &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-css  &quot;&gt;
@@ -7721,9 +7789,9 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;p&gt;Another good point in this step is that it should change the Switch Toggle content to be visible in case the browser supports it. Otherwise, it will be hidden via CSS.&lt;/p&gt;
 &lt;p&gt;This is the final state for the Javascript integration.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist104161425&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-dark-mode-via-css-media-query-and-classes-via-javascript-js&quot; class=&quot;file my-2&quot;&gt;
     
     &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
@@ -7959,9 +8027,9 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;h3&gt;Listening for dark mode changes in OS&lt;/h3&gt;
 &lt;p&gt;Now we can change slightly our javascript file to Adds a listener for dark mode changes via user system preferences. We can reuse the previous value for &lt;a href=&quot;https://caniuse.com/#search=matchMedia&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;&lt;strong&gt;matchMedia&lt;/strong&gt;&lt;/a&gt; method and add a listener to the changes.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist104161793&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js&quot; class=&quot;file my-2&quot;&gt;
     
     &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
@@ -8203,9 +8271,9 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;p&gt;Another improvement you can apply is to use the better event listener for the current user device by using &lt;strong&gt;touchstart&lt;/strong&gt; if is a mobile device. Otherwise, it will trigger based on the &lt;strong&gt;click&lt;/strong&gt; event.&lt;/p&gt;
 &lt;p&gt;With all these changes, this will be the final version of the Javascript file.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist104161898&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js&quot; class=&quot;file my-2&quot;&gt;
     
     &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
@@ -8620,58 +8688,58 @@ I hope you enjoyed this reading as much as I enjoyed writing it. Thank you so mu
 &lt;/blockquote&gt;
 &lt;p&gt;If you want to know more about reflows and repaints, I recommend you to look at this post. It&apos;s old, but &lt;strong&gt;&lt;em&gt;for sure&lt;/em&gt;&lt;/strong&gt; is gold.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist26458139&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-what-forces-layout-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-what-forces-layout-md-readme&quot; class=&quot;Box-body readme blob js-code-block-container p-5 p-xl-6 &quot;&gt;
-    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;h1 dir=&quot;auto&quot;&gt;&lt;a id=&quot;user-content-what-forces-layout--reflow&quot; class=&quot;anchor&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot; href=&quot;#what-forces-layout--reflow&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;What forces layout / reflow&lt;/h1&gt;
+    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;markdown-heading&quot; dir=&quot;auto&quot;&gt;&lt;h1 class=&quot;heading-element&quot; dir=&quot;auto&quot;&gt;What forces layout / reflow&lt;/h1&gt;&lt;a id=&quot;user-content-what-forces-layout--reflow&quot; class=&quot;anchor&quot; aria-label=&quot;Permalink: What forces layout / reflow&quot; href=&quot;#what-forces-layout--reflow&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;p dir=&quot;auto&quot;&gt;All of the below properties or methods, when requested/called in JavaScript, will trigger the browser to synchronously calculate the style and layout*. This is also called reflow or &lt;a href=&quot;http://www.kellegous.com/j/2013/01/26/layout-performance/&quot; rel=&quot;nofollow&quot;&gt;layout thrashing&lt;/a&gt;, and is common performance bottleneck.&lt;/p&gt;
 &lt;p dir=&quot;auto&quot;&gt;Generally, all APIs that synchronously provide layout metrics will trigger forced reflow / layout. Read on for additional cases and details.&lt;/p&gt;
-&lt;h3 dir=&quot;auto&quot;&gt;&lt;a id=&quot;user-content-element-apis&quot; class=&quot;anchor&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot; href=&quot;#element-apis&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Element APIs&lt;/h3&gt;
-&lt;h5 dir=&quot;auto&quot;&gt;&lt;a id=&quot;user-content-getting-box-metrics&quot; class=&quot;anchor&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot; href=&quot;#getting-box-metrics&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Getting box metrics&lt;/h5&gt;
+&lt;div class=&quot;markdown-heading&quot; dir=&quot;auto&quot;&gt;&lt;h3 class=&quot;heading-element&quot; dir=&quot;auto&quot;&gt;Element APIs&lt;/h3&gt;&lt;a id=&quot;user-content-element-apis&quot; class=&quot;anchor&quot; aria-label=&quot;Permalink: Element APIs&quot; href=&quot;#element-apis&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;markdown-heading&quot; dir=&quot;auto&quot;&gt;&lt;h5 class=&quot;heading-element&quot; dir=&quot;auto&quot;&gt;Getting box metrics&lt;/h5&gt;&lt;a id=&quot;user-content-getting-box-metrics&quot; class=&quot;anchor&quot; aria-label=&quot;Permalink: Getting box metrics&quot; href=&quot;#getting-box-metrics&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;ul dir=&quot;auto&quot;&gt;
 &lt;li&gt;&lt;code&gt;elem.offsetLeft&lt;/code&gt;, &lt;code&gt;elem.offsetTop&lt;/code&gt;, &lt;code&gt;elem.offsetWidth&lt;/code&gt;, &lt;code&gt;elem.offsetHeight&lt;/code&gt;, &lt;code&gt;elem.offsetParent&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;elem.clientLeft&lt;/code&gt;, &lt;code&gt;elem.clientTop&lt;/code&gt;, &lt;code&gt;elem.clientWidth&lt;/code&gt;, &lt;code&gt;elem.clientHeight&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;elem.getClientRects()&lt;/code&gt;, &lt;code&gt;elem.getBoundingClientRect()&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h5 dir=&quot;auto&quot;&gt;&lt;a id=&quot;user-content-scroll-stuff&quot; class=&quot;anchor&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot; href=&quot;#scroll-stuff&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Scroll stuff&lt;/h5&gt;
+&lt;div class=&quot;markdown-heading&quot; dir=&quot;auto&quot;&gt;&lt;h5 class=&quot;heading-element&quot; dir=&quot;auto&quot;&gt;Scroll stuff&lt;/h5&gt;&lt;a id=&quot;user-content-scroll-stuff&quot; class=&quot;anchor&quot; aria-label=&quot;Permalink: Scroll stuff&quot; href=&quot;#scroll-stuff&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;ul dir=&quot;auto&quot;&gt;
 &lt;li&gt;&lt;code&gt;elem.scrollBy()&lt;/code&gt;, &lt;code&gt;elem.scrollTo()&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;elem.scrollIntoView()&lt;/code&gt;, &lt;code&gt;elem.scrollIntoViewIfNeeded()&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;elem.scrollWidth&lt;/code&gt;, &lt;code&gt;elem.scrollHeight&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;elem.scrollLeft&lt;/code&gt;, &lt;code&gt;elem.scrollTop&lt;/code&gt; also, setting them&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h5 dir=&quot;auto&quot;&gt;&lt;a id=&quot;user-content-setting-focus&quot; class=&quot;anchor&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot; href=&quot;#setting-focus&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Setting focus&lt;/h5&gt;
+&lt;div class=&quot;markdown-heading&quot; dir=&quot;auto&quot;&gt;&lt;h5 class=&quot;heading-element&quot; dir=&quot;auto&quot;&gt;Setting focus&lt;/h5&gt;&lt;a id=&quot;user-content-setting-focus&quot; class=&quot;anchor&quot; aria-label=&quot;Permalink: Setting focus&quot; href=&quot;#setting-focus&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;ul dir=&quot;auto&quot;&gt;
 &lt;li&gt;&lt;code&gt;elem.focus()&lt;/code&gt;   (&lt;a href=&quot;https://source.chromium.org/chromium/chromium/src/+/master:third_party/blink/renderer/core/dom/element.cc;l=4206-4225;drc=d685ea3c9ffcb18c781bc3a0bdbb92eb88842b1b&quot; rel=&quot;nofollow&quot;&gt;source&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h5 dir=&quot;auto&quot;&gt;&lt;a id=&quot;user-content-also&quot; class=&quot;anchor&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot; href=&quot;#also&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Also…&lt;/h5&gt;
+&lt;div class=&quot;markdown-heading&quot; dir=&quot;auto&quot;&gt;&lt;h5 class=&quot;heading-element&quot; dir=&quot;auto&quot;&gt;Also…&lt;/h5&gt;&lt;a id=&quot;user-content-also&quot; class=&quot;anchor&quot; aria-label=&quot;Permalink: Also…&quot; href=&quot;#also&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;ul dir=&quot;auto&quot;&gt;
 &lt;li&gt;&lt;code&gt;elem.computedRole&lt;/code&gt;, &lt;code&gt;elem.computedName&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;elem.innerText&lt;/code&gt; (&lt;a href=&quot;https://source.chromium.org/chromium/chromium/src/+/master:third_party/blink/renderer/core/editing/element_inner_text.cc;l=462-468;drc=d685ea3c9ffcb18c781bc3a0bdbb92eb88842b1b&quot; rel=&quot;nofollow&quot;&gt;source&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 dir=&quot;auto&quot;&gt;&lt;a id=&quot;user-content-getting-window-dimensions&quot; class=&quot;anchor&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot; href=&quot;#getting-window-dimensions&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Getting window dimensions&lt;/h3&gt;
+&lt;div class=&quot;markdown-heading&quot; dir=&quot;auto&quot;&gt;&lt;h3 class=&quot;heading-element&quot; dir=&quot;auto&quot;&gt;Getting window dimensions&lt;/h3&gt;&lt;a id=&quot;user-content-getting-window-dimensions&quot; class=&quot;anchor&quot; aria-label=&quot;Permalink: Getting window dimensions&quot; href=&quot;#getting-window-dimensions&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;ul dir=&quot;auto&quot;&gt;
 &lt;li&gt;&lt;code&gt;window.scrollX&lt;/code&gt;, &lt;code&gt;window.scrollY&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;window.innerHeight&lt;/code&gt;, &lt;code&gt;window.innerWidth&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;window.visualViewport.height / width / offsetTop / offsetLeft (&lt;a href=&quot;https://source.chromium.org/chromium/chromium/src/+/master:third_party/blink/renderer/core/frame/visual_viewport.cc;l=435-461;drc=a3c165458e524bdc55db15d2a5714bb9a0c69c70?originalUrl=https:%2F%2Fcs.chromium.org%2F&quot; rel=&quot;nofollow&quot;&gt;source&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 dir=&quot;auto&quot;&gt;&lt;a id=&quot;user-content-document&quot; class=&quot;anchor&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot; href=&quot;#document&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;document&lt;/h3&gt;
+&lt;div class=&quot;markdown-heading&quot; dir=&quot;auto&quot;&gt;&lt;h3 class=&quot;heading-element&quot; dir=&quot;auto&quot;&gt;document&lt;/h3&gt;&lt;a id=&quot;user-content-document&quot; class=&quot;anchor&quot; aria-label=&quot;Permalink: document&quot; href=&quot;#document&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;ul dir=&quot;auto&quot;&gt;
 &lt;li&gt;&lt;code&gt;document.scrollingElement&lt;/code&gt; only forces style&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;document.elementFromPoint&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 dir=&quot;auto&quot;&gt;&lt;a id=&quot;user-content-forms-setting-selection--focus&quot; class=&quot;anchor&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot; href=&quot;#forms-setting-selection--focus&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Forms: Setting selection + focus&lt;/h3&gt;
+&lt;div class=&quot;markdown-heading&quot; dir=&quot;auto&quot;&gt;&lt;h3 class=&quot;heading-element&quot; dir=&quot;auto&quot;&gt;Forms: Setting selection + focus&lt;/h3&gt;&lt;a id=&quot;user-content-forms-setting-selection--focus&quot; class=&quot;anchor&quot; aria-label=&quot;Permalink: Forms: Setting selection + focus&quot; href=&quot;#forms-setting-selection--focus&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;ul dir=&quot;auto&quot;&gt;
 &lt;li&gt;&lt;code&gt;inputElem.focus()&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;inputElem.select()&lt;/code&gt;, &lt;code&gt;textareaElem.select()&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 dir=&quot;auto&quot;&gt;&lt;a id=&quot;user-content-mouse-events-reading-offset-data&quot; class=&quot;anchor&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot; href=&quot;#mouse-events-reading-offset-data&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Mouse events: Reading offset data&lt;/h3&gt;
+&lt;div class=&quot;markdown-heading&quot; dir=&quot;auto&quot;&gt;&lt;h3 class=&quot;heading-element&quot; dir=&quot;auto&quot;&gt;Mouse events: Reading offset data&lt;/h3&gt;&lt;a id=&quot;user-content-mouse-events-reading-offset-data&quot; class=&quot;anchor&quot; aria-label=&quot;Permalink: Mouse events: Reading offset data&quot; href=&quot;#mouse-events-reading-offset-data&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;ul dir=&quot;auto&quot;&gt;
 &lt;li&gt;&lt;code&gt;mouseEvt.layerX&lt;/code&gt;, &lt;code&gt;mouseEvt.layerY&lt;/code&gt;, &lt;code&gt;mouseEvt.offsetX&lt;/code&gt;, &lt;code&gt;mouseEvt.offsetY&lt;/code&gt; (&lt;a href=&quot;https://source.chromium.org/chromium/chromium/src/+/master:third_party/blink/renderer/core/events/mouse_event.cc;l=476-487;drc=52fd700fb07a43b740d24595d42d8a6a57a43f81&quot; rel=&quot;nofollow&quot;&gt;source&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 dir=&quot;auto&quot;&gt;&lt;a id=&quot;user-content-calling-getcomputedstyle&quot; class=&quot;anchor&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot; href=&quot;#calling-getcomputedstyle&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Calling getComputedStyle()&lt;/h3&gt;
+&lt;div class=&quot;markdown-heading&quot; dir=&quot;auto&quot;&gt;&lt;h3 class=&quot;heading-element&quot; dir=&quot;auto&quot;&gt;Calling getComputedStyle()&lt;/h3&gt;&lt;a id=&quot;user-content-calling-getcomputedstyle&quot; class=&quot;anchor&quot; aria-label=&quot;Permalink: Calling getComputedStyle()&quot; href=&quot;#calling-getcomputedstyle&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;p dir=&quot;auto&quot;&gt;&lt;code&gt;window.getComputedStyle()&lt;/code&gt; will typically force style recalc.&lt;/p&gt;
 &lt;p dir=&quot;auto&quot;&gt;&lt;code&gt;window.getComputedStyle()&lt;/code&gt; will often force layout, as well.&lt;/p&gt;
 &lt;details&gt;
@@ -8701,11 +8769,11 @@ I hope you enjoyed this reading as much as I enjoyed writing it. Thank you so mu
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/details&gt;
-&lt;h3 dir=&quot;auto&quot;&gt;&lt;a id=&quot;user-content-getting-range-dimensions&quot; class=&quot;anchor&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot; href=&quot;#getting-range-dimensions&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Getting &lt;code&gt;Range&lt;/code&gt; dimensions&lt;/h3&gt;
+&lt;div class=&quot;markdown-heading&quot; dir=&quot;auto&quot;&gt;&lt;h3 class=&quot;heading-element&quot; dir=&quot;auto&quot;&gt;Getting &lt;code&gt;Range&lt;/code&gt; dimensions&lt;/h3&gt;&lt;a id=&quot;user-content-getting-range-dimensions&quot; class=&quot;anchor&quot; aria-label=&quot;Permalink: Getting Range dimensions&quot; href=&quot;#getting-range-dimensions&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;ul dir=&quot;auto&quot;&gt;
 &lt;li&gt;&lt;code&gt;range.getClientRects()&lt;/code&gt;, &lt;code&gt;range.getBoundingClientRect()&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 dir=&quot;auto&quot;&gt;&lt;a id=&quot;user-content-svg&quot; class=&quot;anchor&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot; href=&quot;#svg&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;SVG&lt;/h3&gt;
+&lt;div class=&quot;markdown-heading&quot; dir=&quot;auto&quot;&gt;&lt;h3 class=&quot;heading-element&quot; dir=&quot;auto&quot;&gt;SVG&lt;/h3&gt;&lt;a id=&quot;user-content-svg&quot; class=&quot;anchor&quot; aria-label=&quot;Permalink: SVG&quot; href=&quot;#svg&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;p dir=&quot;auto&quot;&gt;Quite a lot of properties/methods force, but I haven&apos;t made an exhaustive list.
 This list in incomplete:&lt;/p&gt;
 &lt;ul dir=&quot;auto&quot;&gt;
@@ -8714,11 +8782,11 @@ This list in incomplete:&lt;/p&gt;
 &lt;li&gt;SVGUse: &lt;code&gt;instanceRoot&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p dir=&quot;auto&quot;&gt;Use the &quot;chromium source tree link&quot; below to explore on your own!&lt;/p&gt;
-&lt;h3 dir=&quot;auto&quot;&gt;&lt;a id=&quot;user-content-contenteditable&quot; class=&quot;anchor&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot; href=&quot;#contenteditable&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;contenteditable&lt;/h3&gt;
+&lt;div class=&quot;markdown-heading&quot; dir=&quot;auto&quot;&gt;&lt;h3 class=&quot;heading-element&quot; dir=&quot;auto&quot;&gt;contenteditable&lt;/h3&gt;&lt;a id=&quot;user-content-contenteditable&quot; class=&quot;anchor&quot; aria-label=&quot;Permalink: contenteditable&quot; href=&quot;#contenteditable&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;ul dir=&quot;auto&quot;&gt;
 &lt;li&gt;Lots &amp;amp; lots of stuff, …including copying an image to clipboard (&lt;a href=&quot;https://source.chromium.org/search?q=UpdateStyleAndLayout%20-f:test&amp;amp;ss=chromium%2Fchromium%2Fsrc:third_party%2Fblink%2Frenderer%2Fcore%2Fediting%2F&quot; rel=&quot;nofollow&quot;&gt;source&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 dir=&quot;auto&quot;&gt;&lt;a id=&quot;user-content--appendix&quot; class=&quot;anchor&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot; href=&quot;#-appendix&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;* Appendix&lt;/h2&gt;
+&lt;div class=&quot;markdown-heading&quot; dir=&quot;auto&quot;&gt;&lt;h2 class=&quot;heading-element&quot; dir=&quot;auto&quot;&gt;* Appendix&lt;/h2&gt;&lt;a id=&quot;user-content--appendix&quot; class=&quot;anchor&quot; aria-label=&quot;Permalink: * Appendix&quot; href=&quot;#-appendix&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;ul dir=&quot;auto&quot;&gt;
 &lt;li&gt;Reflow only has a cost if the document has changed and invalidated the style or layout. Typically, this is because the DOM was changed (classes modified, nodes added/removed, even adding a psuedo-class like :focus).&lt;/li&gt;
 &lt;li&gt;If layout is forced, style must be recalculated first. So forced layout triggers both operations. Their costs are very dependent on the content/situation, but typically both operations are similar in cost.&lt;/li&gt;
@@ -8734,7 +8802,7 @@ This list in incomplete:&lt;/p&gt;
 &lt;p dir=&quot;auto&quot;&gt;&lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;https://cloud.githubusercontent.com/assets/39191/10144107/9fae0b48-65d0-11e5-8e87-c9a8e999b064.png&quot;&gt;&lt;img src=&quot;https://cloud.githubusercontent.com/assets/39191/10144107/9fae0b48-65d0-11e5-8e87-c9a8e999b064.png&quot; style=&quot;max-width: 100%;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
  &lt;i&gt;Timeline trace of The Guardian. Outbrain is forcing layout repeatedly, probably in a loop.&lt;/i&gt;
 
-&lt;h5 dir=&quot;auto&quot;&gt;&lt;a id=&quot;user-content-cross-browser&quot; class=&quot;anchor&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot; href=&quot;#cross-browser&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Cross-browser&lt;/h5&gt;
+&lt;div class=&quot;markdown-heading&quot; dir=&quot;auto&quot;&gt;&lt;h5 class=&quot;heading-element&quot; dir=&quot;auto&quot;&gt;Cross-browser&lt;/h5&gt;&lt;a id=&quot;user-content-cross-browser&quot; class=&quot;anchor&quot; aria-label=&quot;Permalink: Cross-browser&quot; href=&quot;#cross-browser&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;ul dir=&quot;auto&quot;&gt;
 &lt;li&gt;The above data was built by reading the Blink source, so it&apos;s true for Chrome, Opera, Brave, Edge and most android browsers. You can browse them &lt;a href=&quot;https://source.chromium.org/chromium/chromium/src/+/master:third_party/blink/renderer/core/dom/document.h;l=657-680;drc=d685ea3c9ffcb18c781bc3a0bdbb92eb88842b1b&quot; rel=&quot;nofollow&quot;&gt;yourself in the Chromium source tree&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://gent.ilcore.com/2011/03/how-not-to-trigger-layout-in-webkit.html&quot; rel=&quot;nofollow&quot;&gt;Tony Gentilcore&apos;s Layout Triggering List&lt;/a&gt; was for 2011 WebKit and generally aligns with the above.&lt;/li&gt;
@@ -8742,7 +8810,7 @@ This list in incomplete:&lt;/p&gt;
 &lt;li&gt;Gecko&apos;s reflow appears to be requested via FrameNeedsReflow. Results: &lt;a href=&quot;https://searchfox.org/mozilla-central/search?q=FrameNeedsReflow&amp;amp;case=false&amp;amp;regexp=false&amp;amp;path=%5E%5B%5E%5C0%5D&quot; rel=&quot;nofollow&quot;&gt;&lt;code&gt;FrameNeedsReflow&lt;/code&gt; - mozilla-central searchfox&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;No concrete data on IE or EdgeHTML, but they likely were roughly the same, as the return values for these properties are spec&apos;d.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 dir=&quot;auto&quot;&gt;&lt;a id=&quot;user-content-more-on-forced-layout&quot; class=&quot;anchor&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot; href=&quot;#more-on-forced-layout&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;More on forced layout&lt;/h4&gt;
+&lt;div class=&quot;markdown-heading&quot; dir=&quot;auto&quot;&gt;&lt;h4 class=&quot;heading-element&quot; dir=&quot;auto&quot;&gt;More on forced layout&lt;/h4&gt;&lt;a id=&quot;user-content-more-on-forced-layout&quot; class=&quot;anchor&quot; aria-label=&quot;Permalink: More on forced layout&quot; href=&quot;#more-on-forced-layout&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;ul dir=&quot;auto&quot;&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://developers.google.com/web/fundamentals/performance/rendering/avoid-large-complex-layouts-and-layout-thrashing&quot; rel=&quot;nofollow&quot;&gt;Avoiding layout thrashing — Web Fundamentals&lt;/a&gt;&lt;/strong&gt; The &lt;strong&gt;best&lt;/strong&gt; resource on identifying and fixing this topic.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://mattandre.ws/2014/05/really-fixing-layout-thrashing/&quot; rel=&quot;nofollow&quot;&gt;Fixing Layout thrashing in the real world | Matt Andrews&lt;/a&gt;&lt;/li&gt;
@@ -8794,9 +8862,9 @@ This list in incomplete:&lt;/p&gt;
 &lt;h3&gt;Check performance metrics via User timing API&lt;/h3&gt;
 &lt;p&gt;What if you want to track a specific feature in your code? Let&apos;s say something like check how long a specific HTTP is taking from the request start to render the content on your page. User timings API for the rescue!&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist98103170&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-fetch-some-data-js&quot; class=&quot;file my-2&quot;&gt;
     
     &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;&gt;
@@ -9093,9 +9161,9 @@ _The 6.0.0 release of Angular is here! This is a major release focused less on t
 &lt;p&gt;Another good decision the Angular CLI team applied was to integrate the publish Angular libraries with Angular-CLI using &lt;a href=&quot;https://www.npmjs.com/package/ng-packagr&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;ng-packagr&lt;/a&gt;, a package that transpile your libraries to Angular Package Format.&lt;/p&gt;
 &lt;p&gt;Some projects are using shell scripts…&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist91342511&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-ng-publish-sh&quot; class=&quot;file my-2&quot;&gt;
     
     &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-shell  &quot;&gt;
@@ -9228,9 +9296,9 @@ _The 6.0.0 release of Angular is here! This is a major release focused less on t
 &lt;p&gt;In a real world, it means that if your e2e tests are failing you can replay only the test, avoiding time consuming waiting for install dependencies or run other tasks that you already know are passing.&lt;/p&gt;
 &lt;p&gt;And this is the final configuration file with all the steps and validations.&lt;/p&gt;
 &lt;p&gt;&lt;div id=&quot;gist88889173&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot;&gt;
+    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
       &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container file-box&quot;&gt;
+        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-config-yml&quot; class=&quot;file my-2&quot;&gt;
     
     &lt;div itemprop=&quot;text&quot; class=&quot;Box-body p-0 blob-wrapper data type-yaml  &quot;&gt;
