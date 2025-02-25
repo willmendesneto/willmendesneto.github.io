@@ -74,7 +74,7 @@ data-styled.g20[id="Share__StyledLinkedInButton-sc-1rx8md7-3"]{content:"bnogKo,"
 @media (min-width:768px){.fejpAz{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;width:auto;}}/*!sc*/
 .fejpAz:hover{background-color:transparent;color:#128c7e;}/*!sc*/
 data-styled.g21[id="Share__StyledWhatsAppButton-sc-1rx8md7-4"]{content:"fejpAz,"}/*!sc*/
-</style><title data-react-helmet="true">Automating launchdarkly feature flags cleanup in your codebase | Wilson Mendes</title><link href="https://github.githubassets.com/assets/gist-embed-b3b573358bfc66d89e1e95dbf8319c09.css" rel="stylesheet"/><link rel="icon" href="/favicon-32x32.png?v=b897f62d006f8ad8d87b6fc5786692ba" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/poppins/v21/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/poppins/v21/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/poppins/v21/pxiByp8kv8JHgFVrLBT5Z1xlFQ.woff2"/><style>@font-face{font-display:swap;font-family:Poppins;font-style:normal;font-weight:500;src:url(/static/webfonts/s/poppins/v21/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2) format("woff2")}@font-face{font-display:swap;font-family:Poppins;font-style:normal;font-weight:700;src:url(/static/webfonts/s/poppins/v21/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2) format("woff2")}@font-face{font-display:swap;font-family:Poppins;font-style:normal;font-weight:900;src:url(/static/webfonts/s/poppins/v21/pxiByp8kv8JHgFVrLBT5Z1xlFQ.woff2) format("woff2")}@font-face{font-display:swap;font-family:Poppins;font-style:normal;font-weight:500;src:url(/static/webfonts/s/poppins/v21/pxiByp8kv8JHgFVrLGT9Z1xlEw.woff) format("woff")}@font-face{font-display:swap;font-family:Poppins;font-style:normal;font-weight:700;src:url(/static/webfonts/s/poppins/v21/pxiByp8kv8JHgFVrLCz7Z1xlEw.woff) format("woff")}@font-face{font-display:swap;font-family:Poppins;font-style:normal;font-weight:900;src:url(/static/webfonts/s/poppins/v21/pxiByp8kv8JHgFVrLBT5Z1xlEw.woff) format("woff")}</style><link rel="preconnect" href="https://www.google-analytics.com"/><link rel="dns-prefetch" href="https://www.google-analytics.com"/><link rel="sitemap" type="application/xml" href="/sitemap/sitemap-index.xml"/><link rel="alternate" type="application/rss+xml" title="Will Mendes Blog RSS Feed" href="/rss.xml"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><header class="Header__PageHeader-sc-160kmj-0 jdTzzp"><nav class="Header__Nav-sc-160kmj-4 kjaAMM"><section class="Section-sc-zthcy2-0 Header__Wrapper-sc-160kmj-5 gFcMiH evqZuv"><span class="Header__Logo-sc-160kmj-1 Header__LogoMobile-sc-160kmj-2 fEijsQ cwHbSA"><a class="Header__NavLink-sc-160kmj-7 kERbqz" href="/">WM</a></span><span class="Header__Logo-sc-160kmj-1 Header__LogoDesktop-sc-160kmj-3 fEijsQ zYzIt"><a class="Header__NavLink-sc-160kmj-7 kERbqz" href="/">Wilson Mendes</a></span><div class="Header__Links-sc-160kmj-6 bOvZRh"><a active="false" class="Header__NavLink-sc-160kmj-7 kERbqz" href="/posts/">posts</a><a active="false" class="Header__NavLink-sc-160kmj-7 kERbqz" href="/talks/">talks</a><a active="false" class="Header__NavLink-sc-160kmj-7 kERbqz" href="/contact/">contact</a></div></section></nav></header><div class="Layout__Wrapper-sc-xnlv4k-0 homhpW"><main class="Layout__Main-sc-xnlv4k-1 gXdlQb"><section class="Section-sc-zthcy2-0 gFcMiH"><h1 class="Title-sc-1g46602-0 kcDSuF">Automating launchdarkly feature flags cleanup in your codebase</h1><time class="PostDate-sc-okmp83-0 jMNRlQ">May 03, 2021<!-- --> - <!-- -->19 min read</time><article class="PostContent__PostWrapper-sc-1jf6w5a-0 inhPKk"><div><p><span
+</style><title data-react-helmet="true">Automating launchdarkly feature flags cleanup in your codebase | Wilson Mendes</title><link href="https://github.githubassets.com/assets/gist-embed-b3b573358bfc66d89e1e95dbf8319c09.css" rel="stylesheet"/><link rel="icon" href="/favicon-32x32.png?v=b897f62d006f8ad8d87b6fc5786692ba" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b897f62d006f8ad8d87b6fc5786692ba"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/poppins/v22/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/poppins/v22/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/poppins/v22/pxiByp8kv8JHgFVrLBT5Z1xlFQ.woff2"/><style>@font-face{font-display:swap;font-family:Poppins;font-style:normal;font-weight:500;src:url(/static/webfonts/s/poppins/v22/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2) format("woff2")}@font-face{font-display:swap;font-family:Poppins;font-style:normal;font-weight:700;src:url(/static/webfonts/s/poppins/v22/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2) format("woff2")}@font-face{font-display:swap;font-family:Poppins;font-style:normal;font-weight:900;src:url(/static/webfonts/s/poppins/v22/pxiByp8kv8JHgFVrLBT5Z1xlFQ.woff2) format("woff2")}@font-face{font-display:swap;font-family:Poppins;font-style:normal;font-weight:500;src:url(/static/webfonts/s/poppins/v22/pxiByp8kv8JHgFVrLGT9Z1xlEw.woff) format("woff")}@font-face{font-display:swap;font-family:Poppins;font-style:normal;font-weight:700;src:url(/static/webfonts/s/poppins/v22/pxiByp8kv8JHgFVrLCz7Z1xlEw.woff) format("woff")}@font-face{font-display:swap;font-family:Poppins;font-style:normal;font-weight:900;src:url(/static/webfonts/s/poppins/v22/pxiByp8kv8JHgFVrLBT5Z1xlEw.woff) format("woff")}</style><link rel="preconnect" href="https://www.google-analytics.com"/><link rel="dns-prefetch" href="https://www.google-analytics.com"/><link rel="sitemap" type="application/xml" href="/sitemap/sitemap-index.xml"/><link rel="alternate" type="application/rss+xml" title="Will Mendes Blog RSS Feed" href="/rss.xml"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><header class="Header__PageHeader-sc-160kmj-0 jdTzzp"><nav class="Header__Nav-sc-160kmj-4 kjaAMM"><section class="Section-sc-zthcy2-0 Header__Wrapper-sc-160kmj-5 gFcMiH evqZuv"><span class="Header__Logo-sc-160kmj-1 Header__LogoMobile-sc-160kmj-2 fEijsQ cwHbSA"><a class="Header__NavLink-sc-160kmj-7 kERbqz" href="/">WM</a></span><span class="Header__Logo-sc-160kmj-1 Header__LogoDesktop-sc-160kmj-3 fEijsQ zYzIt"><a class="Header__NavLink-sc-160kmj-7 kERbqz" href="/">Wilson Mendes</a></span><div class="Header__Links-sc-160kmj-6 bOvZRh"><a active="false" class="Header__NavLink-sc-160kmj-7 kERbqz" href="/posts/">posts</a><a active="false" class="Header__NavLink-sc-160kmj-7 kERbqz" href="/talks/">talks</a><a active="false" class="Header__NavLink-sc-160kmj-7 kERbqz" href="/contact/">contact</a></div></section></nav></header><div class="Layout__Wrapper-sc-xnlv4k-0 homhpW"><main class="Layout__Main-sc-xnlv4k-1 gXdlQb"><section class="Section-sc-zthcy2-0 gFcMiH"><h1 class="Title-sc-1g46602-0 kcDSuF">Automating launchdarkly feature flags cleanup in your codebase</h1><time class="PostDate-sc-okmp83-0 jMNRlQ">May 03, 2021<!-- --> - <!-- -->19 min read</time><article class="PostContent__PostWrapper-sc-1jf6w5a-0 inhPKk"><div><p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1204px; "
     >
@@ -328,7 +328,10 @@ data-styled.g21[id="Share__StyledWhatsAppButton-sc-1rx8md7-4"]{content:"fejpAz,"
       <div class="gist-data">
         <div class="js-gist-file-update-container js-task-list-container">
   <div id="file-creating-project-md" class="file my-2">
-      <div id="file-creating-project-md-readme" class="Box-body readme blob js-code-block-container p-5 p-xl-6 ">
+      <div id="file-creating-project-md-readme" class="Box-body readme blob p-5 p-xl-6 "
+    style="overflow: auto" tabindex="0" role="region"
+    aria-label="file-creating-project-md"
+  >
     <article class="markdown-body entry-content container-lg" itemprop="text"><div class="highlight highlight-source-shell" dir="auto"><pre>mkdir my-project
 <span class="pl-c1">cd</span> my-project
 npm init -y</pre></div>
@@ -354,7 +357,10 @@ npm init -y</pre></div>
       <div class="gist-data">
         <div class="js-gist-file-update-container js-task-list-container">
   <div id="file-installing-launchdarkly-node-server-sdk-md" class="file my-2">
-      <div id="file-installing-launchdarkly-node-server-sdk-md-readme" class="Box-body readme blob js-code-block-container p-5 p-xl-6 ">
+      <div id="file-installing-launchdarkly-node-server-sdk-md-readme" class="Box-body readme blob p-5 p-xl-6 "
+    style="overflow: auto" tabindex="0" role="region"
+    aria-label="file-installing-launchdarkly-node-server-sdk-md"
+  >
     <article class="markdown-body entry-content container-lg" itemprop="text"><div class="highlight highlight-source-shell" dir="auto"><pre>npm install launchdarkly-node-server-sdk --save</pre></div>
 </article>
   </div>
@@ -379,7 +385,11 @@ npm init -y</pre></div>
         <div class="js-gist-file-update-container js-task-list-container">
   <div id="file-index-js" class="file my-2">
     
-    <div itemprop="text" class="Box-body p-0 blob-wrapper data type-javascript  ">
+    <div itemprop="text"
+      class="Box-body p-0 blob-wrapper data type-javascript  "
+      style="overflow: auto" tabindex="0" role="region"
+      aria-label="file-index-js"
+    >
 
         
 <div class="js-check-bidi js-blob-code-container blob-code-content">
@@ -406,224 +416,224 @@ npm init -y</pre></div>
 </svg>
 </span></template>
 
-  <table data-hpc class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip data-tagsearch-lang="JavaScript" data-tagsearch-path="index.js">
+  <table data-hpc class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip data-tagsearch-path="index.js">
         <tr>
-          <td id="file-index-js-L1" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="1"></td>
+          <td id="file-index-js-L1" class="blob-num js-line-number js-blob-rnum" data-line-number="1"></td>
           <td id="file-index-js-LC1" class="blob-code blob-code-inner js-file-line">const assert = require(&#39;assert&#39;);</td>
         </tr>
         <tr>
-          <td id="file-index-js-L2" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="2"></td>
+          <td id="file-index-js-L2" class="blob-num js-line-number js-blob-rnum" data-line-number="2"></td>
           <td id="file-index-js-LC2" class="blob-code blob-code-inner js-file-line">const LaunchDarkly = require(&#39;launchdarkly-node-server-sdk&#39;);</td>
         </tr>
         <tr>
-          <td id="file-index-js-L3" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="3"></td>
+          <td id="file-index-js-L3" class="blob-num js-line-number js-blob-rnum" data-line-number="3"></td>
           <td id="file-index-js-LC3" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-index-js-L4" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="4"></td>
+          <td id="file-index-js-L4" class="blob-num js-line-number js-blob-rnum" data-line-number="4"></td>
           <td id="file-index-js-LC4" class="blob-code blob-code-inner js-file-line">// Check if the variable was passed on</td>
         </tr>
         <tr>
-          <td id="file-index-js-L5" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="5"></td>
+          <td id="file-index-js-L5" class="blob-num js-line-number js-blob-rnum" data-line-number="5"></td>
           <td id="file-index-js-LC5" class="blob-code blob-code-inner js-file-line">assert(process.env.LD_SDK_KEY, &#39;env var &quot;LD_SDK_KEY&quot; should be passed to the command&#39;);</td>
         </tr>
         <tr>
-          <td id="file-index-js-L6" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="6"></td>
+          <td id="file-index-js-L6" class="blob-num js-line-number js-blob-rnum" data-line-number="6"></td>
           <td id="file-index-js-LC6" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-index-js-L7" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="7"></td>
+          <td id="file-index-js-L7" class="blob-num js-line-number js-blob-rnum" data-line-number="7"></td>
           <td id="file-index-js-LC7" class="blob-code blob-code-inner js-file-line">const featureFlagKey = &#39;is-app-enabled&#39;;</td>
         </tr>
         <tr>
-          <td id="file-index-js-L8" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="8"></td>
+          <td id="file-index-js-L8" class="blob-num js-line-number js-blob-rnum" data-line-number="8"></td>
           <td id="file-index-js-LC8" class="blob-code blob-code-inner js-file-line">const config = {</td>
         </tr>
         <tr>
-          <td id="file-index-js-L9" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="9"></td>
+          <td id="file-index-js-L9" class="blob-num js-line-number js-blob-rnum" data-line-number="9"></td>
           <td id="file-index-js-LC9" class="blob-code blob-code-inner js-file-line">  key: `user-${Date.now()}`,</td>
         </tr>
         <tr>
-          <td id="file-index-js-L10" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="10"></td>
+          <td id="file-index-js-L10" class="blob-num js-line-number js-blob-rnum" data-line-number="10"></td>
           <td id="file-index-js-LC10" class="blob-code blob-code-inner js-file-line">};</td>
         </tr>
         <tr>
-          <td id="file-index-js-L11" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="11"></td>
+          <td id="file-index-js-L11" class="blob-num js-line-number js-blob-rnum" data-line-number="11"></td>
           <td id="file-index-js-LC11" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-index-js-L12" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="12"></td>
+          <td id="file-index-js-L12" class="blob-num js-line-number js-blob-rnum" data-line-number="12"></td>
           <td id="file-index-js-LC12" class="blob-code blob-code-inner js-file-line">const ldClient = LaunchDarkly.init(process.env.LD_SDK_KEY);</td>
         </tr>
         <tr>
-          <td id="file-index-js-L13" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="13"></td>
+          <td id="file-index-js-L13" class="blob-num js-line-number js-blob-rnum" data-line-number="13"></td>
           <td id="file-index-js-LC13" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-index-js-L14" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="14"></td>
+          <td id="file-index-js-L14" class="blob-num js-line-number js-blob-rnum" data-line-number="14"></td>
           <td id="file-index-js-LC14" class="blob-code blob-code-inner js-file-line">const main = async () =&gt; {</td>
         </tr>
         <tr>
-          <td id="file-index-js-L15" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="15"></td>
+          <td id="file-index-js-L15" class="blob-num js-line-number js-blob-rnum" data-line-number="15"></td>
           <td id="file-index-js-LC15" class="blob-code blob-code-inner js-file-line">  try {</td>
         </tr>
         <tr>
-          <td id="file-index-js-L16" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="16"></td>
+          <td id="file-index-js-L16" class="blob-num js-line-number js-blob-rnum" data-line-number="16"></td>
           <td id="file-index-js-LC16" class="blob-code blob-code-inner js-file-line">    await ldClient.waitForInitialization();</td>
         </tr>
         <tr>
-          <td id="file-index-js-L17" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="17"></td>
+          <td id="file-index-js-L17" class="blob-num js-line-number js-blob-rnum" data-line-number="17"></td>
           <td id="file-index-js-LC17" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-index-js-L18" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="18"></td>
+          <td id="file-index-js-L18" class="blob-num js-line-number js-blob-rnum" data-line-number="18"></td>
           <td id="file-index-js-LC18" class="blob-code blob-code-inner js-file-line">    console.log(&#39;SDK successfully initialized!&#39;);</td>
         </tr>
         <tr>
-          <td id="file-index-js-L19" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="19"></td>
+          <td id="file-index-js-L19" class="blob-num js-line-number js-blob-rnum" data-line-number="19"></td>
           <td id="file-index-js-LC19" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-index-js-L20" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="20"></td>
+          <td id="file-index-js-L20" class="blob-num js-line-number js-blob-rnum" data-line-number="20"></td>
           <td id="file-index-js-LC20" class="blob-code blob-code-inner js-file-line">    const flagValue = await ldClient.variation(featureFlagKey, config, false);</td>
         </tr>
         <tr>
-          <td id="file-index-js-L21" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="21"></td>
+          <td id="file-index-js-L21" class="blob-num js-line-number js-blob-rnum" data-line-number="21"></td>
           <td id="file-index-js-LC21" class="blob-code blob-code-inner js-file-line">    console.log(`Feature flag &#39;${featureFlagKey}&#39; is &#39;${flagValue}&#39;`);</td>
         </tr>
         <tr>
-          <td id="file-index-js-L22" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="22"></td>
+          <td id="file-index-js-L22" class="blob-num js-line-number js-blob-rnum" data-line-number="22"></td>
           <td id="file-index-js-LC22" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-index-js-L23" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="23"></td>
+          <td id="file-index-js-L23" class="blob-num js-line-number js-blob-rnum" data-line-number="23"></td>
           <td id="file-index-js-LC23" class="blob-code blob-code-inner js-file-line">    ldClient.flush(() =&gt; {</td>
         </tr>
         <tr>
-          <td id="file-index-js-L24" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="24"></td>
+          <td id="file-index-js-L24" class="blob-num js-line-number js-blob-rnum" data-line-number="24"></td>
           <td id="file-index-js-LC24" class="blob-code blob-code-inner js-file-line">      console.info(&#39;Flushing connections ...&#39;);</td>
         </tr>
         <tr>
-          <td id="file-index-js-L25" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="25"></td>
+          <td id="file-index-js-L25" class="blob-num js-line-number js-blob-rnum" data-line-number="25"></td>
           <td id="file-index-js-LC25" class="blob-code blob-code-inner js-file-line">      ldClient.close(() =&gt; {</td>
         </tr>
         <tr>
-          <td id="file-index-js-L26" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="26"></td>
+          <td id="file-index-js-L26" class="blob-num js-line-number js-blob-rnum" data-line-number="26"></td>
           <td id="file-index-js-LC26" class="blob-code blob-code-inner js-file-line">        console.info(&#39;Shutting down ...&#39;);</td>
         </tr>
         <tr>
-          <td id="file-index-js-L27" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="27"></td>
+          <td id="file-index-js-L27" class="blob-num js-line-number js-blob-rnum" data-line-number="27"></td>
           <td id="file-index-js-LC27" class="blob-code blob-code-inner js-file-line">      });</td>
         </tr>
         <tr>
-          <td id="file-index-js-L28" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="28"></td>
+          <td id="file-index-js-L28" class="blob-num js-line-number js-blob-rnum" data-line-number="28"></td>
           <td id="file-index-js-LC28" class="blob-code blob-code-inner js-file-line">    });</td>
         </tr>
         <tr>
-          <td id="file-index-js-L29" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="29"></td>
+          <td id="file-index-js-L29" class="blob-num js-line-number js-blob-rnum" data-line-number="29"></td>
           <td id="file-index-js-LC29" class="blob-code blob-code-inner js-file-line">  } catch (error) {</td>
         </tr>
         <tr>
-          <td id="file-index-js-L30" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="30"></td>
+          <td id="file-index-js-L30" class="blob-num js-line-number js-blob-rnum" data-line-number="30"></td>
           <td id="file-index-js-LC30" class="blob-code blob-code-inner js-file-line">    console.error(error);</td>
         </tr>
         <tr>
-          <td id="file-index-js-L31" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="31"></td>
+          <td id="file-index-js-L31" class="blob-num js-line-number js-blob-rnum" data-line-number="31"></td>
           <td id="file-index-js-LC31" class="blob-code blob-code-inner js-file-line">    process.exit(1);</td>
         </tr>
         <tr>
-          <td id="file-index-js-L32" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="32"></td>
+          <td id="file-index-js-L32" class="blob-num js-line-number js-blob-rnum" data-line-number="32"></td>
           <td id="file-index-js-LC32" class="blob-code blob-code-inner js-file-line">  }</td>
         </tr>
         <tr>
-          <td id="file-index-js-L33" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="33"></td>
+          <td id="file-index-js-L33" class="blob-num js-line-number js-blob-rnum" data-line-number="33"></td>
           <td id="file-index-js-LC33" class="blob-code blob-code-inner js-file-line">};</td>
         </tr>
         <tr>
-          <td id="file-index-js-L34" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="34"></td>
+          <td id="file-index-js-L34" class="blob-num js-line-number js-blob-rnum" data-line-number="34"></td>
           <td id="file-index-js-LC34" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-index-js-L35" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="35"></td>
+          <td id="file-index-js-L35" class="blob-num js-line-number js-blob-rnum" data-line-number="35"></td>
           <td id="file-index-js-LC35" class="blob-code blob-code-inner js-file-line">process.setMaxListeners(0);</td>
         </tr>
         <tr>
-          <td id="file-index-js-L36" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="36"></td>
+          <td id="file-index-js-L36" class="blob-num js-line-number js-blob-rnum" data-line-number="36"></td>
           <td id="file-index-js-LC36" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-index-js-L37" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="37"></td>
+          <td id="file-index-js-L37" class="blob-num js-line-number js-blob-rnum" data-line-number="37"></td>
           <td id="file-index-js-LC37" class="blob-code blob-code-inner js-file-line">const gracefulShutdown = () =&gt; {</td>
         </tr>
         <tr>
-          <td id="file-index-js-L38" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="38"></td>
+          <td id="file-index-js-L38" class="blob-num js-line-number js-blob-rnum" data-line-number="38"></td>
           <td id="file-index-js-LC38" class="blob-code blob-code-inner js-file-line">  ldClient.flush(() =&gt; {</td>
         </tr>
         <tr>
-          <td id="file-index-js-L39" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="39"></td>
+          <td id="file-index-js-L39" class="blob-num js-line-number js-blob-rnum" data-line-number="39"></td>
           <td id="file-index-js-LC39" class="blob-code blob-code-inner js-file-line">    console.info(&#39;Flushing connections ...&#39;);</td>
         </tr>
         <tr>
-          <td id="file-index-js-L40" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="40"></td>
+          <td id="file-index-js-L40" class="blob-num js-line-number js-blob-rnum" data-line-number="40"></td>
           <td id="file-index-js-LC40" class="blob-code blob-code-inner js-file-line">    ldClient.close(() =&gt; {</td>
         </tr>
         <tr>
-          <td id="file-index-js-L41" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="41"></td>
+          <td id="file-index-js-L41" class="blob-num js-line-number js-blob-rnum" data-line-number="41"></td>
           <td id="file-index-js-LC41" class="blob-code blob-code-inner js-file-line">      console.info(&#39;Shutting down ...&#39;);</td>
         </tr>
         <tr>
-          <td id="file-index-js-L42" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="42"></td>
+          <td id="file-index-js-L42" class="blob-num js-line-number js-blob-rnum" data-line-number="42"></td>
           <td id="file-index-js-LC42" class="blob-code blob-code-inner js-file-line">      process.exit(1);</td>
         </tr>
         <tr>
-          <td id="file-index-js-L43" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="43"></td>
+          <td id="file-index-js-L43" class="blob-num js-line-number js-blob-rnum" data-line-number="43"></td>
           <td id="file-index-js-LC43" class="blob-code blob-code-inner js-file-line">    });</td>
         </tr>
         <tr>
-          <td id="file-index-js-L44" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="44"></td>
+          <td id="file-index-js-L44" class="blob-num js-line-number js-blob-rnum" data-line-number="44"></td>
           <td id="file-index-js-LC44" class="blob-code blob-code-inner js-file-line">  });</td>
         </tr>
         <tr>
-          <td id="file-index-js-L45" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="45"></td>
+          <td id="file-index-js-L45" class="blob-num js-line-number js-blob-rnum" data-line-number="45"></td>
           <td id="file-index-js-LC45" class="blob-code blob-code-inner js-file-line">};</td>
         </tr>
         <tr>
-          <td id="file-index-js-L46" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="46"></td>
+          <td id="file-index-js-L46" class="blob-num js-line-number js-blob-rnum" data-line-number="46"></td>
           <td id="file-index-js-LC46" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-index-js-L47" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="47"></td>
+          <td id="file-index-js-L47" class="blob-num js-line-number js-blob-rnum" data-line-number="47"></td>
           <td id="file-index-js-LC47" class="blob-code blob-code-inner js-file-line">// listen for TERM signal .e.g. kill</td>
         </tr>
         <tr>
-          <td id="file-index-js-L48" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="48"></td>
+          <td id="file-index-js-L48" class="blob-num js-line-number js-blob-rnum" data-line-number="48"></td>
           <td id="file-index-js-LC48" class="blob-code blob-code-inner js-file-line">process.on(&#39;SIGTERM&#39;, gracefulShutdown);</td>
         </tr>
         <tr>
-          <td id="file-index-js-L49" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="49"></td>
+          <td id="file-index-js-L49" class="blob-num js-line-number js-blob-rnum" data-line-number="49"></td>
           <td id="file-index-js-LC49" class="blob-code blob-code-inner js-file-line">// listen for INT signal e.g. Ctrl-C</td>
         </tr>
         <tr>
-          <td id="file-index-js-L50" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="50"></td>
+          <td id="file-index-js-L50" class="blob-num js-line-number js-blob-rnum" data-line-number="50"></td>
           <td id="file-index-js-LC50" class="blob-code blob-code-inner js-file-line">process.on(&#39;SIGINT&#39;, gracefulShutdown);</td>
         </tr>
         <tr>
-          <td id="file-index-js-L51" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="51"></td>
+          <td id="file-index-js-L51" class="blob-num js-line-number js-blob-rnum" data-line-number="51"></td>
           <td id="file-index-js-LC51" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-index-js-L52" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="52"></td>
+          <td id="file-index-js-L52" class="blob-num js-line-number js-blob-rnum" data-line-number="52"></td>
           <td id="file-index-js-LC52" class="blob-code blob-code-inner js-file-line">main();</td>
         </tr>
   </table>
@@ -653,7 +663,11 @@ npm init -y</pre></div>
         <div class="js-gist-file-update-container js-task-list-container">
   <div id="file-package-json" class="file my-2">
     
-    <div itemprop="text" class="Box-body p-0 blob-wrapper data type-json  ">
+    <div itemprop="text"
+      class="Box-body p-0 blob-wrapper data type-json  "
+      style="overflow: auto" tabindex="0" role="region"
+      aria-label="file-package-json"
+    >
 
         
 <div class="js-check-bidi js-blob-code-container blob-code-content">
@@ -680,45 +694,45 @@ npm init -y</pre></div>
 </svg>
 </span></template>
 
-  <table data-hpc class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip data-tagsearch-lang="JSON" data-tagsearch-path="package.json">
+  <table data-hpc class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip data-tagsearch-path="package.json">
         <tr>
-          <td id="file-package-json-L1" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="1"></td>
+          <td id="file-package-json-L1" class="blob-num js-line-number js-blob-rnum" data-line-number="1"></td>
           <td id="file-package-json-LC1" class="blob-code blob-code-inner js-file-line">{</td>
         </tr>
         <tr>
-          <td id="file-package-json-L2" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="2"></td>
+          <td id="file-package-json-L2" class="blob-num js-line-number js-blob-rnum" data-line-number="2"></td>
           <td id="file-package-json-LC2" class="blob-code blob-code-inner js-file-line">  &quot;name&quot;: &quot;my-project&quot;,</td>
         </tr>
         <tr>
-          <td id="file-package-json-L3" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="3"></td>
+          <td id="file-package-json-L3" class="blob-num js-line-number js-blob-rnum" data-line-number="3"></td>
           <td id="file-package-json-LC3" class="blob-code blob-code-inner js-file-line">  &quot;main&quot;: &quot;index.js&quot;,</td>
         </tr>
         <tr>
-          <td id="file-package-json-L4" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="4"></td>
+          <td id="file-package-json-L4" class="blob-num js-line-number js-blob-rnum" data-line-number="4"></td>
           <td id="file-package-json-LC4" class="blob-code blob-code-inner js-file-line">  &quot;scripts&quot;: {</td>
         </tr>
         <tr>
-          <td id="file-package-json-L5" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="5"></td>
+          <td id="file-package-json-L5" class="blob-num js-line-number js-blob-rnum" data-line-number="5"></td>
           <td id="file-package-json-LC5" class="blob-code blob-code-inner js-file-line">    &quot;start&quot;: &quot;node index.js&quot;</td>
         </tr>
         <tr>
-          <td id="file-package-json-L6" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="6"></td>
+          <td id="file-package-json-L6" class="blob-num js-line-number js-blob-rnum" data-line-number="6"></td>
           <td id="file-package-json-LC6" class="blob-code blob-code-inner js-file-line">  },</td>
         </tr>
         <tr>
-          <td id="file-package-json-L7" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="7"></td>
+          <td id="file-package-json-L7" class="blob-num js-line-number js-blob-rnum" data-line-number="7"></td>
           <td id="file-package-json-LC7" class="blob-code blob-code-inner js-file-line">  &quot;dependencies&quot;: {</td>
         </tr>
         <tr>
-          <td id="file-package-json-L8" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="8"></td>
+          <td id="file-package-json-L8" class="blob-num js-line-number js-blob-rnum" data-line-number="8"></td>
           <td id="file-package-json-LC8" class="blob-code blob-code-inner js-file-line">    &quot;launchdarkly-node-server-sdk&quot;: &quot;^5.14.3&quot;</td>
         </tr>
         <tr>
-          <td id="file-package-json-L9" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="9"></td>
+          <td id="file-package-json-L9" class="blob-num js-line-number js-blob-rnum" data-line-number="9"></td>
           <td id="file-package-json-LC9" class="blob-code blob-code-inner js-file-line">  }</td>
         </tr>
         <tr>
-          <td id="file-package-json-L10" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="10"></td>
+          <td id="file-package-json-L10" class="blob-num js-line-number js-blob-rnum" data-line-number="10"></td>
           <td id="file-package-json-LC10" class="blob-code blob-code-inner js-file-line">}</td>
         </tr>
   </table>
@@ -809,7 +823,11 @@ npm init -y</pre></div>
         <div class="js-gist-file-update-container js-task-list-container">
   <div id="file-list-unused-feature-flags-in-code-sh" class="file my-2">
     
-    <div itemprop="text" class="Box-body p-0 blob-wrapper data type-shell  ">
+    <div itemprop="text"
+      class="Box-body p-0 blob-wrapper data type-shell  "
+      style="overflow: auto" tabindex="0" role="region"
+      aria-label="file-list-unused-feature-flags-in-code-sh"
+    >
 
         
 <div class="js-check-bidi js-blob-code-container blob-code-content">
@@ -836,709 +854,709 @@ npm init -y</pre></div>
 </svg>
 </span></template>
 
-  <table data-hpc class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip data-tagsearch-lang="Shell" data-tagsearch-path="list-unused-feature-flags-in-code.sh">
+  <table data-hpc class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip data-tagsearch-path="list-unused-feature-flags-in-code.sh">
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L1" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="1"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L1" class="blob-num js-line-number js-blob-rnum" data-line-number="1"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC1" class="blob-code blob-code-inner js-file-line">#!/usr/bin/env bash</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L2" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="2"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L2" class="blob-num js-line-number js-blob-rnum" data-line-number="2"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC2" class="blob-code blob-code-inner js-file-line">set -o errexit</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L3" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="3"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L3" class="blob-num js-line-number js-blob-rnum" data-line-number="3"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC3" class="blob-code blob-code-inner js-file-line">set -o pipefail</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L4" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="4"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L4" class="blob-num js-line-number js-blob-rnum" data-line-number="4"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC4" class="blob-code blob-code-inner js-file-line">set -o nounset</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L5" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="5"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L5" class="blob-num js-line-number js-blob-rnum" data-line-number="5"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC5" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L6" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="6"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L6" class="blob-num js-line-number js-blob-rnum" data-line-number="6"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC6" class="blob-code blob-code-inner js-file-line"># Mandatory arguments</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L7" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="7"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L7" class="blob-num js-line-number js-blob-rnum" data-line-number="7"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC7" class="blob-code blob-code-inner js-file-line">LD_AUTH_TOKEN=&quot;&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L8" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="8"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L8" class="blob-num js-line-number js-blob-rnum" data-line-number="8"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC8" class="blob-code blob-code-inner js-file-line">PROJECT=&quot;&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L9" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="9"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L9" class="blob-num js-line-number js-blob-rnum" data-line-number="9"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC9" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L10" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="10"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L10" class="blob-num js-line-number js-blob-rnum" data-line-number="10"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC10" class="blob-code blob-code-inner js-file-line"># Optional arguments</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L11" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="11"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L11" class="blob-num js-line-number js-blob-rnum" data-line-number="11"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC11" class="blob-code blob-code-inner js-file-line">OUTPUT_FILE=&quot;unused-feature-flags.txt&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L12" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="12"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L12" class="blob-num js-line-number js-blob-rnum" data-line-number="12"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC12" class="blob-code blob-code-inner js-file-line">ENVIRONMENT=&quot;production&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L13" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="13"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L13" class="blob-num js-line-number js-blob-rnum" data-line-number="13"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC13" class="blob-code blob-code-inner js-file-line">LIMIT=&quot;5000&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L14" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="14"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L14" class="blob-num js-line-number js-blob-rnum" data-line-number="14"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC14" class="blob-code blob-code-inner js-file-line">HELP=&quot;false&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L15" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="15"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L15" class="blob-num js-line-number js-blob-rnum" data-line-number="15"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC15" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L16" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="16"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L16" class="blob-num js-line-number js-blob-rnum" data-line-number="16"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC16" class="blob-code blob-code-inner js-file-line">for i in &quot;$@&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L17" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="17"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L17" class="blob-num js-line-number js-blob-rnum" data-line-number="17"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC17" class="blob-code blob-code-inner js-file-line">do</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L18" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="18"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L18" class="blob-num js-line-number js-blob-rnum" data-line-number="18"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC18" class="blob-code blob-code-inner js-file-line">  case $i in</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L19" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="19"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L19" class="blob-num js-line-number js-blob-rnum" data-line-number="19"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC19" class="blob-code blob-code-inner js-file-line">      # Required arguments</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L20" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="20"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L20" class="blob-num js-line-number js-blob-rnum" data-line-number="20"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC20" class="blob-code blob-code-inner js-file-line">      -t=*|--token=*)</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L21" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="21"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L21" class="blob-num js-line-number js-blob-rnum" data-line-number="21"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC21" class="blob-code blob-code-inner js-file-line">      LD_AUTH_TOKEN=&quot;${i#*=}&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L22" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="22"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L22" class="blob-num js-line-number js-blob-rnum" data-line-number="22"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC22" class="blob-code blob-code-inner js-file-line">      shift # past argument=value</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L23" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="23"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L23" class="blob-num js-line-number js-blob-rnum" data-line-number="23"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC23" class="blob-code blob-code-inner js-file-line">      ;;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L24" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="24"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L24" class="blob-num js-line-number js-blob-rnum" data-line-number="24"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC24" class="blob-code blob-code-inner js-file-line">      -o=*|--output-file=*)</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L25" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="25"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L25" class="blob-num js-line-number js-blob-rnum" data-line-number="25"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC25" class="blob-code blob-code-inner js-file-line">      OUTPUT_FILE=&quot;${i#*=}&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L26" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="26"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L26" class="blob-num js-line-number js-blob-rnum" data-line-number="26"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC26" class="blob-code blob-code-inner js-file-line">      shift # past argument=value</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L27" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="27"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L27" class="blob-num js-line-number js-blob-rnum" data-line-number="27"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC27" class="blob-code blob-code-inner js-file-line">      ;;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L28" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="28"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L28" class="blob-num js-line-number js-blob-rnum" data-line-number="28"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC28" class="blob-code blob-code-inner js-file-line">      -e=*|--env=*)</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L29" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="29"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L29" class="blob-num js-line-number js-blob-rnum" data-line-number="29"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC29" class="blob-code blob-code-inner js-file-line">      ENVIRONMENT=&quot;${i#*=}&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L30" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="30"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L30" class="blob-num js-line-number js-blob-rnum" data-line-number="30"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC30" class="blob-code blob-code-inner js-file-line">      shift # past argument=value</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L31" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="31"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L31" class="blob-num js-line-number js-blob-rnum" data-line-number="31"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC31" class="blob-code blob-code-inner js-file-line">      ;;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L32" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="32"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L32" class="blob-num js-line-number js-blob-rnum" data-line-number="32"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC32" class="blob-code blob-code-inner js-file-line">      -p=*|--project=*)</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L33" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="33"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L33" class="blob-num js-line-number js-blob-rnum" data-line-number="33"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC33" class="blob-code blob-code-inner js-file-line">      PROJECT=&quot;${i#*=}&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L34" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="34"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L34" class="blob-num js-line-number js-blob-rnum" data-line-number="34"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC34" class="blob-code blob-code-inner js-file-line">      shift # past argument=value</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L35" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="35"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L35" class="blob-num js-line-number js-blob-rnum" data-line-number="35"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC35" class="blob-code blob-code-inner js-file-line">      ;;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L36" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="36"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L36" class="blob-num js-line-number js-blob-rnum" data-line-number="36"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC36" class="blob-code blob-code-inner js-file-line">      -l=*|--limit=*)</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L37" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="37"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L37" class="blob-num js-line-number js-blob-rnum" data-line-number="37"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC37" class="blob-code blob-code-inner js-file-line">      LIMIT=&quot;${i#*=}&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L38" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="38"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L38" class="blob-num js-line-number js-blob-rnum" data-line-number="38"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC38" class="blob-code blob-code-inner js-file-line">      shift # past argument=value</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L39" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="39"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L39" class="blob-num js-line-number js-blob-rnum" data-line-number="39"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC39" class="blob-code blob-code-inner js-file-line">      ;;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L40" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="40"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L40" class="blob-num js-line-number js-blob-rnum" data-line-number="40"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC40" class="blob-code blob-code-inner js-file-line">      -h=*|--help=*|-h|--help)</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L41" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="41"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L41" class="blob-num js-line-number js-blob-rnum" data-line-number="41"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC41" class="blob-code blob-code-inner js-file-line">      HELP=&quot;true&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L42" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="42"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L42" class="blob-num js-line-number js-blob-rnum" data-line-number="42"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC42" class="blob-code blob-code-inner js-file-line">      shift # past argument=value</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L43" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="43"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L43" class="blob-num js-line-number js-blob-rnum" data-line-number="43"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC43" class="blob-code blob-code-inner js-file-line">      ;;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L44" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="44"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L44" class="blob-num js-line-number js-blob-rnum" data-line-number="44"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC44" class="blob-code blob-code-inner js-file-line">      --default)</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L45" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="45"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L45" class="blob-num js-line-number js-blob-rnum" data-line-number="45"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC45" class="blob-code blob-code-inner js-file-line">      shift # past argument with no value</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L46" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="46"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L46" class="blob-num js-line-number js-blob-rnum" data-line-number="46"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC46" class="blob-code blob-code-inner js-file-line">      ;;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L47" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="47"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L47" class="blob-num js-line-number js-blob-rnum" data-line-number="47"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC47" class="blob-code blob-code-inner js-file-line">      *)</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L48" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="48"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L48" class="blob-num js-line-number js-blob-rnum" data-line-number="48"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC48" class="blob-code blob-code-inner js-file-line">        # unknown option</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L49" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="49"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L49" class="blob-num js-line-number js-blob-rnum" data-line-number="49"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC49" class="blob-code blob-code-inner js-file-line">      ;;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L50" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="50"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L50" class="blob-num js-line-number js-blob-rnum" data-line-number="50"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC50" class="blob-code blob-code-inner js-file-line">  esac</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L51" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="51"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L51" class="blob-num js-line-number js-blob-rnum" data-line-number="51"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC51" class="blob-code blob-code-inner js-file-line">done</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L52" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="52"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L52" class="blob-num js-line-number js-blob-rnum" data-line-number="52"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC52" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L53" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="53"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L53" class="blob-num js-line-number js-blob-rnum" data-line-number="53"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC53" class="blob-code blob-code-inner js-file-line">setup() {</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L54" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="54"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L54" class="blob-num js-line-number js-blob-rnum" data-line-number="54"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC54" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L55" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="55"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L55" class="blob-num js-line-number js-blob-rnum" data-line-number="55"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC55" class="blob-code blob-code-inner js-file-line">  if [ &quot;$HELP&quot; == &quot;true&quot; ]; then</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L56" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="56"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L56" class="blob-num js-line-number js-blob-rnum" data-line-number="56"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC56" class="blob-code blob-code-inner js-file-line">    cat &lt;&lt; EOM</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L57" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="57"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L57" class="blob-num js-line-number js-blob-rnum" data-line-number="57"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC57" class="blob-code blob-code-inner js-file-line">List unused Feature Flags in Code</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L58" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="58"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L58" class="blob-num js-line-number js-blob-rnum" data-line-number="58"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC58" class="blob-code blob-code-inner js-file-line">and checks for cleaned up feature flags in LaunchDarkly, </td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L59" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="59"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L59" class="blob-num js-line-number js-blob-rnum" data-line-number="59"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC59" class="blob-code blob-code-inner js-file-line">so they can be removed from your codebase</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L60" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="60"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L60" class="blob-num js-line-number js-blob-rnum" data-line-number="60"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC60" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L61" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="61"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L61" class="blob-num js-line-number js-blob-rnum" data-line-number="61"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC61" class="blob-code blob-code-inner js-file-line">Dependency Requirements (other than LSB commands)</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L62" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="62"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L62" class="blob-num js-line-number js-blob-rnum" data-line-number="62"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC62" class="blob-code blob-code-inner js-file-line">  - curl</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L63" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="63"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L63" class="blob-num js-line-number js-blob-rnum" data-line-number="63"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC63" class="blob-code blob-code-inner js-file-line">  - git</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L64" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="64"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L64" class="blob-num js-line-number js-blob-rnum" data-line-number="64"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC64" class="blob-code blob-code-inner js-file-line">  - jq</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L65" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="65"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L65" class="blob-num js-line-number js-blob-rnum" data-line-number="65"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC65" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L66" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="66"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L66" class="blob-num js-line-number js-blob-rnum" data-line-number="66"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC66" class="blob-code blob-code-inner js-file-line">This script queries LaunchDarkly for feature flags with client SDK on (frontend/backend flags).</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L67" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="67"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L67" class="blob-num js-line-number js-blob-rnum" data-line-number="67"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC67" class="blob-code blob-code-inner js-file-line">Then it searches for the received flags that are not in this codebase in your codebase </td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L68" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="68"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L68" class="blob-num js-line-number js-blob-rnum" data-line-number="68"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC68" class="blob-code blob-code-inner js-file-line">checking them using GIT.</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L69" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="69"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L69" class="blob-num js-line-number js-blob-rnum" data-line-number="69"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC69" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L70" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="70"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L70" class="blob-num js-line-number js-blob-rnum" data-line-number="70"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC70" class="blob-code blob-code-inner js-file-line">Usage:</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L71" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="71"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L71" class="blob-num js-line-number js-blob-rnum" data-line-number="71"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC71" class="blob-code blob-code-inner js-file-line">  Pass &#39;--token&#39; with a valid API token (see https://docs.launchdarkly.com/home/account-security/api-access-tokens) </td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L72" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="72"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L72" class="blob-num js-line-number js-blob-rnum" data-line-number="72"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC72" class="blob-code blob-code-inner js-file-line">  and run as following</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L73" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="73"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L73" class="blob-num js-line-number js-blob-rnum" data-line-number="73"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC73" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L74" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="74"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L74" class="blob-num js-line-number js-blob-rnum" data-line-number="74"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC74" class="blob-code blob-code-inner js-file-line">  $ npm run list-unused-feature-flags-in-code -- --help </td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L75" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="75"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L75" class="blob-num js-line-number js-blob-rnum" data-line-number="75"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC75" class="blob-code blob-code-inner js-file-line">  $ npm run list-unused-feature-flags-in-code -- --token=&lt;token&gt; </td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L76" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="76"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L76" class="blob-num js-line-number js-blob-rnum" data-line-number="76"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC76" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L77" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="77"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L77" class="blob-num js-line-number js-blob-rnum" data-line-number="77"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC77" class="blob-code blob-code-inner js-file-line">  Arguments:</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L78" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="78"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L78" class="blob-num js-line-number js-blob-rnum" data-line-number="78"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC78" class="blob-code blob-code-inner js-file-line">    - &#39;-t|--token&#39;(required): LaunchDarkly API Token. It&#39;s required for LaunchDarkly API communication.</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L79" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="79"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L79" class="blob-num js-line-number js-blob-rnum" data-line-number="79"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC79" class="blob-code blob-code-inner js-file-line">    - &#39;-p|--project&#39;(required): LaunchDarkly project containing flags</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L80" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="80"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L80" class="blob-num js-line-number js-blob-rnum" data-line-number="80"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC80" class="blob-code blob-code-inner js-file-line">    - &#39;-h|--help&#39;(optional): It shows the help command with the steps to run this script</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L81" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="81"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L81" class="blob-num js-line-number js-blob-rnum" data-line-number="81"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC81" class="blob-code blob-code-inner js-file-line">    - &#39;-o|--output&#39;(optional): Path to output file, which will contain a list of all supect flags (defaults to &#39;flags-for-removal.txt&#39;)</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L82" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="82"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L82" class="blob-num js-line-number js-blob-rnum" data-line-number="82"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC82" class="blob-code blob-code-inner js-file-line">    - &#39;-e|--env&#39;(optional): LaunchDarkly enviroment containing flags (defaults to &#39;production&#39;)</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L83" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="83"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L83" class="blob-num js-line-number js-blob-rnum" data-line-number="83"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC83" class="blob-code blob-code-inner js-file-line">    - &#39;-l|--limit&#39;(optional): Limit the number of results from LaunchDarkly (defaults to &#39;5000&#39;)</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L84" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="84"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L84" class="blob-num js-line-number js-blob-rnum" data-line-number="84"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC84" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L85" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="85"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L85" class="blob-num js-line-number js-blob-rnum" data-line-number="85"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC85" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L86" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="86"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L86" class="blob-num js-line-number js-blob-rnum" data-line-number="86"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC86" class="blob-code blob-code-inner js-file-line">EOM</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L87" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="87"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L87" class="blob-num js-line-number js-blob-rnum" data-line-number="87"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC87" class="blob-code blob-code-inner js-file-line">    exit 0</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L88" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="88"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L88" class="blob-num js-line-number js-blob-rnum" data-line-number="88"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC88" class="blob-code blob-code-inner js-file-line">  fi</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L89" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="89"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L89" class="blob-num js-line-number js-blob-rnum" data-line-number="89"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC89" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L90" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="90"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L90" class="blob-num js-line-number js-blob-rnum" data-line-number="90"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC90" class="blob-code blob-code-inner js-file-line">  if [ &quot;$LD_AUTH_TOKEN&quot; == &quot;&quot; ]; then</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L91" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="91"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L91" class="blob-num js-line-number js-blob-rnum" data-line-number="91"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC91" class="blob-code blob-code-inner js-file-line">    echo &quot;LD_AUTH_TOKEN env variable with the API Auth Token is not available.&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L92" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="92"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L92" class="blob-num js-line-number js-blob-rnum" data-line-number="92"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC92" class="blob-code blob-code-inner js-file-line">    echo &quot;For more details, please check https://docs.launchdarkly.com/home/account-security/api-access-tokens&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L93" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="93"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L93" class="blob-num js-line-number js-blob-rnum" data-line-number="93"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC93" class="blob-code blob-code-inner js-file-line">    exit 1</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L94" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="94"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L94" class="blob-num js-line-number js-blob-rnum" data-line-number="94"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC94" class="blob-code blob-code-inner js-file-line">  fi</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L95" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="95"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L95" class="blob-num js-line-number js-blob-rnum" data-line-number="95"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC95" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L96" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="96"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L96" class="blob-num js-line-number js-blob-rnum" data-line-number="96"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC96" class="blob-code blob-code-inner js-file-line">  if [ &quot;$PROJECT&quot; == &quot;&quot; ]; then</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L97" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="97"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L97" class="blob-num js-line-number js-blob-rnum" data-line-number="97"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC97" class="blob-code blob-code-inner js-file-line">    echo &quot;PROJECT env variable should be informed via &#39;-p&#39; or &#39;--project&#39;.&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L98" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="98"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L98" class="blob-num js-line-number js-blob-rnum" data-line-number="98"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC98" class="blob-code blob-code-inner js-file-line">    echo &quot;&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L99" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="99"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L99" class="blob-num js-line-number js-blob-rnum" data-line-number="99"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC99" class="blob-code blob-code-inner js-file-line">    exit 1</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L100" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="100"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L100" class="blob-num js-line-number js-blob-rnum" data-line-number="100"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC100" class="blob-code blob-code-inner js-file-line">  fi</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L101" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="101"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L101" class="blob-num js-line-number js-blob-rnum" data-line-number="101"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC101" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L102" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="102"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L102" class="blob-num js-line-number js-blob-rnum" data-line-number="102"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC102" class="blob-code blob-code-inner js-file-line">  # Check if files exist. In case of yes, removes the previous file</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L103" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="103"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L103" class="blob-num js-line-number js-blob-rnum" data-line-number="103"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC103" class="blob-code blob-code-inner js-file-line">  if [ -f &quot;$OUTPUT_FILE&quot; ]; then</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L104" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="104"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L104" class="blob-num js-line-number js-blob-rnum" data-line-number="104"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC104" class="blob-code blob-code-inner js-file-line">    rm &quot;$OUTPUT_FILE&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L105" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="105"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L105" class="blob-num js-line-number js-blob-rnum" data-line-number="105"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC105" class="blob-code blob-code-inner js-file-line">  fi</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L106" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="106"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L106" class="blob-num js-line-number js-blob-rnum" data-line-number="106"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC106" class="blob-code blob-code-inner js-file-line">}</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L107" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="107"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L107" class="blob-num js-line-number js-blob-rnum" data-line-number="107"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC107" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L108" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="108"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L108" class="blob-num js-line-number js-blob-rnum" data-line-number="108"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC108" class="blob-code blob-code-inner js-file-line">tearDown() {</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L109" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="109"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L109" class="blob-num js-line-number js-blob-rnum" data-line-number="109"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC109" class="blob-code blob-code-inner js-file-line">  if [ -f &quot;$OUTPUT_FILE&quot; ]; then</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L110" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="110"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L110" class="blob-num js-line-number js-blob-rnum" data-line-number="110"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC110" class="blob-code blob-code-inner js-file-line">    rm &quot;$OUTPUT_FILE&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L111" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="111"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L111" class="blob-num js-line-number js-blob-rnum" data-line-number="111"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC111" class="blob-code blob-code-inner js-file-line">  fi</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L112" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="112"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L112" class="blob-num js-line-number js-blob-rnum" data-line-number="112"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC112" class="blob-code blob-code-inner js-file-line">}</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L113" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="113"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L113" class="blob-num js-line-number js-blob-rnum" data-line-number="113"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC113" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L114" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="114"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L114" class="blob-num js-line-number js-blob-rnum" data-line-number="114"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC114" class="blob-code blob-code-inner js-file-line">getAllFeatureFlags() {</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L115" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="115"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L115" class="blob-num js-line-number js-blob-rnum" data-line-number="115"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC115" class="blob-code blob-code-inner js-file-line">  now=$(date +%s000)</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L116" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="116"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L116" class="blob-num js-line-number js-blob-rnum" data-line-number="116"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC116" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L117" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="117"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L117" class="blob-num js-line-number js-blob-rnum" data-line-number="117"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC117" class="blob-code blob-code-inner js-file-line">  curl --request GET \</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L118" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="118"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L118" class="blob-num js-line-number js-blob-rnum" data-line-number="118"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC118" class="blob-code blob-code-inner js-file-line">    --url &quot;https://app.launchdarkly.com/api/v2/flags/$PROJECT?limit=$LIMIT&amp;offset=0&amp;summary=false&amp;env=$ENVIRONMENT&quot; \</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L119" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="119"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L119" class="blob-num js-line-number js-blob-rnum" data-line-number="119"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC119" class="blob-code blob-code-inner js-file-line">    --header &quot;authorization: $LD_AUTH_TOKEN&quot; \</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L120" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="120"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L120" class="blob-num js-line-number js-blob-rnum" data-line-number="120"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC120" class="blob-code blob-code-inner js-file-line">    --header &#39;LD-API-Version: beta&#39; \</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L121" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="121"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L121" class="blob-num js-line-number js-blob-rnum" data-line-number="121"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC121" class="blob-code blob-code-inner js-file-line">    | jq -r &quot;.items[] | select(.creationDate &lt; $now) | .key&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L122" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="122"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L122" class="blob-num js-line-number js-blob-rnum" data-line-number="122"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC122" class="blob-code blob-code-inner js-file-line">}</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L123" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="123"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L123" class="blob-num js-line-number js-blob-rnum" data-line-number="123"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC123" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L124" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="124"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L124" class="blob-num js-line-number js-blob-rnum" data-line-number="124"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC124" class="blob-code blob-code-inner js-file-line">checkForFeatureFlagsInCodebase() {</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L125" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="125"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L125" class="blob-num js-line-number js-blob-rnum" data-line-number="125"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC125" class="blob-code blob-code-inner js-file-line">  while IFS= read -r line; do</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L126" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="126"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L126" class="blob-num js-line-number js-blob-rnum" data-line-number="126"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC126" class="blob-code blob-code-inner js-file-line">    echo &quot;Checking feature flag: &#39;$line&#39;&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L127" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="127"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L127" class="blob-num js-line-number js-blob-rnum" data-line-number="127"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC127" class="blob-code blob-code-inner js-file-line">    grepResult=$(git grep -r &quot;$line&quot; . || true)</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L128" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="128"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L128" class="blob-num js-line-number js-blob-rnum" data-line-number="128"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC128" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L129" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="129"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L129" class="blob-num js-line-number js-blob-rnum" data-line-number="129"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC129" class="blob-code blob-code-inner js-file-line">    if [ -z &quot;$grepResult&quot; ]; then</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L130" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="130"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L130" class="blob-num js-line-number js-blob-rnum" data-line-number="130"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC130" class="blob-code blob-code-inner js-file-line">      echo &quot;    Feature flag is not in current code&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L131" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="131"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L131" class="blob-num js-line-number js-blob-rnum" data-line-number="131"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC131" class="blob-code blob-code-inner js-file-line">      gitlogResult=$(git log -S &quot;$line&quot; --stat --since=&quot;$cutoffTime&quot; --patch)</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L132" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="132"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L132" class="blob-num js-line-number js-blob-rnum" data-line-number="132"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC132" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L133" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="133"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L133" class="blob-num js-line-number js-blob-rnum" data-line-number="133"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC133" class="blob-code blob-code-inner js-file-line">      if [ -z &quot;$gitlogResult&quot; ]; then</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L134" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="134"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L134" class="blob-num js-line-number js-blob-rnum" data-line-number="134"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC134" class="blob-code blob-code-inner js-file-line">        echo &quot;    Feature flag was not modified in code since $cutoffTime&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L135" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="135"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L135" class="blob-num js-line-number js-blob-rnum" data-line-number="135"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC135" class="blob-code blob-code-inner js-file-line">        echo &quot;    Feature flag is a removal candidate: &#39;$line&#39;&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L136" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="136"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L136" class="blob-num js-line-number js-blob-rnum" data-line-number="136"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC136" class="blob-code blob-code-inner js-file-line">        echo &quot;$line&quot; &gt;&gt; &quot;$OUTPUT_FILE&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L137" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="137"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L137" class="blob-num js-line-number js-blob-rnum" data-line-number="137"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC137" class="blob-code blob-code-inner js-file-line">      else</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L138" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="138"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L138" class="blob-num js-line-number js-blob-rnum" data-line-number="138"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC138" class="blob-code blob-code-inner js-file-line">        echo &quot;    Feature flag was recently modified in code, no action&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L139" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="139"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L139" class="blob-num js-line-number js-blob-rnum" data-line-number="139"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC139" class="blob-code blob-code-inner js-file-line">      fi</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L140" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="140"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L140" class="blob-num js-line-number js-blob-rnum" data-line-number="140"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC140" class="blob-code blob-code-inner js-file-line">    else</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L141" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="141"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L141" class="blob-num js-line-number js-blob-rnum" data-line-number="141"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC141" class="blob-code blob-code-inner js-file-line">        echo &quot;    Feature flag is currently in code, no action&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L142" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="142"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L142" class="blob-num js-line-number js-blob-rnum" data-line-number="142"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC142" class="blob-code blob-code-inner js-file-line">    fi</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L143" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="143"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L143" class="blob-num js-line-number js-blob-rnum" data-line-number="143"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC143" class="blob-code blob-code-inner js-file-line">  done &lt;&lt;&lt; &quot;$1&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L144" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="144"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L144" class="blob-num js-line-number js-blob-rnum" data-line-number="144"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC144" class="blob-code blob-code-inner js-file-line">}</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L145" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="145"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L145" class="blob-num js-line-number js-blob-rnum" data-line-number="145"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC145" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L146" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="146"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L146" class="blob-num js-line-number js-blob-rnum" data-line-number="146"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC146" class="blob-code blob-code-inner js-file-line">main() {</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L147" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="147"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L147" class="blob-num js-line-number js-blob-rnum" data-line-number="147"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC147" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L148" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="148"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L148" class="blob-num js-line-number js-blob-rnum" data-line-number="148"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC148" class="blob-code blob-code-inner js-file-line">  setup</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L149" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="149"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L149" class="blob-num js-line-number js-blob-rnum" data-line-number="149"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC149" class="blob-code blob-code-inner js-file-line">  tearDown</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L150" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="150"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L150" class="blob-num js-line-number js-blob-rnum" data-line-number="150"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC150" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L151" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="151"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L151" class="blob-num js-line-number js-blob-rnum" data-line-number="151"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC151" class="blob-code blob-code-inner js-file-line">  # Cutoff time: since yesterday</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L152" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="152"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L152" class="blob-num js-line-number js-blob-rnum" data-line-number="152"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC152" class="blob-code blob-code-inner js-file-line">  cutoffTime=$(date -v-1d +%Y-%m-%d)</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L153" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="153"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L153" class="blob-num js-line-number js-blob-rnum" data-line-number="153"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC153" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L154" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="154"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L154" class="blob-num js-line-number js-blob-rnum" data-line-number="154"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC154" class="blob-code blob-code-inner js-file-line">  echo &quot;Starting search for unused feature flags that might be removed until ($(date))&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L155" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="155"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L155" class="blob-num js-line-number js-blob-rnum" data-line-number="155"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC155" class="blob-code blob-code-inner js-file-line">  echo &quot;&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L156" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="156"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L156" class="blob-num js-line-number js-blob-rnum" data-line-number="156"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC156" class="blob-code blob-code-inner js-file-line">  echo &quot;Getting frontend feature flags from LaunchDarkly&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L157" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="157"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L157" class="blob-num js-line-number js-blob-rnum" data-line-number="157"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC157" class="blob-code blob-code-inner js-file-line">  featureFlags=$(getAllFeatureFlags)</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L158" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="158"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L158" class="blob-num js-line-number js-blob-rnum" data-line-number="158"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC158" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L159" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="159"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L159" class="blob-num js-line-number js-blob-rnum" data-line-number="159"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC159" class="blob-code blob-code-inner js-file-line">  echo &quot;&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L160" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="160"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L160" class="blob-num js-line-number js-blob-rnum" data-line-number="160"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC160" class="blob-code blob-code-inner js-file-line">  echo &quot;Checking Git repository for feature flags&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L161" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="161"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L161" class="blob-num js-line-number js-blob-rnum" data-line-number="161"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC161" class="blob-code blob-code-inner js-file-line">  checkForFeatureFlagsInCodebase &quot;$featureFlags&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L162" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="162"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L162" class="blob-num js-line-number js-blob-rnum" data-line-number="162"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC162" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L163" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="163"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L163" class="blob-num js-line-number js-blob-rnum" data-line-number="163"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC163" class="blob-code blob-code-inner js-file-line">  echo &quot;&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L164" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="164"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L164" class="blob-num js-line-number js-blob-rnum" data-line-number="164"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC164" class="blob-code blob-code-inner js-file-line">  echo &quot;All done!&quot;</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L165" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="165"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L165" class="blob-num js-line-number js-blob-rnum" data-line-number="165"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC165" class="blob-code blob-code-inner js-file-line">}</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L166" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="166"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L166" class="blob-num js-line-number js-blob-rnum" data-line-number="166"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC166" class="blob-code blob-code-inner js-file-line">
 </td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L167" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="167"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L167" class="blob-num js-line-number js-blob-rnum" data-line-number="167"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC167" class="blob-code blob-code-inner js-file-line"># `time` is the default command available on CLI.</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L168" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="168"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L168" class="blob-num js-line-number js-blob-rnum" data-line-number="168"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC168" class="blob-code blob-code-inner js-file-line"># More details in this link https://man7.org/linux/man-pages/man1/time.1.html</td>
         </tr>
         <tr>
-          <td id="file-list-unused-feature-flags-in-code-sh-L169" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="169"></td>
+          <td id="file-list-unused-feature-flags-in-code-sh-L169" class="blob-num js-line-number js-blob-rnum" data-line-number="169"></td>
           <td id="file-list-unused-feature-flags-in-code-sh-LC169" class="blob-code blob-code-inner js-file-line">time main</td>
         </tr>
   </table>
@@ -1661,4 +1679,4 @@ npm init -y</pre></div>
       
       
       
-      }</script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/posts/automating-launchdarkly-feature-flags-cleanup-in-your-codebase/";window.___webpackCompilationHash="2b4b8a4918c1a8928146";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-da6d49d851c9a11b4a8d.js"],"app":["/app-ec08c5936c396cd604f8.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-2495e831ed6b35be3025.js"],"component---src-pages-404-js":["/component---src-pages-404-js-7c43bff036b50c88933c.js"],"component---src-pages-contact-js":["/component---src-pages-contact-js-349aef1b96db5709ace2.js"],"component---src-pages-index-js":["/component---src-pages-index-js-6bf58be272175203d962.js"],"component---src-pages-posts-js":["/component---src-pages-posts-js-33e839dfa65bbd4d3d49.js"],"component---src-pages-talks-js":["/component---src-pages-talks-js-429b07bace5ed972e101.js"],"component---src-pages-workshops-js":["/component---src-pages-workshops-js-c00ba2574e587f149dff.js"],"component---src-templates-post-js":["/component---src-templates-post-js-db5a4a2b37d47f31d3db.js"]};/*]]>*/</script><script src="/polyfill-da6d49d851c9a11b4a8d.js" nomodule=""></script><script src="/app-ec08c5936c396cd604f8.js" async=""></script><script src="/framework-17f555e01a348ec28385.js" async=""></script><script src="/webpack-runtime-7848810fc12a77539dae.js" async=""></script></body></html>
+      }</script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/posts/automating-launchdarkly-feature-flags-cleanup-in-your-codebase/";window.___webpackCompilationHash="74194b75f64519ba0850";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-da6d49d851c9a11b4a8d.js"],"app":["/app-ec08c5936c396cd604f8.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-2495e831ed6b35be3025.js"],"component---src-pages-404-js":["/component---src-pages-404-js-7c43bff036b50c88933c.js"],"component---src-pages-contact-js":["/component---src-pages-contact-js-7fbb9319b011469989b1.js"],"component---src-pages-index-js":["/component---src-pages-index-js-6bf58be272175203d962.js"],"component---src-pages-posts-js":["/component---src-pages-posts-js-33e839dfa65bbd4d3d49.js"],"component---src-pages-talks-js":["/component---src-pages-talks-js-44424aaa33c1d063ccd6.js"],"component---src-pages-workshops-js":["/component---src-pages-workshops-js-c00ba2574e587f149dff.js"],"component---src-templates-post-js":["/component---src-templates-post-js-db5a4a2b37d47f31d3db.js"]};/*]]>*/</script><script src="/polyfill-da6d49d851c9a11b4a8d.js" nomodule=""></script><script src="/app-ec08c5936c396cd604f8.js" async=""></script><script src="/framework-17f555e01a348ec28385.js" async=""></script><script src="/webpack-runtime-2e19ffafa65a5de579f6.js" async=""></script></body></html>
