@@ -51,9 +51,14 @@ const FormButton = styled.button`
   box-shadow: 5px 5px #566ff8;
   border-radius: 0.3px;
   border: 1px solid white;
+  width: 100%;
 
   &:hover {
     background-image: linear-gradient(180deg, #4a60de 0%, #2f43c2 100%);
+  }
+
+  ${screen.md} {
+    width: inherit;
   }
 `;
 
