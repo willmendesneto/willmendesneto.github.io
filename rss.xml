@@ -1,4 +1,46 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Will Mendes Blog RSS Feed]]></title><description><![CDATA[Principal Frontend-Engineer, Principal Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies]]></description><link>https://willmendesneto.com</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 25 Feb 2025 14:05:45 GMT</lastBuildDate><item><title><![CDATA[Optimize Thread Usage in Vitest for CI/CD Environments]]></title><link>https://willmendesneto.com/posts/optimize-thread-usage-in-vitest-for-ci-cd-environments</link><guid isPermaLink="false">https://willmendesneto.com/posts/optimize-thread-usage-in-vitest-for-ci-cd-environments</guid><pubDate>Mon, 24 Feb 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;Introduction&lt;/h3&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Will Mendes Blog RSS Feed]]></title><description><![CDATA[Principal Frontend-Engineer, Principal Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies]]></description><link>https://willmendesneto.com</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 06 Mar 2025 18:12:46 GMT</lastBuildDate><item><title><![CDATA[Optimize Thread Usage in Vitest for CI/CD Environments]]></title><link>https://willmendesneto.com/posts/optimize-thread-usage-in-vitest-for-ci-cd-environments</link><guid isPermaLink="false">https://willmendesneto.com/posts/optimize-thread-usage-in-vitest-for-ci-cd-environments</guid><pubDate>Mon, 24 Feb 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1061px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;https://willmendesneto.com/static/1190d4af8ac6ba7bff9daf2dfff786a5/20320/vitest-optimized.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 42.1875%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAIABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQB/8QAFQEBAQAAAAAAAAAAAAAAAAAAAgT/2gAMAwEAAhADEAAAAaMBRaHP/8QAGRABAAIDAAAAAAAAAAAAAAAAAgABAxIh/9oACAEBAAEFAnzONhKJc//EABgRAQADAQAAAAAAAAAAAAAAAAEAAhEh/9oACAEDAQE/ASpYNidn/8QAFhEBAQEAAAAAAAAAAAAAAAAAARAR/9oACAECAQE/AVxn/8QAGRAAAgMBAAAAAAAAAAAAAAAAAAECERKh/9oACAEBAAY/AnY9T7Zpo//EABkQAQEBAQEBAAAAAAAAAAAAAAERADFhwf/aAAgBAQABPyFXcvMxVaEn0wlFfd//2gAMAwEAAgADAAAAEI/f/8QAFREBAQAAAAAAAAAAAAAAAAAAAQD/2gAIAQMBAT8QVYAi/8QAGBEAAgMAAAAAAAAAAAAAAAAAAAERIUH/2gAIAQIBAT8QdRpLP//EABsQAAIDAAMAAAAAAAAAAAAAAAERACExYXGh/9oACAEBAAE/EOSB0UcqiGRC7rEDdBLIeOf/2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+          &lt;source
+              srcset=&quot;https://willmendesneto.com/static/1190d4af8ac6ba7bff9daf2dfff786a5/fb34c/vitest-optimized.avif 320w,https://willmendesneto.com/static/1190d4af8ac6ba7bff9daf2dfff786a5/646cd/vitest-optimized.avif 768w,https://willmendesneto.com/static/1190d4af8ac6ba7bff9daf2dfff786a5/8b485/vitest-optimized.avif 1024w,https://willmendesneto.com/static/1190d4af8ac6ba7bff9daf2dfff786a5/32611/vitest-optimized.avif 1061w&quot;
+              sizes=&quot;(max-width: 1061px) 100vw, 1061px&quot;
+              type=&quot;image/avif&quot;
+            /&gt;&lt;source
+              srcset=&quot;https://willmendesneto.com/static/1190d4af8ac6ba7bff9daf2dfff786a5/cb523/vitest-optimized.webp 320w,https://willmendesneto.com/static/1190d4af8ac6ba7bff9daf2dfff786a5/cd067/vitest-optimized.webp 768w,https://willmendesneto.com/static/1190d4af8ac6ba7bff9daf2dfff786a5/53334/vitest-optimized.webp 1024w,https://willmendesneto.com/static/1190d4af8ac6ba7bff9daf2dfff786a5/a5786/vitest-optimized.webp 1061w&quot;
+              sizes=&quot;(max-width: 1061px) 100vw, 1061px&quot;
+              type=&quot;image/webp&quot;
+            /&gt;
+          &lt;source
+            srcset=&quot;https://willmendesneto.com/static/1190d4af8ac6ba7bff9daf2dfff786a5/32622/vitest-optimized.jpg 320w,https://willmendesneto.com/static/1190d4af8ac6ba7bff9daf2dfff786a5/ec2bf/vitest-optimized.jpg 768w,https://willmendesneto.com/static/1190d4af8ac6ba7bff9daf2dfff786a5/c3413/vitest-optimized.jpg 1024w,https://willmendesneto.com/static/1190d4af8ac6ba7bff9daf2dfff786a5/20320/vitest-optimized.jpg 1061w&quot;
+            sizes=&quot;(max-width: 1061px) 100vw, 1061px&quot;
+            type=&quot;image/jpeg&quot;
+          /&gt;
+          &lt;img
+            class=&quot;gatsby-resp-image-image&quot;
+            src=&quot;https://willmendesneto.com/static/1190d4af8ac6ba7bff9daf2dfff786a5/20320/vitest-optimized.jpg&quot;
+            alt=&quot;vitest optimized&quot;
+            title=&quot;vitest optimized&quot;
+            loading=&quot;lazy&quot;
+            decoding=&quot;async&quot;
+            style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+          /&gt;
+        &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h3&gt;Introduction&lt;/h3&gt;
 &lt;p&gt;When working with tests in a CI/CD environment, it’s common to face challenges related to performance and efficient resource usage. A recurring issue involves Vitest’s default configuration for the number of threads, which can cause memory problems, especially in virtualized or shared environments like Kubernetes runners. As a result of that, your test suite might be ending up failing intermentently.&lt;/p&gt;
 &lt;p&gt;In this article, we’ll explore a practical solution to this problem using Vitest’s &lt;code class=&quot;language-text&quot;&gt;poolOptions&lt;/code&gt; configuration, ensuring efficient and adaptable test execution regardless of the environment.&lt;/p&gt;
 &lt;hr&gt;
