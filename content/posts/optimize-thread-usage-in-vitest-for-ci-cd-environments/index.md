@@ -11,6 +11,9 @@ author: Wilson Mendes
 tags: ['frontend', 'test', 'open-source', 'vite', 'vitest', 'tooling', 'performance', 'architecture']
 ---
 
+![](./vitest-optimized.jpg)
+
+
 ### Introduction
 
 When working with tests in a CI/CD environment, it’s common to face challenges related to performance and efficient resource usage. A recurring issue involves Vitest’s default configuration for the number of threads, which can cause memory problems, especially in virtualized or shared environments like Kubernetes runners. As a result of that, your test suite might be ending up failing intermentently.
