@@ -1,4 +1,207 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Will Mendes Blog RSS Feed]]></title><description><![CDATA[Principal Frontend-Engineer, Principal Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies]]></description><link>https://willmendesneto.com</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 06 Mar 2025 18:12:46 GMT</lastBuildDate><item><title><![CDATA[Optimize Thread Usage in Vitest for CI/CD Environments]]></title><link>https://willmendesneto.com/posts/optimize-thread-usage-in-vitest-for-ci-cd-environments</link><guid isPermaLink="false">https://willmendesneto.com/posts/optimize-thread-usage-in-vitest-for-ci-cd-environments</guid><pubDate>Mon, 24 Feb 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Will Mendes Blog RSS Feed]]></title><description><![CDATA[Principal Frontend-Engineer, Principal Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies]]></description><link>https://willmendesneto.com</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 03 Apr 2025 01:58:29 GMT</lastBuildDate><item><title><![CDATA[Leveling Up React Hooks with TypeScript: A Wizard's Journey]]></title><link>https://willmendesneto.com/posts/leveling-up-react-hooks-with-typescript-a-wizards-journey</link><guid isPermaLink="false">https://willmendesneto.com/posts/leveling-up-react-hooks-with-typescript-a-wizards-journey</guid><pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;I want to share a real-world example of how embracing TypeScript can significantly improve your React hooks and overall codebase. We&apos;ll be diving into the evolution of &lt;a href=&quot;https://github.com/willmendesneto/react-sweet-wizard&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;react-sweet-wizard&lt;/a&gt;, a package I built to simplify form wizards - eventually called as Form Stepper or Form steps - in React. Think of it as a guided tour through the land of forms, but with less frustration and more type safety!&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For more details about React Sweet Wizard, why it was created, benefits, usage and more, please check the post &lt;a href=&quot;https://willmendesneto.com/posts/introducing-react-sweet-wizard-simplifying-the-form-flow-of-your-react-app&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Introducing React Sweet Wizard: Simplifying the Form Flow of Your React App&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;If you&apos;ve ever wrestled with complex forms or multi-step processes in React, you know the struggle. Managing state and navigation can quickly become a tangled mess. That&apos;s where &lt;a href=&quot;https://github.com/willmendesneto/react-sweet-wizard&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;react-sweet-wizard&lt;/a&gt; comes in. But as the project  and evolved, so did the need for better type safety and code maintainability.&lt;/p&gt;
+&lt;p&gt;Let&apos;s take a close look at the &quot;before&quot; and &quot;after&quot; scenarios in this repository, and walk through the 🪄 TypeScript magic 🪄 that made a world of difference.&lt;/p&gt;
+&lt;h3&gt;Initial Scenario and Type-Challenges implementing Wizard&lt;/h3&gt;
+&lt;p&gt;Here&apos;s a snippet of the original implementation:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// Defining initial state&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// ❌ `steps` prop is not even typed&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; initialState&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; WizardStepperReducerState &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  activeStepIndex&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  steps&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;//...&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// Original Context Creation&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// ❌ Forcing empty object to avoid runtime, even though &lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// the code should use nullable pattern to cover that&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; WizardStepperContext &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;createContext&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;//...&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// Original useWizardContext&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; useWizardContext &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; _P &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;never&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; context &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useContext&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;WizardStepperContext&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// ❌ Runtime error if `context` value returns as `null` - which is a real scenario in some apps, but not here&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// ❌ Instead of check if `context !== null` or `!context` &lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// it uses `Object.keys(context).length === 0` which uses way more resources&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Object&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;keys&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;context&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length &lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;Please make sure you&apos;re wrapping all the steps in a &apos;WizardProvider&apos; component&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// ❌ forcing type using `as`&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; context &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; WizardStepperContextProps&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// ...&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; goTo &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useCallback&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;   
+  &lt;span class=&quot;token comment&quot;&gt;// ❌ At this stage, `stepId` was not even typed 😱&lt;/span&gt;
+  stepId &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;dispatch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; type&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;GOTO_PAGE&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; payload&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; stepId &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;dispatch&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;At first glance, it works. But dig a little deeper, and you&apos;ll find some type-related gremlins lurking.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Generic Context without Specific Types&lt;/strong&gt;: The WizardStepperContext was created without specific type parameters, leading to potential any pitfalls.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Loose Type Definitions&lt;/strong&gt;: The WizardStepperReducerState and Action types lacked precision, making it harder to catch errors early.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Assumptions and Type Casting&lt;/strong&gt;: The useWizardContext hook relied on type casting, which can hide underlying type issues.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Type-Safe Wizard: improving Developer Experience and ergonomics&lt;/h3&gt;
+&lt;p&gt;Now, let&apos;s fast-forward to the improved version:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// ✅ Context now is using nullable pattern&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; WizardStepperContext &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token generic-function&quot;&gt;&lt;span class=&quot;token function&quot;&gt;createContext&lt;/span&gt;&lt;span class=&quot;token generic class-name&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;WizardStepperContextProps&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// Improved useWizardContext&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// ✅ Now the code is using generics and returning a `Readonly` context&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; useWizardContext &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;T&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;DefaultWizardStepProps&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;(): Readonly&amp;lt;WizardStepperContextProps&amp;lt;T&gt;&gt; =&gt; &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; context&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; Readonly&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;WizardStepperContextProps&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useContext&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;WizardStepperContext&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// ✅ Type guard in action 🎉&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// ✅ Perf++ by checking `!context` instead of `Object.keys()`&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;context&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;Please make sure you&apos;re wrapping all the steps in a &apos;WizardProvider&apos; component&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; context&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;;
+
+// Generic type used in State and Actions
+interface WizardStepperReducerState&amp;lt;T&gt; &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  activeStepIndex&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  steps&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+
+type Action&amp;lt;T&gt; =
+  | &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; type&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;NEXT_PAGE&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+  | &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; type&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;PREV_PAGE&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+  | &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; type&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;GOTO_PAGE&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; payload&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; stepId&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+  | &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; type&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;SET_STEP_COUNT&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; payload&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; steps&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;;
+
+// Improved goTo
+const goTo = useCallback(
+  // ✅ typed `stepId`
+  (stepId: number | string) =&gt; &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;dispatch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; type&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;GOTO_PAGE&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; payload&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; stepId &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;,
+  [dispatch]
+);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Ok, so... what changed really? A lot, actually! Here are the key improvements and their benefits:&lt;/p&gt;
+&lt;h4&gt;Generic State and Actions&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// ✅ `steps` is now typed 🎉&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;WizardStepperReducerState&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  activeStepIndex&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  steps&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Action&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; type&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;SET_STEP_COUNT&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; payload&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; steps&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Apply these code changes also improved type safety, reduced runtime errors, and better code predictability. Generics can be heavily used in this scenario, leading to consumers the responsibility to define specific types. Since this will be done on their end already to map this data, is even better to enforce this validation between project and package.&lt;/p&gt;
+&lt;h4&gt;Typed Context&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// ✅ Applying generics and also using nullable pattern &lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; WizardStepperContext &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token generic-function&quot;&gt;&lt;span class=&quot;token function&quot;&gt;createContext&lt;/span&gt;&lt;span class=&quot;token generic class-name&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;WizardStepperContextProps&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Enhanced type checking, preventing accidental misuse of context values. Also, by using nullable pattern the code won&apos;t be checking for &lt;code class=&quot;language-text&quot;&gt;Object.keys()&lt;/code&gt; which is way costly than a simple &lt;code class=&quot;language-text&quot;&gt;!context&lt;/code&gt; runtime check.&lt;/p&gt;
+&lt;h4&gt;Readonly Context&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; useWizardContext &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;T&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;DefaultWizardStepProps&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;(): Readonly&amp;lt;WizardStepperContextProps&amp;lt;T&gt;&gt; =&gt; &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; context&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; Readonly&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;WizardStepperContextProps&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useContext&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;WizardStepperContext&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// Type guard in action 🎉&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;context&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;Please make sure you&apos;re wrapping all the steps in a &apos;WizardProvider&apos; component&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; context&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Readonly&lt;/code&gt; is a builtin typescript type and prevents accidental modification of the context value, ensuring data integrity. In this case, it can also avoid misusage on the consumer&apos;s side.&lt;/p&gt;
+&lt;h4&gt;Improved &lt;code class=&quot;language-text&quot;&gt;goTo&lt;/code&gt; function&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; goTo &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useCallback&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;stepId&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;dispatch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; type&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;GOTO_PAGE&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; payload&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; stepId &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;dispatch&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Increased flexibility and robustness, allowing steps to be identified by either &lt;code class=&quot;language-text&quot;&gt;index&lt;/code&gt; or &lt;code class=&quot;language-text&quot;&gt;ID&lt;/code&gt;, which can be a &lt;code class=&quot;language-text&quot;&gt;number&lt;/code&gt; or even a &lt;code class=&quot;language-text&quot;&gt;string&lt;/code&gt;.&lt;/p&gt;
+&lt;h4&gt;Initial State Generic&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// ✅ Initial state now has `steps` as a generic type, which a game changer&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; initialState &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;
+  &lt;span class=&quot;token constant&quot;&gt;T&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;DefaultWizardStepProps&lt;/span&gt;
+&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; WizardStepperReducerState&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  activeStepIndex&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  steps&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Improved type safety and reduced boilerplate. This is also taking advantage of direct generics usage in this codebase.&lt;/p&gt;
+&lt;h4&gt;Explicit Inline Props Typing&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;Step&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; id&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; children &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; id&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; children&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; ReactNode &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;JSX&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Element &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;JSX&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Element&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;id&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;children&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This one is necessary for bundle size reasons, something to always be concerned when implementing packages, dependencies, etc. By applying this approach for such small component, the bundle is also decreased.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⚠️ Good to mention this should NOT be applied in all scenarios due to maintenability implications. So keep that in mind if you find a scenario you can implement this technique. ⚠️&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Benefits for Consumers and the Codebase&lt;/h3&gt;
+&lt;p&gt;These TypeScript improvements aren&apos;t just show off. They directly benefit consumers of the react-sweet-wizard package and improve the codebase in several ways:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Enhanced Reliability&lt;/strong&gt;: Type safety catches errors early, reducing the likelihood of runtime issues.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Improved Maintainability&lt;/strong&gt;: Clearer type definitions make the code easier to understand and modify.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Better Developer Experience&lt;/strong&gt;: Type hints and autocompletion in IDEs make development smoother and faster.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Increased Code Confidence&lt;/strong&gt;: Knowing that the code is type-safe boosts confidence during development and deployment.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Tips and Tricks: Applying TypeScript Best Practices to React Hooks&lt;/h3&gt;
+&lt;p&gt;Let&apos;s distill the lessons learned during react-sweet-wizard refactoring into actionable tips you can apply to your own React hooks:&lt;/p&gt;
+&lt;h4&gt;Embrace Generics for Reusable Hooks&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; initialState &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;T&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;DefaultWizardStepProps&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;(): WizardStepperReducerState&amp;lt;T&gt; =&gt; (&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  activeStepIndex&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  steps&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;By making &lt;code class=&quot;language-text&quot;&gt;initialState()&lt;/code&gt; generic, the code is also allowing it to work with various step types (T). This eliminates the need for type casting and ensures that the state is always initialized with the correct type. Apply this pattern to any hook that needs to handle different data structures.&lt;/p&gt;
+&lt;h4&gt;Leverage Readonly for Context Integrity&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; useWizardContext &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;T&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;DefaultWizardStepProps&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;(): Readonly&amp;lt;WizardStepperContextProps&amp;lt;T&gt;&gt; =&gt; &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; context&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; Readonly&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;WizardStepperContextProps&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useContext&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;WizardStepperContext&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// Type guard in action 🎉&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;context&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;Please make sure you&apos;re wrapping all the steps in a &apos;WizardProvider&apos; component&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; context&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Returning &lt;code class=&quot;language-text&quot;&gt;Readonly&amp;lt;WizardStepperContextProps&amp;lt;T&gt;&gt;&lt;/code&gt; from &lt;code class=&quot;language-text&quot;&gt;useWizardContext()&lt;/code&gt; prevents consumers from accidentally modifying context values. This is crucial for maintaining state integrity and preventing unexpected side effects.&lt;/p&gt;
+&lt;h4&gt;Explicit types for Action and State&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Action&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;
+  &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; type&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;NEXT_PAGE&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; type&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;PREV_PAGE&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; type&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;GOTO_PAGE&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; payload&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; stepId&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; type&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;SET_STEP_COUNT&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; payload&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; steps&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;WizardStepperReducerState&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  activeStepIndex&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  steps&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Defining explicit types for actions and state in the reducer makes the data flow more predictable. It helps catch type-related errors during development and improves code readability. Always type your reducer&apos;s state and actions as precisely as possible.&lt;/p&gt;
+&lt;h4&gt;Type guard and avoiding runtime errors&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; context&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; Readonly&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;WizardStepperContextProps&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useContext&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;WizardStepperContext&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// Type guard in action 🎉&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;context&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;Please make sure you&apos;re wrapping all the steps in a &apos;WizardProvider&apos; component&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Since the value can be &lt;code class=&quot;language-text&quot;&gt;null&lt;/code&gt;, having a type guard is a mandatory approach to make sure the app will keep running as expected. In this case, the approach defined was to make sure developers/consumers will be aware of the misusage of the package rightaway, throwing a runtime error.&lt;/p&gt;
+&lt;h4&gt;Test Your Types in Your CI Pipeline&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;tsc --noEmit&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Running &lt;code class=&quot;language-text&quot;&gt;tsc --noEmit&lt;/code&gt; in your CI pipeline ensures that your TypeScript code is free of type errors. This is a crucial step in preventing type-related bugs from reaching production. Integrate this command into your build process to catch errors early.&lt;/p&gt;
+&lt;h3&gt;That’s all for now&lt;/h3&gt;
+&lt;p&gt;TypeScript is a powerful tool for improving the reliability and maintainability of your React code. By embracing its features, you can create more robust and scalable applications.&lt;/p&gt;
+&lt;p&gt;In the case of react-sweet-wizard, TypeScript has been a game-changer. It&apos;s made the codebase more predictable, easier to maintain, and safer to use.&lt;/p&gt;
+&lt;p&gt;I hope you enjoyed this reading as much as I enjoyed writing it. Thank you so much for reading until the end and see you soon!&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Cya 👋&lt;/h3&gt;
+                &lt;div style=&quot;margin-top=55px; font-style: italic;&quot;&gt;(This is an article posted to my blog at willmendesneto.com. You can read it online by &lt;a href=&quot;https://willmendesneto.com/posts/leveling-up-react-hooks-with-typescript-a-wizards-journey&quot;&gt;clicking here&lt;/a&gt;.)&lt;/div&gt;
+              </content:encoded></item><item><title><![CDATA[Optimize Thread Usage in Vitest for CI/CD Environments]]></title><link>https://willmendesneto.com/posts/optimize-thread-usage-in-vitest-for-ci-cd-environments</link><guid isPermaLink="false">https://willmendesneto.com/posts/optimize-thread-usage-in-vitest-for-ci-cd-environments</guid><pubDate>Mon, 24 Feb 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1061px; &quot;
     &gt;
@@ -622,7 +825,7 @@
   &lt;div id=&quot;file-setting-up-the-project-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-setting-up-the-project-md-readme&quot; class=&quot;Box-body readme blob p-5 p-xl-6 &quot;
     style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-    aria-label=&quot;file-setting-up-the-project-md&quot;
+    aria-label=&quot;setting-up-the-project.md content, created by willmendesneto on 03:15AM on July 13, 2021.&quot;
   &gt;
     &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-shell&quot; dir=&quot;auto&quot;&gt;&lt;pre&gt;&lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;#&lt;/span&gt; Creating folder jumping on the created folder&lt;/span&gt;
 mkdir multiple-package-versions-in-project &lt;span class=&quot;pl-k&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; \
@@ -659,7 +862,7 @@ npm install --save \
     &lt;div itemprop=&quot;text&quot;
       class=&quot;Box-body p-0 blob-wrapper data type-json  &quot;
       style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-      aria-label=&quot;file-package-json&quot;
+      aria-label=&quot;package.json content, created by willmendesneto on 03:09AM on July 13, 2021.&quot;
     &gt;
 
         
@@ -782,7 +985,7 @@ npm install --save \
     &lt;div itemprop=&quot;text&quot;
       class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;
       style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-      aria-label=&quot;file-index-js&quot;
+      aria-label=&quot;index.js content, created by willmendesneto on 03:11AM on July 13, 2021.&quot;
     &gt;
 
         
@@ -1128,7 +1331,7 @@ npm install --save \
     &lt;div itemprop=&quot;text&quot;
       class=&quot;Box-body p-0 blob-wrapper data type-typescript  &quot;
       style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-      aria-label=&quot;file-do-not-abuse-of-nullish-coalescing-usage-in-ts&quot;
+      aria-label=&quot;do-not-abuse-of-nullish-coalescing-usage-in.ts content, created by willmendesneto on 06:00PM on June 09, 2021.&quot;
     &gt;
 
         
@@ -1463,7 +1666,7 @@ npm install --save \
     &lt;div itemprop=&quot;text&quot;
       class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;
       style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-      aria-label=&quot;file-pino-sanitize-example-js&quot;
+      aria-label=&quot;pino-sanitize-example.js content, created by willmendesneto on 01:57AM on April 29, 2021.&quot;
     &gt;
 
         
@@ -1683,7 +1886,7 @@ npm install --save \
   &lt;div id=&quot;file-running-pino-sanitize-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-running-pino-sanitize-md-readme&quot; class=&quot;Box-body readme blob p-5 p-xl-6 &quot;
     style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-    aria-label=&quot;file-running-pino-sanitize-md&quot;
+    aria-label=&quot;running-pino-sanitize.md content, created by willmendesneto on 02:12AM on April 29, 2021.&quot;
   &gt;
     &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-shell&quot; dir=&quot;auto&quot;&gt;&lt;pre&gt;node example.js &lt;span class=&quot;pl-k&quot;&gt;|&lt;/span&gt; pino-sanitize -u=&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;:{UUID}&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; -h=&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;:{HASH}&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; -q=&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;:{QUERY-STRING}&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; -k=&lt;span class=&quot;pl-s&quot;&gt;&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;err,msg,stack&lt;span class=&quot;pl-pds&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/article&gt;
@@ -1979,7 +2182,7 @@ npm install --save \
   &lt;div id=&quot;file-creating-project-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-creating-project-md-readme&quot; class=&quot;Box-body readme blob p-5 p-xl-6 &quot;
     style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-    aria-label=&quot;file-creating-project-md&quot;
+    aria-label=&quot;creating-project.md content, created by willmendesneto on 08:31PM on April 22, 2021.&quot;
   &gt;
     &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-shell&quot; dir=&quot;auto&quot;&gt;&lt;pre&gt;mkdir my-project
 &lt;span class=&quot;pl-c1&quot;&gt;cd&lt;/span&gt; my-project
@@ -2008,7 +2211,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
   &lt;div id=&quot;file-installing-launchdarkly-node-server-sdk-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-installing-launchdarkly-node-server-sdk-md-readme&quot; class=&quot;Box-body readme blob p-5 p-xl-6 &quot;
     style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-    aria-label=&quot;file-installing-launchdarkly-node-server-sdk-md&quot;
+    aria-label=&quot;installing-launchdarkly-node-server-sdk.md content, created by willmendesneto on 03:34AM on April 27, 2021.&quot;
   &gt;
     &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-shell&quot; dir=&quot;auto&quot;&gt;&lt;pre&gt;npm install launchdarkly-node-server-sdk --save&lt;/pre&gt;&lt;/div&gt;
 &lt;/article&gt;
@@ -2037,7 +2240,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
     &lt;div itemprop=&quot;text&quot;
       class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;
       style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-      aria-label=&quot;file-index-js&quot;
+      aria-label=&quot;index.js content, created by willmendesneto on 03:42AM on April 27, 2021.&quot;
     &gt;
 
         
@@ -2315,7 +2518,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
     &lt;div itemprop=&quot;text&quot;
       class=&quot;Box-body p-0 blob-wrapper data type-json  &quot;
       style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-      aria-label=&quot;file-package-json&quot;
+      aria-label=&quot;package.json content, created by willmendesneto on 03:49AM on April 27, 2021.&quot;
     &gt;
 
         
@@ -2460,7 +2663,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
     &lt;div itemprop=&quot;text&quot;
       class=&quot;Box-body p-0 blob-wrapper data type-shell  &quot;
       style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-      aria-label=&quot;file-list-unused-feature-flags-in-code-sh&quot;
+      aria-label=&quot;list-unused-feature-flags-in-code.sh content, created by willmendesneto on 02:01AM on April 26, 2021.&quot;
     &gt;
 
         
@@ -3342,7 +3545,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
   &lt;div id=&quot;file-creating-project-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-creating-project-md-readme&quot; class=&quot;Box-body readme blob p-5 p-xl-6 &quot;
     style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-    aria-label=&quot;file-creating-project-md&quot;
+    aria-label=&quot;creating-project.md content, created by willmendesneto on 08:31PM on April 22, 2021.&quot;
   &gt;
     &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-shell&quot; dir=&quot;auto&quot;&gt;&lt;pre&gt;mkdir my-project
 &lt;span class=&quot;pl-c1&quot;&gt;cd&lt;/span&gt; my-project
@@ -3371,7 +3574,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
   &lt;div id=&quot;file-installing-dependency-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-installing-dependency-md-readme&quot; class=&quot;Box-body readme blob p-5 p-xl-6 &quot;
     style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-    aria-label=&quot;file-installing-dependency-md&quot;
+    aria-label=&quot;installing-dependency.md content, created by willmendesneto on 08:37PM on April 22, 2021.&quot;
   &gt;
     &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-shell&quot; dir=&quot;auto&quot;&gt;&lt;pre&gt;npm install perf-marks --save-dev&lt;/pre&gt;&lt;/div&gt;
 &lt;/article&gt;
@@ -3400,7 +3603,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
     &lt;div itemprop=&quot;text&quot;
       class=&quot;Box-body p-0 blob-wrapper data type-json  &quot;
       style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-      aria-label=&quot;file-package-json-with-new-dependency-json&quot;
+      aria-label=&quot;package-json-with-new-dependency.json content, created by willmendesneto on 08:39PM on April 22, 2021.&quot;
     &gt;
 
         
@@ -3484,7 +3687,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
   &lt;div id=&quot;file-unused-dependency-depcheck-output-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-unused-dependency-depcheck-output-md-readme&quot; class=&quot;Box-body readme blob p-5 p-xl-6 &quot;
     style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-    aria-label=&quot;file-unused-dependency-depcheck-output-md&quot;
+    aria-label=&quot;unused-dependency-depcheck-output.md content, created by willmendesneto on 08:43PM on April 22, 2021.&quot;
   &gt;
     &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-shell&quot; dir=&quot;auto&quot;&gt;&lt;pre&gt;Unused dependencies
 &lt;span class=&quot;pl-k&quot;&gt;*&lt;/span&gt; perf-marks&lt;/pre&gt;&lt;/div&gt;
@@ -3517,7 +3720,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
     &lt;div itemprop=&quot;text&quot;
       class=&quot;Box-body p-0 blob-wrapper data type-text  &quot;
       style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-      aria-label=&quot;file-gistfile1-txt&quot;
+      aria-label=&quot;gistfile1.txt content, created by willmendesneto on 08:46PM on April 22, 2021.&quot;
     &gt;
 
         
@@ -3697,7 +3900,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
   &lt;div id=&quot;file-common-editor-structure-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-common-editor-structure-md-readme&quot; class=&quot;Box-body readme blob p-5 p-xl-6 &quot;
     style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-    aria-label=&quot;file-common-editor-structure-md&quot;
+    aria-label=&quot;common-editor-structure.md content, created by willmendesneto on 03:07AM on April 19, 2021.&quot;
   &gt;
     &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;pre&gt;&lt;code&gt;...
 editor/
@@ -3735,7 +3938,7 @@ editor/
     &lt;div itemprop=&quot;text&quot;
       class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;
       style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-      aria-label=&quot;file-editor-js&quot;
+      aria-label=&quot;editor.js content, created by willmendesneto on 02:58AM on April 19, 2021.&quot;
     &gt;
 
         
@@ -4000,7 +4203,7 @@ editor/
     &lt;div itemprop=&quot;text&quot;
       class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;
       style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-      aria-label=&quot;file-minimal-js&quot;
+      aria-label=&quot;minimal.js content, created by willmendesneto on 02:51AM on April 19, 2021.&quot;
     &gt;
 
         
@@ -4216,7 +4419,7 @@ editor/
     &lt;div itemprop=&quot;text&quot;
       class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;
       style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-      aria-label=&quot;file-icons-js&quot;
+      aria-label=&quot;icons.js content, created by willmendesneto on 03:43AM on April 19, 2021.&quot;
     &gt;
 
         
@@ -4364,7 +4567,7 @@ editor/
     &lt;div itemprop=&quot;text&quot;
       class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;
       style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-      aria-label=&quot;file-app-js&quot;
+      aria-label=&quot;App.js content, created by willmendesneto on 03:41AM on April 19, 2021.&quot;
     &gt;
 
         
@@ -4943,7 +5146,7 @@ editor/
     &lt;div itemprop=&quot;text&quot;
       class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;
       style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-      aria-label=&quot;file-editor-with-setup-for-actions-js&quot;
+      aria-label=&quot;editor-with-setup-for-actions.js content, created by willmendesneto on 03:26AM on April 19, 2021.&quot;
     &gt;
 
         
@@ -5343,7 +5546,7 @@ editor/
   &lt;div id=&quot;file-first-app-structure-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-first-app-structure-md-readme&quot; class=&quot;Box-body readme blob p-5 p-xl-6 &quot;
     style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-    aria-label=&quot;file-first-app-structure-md&quot;
+    aria-label=&quot;first-app-structure.md content, created by willmendesneto on 09:15PM on April 09, 2021.&quot;
   &gt;
     &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;pre&gt;&lt;code&gt;node_modules/
   @myapp/
@@ -5381,7 +5584,7 @@ editor/
   &lt;div id=&quot;file-exposing-esm-file-package-ison-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-exposing-esm-file-package-ison-md-readme&quot; class=&quot;Box-body readme blob p-5 p-xl-6 &quot;
     style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-    aria-label=&quot;file-exposing-esm-file-package-ison-md&quot;
+    aria-label=&quot;exposing-esm-file-package-ison.md content, created by willmendesneto on 09:16PM on April 09, 2021.&quot;
   &gt;
     &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-json&quot; dir=&quot;auto&quot;&gt;&lt;pre&gt;{
   &lt;span class=&quot;pl-ii&quot;&gt;...&lt;/span&gt;
@@ -5418,7 +5621,7 @@ editor/
   &lt;div id=&quot;file-build-structure-with-cjs-and-esm-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-build-structure-with-cjs-and-esm-md-readme&quot; class=&quot;Box-body readme blob p-5 p-xl-6 &quot;
     style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-    aria-label=&quot;file-build-structure-with-cjs-and-esm-md&quot;
+    aria-label=&quot;build-structure-with-cjs-and-esm.md content, created by willmendesneto on 09:18PM on April 09, 2021.&quot;
   &gt;
     &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;pre&gt;&lt;code&gt;@myapp/
   buttons/
@@ -5503,7 +5706,7 @@ editor/
   &lt;div id=&quot;file-breaking-changes-because-the-package-structure-changed-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-breaking-changes-because-the-package-structure-changed-md-readme&quot; class=&quot;Box-body readme blob p-5 p-xl-6 &quot;
     style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-    aria-label=&quot;file-breaking-changes-because-the-package-structure-changed-md&quot;
+    aria-label=&quot;breaking-changes-because-the-package-structure-changed.md content, created by willmendesneto on 09:19PM on April 09, 2021.&quot;
   &gt;
     &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;pre&gt;&lt;code&gt;@myapp/
   buttons/
@@ -5639,7 +5842,7 @@ editor/
     &lt;div itemprop=&quot;text&quot;
       class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;
       style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-      aria-label=&quot;file-utils-entrypoint-example-js&quot;
+      aria-label=&quot;utils-entrypoint-example.js content, created by willmendesneto on 09:19PM on April 09, 2021.&quot;
     &gt;
 
         
@@ -5718,7 +5921,7 @@ editor/
     &lt;div itemprop=&quot;text&quot;
       class=&quot;Box-body p-0 blob-wrapper data type-json  &quot;
       style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-      aria-label=&quot;file-package-json&quot;
+      aria-label=&quot;package.json content, created by willmendesneto on 09:20PM on April 09, 2021.&quot;
     &gt;
 
         
@@ -5806,7 +6009,7 @@ editor/
   &lt;div id=&quot;file-final-structure-with-entry-points-md&quot; class=&quot;file my-2&quot;&gt;
       &lt;div id=&quot;file-final-structure-with-entry-points-md-readme&quot; class=&quot;Box-body readme blob p-5 p-xl-6 &quot;
     style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-    aria-label=&quot;file-final-structure-with-entry-points-md&quot;
+    aria-label=&quot;final-structure-with-entry-points.md content, created by willmendesneto on 09:21PM on April 09, 2021.&quot;
   &gt;
     &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;pre&gt;&lt;code&gt;@myapp/
   buttons/
@@ -5972,7 +6175,7 @@ I encourage you to see all of these steps in action by using [perf-marks entry-p
     &lt;div itemprop=&quot;text&quot;
       class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;
       style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-      aria-label=&quot;file-performance-observer-js&quot;
+      aria-label=&quot;performance-observer.js content, created by willmendesneto on 01:45AM on March 29, 2021.&quot;
     &gt;
 
         
@@ -6252,7 +6455,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
     &lt;div itemprop=&quot;text&quot;
       class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;
       style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-      aria-label=&quot;file-perf-node-js&quot;
+      aria-label=&quot;perf-node.js content, created by willmendesneto on 02:35AM on March 29, 2021.&quot;
     &gt;
 
         
@@ -6419,7 +6622,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
     &lt;div itemprop=&quot;text&quot;
       class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;
       style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-      aria-label=&quot;file-using-perf-marks-js&quot;
+      aria-label=&quot;using-perf-marks.js content, created by willmendesneto on 02:51AM on March 29, 2021.&quot;
     &gt;
 
         
@@ -6549,7 +6752,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
     &lt;div itemprop=&quot;text&quot;
       class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;
       style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-      aria-label=&quot;file-perf-marks-js&quot;
+      aria-label=&quot;perf-marks.js content, created by willmendesneto on 03:03AM on March 29, 2021.&quot;
     &gt;
 
         
@@ -6727,7 +6930,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
     &lt;div itemprop=&quot;text&quot;
       class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;
       style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-      aria-label=&quot;file-css-in-js-breakpoints-js&quot;
+      aria-label=&quot;css-in-js-breakpoints.js content, created by willmendesneto on 05:45AM on March 20, 2021.&quot;
     &gt;
 
         
@@ -6992,7 +7195,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
     &lt;div itemprop=&quot;text&quot;
       class=&quot;Box-body p-0 blob-wrapper data type-css  &quot;
       style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-      aria-label=&quot;file-a11y-dev-mode-css&quot;
+      aria-label=&quot;a11y-dev-mode.css content, created by willmendesneto on 09:36AM on February 02, 2020.&quot;
     &gt;
 
         
@@ -7398,7 +7601,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
     &lt;div itemprop=&quot;text&quot;
       class=&quot;Box-body p-0 blob-wrapper data type-css  &quot;
       style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-      aria-label=&quot;file-dark-mode-via-css-media-query-css&quot;
+      aria-label=&quot;dark-mode-via-css-media-query.css content, created by willmendesneto on 06:22PM on July 05, 2020.&quot;
     &gt;
 
         
@@ -7528,7 +7731,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
     &lt;div itemprop=&quot;text&quot;
       class=&quot;Box-body p-0 blob-wrapper data type-html  &quot;
       style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-      aria-label=&quot;file-dark-mode-switch-toggle-html&quot;
+      aria-label=&quot;dark-mode-switch-toggle.html content, created by willmendesneto on 07:14PM on July 05, 2020.&quot;
     &gt;
 
         
@@ -7614,7 +7817,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
     &lt;div itemprop=&quot;text&quot;
       class=&quot;Box-body p-0 blob-wrapper data type-css  &quot;
       style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-      aria-label=&quot;file-dark-mode-via-css-media-query-and-classes-via-javascript-css&quot;
+      aria-label=&quot;dark-mode-via-css-media-query-and-classes-via-javascript.css content, created by willmendesneto on 06:54PM on July 05, 2020.&quot;
     &gt;
 
         
@@ -8035,7 +8238,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
     &lt;div itemprop=&quot;text&quot;
       class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;
       style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-      aria-label=&quot;file-dark-mode-via-css-media-query-and-classes-via-javascript-js&quot;
+      aria-label=&quot;dark-mode-via-css-media-query-and-classes-via-javascript.js content, created by willmendesneto on 07:32PM on July 05, 2020.&quot;
     &gt;
 
         
@@ -8277,7 +8480,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
     &lt;div itemprop=&quot;text&quot;
       class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;
       style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-      aria-label=&quot;file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js&quot;
+      aria-label=&quot;dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript.js content, created by willmendesneto on 08:14PM on July 05, 2020.&quot;
     &gt;
 
         
@@ -8525,7 +8728,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
     &lt;div itemprop=&quot;text&quot;
       class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;
       style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-      aria-label=&quot;file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js&quot;
+      aria-label=&quot;dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript.js content, created by willmendesneto on 08:27PM on July 05, 2020.&quot;
     &gt;
 
         
@@ -8942,7 +9145,7 @@ I hope you enjoyed this reading as much as I enjoyed writing it. Thank you so mu
       &lt;div class=&quot;gist-data&quot;&gt;
         &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
   &lt;div id=&quot;file-what-forces-layout-md&quot; class=&quot;file my-2&quot;&gt;
-      &lt;div id=&quot;file-what-forces-layout-md-readme&quot; class=&quot;Box-body readme blob p-5 p-xl-6 &quot; style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;file-what-forces-layout-md&quot;&gt;
+      &lt;div id=&quot;file-what-forces-layout-md-readme&quot; class=&quot;Box-body readme blob p-5 p-xl-6 &quot; style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot; aria-label=&quot;what-forces-layout.md content, created by paulirish on 06:22AM on September 18, 2015.&quot;&gt;
     &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;markdown-heading&quot; dir=&quot;auto&quot;&gt;&lt;h1 class=&quot;heading-element&quot; dir=&quot;auto&quot;&gt;What forces layout / reflow&lt;/h1&gt;&lt;a id=&quot;user-content-what-forces-layout--reflow&quot; class=&quot;anchor&quot; aria-label=&quot;Permalink: What forces layout / reflow&quot; href=&quot;#what-forces-layout--reflow&quot;&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;p dir=&quot;auto&quot;&gt;All of the below properties or methods, when requested/called in JavaScript, will trigger the browser to synchronously calculate the style and layout*. This is also called reflow or &lt;a href=&quot;http://www.kellegous.com/j/2013/01/26/layout-performance/&quot; rel=&quot;nofollow&quot;&gt;layout thrashing&lt;/a&gt;, and is common performance bottleneck.&lt;/p&gt;
 &lt;p dir=&quot;auto&quot;&gt;Generally, all APIs that synchronously provide layout metrics will trigger forced reflow / layout. Read on for additional cases and details.&lt;/p&gt;
@@ -9120,7 +9323,7 @@ This list in incomplete:&lt;/p&gt;
     &lt;div itemprop=&quot;text&quot;
       class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;
       style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-      aria-label=&quot;file-fetch-some-data-js&quot;
+      aria-label=&quot;fetch-some-data.js content, created by willmendesneto on 10:32AM on September 04, 2019.&quot;
     &gt;
 
         
@@ -9423,7 +9626,7 @@ _The 6.0.0 release of Angular is here! This is a major release focused less on t
     &lt;div itemprop=&quot;text&quot;
       class=&quot;Box-body p-0 blob-wrapper data type-shell  &quot;
       style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-      aria-label=&quot;file-ng-publish-sh&quot;
+      aria-label=&quot;ng-publish.sh content, created by willmendesneto on 01:17PM on August 15, 2018.&quot;
     &gt;
 
         
@@ -9562,7 +9765,7 @@ _The 6.0.0 release of Angular is here! This is a major release focused less on t
     &lt;div itemprop=&quot;text&quot;
       class=&quot;Box-body p-0 blob-wrapper data type-yaml  &quot;
       style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-      aria-label=&quot;file-config-yml&quot;
+      aria-label=&quot;config.yml content, created by willmendesneto on 11:42AM on April 09, 2018.&quot;
     &gt;
 
         
