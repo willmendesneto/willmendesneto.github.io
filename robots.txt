@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://willmendesneto.com/sitemap/sitemap-index.xml
-Host: https://willmendesneto.com
