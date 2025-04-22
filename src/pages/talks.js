@@ -10,6 +10,9 @@ const TalksPage = ({ location }) => (
     <>
       <SEO title="Talks" />
       <Title>TALKS</Title>
+      <Link href="https://docs.google.com/presentation/d/1ikvHjY0QBVKraAPVSTaBVoGe86NNRuS4aMiXML1Xd_4/edit?usp=sharing">
+        AI-Powered Angular: Building Smart Angular Apps with Gemini AI & OpenAI
+      </Link>
       <Link href="https://slides.com/willmendesneto/building-large-monorepo-apps-with-nx">
         Building Scalable Monorepos with NX
       </Link>

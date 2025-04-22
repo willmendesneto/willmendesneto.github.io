@@ -9,6 +9,7 @@
     "url": "https://willmendesneto.com"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.17.1",
     "babel-plugin-styled-components": "^1.13.3",
     "gatsby": "^4.25.7",
     "gatsby-alias-imports": "^1.0.6",
