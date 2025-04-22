@@ -88,6 +88,7 @@ module.exports = {
       },
     },
     'gatsby-transformer-sharp',
+    'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-manifest',
@@ -122,7 +123,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-sitemap',
-    'gatsby-plugin-robots-txt',
     'gatsby-plugin-offline',
     'gatsby-plugin-catch-links',
     {
@@ -171,7 +171,7 @@ module.exports = {
                 allMarkdownRemark(
                   limit: 1000,
                   filter: { frontmatter: { status: { eq: "active" }, category: { eq: "post" } } }
-                  sort: { order: DESC, fields: [frontmatter___date] }
+                  sort: {frontmatter: {date: DESC}}
                 ) {
                   edges {
                     node {

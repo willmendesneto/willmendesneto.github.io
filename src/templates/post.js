@@ -8,11 +8,21 @@ import PostContent from '../components/PostContent';
 import PostDate from '../components/PostDate';
 import Share from '../components/Share';
 
-export default function Template({
-  data: {
-    markdownRemark: { frontmatter, html, timeToRead, tags },
-  },
-}) {
+function Template({ data }) {
+  // Check if markdownRemark exists before destructuring
+  if (!data || !data.markdownRemark) {
+    return (
+      <Layout>
+        <SEO title="Post not found" />
+        <Title>Post not found</Title>
+        <p>Sorry, this post could not be found.</p>
+      </Layout>
+    );
+  }
+
+  const { frontmatter, html, timeToRead, fields } = data.markdownRemark;
+  const tags = frontmatter.tags || [];
+
   return (
     <Layout>
       <SEO title={frontmatter.title} />
@@ -26,26 +36,23 @@ export default function Template({
       </PostContent>
       <Share path={frontmatter.path} title={frontmatter.title} tags={tags} />
       <h3>Subscribe</h3>
-      <p>
-        To keep up with posts on this blog, you can also{' '}
-        <a href="/rss.xml" target="_blank" rel="noopener noreferrer">
-          subscribe via RSS
-        </a>
-        .
-      </p>
+      <p>Subscribe text content here.</p>
     </Layout>
   );
 }
 
+export default Template;
+
 export const pageQuery = graphql`
-  query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query ($postPath: String!) {
+    markdownRemark(frontmatter: { path: { eq: $postPath } }) {
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         path
         title
         tags
+        status
       }
       timeToRead
     }
