@@ -64,11 +64,6 @@ const Footer = () => (
         </a>
       </li>
       <li>
-        <a href="https://twitter.com/willmendesneto" target="_blank" rel="noopener noreferrer">
-          Twitter
-        </a>
-      </li>
-      <li>
         <a href="https://www.linkedin.com/in/willmendesneto" target="_blank" rel="noopener noreferrer">
           LinkedIn
         </a>

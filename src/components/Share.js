@@ -83,7 +83,6 @@ const Share = ({ title, tags, path }) => {
         site {
           siteMetadata {
             siteUrl
-            author
           }
         }
       }
@@ -99,7 +98,7 @@ const Share = ({ title, tags, path }) => {
         <FacebookShareButton url={url}>Facebook</FacebookShareButton>
       </StyledFacebookButton>
       <StyledTwitterButton>
-        <TwitterShareButton url={url} title={title} via={site.siteMetadata.author.split('@').join('')} hashtags={tags}>
+        <TwitterShareButton url={url} title={title} hashtags={tags}>
           Twitter
         </TwitterShareButton>
       </StyledTwitterButton>
