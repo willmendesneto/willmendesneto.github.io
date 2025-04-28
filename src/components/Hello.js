@@ -2,7 +2,7 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import profile from '../images/profile.jpg';
+import profile from '../images/profile.png';
 import { screen } from '../styles/screen';
 
 const Image = styled.img`

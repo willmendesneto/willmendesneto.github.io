@@ -97,7 +97,7 @@ module.exports = {
         short_name: 'willmendesneto.com',
         start_url: '/',
         display: 'minimal-ui',
-        icon: 'src/images/profile.jpg', // This path is relative to the root of the site.
+        icon: 'src/images/profile.png', // This path is relative to the root of the site.
       },
     },
     {
