@@ -27,7 +27,7 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-7f251962242639f25952.js"
+    "url": "webpack-runtime-394c9db1acd190094979.js"
   },
   {
     "url": "styles.6f085bda7eef4125a3e2.css"
@@ -36,24 +36,24 @@ self.__precacheManifest = [
     "url": "framework-0a5e54c64463689c5867.js"
   },
   {
-    "url": "app-3172c1f1e26e0aa6fbab.js"
+    "url": "app-eba9decb0dd2c9ebbd4b.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "158ab62597f7c0ada1ca9581517b05cc"
+    "revision": "43e59c56a06739b75ecaa7e4e32d3e62"
   },
   {
-    "url": "static/webfonts/s/poppins/v22/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2"
+    "url": "static/webfonts/s/poppins/v23/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2"
   },
   {
-    "url": "static/webfonts/s/poppins/v22/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2"
+    "url": "static/webfonts/s/poppins/v23/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2"
   },
   {
-    "url": "static/webfonts/s/poppins/v22/pxiByp8kv8JHgFVrLBT5Z1xlFQ.woff2"
+    "url": "static/webfonts/s/poppins/v23/pxiByp8kv8JHgFVrLBT5Z1xlFQ.woff2"
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "9285ceff24a55cd65007981e68df99cf"
+    "revision": "3ef2b5524f3d7e2d6f229a8aac8c83b0"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
@@ -163,7 +163,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-3172c1f1e26e0aa6fbab.js`))) {
+  if (!resources || !(await caches.match(`/app-eba9decb0dd2c9ebbd4b.js`))) {
     return await fetch(event.request)
   }
 
