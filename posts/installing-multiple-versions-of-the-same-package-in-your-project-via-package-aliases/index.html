@@ -142,267 +142,45 @@ data-styled.g21[id="Share__StyledWhatsAppButton-sc-1rx8md7-4"]{content:"kCYnPa,"
 <span class="token comment"># Or if you want to point on a specific version</span>
 <span class="token function">npm</span> <span class="token function">install</span> <span class="token operator">&lt;</span>package-name-alias<span class="token operator">></span>@npm:<span class="token operator">&lt;</span>package-name<span class="token operator">></span>@<span class="token operator">&lt;</span>package-version<span class="token operator">></span></code></pre></div>
 <p>In your example, we'll call <code class="language-text">feature-toggle-service</code> when using the old version of the package and <code class="language-text">feature-toggle-service-next</code> when using the latest version. At the end, this will be the commands you have to run to get the setup done in your local environment.</p>
-<p><div id="gist110641063" class="gist">
-    <div class="gist-file" translate="no" data-color-mode="light" data-light-theme="light">
-      <div class="gist-data">
-        <div class="js-gist-file-update-container js-task-list-container">
-  <div id="file-setting-up-the-project-md" class="file my-2">
-      <div id="file-setting-up-the-project-md-readme" class="Box-body readme blob p-5 p-xl-6 "
-    style="overflow: auto" tabindex="0" role="region"
-    aria-label="setting-up-the-project.md content, created by willmendesneto on 03:15AM on July 13, 2021."
-  >
-    <article class="markdown-body entry-content container-lg" itemprop="text"><div class="highlight highlight-source-shell" dir="auto"><pre><span class="pl-c"><span class="pl-c">#</span> Creating folder jumping on the created folder</span>
-mkdir multiple-package-versions-in-project <span class="pl-k">&amp;&amp;</span> \
-<span class="pl-c1">cd</span> multiple-package-versions-in-project \
-<span class="pl-c"><span class="pl-c">#</span> Starting a NPM project</span>
-npm init -y <span class="pl-k">&amp;&amp;</span> \
-<span class="pl-c"><span class="pl-c">#</span> Installing old &amp; new versions of `feature-toggle-service` package</span>
-npm install --save \
-  feature-toggle-service@npm:feature-toggle-service@4.0.0 \
-  feature-toggle-service-next@npm:feature-toggle-service@6.0.0</pre></div>
-</article>
-  </div>
-
-  </div>
-</div>
-
-      </div>
-      <div class="gist-meta">
-        <a href="https://gist.github.com/willmendesneto/fda99dd27859571649e74d2cb2e02a54/raw/38b315486124d5196e774fd68c01bb7cac0bbb00/setting-up-the-project.md" style="float:right" class="Link--inTextBlock">view raw</a>
-        <a href="https://gist.github.com/willmendesneto/fda99dd27859571649e74d2cb2e02a54#file-setting-up-the-project-md" class="Link--inTextBlock">
-          setting-up-the-project.md
-        </a>
-        hosted with &#10084; by <a class="Link--inTextBlock" href="https://github.com">GitHub</a>
-      </div>
-    </div>
-</div></p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token comment"># Creating folder jumping on the created folder</span>
+<span class="token function">mkdir</span> multiple-package-versions-in-project <span class="token operator">&amp;&amp;</span> <span class="token punctuation">\</span>
+<span class="token builtin class-name">cd</span> multiple-package-versions-in-project <span class="token punctuation">\</span>
+<span class="token comment"># Starting a NPM project</span>
+<span class="token function">npm</span> init <span class="token parameter variable">-y</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">\</span>
+<span class="token comment"># Installing old &amp; new versions of `feature-toggle-service` package</span>
+<span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">--save</span> <span class="token punctuation">\</span>
+  feature-toggle-service@npm:feature-toggle-service@4.0.0 <span class="token punctuation">\</span>
+  feature-toggle-service-next@npm:feature-toggle-service@6.0.0</code></pre></div>
 <p>As you can see on the code below, your <code class="language-text">package.json</code> file now is pointing to different versions of the same package, having that available calling their respective aliases by calling via <code class="language-text">import</code> or <code class="language-text">require</code>.</p>
-<p><div id="gist110641009" class="gist">
-    <div class="gist-file" translate="no" data-color-mode="light" data-light-theme="light">
-      <div class="gist-data">
-        <div class="js-gist-file-update-container js-task-list-container">
-  <div id="file-package-json" class="file my-2">
-    
-    <div itemprop="text"
-      class="Box-body p-0 blob-wrapper data type-json  "
-      style="overflow: auto" tabindex="0" role="region"
-      aria-label="package.json content, created by willmendesneto on 03:09AM on July 13, 2021."
-    >
-
-        
-<div class="js-check-hidden-unicode js-blob-code-container blob-code-content">
-
-  <template class="js-file-alert-template">
-  <div data-view-component="true" class="flash flash-warn flash-full d-flex flex-items-center">
-  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert">
-    <path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
-</svg>
-    <span>
-      This file contains hidden or bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
-      <a class="Link--inTextBlock" href="https://github.co/hiddenchars" target="_blank">Learn more about bidirectional Unicode characters</a>
-    </span>
-
-
-  <div data-view-component="true" class="flash-action">        <a href="{{ revealButtonHref }}" data-view-component="true" class="btn-sm btn">    Show hidden characters
-</a>
-</div>
-</div></template>
-<template class="js-line-alert-template">
-  <span aria-label="This line has hidden Unicode characters" data-view-component="true" class="line-alert tooltipped tooltipped-e">
-    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert">
-    <path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
-</svg>
-</span></template>
-
-  <table data-hpc class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip data-tagsearch-path="package.json">
-        <tr>
-          <td id="file-package-json-L1" class="blob-num js-line-number js-blob-rnum" data-line-number="1"></td>
-          <td id="file-package-json-LC1" class="blob-code blob-code-inner js-file-line">{</td>
-        </tr>
-        <tr>
-          <td id="file-package-json-L2" class="blob-num js-line-number js-blob-rnum" data-line-number="2"></td>
-          <td id="file-package-json-LC2" class="blob-code blob-code-inner js-file-line">  &quot;name&quot;: &quot;multiple-versions-of-package-in-project&quot;,</td>
-        </tr>
-        <tr>
-          <td id="file-package-json-L3" class="blob-num js-line-number js-blob-rnum" data-line-number="3"></td>
-          <td id="file-package-json-LC3" class="blob-code blob-code-inner js-file-line">  &quot;version&quot;: &quot;1.0.0&quot;,</td>
-        </tr>
-        <tr>
-          <td id="file-package-json-L4" class="blob-num js-line-number js-blob-rnum" data-line-number="4"></td>
-          <td id="file-package-json-LC4" class="blob-code blob-code-inner js-file-line">  &quot;description&quot;: &quot;Using multiple versions of the same package in a project&quot;,</td>
-        </tr>
-        <tr>
-          <td id="file-package-json-L5" class="blob-num js-line-number js-blob-rnum" data-line-number="5"></td>
-          <td id="file-package-json-LC5" class="blob-code blob-code-inner js-file-line">  &quot;main&quot;: &quot;index.js&quot;,</td>
-        </tr>
-        <tr>
-          <td id="file-package-json-L6" class="blob-num js-line-number js-blob-rnum" data-line-number="6"></td>
-          <td id="file-package-json-LC6" class="blob-code blob-code-inner js-file-line">  &quot;scripts&quot;: {</td>
-        </tr>
-        <tr>
-          <td id="file-package-json-L7" class="blob-num js-line-number js-blob-rnum" data-line-number="7"></td>
-          <td id="file-package-json-LC7" class="blob-code blob-code-inner js-file-line">    &quot;start&quot;: &quot;node index.js&quot;</td>
-        </tr>
-        <tr>
-          <td id="file-package-json-L8" class="blob-num js-line-number js-blob-rnum" data-line-number="8"></td>
-          <td id="file-package-json-LC8" class="blob-code blob-code-inner js-file-line">  },</td>
-        </tr>
-        <tr>
-          <td id="file-package-json-L9" class="blob-num js-line-number js-blob-rnum" data-line-number="9"></td>
-          <td id="file-package-json-LC9" class="blob-code blob-code-inner js-file-line">  &quot;keywords&quot;: [],</td>
-        </tr>
-        <tr>
-          <td id="file-package-json-L10" class="blob-num js-line-number js-blob-rnum" data-line-number="10"></td>
-          <td id="file-package-json-LC10" class="blob-code blob-code-inner js-file-line">  &quot;author&quot;: &quot;Will Mendes &lt;willmendesneto@gmail.com&gt;&quot;,</td>
-        </tr>
-        <tr>
-          <td id="file-package-json-L11" class="blob-num js-line-number js-blob-rnum" data-line-number="11"></td>
-          <td id="file-package-json-LC11" class="blob-code blob-code-inner js-file-line">  &quot;license&quot;: &quot;ISC&quot;,</td>
-        </tr>
-        <tr>
-          <td id="file-package-json-L12" class="blob-num js-line-number js-blob-rnum" data-line-number="12"></td>
-          <td id="file-package-json-LC12" class="blob-code blob-code-inner js-file-line">  &quot;dependencies&quot;: {</td>
-        </tr>
-        <tr>
-          <td id="file-package-json-L13" class="blob-num js-line-number js-blob-rnum" data-line-number="13"></td>
-          <td id="file-package-json-LC13" class="blob-code blob-code-inner js-file-line">    &quot;feature-toggle-service&quot;: &quot;npm:feature-toggle-service@^4.0.0&quot;,</td>
-        </tr>
-        <tr>
-          <td id="file-package-json-L14" class="blob-num js-line-number js-blob-rnum" data-line-number="14"></td>
-          <td id="file-package-json-LC14" class="blob-code blob-code-inner js-file-line">    &quot;feature-toggle-service-next&quot;: &quot;npm:feature-toggle-service@^6.0.0&quot;</td>
-        </tr>
-        <tr>
-          <td id="file-package-json-L15" class="blob-num js-line-number js-blob-rnum" data-line-number="15"></td>
-          <td id="file-package-json-LC15" class="blob-code blob-code-inner js-file-line">  }</td>
-        </tr>
-        <tr>
-          <td id="file-package-json-L16" class="blob-num js-line-number js-blob-rnum" data-line-number="16"></td>
-          <td id="file-package-json-LC16" class="blob-code blob-code-inner js-file-line">}</td>
-        </tr>
-  </table>
-</div>
-
-
-    </div>
-
-  </div>
-</div>
-
-      </div>
-      <div class="gist-meta">
-        <a href="https://gist.github.com/willmendesneto/0c6790fee63e328d220268784b7dcc8e/raw/e673158d8d5b7feffa03cd76c4ed986f5a996eea/package.json" style="float:right" class="Link--inTextBlock">view raw</a>
-        <a href="https://gist.github.com/willmendesneto/0c6790fee63e328d220268784b7dcc8e#file-package-json" class="Link--inTextBlock">
-          package.json
-        </a>
-        hosted with &#10084; by <a class="Link--inTextBlock" href="https://github.com">GitHub</a>
-      </div>
-    </div>
-</div></p>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"multiple-versions-of-package-in-project"</span><span class="token punctuation">,</span>
+  <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"1.0.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Using multiple versions of the same package in a project"</span><span class="token punctuation">,</span>
+  <span class="token property">"main"</span><span class="token operator">:</span> <span class="token string">"index.js"</span><span class="token punctuation">,</span>
+  <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"start"</span><span class="token operator">:</span> <span class="token string">"node index.js"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"keywords"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"author"</span><span class="token operator">:</span> <span class="token string">"Will Mendes &lt;willmendesneto@gmail.com>"</span><span class="token punctuation">,</span>
+  <span class="token property">"license"</span><span class="token operator">:</span> <span class="token string">"ISC"</span><span class="token punctuation">,</span>
+  <span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"feature-toggle-service"</span><span class="token operator">:</span> <span class="token string">"npm:feature-toggle-service@^4.0.0"</span><span class="token punctuation">,</span>
+    <span class="token property">"feature-toggle-service-next"</span><span class="token operator">:</span> <span class="token string">"npm:feature-toggle-service@^6.0.0"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
 <hr/>
 <p>Now, let's write some code using these packages. This can be done by importing both packages and methods and printing their outputs by passing their values in <code class="language-text">console.log()</code> functions.</p>
-<p><div id="gist110641036" class="gist">
-    <div class="gist-file" translate="no" data-color-mode="light" data-light-theme="light">
-      <div class="gist-data">
-        <div class="js-gist-file-update-container js-task-list-container">
-  <div id="file-index-js" class="file my-2">
-    
-    <div itemprop="text"
-      class="Box-body p-0 blob-wrapper data type-javascript  "
-      style="overflow: auto" tabindex="0" role="region"
-      aria-label="index.js content, created by willmendesneto on 03:11AM on July 13, 2021."
-    >
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js">onst <span class="token punctuation">{</span> isOn<span class="token punctuation">,</span> set <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'feature-toggle-service'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token literal-property property">isOn</span><span class="token operator">:</span> isOnNext<span class="token punctuation">,</span> <span class="token literal-property property">set</span><span class="token operator">:</span> setNext <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'feature-toggle-service-next'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        
-<div class="js-check-hidden-unicode js-blob-code-container blob-code-content">
+<span class="token keyword">const</span> defaultConfig <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">enableFirstSection</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token function">set</span><span class="token punctuation">(</span>defaultConfig<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">setNext</span><span class="token punctuation">(</span>defaultConfig<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  <template class="js-file-alert-template">
-  <div data-view-component="true" class="flash flash-warn flash-full d-flex flex-items-center">
-  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert">
-    <path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
-</svg>
-    <span>
-      This file contains hidden or bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
-      <a class="Link--inTextBlock" href="https://github.co/hiddenchars" target="_blank">Learn more about bidirectional Unicode characters</a>
-    </span>
-
-
-  <div data-view-component="true" class="flash-action">        <a href="{{ revealButtonHref }}" data-view-component="true" class="btn-sm btn">    Show hidden characters
-</a>
-</div>
-</div></template>
-<template class="js-line-alert-template">
-  <span aria-label="This line has hidden Unicode characters" data-view-component="true" class="line-alert tooltipped tooltipped-e">
-    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert">
-    <path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
-</svg>
-</span></template>
-
-  <table data-hpc class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip data-tagsearch-path="index.js">
-        <tr>
-          <td id="file-index-js-L1" class="blob-num js-line-number js-blob-rnum" data-line-number="1"></td>
-          <td id="file-index-js-LC1" class="blob-code blob-code-inner js-file-line">const { isOn, set } = require(&#39;feature-toggle-service&#39;);</td>
-        </tr>
-        <tr>
-          <td id="file-index-js-L2" class="blob-num js-line-number js-blob-rnum" data-line-number="2"></td>
-          <td id="file-index-js-LC2" class="blob-code blob-code-inner js-file-line">const { isOn: isOnNext, set: setNext } = require(&#39;feature-toggle-service-next&#39;);</td>
-        </tr>
-        <tr>
-          <td id="file-index-js-L3" class="blob-num js-line-number js-blob-rnum" data-line-number="3"></td>
-          <td id="file-index-js-LC3" class="blob-code blob-code-inner js-file-line">
-</td>
-        </tr>
-        <tr>
-          <td id="file-index-js-L4" class="blob-num js-line-number js-blob-rnum" data-line-number="4"></td>
-          <td id="file-index-js-LC4" class="blob-code blob-code-inner js-file-line">const defaultConfig = { enableFirstSection: true };</td>
-        </tr>
-        <tr>
-          <td id="file-index-js-L5" class="blob-num js-line-number js-blob-rnum" data-line-number="5"></td>
-          <td id="file-index-js-LC5" class="blob-code blob-code-inner js-file-line">set(defaultConfig);</td>
-        </tr>
-        <tr>
-          <td id="file-index-js-L6" class="blob-num js-line-number js-blob-rnum" data-line-number="6"></td>
-          <td id="file-index-js-LC6" class="blob-code blob-code-inner js-file-line">setNext(defaultConfig);</td>
-        </tr>
-        <tr>
-          <td id="file-index-js-L7" class="blob-num js-line-number js-blob-rnum" data-line-number="7"></td>
-          <td id="file-index-js-LC7" class="blob-code blob-code-inner js-file-line">
-</td>
-        </tr>
-        <tr>
-          <td id="file-index-js-L8" class="blob-num js-line-number js-blob-rnum" data-line-number="8"></td>
-          <td id="file-index-js-LC8" class="blob-code blob-code-inner js-file-line">// ❌ Old version: does NOT have a `debug` option</td>
-        </tr>
-        <tr>
-          <td id="file-index-js-L9" class="blob-num js-line-number js-blob-rnum" data-line-number="9"></td>
-          <td id="file-index-js-LC9" class="blob-code blob-code-inner js-file-line">console.log(isOn(&#39;enableFirstSection&#39;));</td>
-        </tr>
-        <tr>
-          <td id="file-index-js-L10" class="blob-num js-line-number js-blob-rnum" data-line-number="10"></td>
-          <td id="file-index-js-LC10" class="blob-code blob-code-inner js-file-line">// ✅ Latest version: does have a `debug` option available</td>
-        </tr>
-        <tr>
-          <td id="file-index-js-L11" class="blob-num js-line-number js-blob-rnum" data-line-number="11"></td>
-          <td id="file-index-js-LC11" class="blob-code blob-code-inner js-file-line">console.log(isOnNext(&#39;enableFirstSection&#39;, true));</td>
-        </tr>
-  </table>
-</div>
-
-
-    </div>
-
-  </div>
-</div>
-
-      </div>
-      <div class="gist-meta">
-        <a href="https://gist.github.com/willmendesneto/a2d08bc4ba22387955f9fb52d7fe8186/raw/9b182df5d50d11ad7ef6424a6e8ef18d768f303f/index.js" style="float:right" class="Link--inTextBlock">view raw</a>
-        <a href="https://gist.github.com/willmendesneto/a2d08bc4ba22387955f9fb52d7fe8186#file-index-js" class="Link--inTextBlock">
-          index.js
-        </a>
-        hosted with &#10084; by <a class="Link--inTextBlock" href="https://github.com">GitHub</a>
-      </div>
-    </div>
-</div></p>
+<span class="token comment">// ❌ Old version: does NOT have a `debug` option</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">isOn</span><span class="token punctuation">(</span><span class="token string">'enableFirstSection'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// ✅ Latest version: does have a `debug` option available</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">isOnNext</span><span class="token punctuation">(</span><span class="token string">'enableFirstSection'</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <p>In this case, we have a new feature on <code class="language-text">isOn</code> method on the latest version, which is the only one who has <code class="language-text">debug</code> option.</p>
 <p>Also, you can check in your Editor/IDE that their JSDocs are totally different as well. It confirms that the package aliases are up and running in your project.</p>
 <p><figure class="gatsby-resp-image-figure" style="">

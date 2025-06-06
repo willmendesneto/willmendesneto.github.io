@@ -1,4 +1,242 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Will Mendes Blog RSS Feed]]></title><description><![CDATA[Principal Frontend-Engineer, Principal Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies]]></description><link>https://willmendesneto.com</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 28 Apr 2025 14:07:15 GMT</lastBuildDate><item><title><![CDATA[Leveling Up React Hooks with TypeScript: A Wizard's Journey]]></title><link>https://willmendesneto.com/posts/leveling-up-react-hooks-with-typescript-a-wizards-journey</link><guid isPermaLink="false">https://willmendesneto.com/posts/leveling-up-react-hooks-with-typescript-a-wizards-journey</guid><pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;Introduction&lt;/h3&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Will Mendes Blog RSS Feed]]></title><description><![CDATA[Principal Frontend-Engineer, Principal Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies]]></description><link>https://willmendesneto.com</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 06 Jun 2025 22:42:42 GMT</lastBuildDate><item><title><![CDATA[Another way of thinking about frontend tests - Unit tests]]></title><link>https://willmendesneto.com/posts/another-way-to-think-in-unit-tests-for-components/</link><guid isPermaLink="false">https://willmendesneto.com/posts/another-way-to-think-in-unit-tests-for-components/</guid><pubDate>Mon, 28 Apr 2025 09:13:00 GMT</pubDate><content:encoded>&lt;p&gt;This time I&apos;ll share a quick code tip. Usually, when writing unit tests on components there&apos;s a common usage/pitfal. Some teams can start describing only and exclusively what the code does instead of the intentions around the code exists.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⚠️ This post will talk only and exclusively about the way of writing tests that makes sense to humans, so we it won&apos;t cover Test Driven Development - AKA TDD. TDD is not just a design tool, but also a software development workflow that has prompts for code improvement in its lifecycle. ⚠️&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;h2&gt;The problem&lt;/h2&gt;
+&lt;p&gt;If you&apos;re looking at unit tests content on the web, eventually you might find some posts, articles and such mentioning phrases like &quot;tests are a way of documenting your code&quot;. But, are they really?&lt;/p&gt;
+&lt;p&gt;They should, of course! However, I rarely heard about some deep and technical discussions around standards, clarifications or any matter to read the tests and understand what&apos;s happening in there.&lt;/p&gt;
+&lt;h2&gt;Writing unit tests that are real and live documentation of your code&lt;/h2&gt;
+&lt;p&gt;This time I&apos;ll share a quick code tip. Usually, when writing unit tests on components there&apos;s a common usage/pitfal. Some teams can start describing only and exclusively what the code does instead of the intentions around the code exists.&lt;/p&gt;
+&lt;p&gt;For this example, we&apos;ll play with some test cases for a component called &quot;Quick Search&quot;, a fancy name for another search component 😜&lt;/p&gt;
+&lt;h3&gt;Less focus on component internals&lt;/h3&gt;
+&lt;p&gt;Nobody cares if your callback has been called, but everybody cares about component behaviors working as expected&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;With registered links
+  #hasAny
+    ✅ is true
+  #all
+    ✅ is a list of all registered links
+Without registered links
+  #hasAny
+    ✅ is false
+  #all
+    ✅ is an empty array
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Main focus on what, how and why the feature exists&lt;/h3&gt;
+&lt;p&gt;Instead of focusing on the nitty-gritty details of how a component or hook works internally, shift your focus to testing its observable behavior and the user&apos;s interaction with it. Think about what the component &lt;em&gt;does&lt;/em&gt; and &lt;em&gt;why&lt;/em&gt; it does it, rather than how specific functions are called or state variables are mutated.&lt;/p&gt;
+&lt;p&gt;Consider a scenario where you have a custom hook, &lt;code class=&quot;language-text&quot;&gt;useRegisteredLinks()&lt;/code&gt;, that checks if a given list of URLs are registered within your application. A less effective way to test this might involve checking if a specific internal filtering method was called. A more behavior-driven approach would be to test the hook&apos;s output based on different inputs:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;`useRegisteredLinks()`
+    ✅ should display registered search results if any are found
+    ✅ should display a &quot;No relevant results found&quot; message if no registered links are present
+    ✅ should handle an empty searchResults array correctly&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Notice how these test descriptions clearly articulate the expected &lt;em&gt;behavior&lt;/em&gt; of the &lt;code class=&quot;language-text&quot;&gt;useRegisteredLinks()&lt;/code&gt; hook under various conditions. They don&apos;t delve into the internal implementation details of how the hook determines if a link is registered. This makes the tests more resilient to code changes; if the internal implementation is refactored but the behavior remains the same, the tests will still pass.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The Key: Focus on Behavior, Not Implementation&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Your test descriptions and assertions should primarily revolve around the observable behavior of the unit you&apos;re testing. For a component, this means testing how it renders under different props, how it responds to user interactions (like clicks or input changes), and what side effects it might trigger. For a hook, focus on the values it returns and any side effects it initiates based on its inputs. For utilities or helpers, concentrate on the output they produce for given inputs.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;When Internal Details Matter (Rarely)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;There might be rare cases where testing internal methods or state becomes necessary. This usually happens when the internal logic is complex and has observable side effects that are crucial to the unit&apos;s functionality. However, strive to minimize these cases as they can make your tests brittle and harder to maintain. If you find yourself frequently testing internals, it might be a sign that your unit is doing too much and could benefit from being broken down into smaller, more focused units.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Example: Quick Search Component with &lt;code class=&quot;language-text&quot;&gt;useRegisteredLinks()&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Let&apos;s illustrate this with a &lt;code class=&quot;language-text&quot;&gt;QuickSearch&lt;/code&gt; React component that utilizes our &lt;code class=&quot;language-text&quot;&gt;useRegisteredLinks()&lt;/code&gt; hook. Assume this component takes a list of potential search result URLs and displays only the ones that are registered within the application.&lt;/p&gt;
+&lt;p&gt;First, let&apos;s define a simplified version of the &lt;code class=&quot;language-text&quot;&gt;useRegisteredLinks()&lt;/code&gt; hook:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// hooks/useRegisteredLinks.ts&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; useState&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; useEffect &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;react&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; registeredUrls &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;/products/1&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;/blog/latest&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;/about&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;UseRegisteredLinksResult&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  hasRegistered&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;boolean&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  registeredLinks&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; useRegisteredLinks &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;links&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; UseRegisteredLinksResult &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;hasRegistered&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; setHasRegistered&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;registeredLinks&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; setRegisteredLinks&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token generic-function&quot;&gt;&lt;span class=&quot;token function&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;token generic class-name&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;token function&quot;&gt;useEffect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; validLinks &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; links&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;link &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; registeredUrls&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;includes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;link&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;setRegisteredLinks&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;validLinks&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;setHasRegistered&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;validLinks&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;links&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; hasRegistered&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; registeredLinks &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; useRegisteredLinks&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now, let&apos;s create the &lt;code class=&quot;language-text&quot;&gt;QuickSearch&lt;/code&gt; component:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// components/QuickSearch.tsx&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; React &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;react&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; useRegisteredLinks &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;@/hooks/useRegisteredLinks&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;QuickSearchProps&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  searchResults&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;QuickSearch&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; searchResults &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; QuickSearchProps&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; registeredLinks &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useRegisteredLinks&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;searchResults&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;h3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;Quick Search Results&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;h3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;ul&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;registeredLinks&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+          registeredLinks&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;link &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+            &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;li&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;link&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+              &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;a&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;link&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;link&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;a&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;li&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+          &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+          &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;p&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;No relevant results found.&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;p&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;ul&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And here&apos;s how we might write unit tests for the &lt;code class=&quot;language-text&quot;&gt;QuickSearch&lt;/code&gt; component, focusing on its behavior:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; React &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;react&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; render&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; screen &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;@testing-library/react&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; QuickSearch&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; QuickSearchProps &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;@/components/QuickSearch&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; useRegisteredLinks &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;@/hooks/useRegisteredLinks&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// Mock the useRegisteredLinks hook to control its behavior in tests&lt;/span&gt;
+vi&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;mock&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;@/hooks/useRegisteredLinks&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; mockedUseRegisteredLinks &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; useRegisteredLinks &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; vi&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Mock&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;SetupProps&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  searchResults&lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  quickSearchProps&lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; QuickSearchProps&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;setup&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  searchResults &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  quickSearchProps &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    hasRegistered&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    registeredLinks&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; SetupProps&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  mockedUseRegisteredLinks&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;mockReturnValue&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;quickSearchProps&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; view &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;QuickSearch&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;searchResults&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;searchResults&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;describe&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;&amp;lt;QuickSearch /&gt;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;should display registered search results if any are found&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      searchResults&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;/products/1&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;/random&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;/blog/latest&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      quickSearchProps&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        hasRegistered&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        registeredLinks&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;/products/1&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;/blog/latest&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token function&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;screen&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getByText&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;Quick Search Results&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toBeInTheDocument&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;screen&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getByRole&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;link&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; name&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;/products/1&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toBeInTheDocument&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;screen&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getByRole&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;link&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; name&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;/blog/latest&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toBeInTheDocument&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;screen&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;queryByRole&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;link&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; name&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;/random&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;not&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toBeInTheDocument&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;screen&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;queryByText&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;No relevant results found.&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;not&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toBeInTheDocument&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;token function&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;should display &quot;No relevant results found&quot; message if no registered links are present&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      searchResults&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;/random1&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;/another&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token function&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;screen&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getByText&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;Quick Search Results&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toBeInTheDocument&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;screen&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getByText&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;No relevant results found.&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toBeInTheDocument&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;screen&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;queryByRole&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;link&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;not&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toBeInTheDocument&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;token function&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;should handle an empty searchResults array correctly&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token function&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;screen&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getByText&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;Quick Search Results&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toBeInTheDocument&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;screen&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getByText&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;No relevant results found.&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toBeInTheDocument&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;screen&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;queryByRole&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;link&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;not&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toBeInTheDocument&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;There are some cristal clear benefits of this approach. By writing tests focusing on the behavior instead of its internals, the tests shouldn&apos;t be affected in case of internal changes such as refactors, for example.&lt;/p&gt;
+&lt;p&gt;Also, the tests can be a clear documentation of what the component should do. In fact, it makes things even clear for maintenance and application evolution purposes. And this is massive!&lt;/p&gt;
+&lt;hr /&gt;
+&lt;!--  --&gt;
+&lt;h2&gt;Thinking Beyond Isolation: User Journey Tests for Page Components&lt;/h2&gt;
+&lt;p&gt;While traditional unit tests excel at verifying individual units in isolation, another valuable approach for testing React page components is to simulate user interactions. Using your unit testing infrastructure (like Vitest and React Testing Library), you can write tests that mimic how a user might interact with a specific page or a significant section of it.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Key Principles:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Focus on User Interactions and Outcomes:&lt;/strong&gt; The tests should revolve around common user workflows on the page. What does a user do? What should happen as a result?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Simulate User Actions:&lt;/strong&gt; Utilize React Testing Library&apos;s &lt;code class=&quot;language-text&quot;&gt;userEvent&lt;/code&gt; API to simulate more realistic user interactions such as typing, clicking, focusing, and changing input values. &lt;code class=&quot;language-text&quot;&gt;userEvent&lt;/code&gt; handles details like focus changes and input dispatch more accurately than &lt;code class=&quot;language-text&quot;&gt;fireEvent&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Assert on Observable Outcomes:&lt;/strong&gt; Verify the changes in the rendered output that a user would perceive. This includes the presence/absence of elements, text changes, attribute changes, and (to a limited extent) the triggering of mocked callbacks.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Component-Centric Scope:&lt;/strong&gt; These tests focus on the page component and its direct children. External dependencies like API calls or higher-level state management are typically mocked.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Unit Test Infrastructure (Vitest) and User Interaction (&lt;code class=&quot;language-text&quot;&gt;userEvent&lt;/code&gt;):&lt;/strong&gt; You&apos;re still using your fast and isolated unit testing framework, Vitest, along with the more user-centric interaction simulation provided by &lt;code class=&quot;language-text&quot;&gt;userEvent&lt;/code&gt; from React Testing Library.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Let&apos;s revisit the feedback form example, now with Vitest and &lt;code class=&quot;language-text&quot;&gt;userEvent&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; React &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;react&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; render&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; screen&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; waitFor &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;@testing-library/react&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; describe&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; it&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; expect&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; vi &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;vitest&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// Import Vitest-specific functions&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; userEvent &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;@testing-library/user-event&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// Import userEvent&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; FeedbackFormPage &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;@/pages/FeedbackFormPage&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// Mock the feedback submission function&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; mockSubmitFeedback &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; vi&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;fn&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+vi&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;mock&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;@/api/feedback&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  submitFeedback&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; mockSubmitFeedback&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;describe&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;&amp;lt;FeedbackFormPage /&gt; - User Journey&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;should allow a user to submit feedback and display a success message&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;FeedbackFormPage&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; user &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; userEvent&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// Setup user event&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;// 1. User types feedback into the input field&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; feedbackInput &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; screen&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getByLabelText&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;Your Feedback&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; user&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;feedbackInput&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;This is great!&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;// 2. User clicks the submit button&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; submitButton &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; screen&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getByRole&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;button&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; name&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Submit Feedback&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; user&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;submitButton&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;// 3. Assert that the submission function was called&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;mockSubmitFeedback&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toHaveBeenCalledWith&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;This is great!&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;// 4. Assert that the success message is displayed&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;waitFor&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; screen&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getByText&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;Thank you for your feedback!&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;token function&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;should prevent submission if the feedback input is empty&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;FeedbackFormPage&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; user &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; userEvent&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// Setup user event&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; submitButton &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; screen&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getByRole&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;button&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; name&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Submit Feedback&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; user&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;submitButton&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;// Assert that the submission function was NOT called&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;mockSubmitFeedback&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;not&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toHaveBeenCalled&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;// Assert that an error message (if any) is displayed (optional)&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// expect(screen.getByText(&apos;Please enter your feedback.&apos;)).toBeInTheDocument();&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Key Changes for Vitest and userEvent:&lt;/p&gt;
+&lt;p&gt;Import userEvent: We now import userEvent from @testing-library/user-event.
+userEvent.setup(): Inside each test that involves user interaction, we call userEvent.setup() to get a user object. This provides the API for simulating interactions.
+Using user.type() and user.click(): Instead of fireEvent.change and fireEvent.click, we now use the asynchronous methods user.type() and user.click() from the user object. These methods more closely simulate actual browser events.
+Benefits of User Journey Tests (Within Unit Infra with Vitest and userEvent for Page Components):&lt;/p&gt;
+&lt;p&gt;More Realistic Interactions: userEvent simulates user behavior more accurately, leading to tests that better reflect real-world usage.
+Higher-Level Confidence: Provides even greater assurance that the page component functions correctly from a user&apos;s perspective due to more accurate interaction simulation.
+Better Documentation: Test names and structure continue to resemble user stories.
+Reduced Risk of Interaction Issues (Within the Component): Helps catch subtle issues related to focus, input dispatch, and other browser behaviors.
+Fast Feedback Loop: Vitest&apos;s speed ensures these tests run quickly.
+Limitations:&lt;/p&gt;
+&lt;p&gt;Still Isolated: Doesn&apos;t test real integrations with backend, routing, or global state. Integration/E2E tests are needed for that.
+Reliance on Mocking: Heavily depends on accurate mocking of dependencies.
+Potential Overlap: Can overlap with traditional unit tests; balance is key.
+In conclusion, user journey tests for React page components using Vitest and userEvent offer an even more refined way to test the integrated behavior of a page from a user-centric standpoint, leveraging a fast unit testing framework and accurate user interaction simulation. They are a valuable complement to traditional unit tests.&lt;/p&gt;
+&lt;!--  --&gt;
+&lt;h3&gt;That’s all for now&lt;/h3&gt;
+&lt;p&gt;This was a quick one, but I hope you enjoyed this reading as much as I enjoyed writing it. Thank you so much for reading until the end and see you soon!&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Cya 👋&lt;/h3&gt;
+                &lt;div style=&quot;margin-top=55px; font-style: italic;&quot;&gt;(This is an article posted to my blog at willmendesneto.com. You can read it online by &lt;a href=&quot;https://willmendesneto.com/posts/another-way-to-think-in-unit-tests-for-components/&quot;&gt;clicking here&lt;/a&gt;.)&lt;/div&gt;
+              </content:encoded></item><item><title><![CDATA[Leveling Up React Hooks with TypeScript: A Wizard's Journey]]></title><link>https://willmendesneto.com/posts/leveling-up-react-hooks-with-typescript-a-wizards-journey</link><guid isPermaLink="false">https://willmendesneto.com/posts/leveling-up-react-hooks-with-typescript-a-wizards-journey</guid><pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;Introduction&lt;/h3&gt;
 &lt;p&gt;I want to share a real-world example of how embracing TypeScript can significantly improve your React hooks and overall codebase. We&apos;ll be diving into the evolution of &lt;a href=&quot;https://github.com/willmendesneto/react-sweet-wizard&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;react-sweet-wizard&lt;/a&gt;, a package I built to simplify form wizards - eventually called as Form Stepper or Form steps - in React. Think of it as a guided tour through the land of forms, but with less frustration and more type safety!&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;For more details about React Sweet Wizard, why it was created, benefits, usage and more, please check the post &lt;a href=&quot;https://willmendesneto.com/posts/introducing-react-sweet-wizard-simplifying-the-form-flow-of-your-react-app&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Introducing React Sweet Wizard: Simplifying the Form Flow of Your React App&lt;/a&gt;&lt;/p&gt;
@@ -818,267 +1056,45 @@ const goTo = useCallback(
 &lt;span class=&quot;token comment&quot;&gt;# Or if you want to point on a specific version&lt;/span&gt;
 &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;package-name-alias&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;@npm:&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;package-name&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;@&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;package-version&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;In your example, we&apos;ll call &lt;code class=&quot;language-text&quot;&gt;feature-toggle-service&lt;/code&gt; when using the old version of the package and &lt;code class=&quot;language-text&quot;&gt;feature-toggle-service-next&lt;/code&gt; when using the latest version. At the end, this will be the commands you have to run to get the setup done in your local environment.&lt;/p&gt;
-&lt;p&gt;&lt;div id=&quot;gist110641063&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
-      &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
-  &lt;div id=&quot;file-setting-up-the-project-md&quot; class=&quot;file my-2&quot;&gt;
-      &lt;div id=&quot;file-setting-up-the-project-md-readme&quot; class=&quot;Box-body readme blob p-5 p-xl-6 &quot;
-    style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-    aria-label=&quot;setting-up-the-project.md content, created by willmendesneto on 03:15AM on July 13, 2021.&quot;
-  &gt;
-    &lt;article class=&quot;markdown-body entry-content container-lg&quot; itemprop=&quot;text&quot;&gt;&lt;div class=&quot;highlight highlight-source-shell&quot; dir=&quot;auto&quot;&gt;&lt;pre&gt;&lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;#&lt;/span&gt; Creating folder jumping on the created folder&lt;/span&gt;
-mkdir multiple-package-versions-in-project &lt;span class=&quot;pl-k&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; \
-&lt;span class=&quot;pl-c1&quot;&gt;cd&lt;/span&gt; multiple-package-versions-in-project \
-&lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;#&lt;/span&gt; Starting a NPM project&lt;/span&gt;
-npm init -y &lt;span class=&quot;pl-k&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; \
-&lt;span class=&quot;pl-c&quot;&gt;&lt;span class=&quot;pl-c&quot;&gt;#&lt;/span&gt; Installing old &amp;amp; new versions of `feature-toggle-service` package&lt;/span&gt;
-npm install --save \
-  feature-toggle-service@npm:feature-toggle-service@4.0.0 \
-  feature-toggle-service-next@npm:feature-toggle-service@6.0.0&lt;/pre&gt;&lt;/div&gt;
-&lt;/article&gt;
-  &lt;/div&gt;
-
-  &lt;/div&gt;
-&lt;/div&gt;
-
-      &lt;/div&gt;
-      &lt;div class=&quot;gist-meta&quot;&gt;
-        &lt;a href=&quot;https://gist.github.com/willmendesneto/fda99dd27859571649e74d2cb2e02a54/raw/38b315486124d5196e774fd68c01bb7cac0bbb00/setting-up-the-project.md&quot; style=&quot;float:right&quot; class=&quot;Link--inTextBlock&quot;&gt;view raw&lt;/a&gt;
-        &lt;a href=&quot;https://gist.github.com/willmendesneto/fda99dd27859571649e74d2cb2e02a54#file-setting-up-the-project-md&quot; class=&quot;Link--inTextBlock&quot;&gt;
-          setting-up-the-project.md
-        &lt;/a&gt;
-        hosted with &amp;#10084; by &lt;a class=&quot;Link--inTextBlock&quot; href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# Creating folder jumping on the created folder&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;mkdir&lt;/span&gt; multiple-package-versions-in-project &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; multiple-package-versions-in-project &lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# Starting a NPM project&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; init &lt;span class=&quot;token parameter variable&quot;&gt;-y&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# Installing old &amp;amp; new versions of `feature-toggle-service` package&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--save&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;
+  feature-toggle-service@npm:feature-toggle-service@4.0.0 &lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;
+  feature-toggle-service-next@npm:feature-toggle-service@6.0.0&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;As you can see on the code below, your &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt; file now is pointing to different versions of the same package, having that available calling their respective aliases by calling via &lt;code class=&quot;language-text&quot;&gt;import&lt;/code&gt; or &lt;code class=&quot;language-text&quot;&gt;require&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;div id=&quot;gist110641009&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
-      &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
-  &lt;div id=&quot;file-package-json&quot; class=&quot;file my-2&quot;&gt;
-    
-    &lt;div itemprop=&quot;text&quot;
-      class=&quot;Box-body p-0 blob-wrapper data type-json  &quot;
-      style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-      aria-label=&quot;package.json content, created by willmendesneto on 03:09AM on July 13, 2021.&quot;
-    &gt;
-
-        
-&lt;div class=&quot;js-check-hidden-unicode js-blob-code-container blob-code-content&quot;&gt;
-
-  &lt;template class=&quot;js-file-alert-template&quot;&gt;
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
-  &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
-&lt;/svg&gt;
-    &lt;span&gt;
-      This file contains hidden or bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
-      &lt;a class=&quot;Link--inTextBlock&quot; href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
-    &lt;/span&gt;
-
-
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
-&lt;/a&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/template&gt;
-&lt;template class=&quot;js-line-alert-template&quot;&gt;
-  &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
-    &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/span&gt;&lt;/template&gt;
-
-  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-path=&quot;package.json&quot;&gt;
-        &lt;tr&gt;
-          &lt;td id=&quot;file-package-json-L1&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-package-json-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;{&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td id=&quot;file-package-json-L2&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-package-json-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &amp;quot;name&amp;quot;: &amp;quot;multiple-versions-of-package-in-project&amp;quot;,&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td id=&quot;file-package-json-L3&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-package-json-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &amp;quot;version&amp;quot;: &amp;quot;1.0.0&amp;quot;,&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td id=&quot;file-package-json-L4&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-package-json-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &amp;quot;description&amp;quot;: &amp;quot;Using multiple versions of the same package in a project&amp;quot;,&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td id=&quot;file-package-json-L5&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-package-json-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &amp;quot;main&amp;quot;: &amp;quot;index.js&amp;quot;,&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td id=&quot;file-package-json-L6&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;6&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-package-json-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &amp;quot;scripts&amp;quot;: {&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td id=&quot;file-package-json-L7&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;7&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-package-json-LC7&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &amp;quot;start&amp;quot;: &amp;quot;node index.js&amp;quot;&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td id=&quot;file-package-json-L8&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;8&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-package-json-LC8&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  },&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td id=&quot;file-package-json-L9&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;9&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-package-json-LC9&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &amp;quot;keywords&amp;quot;: [],&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td id=&quot;file-package-json-L10&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;10&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-package-json-LC10&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &amp;quot;author&amp;quot;: &amp;quot;Will Mendes &amp;lt;willmendesneto@gmail.com&amp;gt;&amp;quot;,&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td id=&quot;file-package-json-L11&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;11&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-package-json-LC11&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &amp;quot;license&amp;quot;: &amp;quot;ISC&amp;quot;,&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td id=&quot;file-package-json-L12&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;12&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-package-json-LC12&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &amp;quot;dependencies&amp;quot;: {&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td id=&quot;file-package-json-L13&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;13&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-package-json-LC13&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &amp;quot;feature-toggle-service&amp;quot;: &amp;quot;npm:feature-toggle-service@^4.0.0&amp;quot;,&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td id=&quot;file-package-json-L14&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;14&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-package-json-LC14&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &amp;quot;feature-toggle-service-next&amp;quot;: &amp;quot;npm:feature-toggle-service@^6.0.0&amp;quot;&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td id=&quot;file-package-json-L15&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;15&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-package-json-LC15&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  }&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td id=&quot;file-package-json-L16&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;16&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-package-json-LC16&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}&lt;/td&gt;
-        &lt;/tr&gt;
-  &lt;/table&gt;
-&lt;/div&gt;
-
-
-    &lt;/div&gt;
-
-  &lt;/div&gt;
-&lt;/div&gt;
-
-      &lt;/div&gt;
-      &lt;div class=&quot;gist-meta&quot;&gt;
-        &lt;a href=&quot;https://gist.github.com/willmendesneto/0c6790fee63e328d220268784b7dcc8e/raw/e673158d8d5b7feffa03cd76c4ed986f5a996eea/package.json&quot; style=&quot;float:right&quot; class=&quot;Link--inTextBlock&quot;&gt;view raw&lt;/a&gt;
-        &lt;a href=&quot;https://gist.github.com/willmendesneto/0c6790fee63e328d220268784b7dcc8e#file-package-json&quot; class=&quot;Link--inTextBlock&quot;&gt;
-          package.json
-        &lt;/a&gt;
-        hosted with &amp;#10084; by &lt;a class=&quot;Link--inTextBlock&quot; href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;multiple-versions-of-package-in-project&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;version&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;1.0.0&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Using multiple versions of the same package in a project&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;main&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;index.js&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;scripts&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;start&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;node index.js&quot;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;keywords&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;author&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Will Mendes &amp;lt;willmendesneto@gmail.com&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;license&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;ISC&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;dependencies&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;feature-toggle-service&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;npm:feature-toggle-service@^4.0.0&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;feature-toggle-service-next&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;npm:feature-toggle-service@^6.0.0&quot;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;hr/&gt;
 &lt;p&gt;Now, let&apos;s write some code using these packages. This can be done by importing both packages and methods and printing their outputs by passing their values in &lt;code class=&quot;language-text&quot;&gt;console.log()&lt;/code&gt; functions.&lt;/p&gt;
-&lt;p&gt;&lt;div id=&quot;gist110641036&quot; class=&quot;gist&quot;&gt;
-    &lt;div class=&quot;gist-file&quot; translate=&quot;no&quot; data-color-mode=&quot;light&quot; data-light-theme=&quot;light&quot;&gt;
-      &lt;div class=&quot;gist-data&quot;&gt;
-        &lt;div class=&quot;js-gist-file-update-container js-task-list-container&quot;&gt;
-  &lt;div id=&quot;file-index-js&quot; class=&quot;file my-2&quot;&gt;
-    
-    &lt;div itemprop=&quot;text&quot;
-      class=&quot;Box-body p-0 blob-wrapper data type-javascript  &quot;
-      style=&quot;overflow: auto&quot; tabindex=&quot;0&quot; role=&quot;region&quot;
-      aria-label=&quot;index.js content, created by willmendesneto on 03:11AM on July 13, 2021.&quot;
-    &gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;onst &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; isOn&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; set &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;feature-toggle-service&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token literal-property property&quot;&gt;isOn&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; isOnNext&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token literal-property property&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; setNext &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;feature-toggle-service-next&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-        
-&lt;div class=&quot;js-check-hidden-unicode js-blob-code-container blob-code-content&quot;&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; defaultConfig &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token literal-property property&quot;&gt;enableFirstSection&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;defaultConfig&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;setNext&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;defaultConfig&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-  &lt;template class=&quot;js-file-alert-template&quot;&gt;
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash flash-warn flash-full d-flex flex-items-center&quot;&gt;
-  &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
-&lt;/svg&gt;
-    &lt;span&gt;
-      This file contains hidden or bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.
-      &lt;a class=&quot;Link--inTextBlock&quot; href=&quot;https://github.co/hiddenchars&quot; target=&quot;_blank&quot;&gt;Learn more about bidirectional Unicode characters&lt;/a&gt;
-    &lt;/span&gt;
-
-
-  &lt;div data-view-component=&quot;true&quot; class=&quot;flash-action&quot;&gt;        &lt;a href=&quot;{{ revealButtonHref }}&quot; data-view-component=&quot;true&quot; class=&quot;btn-sm btn&quot;&gt;    Show hidden characters
-&lt;/a&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/template&gt;
-&lt;template class=&quot;js-line-alert-template&quot;&gt;
-  &lt;span aria-label=&quot;This line has hidden Unicode characters&quot; data-view-component=&quot;true&quot; class=&quot;line-alert tooltipped tooltipped-e&quot;&gt;
-    &lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; data-view-component=&quot;true&quot; class=&quot;octicon octicon-alert&quot;&gt;
-    &lt;path d=&quot;M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z&quot;&gt;&lt;/path&gt;
-&lt;/svg&gt;
-&lt;/span&gt;&lt;/template&gt;
-
-  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-path=&quot;index.js&quot;&gt;
-        &lt;tr&gt;
-          &lt;td id=&quot;file-index-js-L1&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-index-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;const { isOn, set } = require(&amp;#39;feature-toggle-service&amp;#39;);&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td id=&quot;file-index-js-L2&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-index-js-LC2&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;const { isOn: isOnNext, set: setNext } = require(&amp;#39;feature-toggle-service-next&amp;#39;);&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td id=&quot;file-index-js-L3&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-index-js-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
-&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td id=&quot;file-index-js-L4&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-index-js-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;const defaultConfig = { enableFirstSection: true };&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td id=&quot;file-index-js-L5&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-index-js-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;set(defaultConfig);&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td id=&quot;file-index-js-L6&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;6&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-index-js-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;setNext(defaultConfig);&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td id=&quot;file-index-js-L7&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;7&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-index-js-LC7&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
-&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td id=&quot;file-index-js-L8&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;8&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-index-js-LC8&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;// ❌ Old version: does NOT have a `debug` option&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td id=&quot;file-index-js-L9&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;9&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-index-js-LC9&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;console.log(isOn(&amp;#39;enableFirstSection&amp;#39;));&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td id=&quot;file-index-js-L10&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;10&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-index-js-LC10&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;// ✅ Latest version: does have a `debug` option available&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td id=&quot;file-index-js-L11&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;11&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-index-js-LC11&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;console.log(isOnNext(&amp;#39;enableFirstSection&amp;#39;, true));&lt;/td&gt;
-        &lt;/tr&gt;
-  &lt;/table&gt;
-&lt;/div&gt;
-
-
-    &lt;/div&gt;
-
-  &lt;/div&gt;
-&lt;/div&gt;
-
-      &lt;/div&gt;
-      &lt;div class=&quot;gist-meta&quot;&gt;
-        &lt;a href=&quot;https://gist.github.com/willmendesneto/a2d08bc4ba22387955f9fb52d7fe8186/raw/9b182df5d50d11ad7ef6424a6e8ef18d768f303f/index.js&quot; style=&quot;float:right&quot; class=&quot;Link--inTextBlock&quot;&gt;view raw&lt;/a&gt;
-        &lt;a href=&quot;https://gist.github.com/willmendesneto/a2d08bc4ba22387955f9fb52d7fe8186#file-index-js&quot; class=&quot;Link--inTextBlock&quot;&gt;
-          index.js
-        &lt;/a&gt;
-        hosted with &amp;#10084; by &lt;a class=&quot;Link--inTextBlock&quot; href=&quot;https://github.com&quot;&gt;GitHub&lt;/a&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;
+&lt;span class=&quot;token comment&quot;&gt;// ❌ Old version: does NOT have a `debug` option&lt;/span&gt;
+console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;isOn&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;enableFirstSection&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// ✅ Latest version: does have a `debug` option available&lt;/span&gt;
+console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;isOnNext&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;enableFirstSection&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;In this case, we have a new feature on &lt;code class=&quot;language-text&quot;&gt;isOn&lt;/code&gt; method on the latest version, which is the only one who has &lt;code class=&quot;language-text&quot;&gt;debug&lt;/code&gt; option.&lt;/p&gt;
 &lt;p&gt;Also, you can check in your Editor/IDE that their JSDocs are totally different as well. It confirms that the package aliases are up and running in your project.&lt;/p&gt;
 &lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
@@ -4234,7 +4250,7 @@ editor/
   &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-path=&quot;minimal.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L1&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-c&gt;// This file will live in `editor/themes/minimal.js`&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;// This file will live in `editor/themes/minimal.js`&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L2&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
@@ -4243,11 +4259,11 @@ editor/
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L3&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-k&gt;import&lt;/span&gt; &lt;span class=pl-v&gt;React&lt;/span&gt; &lt;span class=pl-k&gt;from&lt;/span&gt; &lt;span class=pl-s&gt;&amp;quot;react&amp;quot;&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;import React from &amp;quot;react&amp;quot;;&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L4&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-k&gt;import&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt; &lt;span class=pl-v&gt;Grid&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt; &lt;span class=pl-s1&gt;withStyles&lt;/span&gt; &lt;span class=pl-kos&gt;}&lt;/span&gt; &lt;span class=pl-k&gt;from&lt;/span&gt; &lt;span class=pl-s&gt;&amp;quot;@material-ui/core&amp;quot;&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC4&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;import { Grid, withStyles } from &amp;quot;@material-ui/core&amp;quot;;&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L5&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
@@ -4256,139 +4272,139 @@ editor/
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L6&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;6&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-k&gt;export&lt;/span&gt; &lt;span class=pl-k&gt;const&lt;/span&gt; &lt;span class=pl-v&gt;Minimal&lt;/span&gt; &lt;span class=pl-c1&gt;=&lt;/span&gt; &lt;span class=pl-en&gt;withStyles&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s1&gt;theme&lt;/span&gt; &lt;span class=pl-c1&gt;=&amp;gt;&lt;/span&gt; &lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;export const Minimal = withStyles(theme =&amp;gt; ({&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L7&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;7&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC7&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-c1&gt;root&lt;/span&gt;: &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC7&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  root: {&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L8&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;8&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC8&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-s&gt;&amp;quot;&amp;amp; .tox .tox-tbtn svg&amp;quot;&lt;/span&gt;: &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC8&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &amp;quot;&amp;amp; .tox .tox-tbtn svg&amp;quot;: {&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L9&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;9&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC9&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      &lt;span class=pl-c1&gt;fill&lt;/span&gt;: &lt;span class=pl-s1&gt;theme&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;palette&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;grey&lt;/span&gt;&lt;span class=pl-kos&gt;[&lt;/span&gt;&lt;span class=pl-s&gt;&amp;quot;500&amp;quot;&lt;/span&gt;&lt;span class=pl-kos&gt;]&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC9&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      fill: theme.palette.grey[&amp;quot;500&amp;quot;]&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L10&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;10&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC10&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC10&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    },&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L11&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;11&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC11&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-s&gt;&amp;quot;&amp;amp; .tox .tox-tbtn:hover svg&amp;quot;&lt;/span&gt;: &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC11&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &amp;quot;&amp;amp; .tox .tox-tbtn:hover svg&amp;quot;: {&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L12&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;12&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC12&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      &lt;span class=pl-c1&gt;fill&lt;/span&gt;: &lt;span class=pl-s1&gt;theme&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;palette&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;common&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;white&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC12&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      fill: theme.palette.common.white&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L13&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;13&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC13&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC13&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    },&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L14&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;14&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC14&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-s&gt;&amp;quot;&amp;amp; .tox .tox-tbtn&amp;quot;&lt;/span&gt;: &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC14&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &amp;quot;&amp;amp; .tox .tox-tbtn&amp;quot;: {&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L15&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;15&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC15&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      &lt;span class=pl-c1&gt;transition&lt;/span&gt;: &lt;span class=pl-s&gt;&amp;quot;background-color 0.3s ease&amp;quot;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC15&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      transition: &amp;quot;background-color 0.3s ease&amp;quot;&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L16&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;16&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC16&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC16&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    },&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L17&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;17&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC17&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-s&gt;&amp;quot;&amp;amp; .tox .tox-tbtn:hover, &amp;amp; .tox .tox-tbtn:active, &amp;amp; .tox .tox-tbtn:focus&amp;quot;&lt;/span&gt;: &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC17&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &amp;quot;&amp;amp; .tox .tox-tbtn:hover, &amp;amp; .tox .tox-tbtn:active, &amp;amp; .tox .tox-tbtn:focus&amp;quot;: {&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L18&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;18&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC18&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      &lt;span class=pl-c1&gt;backgroundColor&lt;/span&gt;: &lt;span class=pl-s1&gt;theme&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;palette&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;grey&lt;/span&gt;&lt;span class=pl-kos&gt;[&lt;/span&gt;&lt;span class=pl-s&gt;&amp;quot;500&amp;quot;&lt;/span&gt;&lt;span class=pl-kos&gt;]&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC18&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      backgroundColor: theme.palette.grey[&amp;quot;500&amp;quot;],&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L19&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;19&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC19&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      &lt;span class=pl-c1&gt;cursor&lt;/span&gt;: &lt;span class=pl-s&gt;&amp;quot;pointer&amp;quot;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC19&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      cursor: &amp;quot;pointer&amp;quot;&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L20&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;20&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC20&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC20&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    },&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L21&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;21&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC21&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-s&gt;&amp;quot;&amp;amp; .tox-tinymce&amp;quot;&lt;/span&gt;: &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC21&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &amp;quot;&amp;amp; .tox-tinymce&amp;quot;: {&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L22&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;22&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC22&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      &lt;span class=pl-c1&gt;borderRadius&lt;/span&gt;: &lt;span class=pl-s1&gt;theme&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;shape&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;borderRadius&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC22&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      borderRadius: theme.shape.borderRadius&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L23&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;23&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC23&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC23&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    },&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L24&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;24&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC24&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-s&gt;&amp;quot;&amp;amp; .tox .tox-toolbar__primary&amp;quot;&lt;/span&gt;: &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC24&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &amp;quot;&amp;amp; .tox .tox-toolbar__primary&amp;quot;: {&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L25&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;25&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC25&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      &lt;span class=pl-c1&gt;backgroundColor&lt;/span&gt;: &lt;span class=pl-s1&gt;theme&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;palette&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;grey&lt;/span&gt;&lt;span class=pl-kos&gt;[&lt;/span&gt;&lt;span class=pl-s&gt;&amp;quot;100&amp;quot;&lt;/span&gt;&lt;span class=pl-kos&gt;]&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC25&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      backgroundColor: theme.palette.grey[&amp;quot;100&amp;quot;],&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L26&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;26&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC26&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      &lt;span class=pl-c1&gt;backgroundImage&lt;/span&gt;: &lt;span class=pl-s&gt;&amp;quot;none&amp;quot;&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC26&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      backgroundImage: &amp;quot;none&amp;quot;,&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L27&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;27&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC27&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      &lt;span class=pl-c1&gt;padding&lt;/span&gt;: &lt;span class=pl-s1&gt;theme&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;spacing&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-c1&gt;2&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC27&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      padding: theme.spacing(2)&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L28&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;28&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC28&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC28&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    },&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L29&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;29&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC29&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-s&gt;&amp;quot;&amp;amp; .tox .tox-edit-area__iframe&amp;quot;&lt;/span&gt;: &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC29&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &amp;quot;&amp;amp; .tox .tox-edit-area__iframe&amp;quot;: {&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L30&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;30&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC30&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      &lt;span class=pl-c1&gt;borderTop&lt;/span&gt;: &lt;span class=pl-s&gt;`1px solid &lt;span class=pl-s1&gt;&lt;span class=pl-kos&gt;${&lt;/span&gt;&lt;span class=pl-s1&gt;theme&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;palette&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;grey&lt;/span&gt;&lt;span class=pl-kos&gt;[&lt;/span&gt;&lt;span class=pl-s&gt;&amp;quot;400&amp;quot;&lt;/span&gt;&lt;span class=pl-kos&gt;]&lt;/span&gt;&lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;/span&gt;`&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC30&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      borderTop: `1px solid ${theme.palette.grey[&amp;quot;400&amp;quot;]}`&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L31&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;31&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC31&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC31&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    },&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L32&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;32&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC32&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-s&gt;&amp;quot;&amp;amp; .tox:not([dir=rtl]) .tox-toolbar__group:not(:last-of-type)&amp;quot;&lt;/span&gt;: &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC32&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &amp;quot;&amp;amp; .tox:not([dir=rtl]) .tox-toolbar__group:not(:last-of-type)&amp;quot;: {&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L33&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;33&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC33&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      &lt;span class=pl-c1&gt;border&lt;/span&gt;: &lt;span class=pl-s&gt;&amp;quot;transparent&amp;quot;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC33&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      border: &amp;quot;transparent&amp;quot;&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L34&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;34&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC34&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC34&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    },&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L35&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;35&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC35&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-s&gt;&amp;quot;&amp;amp; .tox-toolbar-overlord .tox-toolbar__primary .tox-toolbar__group:last-child&amp;quot;&lt;/span&gt;: &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC35&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &amp;quot;&amp;amp; .tox-toolbar-overlord .tox-toolbar__primary .tox-toolbar__group:last-child&amp;quot;: {&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L36&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;36&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC36&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      &lt;span class=pl-c1&gt;marginLeft&lt;/span&gt;: &lt;span class=pl-s&gt;&amp;quot;auto&amp;quot;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC36&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;      marginLeft: &amp;quot;auto&amp;quot;&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L37&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;37&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC37&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    &lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC37&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;    }&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L38&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;38&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC38&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC38&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  }&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L39&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;39&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-minimal-js-LC39&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-v&gt;Grid&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-minimal-js-LC39&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;}))(Grid);&lt;/td&gt;
         &lt;/tr&gt;
   &lt;/table&gt;
 &lt;/div&gt;
