@@ -37,17 +37,56 @@ npm install <package-name-alias>@npm:<package-name>@<package-version>
 
 In your example, we'll call `feature-toggle-service` when using the old version of the package and `feature-toggle-service-next` when using the latest version. At the end, this will be the commands you have to run to get the setup done in your local environment.
 
-`gist:willmendesneto/fda99dd27859571649e74d2cb2e02a54`
+```bash
+# Creating folder jumping on the created folder
+mkdir multiple-package-versions-in-project && \
+cd multiple-package-versions-in-project \
+# Starting a NPM project
+npm init -y && \
+# Installing old & new versions of `feature-toggle-service` package
+npm install --save \
+  feature-toggle-service@npm:feature-toggle-service@4.0.0 \
+  feature-toggle-service-next@npm:feature-toggle-service@6.0.0
+```
 
 As you can see on the code below, your `package.json` file now is pointing to different versions of the same package, having that available calling their respective aliases by calling via `import` or `require`.
 
-`gist:willmendesneto/0c6790fee63e328d220268784b7dcc8e`
+```json
+{
+  "name": "multiple-versions-of-package-in-project",
+  "version": "1.0.0",
+  "description": "Using multiple versions of the same package in a project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Will Mendes <willmendesneto@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "feature-toggle-service": "npm:feature-toggle-service@^4.0.0",
+    "feature-toggle-service-next": "npm:feature-toggle-service@^6.0.0"
+  }
+}
+```
 
 <hr/>
 
 Now, let's write some code using these packages. This can be done by importing both packages and methods and printing their outputs by passing their values in `console.log()` functions.
 
-`gist:willmendesneto/a2d08bc4ba22387955f9fb52d7fe8186`
+```js
+onst { isOn, set } = require('feature-toggle-service');
+const { isOn: isOnNext, set: setNext } = require('feature-toggle-service-next');
+
+const defaultConfig = { enableFirstSection: true };
+set(defaultConfig);
+setNext(defaultConfig);
+
+// ❌ Old version: does NOT have a `debug` option
+console.log(isOn('enableFirstSection'));
+// ✅ Latest version: does have a `debug` option available
+console.log(isOnNext('enableFirstSection', true));
+```
 
 In this case, we have a new feature on `isOn` method on the latest version, which is the only one who has `debug` option.
 
