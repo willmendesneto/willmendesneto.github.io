@@ -58,7 +58,7 @@ const Sidebar = () => (
     </FirstWrapper>
     <p>
       I'm a{' '}
-      <a href="https://developers.google.com/community/experts/directory/profile/profile-wilson_mendes">
+      <a href="https://developers.google.com/profile/u/willmendesneto">
         Google Developer Expert (GDE) in Angular and Web technologies
       </a>{' '}
       and{' '}
