@@ -1,4 +1,189 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Will Mendes Blog RSS Feed]]></title><description><![CDATA[Principal Frontend-Engineer, Principal Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies]]></description><link>https://willmendesneto.com</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 27 Jun 2025 18:25:11 GMT</lastBuildDate><item><title><![CDATA[Another way of thinking about frontend tests - Unit tests]]></title><link>https://willmendesneto.com/posts/another-way-to-think-in-unit-tests-for-components/</link><guid isPermaLink="false">https://willmendesneto.com/posts/another-way-to-think-in-unit-tests-for-components/</guid><pubDate>Mon, 28 Apr 2025 09:13:00 GMT</pubDate><content:encoded>&lt;p&gt;This time I&apos;ll share a quick code tip. Usually, when writing unit tests on components there&apos;s a common usage/pitfal. Some teams can start describing only and exclusively what the code does instead of the intentions around the code exists.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Will Mendes Blog RSS Feed]]></title><description><![CDATA[Principal Frontend-Engineer, Principal Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies]]></description><link>https://willmendesneto.com</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 20 Oct 2025 01:56:09 GMT</lastBuildDate><item><title><![CDATA[Building a Chrome Extension with AI Integration — A Developer Deep Dive]]></title><link>https://willmendesneto.com/posts/building-a-chrome-extension-with-ai-integration—a-developer-deep-dive/</link><guid isPermaLink="false">https://willmendesneto.com/posts/building-a-chrome-extension-with-ai-integration—a-developer-deep-dive/</guid><pubDate>Thu, 09 Oct 2025 09:13:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1280px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;https://willmendesneto.com/static/ba52e27e8e6711218f05acb26a563622/99e71/chrome-extension.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 41.25%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABYlAAAWJQFJUiTwAAACP0lEQVR42iWS20uaARjGvVq0yhkdrNTyUGpLzdTSvjJDsdQ5U2tO0tZisU4UK4ixoDFGV7tZ7GYs2EXEiIjB1thwYyu2ykPRgdj/89tnu3h5eW8efs/zvJLj42MODw+5OD9jaeUFUvVtNGYnequAuTeIc3AEqyeMvsNNtdKAosWKf2yOOkuEm40DlKkDVGiDVLYNUVLpQJLNZimKFvJ5PmcymHxxul0J6pRG5MZOGvui6Cw9NLf3oW5z0Wi0Yb+TRqaPUaoNc8tyj3JdGEXfBDJL9L9gcU7yOc4uz3k+v0rQPYa8uQOlbxjD09cYhRC2/iGMXX40FgF7dAqpMYrcPkpDcB5px31q/VMo7i4gKdJlc1k+7H7iz9ERO7u7NLU6qFXqUZoFNO4Ibd2D2EVyU08InWhd1Z+iTB+mypGkWiRrST6j0pmmVB9BUigUeLu5w+jiS5bX1rm6vCA5Po2sVkNrpxeTEEDX7sFg94rbjdbhpV5IITXHUPkeUy+SVQljqAZmUI8sI8nn8mx//MLc6ivW1t/x9+qSjfebyOQ6atQmVAYbquZ26jUmWoxW7IMJKoxhMa84Na4Uau8k+sAsNZ5HNIi0kryYXebHL95sbLH39TvF+0i0npqcJ56eoscbJhRP8XBimmQiiTOQpqTJj8wUEQuJiRnOonCPo408ocqWQJITC/m5f8Detwz7B7+vxU5PT9jc2mZmcYUHkwtYu/rxuXoRugTk5iA35J7rdylrCVNuHkZqT6KOLdEZWuAfrUNGB6ahCgkAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+          &lt;source
+              srcset=&quot;https://willmendesneto.com/static/ba52e27e8e6711218f05acb26a563622/fb34c/chrome-extension.avif 320w,https://willmendesneto.com/static/ba52e27e8e6711218f05acb26a563622/646cd/chrome-extension.avif 768w,https://willmendesneto.com/static/ba52e27e8e6711218f05acb26a563622/8b485/chrome-extension.avif 1024w,https://willmendesneto.com/static/ba52e27e8e6711218f05acb26a563622/a73d6/chrome-extension.avif 1280w,https://willmendesneto.com/static/ba52e27e8e6711218f05acb26a563622/a7f9f/chrome-extension.avif 1920w,https://willmendesneto.com/static/ba52e27e8e6711218f05acb26a563622/d090e/chrome-extension.avif 2000w&quot;
+              sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+              type=&quot;image/avif&quot;
+            /&gt;&lt;source
+              srcset=&quot;https://willmendesneto.com/static/ba52e27e8e6711218f05acb26a563622/cb523/chrome-extension.webp 320w,https://willmendesneto.com/static/ba52e27e8e6711218f05acb26a563622/cd067/chrome-extension.webp 768w,https://willmendesneto.com/static/ba52e27e8e6711218f05acb26a563622/53334/chrome-extension.webp 1024w,https://willmendesneto.com/static/ba52e27e8e6711218f05acb26a563622/4b075/chrome-extension.webp 1280w,https://willmendesneto.com/static/ba52e27e8e6711218f05acb26a563622/f3ff0/chrome-extension.webp 1920w,https://willmendesneto.com/static/ba52e27e8e6711218f05acb26a563622/56b60/chrome-extension.webp 2000w&quot;
+              sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+              type=&quot;image/webp&quot;
+            /&gt;
+          &lt;source
+            srcset=&quot;https://willmendesneto.com/static/ba52e27e8e6711218f05acb26a563622/d4f27/chrome-extension.png 320w,https://willmendesneto.com/static/ba52e27e8e6711218f05acb26a563622/778aa/chrome-extension.png 768w,https://willmendesneto.com/static/ba52e27e8e6711218f05acb26a563622/658fc/chrome-extension.png 1024w,https://willmendesneto.com/static/ba52e27e8e6711218f05acb26a563622/26c69/chrome-extension.png 1280w,https://willmendesneto.com/static/ba52e27e8e6711218f05acb26a563622/7d442/chrome-extension.png 1920w,https://willmendesneto.com/static/ba52e27e8e6711218f05acb26a563622/99e71/chrome-extension.png 2000w&quot;
+            sizes=&quot;(max-width: 1280px) 100vw, 1280px&quot;
+            type=&quot;image/png&quot;
+          /&gt;
+          &lt;img
+            class=&quot;gatsby-resp-image-image&quot;
+            src=&quot;https://willmendesneto.com/static/ba52e27e8e6711218f05acb26a563622/26c69/chrome-extension.png&quot;
+            alt=&quot;chrome extension&quot;
+            title=&quot;&quot;
+            loading=&quot;lazy&quot;
+            decoding=&quot;async&quot;
+            style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+          /&gt;
+        &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;TL;DR; Feel free to check the repo &lt;a href=&quot;https://github.com/willmendesneto/pdp-ai-chrome-extension&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;PDP AI: LLM-generated for Merchandisers&lt;/a&gt;🎉&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;This project combines two of my favorite areas — &lt;strong&gt;frontend architecture&lt;/strong&gt; and &lt;strong&gt;applied AI&lt;/strong&gt; — to create something genuinely useful: a Chrome extension that uses &lt;strong&gt;Gemini AI&lt;/strong&gt; to analyze and optimize &lt;strong&gt;Product Detail Pages&lt;/strong&gt; (the meaning of the acronym &lt;em&gt;PDPs&lt;/em&gt; used in this blogpost) for both SEO and UX.&lt;/p&gt;
+&lt;p&gt;If you&apos;ve worked on e-commerce before, you know PDPs can make or break conversions. They&apos;re also notorious for being hard to optimize efficiently: changing metadata requires SEO and dev alignment, and UX improvements often demand multiple review loops.&lt;/p&gt;
+&lt;p&gt;The extension, &lt;strong&gt;&quot;PDP AI: LLM-generated for Merchandisers,&quot;&lt;/strong&gt; aims to reduce this friction by using an LLM as a live consultant — it reads the current page, generates optimized content, and applies it instantly to the DOM so merchandisers can preview improvements in context.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;Motivation &amp;#x26; Core Problem&lt;/h3&gt;
+&lt;p&gt;In e-commerce, few things move slower than merchandising feedback loops. Optimizing a Product Detail Page (PDP) typically requires back-and-forth cycles between copywriters, SEO teams, and developers. Every iteration can take days.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The main goal here is to &lt;strong&gt;optimize&lt;/strong&gt; that cycle using the best tools for it.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The project — &lt;a href=&quot;https://github.com/willmendesneto/pdp-ai-chrome-extension&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;PDP AI: LLM-generated for Merchandisers&lt;/a&gt; — is a Chrome extension that uses &lt;a href=&quot;https://gemini.google.com/app&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Google Gemini&lt;/a&gt; to analyze a live PDP, suggest optimizations for both SEO (metadata) and CX (content clarity), and apply those suggestions instantly to the DOM.&lt;/p&gt;
+&lt;p&gt;It’s a deep experiment in bridging three complex systems:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The restrictive security model of Manifest V3&lt;/li&gt;
+&lt;li&gt;The analytical power of LLMs&lt;/li&gt;
+&lt;li&gt;The unpredictable structure of e-commerce frontends&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The architectural challenge: perform high-stakes operations (network calls, content rewriting, DOM mutation) within Chrome’s isolation rules — without leaking API keys or violating MV3’s sandboxing.&lt;/p&gt;
+&lt;h3&gt;Architecture Breakdown: A Layered Communication Model 🔐&lt;/h3&gt;
+&lt;p&gt;Manifest V3 enforces strong process isolation, which means your extension can’t just &quot;fetch&quot; from the page. Each file has to own a single responsibility. Here’s how this one’s wired:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;left&quot;&gt;Component&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;File(s)&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;Responsibility&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;Service Worker&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;background.js&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;The brain. Handles Gemini API requests, parses structured responses, and manages API keys via &lt;code class=&quot;language-text&quot;&gt;chrome.storage.local&lt;/code&gt;. Never touches the DOM.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;Content Script&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;content.js&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;The bridge. Listens for messages from the injected script and forwards HTML to the service worker via &lt;code class=&quot;language-text&quot;&gt;chrome.runtime.sendMessage&lt;/code&gt;. Receives AI results and sends them back to the page.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;DOM Updater&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;dom-updater.js&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;The executor. Runs in the &lt;strong&gt;main world&lt;/strong&gt;, applying AI-generated updates directly to the live DOM. Operates on selectors returned by the model.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;Popup UI&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;popup.html&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;popup.js&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;popup.css&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;The control center. Lets users trigger the process, shows loading states, and visualizes before/after content with reasons for each suggestion.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;Settings Vault&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;options.html&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;options.js&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;Securely stores the Gemini API key; it’s never shared with page scripts.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;This message-passing pattern ensures a clear separation of trust boundaries — inspired by Chrome’s own &lt;a href=&quot;https://developer.chrome.com/docs/extensions/mv3/architecture-overview&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Extension Architecture&lt;/a&gt; guidelines.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;Prompt Engineering: Making Gemini a Structural Analyst 🧠&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You can know more about Prompt Engineering usage, best practices, validation and more by checking &lt;a href=&quot;https://developers.google.com/machine-learning/prompt-engineering&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Prompt Engineering for Developers&lt;/a&gt; link&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The &lt;strong&gt;prompt&lt;/strong&gt; inside &lt;code class=&quot;language-text&quot;&gt;background.js&lt;/code&gt; is arguably the real &quot;code.&quot; It defines what the model does, how it should format its output, and what constraints it must follow.&lt;/p&gt;
+&lt;p&gt;We didn’t just want &lt;em&gt;creative text&lt;/em&gt;. We wanted &lt;strong&gt;machine-composable output&lt;/strong&gt; — JSON objects with selectors and reasons.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example excerpt:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token property&quot;&gt;&quot;body&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;originalDescription&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;…&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;selectors&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;.product-description&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;#pdp-desc&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;newDescription&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Optimized, detailed text with feature highlights&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;reason&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Adds clarity and key phrases for SEO&quot;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This is the &lt;em&gt;Machine-Composable Response Format&lt;/em&gt; — a predictable JSON schema designed to make the AI’s output safe for programmatic consumption. The idea of the contract was to apply something similar to Model Context Protocol (MCP) server response approach. So that we can also add this flexibility on the product to move into different directions and integrations, if relevant - and it will!&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;To know more about MCP&apos;s please check the &lt;a href=&quot;https://modelcontextprotocol.io/docs/getting-started/intro&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Model Context Protocol Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Key rules enforced through prompt constraints:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Delegated scraping:&lt;/strong&gt; Instead of writing brittle DOM extraction logic, the model receives the entire HTML and returns both extracted data and CSS selectors. This makes it resilient to different PDP layouts. It will also enable us to enrich the AI model context in a short future as soon as the project grows&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Length &amp;#x26; clarity constraints:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;head&gt;&lt;/code&gt; fields respect SEO standards — &lt;em&gt;title ≤ 60 chars&lt;/em&gt;, &lt;em&gt;meta description ≤ 160 chars&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;body&gt;&lt;/code&gt; content prioritizes completeness and persuasion — no summarizing away details.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Explainability:&lt;/strong&gt; Each suggestion carries a &lt;code class=&quot;language-text&quot;&gt;reason&lt;/code&gt;, improving transparency for merchandisers.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr /&gt;
+&lt;h3&gt;The JSON Contract &amp;#x26; Security Design&lt;/h3&gt;
+&lt;p&gt;The JSON schema doubles as the &lt;strong&gt;API contract&lt;/strong&gt; between AI and code. The service worker expects this structure, validates it, and passes it down through &lt;code class=&quot;language-text&quot;&gt;chrome.tabs.sendMessage&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The DOM updater (&lt;code class=&quot;language-text&quot;&gt;dom-updater.js&lt;/code&gt;) then safely loops through the selectors to replace content — updating &lt;code class=&quot;language-text&quot;&gt;&amp;lt;title&gt;&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;&amp;lt;meta&gt;&lt;/code&gt; tags, and customer-facing text nodes.&lt;/p&gt;
+&lt;p&gt;Because only the updater runs in the main world, the API key and AI logic never cross into unsafe territory — crucial for compliance with Manifest V3’s &lt;a href=&quot;https://developer.chrome.com/docs/extensions/mv3/content_scripts/#execution-environment&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Content Script Isolation&lt;/a&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;UI Feedback Loop: Closing the Human-in-the-Loop Circle&lt;/h3&gt;
+&lt;p&gt;The popup UI acts as a &lt;strong&gt;visual diff viewer&lt;/strong&gt;. It shows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Original vs. AI-suggested text&lt;/li&gt;
+&lt;li&gt;The reasoning for each recommendation&lt;/li&gt;
+&lt;li&gt;Real-time updates applied to the live page&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The HTML/CSS implementation (&lt;code class=&quot;language-text&quot;&gt;popup.html&lt;/code&gt; + &lt;code class=&quot;language-text&quot;&gt;popup.css&lt;/code&gt;) keeps everything compact and responsive, emphasizing clarity for non-technical users while staying developer-friendly for debugging.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;Lessons Learned&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Your prompt &lt;em&gt;is&lt;/em&gt; the software contract.&lt;/strong&gt;
+A well-defined schema transforms generative AI from &quot;black box&quot; to &quot;deterministic API.&quot; We treated prompt engineering like interface design.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Separation of concerns beats convenience.&lt;/strong&gt;
+Each script has one clear boundary. This made debugging trivial — we could trace data from page → service worker → Gemini → page without crossing trust zones.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;LLMs can be reliable scrapers — if you guide them.&lt;/strong&gt;
+By providing context (&quot;analyze HTML, return selectors&quot;), the model performed robust structural analysis that would take hundreds of regexes to reproduce.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Manifest V3’s restrictions are features, not bugs.&lt;/strong&gt;
+They forced a cleaner, message-driven architecture that’s more secure and modular.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr /&gt;
+&lt;h3&gt;References &amp;#x26; Further Reading&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.chrome.com/docs/extensions/mv3/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Chrome Extensions Manifest V3 Docs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://ai.google.dev/api/rest/v1beta/models/gemini-2.0-flash&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Google Gemini API Reference&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developers.google.com/machine-learning/prompt-engineering&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Prompt Engineering for Developers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/willmendesneto/pdp-ai-chrome-extension&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;PDP AI: LLM-generated for Merchandisers&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;With this structure and the hyphotesis raised for this experiment, the initial validation for the extension was a success, turning &lt;strong&gt;days of merchandising iteration into seconds&lt;/strong&gt; integrating both of worlds: all the power of AI with and the real visualization of the changes via PDP extension.&lt;/p&gt;
+&lt;p&gt;Take that as some food for though! What started as an experiment in Chrome’s sandbox evolved into a modular AI-powered workflow — one that lives entirely client-side, yet feels like a co-pilot for every product manager and SEO specialist.&lt;/p&gt;
+&lt;h3&gt;That’s all for now&lt;/h3&gt;
+&lt;p&gt;I hope you enjoyed this reading as much as I enjoyed writing it. Thank you so much for reading until the end and see you soon!&lt;/p&gt;
+&lt;p&gt;🚀🚀🚀🚀🚀🚀&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Cya 👋&lt;/h3&gt;
+                &lt;div style=&quot;margin-top=55px; font-style: italic;&quot;&gt;(This is an article posted to my blog at willmendesneto.com. You can read it online by &lt;a href=&quot;https://willmendesneto.com/posts/building-a-chrome-extension-with-ai-integration—a-developer-deep-dive/&quot;&gt;clicking here&lt;/a&gt;.)&lt;/div&gt;
+              </content:encoded></item><item><title><![CDATA[Another way of thinking about frontend tests - Unit tests]]></title><link>https://willmendesneto.com/posts/another-way-to-think-in-unit-tests-for-components/</link><guid isPermaLink="false">https://willmendesneto.com/posts/another-way-to-think-in-unit-tests-for-components/</guid><pubDate>Mon, 28 Apr 2025 09:13:00 GMT</pubDate><content:encoded>&lt;p&gt;This time I&apos;ll share a quick code tip. Usually, when writing unit tests on components there&apos;s a common usage/pitfal. Some teams can start describing only and exclusively what the code does instead of the intentions around the code exists.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;⚠️ This post will talk only and exclusively about the way of writing tests that makes sense to humans, so we it won&apos;t cover Test Driven Development - AKA TDD. TDD is not just a design tool, but also a software development workflow that has prompts for code improvement in its lifecycle. ⚠️&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1375,7 +1560,7 @@ console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-path=&quot;do-not-abuse-of-nullish-coalescing-usage-in.ts&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;4&quot; data-paste-markdown-skip data-tagsearch-path=&quot;do-not-abuse-of-nullish-coalescing-usage-in.ts&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-do-not-abuse-of-nullish-coalescing-usage-in-ts-L1&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-do-not-abuse-of-nullish-coalescing-usage-in-ts-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;// Link for example in Typescript playground&lt;/td&gt;
@@ -1710,10 +1895,10 @@ console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-path=&quot;pino-sanitize-example.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;4&quot; data-paste-markdown-skip data-tagsearch-path=&quot;pino-sanitize-example.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L1&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-pino-sanitize-example-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-s&gt;&amp;#39;use strict&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-pino-sanitize-example-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&amp;#39;use strict&amp;#39;;&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L2&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;2&quot;&gt;&lt;/td&gt;
@@ -1722,7 +1907,7 @@ console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L3&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;3&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-pino-sanitize-example-js-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-k&gt;const&lt;/span&gt; &lt;span class=pl-s1&gt;pino&lt;/span&gt; &lt;span class=pl-c1&gt;=&lt;/span&gt; &lt;span class=pl-en&gt;require&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s&gt;&amp;#39;pino&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-pino-sanitize-example-js-LC3&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;const pino = require(&amp;#39;pino&amp;#39;)();&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L4&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;4&quot;&gt;&lt;/td&gt;
@@ -1731,11 +1916,11 @@ console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L5&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;5&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-pino-sanitize-example-js-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-k&gt;const&lt;/span&gt; &lt;span class=pl-s1&gt;uuid&lt;/span&gt; &lt;span class=pl-c1&gt;=&lt;/span&gt; &lt;span class=pl-s&gt;&amp;#39;fe35c68e-1648-40a5-8f3a-a7d5ae054261&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-pino-sanitize-example-js-LC5&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;const uuid = &amp;#39;fe35c68e-1648-40a5-8f3a-a7d5ae054261&amp;#39;;&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L6&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;6&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-pino-sanitize-example-js-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-k&gt;const&lt;/span&gt; &lt;span class=pl-s1&gt;hash&lt;/span&gt; &lt;span class=pl-c1&gt;=&lt;/span&gt; &lt;span class=pl-s&gt;&amp;#39;2cccdfbad40b872c6615c9721d14b904465a424e&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-pino-sanitize-example-js-LC6&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;const hash = &amp;#39;2cccdfbad40b872c6615c9721d14b904465a424e&amp;#39;;&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L7&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;7&quot;&gt;&lt;/td&gt;
@@ -1744,43 +1929,43 @@ console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L8&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;8&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-pino-sanitize-example-js-LC8&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-s1&gt;pino&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;info&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s&gt;&amp;#39;hello world&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-pino-sanitize-example-js-LC8&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;pino.info(&amp;#39;hello world&amp;#39;);&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L9&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;9&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-pino-sanitize-example-js-LC9&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-s1&gt;pino&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;error&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s&gt;&amp;#39;this is at error level&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-pino-sanitize-example-js-LC9&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;pino.error(&amp;#39;this is at error level&amp;#39;);&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L10&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;10&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-pino-sanitize-example-js-LC10&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-s1&gt;pino&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;info&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s&gt;&amp;#39;the answer is %d&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt; &lt;span class=pl-c1&gt;42&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-pino-sanitize-example-js-LC10&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;pino.info(&amp;#39;the answer is %d&amp;#39;, 42);&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L11&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;11&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-pino-sanitize-example-js-LC11&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-s1&gt;pino&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;info&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-kos&gt;{&lt;/span&gt; &lt;span class=pl-c1&gt;obj&lt;/span&gt;: &lt;span class=pl-c1&gt;42&lt;/span&gt; &lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt; &lt;span class=pl-s&gt;&amp;#39;hello world&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-pino-sanitize-example-js-LC11&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;pino.info({ obj: 42 }, &amp;#39;hello world&amp;#39;);&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L12&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;12&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-pino-sanitize-example-js-LC12&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-s1&gt;pino&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;info&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-kos&gt;{&lt;/span&gt; &lt;span class=pl-c1&gt;obj&lt;/span&gt;: &lt;span class=pl-c1&gt;42&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt; &lt;span class=pl-c1&gt;b&lt;/span&gt;: &lt;span class=pl-c1&gt;2&lt;/span&gt; &lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt; &lt;span class=pl-s&gt;&amp;#39;hello world&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-pino-sanitize-example-js-LC12&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;pino.info({ obj: 42, b: 2 }, &amp;#39;hello world&amp;#39;);&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L13&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;13&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-pino-sanitize-example-js-LC13&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-s1&gt;pino&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;info&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-kos&gt;{&lt;/span&gt; &lt;span class=pl-c1&gt;nested&lt;/span&gt;: &lt;span class=pl-kos&gt;{&lt;/span&gt; &lt;span class=pl-c1&gt;obj&lt;/span&gt;: &lt;span class=pl-c1&gt;42&lt;/span&gt; &lt;span class=pl-kos&gt;}&lt;/span&gt; &lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;span class=pl-kos&gt;,&lt;/span&gt; &lt;span class=pl-s&gt;&amp;#39;nested&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-pino-sanitize-example-js-LC13&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;pino.info({ nested: { obj: 42 } }, &amp;#39;nested&amp;#39;);&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L14&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;14&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-pino-sanitize-example-js-LC14&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-en&gt;setImmediate&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-k&gt;function&lt;/span&gt; &lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt; &lt;span class=pl-kos&gt;{&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-pino-sanitize-example-js-LC14&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;setImmediate(function () {&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L15&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;15&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-pino-sanitize-example-js-LC15&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  &lt;span class=pl-s1&gt;pino&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;info&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s&gt;&amp;#39;after setImmediate&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-pino-sanitize-example-js-LC15&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;  pino.info(&amp;#39;after setImmediate&amp;#39;);&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L16&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;16&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-pino-sanitize-example-js-LC16&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-pino-sanitize-example-js-LC16&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;});&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L17&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;17&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-pino-sanitize-example-js-LC17&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-s1&gt;pino&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;error&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-k&gt;new&lt;/span&gt; &lt;span class=pl-v&gt;Error&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s&gt;`an error with UUID: &lt;span class=pl-s1&gt;&lt;span class=pl-kos&gt;${&lt;/span&gt;&lt;span class=pl-s1&gt;uuid&lt;/span&gt;&lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;/span&gt;`&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-pino-sanitize-example-js-LC17&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;pino.error(new Error(`an error with UUID: ${uuid}`));&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L18&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;18&quot;&gt;&lt;/td&gt;
@@ -1789,11 +1974,11 @@ console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L19&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;19&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-pino-sanitize-example-js-LC19&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-k&gt;var&lt;/span&gt; &lt;span class=pl-s1&gt;child&lt;/span&gt; &lt;span class=pl-c1&gt;=&lt;/span&gt; &lt;span class=pl-s1&gt;pino&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;child&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-kos&gt;{&lt;/span&gt; &lt;span class=pl-c1&gt;a&lt;/span&gt;: &lt;span class=pl-s&gt;`property &lt;span class=pl-s1&gt;&lt;span class=pl-kos&gt;${&lt;/span&gt;&lt;span class=pl-s1&gt;uuid&lt;/span&gt;&lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;/span&gt;`&lt;/span&gt; &lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-pino-sanitize-example-js-LC19&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;var child = pino.child({ a: `property ${uuid}` });&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L20&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;20&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-pino-sanitize-example-js-LC20&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-s1&gt;child&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;info&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s&gt;&amp;#39;hello child!&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-pino-sanitize-example-js-LC20&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;child.info(&amp;#39;hello child!&amp;#39;);&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L21&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;21&quot;&gt;&lt;/td&gt;
@@ -1802,11 +1987,11 @@ console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L22&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;22&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-pino-sanitize-example-js-LC22&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-k&gt;var&lt;/span&gt; &lt;span class=pl-s1&gt;childsChild&lt;/span&gt; &lt;span class=pl-c1&gt;=&lt;/span&gt; &lt;span class=pl-s1&gt;child&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;child&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-kos&gt;{&lt;/span&gt; &lt;span class=pl-c1&gt;another&lt;/span&gt;: &lt;span class=pl-s&gt;&amp;#39;property&amp;#39;&lt;/span&gt; &lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-pino-sanitize-example-js-LC22&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;var childsChild = child.child({ another: &amp;#39;property&amp;#39; });&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L23&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;23&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-pino-sanitize-example-js-LC23&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-s1&gt;childsChild&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;info&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s&gt;&amp;#39;hello baby..&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-pino-sanitize-example-js-LC23&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;childsChild.info(&amp;#39;hello baby..&amp;#39;);&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L24&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;24&quot;&gt;&lt;/td&gt;
@@ -1815,7 +2000,7 @@ console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L25&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;25&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-pino-sanitize-example-js-LC25&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-s1&gt;pino&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;debug&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s&gt;&amp;#39;this should be mute&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-pino-sanitize-example-js-LC25&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;pino.debug(&amp;#39;this should be mute&amp;#39;);&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L26&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;26&quot;&gt;&lt;/td&gt;
@@ -1824,7 +2009,7 @@ console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L27&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;27&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-pino-sanitize-example-js-LC27&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-s1&gt;pino&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-c1&gt;level&lt;/span&gt; &lt;span class=pl-c1&gt;=&lt;/span&gt; &lt;span class=pl-s&gt;&amp;#39;trace&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-pino-sanitize-example-js-LC27&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;pino.level = &amp;#39;trace&amp;#39;;&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L28&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;28&quot;&gt;&lt;/td&gt;
@@ -1833,7 +2018,7 @@ console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L29&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;29&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-pino-sanitize-example-js-LC29&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-s1&gt;pino&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;debug&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s&gt;&amp;#39;this is a debug statement&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-pino-sanitize-example-js-LC29&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;pino.debug(&amp;#39;this is a debug statement&amp;#39;);&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L30&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;30&quot;&gt;&lt;/td&gt;
@@ -1842,11 +2027,11 @@ console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L31&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;31&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-pino-sanitize-example-js-LC31&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-s1&gt;pino&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;child&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-kos&gt;{&lt;/span&gt; &lt;span class=pl-c1&gt;another&lt;/span&gt;: &lt;span class=pl-s&gt;&amp;#39;#property2&amp;#39;&lt;/span&gt; &lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;debug&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s&gt;&amp;#39;this is a debug statement via child&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-pino-sanitize-example-js-LC31&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;pino.child({ another: &amp;#39;#property2&amp;#39; }).debug(&amp;#39;this is a debug statement via child&amp;#39;);&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L32&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;32&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-pino-sanitize-example-js-LC32&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-s1&gt;pino&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;trace&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s&gt;&amp;#39;this is a trace statement&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-pino-sanitize-example-js-LC32&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;pino.trace(&amp;#39;this is a trace statement&amp;#39;);&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L33&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;33&quot;&gt;&lt;/td&gt;
@@ -1855,7 +2040,7 @@ console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L34&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;34&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-pino-sanitize-example-js-LC34&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-s1&gt;pino&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;debug&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s&gt;&amp;#39;this is a &amp;quot;debug&amp;quot; statement with &amp;quot;&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-pino-sanitize-example-js-LC34&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;pino.debug(&amp;#39;this is a &amp;quot;debug&amp;quot; statement with &amp;quot;&amp;#39;);&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L35&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;35&quot;&gt;&lt;/td&gt;
@@ -1864,7 +2049,7 @@ console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L36&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;36&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-pino-sanitize-example-js-LC36&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-s1&gt;pino&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;info&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s&gt;&amp;#39;hello world&amp;#39;&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-pino-sanitize-example-js-LC36&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;pino.info(&amp;#39;hello world&amp;#39;);&lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L37&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;37&quot;&gt;&lt;/td&gt;
@@ -1873,7 +2058,7 @@ console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
         &lt;/tr&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-pino-sanitize-example-js-L38&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;38&quot;&gt;&lt;/td&gt;
-          &lt;td id=&quot;file-pino-sanitize-example-js-LC38&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&lt;span class=pl-s1&gt;pino&lt;/span&gt;&lt;span class=pl-kos&gt;.&lt;/span&gt;&lt;span class=pl-en&gt;info&lt;/span&gt;&lt;span class=pl-kos&gt;(&lt;/span&gt;&lt;span class=pl-s&gt;`API CALLED: www.test.com/&lt;span class=pl-s1&gt;&lt;span class=pl-kos&gt;${&lt;/span&gt;&lt;span class=pl-s1&gt;uuid&lt;/span&gt;&lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;/span&gt;/user/:&lt;span class=pl-s1&gt;&lt;span class=pl-kos&gt;${&lt;/span&gt;&lt;span class=pl-s1&gt;hash&lt;/span&gt;&lt;span class=pl-kos&gt;}&lt;/span&gt;&lt;/span&gt;/7627?test=true with HTTP Status 200`&lt;/span&gt;&lt;span class=pl-kos&gt;)&lt;/span&gt;&lt;span class=pl-kos&gt;;&lt;/span&gt;&lt;/td&gt;
+          &lt;td id=&quot;file-pino-sanitize-example-js-LC38&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;pino.info(`API CALLED: www.test.com/${uuid}/user/:${hash}/7627?test=true with HTTP Status 200`);&lt;/td&gt;
         &lt;/tr&gt;
   &lt;/table&gt;
 &lt;/div&gt;
@@ -2284,7 +2469,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-path=&quot;index.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;4&quot; data-paste-markdown-skip data-tagsearch-path=&quot;index.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-index-js-L1&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-index-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;const assert = require(&amp;#39;assert&amp;#39;);&lt;/td&gt;
@@ -2562,7 +2747,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-path=&quot;package.json&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;4&quot; data-paste-markdown-skip data-tagsearch-path=&quot;package.json&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-package-json-L1&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-package-json-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;{&lt;/td&gt;
@@ -2707,7 +2892,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-path=&quot;list-unused-feature-flags-in-code.sh&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;4&quot; data-paste-markdown-skip data-tagsearch-path=&quot;list-unused-feature-flags-in-code.sh&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-list-unused-feature-flags-in-code-sh-L1&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-list-unused-feature-flags-in-code-sh-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;#!/usr/bin/env bash&lt;/td&gt;
@@ -3647,7 +3832,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-path=&quot;package-json-with-new-dependency.json&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;4&quot; data-paste-markdown-skip data-tagsearch-path=&quot;package-json-with-new-dependency.json&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-package-json-with-new-dependency-json-L1&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-package-json-with-new-dependency-json-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;{&lt;/td&gt;
@@ -3764,7 +3949,7 @@ npm init -y&lt;/pre&gt;&lt;/div&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-path=&quot;gistfile1.txt&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;4&quot; data-paste-markdown-skip data-tagsearch-path=&quot;gistfile1.txt&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-gistfile1-txt-L1&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-gistfile1-txt-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;ignores: [&amp;quot;perf-marks&amp;quot;]&lt;/td&gt;
@@ -3982,7 +4167,7 @@ editor/
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-path=&quot;editor.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;4&quot; data-paste-markdown-skip data-tagsearch-path=&quot;editor.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-editor-js-L1&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-editor-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
@@ -4247,7 +4432,7 @@ editor/
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-path=&quot;minimal.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;4&quot; data-paste-markdown-skip data-tagsearch-path=&quot;minimal.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-minimal-js-L1&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-minimal-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;// This file will live in `editor/themes/minimal.js`&lt;/td&gt;
@@ -4463,7 +4648,7 @@ editor/
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-path=&quot;icons.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;4&quot; data-paste-markdown-skip data-tagsearch-path=&quot;icons.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-icons-js-L1&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-icons-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;// This file will live in `editor/icons.js`&lt;/td&gt;
@@ -4611,7 +4796,7 @@ editor/
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-path=&quot;App.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;4&quot; data-paste-markdown-skip data-tagsearch-path=&quot;App.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-app-js-L1&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-app-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;import React, { useState, useEffect } from &amp;quot;react&amp;quot;;&lt;/td&gt;
@@ -5190,7 +5375,7 @@ editor/
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-path=&quot;editor-with-setup-for-actions.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;4&quot; data-paste-markdown-skip data-tagsearch-path=&quot;editor-with-setup-for-actions.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-editor-with-setup-for-actions-js-L1&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-editor-with-setup-for-actions-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;import React, { useEffect, useState } from &amp;quot;react&amp;quot;;&lt;/td&gt;
@@ -5886,7 +6071,7 @@ editor/
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-path=&quot;utils-entrypoint-example.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;4&quot; data-paste-markdown-skip data-tagsearch-path=&quot;utils-entrypoint-example.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-utils-entrypoint-example-js-L1&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-utils-entrypoint-example-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;// `./entrypoints/utils.js` file content&lt;/td&gt;
@@ -5965,7 +6150,7 @@ editor/
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-path=&quot;package.json&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;4&quot; data-paste-markdown-skip data-tagsearch-path=&quot;package.json&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-package-json-L1&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-package-json-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;{&lt;/td&gt;
@@ -6219,7 +6404,7 @@ I encourage you to see all of these steps in action by using [perf-marks entry-p
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-path=&quot;performance-observer.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;4&quot; data-paste-markdown-skip data-tagsearch-path=&quot;performance-observer.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-performance-observer-js-L1&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-performance-observer-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;const observer = new PerformanceObserver((list) =&amp;gt; {&lt;/td&gt;
@@ -6499,7 +6684,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-path=&quot;perf-node.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;4&quot; data-paste-markdown-skip data-tagsearch-path=&quot;perf-node.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-perf-node-js-L1&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-perf-node-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;const { performance, PerformanceObserver } = require(&amp;#39;perf_hooks&amp;#39;);&lt;/td&gt;
@@ -6666,7 +6851,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-path=&quot;using-perf-marks.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;4&quot; data-paste-markdown-skip data-tagsearch-path=&quot;using-perf-marks.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-using-perf-marks-js-L1&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-using-perf-marks-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;import { profiler } from &amp;#39;perf-marks/profiler&amp;#39;;&lt;/td&gt;
@@ -6796,7 +6981,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-path=&quot;perf-marks.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;4&quot; data-paste-markdown-skip data-tagsearch-path=&quot;perf-marks.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-perf-marks-js-L1&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-perf-marks-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;import { start, end } from &amp;#39;perf-marks/marks&amp;#39;;&lt;/td&gt;
@@ -6974,7 +7159,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-path=&quot;css-in-js-breakpoints.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;4&quot; data-paste-markdown-skip data-tagsearch-path=&quot;css-in-js-breakpoints.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-css-in-js-breakpoints-js-L1&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-css-in-js-breakpoints-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;/**&lt;/td&gt;
@@ -7239,7 +7424,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-path=&quot;a11y-dev-mode.css&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;4&quot; data-paste-markdown-skip data-tagsearch-path=&quot;a11y-dev-mode.css&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-a11y-dev-mode-css-L1&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-a11y-dev-mode-css-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;/* Highliting accessibility errors in HTML */&lt;/td&gt;
@@ -7645,7 +7830,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-path=&quot;dark-mode-via-css-media-query.css&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;4&quot; data-paste-markdown-skip data-tagsearch-path=&quot;dark-mode-via-css-media-query.css&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-dark-mode-via-css-media-query-css-L1&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-dark-mode-via-css-media-query-css-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;html {    &lt;/td&gt;
@@ -7775,7 +7960,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-path=&quot;dark-mode-switch-toggle.html&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;4&quot; data-paste-markdown-skip data-tagsearch-path=&quot;dark-mode-switch-toggle.html&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-dark-mode-switch-toggle-html-L1&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-dark-mode-switch-toggle-html-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;&amp;lt;!-- Adding dark-mode switch toggle in your page --&amp;gt;&lt;/td&gt;
@@ -7861,7 +8046,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-path=&quot;dark-mode-via-css-media-query-and-classes-via-javascript.css&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;4&quot; data-paste-markdown-skip data-tagsearch-path=&quot;dark-mode-via-css-media-query-and-classes-via-javascript.css&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-dark-mode-via-css-media-query-and-classes-via-javascript-css-L1&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-dark-mode-via-css-media-query-and-classes-via-javascript-css-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;
@@ -8282,7 +8467,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-path=&quot;dark-mode-via-css-media-query-and-classes-via-javascript.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;4&quot; data-paste-markdown-skip data-tagsearch-path=&quot;dark-mode-via-css-media-query-and-classes-via-javascript.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-dark-mode-via-css-media-query-and-classes-via-javascript-js-L1&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-dark-mode-via-css-media-query-and-classes-via-javascript-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;function toggleSiteTheme(e) {&lt;/td&gt;
@@ -8524,7 +8709,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-path=&quot;dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;4&quot; data-paste-markdown-skip data-tagsearch-path=&quot;dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-L1&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-dark-mode-via-css-media-query-classes-and-scheme-listener-via-javascript-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;function toggleSiteTheme(e) {&lt;/td&gt;
@@ -8772,7 +8957,7 @@ At the end, the user won&apos;t know anything about Javascript Frameworks, CSS, 
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-path=&quot;dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;4&quot; data-paste-markdown-skip data-tagsearch-path=&quot;dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-L1&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-dark-mode-via-css-media-query-classes-and-scheme-listener-and-event-listener-optimized-by-devicevia-javascript-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;function toggleSiteTheme(e) {&lt;/td&gt;
@@ -9367,7 +9552,7 @@ This list in incomplete:&lt;/p&gt;
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-path=&quot;fetch-some-data.js&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;4&quot; data-paste-markdown-skip data-tagsearch-path=&quot;fetch-some-data.js&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-fetch-some-data-js-L1&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-fetch-some-data-js-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;const fetchSomeData = async () =&amp;gt; {&lt;/td&gt;
@@ -9670,7 +9855,7 @@ _The 6.0.0 release of Angular is here! This is a major release focused less on t
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-path=&quot;ng-publish.sh&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;4&quot; data-paste-markdown-skip data-tagsearch-path=&quot;ng-publish.sh&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-ng-publish-sh-L1&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-ng-publish-sh-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;# Usage: &lt;/td&gt;
@@ -9809,7 +9994,7 @@ _The 6.0.0 release of Angular is here! This is a major release focused less on t
 &lt;/svg&gt;
 &lt;/span&gt;&lt;/template&gt;
 
-  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;8&quot; data-paste-markdown-skip data-tagsearch-path=&quot;config.yml&quot;&gt;
+  &lt;table data-hpc class=&quot;highlight tab-size js-file-line-container&quot; data-tab-size=&quot;4&quot; data-paste-markdown-skip data-tagsearch-path=&quot;config.yml&quot;&gt;
         &lt;tr&gt;
           &lt;td id=&quot;file-config-yml-L1&quot; class=&quot;blob-num js-line-number js-blob-rnum&quot; data-line-number=&quot;1&quot;&gt;&lt;/td&gt;
           &lt;td id=&quot;file-config-yml-LC1&quot; class=&quot;blob-code blob-code-inner js-file-line&quot;&gt;version: 2&lt;/td&gt;

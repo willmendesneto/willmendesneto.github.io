@@ -40,16 +40,16 @@ self.__precacheManifest = [
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "128bc9fb52f4545d64f179f3e3babe63"
+    "revision": "ad73e4e8216a70f062bdedd76250c44e"
   },
   {
-    "url": "static/webfonts/s/poppins/v23/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2"
+    "url": "static/webfonts/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2"
   },
   {
-    "url": "static/webfonts/s/poppins/v23/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2"
+    "url": "static/webfonts/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2"
   },
   {
-    "url": "static/webfonts/s/poppins/v23/pxiByp8kv8JHgFVrLBT5Z1xlFQ.woff2"
+    "url": "static/webfonts/s/poppins/v24/pxiByp8kv8JHgFVrLBT5Z1xlFQ.woff2"
   },
   {
     "url": "manifest.webmanifest",
