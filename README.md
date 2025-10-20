@@ -28,5 +28,4 @@ Feel free to [contribute](https://github.com/willmendesneto/willmendesneto.githu
 
 **Wilson Mendes (willmendesneto)**
 
-- <https://twitter.com/willmendesneto>
 - <http://github.com/willmendesneto>
