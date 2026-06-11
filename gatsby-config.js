@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://willmendesneto.com',
+    siteUrl: 'https://willmendesneto.github.io',
     title: 'Wilson Mendes',
     description:
       'Principal Frontend-Engineer, Principal Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies',
@@ -93,8 +93,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'willmendesneto.com',
-        short_name: 'willmendesneto.com',
+        name: 'willmendesneto.github.io',
+        short_name: 'willmendesneto.github.io',
         start_url: '/',
         display: 'minimal-ui',
         icon: 'src/images/profile.png', // This path is relative to the root of the site.
@@ -146,7 +146,7 @@ module.exports = {
               return allMarkdownRemark.edges.map(edge => {
                 const siteUrl = site.siteMetadata.siteUrl;
                 const postText = `
-                <div style="margin-top=55px; font-style: italic;">(This is an article posted to my blog at willmendesneto.com. You can read it online by <a href="${
+                <div style="margin-top=55px; font-style: italic;">(This is an article posted to my blog at willmendesneto.github.io. You can read it online by <a href="${
                   siteUrl + edge.node.frontmatter.path
                 }">clicking here</a>.)</div>
               `;

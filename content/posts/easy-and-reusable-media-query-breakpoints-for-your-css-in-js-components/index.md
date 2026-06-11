@@ -54,7 +54,7 @@ As a final result, your app will have a single place as the source of your break
 ![CSS Media Queries helper in action](./website-media-queries.jpg)
 
 
-As I mentioned in another post, dependencies are necessary in webapps. However, [we should consider twice when adding any package dependency in our apps for several reasons](https://willmendesneto.com/posts/solving-a-problem-is-more-than-just-adding-a-new-dependency).
+As I mentioned in another post, dependencies are necessary in webapps. However, [we should consider twice when adding any package dependency in our apps for several reasons](https://willmendesneto.github.io/posts/solving-a-problem-is-more-than-just-adding-a-new-dependency).
 
 <hr/>
 

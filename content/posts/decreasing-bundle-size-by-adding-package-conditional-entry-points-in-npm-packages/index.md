@@ -22,7 +22,7 @@ Among the evolution or large codebases, concerns about performance are always ra
 
 Even though these are quite good ideas, having application performance boost as final results, it's usually done on the application side. If you're using design system and javascript libraries you should also care about their bundle sizes. 
 
-> Some of these points were covered on ["Solving a problem is more than just adding a new dependency"](https://willmendesneto.com/posts/solving-a-problem-is-more-than-just-adding-a-new-dependency) post. The intention of this post is specifically to show you how to integrate entry points in your NPM Packages.
+> Some of these points were covered on ["Solving a problem is more than just adding a new dependency"](https://willmendesneto.github.io/posts/solving-a-problem-is-more-than-just-adding-a-new-dependency) post. The intention of this post is specifically to show you how to integrate entry points in your NPM Packages.
 
 ### The problem with large Javascript bundle size
 
@@ -125,7 +125,7 @@ I encourage you to see all of these steps in action by using [perf-marks entry-p
 
 <hr/>
 
-> You can find more details about Perf-Marks on ["Cross-platform performance measurements with User Timing API and perf-marks"](https://willmendesneto.com/posts/cross-platform-performance-measurements-with-user-timing-apiand-perf-marks/) post.
+> You can find more details about Perf-Marks on ["Cross-platform performance measurements with User Timing API and perf-marks"](https://willmendesneto.github.io/posts/cross-platform-performance-measurements-with-user-timing-apiand-perf-marks/) post.
 
 <hr/>
 
