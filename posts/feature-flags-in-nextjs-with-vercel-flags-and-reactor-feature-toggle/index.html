@@ -1,0 +1,475 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.14.3"/><meta data-react-helmet="true" name="description" content="Principal Frontend-Engineer, Principal Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies"/><meta data-react-helmet="true" property="og:title" content="Feature flags in Next.js — bridging Vercel Flags and reactor-feature-toggle across server and client"/><meta data-react-helmet="true" property="og:description" content="Principal Frontend-Engineer, Principal Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:title" content="Feature flags in Next.js — bridging Vercel Flags and reactor-feature-toggle across server and client"/><meta data-react-helmet="true" name="twitter:creator" content=""/><meta data-react-helmet="true" name="twitter:description" content="Principal Frontend-Engineer, Principal Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><style data-href="/styles.6f085bda7eef4125a3e2.css" data-identity="gatsby-global-css">html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color:#333;font-family:Poppins,sans-serif;font-size:30px;font-weight:500;height:100%;line-height:1.8em;padding:20px 0 0;position:relative;width:100%}body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background:#fff;box-sizing:border-box;margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{-webkit-text-decoration-skip:objects;background-color:transparent;color:#333;font-weight:700}a:active,a:hover{color:#099;opacity:.8;outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:30px}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{box-sizing:border-box;font:112.5%/1.45em;overflow-y:scroll}*,:after,:before{box-sizing:inherit}body{word-wrap:break-word;-ms-font-feature-settings:"kern","liga","clig","calt";font-feature-settings:"kern","liga","clig","calt";font-kerning:normal;font-weight:400}img{margin:0 0 1.45rem;max-width:100%;padding:0}h1{font-size:2.25rem}h1,h2{color:inherit;font-weight:700;line-height:1.1;margin:0 0 1.45rem;padding:0;text-rendering:optimizeLegibility}h2{font-size:1.62671rem}h3{font-size:1.38316rem}h3,h4{color:inherit;font-weight:700;line-height:1.1;margin:0 0 1.45rem;padding:0;text-rendering:optimizeLegibility}h4{font-size:1rem}h5{font-size:.85028rem}h5,h6{color:inherit;font-weight:700;line-height:1.1;margin:0 0 1.45rem;padding:0;text-rendering:optimizeLegibility}h6{font-size:.78405rem}hgroup{margin:0 0 1.45rem;padding:0}ol,ul{list-style-image:none;list-style-position:outside;margin:0 0 1.45rem 1.45rem;padding:0}dl{text-align:justify}dd,dl{margin:0 0 1.45rem}dd,dl,p{padding:0}p{margin:0 0 30px}figure{padding:0}figure,pre{margin:0 0 1.45rem}pre{word-wrap:normal;background:rgba(0,0,0,.04);border-radius:3px;font-size:.85rem;line-height:1.42;overflow:auto;padding:1.45rem}table{border-collapse:collapse;font-size:1rem;line-height:1.45rem;width:100%}fieldset,table{margin:0 0 1.45rem;padding:0}blockquote{color:#757575;margin:0 1.45rem 1.45rem;padding:20px 0 10px}form,iframe,noscript{margin:0 0 1.45rem;padding:0}hr{background:rgba(0,0,0,.2);border:none;height:1px;margin:0 0 calc(1.45rem - 1px);padding:0}address{margin:0 0 1.45rem;padding:0}b,dt,strong,th{font-weight:700}li{margin-bottom:.725rem}ol li,ul li{padding-left:0}li>ol,li>ul{margin-bottom:.725rem;margin-left:1.45rem;margin-top:.725rem}blockquote :last-child,li :last-child,p :last-child{margin-bottom:0}li>p{margin-bottom:.725rem}code,kbd,samp{font-size:.85rem;line-height:1.45rem}abbr,abbr[title],acronym{border-bottom:1px dotted rgba(0,0,0,.5);cursor:help}abbr[title]{text-decoration:none}td,th,thead{text-align:left}td,th{font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";border-bottom:1px solid rgba(0,0,0,.12);padding:.725rem .96667rem calc(.725rem - 1px)}td:first-child,th:first-child{padding-left:0}td:last-child,th:last-child{padding-right:0}code,tt{background-color:rgba(0,0,0,.04);border-radius:3px;font-family:SFMono-Regular,Consolas,Roboto Mono,Droid Sans Mono,Liberation Mono,Menlo,Courier,monospace;padding:.2em 0}pre code{background:none;line-height:1.42}code:after,code:before,tt:after,tt:before{content:" ";letter-spacing:-.2em}pre code:after,pre code:before,pre tt:after,pre tt:before{content:""}h1,h2,h3,h4,h5,h6{color:#333}h1{font-weight:500}h2,h3,h4,h5,h6{background:transparent;display:block;font-weight:700;margin-top:40px}.gatsby-highlight{border-radius:20px;margin:10px 0 20px}.gatsby-resp-image-figcaption{margin-top:40px}.twitter-tweet{margin:10px auto}.gist{margin-bottom:30px;margin-top:30px}.gist .gist-data{padding-bottom:10px;padding-top:10px}.gist .blob-num{border-bottom:none}@media only screen and (max-width:480px){html{font-size:100%}}code[class*=language-],pre[class*=language-]{word-wrap:normal;background:none;color:#f8f8f2;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;tab-size:4;text-align:left;text-shadow:0 1px rgba(0,0,0,.3);white-space:pre;word-break:normal;word-spacing:normal}pre[class*=language-]{border-radius:.3em;margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#272822}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#8292a2}.token.punctuation{color:#f8f8f2}.token.namespace{opacity:.7}.token.constant,.token.deleted,.token.property,.token.symbol,.token.tag{color:#f92672}.token.boolean,.token.number{color:#ae81ff}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#a6e22e}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url,.token.variable{color:#f8f8f2}.token.atrule,.token.attr-value,.token.class-name,.token.function{color:#e6db74}.token.keyword{color:#66d9ef}.token.important,.token.regex{color:#fd971f}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}</style><style data-styled="" data-styled-version="5.3.11">.gmJirg{font-style:normal;font-weight:900;line-height:1em;margin:50px 0 20px 0;font-size:30px;-webkit-letter-spacing:-2px;-moz-letter-spacing:-2px;-ms-letter-spacing:-2px;letter-spacing:-2px;}/*!sc*/
+@media (min-width:768px){.gmJirg{font-size:50px;line-height:1em;margin:70px 0 20px 0;}}/*!sc*/
+data-styled.g1[id="Title-sc-1g46602-0"]{content:"gmJirg,"}/*!sc*/
+.hqFmJy{max-width:1280px;margin:0 auto;padding-top:0;}/*!sc*/
+.hqFmJy h1{font-size:34px;}/*!sc*/
+@media (min-width:1024px){.hqFmJy h1{font-size:50px;}}/*!sc*/
+@media (min-width:1024px){.hqFmJy{padding-top:50px;}}/*!sc*/
+data-styled.g2[id="Section-sc-zthcy2-0"]{content:"hqFmJy,"}/*!sc*/
+.cwnsrJ{display:inline-block;text-align:left;width:40%;}/*!sc*/
+data-styled.g4[id="Header__Logo-sc-160kmj-1"]{content:"cwnsrJ,"}/*!sc*/
+.jXfKZt{display:inline-block;height:40px;width:20%;}/*!sc*/
+@media (min-width:768px){.jXfKZt{display:none;}}/*!sc*/
+.jXfKZt img{border-radius:50%;margin-bottom:0;}/*!sc*/
+data-styled.g5[id="Header__LogoMobile-sc-160kmj-2"]{content:"jXfKZt,"}/*!sc*/
+.bnByzQ{display:none;}/*!sc*/
+@media (min-width:768px){.bnByzQ{display:inline-block;}}/*!sc*/
+data-styled.g6[id="Header__LogoDesktop-sc-160kmj-3"]{content:"bnByzQ,"}/*!sc*/
+.dFLEgZ{background:#fff;color:#333;margin:0 auto;padding:10px 15px;position:fixed;text-transform:uppercase;top:0;width:100%;z-index:10;box-sizing:border-box;pointer-events:auto;box-shadow:inset 0 -1px 0 rgb(230 230 230);}/*!sc*/
+@media (min-width:768px){.dFLEgZ{line-height:auto;padding:15px;right:0;padding-top:2vw;padding-bottom:2vw;padding-left:4vw;padding-right:4vw;}}/*!sc*/
+data-styled.g7[id="Header__Nav-sc-160kmj-4"]{content:"dFLEgZ,"}/*!sc*/
+.XXQoO{position:relative;overflow-x:auto;padding-top:0;font-size:21px;}/*!sc*/
+@media (min-width:1024px){.XXQoO{padding:0 20px;max-width:1280px;}}/*!sc*/
+data-styled.g8[id="Header__Wrapper-sc-160kmj-5"]{content:"XXQoO,"}/*!sc*/
+.eXmVxk{display:inline-block;position:absolute;right:0;}/*!sc*/
+@media (min-width:768px){.eXmVxk{line-height:inherit;}}/*!sc*/
+data-styled.g9[id="Header__Links-sc-160kmj-6"]{content:"eXmVxk,"}/*!sc*/
+.lnGOEe{font-weight:900;color:#333;padding:0;font-size:15px;margin-right:10px;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.lnGOEe:hover{opacity:1;-webkit-text-decoration:underline;text-decoration:underline;text-underline-offset:10px;}/*!sc*/
+.lnGOEe:last-child:after{margin-right:0;}/*!sc*/
+@media (min-width:768px){.lnGOEe{font-size:21px;margin-right:25px;}}/*!sc*/
+data-styled.g10[id="Header__NavLink-sc-160kmj-7"]{content:"lnGOEe,"}/*!sc*/
+.flYXcn{color:#000;font-size:16px;padding:15px 0;text-align:center;}/*!sc*/
+data-styled.g11[id="Footer__Text-sc-14qtz8p-0"]{content:"flYXcn,"}/*!sc*/
+.dvTerU{width:100%;min-height:200px;border-top:2px solid #f0f0f2;margin:75px 0 0 0;font-size:16px;text-transform:uppercase;text-align:center;box-sizing:border-box;background:#f0f0f2;}/*!sc*/
+.dvTerU ul{display:block;margin:0;margin-bottom:70px;}/*!sc*/
+@media (min-width:768px){.dvTerU ul{display:inline-block;vertical-align:middle;}}/*!sc*/
+.dvTerU li{display:block;padding:10px;}/*!sc*/
+@media (min-width:768px){.dvTerU li{display:inline-block;margin-right:25px;}}/*!sc*/
+.dvTerU li a:hover{opacity:0.8;}/*!sc*/
+data-styled.g12[id="Footer__PageFooter-sc-14qtz8p-1"]{content:"dvTerU,"}/*!sc*/
+.ZipCz{padding:15px 7px 15px 0;margin:0 auto;width:100%;overflow:hidden;max-width:1280px;font-size:20px;line-height:1.8em;padding:30px 0 0;position:relative;vertical-align:top;}/*!sc*/
+@media (min-width:768px){.ZipCz{font-size:22px;}}/*!sc*/
+.ZipCz pre{border-radius:0;font-size:0.8em;}/*!sc*/
+data-styled.g13[id="Layout__Wrapper-sc-xnlv4k-0"]{content:"ZipCz,"}/*!sc*/
+.fNsDiC{display:inline-block;padding:15px;vertical-align:top;width:100%;}/*!sc*/
+data-styled.g14[id="Layout__Main-sc-xnlv4k-1"]{content:"fNsDiC,"}/*!sc*/
+.IOdOV figure{margin-bottom:1.45rem;vertical-align:middle;text-align:center;display:block;padding:0;margin:50px auto;}/*!sc*/
+.IOdOV figcaption{color:#666;font-size:12px;line-height:1.5em;}/*!sc*/
+@media (min-width:1024px){.IOdOV figcaption{font-size:16px;}}/*!sc*/
+.IOdOV img{vertical-align:middle;aspect-ratio:auto 245 / 192;}/*!sc*/
+.IOdOV p img{text-align:center;display:block;margin:20px auto;}/*!sc*/
+.IOdOV p .language-text{margin-right:5px;}/*!sc*/
+.IOdOV hr{border:none;background:transparent;color:#111;-webkit-letter-spacing:1em;-moz-letter-spacing:1em;-ms-letter-spacing:1em;letter-spacing:1em;text-align:center;margin-top:10px;margin-bottom:50px;}/*!sc*/
+@media (min-width:768px){.IOdOV hr{margin-bottom:70px;}}/*!sc*/
+.IOdOV hr:before{content:'...';}/*!sc*/
+data-styled.g15[id="PostContent__PostWrapper-sc-1jf6w5a-0"]{content:"IOdOV,"}/*!sc*/
+.zvPDV{color:#4e4c4c;display:block;font-style:italic;margin-bottom:20px;-webkit-letter-spacing:normal;-moz-letter-spacing:normal;-ms-letter-spacing:normal;letter-spacing:normal;line-height:1em;margin-top:10px;text-align:left;text-transform:capitalize;font-size:20px;}/*!sc*/
+data-styled.g16[id="PostDate-sc-okmp83-0"]{content:"zvPDV,"}/*!sc*/
+.djBsFU{border-radius:20px;background:#f0f0f2;padding:20px 10px;margin-top:40px;margin-bottom:30px;}/*!sc*/
+data-styled.g17[id="Share__ShareWrapper-sc-1rx8md7-0"]{content:"djBsFU,"}/*!sc*/
+.cdPxUF{cursor:pointer;color:#fff;padding:10px 20px;margin-right:20px;border-radius:10px;width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-bottom:10px;-webkit-transition:background-color 300ms;transition:background-color 300ms;background-color:#3b5998;border:2px solid #3b5998;}/*!sc*/
+@media (min-width:768px){.cdPxUF{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;width:auto;}}/*!sc*/
+.cdPxUF:hover{background-color:transparent;color:#3b5998;}/*!sc*/
+data-styled.g18[id="Share__StyledFacebookButton-sc-1rx8md7-1"]{content:"cdPxUF,"}/*!sc*/
+.jrocMe{cursor:pointer;color:#fff;padding:10px 20px;margin-right:20px;border-radius:10px;width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-bottom:10px;-webkit-transition:background-color 300ms;transition:background-color 300ms;background-color:#1da1f2;border:2px solid #1da1f2;}/*!sc*/
+@media (min-width:768px){.jrocMe{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;width:auto;}}/*!sc*/
+.jrocMe:hover{background-color:transparent;color:#1da1f2;}/*!sc*/
+data-styled.g19[id="Share__StyledTwitterButton-sc-1rx8md7-2"]{content:"jrocMe,"}/*!sc*/
+.gkTTTx{cursor:pointer;color:#fff;padding:10px 20px;margin-right:20px;border-radius:10px;width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-bottom:10px;-webkit-transition:background-color 300ms;transition:background-color 300ms;background-color:#3b5998;border:2px solid #3b5998;}/*!sc*/
+@media (min-width:768px){.gkTTTx{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;width:auto;}}/*!sc*/
+.gkTTTx:hover{background-color:transparent;color:#3b5998;}/*!sc*/
+data-styled.g20[id="Share__StyledLinkedInButton-sc-1rx8md7-3"]{content:"gkTTTx,"}/*!sc*/
+.kCYnPa{cursor:pointer;color:#fff;padding:10px 20px;margin-right:20px;border-radius:10px;width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-bottom:10px;-webkit-transition:background-color 300ms;transition:background-color 300ms;background-color:#128c7e;border:2px solid #128c7e;}/*!sc*/
+@media (min-width:768px){.kCYnPa{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;width:auto;}}/*!sc*/
+.kCYnPa:hover{background-color:transparent;color:#128c7e;}/*!sc*/
+data-styled.g21[id="Share__StyledWhatsAppButton-sc-1rx8md7-4"]{content:"kCYnPa,"}/*!sc*/
+</style><title data-react-helmet="true">Feature flags in Next.js — bridging Vercel Flags and reactor-feature-toggle across server and client | Wilson Mendes</title><link href="https://github.githubassets.com/assets/gist-embed-b3b573358bfc66d89e1e95dbf8319c09.css" rel="stylesheet"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="icon" href="/favicon-32x32.png?v=43b819889f87514423d481b4bbf77bf0" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=43b819889f87514423d481b4bbf77bf0"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=43b819889f87514423d481b4bbf77bf0"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=43b819889f87514423d481b4bbf77bf0"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=43b819889f87514423d481b4bbf77bf0"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=43b819889f87514423d481b4bbf77bf0"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=43b819889f87514423d481b4bbf77bf0"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=43b819889f87514423d481b4bbf77bf0"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=43b819889f87514423d481b4bbf77bf0"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/poppins/v24/pxiByp8kv8JHgFVrLBT5Z1xlFQ.woff2"/><style>@font-face{font-display:swap;font-family:Poppins;font-style:normal;font-weight:500;src:url(/static/webfonts/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2) format("woff2")}@font-face{font-display:swap;font-family:Poppins;font-style:normal;font-weight:700;src:url(/static/webfonts/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2) format("woff2")}@font-face{font-display:swap;font-family:Poppins;font-style:normal;font-weight:900;src:url(/static/webfonts/s/poppins/v24/pxiByp8kv8JHgFVrLBT5Z1xlFQ.woff2) format("woff2")}@font-face{font-display:swap;font-family:Poppins;font-style:normal;font-weight:500;src:url(/static/webfonts/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1xlEw.woff) format("woff")}@font-face{font-display:swap;font-family:Poppins;font-style:normal;font-weight:700;src:url(/static/webfonts/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1xlEw.woff) format("woff")}@font-face{font-display:swap;font-family:Poppins;font-style:normal;font-weight:900;src:url(/static/webfonts/s/poppins/v24/pxiByp8kv8JHgFVrLBT5Z1xlEw.woff) format("woff")}</style><link rel="preconnect" href="https://www.google-analytics.com"/><link rel="dns-prefetch" href="https://www.google-analytics.com"/><link rel="sitemap" type="application/xml" href="/sitemap-index.xml"/><link rel="alternate" type="application/rss+xml" title="Will Mendes Blog RSS Feed" href="/rss.xml"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><header class="Header__PageHeader-sc-160kmj-0 dZmhDY"><nav class="Header__Nav-sc-160kmj-4 dFLEgZ"><section class="Section-sc-zthcy2-0 Header__Wrapper-sc-160kmj-5 hqFmJy XXQoO"><span class="Header__Logo-sc-160kmj-1 Header__LogoMobile-sc-160kmj-2 cwnsrJ jXfKZt"><a class="Header__NavLink-sc-160kmj-7 lnGOEe" href="/">WM</a></span><span class="Header__Logo-sc-160kmj-1 Header__LogoDesktop-sc-160kmj-3 cwnsrJ bnByzQ"><a class="Header__NavLink-sc-160kmj-7 lnGOEe" href="/">Wilson Mendes</a></span><div class="Header__Links-sc-160kmj-6 eXmVxk"><a active="false" class="Header__NavLink-sc-160kmj-7 lnGOEe" href="/posts/">posts</a><a active="false" class="Header__NavLink-sc-160kmj-7 lnGOEe" href="/talks/">talks</a><a active="false" class="Header__NavLink-sc-160kmj-7 lnGOEe" href="/contact/">contact</a></div></section></nav></header><div class="Layout__Wrapper-sc-xnlv4k-0 ZipCz"><main class="Layout__Main-sc-xnlv4k-1 fNsDiC"><section class="Section-sc-zthcy2-0 hqFmJy"><h1 class="Title-sc-1g46602-0 gmJirg">Feature flags in Next.js — bridging Vercel Flags and reactor-feature-toggle across server and client</h1><time class="PostDate-sc-okmp83-0 zvPDV">June 11, 2026<!-- --> - <!-- -->8 min read</time><article class="PostContent__PostWrapper-sc-1jf6w5a-0 IOdOV"><div><p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1280px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/d39514900b59df15f4e228ec952bf9fe/84d64/hero-image.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 30.9375%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAIAAABM9SnKAAAACXBIWXMAAAsTAAALEwEAmpwYAAABXklEQVR42h3PSU7CUByA8V7BhQpt3/u/R6GlZWpkkCGAUQgIpUULFKTMFjRIkDjEjca4NtGVF/AG3sHEY1lNfttv8TE81v5Ag0N1jq8hVKe4IWBDxCdB0laoFSGWCtYe7iXwWRLsBNhJMnSlyIhxSzfzeiuIGKB0PbTpRQb4OxIxI149xhoq7SryOCyNo9I47B8khWmOTLIuOmU4pPFUx7IJwbZPHUGoF9eWO6IOyU2w+CLnnqTi87a/yWcWbMLZwlpYsAuCkxecAj1nPJ6ykpif3n+xeUeRF+XSw+DxfZtWuOorXP/A6husTzZoBQ47YknfzbdS0Zu5/WE7bwecw7ifQJqyOOB8TVbp4diERGceseVXRmpgFPeN1dCFkF6Xs30trkVUMyVftcO3RmxzTFYMj/6fuSrH1xHoAjUl2pZoJ0I6cdRN4X4aBvtkmIFZgSyO4LJKljVY1WFtKne/HXVVH/KsPZ8AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/d39514900b59df15f4e228ec952bf9fe/fb34c/hero-image.avif 320w,
+/static/d39514900b59df15f4e228ec952bf9fe/646cd/hero-image.avif 768w,
+/static/d39514900b59df15f4e228ec952bf9fe/8b485/hero-image.avif 1024w,
+/static/d39514900b59df15f4e228ec952bf9fe/a73d6/hero-image.avif 1280w,
+/static/d39514900b59df15f4e228ec952bf9fe/a7f9f/hero-image.avif 1920w,
+/static/d39514900b59df15f4e228ec952bf9fe/f87ab/hero-image.avif 3712w"
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              type="image/avif"
+            /><source
+              srcset="/static/d39514900b59df15f4e228ec952bf9fe/cb523/hero-image.webp 320w,
+/static/d39514900b59df15f4e228ec952bf9fe/cd067/hero-image.webp 768w,
+/static/d39514900b59df15f4e228ec952bf9fe/53334/hero-image.webp 1024w,
+/static/d39514900b59df15f4e228ec952bf9fe/4b075/hero-image.webp 1280w,
+/static/d39514900b59df15f4e228ec952bf9fe/f3ff0/hero-image.webp 1920w,
+/static/d39514900b59df15f4e228ec952bf9fe/60146/hero-image.webp 3712w"
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/d39514900b59df15f4e228ec952bf9fe/d4f27/hero-image.png 320w,
+/static/d39514900b59df15f4e228ec952bf9fe/778aa/hero-image.png 768w,
+/static/d39514900b59df15f4e228ec952bf9fe/658fc/hero-image.png 1024w,
+/static/d39514900b59df15f4e228ec952bf9fe/26c69/hero-image.png 1280w,
+/static/d39514900b59df15f4e228ec952bf9fe/7d442/hero-image.png 1920w,
+/static/d39514900b59df15f4e228ec952bf9fe/84d64/hero-image.png 3712w"
+            sizes="(max-width: 1280px) 100vw, 1280px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/d39514900b59df15f4e228ec952bf9fe/26c69/hero-image.png"
+            alt="hero image"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<blockquote>
+<p>TL;DR; Use Vercel Flags SDK on the server to evaluate <code class="language-text">NEXT_PUBLIC_FEATURE_FLAG_*</code> keys, pass the resolved map to <code class="language-text">FeatureToggleProvider</code> from <code class="language-text">reactor-feature-toggle</code> in the root layout, and read flag state anywhere in your React app with <code class="language-text">useFeatureToggle().isOn(...)</code> on the client or <code class="language-text">await isFeatureEnabled(...)</code> on the server. No flag value is ever computed twice. 🎉</p>
+</blockquote>
+<h3>Introduction</h3>
+<p>Feature flags are one of those tools that feel straightforward right up to the moment your app straddles two runtimes. In a Next.js App Router project you have Server Components doing data fetching, API route handlers running on the edge, and React client components managing interactivity — all of them potentially need to know whether a flag is on or off, and all of them live in very different execution contexts.</p>
+<p>The naive solution is to pick a single evaluation point and live with the trade-offs. Either you evaluate on the server and hydrate the result down as props (fragile, ad-hoc), or you evaluate on the client and accept a flash of the wrong UI state. Neither is great.</p>
+<p>This post walks through a pattern that solves it cleanly: <strong>Vercel Flags SDK handles remote evaluation on the server, and <code class="language-text">reactor-feature-toggle</code> distributes those resolved values to every client component through a single React context</strong>. The server computes flag state once; the client never needs to phone home to re-evaluate.</p>
+<hr>
+<h3>Why two libraries?</h3>
+<p><a href="https://vercel.com/docs/flags" target="_blank" rel="nofollow noopener noreferrer">Vercel Flags</a> is a platform feature. It gives you remote flag management with per-environment overrides, a toolbar for preview deployments, and a typed SDK that integrates with Next.js <code class="language-text">flag()</code> and <code class="language-text">flags/next</code>. What it does not do is manage how those values flow through your React tree on the client side.</p>
+<p><a href="https://www.npmjs.com/package/reactor-feature-toggle" target="_blank" rel="nofollow noopener noreferrer"><code class="language-text">reactor-feature-toggle</code></a> is a lightweight React library that covers exactly that gap: a provider + hook pattern that lets any client component read flag state without prop drilling or redundant fetches.</p>
+<p>The combination is clean. Vercel Flags owns the <em>decision</em>; <code class="language-text">reactor-feature-toggle</code> owns the <em>distribution</em>.</p>
+<hr>
+<h3>Step 1 — Create the flags in the Vercel dashboard</h3>
+<p>Before any code, create each flag in your project's Vercel Flags UI. The key there should be <strong>kebab-case</strong> and match the suffix of your env var in lowercase:</p>
+<table>
+<thead>
+<tr>
+<th>Env var</th>
+<th>Vercel Flags key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="language-text">NEXT_PUBLIC_FEATURE_FLAG_CHECKOUT_V2</code></td>
+<td><code class="language-text">checkout-v2</code></td>
+</tr>
+<tr>
+<td><code class="language-text">NEXT_PUBLIC_FEATURE_FLAG_AI_RECOMMENDATIONS</code></td>
+<td><code class="language-text">ai-recommendations</code></td>
+</tr>
+</tbody>
+</table>
+<p>You can also pull the current flag values locally after linking the project:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">npx vercel <span class="token function">link</span>
+<span class="token function">npm</span> run vercel:flags        <span class="token comment"># list remote flags</span>
+<span class="token function">npm</span> run vercel:env-pull     <span class="token comment"># pull FLAGS, FLAGS_SECRET, NEXT_PUBLIC_FEATURE_FLAG_* into .env</span></code></pre></div>
+<p>This is a required step, not optional. If the flag doesn't exist in the dashboard, remote evaluation has nothing to resolve and your env-variable fallback carries all the weight.</p>
+<hr>
+<h3>Step 2 — Declare env vars with Zod validation</h3>
+<p>All flag keys live in a single validated env module. Using <code class="language-text">t3-env</code> or a similar Zod-based setup, each key is declared as a string enum that defaults to <code class="language-text">"false"</code>:</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token comment">// src/env.mjs</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> env <span class="token operator">=</span> <span class="token function">createEnv</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  shared<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ... other keys</span>
+    <span class="token constant">NEXT_PUBLIC_FEATURE_FLAG_CHECKOUT_V2</span><span class="token operator">:</span>
+      z<span class="token punctuation">.</span><span class="token function">enum</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"true"</span><span class="token punctuation">,</span> <span class="token string">"false"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">optional</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">default</span><span class="token punctuation">(</span><span class="token string">"false"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token constant">NEXT_PUBLIC_FEATURE_FLAG_AI_RECOMMENDATIONS</span><span class="token operator">:</span>
+      z<span class="token punctuation">.</span><span class="token function">enum</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"true"</span><span class="token punctuation">,</span> <span class="token string">"false"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">optional</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">default</span><span class="token punctuation">(</span><span class="token string">"false"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  runtimeEnv<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token constant">NEXT_PUBLIC_FEATURE_FLAG_CHECKOUT_V2</span><span class="token operator">:</span>
+      process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NEXT_PUBLIC_FEATURE_FLAG_CHECKOUT_V2</span><span class="token punctuation">,</span>
+    <span class="token constant">NEXT_PUBLIC_FEATURE_FLAG_AI_RECOMMENDATIONS</span><span class="token operator">:</span>
+      process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NEXT_PUBLIC_FEATURE_FLAG_AI_RECOMMENDATIONS</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>Every flag defaults to <code class="language-text">"false"</code>. This is intentional: if the deployment is missing the env var or the remote evaluation fails, the feature stays off. It keeps partial deploys and rollbacks safe.</p>
+<hr>
+<h3>Step 3 — The server evaluation layer</h3>
+<p>This is the core of the pattern. A server-only module wraps each flag with <code class="language-text">flag()</code> from <code class="language-text">flags/next</code>, wires the Vercel adapter, and provides two env-fallback escape hatches — one for local development and one for failures at runtime.</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token comment">// src/utils/feature-toggle-server.ts</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> vercelAdapter <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@flags-sdk/vercel"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> flag <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"flags/next"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> env <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@/env.mjs"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> vercelAdapterInstance <span class="token operator">=</span> <span class="token function">vercelAdapter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> isLocalEnvironment <span class="token operator">=</span>
+  env<span class="token punctuation">.</span><span class="token constant">VERCEL_ENV</span> <span class="token operator">===</span> <span class="token string">"development"</span> <span class="token operator">||</span>
+  env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">===</span> <span class="token string">"development"</span> <span class="token operator">||</span>
+  env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">===</span> <span class="token string">"test"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">createBooleanAppFlag</span><span class="token punctuation">(</span>vercelKey<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> envKey<span class="token operator">:</span> FeatureFlagEnvKeys<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// In local/test: read env directly, no remote call needed.</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>isLocalEnvironment<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>_req<span class="token operator">?</span><span class="token operator">:</span> FeatureFlagEvaluationRequest<span class="token punctuation">)</span> <span class="token operator">=></span>
+      <span class="token function">Boolean</span><span class="token punctuation">(</span>env<span class="token punctuation">[</span>envKey<span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token string">"true"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">const</span> <span class="token function-variable function">decide</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>params<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> raw <span class="token operator">=</span> <span class="token keyword">await</span> vercelAdapterInstance<span class="token punctuation">.</span><span class="token function">decide</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        key<span class="token operator">:</span> vercelKey<span class="token punctuation">,</span>
+        headers<span class="token operator">:</span> params<span class="token punctuation">.</span>headers<span class="token punctuation">,</span>
+        cookies<span class="token operator">:</span> params<span class="token punctuation">.</span>cookies<span class="token punctuation">,</span>
+        entities<span class="token operator">:</span> params<span class="token punctuation">.</span>entities<span class="token punctuation">,</span>
+        defaultValue<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> <span class="token function">Boolean</span><span class="token punctuation">(</span>raw<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Vercel Flags unreachable — fall back to the env var for this deployment.</span>
+      <span class="token keyword">return</span> env<span class="token punctuation">[</span>envKey<span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token string">"true"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token generic-function"><span class="token function">flag</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token builtin">boolean</span><span class="token punctuation">,</span> <span class="token builtin">boolean</span><span class="token operator">></span></span></span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    key<span class="token operator">:</span> vercelKey<span class="token punctuation">,</span>
+    adapter<span class="token operator">:</span> vercelAdapterInstance<span class="token punctuation">,</span>
+    decide<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> appFeatureFlags <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token constant">NEXT_PUBLIC_FEATURE_FLAG_CHECKOUT_V2</span><span class="token operator">:</span> <span class="token function">createBooleanAppFlag</span><span class="token punctuation">(</span>
+    <span class="token string">"checkout-v2"</span><span class="token punctuation">,</span>
+    <span class="token string">"NEXT_PUBLIC_FEATURE_FLAG_CHECKOUT_V2"</span>
+  <span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token constant">NEXT_PUBLIC_FEATURE_FLAG_AI_RECOMMENDATIONS</span><span class="token operator">:</span> <span class="token function">createBooleanAppFlag</span><span class="token punctuation">(</span>
+    <span class="token string">"ai-recommendations"</span><span class="token punctuation">,</span>
+    <span class="token string">"NEXT_PUBLIC_FEATURE_FLAG_AI_RECOMMENDATIONS"</span>
+  <span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span> <span class="token keyword">as</span> <span class="token keyword">const</span><span class="token punctuation">;</span></code></pre></div>
+<p>Two public functions are exported from this module:</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token comment">// Evaluate a single flag — pass { request } in route handlers</span>
+<span class="token keyword">export</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">isFeatureEnabled</span><span class="token punctuation">(</span>
+  featureName<span class="token operator">:</span> FeatureFlagKeys<span class="token punctuation">,</span>
+  options<span class="token operator">?</span><span class="token operator">:</span> IsFeatureEnabledOptions
+<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Promise</span><span class="token operator">&lt;</span><span class="token builtin">boolean</span><span class="token operator">></span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+
+<span class="token comment">// Evaluate all flags at once — used by the root layout</span>
+<span class="token keyword">export</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">getFeatureToggles</span><span class="token punctuation">(</span>
+  request<span class="token operator">?</span><span class="token operator">:</span> FeatureFlagEvaluationRequest
+<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Promise</span><span class="token operator">&lt;</span>AppFeatureToggles<span class="token operator">></span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span></code></pre></div>
+<blockquote>
+<p><strong>Important:</strong> this module must never be imported from client components. <code class="language-text">flags/next</code> uses <code class="language-text">next/headers</code> internally, which is only available in Server Components and route handlers.</p>
+</blockquote>
+<hr>
+<h3>Step 4 — Root layout: evaluate once, provide everywhere</h3>
+<p>The root layout is the right place to resolve all flags for the current request. The resolved map becomes the initial value for <code class="language-text">FeatureToggleProvider</code>:</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token comment">// src/app/layout.tsx</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> FeatureToggleProvider <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"reactor-feature-toggle/client"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> getFeatureToggles <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@/utils/feature-toggle-server"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> cookies <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"next/headers"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">RootLayout</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  children<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  children<span class="token operator">:</span> React<span class="token punctuation">.</span>ReactNode<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Await cookies() first so the layout segment is cookie-dynamic.</span>
+  <span class="token comment">// flags/next reads the `vercel-flag-overrides` cookie for Toolbar overrides</span>
+  <span class="token comment">// on Preview deployments. Skipping this causes overrides to be silently ignored.</span>
+  <span class="token keyword">await</span> <span class="token function">cookies</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">const</span> featureToggles <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">getFeatureToggles</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>html lang<span class="token operator">=</span><span class="token string">"en"</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>body<span class="token operator">></span>
+        <span class="token operator">&lt;</span>FeatureToggleProvider featureToggleService<span class="token operator">=</span><span class="token punctuation">{</span>featureToggles<span class="token punctuation">}</span><span class="token operator">></span>
+          <span class="token punctuation">{</span>children<span class="token punctuation">}</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>FeatureToggleProvider<span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>One call, one network round-trip to Vercel Flags, all values cached for the lifetime of the request. Every client component in the tree gets the same resolved state without any additional fetching.</p>
+<p>The <code class="language-text">await cookies()</code> line deserves a comment. On Vercel Preview, the Toolbar stores per-session flag overrides in an encrypted <code class="language-text">vercel-flag-overrides</code> cookie. If you skip <code class="language-text">await cookies()</code>, Next.js may not mark the layout as dynamic before <code class="language-text">getFeatureToggles()</code> runs, and the cookie store won't be available — so your toolbar overrides silently lose to the remote dashboard values. Awaiting <code class="language-text">cookies()</code> first forces the correct behaviour.</p>
+<hr>
+<h3>Step 5 — Reading flags in client components</h3>
+<p>Any client component under the provider reads flags through the <code class="language-text">useFeatureToggle</code> hook:</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token string">"use client"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> useFeatureToggle <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"reactor-feature-toggle/client"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">ProductRecommendations</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> isOn <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">useFeatureToggle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> isAIRecommendationsEnabled <span class="token operator">=</span> <span class="token function">isOn</span><span class="token punctuation">(</span><span class="token string">"NEXT_PUBLIC_FEATURE_FLAG_AI_RECOMMENDATIONS"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>isAIRecommendationsEnabled<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token operator">&lt;</span>RecommendationPanel title<span class="token operator">=</span><span class="token string">"You might also like"</span> <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>No async work, no waterfall, no state management. The values were resolved on the server during SSR, serialised into the React tree via <code class="language-text">FeatureToggleProvider</code>, and are now synchronously available on the client.</p>
+<hr>
+<h3>Step 6 — Reading flags in server-only code</h3>
+<p>For Server Components, route handlers, or middleware, use <code class="language-text">isFeatureEnabled</code> directly:</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token comment">// Page-level gating (Server Component)</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> isFeatureEnabled <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@/utils/feature-toggle-server"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> CheckoutV2 <span class="token keyword">from</span> <span class="token string">"@/components/checkout/CheckoutV2"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> CheckoutLegacy <span class="token keyword">from</span> <span class="token string">"@/components/checkout/CheckoutLegacy"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">CheckoutPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> isCheckoutV2Enabled <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">isFeatureEnabled</span><span class="token punctuation">(</span>
+    <span class="token string">"NEXT_PUBLIC_FEATURE_FLAG_CHECKOUT_V2"</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> isCheckoutV2Enabled <span class="token operator">?</span> <span class="token operator">&lt;</span>CheckoutV2 <span class="token operator">/</span><span class="token operator">></span> <span class="token operator">:</span> <span class="token operator">&lt;</span>CheckoutLegacy <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>For API route handlers, pass the <code class="language-text">NextRequest</code> so the Vercel adapter can read cookies and headers for per-request toolbar overrides:</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token comment">// Route handler</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> isFeatureEnabled <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@/utils/feature-toggle-server"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token constant">GET</span><span class="token punctuation">(</span>request<span class="token operator">:</span> NextRequest<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> isEnabled <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">isFeatureEnabled</span><span class="token punctuation">(</span>
+    <span class="token string">"NEXT_PUBLIC_FEATURE_FLAG_AI_RECOMMENDATIONS"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> request <span class="token punctuation">}</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>isEnabled<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> NextResponse<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> recommendations<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">const</span> recommendations <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetchAIRecommendations</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> NextResponse<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> recommendations <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<hr>
+<h3>The evaluation chain: local, preview, production</h3>
+<p>One of the things that makes this pattern practical is that the evaluation logic adapts to the environment automatically:</p>
+<table>
+<thead>
+<tr>
+<th>Environment</th>
+<th>How flags are resolved</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="language-text">next dev</code> / unit tests (<code class="language-text">NODE_ENV === "test"</code>)</td>
+<td>Env vars only — no remote call, no Vercel billing. Fast feedback loop.</td>
+</tr>
+<tr>
+<td>Vercel Preview (normal browser traffic)</td>
+<td>Vercel Flags SDK first. Toolbar override cookie wins if present. Env var fallback if the adapter fails.</td>
+</tr>
+<tr>
+<td>Vercel Preview + automation traffic (valid <code class="language-text">x-automation</code> header)</td>
+<td>Env vars only — same as local dev, so E2E, synthetic tests, and internal scripts match the deployment's vars rather than user-scoped rollouts.</td>
+</tr>
+<tr>
+<td>Vercel Production</td>
+<td>Vercel Flags SDK first, then env var fallback on any failure.</td>
+</tr>
+</tbody>
+</table>
+<p>The env-var fallback on remote failure matters more than it sounds. Feature flag platforms are external dependencies. If the Vercel Flags adapter returns a network error mid-deploy or during an incident, your app keeps running with the values baked into the deployment. The feature stays in whatever state the deployment was configured for — not in an unpredictable half-open state.</p>
+<blockquote>
+<p>Feature flag management platforms are also points of failure. Make sure you are minimising the risks involved in this integration, in case of an error, timeout or any other issue that might impact your project.</p>
+</blockquote>
+<hr>
+<h3>Adding a new flag</h3>
+<p>The full checklist for adding a flag:</p>
+<ol>
+<li><strong>Vercel dashboard</strong> — create the key (<code class="language-text">dark-mode</code>) in the project's flags UI.</li>
+<li><strong><code class="language-text">src/env.mjs</code></strong> — add <code class="language-text">NEXT_PUBLIC_FEATURE_FLAG_DARK_MODE</code> to both <code class="language-text">runtimeEnv</code> and the Zod schema with <code class="language-text">.default("false")</code>.</li>
+<li><strong><code class="language-text">src/utils/feature-toggle-server.ts</code></strong> — add an entry to <code class="language-text">appFeatureFlags</code>:</li>
+</ol>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token constant">NEXT_PUBLIC_FEATURE_FLAG_DARK_MODE</span><span class="token operator">:</span> <span class="token function">createBooleanAppFlag</span><span class="token punctuation">(</span>
+  <span class="token string">"dark-mode"</span><span class="token punctuation">,</span>
+  <span class="token string">"NEXT_PUBLIC_FEATURE_FLAG_DARK_MODE"</span>
+<span class="token punctuation">)</span><span class="token punctuation">,</span></code></pre></div>
+<ol start="4">
+<li><strong>Consume it</strong> — either <code class="language-text">useFeatureToggle().isOn(...)</code> in a client component or <code class="language-text">await isFeatureEnabled(...)</code> in a server context.</li>
+</ol>
+<p>TypeScript takes care of the rest. Because <code class="language-text">AppFeatureFlagKeys</code> is inferred from <code class="language-text">appFeatureFlags</code>, passing an unknown key to <code class="language-text">isFeatureEnabled</code> or <code class="language-text">isOn</code> is a compile-time error.</p>
+<hr>
+<h3>Testing</h3>
+<p><strong>Client components:</strong> wrap the component under test with <code class="language-text">FeatureToggleProvider</code> and pass explicit booleans. No mocking of the library itself needed.</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> FeatureToggleProvider <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"reactor-feature-toggle/client"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> render<span class="token punctuation">,</span> screen <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@testing-library/react"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> ProductRecommendations <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./ProductRecommendations"</span><span class="token punctuation">;</span>
+
+<span class="token function">it</span><span class="token punctuation">(</span><span class="token string">"renders the recommendation panel when the flag is on"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token function">render</span><span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>FeatureToggleProvider
+      featureToggleService<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span>
+        <span class="token constant">NEXT_PUBLIC_FEATURE_FLAG_AI_RECOMMENDATIONS</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">}</span>
+    <span class="token operator">></span>
+      <span class="token operator">&lt;</span>ProductRecommendations <span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>FeatureToggleProvider<span class="token operator">></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">expect</span><span class="token punctuation">(</span>screen<span class="token punctuation">.</span><span class="token function">getByText</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">you might also like</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBeInTheDocument</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">it</span><span class="token punctuation">(</span><span class="token string">"renders nothing when the flag is off"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> container <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">render</span><span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>FeatureToggleProvider
+      featureToggleService<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span>
+        <span class="token constant">NEXT_PUBLIC_FEATURE_FLAG_AI_RECOMMENDATIONS</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">}</span>
+    <span class="token operator">></span>
+      <span class="token operator">&lt;</span>ProductRecommendations <span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>FeatureToggleProvider<span class="token operator">></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">expect</span><span class="token punctuation">(</span>container<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBeEmptyDOMElement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p><strong>Server utilities:</strong> override the env vars in the test process before importing the module. A small helper that mutates <code class="language-text">process.env</code> (and resets it in <code class="language-text">afterEach</code>) works well here.</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> setEnvOverrides<span class="token punctuation">,</span> resetEnvOverrides <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"~/test/mocks/env"</span><span class="token punctuation">;</span>
+
+<span class="token function">afterEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">resetEnvOverrides</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">it</span><span class="token punctuation">(</span><span class="token string">"returns true when the env var is set"</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token function">setEnvOverrides</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token constant">NEXT_PUBLIC_FEATURE_FLAG_CHECKOUT_V2</span><span class="token operator">:</span> <span class="token string">"true"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">isFeatureEnabled</span><span class="token punctuation">(</span><span class="token string">"NEXT_PUBLIC_FEATURE_FLAG_CHECKOUT_V2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">expect</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">it</span><span class="token punctuation">(</span><span class="token string">"returns false by default"</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">isFeatureEnabled</span><span class="token punctuation">(</span><span class="token string">"NEXT_PUBLIC_FEATURE_FLAG_CHECKOUT_V2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">expect</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<hr>
+<h3>What this gives you</h3>
+<p>Stepping back, the value of this combination is not just that it works — it is that it gives you a consistent model across the whole app:</p>
+<ul>
+<li>One source of truth for flag definitions (<code class="language-text">appFeatureFlags</code>)</li>
+<li>One source of truth for env validation (<code class="language-text">env.mjs</code>)</li>
+<li>One evaluation point per request (root layout for UI, route handlers for API)</li>
+<li>One reading API for client code (<code class="language-text">useFeatureToggle().isOn(...)</code>)</li>
+<li>Automatic env fallback so the platform is never a single point of failure</li>
+</ul>
+<p>Feature flags are meant to reduce risk. The implementation of the flag system itself should not introduce any.</p>
+<h3>That's all for now</h3>
+<p>I hope you enjoyed this reading as much as I enjoyed writing it. Thank you so much for reading until the end and see you soon!</p>
+<p>🚀🚀🚀🚀🚀🚀</p>
+<hr />
+<h3>Cya 👋</h3></div></article><div class="Share__ShareWrapper-sc-1rx8md7-0 djBsFU"><p>Share this post via:</p><span class="Share__StyledFacebookButton-sc-1rx8md7-1 cdPxUF"><button aria-label="facebook" class="react-share__ShareButton" style="background-color:transparent;border:none;padding:0;font:inherit;color:inherit;cursor:pointer">Facebook</button></span><span class="Share__StyledTwitterButton-sc-1rx8md7-2 jrocMe"><button aria-label="twitter" class="react-share__ShareButton" style="background-color:transparent;border:none;padding:0;font:inherit;color:inherit;cursor:pointer">Twitter</button></span><span class="Share__StyledLinkedInButton-sc-1rx8md7-3 gkTTTx"><button aria-label="linkedin" class="react-share__ShareButton" style="background-color:transparent;border:none;padding:0;font:inherit;color:inherit;cursor:pointer">LinkedIn</button></span><span class="Share__StyledWhatsAppButton-sc-1rx8md7-4 kCYnPa"><button aria-label="whatsapp" class="react-share__ShareButton" style="background-color:transparent;border:none;padding:0;font:inherit;color:inherit;cursor:pointer">WhatsApp</button></span></div><h3>Subscribe</h3><p>Subscribe text content here.</p></section></main></div><footer class="Footer__PageFooter-sc-14qtz8p-1 dvTerU"><ul><li><a href="https://github.com/willmendesneto" target="_blank" rel="noopener noreferrer">Github</a></li><li><a href="https://www.linkedin.com/in/willmendesneto" target="_blank" rel="noopener noreferrer">LinkedIn</a></li><li><a href="/rss.xml" target="_blank" rel="noopener noreferrer">RSS</a></li></ul><p class="Footer__Text-sc-14qtz8p-0 flYXcn">made by me with<!-- --> <span role="img" aria-label="love">❤️</span> <!-- -->since 2014</p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
+  
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'UA-58169656-1', 'auto', {});
+      
+      
+      
+      
+      
+      }</script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/posts/feature-flags-in-nextjs-with-vercel-flags-and-reactor-feature-toggle/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-eba9decb0dd2c9ebbd4b.js\"],\"component---cache-caches-gatsby-plugin-offline-app-shell-js\":[\"/component---cache-caches-gatsby-plugin-offline-app-shell-js-7d62fa551b40582ef423.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-71c0c39b68d0f54c22ad.js\"],\"component---src-pages-contact-js\":[\"/component---src-pages-contact-js-4bcb654f09dea386fa48.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-36dc1b538e73e01d9415.js\"],\"component---src-pages-posts-js\":[\"/component---src-pages-posts-js-bca60350dc3599d59fed.js\"],\"component---src-pages-talks-js\":[\"/component---src-pages-talks-js-b79f66188759b6de45f1.js\"],\"component---src-pages-workshops-js\":[\"/component---src-pages-workshops-js-19f3b7dc89e179e9f3b7.js\"],\"component---src-templates-post-js\":[\"/component---src-templates-post-js-2e4b28094f187910da6d.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="62ab4a37e1ebeb824024";</script><script src="/webpack-runtime-0e671f5e375d06e13de0.js" async></script><script src="/framework-0a5e54c64463689c5867.js" async></script><script src="/app-eba9decb0dd2c9ebbd4b.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
