@@ -1,12 +1,12 @@
 {
-  "name": "willmendesneto.com",
+  "name": "willmendesneto.github.io",
   "description": "Wilson Mendes's website",
   "version": "3.1.0",
   "author": "Wilson Mendes <contact@willmendesneto.com>",
-  "homepage": "http://willmendesneto.github.io",
+  "homepage": "https://willmendesneto.github.io",
   "repository": {
     "type": "git",
-    "url": "http://willmendesneto.github.io"
+    "url": "https://github.com/willmendesneto/willmendesneto.github.io"
   },
   "dependencies": {
     "ajv": "^8.17.1",

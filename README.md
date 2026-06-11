@@ -1,6 +1,6 @@
 # 🚀 My personal page 🚀
 
-> URL: [willmendesneto.github.io](http://willmendesneto.github.io)
+> URL: [willmendesneto.github.io](https://willmendesneto.github.io)
 
 ## 🧩 Tech Stack
 
