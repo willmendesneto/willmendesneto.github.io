@@ -15,7 +15,7 @@ tags: ['frontend', 'test', 'open-source', 'vite', 'vitest', 'tooling', 'performa
 
 I want to share a real-world example of how embracing TypeScript can significantly improve your React hooks and overall codebase. We'll be diving into the evolution of [react-sweet-wizard](https://github.com/willmendesneto/react-sweet-wizard), a package I built to simplify form wizards - eventually called as Form Stepper or Form steps - in React. Think of it as a guided tour through the land of forms, but with less frustration and more type safety!
 
-> For more details about React Sweet Wizard, why it was created, benefits, usage and more, please check the post [Introducing React Sweet Wizard: Simplifying the Form Flow of Your React App](https://willmendesneto.com/posts/introducing-react-sweet-wizard-simplifying-the-form-flow-of-your-react-app)
+> For more details about React Sweet Wizard, why it was created, benefits, usage and more, please check the post [Introducing React Sweet Wizard: Simplifying the Form Flow of Your React App](https://willmendesneto.github.io/posts/introducing-react-sweet-wizard-simplifying-the-form-flow-of-your-react-app)
 
 If you've ever wrestled with complex forms or multi-step processes in React, you know the struggle. Managing state and navigation can quickly become a tangled mess. That's where [react-sweet-wizard](https://github.com/willmendesneto/react-sweet-wizard) comes in. But as the project  and evolved, so did the need for better type safety and code maintainability.
 
