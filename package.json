@@ -3,10 +3,10 @@
   "description": "Wilson Mendes's website",
   "version": "3.1.0",
   "author": "Wilson Mendes <contact@willmendesneto.com>",
-  "homepage": "https://willmendesneto.com",
+  "homepage": "http://willmendesneto.github.io",
   "repository": {
     "type": "git",
-    "url": "https://willmendesneto.com"
+    "url": "http://willmendesneto.github.io"
   },
   "dependencies": {
     "ajv": "^8.17.1",
@@ -75,7 +75,7 @@
     "lint": "eslint .",
     "format": "prettier --write \"./src/**/*.{js,json,md}\"",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "rm -rf ./public ./node_modules/.cache/gh-pages && gatsby build && echo \"$(git rev-parse --short HEAD)\" >> ./public/VERSION.txt && cp CNAME ./public && gh-pages -d public -b master"
+    "deploy": "rm -rf ./public ./node_modules/.cache/gh-pages && gatsby build && echo \"$(git rev-parse --short HEAD)\" >> ./public/VERSION.txt && gh-pages -d public -b master"
   },
   "eslintConfig": {
     "extends": "react-app"

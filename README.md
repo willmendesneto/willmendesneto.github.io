@@ -1,6 +1,6 @@
 # 🚀 My personal page 🚀
 
-> URL: [willmendesneto.com](https://willmendesneto.com)
+> URL: [willmendesneto.github.io](http://willmendesneto.github.io)
 
 ## 🧩 Tech Stack
 
@@ -12,8 +12,8 @@
 
 ## 💻 Steps to run
 
-- git clone https://github.com/willmendesneto/willmendesneto.github.io.git willmendesneto.com
-- cd willmendesneto.com
+- git clone https://github.com/willmendesneto/willmendesneto.github.io.git willmendesneto.github.io
+- cd willmendesneto.github.io
 - nvm use
 - npm install
 - npm start
