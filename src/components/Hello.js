@@ -93,8 +93,8 @@ const Sidebar = () => (
       Feel free to watch, subscribe and share the videos with your social connections!
     </p>
     <p>
-      I’m currently lending my brain to <a href="https://www.leaflink.com/">LeafLink</a> and in my free time I'm a
-      speaker and trainer at various conferences around the world in keynotes, workshops, and sessions for events such
+      I’m currently lending my brain to <a href="https://www.investorbase.com/">InvestorBase</a> and in my free time I'm
+      a speaker and trainer at various conferences around the world in keynotes, workshops, and sessions for events such
       as <a href="https://2018.jsconf.asia/">JSConf</a>,{' '}
       <a href="http://qconsp.com/sp2015/speaker/wilson-mendes.html">QCon</a>, <a href="http://ngjapan.org">NG-Japan</a>,{' '}
       <a href="http://2016.devfest.org.au">DevFest Australia</a>,{' '}
