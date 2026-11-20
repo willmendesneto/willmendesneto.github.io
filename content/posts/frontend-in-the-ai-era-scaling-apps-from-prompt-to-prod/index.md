@@ -13,6 +13,8 @@ tags: ['frontend', 'ai', 'architecture', 'tooling', 'talks', 'conferences']
 
 ![](./hero.png)
 
+> 🇧🇷 Prefere ler em português? [Clique aqui para a versão em português](/posts/frontend-na-era-da-ia-escalando-apps-do-prompt-a-producao/).
+
 > TL;DR; Agents can write a full feature before you finish your coffee. Your job moved: wear five hats, put your guardrails in the repo instead of the tool, and remember that AI generates ideas, but you are responsible for the final quality. 🎉
 
 ### Introduction
@@ -146,6 +148,8 @@ The future is bright, the future is A.I.… and it still needs you. Just in a di
 I hope you enjoyed this reading as much as I enjoyed writing it. Thank you so much for reading until the end and see you soon!
 
 🚀🚀🚀🚀🚀🚀
+
+> 🇧🇷 Prefere ler em português? [Clique aqui para a versão em português](/posts/frontend-na-era-da-ia-escalando-apps-do-prompt-a-producao/).
 
 <hr />
 
