@@ -1,0 +1,343 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.14.3"/><meta data-react-helmet="true" name="description" content="Principal Frontend-Engineer, Principal Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies"/><meta data-react-helmet="true" property="og:title" content="Feature flagging Gemini features in Angular with ngx-feature-toggle"/><meta data-react-helmet="true" property="og:description" content="Principal Frontend-Engineer, Principal Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:title" content="Feature flagging Gemini features in Angular with ngx-feature-toggle"/><meta data-react-helmet="true" name="twitter:creator" content=""/><meta data-react-helmet="true" name="twitter:description" content="Principal Frontend-Engineer, Principal Software-Developer, Google Developer Expert Web Technologies, Microsoft MVP Developer Technologies"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><style data-href="/styles.6f085bda7eef4125a3e2.css" data-identity="gatsby-global-css">html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color:#333;font-family:Poppins,sans-serif;font-size:30px;font-weight:500;height:100%;line-height:1.8em;padding:20px 0 0;position:relative;width:100%}body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background:#fff;box-sizing:border-box;margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{-webkit-text-decoration-skip:objects;background-color:transparent;color:#333;font-weight:700}a:active,a:hover{color:#099;opacity:.8;outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:30px}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{box-sizing:border-box;font:112.5%/1.45em;overflow-y:scroll}*,:after,:before{box-sizing:inherit}body{word-wrap:break-word;-ms-font-feature-settings:"kern","liga","clig","calt";font-feature-settings:"kern","liga","clig","calt";font-kerning:normal;font-weight:400}img{margin:0 0 1.45rem;max-width:100%;padding:0}h1{font-size:2.25rem}h1,h2{color:inherit;font-weight:700;line-height:1.1;margin:0 0 1.45rem;padding:0;text-rendering:optimizeLegibility}h2{font-size:1.62671rem}h3{font-size:1.38316rem}h3,h4{color:inherit;font-weight:700;line-height:1.1;margin:0 0 1.45rem;padding:0;text-rendering:optimizeLegibility}h4{font-size:1rem}h5{font-size:.85028rem}h5,h6{color:inherit;font-weight:700;line-height:1.1;margin:0 0 1.45rem;padding:0;text-rendering:optimizeLegibility}h6{font-size:.78405rem}hgroup{margin:0 0 1.45rem;padding:0}ol,ul{list-style-image:none;list-style-position:outside;margin:0 0 1.45rem 1.45rem;padding:0}dl{text-align:justify}dd,dl{margin:0 0 1.45rem}dd,dl,p{padding:0}p{margin:0 0 30px}figure{padding:0}figure,pre{margin:0 0 1.45rem}pre{word-wrap:normal;background:rgba(0,0,0,.04);border-radius:3px;font-size:.85rem;line-height:1.42;overflow:auto;padding:1.45rem}table{border-collapse:collapse;font-size:1rem;line-height:1.45rem;width:100%}fieldset,table{margin:0 0 1.45rem;padding:0}blockquote{color:#757575;margin:0 1.45rem 1.45rem;padding:20px 0 10px}form,iframe,noscript{margin:0 0 1.45rem;padding:0}hr{background:rgba(0,0,0,.2);border:none;height:1px;margin:0 0 calc(1.45rem - 1px);padding:0}address{margin:0 0 1.45rem;padding:0}b,dt,strong,th{font-weight:700}li{margin-bottom:.725rem}ol li,ul li{padding-left:0}li>ol,li>ul{margin-bottom:.725rem;margin-left:1.45rem;margin-top:.725rem}blockquote :last-child,li :last-child,p :last-child{margin-bottom:0}li>p{margin-bottom:.725rem}code,kbd,samp{font-size:.85rem;line-height:1.45rem}abbr,abbr[title],acronym{border-bottom:1px dotted rgba(0,0,0,.5);cursor:help}abbr[title]{text-decoration:none}td,th,thead{text-align:left}td,th{font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";border-bottom:1px solid rgba(0,0,0,.12);padding:.725rem .96667rem calc(.725rem - 1px)}td:first-child,th:first-child{padding-left:0}td:last-child,th:last-child{padding-right:0}code,tt{background-color:rgba(0,0,0,.04);border-radius:3px;font-family:SFMono-Regular,Consolas,Roboto Mono,Droid Sans Mono,Liberation Mono,Menlo,Courier,monospace;padding:.2em 0}pre code{background:none;line-height:1.42}code:after,code:before,tt:after,tt:before{content:" ";letter-spacing:-.2em}pre code:after,pre code:before,pre tt:after,pre tt:before{content:""}h1,h2,h3,h4,h5,h6{color:#333}h1{font-weight:500}h2,h3,h4,h5,h6{background:transparent;display:block;font-weight:700;margin-top:40px}.gatsby-highlight{border-radius:20px;margin:10px 0 20px}.gatsby-resp-image-figcaption{margin-top:40px}.twitter-tweet{margin:10px auto}.gist{margin-bottom:30px;margin-top:30px}.gist .gist-data{padding-bottom:10px;padding-top:10px}.gist .blob-num{border-bottom:none}@media only screen and (max-width:480px){html{font-size:100%}}code[class*=language-],pre[class*=language-]{word-wrap:normal;background:none;color:#f8f8f2;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;tab-size:4;text-align:left;text-shadow:0 1px rgba(0,0,0,.3);white-space:pre;word-break:normal;word-spacing:normal}pre[class*=language-]{border-radius:.3em;margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#272822}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#8292a2}.token.punctuation{color:#f8f8f2}.token.namespace{opacity:.7}.token.constant,.token.deleted,.token.property,.token.symbol,.token.tag{color:#f92672}.token.boolean,.token.number{color:#ae81ff}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#a6e22e}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url,.token.variable{color:#f8f8f2}.token.atrule,.token.attr-value,.token.class-name,.token.function{color:#e6db74}.token.keyword{color:#66d9ef}.token.important,.token.regex{color:#fd971f}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}</style><style data-styled="" data-styled-version="5.3.11">.bDFcAI{font-style:normal;font-weight:900;line-height:1em;margin:50px 0 20px 0;font-size:30px;-webkit-letter-spacing:-2px;-moz-letter-spacing:-2px;-ms-letter-spacing:-2px;letter-spacing:-2px;}/*!sc*/
+@media (min-width:768px){.bDFcAI{font-size:50px;line-height:1em;margin:70px 0 20px 0;}}/*!sc*/
+data-styled.g1[id="Title-sc-vnv17x-0"]{content:"bDFcAI,"}/*!sc*/
+.cXbFvi{max-width:1280px;margin:0 auto;padding-top:0;}/*!sc*/
+.cXbFvi h1{font-size:34px;}/*!sc*/
+@media (min-width:1024px){.cXbFvi h1{font-size:50px;}}/*!sc*/
+@media (min-width:1024px){.cXbFvi{padding-top:50px;}}/*!sc*/
+data-styled.g2[id="Section-sc-ari8ok-0"]{content:"cXbFvi,"}/*!sc*/
+.kZqldI{display:inline-block;text-align:left;width:40%;}/*!sc*/
+data-styled.g4[id="Header__Logo-sc-3wsfxk-1"]{content:"kZqldI,"}/*!sc*/
+.fbOZkE{display:inline-block;height:40px;width:20%;}/*!sc*/
+@media (min-width:768px){.fbOZkE{display:none;}}/*!sc*/
+.fbOZkE img{border-radius:50%;margin-bottom:0;}/*!sc*/
+data-styled.g5[id="Header__LogoMobile-sc-3wsfxk-2"]{content:"fbOZkE,"}/*!sc*/
+.jRJOON{display:none;}/*!sc*/
+@media (min-width:768px){.jRJOON{display:inline-block;}}/*!sc*/
+data-styled.g6[id="Header__LogoDesktop-sc-3wsfxk-3"]{content:"jRJOON,"}/*!sc*/
+.bmidJM{background:#fff;color:#333;margin:0 auto;padding:10px 15px;position:fixed;text-transform:uppercase;top:0;width:100%;z-index:10;box-sizing:border-box;pointer-events:auto;box-shadow:inset 0 -1px 0 rgb(230 230 230);}/*!sc*/
+@media (min-width:768px){.bmidJM{line-height:auto;padding:15px;right:0;padding-top:2vw;padding-bottom:2vw;padding-left:4vw;padding-right:4vw;}}/*!sc*/
+data-styled.g7[id="Header__Nav-sc-3wsfxk-4"]{content:"bmidJM,"}/*!sc*/
+.fcKOjf{position:relative;overflow-x:auto;padding-top:0;font-size:21px;}/*!sc*/
+@media (min-width:1024px){.fcKOjf{padding:0 20px;max-width:1280px;}}/*!sc*/
+data-styled.g8[id="Header__Wrapper-sc-3wsfxk-5"]{content:"fcKOjf,"}/*!sc*/
+.eTrdJZ{display:inline-block;position:absolute;right:0;}/*!sc*/
+@media (min-width:768px){.eTrdJZ{line-height:inherit;}}/*!sc*/
+data-styled.g9[id="Header__Links-sc-3wsfxk-6"]{content:"eTrdJZ,"}/*!sc*/
+.bWcTRz{font-weight:900;color:#333;padding:0;font-size:15px;margin-right:10px;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.bWcTRz:hover{opacity:1;-webkit-text-decoration:underline;text-decoration:underline;text-underline-offset:10px;}/*!sc*/
+.bWcTRz:last-child:after{margin-right:0;}/*!sc*/
+@media (min-width:768px){.bWcTRz{font-size:21px;margin-right:25px;}}/*!sc*/
+data-styled.g10[id="Header__NavLink-sc-3wsfxk-7"]{content:"bWcTRz,"}/*!sc*/
+.gnJgto{color:#000;font-size:16px;padding:15px 0;text-align:center;}/*!sc*/
+data-styled.g11[id="Footer__Text-sc-1krxj25-0"]{content:"gnJgto,"}/*!sc*/
+.gSrXJb{width:100%;min-height:200px;border-top:2px solid #f0f0f2;margin:75px 0 0 0;font-size:16px;text-transform:uppercase;text-align:center;box-sizing:border-box;background:#f0f0f2;}/*!sc*/
+.gSrXJb ul{display:block;margin:0;margin-bottom:70px;}/*!sc*/
+@media (min-width:768px){.gSrXJb ul{display:inline-block;vertical-align:middle;}}/*!sc*/
+.gSrXJb li{display:block;padding:10px;}/*!sc*/
+@media (min-width:768px){.gSrXJb li{display:inline-block;margin-right:25px;}}/*!sc*/
+.gSrXJb li a:hover{opacity:0.8;}/*!sc*/
+data-styled.g12[id="Footer__PageFooter-sc-1krxj25-1"]{content:"gSrXJb,"}/*!sc*/
+.eKIGBf{padding:15px 7px 15px 0;margin:0 auto;width:100%;overflow:hidden;max-width:1280px;font-size:20px;line-height:1.8em;padding:30px 0 0;position:relative;vertical-align:top;}/*!sc*/
+@media (min-width:768px){.eKIGBf{font-size:22px;}}/*!sc*/
+.eKIGBf pre{border-radius:0;font-size:0.8em;}/*!sc*/
+data-styled.g13[id="Layout__Wrapper-sc-a4eoc7-0"]{content:"eKIGBf,"}/*!sc*/
+.ljzXvG{display:inline-block;padding:15px;vertical-align:top;width:100%;}/*!sc*/
+data-styled.g14[id="Layout__Main-sc-a4eoc7-1"]{content:"ljzXvG,"}/*!sc*/
+.eMdLMV figure{margin-bottom:1.45rem;vertical-align:middle;text-align:center;display:block;padding:0;margin:50px auto;}/*!sc*/
+.eMdLMV figcaption{color:#666;font-size:12px;line-height:1.5em;}/*!sc*/
+@media (min-width:1024px){.eMdLMV figcaption{font-size:16px;}}/*!sc*/
+.eMdLMV img{vertical-align:middle;aspect-ratio:auto 245 / 192;}/*!sc*/
+.eMdLMV p img{text-align:center;display:block;margin:20px auto;}/*!sc*/
+.eMdLMV p .language-text{margin-right:5px;}/*!sc*/
+.eMdLMV hr{border:none;background:transparent;color:#111;-webkit-letter-spacing:1em;-moz-letter-spacing:1em;-ms-letter-spacing:1em;letter-spacing:1em;text-align:center;margin-top:10px;margin-bottom:50px;}/*!sc*/
+@media (min-width:768px){.eMdLMV hr{margin-bottom:70px;}}/*!sc*/
+.eMdLMV hr:before{content:'...';}/*!sc*/
+data-styled.g15[id="PostContent__PostWrapper-sc-1q03oco-0"]{content:"eMdLMV,"}/*!sc*/
+.cniMPq{color:#4e4c4c;display:block;font-style:italic;margin-bottom:20px;-webkit-letter-spacing:normal;-moz-letter-spacing:normal;-ms-letter-spacing:normal;letter-spacing:normal;line-height:1em;margin-top:10px;text-align:left;text-transform:capitalize;font-size:20px;}/*!sc*/
+data-styled.g16[id="PostDate-sc-dbk9s2-0"]{content:"cniMPq,"}/*!sc*/
+.eRSjqf{border-radius:20px;background:#f0f0f2;padding:20px 10px;margin-top:40px;margin-bottom:30px;}/*!sc*/
+data-styled.g17[id="Share__ShareWrapper-sc-1cvlxuw-0"]{content:"eRSjqf,"}/*!sc*/
+.iUSwq{cursor:pointer;color:#fff;padding:10px 20px;margin-right:20px;border-radius:10px;width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-bottom:10px;-webkit-transition:background-color 300ms;transition:background-color 300ms;background-color:#3b5998;border:2px solid #3b5998;}/*!sc*/
+@media (min-width:768px){.iUSwq{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;width:auto;}}/*!sc*/
+.iUSwq:hover{background-color:transparent;color:#3b5998;}/*!sc*/
+data-styled.g18[id="Share__StyledFacebookButton-sc-1cvlxuw-1"]{content:"iUSwq,"}/*!sc*/
+.iULuXF{cursor:pointer;color:#fff;padding:10px 20px;margin-right:20px;border-radius:10px;width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-bottom:10px;-webkit-transition:background-color 300ms;transition:background-color 300ms;background-color:#1da1f2;border:2px solid #1da1f2;}/*!sc*/
+@media (min-width:768px){.iULuXF{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;width:auto;}}/*!sc*/
+.iULuXF:hover{background-color:transparent;color:#1da1f2;}/*!sc*/
+data-styled.g19[id="Share__StyledTwitterButton-sc-1cvlxuw-2"]{content:"iULuXF,"}/*!sc*/
+.bPjaGK{cursor:pointer;color:#fff;padding:10px 20px;margin-right:20px;border-radius:10px;width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-bottom:10px;-webkit-transition:background-color 300ms;transition:background-color 300ms;background-color:#3b5998;border:2px solid #3b5998;}/*!sc*/
+@media (min-width:768px){.bPjaGK{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;width:auto;}}/*!sc*/
+.bPjaGK:hover{background-color:transparent;color:#3b5998;}/*!sc*/
+data-styled.g20[id="Share__StyledLinkedInButton-sc-1cvlxuw-3"]{content:"bPjaGK,"}/*!sc*/
+.hYzst{cursor:pointer;color:#fff;padding:10px 20px;margin-right:20px;border-radius:10px;width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-bottom:10px;-webkit-transition:background-color 300ms;transition:background-color 300ms;background-color:#128c7e;border:2px solid #128c7e;}/*!sc*/
+@media (min-width:768px){.hYzst{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;width:auto;}}/*!sc*/
+.hYzst:hover{background-color:transparent;color:#128c7e;}/*!sc*/
+data-styled.g21[id="Share__StyledWhatsAppButton-sc-1cvlxuw-4"]{content:"hYzst,"}/*!sc*/
+</style><title data-react-helmet="true">Feature flagging Gemini features in Angular with ngx-feature-toggle | Wilson Mendes</title><link href="https://github.githubassets.com/assets/gist-embed-b3b573358bfc66d89e1e95dbf8319c09.css" rel="stylesheet"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="icon" href="/favicon-32x32.png?v=43b819889f87514423d481b4bbf77bf0" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=43b819889f87514423d481b4bbf77bf0"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=43b819889f87514423d481b4bbf77bf0"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=43b819889f87514423d481b4bbf77bf0"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=43b819889f87514423d481b4bbf77bf0"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=43b819889f87514423d481b4bbf77bf0"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=43b819889f87514423d481b4bbf77bf0"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=43b819889f87514423d481b4bbf77bf0"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=43b819889f87514423d481b4bbf77bf0"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/poppins/v24/pxiByp8kv8JHgFVrLBT5Z1xlFQ.woff2"/><style>@font-face{font-display:swap;font-family:Poppins;font-style:normal;font-weight:500;src:url(/static/webfonts/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2) format("woff2")}@font-face{font-display:swap;font-family:Poppins;font-style:normal;font-weight:700;src:url(/static/webfonts/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2) format("woff2")}@font-face{font-display:swap;font-family:Poppins;font-style:normal;font-weight:900;src:url(/static/webfonts/s/poppins/v24/pxiByp8kv8JHgFVrLBT5Z1xlFQ.woff2) format("woff2")}@font-face{font-display:swap;font-family:Poppins;font-style:normal;font-weight:500;src:url(/static/webfonts/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1xlEw.woff) format("woff")}@font-face{font-display:swap;font-family:Poppins;font-style:normal;font-weight:700;src:url(/static/webfonts/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1xlEw.woff) format("woff")}@font-face{font-display:swap;font-family:Poppins;font-style:normal;font-weight:900;src:url(/static/webfonts/s/poppins/v24/pxiByp8kv8JHgFVrLBT5Z1xlEw.woff) format("woff")}</style><link rel="preconnect" href="https://www.google-analytics.com"/><link rel="dns-prefetch" href="https://www.google-analytics.com"/><link rel="sitemap" type="application/xml" href="/sitemap-index.xml"/><link rel="alternate" type="application/rss+xml" title="Will Mendes Blog RSS Feed" href="/rss.xml"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><header class="Header__PageHeader-sc-3wsfxk-0 gLKcoh"><nav class="Header__Nav-sc-3wsfxk-4 bmidJM"><section class="Section-sc-ari8ok-0 Header__Wrapper-sc-3wsfxk-5 cXbFvi fcKOjf"><span class="Header__Logo-sc-3wsfxk-1 Header__LogoMobile-sc-3wsfxk-2 kZqldI fbOZkE"><a class="Header__NavLink-sc-3wsfxk-7 bWcTRz" href="/">WM</a></span><span class="Header__Logo-sc-3wsfxk-1 Header__LogoDesktop-sc-3wsfxk-3 kZqldI jRJOON"><a class="Header__NavLink-sc-3wsfxk-7 bWcTRz" href="/">Wilson Mendes</a></span><div class="Header__Links-sc-3wsfxk-6 eTrdJZ"><a active="false" class="Header__NavLink-sc-3wsfxk-7 bWcTRz" href="/posts/">posts</a><a active="false" class="Header__NavLink-sc-3wsfxk-7 bWcTRz" href="/talks/">talks</a><a active="false" class="Header__NavLink-sc-3wsfxk-7 bWcTRz" href="/contact/">contact</a></div></section></nav></header><div class="Layout__Wrapper-sc-a4eoc7-0 eKIGBf"><main class="Layout__Main-sc-a4eoc7-1 ljzXvG"><section class="Section-sc-ari8ok-0 cXbFvi"><h1 class="Title-sc-vnv17x-0 bDFcAI">Feature flagging Gemini features in Angular with ngx-feature-toggle</h1><time class="PostDate-sc-dbk9s2-0 cniMPq">November 23, 2026<!-- --> - <!-- -->5 min read</time><article class="PostContent__PostWrapper-sc-1q03oco-0 eMdLMV"><div><p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1280px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/e518e3a029afb3eacb314800f3751d5d/00711/hero.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 33.4375%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAIAAACHqfpvAAAACXBIWXMAAC4jAAAuIwF4pT92AAABXUlEQVR42oVQ207CQBDlQ/0Df0E/wAdjfNHE+OKL0QDGGAwEU0MpSEKkQG0hiBKggLS17ba7293t1S0mvjrJTM5McmbOnEIYxyyM2C6iKMr+izRN/2qh+VQX6g+i1JKklig24yTBCOv6Ym0swzACJAA08BjFBKXU4wREPGUpucjMyW1JGql9RRkM37SG2MQILdZfVal2XTv1PFiZabX5uK5/Due9TG9QFhdfj07EvbJ8zOUWBLFzJ4xuq/JytVFVdWNZ42ehWyqp71Po+47tGoblAd+0bBfArbG96hzc9A/PxX3CcOH+Ubgsdy+KL+PJh9yTozSzNG3Wbq8MIwgCF3i2AzAmjgN8H3Kpuj2pKGdTo5/L/rZM7W2gDHqappmmGccxxBgGGACXUpo/iZDjOIzlOM1SRkPoBYSwnMwzSZKQm7OzmptI+MUA+9DnQz7hKzj/F+ctowhDQkmWZT+h9nqq9Z9DjQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/e518e3a029afb3eacb314800f3751d5d/fb34c/hero.avif 320w,
+/static/e518e3a029afb3eacb314800f3751d5d/646cd/hero.avif 768w,
+/static/e518e3a029afb3eacb314800f3751d5d/8b485/hero.avif 1024w,
+/static/e518e3a029afb3eacb314800f3751d5d/a73d6/hero.avif 1280w,
+/static/e518e3a029afb3eacb314800f3751d5d/a7f9f/hero.avif 1920w,
+/static/e518e3a029afb3eacb314800f3751d5d/fb732/hero.avif 2400w"
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              type="image/avif"
+            /><source
+              srcset="/static/e518e3a029afb3eacb314800f3751d5d/cb523/hero.webp 320w,
+/static/e518e3a029afb3eacb314800f3751d5d/cd067/hero.webp 768w,
+/static/e518e3a029afb3eacb314800f3751d5d/53334/hero.webp 1024w,
+/static/e518e3a029afb3eacb314800f3751d5d/4b075/hero.webp 1280w,
+/static/e518e3a029afb3eacb314800f3751d5d/f3ff0/hero.webp 1920w,
+/static/e518e3a029afb3eacb314800f3751d5d/4293a/hero.webp 2400w"
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/e518e3a029afb3eacb314800f3751d5d/d4f27/hero.png 320w,
+/static/e518e3a029afb3eacb314800f3751d5d/778aa/hero.png 768w,
+/static/e518e3a029afb3eacb314800f3751d5d/658fc/hero.png 1024w,
+/static/e518e3a029afb3eacb314800f3751d5d/26c69/hero.png 1280w,
+/static/e518e3a029afb3eacb314800f3751d5d/7d442/hero.png 1920w,
+/static/e518e3a029afb3eacb314800f3751d5d/00711/hero.png 2400w"
+            sizes="(max-width: 1280px) 100vw, 1280px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/e518e3a029afb3eacb314800f3751d5d/26c69/hero.png"
+            alt="hero"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<blockquote>
+<p>TL;DR; Treat every AI feature as a release you can turn off. Put it behind <code class="language-text">*featureToggle</code>, guard its routes with <code class="language-text">featureToggleGuard</code>, flip it at runtime with <code class="language-text">FeatureToggleService</code>, and always render something useful when the model is not available 🎉</p>
+</blockquote>
+<h3>Introduction</h3>
+<p>If 2026 taught me one thing about AI features on the web, it is that they fail in more ways than a regular feature. The model can be slow, expensive, wrong, or simply not on the device yet. Built-in AI in Chrome, like the <a href="https://developer.chrome.com/docs/ai/summarizer-api" target="_blank" rel="nofollow noopener noreferrer">Summarizer API</a> running Gemini Nano, downloads the model on first use, and some devices will never meet the hardware requirements. Cloud models have quotas and bills.</p>
+<p>None of that is a reason to avoid shipping. It is a reason to ship with a switch in your hand.</p>
+<p>In this article, we'll explore how to put a Gemini-powered "Summarize" button behind a feature toggle in Angular using <a href="https://github.com/willmendesneto/ngx-feature-toggle" target="_blank" rel="nofollow noopener noreferrer">ngx-feature-toggle</a>, roll it out gradually, keep a kill switch, and render a fallback UI when the model is unavailable. If you want the background on the library itself, I wrote about it in <a href="/posts/ngx-feature-toggle-flexible-user-management-and-page-access-control-for-angular-apps/">NGX-Feature-Toggle — Flexible User Management and Page Access control</a>.</p>
+<h2>The Problem with shipping AI features "always on"</h2>
+<p>Picture a summary button on an article page. It works on your machine. Then it reaches production and:</p>
+<ul>
+<li>some users see a button that does nothing, because their device can't run the on-device model;</li>
+<li>a prompt change makes the output worse, and you need a full deploy to roll it back;</li>
+<li>cloud usage grows faster than the budget, and the only lever is a hotfix;</li>
+<li>a new "AI lab" page is reachable by URL before it's ready.</li>
+</ul>
+<blockquote>
+<p>An AI feature without a kill switch is an incident waiting for a deploy window.</p>
+</blockquote>
+<h2>The Solution: toggles in templates, routes and at runtime</h2>
+<p>The latest <code class="language-text">ngx-feature-toggle</code> (v13 at the time of writing) is built around standalone APIs and signals, and it requires Angular 22 or newer. Older apps can keep using the previous major versions.</p>
+<h4>1. Safe defaults at bootstrap</h4>
+<p>Start with every AI flag <strong>off</strong>. If the remote configuration never arrives, users get the classic experience instead of a broken one.</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token comment">// app.config.ts</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> ApplicationConfig<span class="token punctuation">,</span> inject<span class="token punctuation">,</span> provideAppInitializer <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> provideRouter <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/router'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> FeatureToggleService<span class="token punctuation">,</span> provideFeatureToggles <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'ngx-feature-toggle'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> routes <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./app.routes'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> appConfig<span class="token operator">:</span> ApplicationConfig <span class="token operator">=</span> <span class="token punctuation">{</span>
+  providers<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token function">provideRouter</span><span class="token punctuation">(</span>routes<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">provideFeatureToggles</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      enableAiSummary<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      enableAiLab<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      aiKillSwitch<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">provideAppInitializer</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> toggles <span class="token operator">=</span> <span class="token function">inject</span><span class="token punctuation">(</span>FeatureToggleService<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'/api/feature-toggles'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>response<span class="token punctuation">.</span>ok<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          toggles<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token keyword">await</span> response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Network error: keep the safe defaults, AI features stay off.</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
+<p>As you can see, <code class="language-text">FeatureToggleService.set()</code> merges the values coming from the server with the defaults. The gradual rollout lives on the server: it decides, per user or per percentage bucket, whether <code class="language-text">enableAiSummary</code> is <code class="language-text">true</code>. The frontend only consumes booleans, which keeps the rollout logic in one place.</p>
+<h4>2. The template: feature, kill switch and fallback</h4>
+<p><code class="language-text">*featureToggle</code> accepts a single name, a <code class="language-text">!</code> prefix for negation, or an array where <strong>all</strong> entries must match. That array is a nice fit for a kill switch:</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Component<span class="token punctuation">,</span> input <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> FeatureToggleDirective <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'ngx-feature-toggle'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> AiSummaryComponent <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./ai-summary.component'</span><span class="token punctuation">;</span>
+
+<span class="token decorator"><span class="token at operator">@</span><span class="token function">Component</span></span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token operator">:</span> <span class="token string">'app-article'</span><span class="token punctuation">,</span>
+  imports<span class="token operator">:</span> <span class="token punctuation">[</span>FeatureToggleDirective<span class="token punctuation">,</span> AiSummaryComponent<span class="token punctuation">]</span><span class="token punctuation">,</span>
+  template<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    &lt;ng-container *featureToggle="['enableAiSummary', '!aiKillSwitch']">
+      &lt;app-ai-summary [text]="body()" />
+    &lt;/ng-container>
+    &lt;ng-container *featureToggle="'aiKillSwitch'">
+      &lt;p>Summaries are paused for now. The full article is below.&lt;/p>
+    &lt;/ng-container>
+    &lt;article [innerHTML]="body()">&lt;/article>
+  </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">ArticleComponent</span> <span class="token punctuation">{</span>
+  <span class="token keyword">readonly</span> body <span class="token operator">=</span> input<span class="token punctuation">.</span><span class="token generic-function"><span class="token function">required</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token operator">></span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>The kill switch is a separate flag on purpose. <code class="language-text">enableAiSummary</code> describes the rollout, while <code class="language-text">aiKillSwitch</code> describes an incident. When you turn the incident off, the rollout state is still there.</p>
+<h4>3. Flip it at runtime</h4>
+<p><code class="language-text">FeatureToggleService</code> exposes the toggles as a signal, and every <code class="language-text">*featureToggle</code> updates when they change, also in <code class="language-text">OnPush</code> and zoneless apps. So that, a kill switch can arrive through Server-Sent Events, without a reload:</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Injectable<span class="token punctuation">,</span> inject <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> FeatureToggleService <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'ngx-feature-toggle'</span><span class="token punctuation">;</span>
+
+<span class="token decorator"><span class="token at operator">@</span><span class="token function">Injectable</span></span><span class="token punctuation">(</span><span class="token punctuation">{</span> providedIn<span class="token operator">:</span> <span class="token string">'root'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">FeatureToggleStream</span> <span class="token punctuation">{</span>
+  <span class="token keyword">private</span> <span class="token keyword">readonly</span> toggles <span class="token operator">=</span> <span class="token function">inject</span><span class="token punctuation">(</span>FeatureToggleService<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> events <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">EventSource</span><span class="token punctuation">(</span><span class="token string">'/api/feature-toggles/stream'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    events<span class="token punctuation">.</span><span class="token function-variable function">onmessage</span> <span class="token operator">=</span> <span class="token punctuation">(</span>event<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+      <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>toggles<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Ignore malformed messages and keep the current toggles.</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    events<span class="token punctuation">.</span><span class="token function-variable function">onerror</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> events<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h4>4. Guard the routes</h4>
+<p>For a whole page, like an experimental "AI lab", use <code class="language-text">featureToggleGuard</code> with <code class="language-text">canMatch</code>. The route data takes the same string, array or callback syntax, and <code class="language-text">redirectTo</code> sends users somewhere useful:</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Routes <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/router'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> featureToggleGuard <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'ngx-feature-toggle'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> routes<span class="token operator">:</span> Routes <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    path<span class="token operator">:</span> <span class="token string">'ai-lab'</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">loadComponent</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'./ai-lab/ai-lab.component'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span> <span class="token operator">=></span> m<span class="token punctuation">.</span>AiLabComponent<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    canMatch<span class="token operator">:</span> <span class="token punctuation">[</span>featureToggleGuard<span class="token punctuation">]</span><span class="token punctuation">,</span>
+    data<span class="token operator">:</span> <span class="token punctuation">{</span>
+      featureToggle<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'enableAiLab'</span><span class="token punctuation">,</span> <span class="token string">'!aiKillSwitch'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      redirectTo<span class="token operator">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre></div>
+<h4>5. A flag is not a capability check</h4>
+<p>Keep in mind: the flag says "you <em>may</em> show this". It doesn't say "this device <em>can</em> run it". The component behind the flag still checks the model. With the Summarizer API, <code class="language-text">availability()</code> returns <code class="language-text">"unavailable"</code>, <code class="language-text">"downloadable"</code>, <code class="language-text">"downloading"</code> or <code class="language-text">"available"</code>, and the <a href="https://developer.chrome.com/docs/ai/inform-users-of-model-download" target="_blank" rel="nofollow noopener noreferrer">Chrome docs</a> recommend showing download progress for the middle two.</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Component<span class="token punctuation">,</span> input<span class="token punctuation">,</span> signal <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+<span class="token comment">// Typings: npm install -D @types/dom-chromium-ai</span>
+
+<span class="token keyword">type</span> <span class="token class-name">SummaryState</span> <span class="token operator">=</span> <span class="token string">'idle'</span> <span class="token operator">|</span> <span class="token string">'downloading'</span> <span class="token operator">|</span> <span class="token string">'ready'</span> <span class="token operator">|</span> <span class="token string">'unavailable'</span> <span class="token operator">|</span> <span class="token string">'error'</span><span class="token punctuation">;</span>
+
+<span class="token decorator"><span class="token at operator">@</span><span class="token function">Component</span></span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token operator">:</span> <span class="token string">'app-ai-summary'</span><span class="token punctuation">,</span>
+  template<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    @switch (state()) {
+      @case ('unavailable') {
+        &lt;a href="#key-points">Jump to the key points&lt;/a>
+      }
+      @case ('downloading') {
+        &lt;p>Preparing the on-device model… {{ progress() }}%&lt;/p>
+      }
+      @case ('error') {
+        &lt;p>We couldn't summarize this article. The full text is below.&lt;/p>
+      }
+      @default {
+        &lt;button type="button" (click)="summarize()">Summarize&lt;/button>
+        &lt;p>{{ summary() }}&lt;/p>
+      }
+    }
+  </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AiSummaryComponent</span> <span class="token punctuation">{</span>
+  <span class="token keyword">readonly</span> text <span class="token operator">=</span> input<span class="token punctuation">.</span><span class="token generic-function"><span class="token function">required</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token operator">></span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">readonly</span> state <span class="token operator">=</span> <span class="token generic-function"><span class="token function">signal</span><span class="token generic class-name"><span class="token operator">&lt;</span>SummaryState<span class="token operator">></span></span></span><span class="token punctuation">(</span><span class="token string">'idle'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">readonly</span> progress <span class="token operator">=</span> <span class="token function">signal</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">readonly</span> summary <span class="token operator">=</span> <span class="token function">signal</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">async</span> <span class="token function">summarize</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> availability <span class="token operator">=</span> <span class="token string">'Summarizer'</span> <span class="token keyword">in</span> self <span class="token operator">?</span> <span class="token keyword">await</span> Summarizer<span class="token punctuation">.</span><span class="token function">availability</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token string">'unavailable'</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>availability <span class="token operator">===</span> <span class="token string">'unavailable'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">'unavailable'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>availability <span class="token operator">!==</span> <span class="token string">'available'</span><span class="token punctuation">)</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">'downloading'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">const</span> summarizer <span class="token operator">=</span> <span class="token keyword">await</span> Summarizer<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        type<span class="token operator">:</span> <span class="token string">'tldr'</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">monitor</span><span class="token operator">:</span> <span class="token punctuation">(</span>m<span class="token punctuation">)</span> <span class="token operator">=></span>
+          m<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'downloadprogress'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">this</span><span class="token punctuation">.</span>progress<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>loaded <span class="token operator">*</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">'ready'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>summary<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token keyword">await</span> summarizer<span class="token punctuation">.</span><span class="token function">summarize</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p><code class="language-text">Summarizer.create()</code> runs inside the click handler because the model download needs user activation. The same shape works for a cloud fallback: swap the <code class="language-text">'unavailable'</code> branch for a call to your Gemini backend, and give that call its own flag so you can turn off the paid path without touching the free on-device one.</p>
+<h3>What this gives you</h3>
+<ul>
+<li><strong>Gradual rollout</strong> decided on the server and consumed as booleans.</li>
+<li><strong>A kill switch</strong> that reaches open tabs without a deploy.</li>
+<li><strong>Fallback UI</strong> for devices that can't run the model, and for errors.</li>
+<li><strong>Routes</strong> that stay closed until the feature is ready.</li>
+</ul>
+<p>And, like any release toggle, plan its removal. Once the feature is stable, delete the flag and the dead branch. I wrote about <a href="/posts/automating-launchdarkly-feature-flags-cleanup-in-your-codebase/">automating that cleanup</a> a while ago, and the advice still holds.</p>
+<p>If you're streaming the response instead of waiting for the whole summary, take a look at <a href="/posts/streaming-gemini-responses-into-angular-signals/">Streaming Gemini responses into Angular signals</a> and <a href="/posts/skeleton-loaders-for-llm-latency-ngx-skeleton-loader-for-streaming-uis/">Skeleton loaders for LLM latency</a> in this series.</p>
+<h2>References</h2>
+<ul>
+<li><a href="https://github.com/willmendesneto/ngx-feature-toggle" target="_blank" rel="nofollow noopener noreferrer">ngx-feature-toggle on GitHub</a></li>
+<li><a href="https://www.npmjs.com/package/ngx-feature-toggle" target="_blank" rel="nofollow noopener noreferrer">ngx-feature-toggle on npm</a></li>
+<li><a href="https://developer.chrome.com/docs/ai/summarizer-api" target="_blank" rel="nofollow noopener noreferrer">Summarize with built-in AI (Summarizer API)</a></li>
+<li><a href="https://developer.chrome.com/docs/ai/inform-users-of-model-download" target="_blank" rel="nofollow noopener noreferrer">Inform users of model download</a></li>
+<li><a href="https://angular.dev/guide/routing/route-guards" target="_blank" rel="nofollow noopener noreferrer">Route guards on angular.dev</a></li>
+<li><a href="https://martinfowler.com/bliki/FeatureToggle.html" target="_blank" rel="nofollow noopener noreferrer">Feature Toggles, by Martin Fowler</a></li>
+</ul>
+<h3>That’s all for now</h3>
+<p>Ship the AI feature, but ship the switch first.</p>
+<p>I hope you enjoyed this reading as much as I enjoyed writing it. Thank you so much for reading until the end and see you soon!</p>
+<p>🚀🚀🚀🚀🚀🚀</p>
+<hr />
+<h3>Cya 👋</h3></div></article><div class="Share__ShareWrapper-sc-1cvlxuw-0 eRSjqf"><p>Share this post via:</p><span class="Share__StyledFacebookButton-sc-1cvlxuw-1 iUSwq"><button aria-label="facebook" class="react-share__ShareButton" style="background-color:transparent;border:none;padding:0;font:inherit;color:inherit;cursor:pointer">Facebook</button></span><span class="Share__StyledTwitterButton-sc-1cvlxuw-2 iULuXF"><button aria-label="twitter" class="react-share__ShareButton" style="background-color:transparent;border:none;padding:0;font:inherit;color:inherit;cursor:pointer">Twitter</button></span><span class="Share__StyledLinkedInButton-sc-1cvlxuw-3 bPjaGK"><button aria-label="linkedin" class="react-share__ShareButton" style="background-color:transparent;border:none;padding:0;font:inherit;color:inherit;cursor:pointer">LinkedIn</button></span><span class="Share__StyledWhatsAppButton-sc-1cvlxuw-4 hYzst"><button aria-label="whatsapp" class="react-share__ShareButton" style="background-color:transparent;border:none;padding:0;font:inherit;color:inherit;cursor:pointer">WhatsApp</button></span></div><h3>Subscribe</h3><p>Subscribe text content here.</p></section></main></div><footer class="Footer__PageFooter-sc-1krxj25-1 gSrXJb"><ul><li><a href="https://github.com/willmendesneto" target="_blank" rel="noopener noreferrer">Github</a></li><li><a href="https://www.linkedin.com/in/willmendesneto" target="_blank" rel="noopener noreferrer">LinkedIn</a></li><li><a href="/rss.xml" target="_blank" rel="noopener noreferrer">RSS</a></li></ul><p class="Footer__Text-sc-1krxj25-0 gnJgto">made by me with<!-- --> <span role="img" aria-label="love">❤️</span> <!-- -->since 2014</p></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
+  
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'UA-58169656-1', 'auto', {});
+      
+      
+      
+      
+      
+      }</script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/posts/feature-flagging-gemini-features-in-angular-with-ngx-feature-toggle/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-04cc3cdf74b0f62b3800.js\"],\"component---cache-caches-gatsby-plugin-offline-app-shell-js\":[\"/component---cache-caches-gatsby-plugin-offline-app-shell-js-62804441410c09389e6e.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-10e35aa6b3a03b0a776f.js\"],\"component---src-pages-contact-js\":[\"/component---src-pages-contact-js-3adf0137b457270f5e55.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-6a8019d9aed60d7df172.js\"],\"component---src-pages-posts-js\":[\"/component---src-pages-posts-js-5142cacbb67d65e8ba96.js\"],\"component---src-pages-talks-js\":[\"/component---src-pages-talks-js-d44bd0184abdc9a2fc86.js\"],\"component---src-pages-workshops-js\":[\"/component---src-pages-workshops-js-a1a8286d16431a76c21c.js\"],\"component---src-templates-post-js\":[\"/component---src-templates-post-js-e8db61554ea286b7d195.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="467d79c0729f50bd5d8f";</script><script src="/webpack-runtime-5ad9c790f2542e3de1e2.js" async></script><script src="/framework-1f26dcae9d6afbb8a76c.js" async></script><script src="/app-04cc3cdf74b0f62b3800.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
