@@ -2,7 +2,7 @@
 
 # Site (`/`)
 
-> **Current state:** Static personal site with 37 active posts and 1 workshop entry in content/posts. No tests. Deployed manually with npm run deploy.
+> **Current state:** Static personal site with 57 active posts and 1 workshop entry in content/posts. No tests. Deployed manually with npm run deploy.
 
 ## When to read this doc
 
