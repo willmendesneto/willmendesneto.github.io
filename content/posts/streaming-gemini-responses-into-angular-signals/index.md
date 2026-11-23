@@ -4,7 +4,7 @@ title: "Streaming Gemini responses into Angular signals — resource(), zoneless
 description: How to stream Gemini output from Firebase AI Logic into an Angular streaming resource, so the UI updates chunk by chunk, works without Zone.js and cancels stale requests.
 layout: post
 author: Wilson Mendes
-date: '2026-11-23T10:20:00.000Z'
+date: '2026-06-16T10:20:00.000Z'
 path: /posts/streaming-gemini-responses-into-angular-signals/
 category: "post"
 lang: en

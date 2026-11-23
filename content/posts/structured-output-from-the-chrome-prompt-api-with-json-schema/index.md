@@ -4,7 +4,7 @@ title: "Structured output from the Chrome Prompt API with JSON Schema"
 description: How to get typed, parseable JSON out of Gemini Nano in Chrome with the Prompt API's responseConstraint, how to validate it, and where the API is available today.
 layout: post
 author: Wilson Mendes
-date: '2026-11-23T09:40:00.000Z'
+date: '2026-06-08T09:40:00.000Z'
 path: /posts/structured-output-from-the-chrome-prompt-api-with-json-schema/
 category: "post"
 lang: en

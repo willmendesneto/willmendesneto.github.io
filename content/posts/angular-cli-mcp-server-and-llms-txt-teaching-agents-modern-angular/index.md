@@ -4,7 +4,7 @@ title: "Angular CLI MCP server and llms.txt — teaching agents modern Angular"
 description: How to give coding agents current Angular knowledge with the Angular CLI MCP server, the angular.dev llms.txt files, the best-practices file and the official rules files.
 layout: post
 author: Wilson Mendes
-date: '2026-11-23T10:40:00.000Z'
+date: '2026-07-01T10:40:00.000Z'
 path: /posts/angular-cli-mcp-server-and-llms-txt-teaching-agents-modern-angular/
 category: "post"
 lang: en

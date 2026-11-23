@@ -4,7 +4,7 @@ title: "Gemini CLI for web projects — GEMINI.md, custom commands, extensions a
 description: How to set up a web repo for Gemini CLI with GEMINI.md context, custom slash commands, extensions, MCP servers and headless runs in CI, and how the same files carry over to Antigravity CLI.
 layout: post
 author: Wilson Mendes
-date: '2026-11-23T12:20:00.000Z'
+date: '2026-07-31T12:20:00.000Z'
 path: /posts/gemini-cli-for-web-projects-gemini-md-custom-commands-and-extensions/
 category: "post"
 lang: en

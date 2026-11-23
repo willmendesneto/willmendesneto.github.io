@@ -4,7 +4,7 @@ title: "Google Antigravity first impressions — agents, Artifacts and browser c
 description: What Google Antigravity looks like one year after launch, how its Artifacts and browser checks change the review loop, and why review discipline is still the part you can't hand over.
 layout: post
 author: Wilson Mendes
-date: '2026-11-23T11:40:00.000Z'
+date: '2026-07-21T11:40:00.000Z'
 path: /posts/google-antigravity-first-impressions-agents-artifacts-browser-checks/
 category: "post"
 lang: en

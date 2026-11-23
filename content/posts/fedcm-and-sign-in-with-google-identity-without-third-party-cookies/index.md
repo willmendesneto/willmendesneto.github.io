@@ -4,7 +4,7 @@ title: "FedCM and Sign in with Google — identity without third-party cookies"
 description: How the FedCM API works, how Google Identity Services uses it for One Tap and the button flow, and why browser-mediated sign-in matters more as browsers and agents mediate more of the web.
 layout: post
 author: Wilson Mendes
-date: '2026-11-23T14:00:00.000Z'
+date: '2026-09-03T14:00:00.000Z'
 path: /posts/fedcm-and-sign-in-with-google-identity-without-third-party-cookies/
 category: "post"
 lang: en

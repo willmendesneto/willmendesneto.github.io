@@ -4,7 +4,7 @@ title: "Zoneless, signals and conventions — making an Angular repo agent-ready
 description: Why modern Angular defaults like zoneless, signals, standalone, native control flow and Vitest make coding agents produce better code, and how to lock those conventions into the repo with AGENTS.md and lint gates.
 layout: post
 author: Wilson Mendes
-date: '2026-11-23T11:00:00.000Z'
+date: '2026-07-09T11:00:00.000Z'
 path: /posts/zoneless-signals-and-conventions-making-an-angular-repo-agent-ready/
 category: "post"
 lang: en

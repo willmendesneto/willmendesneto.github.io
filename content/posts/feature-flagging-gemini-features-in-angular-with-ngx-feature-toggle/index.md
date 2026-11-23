@@ -4,7 +4,7 @@ title: "Feature flagging Gemini features in Angular with ngx-feature-toggle"
 description: Ship an AI summary button behind a feature toggle, roll it out gradually, keep a kill switch for cost or quality incidents and render a fallback when the model is not there.
 layout: post
 author: Wilson Mendes
-date: '2026-11-23T13:00:00.000Z'
+date: '2026-08-12T13:00:00.000Z'
 path: /posts/feature-flagging-gemini-features-in-angular-with-ngx-feature-toggle/
 category: "post"
 lang: en

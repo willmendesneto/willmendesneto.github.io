@@ -4,7 +4,7 @@ title: "Hybrid inference with Firebase AI Logic — on-device first, cloud fallb
 description: How to use the Firebase AI Logic web SDK to run Gemini Nano in Chrome when it is available and fall back to a cloud Gemini model when it isn't, with one API, one schema and App Check in front of it.
 layout: post
 author: Wilson Mendes
-date: '2026-11-23T10:00:00.000Z'
+date: '2026-06-11T10:00:00.000Z'
 path: /posts/hybrid-inference-with-firebase-ai-logic-on-device-first-cloud-fallback/
 category: "post"
 lang: en

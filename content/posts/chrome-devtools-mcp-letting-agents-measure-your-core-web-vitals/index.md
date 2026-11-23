@@ -4,7 +4,7 @@ title: "Chrome DevTools MCP — letting agents measure your Core Web Vitals"
 description: How to connect a coding agent to Chrome DevTools MCP, record performance traces, read LCP, INP and CLS insights, and keep your real browser profile out of the agent's reach.
 layout: post
 author: Wilson Mendes
-date: '2026-11-23T12:40:00.000Z'
+date: '2026-08-04T12:40:00.000Z'
 path: /posts/chrome-devtools-mcp-letting-agents-measure-your-core-web-vitals/
 category: "post"
 lang: en

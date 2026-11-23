@@ -4,7 +4,7 @@ title: "WebMCP — exposing your web app tools to browser agents"
 description: A deep dive into the WebMCP proposal, where a page registers tools with a name, description, input schema and execute function, so browser agents stop guessing at your DOM. Current API, Chrome status, Angular support and the security rules I'd follow.
 layout: post
 author: Wilson Mendes
-date: '2026-11-23T15:00:00.000Z'
+date: '2026-10-09T15:00:00.000Z'
 path: /posts/webmcp-exposing-your-web-app-tools-to-browser-agents/
 category: "post"
 lang: en

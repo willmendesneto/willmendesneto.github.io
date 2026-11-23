@@ -4,7 +4,7 @@ title: "Skeleton loaders for LLM latency — ngx-skeleton-loader for streaming U
 description: Split LLM latency into waiting for the first token and streaming the rest, show a skeleton only for the first phase, and keep the whole thing accessible with signals-driven state.
 layout: post
 author: Wilson Mendes
-date: '2026-11-23T13:20:00.000Z'
+date: '2026-08-24T13:20:00.000Z'
 path: /posts/skeleton-loaders-for-llm-latency-ngx-skeleton-loader-for-streaming-uis/
 category: "post"
 lang: en

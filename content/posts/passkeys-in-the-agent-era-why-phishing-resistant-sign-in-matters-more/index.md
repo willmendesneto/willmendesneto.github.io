@@ -4,7 +4,7 @@ title: "Passkeys in the agent era — why phishing-resistant sign-in matters mor
 description: Browser agents read pages and act on them. Passwords and one-time codes can be typed anywhere, passkeys can't, and that difference is why sign-in should stay with the human.
 layout: post
 author: Wilson Mendes
-date: '2026-11-23T13:40:00.000Z'
+date: '2026-08-31T13:40:00.000Z'
 path: /posts/passkeys-in-the-agent-era-why-phishing-resistant-sign-in-matters-more/
 category: "post"
 lang: en

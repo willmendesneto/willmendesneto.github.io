@@ -4,7 +4,7 @@ title: "Agents acting for users — delegation, OAuth scopes, A2A and AP2"
 description: Agents need delegated, scoped and revocable authority, not the user's password. A look at OAuth scopes, token exchange, human-in-the-loop approvals, A2A and AP2 mandates, and what web developers can build today.
 layout: post
 author: Wilson Mendes
-date: '2026-11-23T14:40:00.000Z'
+date: '2026-10-05T14:40:00.000Z'
 path: /posts/agents-acting-for-users-delegation-oauth-scopes-a2a-and-ap2/
 category: "post"
 lang: en

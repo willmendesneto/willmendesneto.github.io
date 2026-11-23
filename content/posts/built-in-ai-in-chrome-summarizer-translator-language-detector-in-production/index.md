@@ -4,7 +4,7 @@ title: "Built-in AI in Chrome — Summarizer, Translator and Language Detector i
 description: How to ship Chrome's task-based built-in AI APIs safely, with feature detection, availability checks, download progress and a fallback for every browser that can't run them.
 layout: post
 author: Wilson Mendes
-date: '2026-11-23T09:20:00.000Z'
+date: '2026-06-03T09:20:00.000Z'
 path: /posts/built-in-ai-in-chrome-summarizer-translator-language-detector-in-production/
 category: "post"
 lang: en

@@ -4,7 +4,7 @@ title: "Signal Forms and Gemini — AI-assisted form filling that still validate
 description: How to pre-fill an Angular Signal Form with Gemini structured output from Firebase AI Logic, while the schema validators stay the source of truth and the user confirms every suggested value.
 layout: post
 author: Wilson Mendes
-date: '2026-11-23T11:20:00.000Z'
+date: '2026-07-13T11:20:00.000Z'
 path: /posts/signal-forms-and-gemini-ai-assisted-form-filling-that-still-validates/
 category: "post"
 lang: en

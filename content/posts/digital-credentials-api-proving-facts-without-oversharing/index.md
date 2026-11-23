@@ -4,7 +4,7 @@ title: "Digital Credentials API — proving facts without oversharing"
 description: How the Digital Credentials API lets a site ask a wallet for one signed fact, like "over 18", instead of a scan of someone's ID, and why that matters more when agents fill forms for people.
 layout: post
 author: Wilson Mendes
-date: '2026-11-23T14:20:00.000Z'
+date: '2026-09-15T14:20:00.000Z'
 path: /posts/digital-credentials-api-proving-facts-without-oversharing/
 category: "post"
 lang: en

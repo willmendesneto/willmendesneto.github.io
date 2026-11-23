@@ -4,7 +4,7 @@ title: "From plan to verified UI — an Angular feature built in Antigravity"
 description: A recommended workflow for building an Angular feature with Google Antigravity, from repo conventions and an implementation plan to a browser check and a final diff review.
 layout: post
 author: Wilson Mendes
-date: '2026-11-23T12:00:00.000Z'
+date: '2026-07-27T12:00:00.000Z'
 path: /posts/from-plan-to-verified-ui-an-angular-feature-built-in-antigravity/
 category: "post"
 lang: en

@@ -4,7 +4,7 @@ title: "AI on the web in 2026 — a GDE's map of what actually shipped"
 description: Looking back at 2026 as a Google Developer Expert in Web Technologies and Identity, a map of what actually shipped for web developers in on-device AI, cloud Gemini, Angular, agentic tooling and identity, and the guide to a 20-post series.
 layout: post
 author: Wilson Mendes
-date: '2026-11-23T09:00:00.000Z'
+date: '2026-06-01T09:00:00.000Z'
 path: /posts/ai-on-the-web-in-2026-a-gde-map-of-what-shipped/
 category: "post"
 lang: en
