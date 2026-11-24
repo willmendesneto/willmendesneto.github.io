@@ -1,5 +1,5 @@
 ---
-status: "draft"
+status: "active"
 title: "ngx-skeleton-loader/testing — a component harness that keeps your tests (and your agents) in sync"
 description: ngx-skeleton-loader now ships NgxSkeletonLoaderHarness in a new ngx-skeleton-loader/testing entry point, so unit tests written by people or by coding agents assert what the skeleton shows instead of how it is rendered.
 layout: post
@@ -65,7 +65,7 @@ If you never used them, the [Using component harnesses in tests](https://angular
 The harness lives in its own entry point, and it needs `@angular/cdk` (`>=19.0.0`) in your project. It is an **optional** peer dependency, so you only install it if you use the harness:
 
 ```bash
-npm install ngx-skeleton-loader@<NEXT_VERSION>
+npm install ngx-skeleton-loader@14.1.0
 npm install --save-dev @angular/cdk
 ```
 
